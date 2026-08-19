@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Driving and judging — An adb-based game QA server</title><meta name="description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/" aria-current="page"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/android-qa/driving/" aria-current="page"><span class="t"><span>Driving and judging</span><span class="kpi">RPC &gt; screen</span></span><span class="s">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</span></a><a href="/en/built/android-qa/loop/"><span class="t"><span>The unattended loop</span><span class="kpi">9h57m</span></span><span class="s">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</span></a><a href="/en/built/android-qa/findings/"><span class="t"><span>What came out</span><span class="kpi">147 / 300</span></span><span class="s">The first thing that wasn&#39;t an automation defect. And it isn&#39;t something to brag about.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">in progress</span></div><h1>Driving and judging</h1><p class="sum">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</p><div class="meta"><span>RPC &gt; screen</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#the-best-improvement-was-moving-the-verdict">The best improvement was moving the verdict</a><a href="#why-the-screen-comes-last">Why the screen comes last</a><a href="#vision-stayed-on-the-driving-side">Vision stayed on the driving side</a><a href="#where-it-still-bites">Where it still bites</a></nav><div class="prose"><p>With no handles on the screen, the path has to look like this.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Two paths leave the device. The upper drive path goes screenshot to vision to coordinate tap. The lower verdict path reads the engine's file log for RPCs and state transitions. A dashed line marks the abandoned original path from vision to verdict.">
+  <rect class="bx-code" x="10" y="86" width="104" height="52" rx="2"/>
+  <text class="bx-t" x="62" y="117" text-anchor="middle">Device</text>
+  <text class="lbl" x="128" y="52">DRIVE</text>
+  <text class="lbl" x="128" y="228">JUDGE</text>
+  <g>
+    <rect class="bx-llm" x="196" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="271" y="92" text-anchor="middle">Screenshot</text>
+    <rect class="bx-llm" x="380" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="455" y="92" text-anchor="middle">Vision</text>
+    <rect class="bx-llm" x="564" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="639" y="92" text-anchor="middle">Tap by coord</text>
+    <path d="M114 92 H196 M346 87 H380 M530 87 H564" stroke="#0C0D10" stroke-width="1.5"/>
+  </g>
+  <g>
+    <rect class="bx-code" x="196" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="271" y="182" text-anchor="middle">File log</text>
+    <rect class="bx-code" x="380" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="455" y="182" text-anchor="middle">RPC · state</text>
+    <rect class="bx-code" x="564" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="639" y="182" text-anchor="middle">Verdict</text>
+    <path d="M114 132 V177 H196 M346 177 H380 M530 177 H564" stroke="#0C0D10" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M455 112 V152" stroke="#c3c6cc" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text class="gt" x="470" y="146">the original path — and it was wrong</text>
+  <text class="lbl" x="762" y="92">what the eye does</text>
+  <text class="lbl" x="762" y="182">what the machine does</text>
+</svg>
+<figcaption>Driving happens by sight; judging happens by log. Judging by vision was the biggest mistake in this project.</figcaption>
+</figure>
+<h2 id="the-best-improvement-was-moving-the-verdict">The best improvement was moving the verdict</h2>
+<p>I started out certain that logs couldn’t tell me anything about game state, because the standard log channel was suppressed.</p>
+<p><strong>Wrong.</strong> Only that one channel was suppressed. <strong>The engine writes its own file log on the device, and it contains the full state-machine transitions and every RPC sent and received.</strong></p>
+<p>That set the evidence order.</p>
+<blockquote>
+<p><strong>Received RPC &gt; state transition &gt; screen</strong></p>
+</blockquote>
+<h2 id="why-the-screen-comes-last">Why the screen comes last</h2>
+<p>Pixels cannot separate two things.</p>
+<ul>
+<li><strong>A loading spinner from a frozen frame</strong> — both are “a picture that’s animating”</li>
+<li><strong>Two states that render identically</strong> — a screen showing a request in flight and one that already failed and returned can look the same</li>
+</ul>
+<p>Logs separate them. If there’s a record of the request going out and a record of the response arriving, <strong>the state is determined regardless of what’s on screen.</strong></p>
+<p>And only after the verdict moved from pixels to logs did <strong>unattended long runs become possible.</strong> Vision-based judging calls a human on an ambiguous screen — and unattended, there is nobody to call.</p>
+<h2 id="vision-stayed-on-the-driving-side">Vision stayed on the driving side</h2>
+<p>Removing it from judging didn’t mean discarding it. <strong>Driving still has nothing but vision.</strong></p>
+<p>It’s the only way to know where a button is. But driving and judging have different requirements.</p>
+<ul>
+<li><strong>Driving recovers from being wrong.</strong> Tap the wrong place and the screen doesn’t change; noticing that, it looks again.</li>
+<li><strong>Judging becomes the result when it’s wrong.</strong> A case wrongly marked PASS is never revisited.</li>
+</ul>
+<p>So <strong>vision sits where being wrong is survivable, and logs sit where it isn’t.</strong> Using one tool for both purposes while demanding different reliability from each doesn’t hold up.</p>
+<h2 id="where-it-still-bites">Where it still bites</h2>
+<ul>
+<li><strong>A silent freeze doesn’t trip the error counter.</strong> Nothing fails; it just stops. So screen-change magnitude is tracked as its own axis, with staged recovery and a hard cut when nothing moves</li>
+<li><strong>Capture before you tap</strong> — a fresh process has no screen-scale state yet</li>
+<li>After a restart, the previous session’s log resurfaces before rotation. Delete it and read from offset zero</li>
+<li>The auto-connect chain runs straight through on remembered credentials, so first-screen cases are only measurable from a cleared-data cold boot</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

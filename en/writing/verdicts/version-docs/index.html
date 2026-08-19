@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Is it broken, or not there yet? — Verdicts</title><meta name="description" content="In version documentation, half the feature description is wrong within six months. The date it appeared never is. And the date is usually what a verdict needs."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 Writing</div><div class="plist"><a href="/en/writing/verdicts/" aria-current="page"><span class="t"><span>Verdicts</span><span class="kpi">3 posts</span></span><span class="s">The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.</span></a><a href="/en/writing/measurement/"><span class="t"><span>Measurement</span><span class="kpi">1 post</span></span><span class="s">Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.</span></a><a href="/en/writing/agents/"><span class="t"><span>Running agents</span><span class="kpi">1 post</span></span><span class="s">The other side — loops, guards, and the things I decided not to automate.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/writing/verdicts/threshold/"><span class="t"><span>I did not touch the threshold</span><span class="kpi">1 failure</span></span><span class="s">One run, 126 cases, one failure. I knew how to make it pass, and didn&#39;t.</span></a><a href="/en/writing/verdicts/version-docs/" aria-current="page"><span class="t"><span>Is it broken, or not there yet?</span><span class="kpi">when</span></span><span class="s">In version documentation, half the feature description is wrong within six months. The date it appeared never is. And the date is usually what a verdict needs.</span></a><a href="/en/writing/verdicts/evidence-grades/"><span class="t"><span>&quot;Probably right&quot; is not a verdict</span><span class="kpi">6 grades of evidence</span></span><span class="s">Answering the same question with &quot;probably right&quot; or with &quot;right&quot; didn&#39;t come down to how hard I worked at it.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Writing</span><span class="st">in progress</span></div><h1>Is it broken, or not there yet?</h1><p class="sum">In version documentation, half the feature description is wrong within six months. The date it appeared never is. And the date is usually what a verdict needs.</p><div class="meta"><span>when</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#this-isnt-trivia-its-grounds-for-a-verdict">This isn’t trivia, it’s grounds for a verdict</a><a href="#the-newest-document-does-not-supersede-the-old-one">The newest document does not supersede the old one</a><a href="#the-honest-limit">The honest limit</a></nav><div class="prose"><p>Engine manuals and release notes are <strong>the fastest-rotting material there is.</strong> Six months in, half of it is wrong — APIs renamed, behaviour changed, things removed.</p>
+<p>One thing doesn’t rot. <strong>When it appeared.</strong></p>
+<h2 id="this-isnt-trivia-its-grounds-for-a-verdict">This isn’t trivia, it’s grounds for a verdict</h2>
+<p>The reason “added in 6.4” matters in QA is that when something won’t reproduce, <strong>that single line is what decides whether it’s a defect.</strong></p>
+<p>One symptom can mean two things.</p>
+<ul>
+<li>Something that should work doesn’t → <strong>a defect</strong></li>
+<li>This version doesn’t have it yet → <strong>not a defect</strong></li>
+</ul>
+<p>You cannot tell them apart by looking. On screen they are both “it doesn’t work.” Logs don’t help either — a feature that isn’t there doesn’t throw, it just does nothing.</p>
+<p>So when something won’t reproduce, <strong>suspect the version first.</strong> Skip that order and you end up filing a bug report against a feature that does not exist, which is the kind of false positive that costs a developer’s time.</p>
+<p>The reverse holds too. <strong>When something was removed</strong> doesn’t rot either. Not knowing “removed in 5.8” means never finding out why something that worked fine has stopped.</p>
+<h2 id="the-newest-document-does-not-supersede-the-old-one">The newest document does not supersede the old one</h2>
+<p>This is the counter-intuitive part. We assume the latest document is a superset of the older ones, and <strong>for date information it is the opposite.</strong></p>
+<p>Once a feature settles in, notes like “available from 6.4” <strong>quietly disappear</strong> from the documentation. A new reader doesn’t need them. So three years on, the docs read as though the feature was always there.</p>
+<p>The only thing that still carries that marker is <strong>the release note from the time.</strong> Throw it away for being stale and it cannot be recovered.</p>
+<p>Which means this class of material isn’t something you “update to the latest” — it’s something you <strong>accumulate.</strong> You go to the current manual for current behaviour and to the old release note for the date. The two documents do different jobs.</p>
+<h2 id="the-honest-limit">The honest limit</h2>
+<p><strong>I am not yet running this as a ledger.</strong></p>
+<p>The links are collected, but I have never built the table that maps “the version our build uses” against “when each feature appeared.” Right now I look it up each time something fails to reproduce.</p>
+<p>If the judgement in this piece is right, the next step is obvious — build that table, and <strong>write the version condition into the test case when it is authored.</strong> Recording it up front is cheaper than looking it up at verdict time.</p>
+<p>I haven’t done it. So this is a judgement, not a report of work.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

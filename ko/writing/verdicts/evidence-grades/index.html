@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>「아마 맞다」는 판정이 아니다 — 판정</title><meta name="description" content="같은 질문에 &quot;아마 맞다&quot;로 답하느냐 &quot;맞다&quot;로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 글</div><div class="plist"><a href="/ko/writing/verdicts/" aria-current="page"><span class="t"><span>판정</span><span class="kpi">글 3</span></span><span class="s">PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.</span></a><a href="/ko/writing/measurement/"><span class="t"><span>측정</span><span class="kpi">글 1</span></span><span class="s">어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.</span></a><a href="/ko/writing/agents/"><span class="t"><span>부리기</span><span class="kpi">글 1</span></span><span class="s">AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/writing/verdicts/threshold/"><span class="t"><span>임계값을 만지지 않았다</span><span class="kpi">FAIL 1건</span></span><span class="s">126케이스 한 런에서 FAIL은 하나. 그 하나를 통과시키는 방법을 알고 있었고, 쓰지 않았다.</span></a><a href="/ko/writing/verdicts/version-docs/"><span class="t"><span>안 되는 게 결함인가, 아직 없는 건가</span><span class="kpi">시점</span></span><span class="s">버전 문서에서 기능 설명은 6개월이면 반이 틀립니다. 등장 시점은 안 틀립니다. 그리고 판정에 필요한 건 대개 후자입니다.</span></a><a href="/ko/writing/verdicts/evidence-grades/" aria-current="page"><span class="t"><span>「아마 맞다」는 판정이 아니다</span><span class="kpi">증거 6등급</span></span><span class="s">같은 질문에 &quot;아마 맞다&quot;로 답하느냐 &quot;맞다&quot;로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>글</span><span class="st">공개</span></div><h1>「아마 맞다」는 판정이 아니다</h1><p class="sum">같은 질문에 &quot;아마 맞다&quot;로 답하느냐 &quot;맞다&quot;로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다.</p><div class="meta"><span>증거 6등급</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#수백-판보다-쿼리-한-줄이-세다">수백 판보다 쿼리 한 줄이 세다</a><a href="#등급을-매겨-내-판정에-대봤다">등급을 매겨 내 판정에 대봤다</a><a href="#제일-자주-틀린-자리는-문서였다">제일 자주 틀린 자리는 문서였다</a><a href="#자가-보고를-증거로-두-번-쳤다">자가 보고를 증거로 두 번 쳤다</a><a href="#없는-증거는-세지-않으면-있는-것처럼-보인다">없는 증거는 세지 않으면 있는 것처럼 보인다</a><a href="#못-한-것">못 한 것</a><a href="#판정">판정</a></nav><div class="prose"><p>같은 질문에 두 가지로 답할 수 있다. <em>“아마 맞는 것 같다”</em> 와 <em>“맞다”</em>.</p>
+<p>둘의 차이가 노력이 아니라는 걸, 남의 발표에서 봤다.</p>
+<h2 id="수백-판보다-쿼리-한-줄이-세다">수백 판보다 쿼리 한 줄이 세다</h2>
+<p>뽑기 확률이 기획대로인지 확인하는 일이다. 권한이 없을 때는 <strong>수백 판을 반복해 뽑아 표본으로 확률을 추정</strong>했다. 조회 권한이 생기자 <strong>원본을 쿼리 한 줄로 5초</strong> 만에 읽게 됐다.</p>
+<p>빨라진 게 아니다. <strong>결론의 성격이 바뀌었다.</strong> 수백 판은 <em>“아마 맞는 것 같다”</em> 까지 간다. 원본 조회는 <strong>맞거나 틀리거나</strong>다.</p>
+<p>그 차이를 만든 건 도구가 아니라 <strong>접근</strong>이었다.</p>
+<h2 id="등급을-매겨-내-판정에-대봤다">등급을 매겨 내 판정에 대봤다</h2>
+<table>
+<thead>
+<tr>
+<th>등급</th>
+<th>무엇</th>
+<th>어디까지 말할 수 있나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>원본을 직접 읽는다</td>
+<td>맞다 / 틀리다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>결정론 코드가 확인한다 — 크기·개수·해시</td>
+<td>있다 / 없다</td>
+</tr>
+<tr>
+<td>3</td>
+<td>로그 앵커</td>
+<td>일어났다 / 안 일어났다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>화면·캡처</td>
+<td>사람이 봐야 한다</td>
+</tr>
+<tr>
+<td>5</td>
+<td>표본 통계</td>
+<td>아마</td>
+</tr>
+<tr>
+<td>6</td>
+<td>남의 자가 보고 · 문서 서술</td>
+<td><strong>증거가 아니다</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 표 자체는 새롭지 않다. 값을 한 건 <strong>내가 실제로 쓴 증거가 몇 등급이었나</strong>를 세어 본 쪽이다.</p>
+<h2 id="제일-자주-틀린-자리는-문서였다">제일 자주 틀린 자리는 문서였다</h2>
+<p>MMO 서버 레포를 README만 읽고 요약했다. 코드를 여니 <strong>두 군데가 틀렸는데 방향이 서로 반대</strong>였다 — 없는 기능을 있다고 했고, 있는 특권을 없다고 했다.</p>
+<p><strong>README는 거짓말을 안 했다.</strong> 그 문서에는 <em>설계 문서</em>라고 적혀 있었고 미착수 표시도 같은 파일 안에 있었다. <strong>6등급을 1등급으로 읽은 건 나다.</strong></p>
+<p>그리고 더 나쁜 게 하나 더 있었다. 액션 게임을 벤치마킹하면서 완벽 회피의 보상이 슬로모션이라고 <strong>기억하고 있었고</strong>, 그 기억을 근거로 선행 작업을 하나 만들려 했다. 출처를 대조하니 실제 보상은 자원 획득이었고 <strong>슬로모션은 어디서도 확인되지 않았다.</strong></p>
+<p><strong>기억은 등급표에 아예 없다.</strong></p>
+<h2 id="자가-보고를-증거로-두-번-쳤다">자가 보고를 증거로 두 번 쳤다</h2>
+<p>한 에이전트 브라우저는 <em>“에이전트 벤치마크 1위”</em> 를 내걸었는데, 그 수치는 <strong>자기 저장소에 자기 채점 셋업으로 올린 것</strong>이었다. 제3자 재현이 없다.</p>
+<p>다른 프레임워크는 <em>“증거 없이는 안 고친다”</em> 가 방침인데, <strong>그 증거가 별도 저장소에 있어</strong> 검증도 반박도 안 된다.</p>
+<p><strong>둘 다 주장이 사실일 수 있다.</strong> 다만 6등급이고, <strong>6등급으로 도입을 정하면 안 된다.</strong></p>
+<h2 id="없는-증거는-세지-않으면-있는-것처럼-보인다">없는 증거는 세지 않으면 있는 것처럼 보인다</h2>
+<p>어떤 발표는 31분인데 <strong>자막이 없어 슬라이드만으로 재구성</strong>했다. 질의응답 14분이 통째로 빠졌다. 청중이 무엇을 궁금해했는지는 아는데 <strong>발표자가 뭐라고 답했는지는 모른다.</strong></p>
+<p>결손을 안 적고 요약만 써 두면, 나중에 그 페이지를 근거로 뭘 주장할 때 <strong>그 구멍이 안 보인다.</strong> 그래서 그 글은 첫 문단이 <em>“근거가 얇다는 것부터 말하고 시작해야 한다”</em> 다.</p>
+<h2 id="못-한-것">못 한 것</h2>
+<p><strong>등급을 강제하는 곳이 없다.</strong> 지금은 글을 쓸 때 손으로 지킨다. 자동화 파이프라인은 판정마다 근거를 남기지만 <strong>그 근거가 몇 등급인지는 안 적는다.</strong> 남기는 것과 등급을 매기는 것은 다른 일이다.</p>
+<p>그리고 ⚠ <strong>5등급을 1등급처럼 쓴 자리가 아직 남아 있을 것이다.</strong> 이 글은 발견한 셋을 적은 것이지 전수 조사가 아니다.</p>
+<h2 id="판정">판정</h2>
+<p>등급을 안 매기면 <strong>제일 약한 증거로 제일 센 판정을 하게 된다.</strong> 그리고 그게 편한 이유는 분명하다 — <strong>6등급이 제일 구하기 쉽다.</strong> README는 30초면 읽고, 남의 수치는 그냥 받아 적으면 되고, 내 기억은 꺼내는 데 0초다.</p>
+<p>1등급은 대개 <strong>권한을 얻어야</strong> 닿는다. 그래서 이 분류의 문제는 결국 판정 기술이 아니라 <strong>무엇을 열어 볼 수 있느냐</strong>로 돌아온다. 뽑기 사례가 정확히 그 이야기였다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

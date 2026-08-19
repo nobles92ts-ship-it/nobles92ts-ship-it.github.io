@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>감지기 — 자가진화 루프</title><meta name="description" content="죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 것</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/" aria-current="page"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/self-evolution/dead-channel/"><span class="t"><span>죽은 채널</span><span class="kpi">20.6MB</span></span><span class="s">정교한 쪽이 조용히 죽어 있었고, 그걸 진단한 제 문서도 두 군데가 틀렸습니다.</span></a><a href="/ko/built/self-evolution/tempo/"><span class="t"><span>네 개의 주기</span><span class="kpi">4 tempo</span></span><span class="s">학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.</span></a><a href="/ko/built/self-evolution/detector/" aria-current="page"><span class="t"><span>감지기</span><span class="kpi">오탐 1회</span></span><span class="s">죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 것</span><span class="st">진행 중</span></div><h1>감지기</h1><p class="sum">죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.</p><div class="meta"><span>오탐 1회</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#왜-이것만-새로-만들었나">왜 이것만 새로 만들었나</a><a href="#감지기가-먼저-오탐을-냈다">감지기가 먼저 오탐을 냈다</a><a href="#첫-완주는-아무것도-안-바꿨다">첫 완주는 아무것도 안 바꿨다</a></nav><div class="prose"><p>계획의 절반을 지우고 남긴 것이 넷인데, 그중 <strong>새로 만든 건 감지기 하나</strong>다.</p>
+<p>나머지 셋은 이미 있던 것을 정리한 것이다 — 색인은 상시 주입하고 본문은 필요할 때 부르기, 세션 끝에 가공 없이 붙이기, 주 1회 사람 승인 통합. 감지기만 없던 부품이었다.</p>
+<h2 id="왜-이것만-새로-만들었나">왜 이것만 새로 만들었나</h2>
+<p>앞의 장치가 몇 달을 죽어 있을 수 있었던 이유는 하나다. <strong>산출물이 없어도 아무 일도 안 일어났다.</strong></p>
+<p>증류기가 안 돌면 본능 파일이 안 생길 뿐이고, 본능 파일이 없어도 세션은 멀쩡히 돈다. 실패에 대가가 없으면 실패가 지속되고, 지속되는 실패는 결국 정상 상태로 보인다.</p>
+<p>그래서 감지기의 일은 <strong>대가를 만드는 것</strong>이다. 아무것도 안 하면 알림이 온다.</p>
+<h2 id="감지기가-먼저-오탐을-냈다">감지기가 먼저 오탐을 냈다</h2>
+<p>만들자마자 감지기가 경보를 울렸다. 판정 기준이 “마지막 통합이 10일 넘음”이었는데, 그동안 <strong>캡처는 멀쩡히 돌고 있었다.</strong></p>
+<p>통합이 늦은 것과 학습이 멈춘 것은 다르다. 통합은 정리 작업이라 늦어도 정보는 계속 들어오고 있다. 그런데 기준 하나로는 그 둘이 구분이 안 됐다.</p>
+<p>그래서 기준을 하나 더 붙였다 — <strong>최근 7일 안에 갱신된 메모리 개수.</strong></p>
+<table>
+<thead>
+<tr>
+<th>통합 지연</th>
+<th>캡처</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>있음</td>
+<td><strong>0건</strong></td>
+<td>⚠ 정체</td>
+</tr>
+<tr>
+<td>있음</td>
+<td>살아 있음</td>
+<td>ℹ 가벼운 권장</td>
+</tr>
+<tr>
+<td>없음</td>
+<td>—</td>
+<td>조용</td>
+</tr>
+</tbody>
+</table>
+<p><strong>두 축이 다 나빠야 경보</strong>를 울린다. 캡처가 살아 있으면 가벼운 권장으로 내린다.</p>
+<p>여기서 배운 게 이거다. <strong>감지기의 오탐은 감지기 문제가 아니라 지표 문제였다.</strong> “마지막 통합 시각”은 재기 쉬운 값이라 골랐는데, 재기 쉬운 값이 재고 싶은 것과 다른 경우다. 재고 싶었던 건 “학습이 멈췄나”인데, 잰 건 “정리를 했나”였다.</p>
+<p>늑대가 안 왔는데 우는 감지기는 <strong>한 번만 울어도 다음부터 안 읽힌다.</strong> 그게 죽는 것보다 나쁠 수 있다 — 죽은 건 언젠가 들키지만, 무시당하는 건 계속 도는 채로 무용해진다.</p>
+<h2 id="첫-완주는-아무것도-안-바꿨다">첫 완주는 아무것도 안 바꿨다</h2>
+<p>처음으로 끝까지 돌린 날, 색인 어긋남 0건, 누락 캡처 0건이었다. 고칠 게 없어서 마커만 갱신하고 끝났다.</p>
+<p><strong>상시 캡처가 잘 되고 있으면 통합이 no-op인 게 정상이다.</strong></p>
+<p>이걸 미리 적어두지 않았으면 “루프가 아무것도 안 한다”고 판단하고 뭔가를 더 만들었을 것이다. 그게 이 프로젝트가 처음에 밟은 함정과 정확히 같은 함정이다 — <strong>아무 일도 안 일어나는 것을 고장으로 읽고, 고치겠다고 부품을 늘리는 것.</strong></p>
+<p>그래서 no-op을 기대 결과로 미리 적어 두는 게 설계의 일부다. 성공했을 때 무엇이 보일지를 안 적어 두면, 성공을 실패로 오독한다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>obra/superpowers — Agent harnesses</title><meta name="description" content="I didn't adopt the framework. But the real output of this teardown wasn't a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/" aria-current="page"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>obra/superpowers</h1><p class="sum">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</p><div class="meta"><span>3 takeaways → 1</span><a class="src" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is">What it is</a><a href="#the-techniques-worth-reading">The techniques worth reading</a><a href="#what-broke--two-of-the-four-criticisms-were-themselves-wrong">What broke — two of the four criticisms were themselves wrong</a><a href="#held-against-my-own-setup--and-my-verdict-flipped">Held against my own setup — and my verdict flipped</a><a href="#verdict">Verdict</a><a href="#but-what-actually-changed-wasnt-a-takeaway">But what actually changed wasn’t a takeaway</a></nav><div class="prose"><p><strong>I rejected the framework wholesale.</strong> My test-case pipeline already has the same machinery — per-stage model selection, retry ceilings, deterministic gates, hash-based resume — and in places it is more precise. That much is an ordinary conclusion. <strong>What makes this one worth writing is what came next:</strong> I had listed three things to take away, then applied the project’s own verification method <strong>to the project itself</strong>, and the ground under two of them disappeared. One survived. And yet the thing this teardown actually changed wasn’t that one — it was <strong>finding and closing a hole in two of my other pipelines.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 286" role="img" aria-label="The real body of this project is not the skill documents but the three layers of wiring that make skills fire on their own. A session-start hook injects a bootstrap every session, one extension-less file acts as both batch script and shell script, and the injected text declares that the agent has no choice. What that wiring turns on is a flow that interrogates the design, splits it into tasks, and spawns a fresh agent per task.">
+  <text class="lbl" x="8" y="22">the body isn't the skill documents — it's the wiring that makes them fire</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="88" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="60" text-anchor="middle">① session-start injection</text>
+  <text class="cap" x="168" y="82" text-anchor="middle">63 lines, every session</text>
+  <text class="cap" x="168" y="104" text-anchor="middle">standing cost ≈1,511 tokens</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="88" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="60" text-anchor="middle">② polyglot dispatcher</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">one file is batch and shell at once</text>
+  <text class="cap" x="500" y="104" text-anchor="middle">the extension is left off on purpose</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="88" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="60" text-anchor="middle">③ the injected text</text>
+  <text class="cap" x="832" y="82" text-anchor="middle">"no choice" + 12 rebuttals</text>
+  <text class="cap" x="832" y="104" text-anchor="middle">the exception clause is the last line</text>
+  <text class="lbl" x="8" y="152">what that wiring turns on</text>
+  <rect class="vn vn-a" x="8" y="164" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="102" y="190" text-anchor="middle">interrogate the design</text>
+  <rect class="vn vn-a" x="204" y="164" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="298" y="190" text-anchor="middle">isolate a workspace</text>
+  <rect class="vn vn-a" x="400" y="164" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="494" y="190" text-anchor="middle">split into 2–5 min tasks</text>
+  <rect class="vn vn-b" x="596" y="164" width="188" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="690" y="190" text-anchor="middle">fresh agent per task</text>
+  <rect class="vn vn-a" x="792" y="164" width="200" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="892" y="190" text-anchor="middle">merge or discard</text>
+  <line class="rule" x1="8" y1="224" x2="992" y2="224"/>
+  <text class="cap cap-i" x="8" y="248">⇒ the bar for accepting new host support is <tspan class="cap-p">"attach a transcript where a skill fired by itself"</tspan></text>
+  <text class="cap" x="8" y="272">without the bootstrap, they call the skills "dead weight that is never invoked"</text>
+</svg>
+<figcaption>Counting the fourteen skills tells you nothing about this thing. The wiring that makes them fire is the product.</figcaption>
+</figure>
+<h2 id="what-it-is">What it is</h2>
+<p><strong>A development methodology for coding agents, plus a library of fourteen skills.</strong> Say <em>“let’s build X”</em> and it doesn’t jump to code — it interrogates the design into a spec, splits that into a plan, then <strong>spawns a fresh agent per task</strong> to implement and review. Thirteen agent hosts are supported.</p>
+<p><strong>The substance isn’t the skill documents, it’s the wiring.</strong> A session-start hook injects 63 lines of preamble into every session, and those lines declare <em>“if there is a 1% chance a skill applies you MUST invoke it / you do not have a choice / you cannot rationalize your way out”</em> — followed immediately by <strong>a twelve-row table of rebuttals to rationalizations.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Measured 2026-08-15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scale</td>
+<td>272,335 stars · 24,345 forks · <strong>in ten months</strong></td>
+</tr>
+<tr>
+<td>Licence / deps</td>
+<td>MIT · <strong>zero external packages</strong> (the “zero dependency” claim checks out in code)</td>
+</tr>
+<tr>
+<td>Contributors</td>
+<td>523 commits by one person, 79 by the next — <strong>bus factor 1</strong></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>167 merged / 943 closed unmerged / 182 open</td>
+</tr>
+<tr>
+<td>Standing context cost</td>
+<td><strong>≈1,511 tokens</strong> (0.76% of 200k)</td>
+</tr>
+<tr>
+<td>Cost when invoked</td>
+<td>the largest single skill is ≈8,084 tokens</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-techniques-worth-reading">The techniques worth reading</h2>
+<p>The controller machinery is where the value is. It reads like <strong>a document written by someone who has already hit every problem that comes with running agents unattended.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>What it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule, don’t stall</strong></td>
+<td>A running plan does not wait for a human. Conflicts, ambiguity and ceiling breaches get ruled on and recorded as <code>decision — why — cost if wrong</code>. Only four things stop it: <strong>irreversible actions, security, side effects outside the workspace, and a plan where every path is a guess</strong></td>
+</tr>
+<tr>
+<td><strong>Roll every ruling up</strong></td>
+<td>Before the workspace is deleted, every ruling line is collected into one section of the final report. <em>“A ruling that dies with the ledger is a decision made in secret”</em></td>
+</tr>
+<tr>
+<td><strong>Fix-loop ceiling + breaker</strong></td>
+<td>Five rounds per task. Rounds 1–3 <strong>resume the original implementer</strong> (it knows its own code); 4–5 use a higher tier and a fresh one. After that the breaker trips and each item is parked or minimally ruled</td>
+</tr>
+<tr>
+<td><strong>Reviewers may not be pre-judged</strong></td>
+<td>If a reviewer prompt contains <em>“don’t flag this”</em>, it halts there. Even if you think it’s a false positive, let the reviewer raise it and rule in the loop</td>
+</tr>
+<tr>
+<td><strong>Hand artifacts over as files</strong></td>
+<td>Pasted text stays in context to the end of the session and is re-read every turn. One measured dispatch was 42k characters, <strong>99% of it pasted history</strong></td>
+</tr>
+<tr>
+<td><strong>Omit the model and you inherit the priciest one</strong></td>
+<td>Leave the model out of a dispatch and it inherits the session’s, silently voiding your cost rules. At the same time, <strong>turn count beats unit price</strong> — the cheapest model burns 2–3× the turns and costs more overall</td>
+</tr>
+</tbody>
+</table>
+<p><strong>And the star of this piece is in the skill-authoring methodology</strong> — <em>match the form to the failure</em>. Classify the baseline failure <strong>before</strong> writing any guidance, because a form that is bulletproof against one failure backfires measurably against another.</p>
+<table>
+<thead>
+<tr>
+<th>Baseline failure</th>
+<th>Right form</th>
+<th>Wrong form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breaks a rule knowingly</td>
+<td>prohibition + rebuttal table</td>
+<td>soft advice</td>
+</tr>
+<tr>
+<td><strong>Complies, but the output shape is wrong</strong></td>
+<td><strong>a positive recipe</strong> — state what the output is, in order</td>
+<td>a list of prohibitions</td>
+</tr>
+<tr>
+<td>Omits required elements</td>
+<td>required slots in a template</td>
+<td>prose reminders near the template</td>
+</tr>
+<tr>
+<td>Should vary by condition</td>
+<td>conditionals on observable predicates</td>
+<td>absolute rule plus exceptions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-broke--two-of-the-four-criticisms-were-themselves-wrong">What broke — two of the four criticisms were themselves wrong</h2>
+<p><strong>Quoting the community criticism as-is would have been a mistake.</strong></p>
+<ul>
+<li><strong>“Installing it costs 22k tokens permanently”</strong> — <strong>stale.</strong> That issue is eight months old. Measuring the current version directly, <strong>the standing cost is 1,511 tokens.</strong> Reading the hook code, it injects exactly one file. <strong>Cite a criticism without pinning the version and the citation itself becomes the error.</strong></li>
+<li><strong>“Commits have collapsed lately”</strong> — <strong>my own misread.</strong> Weekly commits read <code>4,1,0,1</code>, which looks like stagnation. But <strong>main is the release branch here</strong> and every PR targets the dev branch, where activity is dense. <strong>Judge activity without looking at the branch layout and you will be wrong.</strong></li>
+<li><strong>“272k stars with 0.38% watchers is abnormal”</strong> — <strong>normal for the cohort.</strong> Contemporary AI-tooling repositories all sit around 0.6%. A low watch ratio isn’t a manipulation signal, it’s what <strong>bookmark-stars</strong> look like.</li>
+<li><strong>“A 69% reduction with no regression was rejected”</strong> — true, but <strong>consistent with stated policy</strong>: <em>“content that shapes behaviour is code.”</em></li>
+</ul>
+<p><strong>Three real weaknesses survive the adversarial pass.</strong> Bus factor 1. A backlog of 334 with an 85% rejection rate — and <strong>the open issues point at logic defects inside the methodology</strong>, not wiring bugs. And ⚠ <strong>the reproduction path for the performance claims lives outside the repository</strong> — <em>“we don’t change it without evidence”</em> is the policy, but that evidence sits in a separate org, so <strong>the claims can be neither verified nor refuted.</strong></p>
+<h2 id="held-against-my-own-setup--and-my-verdict-flipped">Held against my own setup — and my verdict flipped</h2>
+<p>I took <em>match the form to the failure</em> and ran it over my own rule documents. <strong>Prohibitions outnumbered recipes 12.6 to 28.6 times over, with recipes at effectively 0%.</strong> So I wrote <em>“my corpus is abnormal”</em> and adopted it as the top item.</p>
+<p><strong>Then I found that the project’s own rule already decided how to handle this.</strong></p>
+<blockquote>
+<p>Always include a no-guidance control. If the control doesn’t exhibit the failure, there is nothing to fix — stop, and don’t author the guidance.</p>
+</blockquote>
+<p><strong>My control is the reference implementation.</strong> I ran the same script over it.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="Prohibition to recipe ratios measured the same way across the reference implementation and my own rule documents. The reference implementation as a whole sits at 26.6 times, and the very document making the argument sits at 18.5. My corpora range from 12.6 to 23.0, meaning mine are less skewed, which is why my first-pass verdict collapsed.">
+  <text class="lbl" x="8" y="22">prohibitions per recipe — lower is less skewed. same script, both sides</text>
+  <rect class="bar bar-p" x="290" y="34" width="648" height="20" rx="2"/>
+  <text class="cap" x="282" y="49" text-anchor="end">reference impl, all skills</text>
+  <text class="cap cap-p" x="946" y="49">26.6×</text>
+  <rect class="bar bar-p" x="290" y="62" width="451" height="20" rx="2"/>
+  <text class="cap" x="282" y="77" text-anchor="end">└ the doc making the claim</text>
+  <text class="cap cap-p" x="749" y="77">18.5×</text>
+  <rect class="bar" x="290" y="90" width="560" height="20" rx="2"/>
+  <text class="cap" x="282" y="105" text-anchor="end">my global rules</text>
+  <text class="cap" x="858" y="105">23.0×</text>
+  <rect class="bar" x="290" y="118" width="558" height="20" rx="2"/>
+  <text class="cap" x="282" y="133" text-anchor="end">my pipeline rules</text>
+  <text class="cap" x="856" y="133">22.9×</text>
+  <rect class="bar" x="290" y="146" width="307" height="20" rx="2"/>
+  <text class="cap" x="282" y="161" text-anchor="end">my notes</text>
+  <text class="cap" x="605" y="161">12.6×</text>
+  <line class="rule" x1="8" y1="184" x2="992" y2="184"/>
+  <text class="cap cap-i" x="8" y="208">⇒ <tspan class="cap-p">the document arguing "prohibitions backfire" is itself at 18.5×</tspan> with recipes at 0%</text>
+  <text class="cap" x="8" y="232">the reference implementation is more skewed than any corpus of mine — mine were not abnormal</text>
+  <text class="cap" x="8" y="256">their own rule settled it: if the control shows no failure, stop. So I stopped</text>
+  <text class="cap" x="8" y="280">⚠ regex screening, so the absolute values mean nothing. Only the <tspan class="cap-i">relative</tspan> comparison holds</text>
+</svg>
+<figcaption>The first pass wasn't wrong about the numbers. It was wrong to measure only my side and call it abnormal.</figcaption>
+</figure>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Pass 1 → 2</th>
+<th>Why · what would reopen it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Match the form to the failure</td>
+<td><strong>adopt → hold</strong></td>
+<td>The reference is more skewed. Reopen when <strong>a concrete shape failure is actually observed</strong>, and then only for that one rule</td>
+</tr>
+<tr>
+<td><strong>Roll every ruling up</strong></td>
+<td><strong>adopt, held</strong></td>
+<td>Attacked and didn’t break. Nothing equivalent existed, and the cost is one section in a report</td>
+</tr>
+<tr>
+<td>Add a no-guidance control arm</td>
+<td><strong>adopt → hold</strong></td>
+<td>⚠ Both target tools have <strong>never actually been run</strong>. Attaching an arm to something never run is debt, not cost. Reopen on the first real run</td>
+</tr>
+<tr>
+<td>Adopt the framework</td>
+<td><strong>rejected, still</strong></td>
+<td>The reasoning changed — below</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>I withdrew one of my rejection grounds.</strong> In the first pass I wrote that the hard approval gate <em>“collides head-on with my no-auto-plan-mode rule and I can’t turn it off”</em> — but <strong>the project states plainly in its closing section that user instructions take precedence over skills.</strong> My phrasing was an exaggeration.</p>
+<p><strong>The conclusion stands, on different grounds.</strong> The precedence sentence is <strong>the last of 63 lines</strong>; everything above it says <em>“you do not have a choice, this is non-negotiable.”</em> And <strong>two of the project’s own measured findings aim squarely at that structure</strong> — <em>“a description that summarises the workflow makes the agent follow the description instead of the body”</em>, and <em>“exemption clauses don’t scope.”</em> <strong>That precedence line is exactly such an exemption clause.</strong></p>
+<h2 id="but-what-actually-changed-wasnt-a-takeaway">But what actually changed wasn’t a takeaway</h2>
+<p><strong>I re-read my own pipelines through the lens of “don’t trust an agent’s success report.”</strong></p>
+<p>The <a href="/en/built/tc-team/">test-case pipeline</a> was already covered — deterministic code checks size, reference counts and truncation right after writing, and blocks the start when they disagree. <strong>Its two siblings were not.</strong> In the <a href="/en/built/android-qa/">game QA server</a> and the <a href="/en/built/moon-studio/">game studio</a>, every stage transition is gated by <strong>another agent’s review verdict</strong>, and a search for any deterministic check that the artifact exists returned zero.</p>
+<p><strong>This failure has already happened here once.</strong> An attempt to generate 83 rows in one shot burned the output ceiling, exited with status 0, and cost a measured 88.3 minutes — which is why the test-case pipeline grew chunking and gates. ⚠ <strong>That lesson never travelled to the siblings.</strong> Lose a design artifact the same way and the next stage takes truncated input, and the review after it passes without knowing the original was cut. <strong>Status code 0, so nothing stops.</strong></p>
+<p>I added handoff gates to both. All 10 failure cases caught, all 12 healthy cases passed, zero false positives.</p>
+<p><strong>The lesson I paid for here isn’t a technique, it’s an order of operations — measure only your own side and the number confirms what you already believed.</strong> That is exactly how my top-ranked item got built, and it only collapsed once I turned the project’s own method back on the project.</p>
+<p>And ⚠ <strong>a teardown pays off even when nothing comes across.</strong> The real takeaway count is one. What this investigation left behind was <strong>gates on two other pipelines.</strong> I borrowed the lens, not the tool.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

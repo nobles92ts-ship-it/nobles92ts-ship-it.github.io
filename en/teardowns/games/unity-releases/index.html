@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Recent Unity releases — Making games</title><meta name="description" content="Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/" aria-current="page"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/games/elemental-sandbox/"><span class="t"><span>Elemental Sandbox</span><span class="kpi">1 rule → 43 places</span></span><span class="s">The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.</span></a><a href="/en/teardowns/games/openmmo/"><span class="t"><span>OpenMMO</span><span class="kpi">2 corrections to my own summary</span></span><span class="s">An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.</span></a><a href="/en/teardowns/games/worldclaw/"><span class="t"><span>Hunyuan3D-WorldClaw</span><span class="kpi">0 code · 0 numbers</span></span><span class="s">A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.</span></a><a href="/en/teardowns/games/dynasty-warriors-origins/"><span class="t"><span>Dynasty Warriors Origins</span><span class="kpi">3 left of 12</span></span><span class="s">I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.</span></a><a href="/en/teardowns/games/unity-releases/" aria-current="page"><span class="t"><span>Recent Unity releases</span><span class="kpi">188 breaking</span></span><span class="s">Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Recent Unity releases</h1><p class="sum">Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.</p><div class="meta"><span>188 breaking</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-was-there">What was there</a><a href="#the-main-change--a-move-not-a-feature">The main change — a move, not a feature</a><a href="#what-broke">What broke</a><a href="#held-against-my-own-setup">Held against my own setup</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>Drawing “this week’s news” honestly gave me five release builds and nothing else.</strong> No announcements, no keynotes inside that window. And yet <strong>what looks from the version numbers like “two beta builds shipped”</strong> turns out, on opening, to contain <strong>construction work replacing the engine’s foundations. 188 breaking changes.</strong> That is not a <em>“shall I try the new feature”</em> question but a <em>“does my code still compile”</em> one.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="Four tracks are rolling at once. Long-term support, the current release, beta and alpha produced five builds in three days. Only the beta track carries 188 breaking changes.">
+  <text class="lbl" x="8" y="22">five builds across four tracks in three days — the parallel structure is right there</text>
+  <rect class="vn vn-a" x="8" y="36" width="240" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="128" y="60" text-anchor="middle">long-term support</text>
+  <text class="cap" x="128" y="82" text-anchor="middle">maintenance patches</text>
+  <text class="cap" x="128" y="102" text-anchor="middle">safe</text>
+  <rect class="vn vn-a" x="256" y="36" width="240" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="376" y="60" text-anchor="middle">current release</text>
+  <text class="cap" x="376" y="82" text-anchor="middle">25 stability fixes</text>
+  <text class="cap" x="376" y="102" text-anchor="middle">what to use today</text>
+  <rect class="vn vn-b" x="504" y="36" width="240" height="76" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="624" y="60" text-anchor="middle">beta — the real story</text>
+  <text class="cap" x="624" y="82" text-anchor="middle">wholesale identifier rework</text>
+  <text class="cap" x="624" y="102" text-anchor="middle">not for production</text>
+  <rect class="vn vn-a" x="752" y="36" width="240" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="872" y="60" text-anchor="middle">alpha</text>
+  <text class="cap" x="872" y="82" text-anchor="middle">next runtime, scouting</text>
+  <text class="cap" x="872" y="102" text-anchor="middle">experiments only</text>
+  <line class="rule" x1="8" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">⇒ this was <tspan class="cap-p">not an "announcement week" but a "rolling week"</tspan> — and that is the information</text>
+  <text class="cap" x="8" y="188">running four tracks at once is itself what decides which version you should be standing on</text>
+  <text class="cap" x="8" y="216">⚠ widen the window into "recent news" and this structure disappears — big news buries small facts</text>
+</svg>
+<figcaption>Listing five items produces no meaning. You have to see the four-track layout to know where to stand.</figcaption>
+</figure>
+<h2 id="what-was-there">What was there</h2>
+<p><strong>Drawing the window honestly is where this material starts.</strong> The request was <em>“the last week”</em>, and what actually happened inside that window was <strong>five release builds and nothing else.</strong> The big news — announcements, keynotes — was <strong>outside it.</strong></p>
+<p><strong>So it is written in two parts</strong> — what actually shipped inside the window, and separately the <strong>immediately preceding context</strong> needed to understand it. <strong>The window was not widened to drag big news in.</strong></p>
+<p>Five builds across four tracks in three days. <strong>Running long-term support, current, beta and alpha simultaneously</strong> shows up plainly.</p>
+<h2 id="the-main-change--a-move-not-a-feature">The main change — a move, not a feature</h2>
+<p><strong>Object identifiers are being replaced systematically across the whole engine.</strong> Animation, physics, graphics and more — <strong>hundreds of APIs affected</strong>, and <strong>188 breaking changes</strong> accumulated on the beta track.</p>
+<p><strong>Why matters here</strong> — it is <strong>groundwork to merge the entity-based workflow with the existing object workflow</strong>, raising the entity concept <strong>into a shared identifier for the entire engine</strong>. Which makes this <strong>a moving version, not a feature version.</strong></p>
+<p><strong>Alongside it, one long-awaited feature lands.</strong> Dictionary serialisation goes <strong>built-in.</strong> Until now this needed callbacks, custom wrappers or third-party assets.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target</td>
+<td>the declared type must be <strong>exactly that</strong> — inheritance and wrapping don’t count</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td><strong>opt-in.</strong> Each field must be marked to serialise</td>
+</tr>
+<tr>
+<td>Inspector</td>
+<td>a dedicated two-column view (key / value)</td>
+</tr>
+<tr>
+<td>Duplicate keys</td>
+<td>tolerated while editing, with an icon and a notice on each duplicate row</td>
+</tr>
+</tbody>
+</table>
+<p><strong>And the whole entity package moves into the core.</strong> Its version rides with the engine release, so <strong>separate version management disappears.</strong> In exchange <strong>managed components are being deprecated</strong>, so class-based components must become structs — <strong>another breaking change.</strong></p>
+<h2 id="what-broke">What broke</h2>
+<p><strong>You have to ask what “188” is a count of.</strong> It is <strong>a beta-track cumulative figure</strong>, and whether it survives intact into the stable release is unknown. <strong>For someone on the current release today, it is not a number that applies.</strong></p>
+<p><strong>The dictionary serialisation has tight conditions too.</strong> The declared type must be exact, and <strong>inheritance and wrapping are out.</strong> Most existing projects go through a wrapper, and <strong>removing that wrapper comes first.</strong> Between <em>“finally built in”</em> and <em>“usable tomorrow”</em> sits that work.</p>
+<p><strong>And this material is different in kind from the other pieces here.</strong> What is being taken apart is neither a repository nor a video but <strong>release notes.</strong> <strong>There are few claims to break</strong>, and the one there is amounts to conceding <em>“this week was quiet.”</em> ⚠ So this piece is <strong>closer to locating myself than to reaching a verdict.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="Of this week's five items only one, the stability patch on the current release, applies to me today. The 188 breaking changes and the dictionary serialisation are each not-now for different reasons.">
+  <text class="lbl" x="8" y="22">of the five, what applies to me today</text>
+  <line class="rule" x1="8" y1="32" x2="992" y2="32"/>
+  <text class="cap cap-i" x="8" y="58">stability patch, current release</text>
+  <text class="cap cap-p" x="984" y="58" text-anchor="end">applies today — the only one</text>
+  <text class="cap cap-i" x="8" y="82">188 breaking changes</text>
+  <text class="cap" x="984" y="82" text-anchor="end">a beta cumulative — may not survive to stable</text>
+  <text class="cap cap-i" x="8" y="106">built-in dictionary serialisation</text>
+  <text class="cap" x="984" y="106" text-anchor="end">the awaited one — but wrapper removal comes first</text>
+  <text class="cap cap-i" x="8" y="130">entity workflow merge</text>
+  <text class="cap" x="984" y="130" text-anchor="end">not applicable — my game's scale doesn't need it</text>
+  <text class="cap cap-i" x="8" y="154">next-runtime alpha</text>
+  <text class="cap" x="984" y="154" text-anchor="end">experiments only</text>
+  <line class="rule" x1="8" y1="168" x2="992" y2="168"/>
+  <text class="cap cap-i" x="8" y="192">⇒ four of the five are <tspan class="cap-p">"someday", not "now"</tspan> — knowing that is what this material is worth</text>
+  <text class="cap" x="8" y="216">and knowing it's a moving version in advance changes when you upgrade — after a chunk finishes, not mid-development</text>
+  <text class="cap" x="8" y="238">⚠ "188" is a beta cumulative. It is not a number that applies today to someone on the stable release</text>
+</svg>
+<figcaption>Reading release notes isn't about "what shipped" but about sorting which of it is arriving for you now.</figcaption>
+</figure>
+<h2 id="held-against-my-own-setup">Held against my own setup</h2>
+<p><strong>I should be standing on the current release.</strong> Beta is <strong>not for production</strong>, and my game is mid-build, so <strong>the engine must not move underneath it.</strong> Of this week’s releases, the one that applies to me is <strong>a single stability patch.</strong></p>
+<p><strong>Knowing in advance that a moving version is coming is what this material is worth.</strong> I will have to upgrade eventually, and knowing it is <strong>major construction rather than a feature drop</strong> means <strong>I pick a different moment</strong> — after a chunk of work closes, not mid-development.</p>
+<p><strong>Dictionary serialisation is genuinely something I’ve been waiting for.</strong> My project has a wrapper in it, and removing it would shrink the code. ⚠ <strong>But that is a post-stable conversation, and the wrapper has to come out first.</strong></p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Track to stand on</td>
+<td><strong>stay on current.</strong> Beta is not for production</td>
+</tr>
+<tr>
+<td><strong>Preparing for the moving version</strong></td>
+<td><strong>adopt — as a timing rule.</strong> When I upgrade, it is <strong>after a chunk closes</strong>, not mid-development</td>
+</tr>
+<tr>
+<td>Dictionary serialisation</td>
+<td><strong>wait.</strong> Post-stable, and wrapper removal first</td>
+</tr>
+<tr>
+<td>Entity workflow</td>
+<td><strong>not applicable.</strong> My game’s scale doesn’t call for it</td>
+</tr>
+<tr>
+<td>Citing “188”</td>
+<td>⚠ <strong>qualify it.</strong> It is a beta cumulative and may not survive to stable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson I paid for here is about reading rather than the material — draw the window honestly and a “quiet week” becomes information in itself.</strong> The fact that there were only five items made the structure — <strong>four tracks running at once</strong> — clearer, not less clear.</p>
+<p>And ⚠ <strong>version numbers hide major construction.</strong> <em>“Two beta builds”</em> and <em>“188 breaking changes”</em> are the same event, and skipping past the first phrasing means <strong>meeting those 188 for the first time on upgrade day.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The dead channel — Self-evolution loop</title><meta name="description" content="The sophisticated one had been dead for months — and the document diagnosing it was wrong in two places."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/" aria-current="page"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/self-evolution/dead-channel/" aria-current="page"><span class="t"><span>The dead channel</span><span class="kpi">20.6MB</span></span><span class="s">The sophisticated one had been dead for months — and the document diagnosing it was wrong in two places.</span></a><a href="/en/built/self-evolution/tempo/"><span class="t"><span>Four tempos</span><span class="kpi">4 tempos</span></span><span class="s">Treating learning as one block and automating the whole block was the real cause of the over-design.</span></a><a href="/en/built/self-evolution/detector/"><span class="t"><span>The detector</span><span class="kpi">1 false positive</span></span><span class="s">The thing built to detect death false-positived first. And the first full run changed nothing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">in progress</span></div><h1>The dead channel</h1><p class="sum">The sophisticated one had been dead for months — and the document diagnosing it was wrong in two places.</p><div class="meta"><span>20.6MB</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#why-automatic-things-die">Why automatic things die</a><a href="#my-initial-diagnosis-was-wrong-in-two-places">My initial diagnosis was wrong in two places</a><a href="#and-that-206mb-was-syncing-to-backup">And that 20.6MB was syncing to backup</a></nav><div class="prose"><p>Before designing this loop I already had a machine for the same job: a pipeline that observed sessions automatically, accumulated them, and distilled patterns out into “instincts.” Fully automatic via hooks, and carefully designed.</p>
+<p>When I opened it up, <strong>127 files and 20.6MB of observations had piled up, and the distiller had never run once.</strong> Zero instincts. Nobody noticed for months — because nothing errored.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 236" role="img" aria-label="Two channels compared. The fully automatic, sophisticated observation pipeline accumulated 127 files and 20.6MB but its distiller never ran, so it died quietly with zero instincts. The simple hand-written memory files are injected into every session and are still running.">
+  <text class="lbl" x="10" y="36">DEAD — FULLY AUTOMATIC</text>
+  <g>
+    <rect class="bx-llm" x="8" y="48" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="118" y="74" text-anchor="middle">Observation hook</text>
+    <text class="bx-s" x="118" y="93" text-anchor="middle">zero human touch</text>
+    <rect class="bx-llm" x="264" y="48" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="374" y="74" text-anchor="middle">127 files</text>
+    <text class="bx-s" x="374" y="93" text-anchor="middle">20.6MB piled up</text>
+    <rect class="bx-llm" x="520" y="48" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="630" y="74" text-anchor="middle">Distiller</text>
+    <text class="bx-s" x="630" y="93" text-anchor="middle">never ran once</text>
+    <rect class="bx-llm" x="776" y="48" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="886" y="74" text-anchor="middle">Zero instincts</text>
+    <text class="bx-s" x="886" y="93" text-anchor="middle">died quietly</text>
+    <path d="M228 77 H264 M484 77 H520 M740 77 H776" stroke="#0C0D10" stroke-width="1.5"/>
+  </g>
+  <text class="lbl" x="10" y="144">ALIVE — SIMPLE, WRITTEN BY HAND</text>
+  <g>
+    <rect class="bx-code" x="8" y="156" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="118" y="182" text-anchor="middle">Memory files</text>
+    <text class="bx-s" x="118" y="201" text-anchor="middle">I write them</text>
+    <rect class="bx-code" x="264" y="156" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="374" y="182" text-anchor="middle">Injected every session</text>
+    <text class="bx-s" x="374" y="201" text-anchor="middle">actually read</text>
+    <rect class="bx-code" x="520" y="156" width="220" height="58" rx="2"/>
+    <text class="bx-t" x="630" y="182" text-anchor="middle">Still alive</text>
+    <text class="bx-s" x="630" y="201" text-anchor="middle">running today</text>
+    <path d="M228 185 H264 M484 185 H520" stroke="#0C0D10" stroke-width="1.5"/>
+  </g>
+  <text class="lbl" x="768" y="180">the one with more</text>
+  <text class="lbl" x="768" y="200">parts died first</text>
+</svg>
+<figcaption>The top one was fully automatic, so nobody ever looked at it. The bottom one needed hands, so it stayed in view.</figcaption>
+</figure>
+<p>The thing running well right next to it was far simpler: memory files written by hand. Injected into every session, actually read, and corrected by me when wrong.</p>
+<p>That inverted the lesson. <strong>It died because it was fully automatic, and the other lived because it took effort.</strong> My original plan was written on exactly the opposite lesson — revive the dead one, then stack more automation on top.</p>
+<h2 id="why-automatic-things-die">Why automatic things die</h2>
+<p>“It died because it was automatic” sounds backwards, but the mechanism is simple.</p>
+<p><strong>Anything automated drops out of the observed set.</strong> Things that need hands come into view every time you put hands on them. I write the memory files myself, so I know immediately when I stop. The observation hook ran on its own, so <strong>there was no way to know it had stopped.</strong></p>
+<p>And the structure had <strong>no consequence for producing nothing.</strong> If the distiller doesn’t run, the instinct file just doesn’t appear — and sessions run fine without it. A failure with no cost is a failure that persists.</p>
+<h2 id="my-initial-diagnosis-was-wrong-in-two-places">My initial diagnosis was wrong in two places</h2>
+<p>I put the design doc through an adversarial review, and two of the problems I had written down turned out not to be true.</p>
+<ul>
+<li><strong>“Observations aren’t accumulating”</strong> → wrong. 20.6MB were sitting right there. The real cause wasn’t a failing hook, it was <strong>a distiller that never ran.</strong> I had been pointing at entirely the wrong repair.</li>
+<li><strong>“The always-injected index is 3–4KB”</strong> → wrong. Measured again, it was <strong>16.8KB — 4.2× over budget.</strong> The bodies, 98 files, came to 370KB, which is physically impossible to always inject, and the on-demand retrieval was never wired up at all.</li>
+</ul>
+<p>A plan built on the wrong cause fixes the wrong thing, no matter how carefully it’s designed. <strong>Those two corrections deleted half the plan.</strong></p>
+<p>The lesson: when diagnosing your own system, the dangerous part isn’t what you don’t know — it’s <strong>what you think you know.</strong> I had “observations aren’t accumulating” as a premise without ever having measured it.</p>
+<h2 id="and-that-206mb-was-syncing-to-backup">And that 20.6MB was syncing to backup</h2>
+<p>The observation hook captured whatever was read, fetched, or returned by a tool — <strong>verbatim.</strong> No source tagging, no secret masking. And all 20.6MB of it was quietly syncing to cloud backup.</p>
+<p>“Only after human approval, and exclude anything from outside” was written plainly in the design doc. <strong>The code enforcing it was zero lines.</strong></p>
+<p>A rule that exists only in the document isn’t a rule. And this case is worse than most, because <strong>nobody was reading it, so there wasn’t even a violation</strong> — violating a rule requires knowing it, and code doesn’t know rules.</p>
+<p>The cleanup was simple: turn off two dead hooks, delete the 20.6MB and 127 empty shells, run a secret scan. The scan came back at zero — but <strong>that was luck, not design.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Prime Agent — Agent harnesses</title><meta name="description" content="I read the code and came away with four techniques. The best of them was something I'd written down myself five days earlier."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/" aria-current="page"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Prime Agent</h1><p class="sum">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</p><div class="meta"><span>top find was a rediscovery</span><a class="src" href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">github.com/PrimeIntellect-ai/prime-agent ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-thing-actually-is">What the thing actually is</a><a href="#the-four-most-interesting-design-decisions">The four most interesting design decisions</a><a href="#what-broke--four-places">What broke — four places</a><a href="#held-against-my-environment--the-tool-is-rejected">Held against my environment — the tool is rejected</a><a href="#so-what-came-home--and-why-the-best-of-it-was-a-rediscovery">So what came home — and why the best of it was a rediscovery</a><a href="#today-corrected-five-days-ago-twice">Today corrected five days ago, twice</a><a href="#the-rule-that-stays">The rule that stays</a></nav><div class="prose"><p><strong>The tool was rejected; four techniques came home. And the best of those four was a rediscovery.</strong> The sentence I ranked first today <strong>was already in my own report on the same subject from five days before, with the application sites and the resume condition already written out.</strong> I have a searchable index of everything I’ve collected, and I didn’t open it. In the same investigation, <strong>two verdicts I’d made about myself were overturned.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 240" role="img" aria-label="How Prime Agent is structured. A TypeScript host manages a daemon and session workers, and the model's only real tool is IPython. File editing, shell, skill invocation and spawning subagents all happen as Python calls inside it.">
+  <text class="lbl" x="8" y="22">TypeScript host — owns permissions, credentials, sessions, scheduling</text>
+  <rect class="bx-code" x="8" y="36" width="300" height="50" rx="2"/>
+  <text class="bx-t" x="158" y="59" text-anchor="middle">daemon supervisor</text>
+  <text class="bx-s" x="158" y="77" text-anchor="middle">worker routing · crash recovery</text>
+  <rect class="bx-code" x="332" y="36" width="300" height="50" rx="2"/>
+  <text class="bx-t" x="482" y="59" text-anchor="middle">session worker</text>
+  <text class="bx-s" x="482" y="77" text-anchor="middle">queue · compaction · goals</text>
+  <rect class="bx-llm" x="656" y="36" width="336" height="50" rx="2"/>
+  <text class="bx-t" x="824" y="59" text-anchor="middle">IPython kernel — separate process</text>
+  <text class="bx-s" x="824" y="77" text-anchor="middle">Python state outlives calls and compaction</text>
+  <path d="M308 61 H332 M632 61 H656" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="118">the model effectively has one tool</text>
+  <rect class="vn vn-b" x="8" y="130" width="984" height="46" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-p" x="500" y="150" text-anchor="middle">ipython</text>
+  <text class="cap" x="500" y="168" text-anchor="middle">reading files · editing · shell · invoking skills · spawning subagents — all as Python in here</text>
+  <line class="rule" x1="8" y1="196" x2="992" y2="196"/>
+  <text class="cap cap-i" x="8" y="218">The design premise, in one line — “don't give the model a tool list; give it a Python interpreter and let it write the rest”</text>
+  <text class="cap" x="8" y="236">⚠ Which makes it fatal that the bundled sandbox example wraps only the shell — it doesn't cover the real execution path</text>
+</svg>
+<figcaption>An open-source coding and research CLI from a distributed-training startup. 350k lines of source, three months old, eight releases in nine days.</figcaption>
+</figure>
+<h2 id="what-the-thing-actually-is">What the thing actually is</h2>
+<p><strong>An agent CLI aiming at the same slot as Claude Code or Codex CLI</strong>, with one different design premise.</p>
+<blockquote>
+<p>Don’t give the model a tool list. <strong>Give it one Python interpreter and let it write the rest as code.</strong></p>
+</blockquote>
+<p>So the only tool the model sees is <code>ipython</code>. Reading a file, editing one, running a shell command, spawning a child agent — all of it happens as Python calls inside that. <strong>Python state — variables, imports, functions, parsed results — survives across tool calls and context compaction.</strong></p>
+<p>Two headline claims, each with its own source paper.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>What</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recursive language model</strong></td>
+<td>A <strong>persistent REPL</strong> where context is a variable and tools and subagents are function calls</td>
+<td>company blog</td>
+</tr>
+<tr>
+<td><strong>Continual harness</strong></td>
+<td>Prompts, memories, skills and subagent specs held as persistent state that the agent <strong>updates itself through small, evidence-backed edits</strong></td>
+<td>a paper</td>
+</tr>
+</tbody>
+</table>
+<p>The scale: 14,647 stars, 1,528 forks, <strong>three months old</strong>, MIT. About 350,000 lines of source with 420 test files and 156,000 lines of test — 45% of the whole. Eight releases shipped in nine days.</p>
+<p>There are conditions attached to that health. <strong>545 open issues</strong>, and skimming the titles they cluster overwhelmingly around daemon and worker lifecycle bugs — wedged daemons, in-flight operations dropped during worker adoption, supervisor restarts racing a dying worker, kernel execution with no timeout. And one file runs 11,288 lines. <strong>The bus factor is 2</strong> — 68% of the last fifty commits came from two people.</p>
+<h2 id="the-four-most-interesting-design-decisions">The four most interesting design decisions</h2>
+<p><strong>It spawns children and never waits.</strong> The call that spawns a subagent <strong>never returns the child’s answer.</strong> It returns a handle immediately and that’s it; results arrive only as messages or files. <strong>It structurally forbids a parent from blocking on a child.</strong></p>
+<p><strong>Memory has scope, version and rollback.</strong> Each harness entry carries <code>version</code>, <code>created_at</code>, <code>source</code> and <code>scope</code>, and the default scope is <strong>session-local</strong>. Promotion to global happens only for “a stable lesson that outlives the session,” and during local refinement <strong>global entries are read-only</strong> — proposing an edit to one is forbidden outright. Refinement history is written to a file, so <strong>any change can be reverted by id.</strong></p>
+<p><strong>The always-loaded overview has a cap.</strong> However many harness entries exist, the system prompt carries only <strong>six per kind, 180 characters of content, five history items</strong>, with the rest represented as <code>+N more</code>. The prompt says so explicitly: <em>“this is a summary, not a full account. Use it as a routing hint and read the original when you need it.”</em></p>
+<p><strong>The output budget is derived from the model, not a constant.</strong> <code>Math.min(model.maxTokens, 32_000)</code>. The reason is in a source comment, and it’s a good one — <strong>as the harness grows the input grows, and a constant output ceiling silently truncates exactly the largest and most important multi-edit proposals.</strong></p>
+<h2 id="what-broke--four-places">What broke — four places</h2>
+<p><strong>① The claim that a coding agent improves itself has no coding evidence.</strong> The self-improvement paper was <strong>validated on Pokémon</strong>, and the REPL blog covers long-context and research tasks on a single small model. And the <strong>repository contains zero coding benchmarks.</strong> There’s a domain gap between the claim and its evidence.</p>
+<p><strong>② It looks like an independent project and is a hard fork of another one.</strong> The internal package names are the upstream project’s, verbatim, and the README admits it. 32 modules are original and <strong>15 were removed from upstream.</strong></p>
+<p><strong>③ Among those 15 is the trust-and-approval layer.</strong> Searching the whole repository for approval identifiers returns <strong>zero.</strong> <strong>Python written by the model executes with the user’s privileges, with no approval step.</strong> The bundled sandbox example wraps the shell tool — and as shown above, <strong>the default runtime’s only tool isn’t the shell, it’s IPython.</strong> The sandbox doesn’t cover the actual execution path.</p>
+<p><strong>④ The Windows kernel bootstrap is broken at the code level.</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">const</span><span style="color:#005CC5"> python</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> path.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">(venv, </span><span style="color:#032F62">"bin"</span><span style="color:#24292E">, </span><span style="color:#032F62">"python"</span><span style="color:#24292E">);   </span><span style="color:#6A737D">// on Windows it's venv\Scripts\python.exe</span></span></code></pre>
+<p><strong>There’s already a platform branch higher up the same file</strong> — only the interpreter path is hardcoded POSIX. The official install script also gates on the operating system.</p>
+<h2 id="held-against-my-environment--the-tool-is-rejected">Held against my environment — the tool is rejected</h2>
+<p>Two things decide it. <strong>The agent’s only tool is IPython, and the path that starts that kernel is broken in code</strong> — a workaround install still leaves the core function dead. And <strong>zero approval gates collides head-on with my own safety boundary</strong>: everything I’ve graded as “human approval only” becomes an unapproved execution target.</p>
+<p>The resume condition is on the record too — <strong>① the interpreter path is fixed and ② the approval layer is restored, or a sandbox covering the real execution path ships by default.</strong> Either one alone doesn’t reopen it.</p>
+<p>⚠ Honestly stated: <strong>this is a static code reading, not an actual install.</strong> The reason for not running it holds up, though — attaching an agent with zero approval gates is itself a violation of my own rules, and the installer refuses the platform anyway.</p>
+<h2 id="so-what-came-home--and-why-the-best-of-it-was-a-rediscovery">So what came home — and why the best of it was a rediscovery</h2>
+<p><strong>First place: don’t re-run a verification when the artifact hasn’t changed.</strong></p>
+<p>When a quality gate fails in autonomous mode, it snapshots the state of the working directory. On the next attempt, <strong>if the snapshot is identical it doesn’t run the gate at all</strong> and only increments the failure count. That structurally eliminates the classic autonomous-loop waste — re-running the same test when nothing was fixed — and makes the retry ceiling count <strong>only attempts where something actually changed.</strong></p>
+<p><strong>And that sentence was already in my report from five days earlier.</strong> That one analysed the same subject from its blog and threads, named two application sites in my pipelines, and wrote down the resume condition. <strong>What I actually gained today isn’t the verdict — it’s the fact that five days passed and I still hadn’t wired it in.</strong></p>
+<blockquote>
+<p>I have an index of everything I’ve collected, made searchable, and I didn’t open it. <strong>Build the tool and never open it and you repeat yourself exactly the same.</strong></p>
+</blockquote>
+<p>The other three landed like this.</p>
+<table>
+<thead>
+<tr>
+<th>Harvest</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attach history and rollback to memory</td>
+<td><strong>Adopted</strong> — right now nothing in any file lets me undo a bad merge. But <strong>automatic application is excluded</strong></td>
+</tr>
+<tr>
+<td>Cap the always-loaded overview</td>
+<td>On hold — resume when the index passes a set size</td>
+</tr>
+<tr>
+<td>Derive the output budget from the model</td>
+<td>On hold — needs checking first. Resume the moment truncated output is observed once on a large input</td>
+</tr>
+</tbody>
+</table>
+<h2 id="today-corrected-five-days-ago-twice">Today corrected five days ago, twice</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 236" role="img" aria-label="The same subject read three different ways. Reading only the blog and threads, reading the code directly, and measuring my own environment each produced a different conclusion.">
+  <text class="lbl" x="8" y="22">same subject · read three times · three different answers</text>
+  <rect class="vn vn-a" x="8" y="36" width="320" height="94" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="24" y="60">① blog and threads only</text>
+  <text class="cap" x="24" y="84">“evidence-backed self-improvement”</text>
+  <text class="cap" x="24" y="104">judged worth adopting as discipline</text>
+  <text class="cap" x="24" y="122">one technique already ranked first</text>
+  <rect class="vn vn-a" x="344" y="36" width="320" height="94" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="360" y="60">② reading the code</text>
+  <text class="cap" x="360" y="84">validated on Pokémon · zero gates</text>
+  <text class="cap" x="360" y="104">the recorded “outcome”</text>
+  <text class="cap" x="360" y="122">was the model's own prediction</text>
+  <rect class="vn vn-b" x="680" y="36" width="312" height="94" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="696" y="60">③ measuring my own setup</text>
+  <text class="cap" x="696" y="84">the kernel won't start — rejected</text>
+  <text class="cap cap-p" x="696" y="104">and what I'd called “already have it”</text>
+  <text class="cap cap-p" x="696" y="122">stored 0 · wired 0 — a shell</text>
+  <path d="M328 83 H344 M664 83 H680" stroke="#0C0D10" stroke-width="1.5"/>
+  <line class="rule" x1="8" y1="152" x2="992" y2="152"/>
+  <text class="cap cap-i" x="8" y="176">Skip the third and you deliver “we already have this” against an empty shell</text>
+  <text class="cap" x="8" y="200">And one flaw survives all three steps — neither side measures whether the change helped</text>
+  <text class="cap" x="8" y="222">One of them handles that worse: it stores the model's advance prediction in the “outcome” field</text>
+</svg>
+<figcaption>Reading the blog, reading the code, and measuring my own setup each gave a different answer.</figcaption>
+</figure>
+<p><strong>Correction one.</strong> My stack comparison had recorded a certain learning system as “already have it.” Measuring it: <strong>zero stored entries, zero hooks wired — an empty shell.</strong> The premise that self-correction ran on two channels collapsed; one channel actually runs.</p>
+<p><strong>Correction two.</strong> The source describes its improvement loop as <em>“evidence-backed rather than arbitrary.”</em> Reading the code, the recorded ‘outcome’ field is <strong>the model’s own advance prediction.</strong> The evidence persists; the outcome doesn’t. <strong>Half true.</strong></p>
+<p>Put the two together and something larger falls out. <strong>My learning loop and this repository’s learning loop share the same decisive flaw — nobody measures whether the change helped.</strong> Their structure is more sophisticated than mine (scope, version, rollback, caps), and they handle that flaw worse: storing a prediction in the outcome field means <strong>the loop can’t even tell that it’s open.</strong></p>
+<h2 id="the-rule-that-stays">The rule that stays</h2>
+<blockquote>
+<p>Reading the blog and threads, reading the code, <strong>and measuring your own environment</strong> each give a different answer.</p>
+</blockquote>
+<p>Skip the third and you end up <strong>delivering “we already have this” against an empty shell.</strong> That is literally what happened on this page.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

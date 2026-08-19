@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Headroom — Context and memory</title><meta name="description" content="It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn't exist."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/" aria-current="page"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Headroom</h1><p class="sum">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</p><div class="meta"><span>verdict reversed twice</span><a class="src" href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">github.com/headroomlabs-ai/headroom ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-tool-does">What the tool does</a><a href="#the-gap-between-the-headline-and-my-actual-work">The gap between the headline and my actual work</a><a href="#what-broke--compression-was-0-and-the-bill-went-up-7">What broke — compression was 0% and the bill went up 7×</a><a href="#and-then-my-own-first-pass-broke">And then my own first pass broke</a><a href="#measurement-ended-the-investigation">Measurement ended the investigation</a><a href="#verdict--0-tools-0-techniques-1-convention">Verdict — 0 tools, 0 techniques, 1 convention</a></nav><div class="prose"><p><strong>No tool came in, no technique came in, and what stayed is one convention.</strong> The headline “60–95% compression” is measured on JSON arrays; coding work sits at 15–20%, and <strong>source code isn’t a compression target at all</strong> — it’s passed through by design. Then, measuring my own environment, <strong>cache reuse was already at 92.5–96.3%</strong>, leaving no room for this tool’s main benefit, and <strong>there was no large payload anywhere on the LLM path to compress.</strong> This investigation only ended after the verdict reversed twice.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="A layer that sits between the agent and the LLM provider. It routes content to different compressors by type, and passes source code and retrieved documents through uncompressed. Originals stay local so the model can retrieve them again.">
+  <text class="lbl" x="8" y="22">agent — Claude Code · Cursor · Codex · your own code</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="46" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="56" text-anchor="middle">prompts · tool output</text>
+  <text class="cap" x="126" y="74" text-anchor="middle">logs · retrieval results · files</text>
+  <path d="M244 59 H276" stroke="#0C0D10" stroke-width="1.5"/>
+  <rect class="bx-llm" x="276" y="30" width="330" height="58" rx="2"/>
+  <text class="bx-t" x="441" y="54" text-anchor="middle">Headroom — runs locally</text>
+  <text class="bx-s" x="441" y="73" text-anchor="middle">data never leaves the machine</text>
+  <path d="M606 59 H638" stroke="#0C0D10" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="638" y="36" width="354" height="46" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="815" y="56" text-anchor="middle">LLM provider</text>
+  <text class="cap" x="815" y="74" text-anchor="middle">compressed prompt + a retrieval tool</text>
+  <text class="lbl" x="8" y="120">it classifies the content and routes it to a different compressor</text>
+  <rect class="vn vn-b" x="8" y="132" width="236" height="44" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-p" x="126" y="150" text-anchor="middle">structured data</text>
+  <text class="cap" x="126" y="170" text-anchor="middle">statistical summary + outliers</text>
+  <rect class="vn vn-b" x="256" y="132" width="236" height="44" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-p" x="374" y="150" text-anchor="middle">prose</text>
+  <text class="cap" x="374" y="170" text-anchor="middle">condensed by a separate model</text>
+  <rect class="vn vn-a" x="504" y="132" width="236" height="44" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="622" y="150" text-anchor="middle">source code</text>
+  <text class="cap" x="622" y="170" text-anchor="middle">passed through — untouched</text>
+  <rect class="vn vn-a" x="756" y="132" width="236" height="44" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="874" y="150" text-anchor="middle">retrieved documents</text>
+  <text class="cap" x="874" y="170" text-anchor="middle">passed through — untouched</text>
+  <path d="M441 88 V96 H498 V200 M498 200 H126 V182 M498 200 H374 V182 M498 200 H622 V182 M498 200 H874 V182" stroke="#8f9198" stroke-width="1.2" fill="none"/>
+  <line class="rule" x1="8" y1="216" x2="992" y2="216"/>
+  <text class="cap cap-i" x="8" y="238">The clever part is that it's <tspan class="cap-p">reversible</tspan> — the original stays local and the model can pull it back when it needs to</text>
+</svg>
+<figcaption>Four ways to attach it: library, proxy, agent wrapper, MCP server. Python and Rust, Apache-2.0, local-first.</figcaption>
+</figure>
+<h2 id="what-the-tool-does">What the tool does</h2>
+<p><strong>A layer that sits between the agent and the LLM and routes outgoing context to different compressors by content type.</strong> Tool output, logs, retrieval results, files.</p>
+<p>The smartest thing in the design is that <strong>it’s reversible.</strong> It compresses but keeps the original cached locally, and if the model decides it needs the original it pulls it back through a retrieval tool. That’s what makes lossiness survivable.</p>
+<p>There are four ways to attach it, and they differ sharply.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Library</td>
+<td>Inserted directly into your code. Maximum control</td>
+</tr>
+<tr>
+<td><strong>Proxy</strong></td>
+<td>Zero code changes. But <strong>all traffic passes through it → a single point of failure</strong></td>
+</tr>
+<tr>
+<td>Agent wrapper</td>
+<td>Starts the proxy and injects the config in one command</td>
+</tr>
+<tr>
+<td>MCP server</td>
+<td>Called only when needed. <strong>The safest place to start</strong></td>
+</tr>
+</tbody>
+</table>
+<p>63,331 stars against 4,807 forks, six months old. <strong>A 13-to-1 fork ratio</strong> means people are actually cloning and using it, not just watching. That said, 592 open issues with only 115 labelled means <strong>triage isn’t keeping up with intake.</strong></p>
+<h2 id="the-gap-between-the-headline-and-my-actual-work">The gap between the headline and my actual work</h2>
+<p><strong>The official limitations document is unexpectedly honest</strong> — a far more reliable source than the README.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Compression by content type. Arrays of JSON objects run 86 to 100 percent, structured logs 82 to 95, long agent conversations 56 to 81, prose 43 to 46, while source code and retrieved documents are passed through untouched and short conversations median 4.8 percent.">
+  <text class="lbl" x="8" y="22">compression by content type — from the official limitations doc</text>
+  <text class="cap cap-i" x="256" y="52" text-anchor="end">arrays of JSON objects</text>
+  <rect class="bar bar-p" x="272" y="38" width="620" height="18" rx="1"/>
+  <text class="cap cap-p" x="902" y="52">86–100%</text>
+  <text class="cap cap-i" x="256" y="80" text-anchor="end">structured logs</text>
+  <rect class="bar bar-p" x="272" y="66" width="588" height="18" rx="1"/>
+  <text class="cap cap-p" x="870" y="80">82–95%</text>
+  <text class="cap cap-i" x="256" y="108" text-anchor="end">long agent conversations</text>
+  <rect class="bar" x="272" y="94" width="502" height="18" rx="1"/>
+  <text class="cap" x="784" y="108">56–81%</text>
+  <text class="cap cap-i" x="256" y="136" text-anchor="end">prose · documents</text>
+  <rect class="bar" x="272" y="122" width="285" height="18" rx="1"/>
+  <text class="cap" x="567" y="136">43–46%</text>
+  <text class="cap cap-i" x="256" y="164" text-anchor="end">short conversations</text>
+  <rect class="bar" x="272" y="150" width="30" height="18" rx="1"/>
+  <text class="cap" x="312" y="164">median 4.8% — effectively nothing</text>
+  <text class="cap cap-i" x="256" y="192" text-anchor="end">source code</text>
+  <line class="tick" x1="272" y1="176" x2="272" y2="200"/>
+  <text class="cap cap-i" x="284" y="192">passed through — not compressed, by design</text>
+  <line class="rule" x1="272" y1="214" x2="992" y2="214"/>
+  <text class="cap" x="272" y="236">The headline “60–95%” is the top two rows. Sessions that read and edit code live in the bottom two</text>
+</svg>
+<figcaption>The same tool ranges from 100% to 0% depending on content type. Which row you're on is the entire adoption decision.</figcaption>
+</figure>
+<p><strong>Passing code through isn’t a bug, it’s the intent.</strong> There is a code compressor, but three safety layers keep it from firing in practice — short spans are skipped silently, <strong>the code in recent messages is never touched</strong>, and if the last user message contains words like “analyse,” “review,” “fix” or “debug” it <strong>protects the code in the entire conversation.</strong></p>
+<p>Which means <strong>a “read this code and fix it” session compresses almost nothing.</strong> The docs say so themselves. It’s the right default — and it’s exactly where <strong>the gap between the headline number and real coding work opens up.</strong></p>
+<h2 id="what-broke--compression-was-0-and-the-bill-went-up-7">What broke — compression was 0% and the bill went up 7×</h2>
+<p>A third party ran a controlled A/B on real traffic and attached the billing receipt. The only variable was whether the proxy was in the path.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right">uncached input per call</th>
+<th style="text-align: right">total cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct</td>
+<td style="text-align: right">~2</td>
+<td style="text-align: right">$0.46</td>
+</tr>
+<tr>
+<td><strong>Through the proxy</strong></td>
+<td style="text-align: right"><strong>~3,000</strong></td>
+<td style="text-align: right"><strong>$3.19 (6.9×)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>And in the same report, the savings rate was 0.00% on all seven runs.</strong> Compression never fired at all, and the bill was still 7×. So <strong>the cause isn’t over-compression, it’s plumbing.</strong></p>
+<p>The mechanism: <strong>a prompt cache is only reused when the leading bytes are byte-identical.</strong> Change that prefix every turn and instead of reading the cache you write it again each time — and <strong>writing costs more than reading, so the “saving” becomes a surcharge.</strong></p>
+<p>There’s a worse detail. <strong>The proxy’s own logs were reporting cache hits as true.</strong> The bill and the dashboard were pointing in opposite directions.</p>
+<p>⚠ <strong>Even so, “confirmed loss” is wrong.</strong> That measurement came from one version, a cache defect was closed afterwards, and <strong>nobody has re-measured the current one.</strong> The accurate state is <strong>“neither benefit nor loss has been measured”</strong> — and blurring that distinction isn’t allowed.</p>
+<p><strong>There’s a finding in the opposite direction too.</strong> Reading the compression engine’s source, <strong>there is no randomness in it at all</strong> — same input, same output. The unseeded randomness that caused trouble is <strong>in the benchmark harness, not the engine.</strong> Fail to separate those two and it reads as “the engine can’t be trusted either.”</p>
+<h2 id="and-then-my-own-first-pass-broke">And then my own first pass broke</h2>
+<p>This is the most valuable part of the investigation. <strong>The first pass measured nothing.</strong> It read the repository’s own documents and a third-party issue report and relayed them. <strong>I was criticising claims with no reproduction while standing on claims with no reproduction.</strong></p>
+<ul>
+<li><strong>I named the wrong mechanism.</strong> “Re-serialisation breaks the cache” was my inference — and that defect had been <strong>closed 18 days before the reporter’s version.</strong> I attached a plausible mechanism without verifying it, which is <strong>the same class of mistake I was accusing the repository of</strong></li>
+<li><strong>I presented “2–7×” as the current state.</strong> One version, one report, and I put the magnitude in the conclusion</li>
+<li><strong>“Two people confirmed it” was a confirmation of different symptoms.</strong> I made the evidence look thicker than it was</li>
+<li><strong>I used issue counts as a scare.</strong> Strip duplicates, hearsay and test reports and two families actually applied</li>
+<li>⚠<strong>I applied scepticism to one side only.</strong> I discounted the vendor’s flattering table for having no reproduction, then <strong>quoted the same vendor’s unflattering figure at face value.</strong> Same source; both deserve the same doubt</li>
+</ul>
+<p>The last one stung most. <strong>The moment you pick which side to doubt, you’ve already picked the conclusion.</strong></p>
+<h2 id="measurement-ended-the-investigation">Measurement ended the investigation</h2>
+<p>Passes one and two were entirely other people’s numbers. On the third I measured my own environment, and <strong>the reason to evaluate this tool disappeared.</strong></p>
+<p><strong>The cache was already at ceiling.</strong> Session logs record cache reads, writes and uncached input per call — <strong>the receipts from past runs were already on disk; nothing had to be re-run.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th style="text-align: right">Calls</th>
+<th style="text-align: right">uncached in / call</th>
+<th style="text-align: right">Reuse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main</td>
+<td style="text-align: right">116</td>
+<td style="text-align: right"><strong>1.8</strong></td>
+<td style="text-align: right">92.5%</td>
+</tr>
+<tr>
+<td>Large (119 MB)</td>
+<td style="text-align: right">5,388</td>
+<td style="text-align: right">300.7</td>
+<td style="text-align: right">95.9%</td>
+</tr>
+<tr>
+<td>Three subagents</td>
+<td style="text-align: right">98–121</td>
+<td style="text-align: right"><strong>2.0</strong></td>
+<td style="text-align: right">96.0–96.3%</td>
+</tr>
+</tbody>
+</table>
+<p>The controlled experiment above cited <strong>~2 tokens per call as its “normal” baseline. Mine is also ~2.</strong> There is nothing for cache alignment to gain, and the item I’d written down as “first priority, biggest win” <strong>was already satisfied.</strong></p>
+<p><strong>And there was no target to compress.</strong> Large logs and data files exist — but <strong>code condenses all of them before they go up.</strong> There is no point on the LLM path where a large payload enters.</p>
+<h2 id="verdict--0-tools-0-techniques-1-convention">Verdict — 0 tools, 0 techniques, 1 convention</h2>
+<p>Neither adoption nor technique harvest. <strong>One convention was adopted.</strong></p>
+<blockquote>
+<p><strong>Don’t invent values you can’t measure.</strong> Attach a confidence interval and an <code>[estimated]</code> label to estimates, and to actually measure, <strong>hold back 10% as an untouched control.</strong></p>
+</blockquote>
+<p>That this convention came from <em>this</em> repository is the irony. It <strong>ships a design for reporting counterfactual savings honestly, confidence intervals and all</strong> — while its own headline table has no reproduction and its dashboard pointed the opposite way from the bill. <strong>Having a measurement design and applying it to your own banner are two different things</strong> — and the first draft of this analysis fell into exactly the same trap.</p>
+<p><strong>The resume condition is on the record.</strong> When a point appears where a large payload goes into an LLM whole, or when someone re-measures the current version. <strong>A rejection with no condition makes you repeat the same investigation six months later.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>조작과 판정 — adb 기반 게임 QA 서버</title><meta name="description" content="조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 것</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/" aria-current="page"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/android-qa/driving/" aria-current="page"><span class="t"><span>조작과 판정</span><span class="kpi">RPC &gt; 화면</span></span><span class="s">조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다.</span></a><a href="/ko/built/android-qa/loop/"><span class="t"><span>무인 루프</span><span class="kpi">9h57m</span></span><span class="s">제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.</span></a><a href="/ko/built/android-qa/findings/"><span class="t"><span>나온 것</span><span class="kpi">147 / 300</span></span><span class="s">자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 것</span><span class="st">진행 중</span></div><h1>조작과 판정</h1><p class="sum">조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다.</p><div class="meta"><span>RPC &gt; 화면</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#최대-개선은-판정을-옮긴-것이었다">최대 개선은 판정을 옮긴 것이었다</a><a href="#화면이-왜-마지막인가">화면이 왜 마지막인가</a><a href="#비전은-조작에만-남겼다">비전은 조작에만 남겼다</a><a href="#아직-무는-곳">아직 무는 곳</a></nav><div class="prose"><p>붙잡을 게 없는 화면이니 조작 경로가 이렇게 된다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="기기에서 두 갈래가 나간다. 위쪽 조작 경로는 스크린샷과 비전을 거쳐 좌표 탭으로 이어지고, 아래쪽 판정 경로는 파일 로그에서 RPC와 상태 전이를 읽어 판정한다. 비전에서 판정으로 가던 처음 경로는 점선으로 표시돼 폐기됐다.">
+  <rect class="bx-code" x="10" y="86" width="104" height="52" rx="2"/>
+  <text class="bx-t" x="62" y="117" text-anchor="middle">실기기</text>
+  <text class="lbl" x="128" y="52">조작</text>
+  <text class="lbl" x="128" y="228">판정</text>
+  <g>
+    <rect class="bx-llm" x="196" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="271" y="92" text-anchor="middle">스크린샷</text>
+    <rect class="bx-llm" x="380" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="455" y="92" text-anchor="middle">비전</text>
+    <rect class="bx-llm" x="564" y="62" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="639" y="92" text-anchor="middle">좌표 탭</text>
+    <path d="M114 92 H196 M346 87 H380 M530 87 H564" stroke="#0C0D10" stroke-width="1.5"/>
+  </g>
+  <g>
+    <rect class="bx-code" x="196" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="271" y="182" text-anchor="middle">파일 로그</text>
+    <rect class="bx-code" x="380" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="455" y="182" text-anchor="middle">RPC·상태전이</text>
+    <rect class="bx-code" x="564" y="152" width="150" height="50" rx="2"/>
+    <text class="bx-t" x="639" y="182" text-anchor="middle">판정</text>
+    <path d="M114 132 V177 H196 M346 177 H380 M530 177 H564" stroke="#0C0D10" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M455 112 V152" stroke="#c3c6cc" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text class="gt" x="470" y="146">처음엔 여기로 판정했다 — 틀렸다</text>
+  <text class="lbl" x="760" y="92">눈이 하는 일</text>
+  <text class="lbl" x="760" y="182">기계가 하는 일</text>
+</svg>
+<figcaption>조작은 눈으로 하고 판정은 로그로 한다. 처음엔 판정까지 비전으로 했는데, 그게 이 프로젝트에서 제일 크게 틀린 판단이었다.</figcaption>
+</figure>
+<h2 id="최대-개선은-판정을-옮긴-것이었다">최대 개선은 판정을 옮긴 것이었다</h2>
+<p>처음엔 “로그로는 게임 내부 상태를 알 수 없다”고 단정했다. 표준 로그 채널이 막혀 있었기 때문이다.</p>
+<p><strong>틀렸다.</strong> 막혀 있던 건 그 채널 하나였고, <strong>엔진이 기기에 직접 쓰는 파일 로그에는 상태 머신 전이와 모든 RPC 송수신이 그대로 남아 있었다.</strong></p>
+<p>여기서 증거 우선순위가 정해졌다.</p>
+<blockquote>
+<p><strong>수신 RPC &gt; 상태 전이 &gt; 화면</strong></p>
+</blockquote>
+<h2 id="화면이-왜-마지막인가">화면이 왜 마지막인가</h2>
+<p>픽셀은 두 가지를 구분하지 못한다.</p>
+<ul>
+<li><strong>로딩 스피너와 멈춘 화면</strong> — 둘 다 “돌고 있는 그림”이다</li>
+<li><strong>같은 화면이 뜻하는 두 가지 상태</strong> — 예를 들어 요청이 처리 중인 화면과 이미 실패해서 되돌아온 화면이 같아 보일 수 있다</li>
+</ul>
+<p>로그는 그걸 구분한다. 요청을 보낸 기록이 있고 응답을 받은 기록이 있으면, 화면이 무엇이든 <strong>어느 상태인지가 결정된다.</strong></p>
+<p>그리고 판정을 픽셀에서 로그로 옮기고 나서야 <strong>무인 장시간 운전이 가능해졌다.</strong> 비전 판정은 애매한 화면에서 사람을 부르는데, 사람이 없으면 부를 곳이 없다.</p>
+<h2 id="비전은-조작에만-남겼다">비전은 조작에만 남겼다</h2>
+<p>판정에서 뺐다고 비전을 버린 건 아니다. <strong>조작에는 여전히 비전밖에 없다.</strong></p>
+<p>버튼이 어디 있는지 알 방법이 그것뿐이라서다. 다만 조작과 판정은 요구가 다르다.</p>
+<ul>
+<li><strong>조작은 틀려도 복구된다.</strong> 엉뚱한 데를 누르면 화면이 안 바뀌고, 안 바뀐 걸 알면 다시 찾는다.</li>
+<li><strong>판정은 틀리면 그대로 결과가 된다.</strong> 잘못 PASS를 준 케이스는 아무도 다시 안 본다.</li>
+</ul>
+<p>그래서 <strong>틀려도 되는 자리에 비전을 두고, 틀리면 안 되는 자리에 로그를 뒀다.</strong> 같은 도구를 두 목적에 쓰면서 신뢰도만 다르게 요구하는 건 성립하지 않는다.</p>
+<h2 id="아직-무는-곳">아직 무는 곳</h2>
+<ul>
+<li><strong>무증상 정지는 에러 카운터로 안 잡힌다.</strong> 아무것도 실패하지 않은 채로 멈춘다. 그래서 화면 변화량을 별도 축으로 두고, 변화가 없으면 단계적으로 복구하다 끊는다</li>
+<li><strong>캡처를 탭보다 먼저</strong> — 새 프로세스는 화면 배율 상태가 비어 있다</li>
+<li>재기동하면 옛 세션 로그가 로테이션 전에 다시 노출된다. 로그를 지우고 오프셋 0에서 읽어야 한다</li>
+<li>자동 접속 체인이 기억된 계정으로 내달려서, 첫 화면 케이스는 앱 데이터를 지운 신규 부팅으로만 실측된다</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

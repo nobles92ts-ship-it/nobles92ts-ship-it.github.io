@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A talk on QA infrastructure — QA automation</title><meta name="description" content="There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn't about tools, it was about the definition of evidence."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/" aria-current="page"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>A talk on QA infrastructure</h1><p class="sum">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</p><div class="meta"><span>0 captions · slides only</span><a class="src" href="https://www.youtube.com/watch?v=10ZbeMZ0nOU" target="_blank" rel="noopener">Source video — youtube.com/watch?v=10ZbeMZ0nOU ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-talk-says">What the talk says</a><a href="#the-technique--one-case-carries-the-whole-talk">The technique — one case carries the whole talk</a><a href="#what-broke--count-the-gap-first">What broke — count the gap first</a><a href="#held-against-my-own-setup">Held against my own setup</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>This piece has to start by admitting its evidence is thin.</strong> It is a 31-minute talk <strong>with no captions, so I reconstructed it from the on-screen slides alone.</strong> What the speaker actually said, every aside, and fourteen minutes of Q&amp;A answers are <strong>all missing.</strong> Even carrying that gap, one thing survived — and it was <strong>not a story about tools but about what counts as evidence.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="The argument of the talk. Access is earned by proving need, infrastructure is not a list of tools but the foundation that makes work observable, and AI sits on top of that in that order. And this analysis was reconstructed from slides without captions.">
+  <text class="lbl" x="8" y="22">the argument — three steps</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="166" y="60" text-anchor="middle">① access</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">"why does QA need that data?"</text>
+  <text class="cap" x="166" y="104" text-anchor="middle">access is proof of need, granted</text>
+  <path d="M324 76 H342" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="342" y="36" width="316" height="80" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="60" text-anchor="middle">② infrastructure</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">not a list of tools</text>
+  <text class="cap" x="500" y="104" text-anchor="middle">the base that makes work observable</text>
+  <path d="M658 76 H676" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">③ AI</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">build the base and it follows</text>
+  <text class="cap" x="834" y="104" text-anchor="middle">without it there is no context to give</text>
+  <line class="rule" x1="8" y1="146" x2="992" y2="146"/>
+  <text class="cap cap-i" x="8" y="170">⇒ it insists the point is not any single tool but <tspan class="cap-p">the accumulation of what you built</tspan></text>
+  <text class="cap" x="8" y="194">and it ends on one actionable line — "this coming Monday, ask for one read permission"</text>
+  <line class="rule" x1="8" y1="210" x2="992" y2="210"/>
+  <text class="cap cap-i" x="8" y="234">⚠ the evidence for this diagram is <tspan class="cap-p">slides only</tspan> — the speaker's words and the Q&amp;A are not in it</text>
+</svg>
+<figcaption>The order of the three steps is the argument. You don't bring in tools first; you go access → infrastructure → AI.</figcaption>
+</figure>
+<h2 id="what-the-talk-says">What the talk says</h2>
+<p><strong>It opens by pushing back on a narrow definition.</strong> The perception that <em>“QA means testing”</em> is what confines QA’s role. The essence of verification is confirming <em>“was this built the way it was designed”</em> — not looking at any particular tool.</p>
+<p><strong>Then it turns to access.</strong> Every time he requested database or build-system access he got back <strong>“why does QA need that data?”</strong> The conclusion: <strong>access is not given, it is earned by proving “this way I can test faster, more accurately, more completely.”</strong></p>
+<p><strong>It defines infrastructure as a capability, not a tool list</strong> — <em>“the groundwork that makes development activity observable, understandable and visible.”</em> And it insists <strong>the point is not any single tool but the accumulation of what gets built that way.</strong></p>
+<p><strong>Asked what he would build first if he started over, he picks bug-report infrastructure.</strong> The reasoning is exact — of the test cycle (prepare cases → execute → <strong>report bugs</strong> → fix), <strong>reporting is the only point that touches the outside world</strong>, and <strong>even a veteran spends 5–10 minutes</strong> on logs, reproduction screenshots and duplicate checks, <strong>so it gets skipped when people can’t be bothered.</strong> The answer is a tool that <strong>collects video, logs and screenshots on one hotkey.</strong></p>
+<p><strong>The closing is actionable</strong> — <em>“this coming Monday, ask for one read permission.”</em></p>
+<h2 id="the-technique--one-case-carries-the-whole-talk">The technique — one case carries the whole talk</h2>
+<p><strong>The gacha probability case.</strong></p>
+<p><strong>Before:</strong> pull hundreds of times and <strong>estimate the rate statistically.</strong> That is <em>“checking by feel.”</em>
+<strong>After:</strong> once the source probability data could be <strong>queried in five seconds</strong>, <strong>the nature of the verification changed.</strong></p>
+<p><strong>The point is that this is not a story about tools.</strong> For the same question (<em>“is the rate correct”</em>), <strong>what counts as evidence</strong> changed. A sample of hundreds gets you as far as <em>“it’s probably right.”</em> Reading the source is <strong>right or wrong.</strong> <strong>One access grant changes the character of the verdict.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 258" role="img" aria-label="The gacha probability case. Estimating a rate from hundreds of pulls became a five-second query against the source, and the nature of the evidence changed with it. It went from estimate to certainty rather than merely getting faster.">
+  <text class="lbl" x="8" y="22">same question — "is the rate correct". What changed is what counted as evidence</text>
+  <rect class="vn vn-a" x="8" y="36" width="484" height="104" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="250" y="60" text-anchor="middle">without access</text>
+  <text class="cap" x="250" y="82" text-anchor="middle">pull hundreds of times</text>
+  <text class="cap" x="250" y="104" text-anchor="middle">estimate the rate from a sample</text>
+  <text class="cap" x="250" y="126" text-anchor="middle">the conclusion is "probably right"</text>
+  <rect class="vn vn-b" x="508" y="36" width="484" height="104" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="750" y="60" text-anchor="middle">once read access exists</text>
+  <text class="cap" x="750" y="82" text-anchor="middle">one query, five seconds</text>
+  <text class="cap" x="750" y="104" text-anchor="middle">read the value directly</text>
+  <text class="cap" x="750" y="126" text-anchor="middle">the conclusion is "right" or "wrong"</text>
+  <line class="rule" x1="8" y1="156" x2="992" y2="156"/>
+  <text class="cap cap-i" x="8" y="180">⇒ it didn't get faster — <tspan class="cap-p">the evidence changed from estimate to certainty</tspan></text>
+  <text class="cap" x="8" y="204">one permission changes what counts as evidence. Which is why this isn't a story about tools</text>
+  <text class="cap" x="8" y="228">⚠ this case too was read off a slide. The actual query and data layout are outside the talk</text>
+  <text class="cap" x="8" y="250">whether "five seconds" is measured or figurative is unknown — cite it with that caveat attached</text>
+</svg>
+<figcaption>This one case carries the whole talk. And the evidence for that case is a single slide.</figcaption>
+</figure>
+<h2 id="what-broke--count-the-gap-first">What broke — count the gap first</h2>
+<p><strong>Only half of it is analysable.</strong> Of 31 minutes, sixteen are the talk and <strong>fourteen are Q&amp;A</strong> — where <strong>only the question text survives on slides and the answers were spoken.</strong> So <strong>I know what the audience wanted to know and not what the speaker said.</strong></p>
+<p>The question list alone is worth reading — <em>“how do you handle someone who won’t accept that you need access”</em>, <em>“where do you reallocate the time AI saves”</em>, <em>“which layer do you build first in practice.”</em> <strong>All of them are places this talk opens and never closes.</strong> There were answers, and they aren’t in my analysis.</p>
+<p><strong>And there is not a single measured number.</strong> <em>“5–10 minutes”</em>, <em>“five seconds”</em>, <em>“hundreds of pulls”</em> — all slide phrasing, <strong>with no account of how any of it was measured.</strong> This was never a measurement report; it is <strong>experience sharing</strong>, so that isn’t a flaw. But <strong>cite the argument and leave the numbers behind.</strong></p>
+<p>⚠ <strong>There is a way to close the gap</strong> — attach a transcript and analyse it again. The reason I didn’t is simple: <strong>what I would get from this talk was already settled at one idea.</strong> Restoring fourteen minutes of answers didn’t look likely to change that verdict. ⚠ <strong>That is an estimate, and it may be wrong.</strong></p>
+<h2 id="held-against-my-own-setup">Held against my own setup</h2>
+<p><strong>I am already headed that way on bug-report infrastructure.</strong> Automated runs leave their own evidence at the moment of the verdict, and images and video are stored separately because they can’t be regenerated. It shares its premise with the talk’s <em>“one hotkey, collect everything”</em> — <strong>what is tedious gets skipped.</strong></p>
+<p><strong>“Without infrastructure there is no context to give the AI” also matches my experience.</strong> The things I built that actually earned their keep did so <strong>not because the model was clever but because there was something to read.</strong></p>
+<p><strong>But the biggest thing left is the gacha case.</strong> I am writing separately about <a href="/en/writing/verdicts/">what counts as evidence</a>, and <strong>this case is the best example that writing has.</strong> For one question, <strong>whether you answer with an estimate or a certainty is decided by access, not by tools.</strong></p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Access decides the character of evidence</strong></td>
+<td><strong>adopt — as an example.</strong> It goes straight into the writing about verdicts</td>
+</tr>
+<tr>
+<td>Collect evidence at report time</td>
+<td><strong>already doing it.</strong> Same premise</td>
+</tr>
+<tr>
+<td>“No infrastructure, no context for AI”</td>
+<td><strong>agreed.</strong> But my experience is the grounds, not this talk</td>
+</tr>
+<tr>
+<td>Citing its numbers</td>
+<td>⛔ <strong>don’t.</strong> All slide phrasing, with no method behind it</td>
+</tr>
+<tr>
+<td>Re-analysis</td>
+<td><strong>hold.</strong> Restoring the answers looks unlikely to move the verdict<br>Reopens: when negotiating access or ordering the build layers becomes <strong>actual work</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson I paid for here is on my side, not the material’s — material with a gap has to be read with the gap counted first.</strong> Fourteen of 31 minutes never arrived, and writing only the summary without recording that means <strong>the hole is invisible later, when I cite this page for something.</strong></p>
+<p>And ⚠ <strong>“re-analysis probably wouldn’t change the verdict” is my estimate.</strong> I did not verify it. I write it down here because <strong>if this verdict later turns out to be wrong, there has to be a record of where it went wrong.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

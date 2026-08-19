@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Toss Nebula device farm — QA automation</title><meta name="description" content="Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/" aria-current="page"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Toss Nebula device farm</h1><p class="sum">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</p><div class="meta"><span>0 techniques taken</span><a class="src" href="https://toss.tech/article/device-farm-nebula" target="_blank" rel="noopener">source — toss.tech/article/device-farm-nebula ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-they-built">What they built</a><a href="#what-broke--135-isnt-a-like-for-like-comparison">What broke — 13.5× isn’t a like-for-like comparison</a><a href="#i-measured-my-own-environment--and-the-target-was-wrong">I measured my own environment — and the target was wrong</a><a href="#what-stayed-wasnt-their-technique--it-was-my-own-discipline">What stayed wasn’t their technique — it was my own discipline</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>Zero techniques, zero adoptions.</strong> The one thing I adopted in the first pass <strong>was rejected in the second</strong> — the measurement behind it was correct, and <strong>that call appears zero times in my pipeline.</strong> A game client paints the whole screen into a single native surface, so there is no accessibility tree to read, and <strong>that fact was already written in my own project docs.</strong> The investigation still wasn’t wasted: using one of this system’s principles as a ruler against my own code turned up <strong>two gateways where there should have been one.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="A four-layer structure. Clients use one public API, a server orchestrates occupancy and execution, an agent on each host relays, and a resident controller on every device does the actual pressing. The fourth layer is the part they built themselves and the heart of the article.">
+  <text class="lbl" x="8" y="22">① clients — web console · SDK · CLI · direct API</text>
+  <rect class="vn vn-a" x="8" y="34" width="984" height="34" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="56" text-anchor="middle">every entrance uses the one public API</text>
+  <path d="M500 68 V84" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="102">② server — orchestration</text>
+  <rect class="bx-code" x="8" y="112" width="486" height="42" rx="2"/>
+  <text class="bx-t" x="251" y="132" text-anchor="middle">occupy · assign · release lock</text>
+  <text class="bx-s" x="251" y="149" text-anchor="middle">stops two tests landing on one device</text>
+  <rect class="bx-code" x="506" y="112" width="486" height="42" rx="2"/>
+  <text class="bx-t" x="749" y="132" text-anchor="middle">execution queue · many runners</text>
+  <text class="bx-s" x="749" y="149" text-anchor="middle">more load, more runners — scales out</text>
+  <path d="M500 154 V170" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="188">③ agent — the bridge on each host. Discovers attached devices and relays</text>
+  <rect class="vn vn-a" x="8" y="196" width="984" height="26" rx="2" fill-opacity=".06"/>
+  <text class="cap" x="500" y="214" text-anchor="middle">iOS on Mac, Android on Linux — the hosts diverge</text>
+  <text class="lbl cap-p" x="8" y="242">④ device — a resident controller per device. <tspan class="cap-i">The layer they built, and the heart of the piece</tspan></text>
+</svg>
+<figcaption>Hundreds of real devices racked and powered around the clock, with anyone in the company able to occupy and drive one through a single API call.</figcaption>
+</figure>
+<h2 id="what-they-built">What they built</h2>
+<p><strong>It started by consolidating the small farms each team ran on a Mac mini with half a dozen phones plugged in.</strong> Five Mac minis, fifteen devices and one developer at the start; <strong>past a hundred devices within a year.</strong></p>
+<p>This is all a user sees.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>POST /device/occupy   { platform: "android", tags: ["smoke"] }</span></span>
+<span class="line"><span>POST /actions/click   { x: 540, y: 1200 }</span></span></code></pre>
+<p><strong>“Grab me a device → press (540,1200) on it.”</strong> You never need to know which Mac mini it’s attached to, or how the driver is configured.</p>
+<h3 id="they-rebuilt-from-the-device-layer-instead-of-extending-the-existing-tool">They rebuilt from the device layer instead of extending the existing tool</h3>
+<p>That’s the biggest decision in the piece. Scaling up, they kept hitting structural limits in the existing automation framework, and <strong>judged owning it better than patching it.</strong></p>
+<table>
+<thead>
+<tr>
+<th>What was removed</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The session concept</strong></td>
+<td><strong>15–40 seconds</strong> to start a session every time, session failures climbing with scale, management cost proportional to device count</td>
+</tr>
+<tr>
+<td>Desktop-oriented mirroring</td>
+<td>Existing tools assume “device screen → desktop app,” which doesn’t fit <strong>fan-out to browsers through a server</strong></td>
+</tr>
+<tr>
+<td>Capture that monopolises USB</td>
+<td>Monopolise it and you can’t drive the device at the same time. The alternative was a <strong>10–15 fps slideshow</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In place of sessions they put <strong>an always-running controller with stateless HTTP calls on top.</strong> And <strong>the interface is defined by one spec, from which clients are generated.</strong></p>
+<p><strong>The side effect of that ownership is the real value.</strong> Their own Korean input method (characters don’t break), instant installs of internal builds, security policy enforced inside the driver spec itself — <strong>owning the spec means never waiting for someone else’s tool to support you.</strong></p>
+<h2 id="what-broke--135-isnt-a-like-for-like-comparison">What broke — 13.5× isn’t a like-for-like comparison</h2>
+<p>The headline: an element click at <strong>52 ms against 702 ms — 13.5×.</strong></p>
+<p><strong>But the author attached his own caveat: roughly 80% of that gap is the existing tool’s wait-for-idle, and turning that off narrows it to 2–3×.</strong> So it’s <strong>a comparison between a safety mechanism on and off.</strong> Stating that is honest; quoting “13.5×” out of the table isn’t. Their choice is reasonable — driving a device while watching it live wants speed. But <strong>it’s a trade in philosophy, not a free win.</strong></p>
+<p><strong>The bigger gap is elsewhere: there’s a p50 and no p99.</strong> What kills test automation is <strong>the tail, not the median.</strong> Session and command failure rates, device uptime, reduction in flakiness — <strong>not a single stability figure appears anywhere in the article.</strong></p>
+<p>The rest, for the record. The effectiveness evidence is <strong>two testimonials</strong> with no measurement conditions or sample. <strong>The nearest open-source prior art</strong> is absent from the comparison — “why not that, instead of building our own” goes unanswered. The iOS capture path is tied to one OS layer, producing <strong>a structural cost of not being able to unify hosts</strong>, and that isn’t written up as a cost. And the driver is closed, so <strong>no third party can verify the table.</strong></p>
+<h2 id="i-measured-my-own-environment--and-the-target-was-wrong">I measured my own environment — and the target was wrong</h2>
+<p>One real device, read-only operations only (anything that drives the device changes its state).</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="Stage breakdown. For both the screenshot and the UI dump, almost all of the time is spent on the device; transfer accounts for 5 percent and process startup 4 percent. Both the cable-swap and host-optimisation hypotheses were therefore rejected.">
+  <text class="lbl" x="8" y="24">stage breakdown — where the bottleneck is</text>
+  <text class="cap cap-i" x="200" y="56" text-anchor="end">UI dump 2,350 ms</text>
+  <rect class="bar bar-p" x="216" y="42" width="762" height="22" rx="1"/>
+  <text class="cap cap-on" x="228" y="58">spent on the device — effectively 100%</text>
+  <text class="cap cap-i" x="200" y="98" text-anchor="end">screenshot 1,863 ms</text>
+  <rect class="bar bar-p" x="216" y="84" width="724" height="22" rx="1"/>
+  <rect class="bar" x="944" y="84" width="34" height="22" rx="1"/>
+  <text class="cap cap-on" x="228" y="100">spent on the device — 95%</text>
+  <text class="cap" x="890" y="122">transfer 5%</text>
+  <text class="cap cap-i" x="200" y="146" text-anchor="end">process startup</text>
+  <rect class="bar" x="216" y="132" width="30" height="22" rx="1"/>
+  <text class="cap" x="256" y="148">73 ms round trip = 4%</text>
+  <line class="rule" x1="8" y1="172" x2="992" y2="172"/>
+  <text class="cap cap-i" x="8" y="194">⇒ “switch to cable and it gets faster” <tspan class="cap-p">rejected</tspan> — 5% ceiling · “keep a process warm on the host” <tspan class="cap-p">rejected</tspan> — 4% ceiling</text>
+  <text class="cap" x="8" y="216">Their gain comes from <tspan class="cap-i">inside the device</tspan>, not the host. Read it as a host optimisation and you waste the effort</text>
+  <text class="cap cap-p" x="8" y="234">And the larger finding — that UI dump call appears zero times in my pipeline</text>
+</svg>
+<figcaption>Read-only operations only, n=5–7. Separating out the transfer stage and process startup showed neither is the bottleneck.</figcaption>
+</figure>
+<p>The UI dump ran <strong>2,350 ms</strong>, ten times slower than theirs. So the first pass adopted <strong>the in-device resident controller as its one harvest.</strong></p>
+<p><strong>The second pass rejected it.</strong> Checking the code exhaustively, <strong>that call appears zero times in my pipeline.</strong></p>
+<p>The reason <strong>was already in my project documentation.</strong> A game client paints the entire screen into a single native surface — <strong>there is no accessibility tree to begin with.</strong> Which is why my screen driving is a screenshot → vision → coordinate-tap loop. Attach that tool and <strong>an empty tree comes back.</strong> The thing that would get ten times faster does not exist.</p>
+<blockquote>
+<p><strong>The 2,350 ms measurement was right and the target was wrong.</strong> Before benchmarking anything, check <strong>whether that call actually happens in my run.</strong></p>
+</blockquote>
+<p>The same measurement killed two more hypotheses. <strong>“Switch to cable and it gets faster”</strong> — transfer is 5% of the total, so the ceiling is 5%. <strong>“Keep a process warm and reuse it”</strong> — the round trip is 73 ms, so the ceiling is 4%. <strong>Their gain comes from inside the device, and reading it as a host optimisation wastes the work.</strong></p>
+<h2 id="what-stayed-wasnt-their-technique--it-was-my-own-discipline">What stayed wasn’t their technique — it was my own discipline</h2>
+<p>I took the point where the article says <strong>“every tool was built on the one public API”</strong> and used it as a ruler against my own code.</p>
+<p>Places that bypass the gateway and call the command directly: <strong>14 occurrences across 7 files.</strong> Roughly half against the files that go through the wrapper.</p>
+<p><strong>And something worse turned up. The bypassing files weren’t the problem — there were two gateways.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Locking</th>
+<th>Error classification</th>
+<th>What real runs use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The official gateway</td>
+<td>yes</td>
+<td>yes</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>The other one</td>
+<td>no</td>
+<td>no</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not one of the official gateway’s defences was wired into the path a real run takes.</strong> When I later attached instrumentation, that fact forced me to attach it to the undefended side.</p>
+<h2 id="verdict">Verdict</h2>
+<p><strong>Zero techniques, zero adoptions.</strong> What this investigation produced is <strong>one finding about my own code.</strong></p>
+<p>Sometimes that’s the honest result of a benchmark. <strong>Even when there’s nothing to copy from someone else’s system, holding its principles up as a ruler against yours shows you where yours has split.</strong></p>
+<p>The rejection carries a resume condition too — <strong>when the target becomes an ordinary app, or the build starts exposing accessibility nodes.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

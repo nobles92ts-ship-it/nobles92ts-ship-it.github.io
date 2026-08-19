@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RAG without a vector DB — Context and memory</title><meta name="description" content="Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/" aria-current="page"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>RAG without a vector DB</h1><p class="sum">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</p><div class="meta"><span>structure 6/6 · numbers 1/5</span><a class="src" href="https://www.threads.com/@gptaku_ai/post/DbpB3WZE6p6" target="_blank" rel="noopener">source — threads.com/@gptaku_ai/post/DbpB3WZE6p6 ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-i-was-actually-reading">What I was actually reading</a><a href="#verification--structure-survives-numbers-dont">Verification — structure survives, numbers don’t</a><a href="#and-then-i-measured-my-own-environment">And then I measured my own environment</a><a href="#but-the-precondition-was-only-46-filled">But the precondition was only 4.6% filled</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>The structure was adopted and the numbers were barred from quotation.</strong> Checking its ten claims against primary sources one at a time: <strong>all six structural claims held, and everything untrustworthy clustered in four specific numbers</strong> (plus one wrong year). It’s a clean view of where a secondhand write-up fails. And holding its boundary line against my own environment — <strong>I was already standing in that band, with the precondition only 4.6% filled in.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 236" role="img" aria-label="Four bands along a document-scale axis. Up to a few hundred pages you put everything in context; a few hundred to a few thousand needs only YAML front matter and file traversal; thousands to tens of thousands needs a vector database with reranking; beyond that needs a vector, graph and SQL hybrid. My own document assets sit in the second band.">
+  <text class="lbl" x="8" y="22">document scale ──────────────────────────────────────────▶</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="58" text-anchor="middle">up to a few hundred</text>
+  <text class="cap" x="126" y="80" text-anchor="middle">put it all in context</text>
+  <text class="cap" x="126" y="98" text-anchor="middle">no retrieval needed at all</text>
+  <rect class="bx-llm" x="256" y="36" width="236" height="70" rx="2"/>
+  <text class="bx-t" x="374" y="58" text-anchor="middle">hundreds to thousands</text>
+  <text class="bx-s" x="374" y="80" text-anchor="middle">YAML front matter</text>
+  <text class="bx-s" x="374" y="98" text-anchor="middle">+ file traversal, grep aside</text>
+  <rect class="vn vn-a" x="504" y="36" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="622" y="58" text-anchor="middle">thousands to tens of thousands</text>
+  <text class="cap" x="622" y="80" text-anchor="middle">vector database</text>
+  <text class="cap" x="622" y="98" text-anchor="middle">+ two-stage reranking</text>
+  <rect class="vn vn-a" x="752" y="36" width="240" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="872" y="58" text-anchor="middle">beyond that</text>
+  <text class="cap" x="872" y="80" text-anchor="middle">hybrid</text>
+  <text class="cap" x="872" y="98" text-anchor="middle">vector + graph + SQL</text>
+  <path d="M374 106 V132" stroke="#2563EB" stroke-width="1.5"/>
+  <path d="M374 132 l-5 -9 h10 z" fill="#2563EB" transform="translate(0,9)"/>
+  <text class="cap cap-p" x="374" y="152" text-anchor="middle">where my document assets sit</text>
+  <text class="cap" x="374" y="170" text-anchor="middle">wiki vault 1,021 files · memory drawer 156</text>
+  <line class="rule" x1="8" y1="192" x2="992" y2="192"/>
+  <text class="cap cap-i" x="8" y="214">The source names the transition trigger itself — “past tens of thousands of documents, or <tspan class="cap-p">when latency starts to matter</tspan>”</text>
+  <text class="cap" x="8" y="232">Most writing on this starts from “how to use a vector DB.” This one decides “whether to” from scale first</text>
+</svg>
+<figcaption>The real output of the piece. "There's no universal recipe" is a common conclusion; cutting that along a scale axis and naming the boundaries is the valuable part.</figcaption>
+</figure>
+<h2 id="what-i-was-actually-reading">What I was actually reading</h2>
+<p><strong>A secondhand write-up: a community discussion plus the author’s own research.</strong> The format is unusual — the post body is two lines and <strong>all of the content lives as text inside ten images.</strong> Text crawling finds nothing; you have to download the images and read them to reach the content.</p>
+<p>And <strong>it summarises primary sources in prose instead of linking them.</strong> So using any of its numbers requires verification first — which is half of this page.</p>
+<p>Three axes run through it, and the argument is that <strong>on each axis the deciding variable is the nature of the documents.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Deciding variable</th>
+<th>The fork</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parsing</strong></td>
+<td>Is it born-digital</td>
+<td>A PDF exported straight from a word processor already has a text layer, so <strong>OCR isn’t needed at all</strong></td>
+</tr>
+<tr>
+<td><strong>Chunking / embedding</strong></td>
+<td>What gets vectorised</td>
+<td>⚠<strong>Not the text itself, but a 50–100 token summary of “which document and what context this fragment belongs to,” plus the file path.</strong> The actual text is handled by an LLM handed that path</td>
+</tr>
+<tr>
+<td><strong>Retrieval</strong></td>
+<td>The kind of question</td>
+<td>What’s similar = vector / how are these connected = graph / what matches these conditions = SQL</td>
+</tr>
+</tbody>
+</table>
+<p>The second axis is the most valuable turn in the piece. <strong>You don’t embed the document — you embed the description and hand over the path.</strong></p>
+<h2 id="verification--structure-survives-numbers-dont">Verification — structure survives, numbers don’t</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 214" role="img" aria-label="Ten cited claims checked against primary sources. All six structural claims were confirmed; of five specific numbers only one was confirmed, three had no findable primary source, and one had the wrong year.">
+  <text class="lbl" x="8" y="24">checked one at a time against primary sources</text>
+  <text class="cap cap-i" x="220" y="58" text-anchor="end">structural claims</text>
+  <rect class="bar bar-p" x="236" y="44" width="612" height="24" rx="1"/>
+  <text class="cap cap-p" x="860" y="59">6 / 6 confirmed</text>
+  <text class="cap cap-on" x="248" y="61">division of labour · hybrid convergence · scale boundaries · index the description</text>
+  <text class="cap cap-i" x="220" y="106" text-anchor="end">specific numbers</text>
+  <rect class="bar bar-p" x="236" y="92" width="102" height="24" rx="1"/>
+  <rect class="bar" x="342" y="92" width="306" height="24" rx="1"/>
+  <text class="cap cap-on" x="352" y="109">no primary source found — 3</text>
+  <rect class="bar" x="652" y="92" width="102" height="24" rx="1"/>
+  <text class="cap cap-on" x="662" y="109">wrong year</text>
+  <text class="cap" x="766" y="107">1 / 5 confirmed</text>
+  <line class="rule" x1="236" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">⚠ One of the three unfound claims <tspan class="cap-p">contradicts the received wisdom</tspan> — adopting that without a source is especially risky</text>
+  <text class="cap" x="8" y="186">And the standard benchmark in that field reports error rates, not accuracy percentages — numbers from different benchmarks were likely mixed</text>
+  <text class="cap cap-i" x="8" y="208">⇒ <tspan class="cap-p">Adopt the structure, bar the numbers.</tspan> That's how to use a secondhand write-up</text>
+</svg>
+<figcaption>This picture is where a secondhand write-up fails. The failures aren't scattered — they cluster in one kind of claim.</figcaption>
+</figure>
+<p><strong>All six structural claims held.</strong> That the two parsers divide labour rather than compete, that retrieval architecture converges on three kinds, the scale boundaries, and that the knowledge-wiki pattern is real — <strong>including that its own boundary line matches exactly.</strong></p>
+<p><strong>Exactly one number was trustworthy.</strong> That attaching a context description to each chunk before embedding drops top-20 retrieval failure <strong>from 5.7% to 3.7%</strong> — matching the announcement precisely. <strong>There’s even a reason to add credit:</strong> the same announcement reports better figures with a hybrid search (2.9%) and with reranking (1.9%), and <strong>the write-up conservatively quoted only the standalone figure.</strong></p>
+<p><strong>The other four are unusable.</strong></p>
+<ul>
+<li><strong>Three OCR accuracy figures</strong> — no primary source found. The standard benchmark in that area reports <strong>error rates rather than accuracy percentages</strong>, so <strong>numbers from different benchmarks were probably mixed</strong></li>
+<li><strong>Chunk size and “overlap doesn’t help”</strong> — no source. The latter especially <strong>contradicts the received wisdom</strong>, which makes adopting it sourceless risky</li>
+<li><strong>Reranker latency</strong> — no source found, and that latency is normally <strong>reported per batch, not per chunk</strong></li>
+<li><strong>A cost-reduction figure</strong> — the value is right and <strong>the year of publication is off by one</strong></li>
+</ul>
+<p><strong>The pattern deserves a name: structure survives being relayed, specific numbers don’t.</strong> The person relaying carries the structure over intact but pulls numbers from memory or another source. <strong>So adopt the structure and bar the numbers</strong> — that’s the right way to use a piece like this.</p>
+<h2 id="and-then-i-measured-my-own-environment">And then I measured my own environment</h2>
+<p>I held its boundary line against my own setup. <strong>Surprisingly, I was already standing in that band — and running the pattern, having reinvented it independently.</strong></p>
+<table>
+<thead>
+<tr>
+<th>My asset</th>
+<th>Measured</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wiki vault</td>
+<td><strong>1,021</strong> markdown files · 15 MB</td>
+<td>Scale is exactly the sweet spot</td>
+</tr>
+<tr>
+<td>Memory drawer</td>
+<td>156 files + <strong>one master index</strong> (a line each, plus when to open it)</td>
+<td>✅ <strong>already live</strong> — the knowledge-wiki pattern itself</td>
+</tr>
+<tr>
+<td>Full-text index</td>
+<td>keyword index, no vectors</td>
+<td>✅ already live — a step above the <code>grep</code> in the source</td>
+</tr>
+<tr>
+<td>The cross-reference stage in my pipeline</td>
+<td>queries the index, extracts references, hands them on</td>
+<td>✅ <strong>in production</strong> — vector-free retrieval already runs in working jobs</td>
+</tr>
+<tr>
+<td>The spec documents I work with</td>
+<td>all born-digital</td>
+<td><strong>The parser discussion doesn’t apply at all</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The memory drawer especially. <strong>One pointer line per item, plus one line saying when to open that document</strong> — that is precisely the routing hint of the master index this piece describes. I built it because I needed it, and <strong>the piece supplies the theory for why it works.</strong></p>
+<h2 id="but-the-precondition-was-only-46-filled">But the precondition was only 4.6% filled</h2>
+<p>The biggest find in this investigation wasn’t someone else’s architecture. It was one of my own numbers.</p>
+<blockquote>
+<p><strong>Of 1,021 markdown files in the vault, 47 have front matter. That’s 4.6%.</strong></p>
+</blockquote>
+<p>The pattern works <strong>because front matter acts as retrieval’s semantic hook.</strong> And the source’s diagnosis is that <strong>“much of retrieval failure happens at the finding stage, not the generation stage,”</strong> with the prescription being <strong>“state the path, the tags and the summary explicitly.”</strong></p>
+<p>My vault <strong>sits at exactly the scale where that prescription works best, with the prescription applied to 47 files.</strong> Right now it isn’t a structured wiki — it’s <strong>a pile of markdown plus human memory.</strong></p>
+<p>So when retrieval fails there, the cause is likely <strong>not “no tool” but “empty metadata.”</strong> Filling in front matter is far cheaper and more effective than bolting on a vector database.</p>
+<p>⚠ <strong>That’s still a hypothesis, though.</strong> I have <strong>not measured whether retrieval is actually failing.</strong> The order matters — <strong>sample a few failure cases first and confirm the cause is missing metadata, before filling anything in.</strong> Otherwise I pay the full cost of going from 4.6% to 100% and can only ever describe the benefit as an estimate.</p>
+<h2 id="verdict">Verdict</h2>
+<p><strong>Zero tools adopted.</strong> A vector database, a graph store, a reranker — all overkill at this scale, and <strong>the boundary the source drew itself hasn’t been reached.</strong></p>
+<p><strong>Two principles came across.</strong> One is <strong>“index only summaries and metadata, and hand the actual work the path to the original”</strong> — three places on my side had each reinvented this separately with different conventions, and now that it has a name they can be unified. The other is this page’s title.</p>
+<blockquote>
+<p><strong>Adopt the structure. Bar the numbers.</strong></p>
+</blockquote>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

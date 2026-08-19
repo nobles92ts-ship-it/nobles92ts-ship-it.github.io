@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cross-session messaging — Agent harnesses</title><meta name="description" content="The mechanism the video dug up doesn't exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/" aria-current="page"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Cross-session messaging</h1><p class="sum">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</p><div class="meta"><span>0 sockets · already live</span><a class="src" href="https://www.instagram.com/reels/DbxtPGODv9k/" target="_blank" rel="noopener">Source video — instagram.com/reels/DbxtPGODv9k ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-video-claims">What the video claims</a><a href="#what-broke-when-i-checked">What broke when I checked</a><a href="#held-against-my-own-machine">Held against my own machine</a><a href="#verdict--and-i-was-wrong-twice">Verdict — and I was wrong twice</a></nav><div class="prose"><p><strong>Following this video’s instructions fails unconditionally on my machine — and that is only where this starts.</strong> A 1 minute 53 second reel digs the cross-session messaging mechanism of Claude Code out of the filesystem itself. One socket directory doubles as the session list, which is a genuinely clean find. <strong>But the video never once says which OS it was filmed on, and that path does not exist on Windows.</strong> I enumerated all 600 named pipes and found zero session sockets. Meanwhile the thing I actually wanted — <strong>sessions talking to each other, and reading another session’s log</strong> — was already live on this machine, and finding that out <strong>overturned my own judgement twice.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="The mechanism the video uncovered. One socket directory becomes the session list, and there are four design decisions: filenames are process IDs, permissions are owner-only, no new protocol was invented, and feature availability is visible through socket existence.">
+  <text class="lbl" x="8" y="22">what the video dug up — one directory doubles as the session list</text>
+  <rect class="bx-code" x="8" y="36" width="984" height="56" rx="2"/>
+  <text class="bx-t" x="500" y="57" text-anchor="middle">/tmp/cc-socks/ — 10757.sock · 15360.sock · 8146.sock</text>
+  <text class="bx-s" x="500" y="78" text-anchor="middle">one socket per session · drwx------ owner only · listing sessions is effectively ls</text>
+  <text class="lbl" x="8" y="112">four design decisions — and not one new protocol</text>
+  <rect class="vn vn-a" x="8" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="128" y="148" text-anchor="middle">PID namespacing</text>
+  <text class="cap" x="128" y="170" text-anchor="middle">the filename is the process ID</text>
+  <rect class="vn vn-a" x="256" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="376" y="148" text-anchor="middle">owner-only permissions</text>
+  <text class="cap" x="376" y="170" text-anchor="middle">delegated to the OS, not built</text>
+  <rect class="vn vn-b" x="504" y="124" width="240" height="66" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="624" y="148" text-anchor="middle">reach, not features</text>
+  <text class="cap" x="624" y="170" text-anchor="middle">a 145-day-old tool, widened</text>
+  <rect class="vn vn-a" x="752" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="872" y="148" text-anchor="middle">the gate is observable</text>
+  <text class="cap" x="872" y="170" text-anchor="middle">it shows as a socket existing</text>
+  <line class="rule" x1="8" y1="204" x2="992" y2="204"/>
+  <text class="cap cap-i" x="8" y="226">⇒ availability surfaces <tspan class="cap-p">as a socket, not as a config flag</tspan> — which is exactly why the video could verify it</text>
+  <text class="cap" x="8" y="246">This is content that dug through a filesystem instead of restating an announcement. That instinct is its best part</text>
+</svg>
+<figcaption>No registry, no auth layer. Everything is delegated to directory listing and OS permissions.</figcaption>
+</figure>
+<h2 id="what-the-video-claims">What the video claims</h2>
+<p><strong>That Claude Code v2.1.224 opened direct messaging between sessions</strong>, and that the claim was verified <strong>by digging through the filesystem rather than reading an announcement.</strong> The screen starts at <code>ls -la /tmp/</code>, finds <code>/tmp/cc-socks/</code>, shows three sockets, points out that permissions are owner-only, and then <strong>contrasts against version 2.1.223, where the socket count is zero.</strong></p>
+<p>There is a twist. <strong>Nothing brand new appeared.</strong> The message-sending tool itself had existed for 145 days, used for resuming subagents; what 2.1.224 opened was <strong>reach</strong> — what only reached inside a subagent now reaches an independent session. <em>“The boundary moved, not the feature”</em> is an accurate framing. That same tool is independently present in this session’s tool list right now.</p>
+<p>The official text shown on screen:</p>
+<blockquote>
+<p>When a change in one session breaks what another is building on, Claude can warn that session before you notice.</p>
+</blockquote>
+<p>And the reason it didn’t work before, quoted from the issue — <em>“Sessions are completely isolated, even when running on the same machine working on the same codebase.”</em></p>
+<h2 id="what-broke-when-i-checked">What broke when I checked</h2>
+<p><strong>The fatal omission is the platform.</strong> The video presents <code>/tmp/cc-socks</code> with no preamble and <strong>never says macOS or Linux.</strong> Windows has no <code>/tmp</code>, and when Node listens on a path it produces a named pipe, not a file. Anyone on Windows who follows <em>“open a terminal and run <code>ls /tmp/cc-socks</code>”</em> <strong>fails unconditionally.</strong></p>
+<p><strong>Both date calculations are off by one day.</strong> 144 days written as 145, 139 written as 140. It looks like inclusive counting and it changes nothing. But for content whose whole pitch is <em>“I measured this myself,”</em> <strong>it stands as an accuracy sample.</strong></p>
+<p><strong>The weakest link is “and across machines.”</strong> The video asserts this on a slide only. Unix domain sockets are local-only, so remote requires a different mechanism — and <strong>that mechanism is never shown.</strong> The official doc URL, the issue’s real state, and whether the release notes mention this at all were all screen captures I never checked against primary sources. Any quotation should stop there.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 254" role="img" aria-label="Measurements on my machine. The video's procedure reproduced as zero sockets even though the feature code is in the binary. Meanwhile the capability I wanted was already on by another route, and messaging a sleeping session woke it with no human involvement.">
+  <text class="lbl" x="8" y="22">① I reproduced the video's procedure exactly, on my machine</text>
+  <text class="cap cap-i" x="8" y="48">socket directory</text>
+  <text class="cap cap-p" x="430" y="48">absent</text>
+  <text class="cap cap-i" x="8" y="70">all 600 named pipes enumerated</text>
+  <text class="cap cap-p" x="430" y="70">0 session sockets</text>
+  <text class="cap cap-i" x="8" y="92">feature code inside the binary</text>
+  <text class="cap cap-p" x="430" y="92">present — shipped, but never surfaces at runtime</text>
+  <line class="rule" x1="8" y1="106" x2="992" y2="106"/>
+  <text class="lbl" x="8" y="130">② meanwhile the thing I wanted was already on — so I messaged a sleeping session</text>
+  <rect class="vn vn-b" x="8" y="142" width="984" height="60" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-i" x="500" y="164" text-anchor="middle">message fired → zero human involvement → the idle session woke itself and carried out the instruction</text>
+  <text class="cap" x="500" y="186" text-anchor="middle">verified out of band — the file exists and its bytes match. The round trip is effectively instant</text>
+  <text class="cap cap-i" x="8" y="226">⇒ push works — <tspan class="cap-p">no polling daemon and no latest-only noticeboard were ever needed</tspan></text>
+  <text class="cap" x="8" y="248">⚠ except that unattended scheduled sessions cannot receive at all. That one line is the real gap</text>
+</svg>
+<figcaption>The left column is the video's procedure; the right is what it produced here. Below is the path that already existed, unrelated to any of it.</figcaption>
+</figure>
+<h2 id="held-against-my-own-machine">Held against my own machine</h2>
+<p><strong>The feature code ships in the Windows build but never surfaces at runtime.</strong> The session-listing tool’s string appears three times inside the executable, and the CLI version clears the gate (2.1.226). Yet with two of those CLI processes running, <strong>both socket and pipe counts were zero.</strong> Properly qualified: this is not <em>“Windows will never do this”</em> but <em>“not observable on this machine on this date.”</em></p>
+<p><strong>And the question I asked already had an answer.</strong> I had asked <em>“can sessions talk to each other, like watching a live log?”</em> — and that capability lives not in sockets but in <strong>five session-management tools in the desktop app.</strong> They list other sessions, <strong>read another session’s transcript directly</strong>, full-text search every session’s body, and deliver a message into another session. That is a step above tailing a log file — <strong>it reads the conversation itself, not a log of it.</strong></p>
+<h2 id="verdict--and-i-was-wrong-twice">Verdict — and I was wrong twice</h2>
+<p><strong>First wrong call: “you can’t wake a sleeping session.”</strong> Having read the tool description, I wrote <em>“a Claude session sleeps once its turn ends, so the real gap is a trigger.”</em> To check, I used an out-of-band oracle — since what matters is not whether it was <em>delivered</em> but whether it <em>ran</em>, I told the target session to write a file and then verified that file myself. The result: <strong>the idle session woke itself and executed, with zero human involvement.</strong> The call flipped. <strong>There is no reason to build a polling noticeboard when push works.</strong></p>
+<p><strong>Second wrong call: “messages arrive disguised as human input.”</strong> I wrote that this made it an injection channel. Opening the receiving session’s raw transcript, they arrive <strong>in an envelope that names the sending session’s ID and title.</strong> They do land as a user turn, but <strong>the origin is labelled</strong> — which is how the receiver correctly determined <em>“this came from another session, not from chat.”</em></p>
+<p><strong>Two things I didn’t expect came out of it.</strong> The receiving session complied and then set its own gate — it wrote the local temp file without fuss, but <strong>stopped and required human approval for anything outbound.</strong> It graded by risk. The direction is right, but ⚠ <strong>this is a model’s judgement, not a boundary enforced in code</strong> — another session might simply comply.</p>
+<p><strong>The second one matters more. This channel’s real failure mode is misdelivery, not security.</strong> The receiving session caught two errors in my own message — I had the date off by a day, and <strong>I named the reply target using a wrong memory of my own session’s title.</strong> Followed literally, the reply would have gone to the wrong session. <strong>A sender can misidentify itself</strong>, and without verification on the receiving end that would have shipped.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand off between sessions using the existing tools</td>
+<td><strong>Adopt now.</strong> Zero build cost</td>
+</tr>
+<tr>
+<td>Build a dedicated file bus for sessions</td>
+<td><strong>Reject.</strong> Four channels already exist and push works</td>
+</tr>
+<tr>
+<td>Polling daemon · always-on unattended loop</td>
+<td><strong>Reject.</strong> No reason to poll what pushes</td>
+</tr>
+<tr>
+<td>Reproduce the video’s procedure</td>
+<td><strong>Reject.</strong> It never surfaces at runtime</td>
+</tr>
+<tr>
+<td>Add inbound cross-session instructions to the safety boundary</td>
+<td><strong>New, needs review.</strong> The receiver’s gate isn’t enforced in code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>If one lesson survives this page: a judgement formed from reading a tool description gets overturned by a single measurement.</strong> It happened twice here. And leaving the overturned calls on the page, rather than deleting them, is what stops the same assumption being made again at the same spot.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

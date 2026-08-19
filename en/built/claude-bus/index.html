@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>claude-bus — Built</title><meta name="description" content="Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/" aria-current="page"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/claude-bus/protocol/"><span class="t"><span>Protocol</span><span class="kpi">1 writer</span></span><span class="s">Conflict copies never appear because every folder has exactly one writer.</span></a><a href="/en/built/claude-bus/timing/"><span class="t"><span>Timing</span><span class="kpi">14%</span></span><span class="s">I measured where the three minutes go, leg by leg. Actual work was 14% of it.</span></a><a href="/en/built/claude-bus/safety/"><span class="t"><span>Safety</span><span class="kpi">no shell</span></span><span class="s">What stands between somebody else&#39;s instruction and my machine. It goes to a person, not a shell.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">public</span></div><h1>claude-bus</h1><p class="sum">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</p><div class="meta"><span>2 machines</span><a class="src" href="https://github.com/nobles92ts-ship-it/claude-bus" target="_blank" rel="noopener">github.com/nobles92ts-ship-it/claude-bus ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#it-buys-you-the-machine-not-the-files">It buys you the machine, not the files</a><a href="#why-build-a-slow-channel-on-purpose">Why build a slow channel on purpose</a><a href="#written-up-in-three-parts">Written up in three parts</a></nav><div class="prose"><p>Two machines share one folder. One side drops a JSON file, a watcher on the other side picks it up within a minute, spawns a fresh session, and puts the result back in the same folder. No server, no port, no auth — it rides on a sync folder that was already running.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 232" role="img" aria-label="The office machine drops a request file into a shared folder. A watcher on the home machine picks it up within a minute, spawns a fresh session, and returns a response file to the same folder. Round trip 133 to 191 seconds.">
+  <rect class="bx-code" x="16" y="72" width="176" height="60" rx="2"/>
+  <text class="bx-t" x="104" y="99" text-anchor="middle">Office machine</text>
+  <text class="bx-s" x="104" y="118" text-anchor="middle">drops the job</text>
+  <rect class="bx-llm" x="404" y="60" width="192" height="84" rx="2"/>
+  <text class="bx-t" x="500" y="92" text-anchor="middle">Shared folder</text>
+  <text class="bx-s" x="500" y="112" text-anchor="middle">a sync that already ran</text>
+  <text class="bx-s" x="500" y="130" text-anchor="middle">no server · port · auth</text>
+  <rect class="bx-code" x="808" y="72" width="176" height="60" rx="2"/>
+  <text class="bx-t" x="896" y="99" text-anchor="middle">Home machine</text>
+  <text class="bx-s" x="896" y="118" text-anchor="middle">a session wakes</text>
+  <path d="M192 88 H396" stroke="#0C0D10" stroke-width="1.5"/>
+  <path d="M396 88 l-9 -4 v8 z" fill="#0C0D10"/>
+  <text class="gt" x="294" y="76" text-anchor="middle">request.json</text>
+  <path d="M596 88 H802" stroke="#0C0D10" stroke-width="1.5"/>
+  <path d="M802 88 l-9 -4 v8 z" fill="#0C0D10"/>
+  <text class="gt" x="699" y="76" text-anchor="middle">watcher picks it up within a minute</text>
+  <path d="M802 122 H600" stroke="#83868d" stroke-width="1.5"/>
+  <path d="M600 122 l9 -4 v8 z" fill="#83868d"/>
+  <path d="M400 122 H198" stroke="#83868d" stroke-width="1.5"/>
+  <path d="M198 122 l9 -4 v8 z" fill="#83868d"/>
+  <text class="gt" x="699" y="142" text-anchor="middle">response.json</text>
+  <text class="gt" x="294" y="142" text-anchor="middle">the result comes back</text>
+  <path class="gate" d="M500 176 l7 12 h-14 z"/>
+  <text class="gt" x="500" y="210" text-anchor="middle">133–191s round trip · it wakes a sleeping machine</text>
+</svg>
+<figcaption>No server, no port, no auth. It drops a file into a sync folder that was already running. Slow — but it does the one thing a chat app can't: wake a machine that's asleep.</figcaption>
+</figure>
+<h2 id="it-buys-you-the-machine-not-the-files">It buys you the machine, not the files</h2>
+<p>Everything under the synced folder is already on both machines. <strong>You don’t need a bus to move files.</strong></p>
+<p>What a bus buys you is <strong>the other machine itself</strong>.</p>
+<ul>
+<li>Hardware only it has — a GPU, an attached device, a game client</li>
+<li>A network only it can reach</li>
+<li>Software only it has installed</li>
+</ul>
+<h2 id="why-build-a-slow-channel-on-purpose">Why build a slow channel on purpose</h2>
+<p>A chat app moves in seconds. But if the other machine is asleep, messages just pile up. This bus takes three minutes and <strong>wakes the sleeper.</strong></p>
+<p>Waking and speed are different axes. When people pick a channel they only look at the second one.</p>
+<h2 id="written-up-in-three-parts">Written up in three parts</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>The problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/en/built/claude-bus/protocol/">Protocol</a></td>
+<td>Making conflict copies impossible in a two-way sync folder</td>
+</tr>
+<tr>
+<td><a href="/en/built/claude-bus/timing/">Timing</a></td>
+<td>Measured where the three minutes go — it wasn’t my code</td>
+</tr>
+<tr>
+<td><a href="/en/built/claude-bus/safety/">Safety</a></td>
+<td>What stands between somebody else’s instruction and my machine</td>
+</tr>
+</tbody>
+</table>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

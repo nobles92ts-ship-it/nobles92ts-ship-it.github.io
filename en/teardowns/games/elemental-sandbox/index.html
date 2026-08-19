@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Elemental Sandbox — Making games</title><meta name="description" content="The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/" aria-current="page"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/games/elemental-sandbox/" aria-current="page"><span class="t"><span>Elemental Sandbox</span><span class="kpi">1 rule → 43 places</span></span><span class="s">The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.</span></a><a href="/en/teardowns/games/openmmo/"><span class="t"><span>OpenMMO</span><span class="kpi">2 corrections to my own summary</span></span><span class="s">An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.</span></a><a href="/en/teardowns/games/worldclaw/"><span class="t"><span>Hunyuan3D-WorldClaw</span><span class="kpi">0 code · 0 numbers</span></span><span class="s">A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.</span></a><a href="/en/teardowns/games/dynasty-warriors-origins/"><span class="t"><span>Dynasty Warriors Origins</span><span class="kpi">3 left of 12</span></span><span class="s">I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.</span></a><a href="/en/teardowns/games/unity-releases/"><span class="t"><span>Recent Unity releases</span><span class="kpi">188 breaking</span></span><span class="s">Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Elemental Sandbox</h1><p class="sum">The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.</p><div class="meta"><span>1 rule → 43 places</span><a class="src" href="https://github.com/achrefelouafi/LinearAbiltyCastingThreeJS" target="_blank" rel="noopener">github.com/achrefelouafi/LinearAbiltyCastingThreeJS ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-was-built">What was built</a><a href="#why-the-sliders-work-while-paused">Why the sliders work while paused</a><a href="#i-ran-it-myself">I ran it myself</a><a href="#then-i-held-it-against-my-own-code">Then I held it against my own code</a><a href="#read-the-licence-in-two-places">Read the licence in two places</a><a href="#one-last-thing-this-repository-did-well">One last thing this repository did well</a></nav><div class="prose"><p><strong>Not one line of effect code came over, and one sentence decided the character of 43 places in my own code.</strong> The showy part of this repository is web-only and doesn’t reach my engine. What crossed is a single rule: <strong>“an instance remembers only a seed and ratios; metres, seconds and radians are recomputed from settings every frame.”</strong> Holding that up against my project — <strong>it was built exactly the opposite way.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Editing while paused works because three things hold at once: one settings object is the sole owner of state, instances remember only ratios and a seed, and pausing is a zero-length frame rather than a stopped loop.">
+  <text class="lbl" x="8" y="22">“freeze the frame and turn the numbers” — three things must hold at once</text>
+  <rect class="bx-code" x="8" y="36" width="320" height="80" rx="2"/>
+  <text class="bx-t" x="168" y="60" text-anchor="middle">① settings are the API</text>
+  <text class="bx-s" x="168" y="80" text-anchor="middle">one mutable object owns all state</text>
+  <text class="bx-s" x="168" y="99" text-anchor="middle">every system only reads it, each frame</text>
+  <rect class="bx-llm" x="340" y="36" width="320" height="80" rx="2"/>
+  <text class="bx-t" x="500" y="60" text-anchor="middle">② record dimensionless</text>
+  <text class="bx-s" x="500" y="80" text-anchor="middle">store ratios (0–1) and a seed</text>
+  <text class="bx-s" x="500" y="99" text-anchor="middle">no metres, radians or seconds at all</text>
+  <rect class="bx-code" x="672" y="36" width="320" height="80" rx="2"/>
+  <text class="bx-t" x="832" y="60" text-anchor="middle">③ pause = dt 0</text>
+  <text class="bx-s" x="832" y="80" text-anchor="middle">the loop doesn't stop —</text>
+  <text class="bx-s" x="832" y="99" text-anchor="middle">it keeps running zero-length frames</text>
+  <path d="M328 76 H340 M660 76 H672" stroke="#8f9198" stroke-width="1.2"/>
+  <text class="lbl" x="8" y="146">everything a single ice spike remembers</text>
+  <rect class="vn vn-b" x="8" y="158" width="484" height="52" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-p" x="250" y="180" text-anchor="middle">position along the line 0.0–1.0 · lateral offset ±0.0–1.0 · jitter seed</text>
+  <text class="cap" x="250" y="199" text-anchor="middle">all ratios. Not one real unit</text>
+  <rect class="vn vn-a" x="508" y="158" width="484" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="750" y="180" text-anchor="middle">the one real unit — time of birth</text>
+  <text class="cap" x="750" y="199" text-anchor="middle">stored because it's an event, not a dimension</text>
+  <line class="rule" x1="8" y1="228" x2="992" y2="228"/>
+  <text class="cap cap-i" x="8" y="246">⇒ Pull the height slider and <tspan class="cap-p">an ice field already standing grows again</tspan> — with no time having passed</text>
+</svg>
+<figcaption>Every structural choice in this repository comes from one requirement — freeze an effect mid-flight and fix its silhouette, palette and timing while looking at the still.</figcaption>
+</figure>
+<h2 id="what-was-built">What was built</h2>
+<p><strong>A skillshot-effect playground that runs in a browser.</strong> A character stands on a floor; press a key and a ground reticle tracks the mouse; click and it fires. <strong>It isn’t a game — no enemies, no health.</strong> The single purpose is <strong>“look at the effect and turn the numbers.”</strong></p>
+<p>And the headline claim was true. <strong>“All generated in code”</strong> — cloning and checking exhaustively, there are ten binaries and <strong>not one of them is for an effect.</strong> No sprite sheets, no flipbooks, no effect textures.</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>How it’s made</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ice crystals</td>
+<td>procedural geometry</td>
+</tr>
+<tr>
+<td>Lightning</td>
+<td><strong>one</strong> ribbon strip placed by a vertex shader</td>
+</tr>
+<tr>
+<td>Meteor</td>
+<td>a sphere carved into fracture faces on the CPU</td>
+</tr>
+<tr>
+<td>Beam</td>
+<td>a parametric tube drawn three times at three radii</td>
+</tr>
+<tr>
+<td>Reticles, scorch marks, lava cracks</td>
+<td>all distance-field + noise shaders</td>
+</tr>
+<tr>
+<td>Smoke, embers, debris</td>
+<td>GPU particles — silhouettes procedural too</td>
+</tr>
+</tbody>
+</table>
+<p>It has <strong>two</strong> runtime dependencies. And the repository was <strong>five days old, 18 commits, one contributor.</strong></p>
+<h2 id="why-the-sliders-work-while-paused">Why the sliders work while paused</h2>
+<p>Because the three things in the diagram hold at once, and the second is the heart of it. <strong>What a single ice spike remembers contains no metres, no radians, no seconds.</strong> Its position along the line is a ratio, its lateral offset is a ratio, and the rest is a handful of random numbers. <strong>The one real unit it stores is its time of birth</strong> — because that’s an event, not a dimension.</p>
+<p>So every frame, <code>update()</code> multiplies those out against the settings object again. <strong>Pull the height slider and an ice field already standing grows.</strong></p>
+<p><strong>The handling of values that can’t be expressed that way is good too.</strong> Four parameters — facet count, bend and the like — <strong>can’t be expressed as position and scale multiplication</strong> and have to be baked into geometry, which normally makes them “constants that need a restart.” The author hashes just those four into a string key, <strong>rebuilds wholesale only when it changes, and carries the instance’s seed and birth time across</strong> — new shape, same identity.</p>
+<p>And the reasoning is in a comment. <strong>“A crystal is 108 triangles; rebuilding is cheaper than approximating.”</strong> A case of something that was “too expensive” <strong>being opened up by actually measuring the cost.</strong></p>
+<h2 id="i-ran-it-myself">I ran it myself</h2>
+<p>Rather than trusting the docs I cloned it and ran it locally. Capture kept failing because the browser doesn’t paint when its window isn’t on screen — so <strong>I called the frame loop directly at a fixed step instead.</strong> The side effect was <strong>a deterministic timestep</strong>, which made the following check possible.</p>
+<p>I fired the ice ability, advanced 54 frames, paused, and — <strong>without letting a single tick of time pass</strong> — changed three settings values and drew three more frames.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right">elapsed</th>
+<th style="text-align: right">height</th>
+<th style="text-align: right">lean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BEFORE</td>
+<td style="text-align: right">13.95</td>
+<td style="text-align: right">3.1</td>
+<td style="text-align: right">0.42</td>
+</tr>
+<tr>
+<td>AFTER</td>
+<td style="text-align: right"><strong>13.95 (identical)</strong></td>
+<td style="text-align: right"><strong>7.44</strong></td>
+<td style="text-align: right"><strong>0.97</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The claim held.</strong> With elapsed time exactly equal, <strong>crystals already standing grew taller and leaned further out.</strong> The smoke column, the snow particles and the character pose are pixel-identical — <strong>the simulation didn’t re-run; the same instant was re-interpreted at new dimensions.</strong> Draw calls matched too, 115 in both frames.</p>
+<p><strong>And measurement diverged from self-reporting.</strong> Idle draw calls matched at 32, but <strong>with the ice field standing mine ran 95–115 against a self-reported ~69.</strong> A difference in capture timing and resolution — <strong>the self-reported figure can’t be quoted as-is.</strong> The slider count came out at 918 against a claimed 938, off by 20.</p>
+<h2 id="then-i-held-it-against-my-own-code">Then I held it against my own code</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 214" role="img" aria-label="Counting every place my project handles time: 43 freeze the value at start, and 22 re-read it every frame.">
+  <text class="lbl" x="8" y="24">how my project handles time — counted exhaustively</text>
+  <text class="cap cap-i" x="288" y="60" text-anchor="end">frozen at start</text>
+  <rect class="bar" x="304" y="44" width="602" height="26" rx="1"/>
+  <text class="cap cap-on" x="316" y="62">changing the value mid-play never reaches anything already running</text>
+  <text class="cap cap-i" x="918" y="62">43</text>
+  <text class="cap cap-i" x="288" y="106" text-anchor="end">re-read every frame</text>
+  <rect class="bar bar-p" x="304" y="90" width="308" height="26" rx="1"/>
+  <text class="cap cap-p" x="624" y="108">22</text>
+  <line class="rule" x1="304" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">Telegraph duration freezes when the coroutine starts — <tspan class="cap-p">built exactly opposite to this repository</tspan></text>
+  <text class="cap" x="8" y="186">So adjusting telegraph length during balancing leaves any telegraph already running untouched</text>
+  <text class="cap" x="8" y="208">Not one line of effect code came over, and that one sentence decided the character of these 43</text>
+</svg>
+<figcaption>One sentence came across, and it pointed at 43 places.</figcaption>
+</figure>
+<p>The rule that transferred is this one.</p>
+<blockquote>
+<p><strong>An ability instance remembers only a seed and ratios. Metres, seconds and radians are recomputed from settings every frame.</strong></p>
+</blockquote>
+<p>My wuxia game project is built <strong>exactly the opposite way.</strong> When a boss produces a form, <strong>the telegraph duration freezes the moment the coroutine starts.</strong> Changing that duration mid-play <strong>never reaches a telegraph already running.</strong></p>
+<p>Counted across the project: <strong>43 places freeze at start, 22 re-read every frame.</strong></p>
+<p><strong>Not one line of effect code came over, and yet the character of 43 places in my code got decided.</strong> That’s the kind of return to expect from this bucket.</p>
+<h2 id="read-the-licence-in-two-places">Read the licence in two places</h2>
+<p><strong>Porting the code is rejected.</strong> Legally it’s free, but web shaders and a 3D-plane assumption mean <strong>there’s nothing to move into my 2D pipeline.</strong></p>
+<p>And <strong>taking it wholesale is risky.</strong> The same repository declares a permissive licence in its licence file and <strong>says something different in the README — “provided as-is for the purposes of this project.”</strong> The bundled character models and environment probe are only noted as <strong>retaining their original licences.</strong></p>
+<p><strong>Treat it as a textbook, not a dependency.</strong> A five-day-old repository with one contributor. Game repos are short-lived, which makes that distinction matter more here than anywhere else.</p>
+<h2 id="one-last-thing-this-repository-did-well">One last thing this repository did well</h2>
+<p><strong>It ships four reference stills in the repository root</strong> — a record of what it was tuned against. And the README lists <strong>seven “known rough edges” the author wrote about their own work</strong>: alignment artifacts, the flat-floor assumption, an empty pass.</p>
+<p>The most portable techniques here are <strong>dimensionless recording, the zero-length frame, and that last one</strong> — because they’re <strong>design rules independent of engine and language.</strong> The rest is work you only have to do because the engine is manual, and <strong>its value collapses in an environment where the engine already does it for you.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

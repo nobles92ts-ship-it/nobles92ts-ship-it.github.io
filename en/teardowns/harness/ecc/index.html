@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ECC — Agent harnesses</title><meta name="description" content="I took apart the upstream of my own configuration. What was worth taking wasn't a feature but a measurement — and that measuring tool wouldn't run here."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/" aria-current="page"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>ECC</h1><p class="sum">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</p><div class="meta"><span>1 of 285</span><a class="src" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">github.com/affaan-m/ECC ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-repository-is">What the repository is</a><a href="#six-named-techniques--and-the-single-most-valuable-page-in-the-repo">Six named techniques — and the single most valuable page in the repo</a><a href="#what-broke--285-skills-is-a-document-count-not-a-tool-count">What broke — “285 skills” is a document count, not a tool count</a><a href="#held-against-mine-one-by-one--one-of-seven">Held against mine, one by one — one of seven</a><a href="#so-i-ran-it--and-it-failed">So I ran it — and it failed</a><a href="#verdict--not-taking-anything-is-the-result">Verdict — not taking anything is the result</a></nav><div class="prose"><p><strong>Out of a repository with 285 skills, exactly one thing got adopted.</strong> The QA and loop techniques it advertises I already had, arrived at independently and mostly in stronger form. The one axis I genuinely lacked was <strong>a tool that measures whether an agent actually followed the rules I wrote</strong> — and <strong>that tool wouldn’t run in my environment.</strong> The leading hypothesis for why is a failure mode this repository itself warns about.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 246" role="img" aria-label="How ECC's hooks work. On every tool call an obfuscated one-liner scans the home directory to locate the install, delegates to a bootstrap, and a dispatcher decides whether to run each hook by matching its strength tag against the profile the user selected.">
+  <text class="lbl" x="8" y="22">on every tool call — Bash, Edit, Write, all of them</text>
+  <rect class="vn vn-a" x="8" y="36" width="196" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="106" y="60" text-anchor="middle">agent event</text>
+  <text class="cap" x="106" y="78" text-anchor="middle">PreToolUse · Stop …</text>
+  <rect class="bx-code" x="228" y="36" width="220" height="52" rx="2"/>
+  <text class="bx-t" x="338" y="59" text-anchor="middle">obfuscated one-liner</text>
+  <text class="bx-s" x="338" y="77" text-anchor="middle">scans home for the install</text>
+  <rect class="bx-code" x="472" y="36" width="220" height="52" rx="2"/>
+  <text class="bx-t" x="582" y="59" text-anchor="middle">bootstrap → dispatcher</text>
+  <text class="bx-s" x="582" y="77" text-anchor="middle">5 entry points · 50 scripts</text>
+  <rect class="bx-llm" x="716" y="36" width="276" height="52" rx="2"/>
+  <text class="bx-t" x="854" y="59" text-anchor="middle">run decided by strength tag</text>
+  <text class="bx-s" x="854" y="77" text-anchor="middle">standard · strict</text>
+  <path d="M204 62 H228 M448 62 H472 M692 62 H716" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="500" y="118">you pick one profile, not individual hooks</text>
+  <rect class="vn vn-a" x="716" y="130" width="86" height="34" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="759" y="152" text-anchor="middle">minimal</text>
+  <rect class="vn vn-b" x="811" y="130" width="86" height="34" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="854" y="152" text-anchor="middle">standard</text>
+  <rect class="vn vn-a" x="906" y="130" width="86" height="34" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="949" y="152" text-anchor="middle">strict</text>
+  <line class="rule" x1="8" y1="192" x2="992" y2="192"/>
+  <text class="cap cap-i" x="8" y="214">Hooks aren't switched on and off — they're managed by <tspan class="cap-p">strength tier</tspan>. That idea came home</text>
+  <text class="cap" x="8" y="236">Mine are all binary, so a hook I mute during exploratory work stays muted into the next session</text>
+</svg>
+<figcaption>The most distinctive design. Every hook goes through one bootstrap, and whether it runs is decided by matching its tag against the active profile.</figcaption>
+</figure>
+<h2 id="what-the-repository-is">What the repository is</h2>
+<p><strong>Everything Claude Code — it presents itself as an “operating system” for agent harnesses.</strong> The pitch: stop rebuilding your development process on every prompt, and <strong>install it once so that it becomes how the agent works.</strong></p>
+<p>The loop it hardcodes:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>plan → test → implement → review → verify → remember → improve</span></span></code></pre>
+<p>Its slogan is <strong>“Optimize the context window. Persist everything else.”</strong> — put as little as possible in context and push state down into files, hooks and memory. That slogan comes back to bite it later on this page.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skills</td>
+<td><strong>285</strong></td>
+</tr>
+<tr>
+<td>Agents</td>
+<td>68 — review, build repair, architecture</td>
+</tr>
+<tr>
+<td>Rule files</td>
+<td>122 — 24 language groups × 5 fixed types</td>
+</tr>
+<tr>
+<td>Total</td>
+<td><strong>3,458 files · 88 MB</strong> (73% markdown, 492 JS, 63 Python)</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<p><strong>It matters to me for a specific reason: this repository is the upstream of my own <code>~/.claude</code>.</strong> I copied it out as files six months ago, and <strong>there is no auto-update.</strong> So this wasn’t browsing someone else’s repo — it was <strong>opening the original of something I already run, and measuring the drift for the first time.</strong></p>
+<h2 id="six-named-techniques--and-the-single-most-valuable-page-in-the-repo">Six named techniques — and the single most valuable page in the repo</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>What</th>
+<th>Executable code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Santa Method</strong></td>
+<td><em>“Make a list, check it twice.”</em> Two independent reviewers, and <strong>both must pass</strong> to ship. On failure, fix and <strong>re-review with a fresh agent that has no memory</strong> (to break anchoring); after three rounds, escalate to a human</td>
+<td>none</td>
+</tr>
+<tr>
+<td><strong>loop-design-check</strong></td>
+<td>A judgement-only skill you run before building a loop. <strong>A step-zero veto gate</strong>, plus five collapse modes</td>
+<td>none</td>
+</tr>
+<tr>
+<td><strong>skill-comply</strong></td>
+<td><strong>Measures</strong> whether skills and rules are actually followed. Derives expected behaviour from the docs, runs it under three pressure levels, and traces the tool calls</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td>click-path-audit</td>
+<td>For bugs where each function works and the combination breaks. Traces call order and state reads/writes</td>
+<td>none</td>
+</tr>
+<tr>
+<td>delivery-gate</td>
+<td>A stop hook that blocks session end using deterministic checks only</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>agent-sort</td>
+<td>Sorts skills and rules per repo into daily and library buckets</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>The reasoning behind Santa Method is good — <strong>“an issue only one of them caught is still a real issue. The other one’s blind spot is the whole reason this method exists.”</strong></p>
+<p>But the most valuable thing here isn’t a skill. It’s <strong>the five collapse modes that loop-design-check tabulates.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>How it breaks</th>
+<th>Antibody</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The goal is a correct-sounding slogan (“manage it well”) → <strong>nothing can adjudicate it</strong> → it runs forever burning money</td>
+<td>Replace it with an outcome a machine can judge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Verification is “look at whether it seems fine” → the agent <strong>confidently says it’s fine and stops</strong></td>
+<td>Separate the judge from the defendant. External comparison plus exit codes</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>(worst)</strong> Gate only on “all tests pass” → <strong>the agent deletes the tests</strong></td>
+<td>Set the completion condition and the boundary condition together</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Expecting to be asked mid-run → <strong>it never asks and drives a wrong answer to the end</strong></td>
+<td>Finish every clarification before departure</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Bloated instructions plus stale memory → <strong>the faster the loop, the more wrong it gets</strong></td>
+<td>Layered memory plus periodic linting</td>
+</tr>
+</tbody>
+</table>
+<p>Numbers 3 and 5 come back later on this page.</p>
+<h2 id="what-broke--285-skills-is-a-document-count-not-a-tool-count">What broke — “285 skills” is a document count, not a tool count</h2>
+<p>Opening the advertised techniques file by file: <strong>Santa Method, agent-sort, click-path-audit and loop-design-check are each one document with zero executable code.</strong> The Python inside Santa Method is <strong>pseudocode</strong> — <code>fix_agent.execute(...)</code> and the like. The fact that 73% of all files are markdown supports this.</p>
+<p>So it’s <strong>a collection of prompt patterns, not a framework.</strong> The parts with real code are skill-comply and delivery-gate.</p>
+<p><strong>The hook bootstrap is a supply-chain surface.</strong> Install the plugin and every Bash, Edit and Write call runs an obfuscated one-liner that loads code from a path discovered by scanning your home directory. It works — but <strong>one bad hook blocks tool use itself.</strong></p>
+<p><strong>And the repository violates its own rule.</strong> All 285 skill descriptions sit resident in context, which is precisely what collapse mode 5 above warns against: <em>bloated instructions mean the faster the loop, the more wrong it gets.</em> Which is why ECC also <strong>ships tools for trimming itself.</strong></p>
+<p><strong>What held up, on the record.</strong> Every health claim was true — MIT, 11 CI workflows, 248 test files, supply-chain monitoring, a commit on the day I looked. <strong>“285 skills” matched a directory count exactly</strong>, with no inflation.</p>
+<h2 id="held-against-mine-one-by-one--one-of-seven">Held against mine, one by one — one of seven</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="The upstream's 285 skills and my 102 overlap at 60. From the non-overlapping upstream side I shortlisted seven and adopted one — and that one wouldn't run in my environment.">
+  <ellipse class="vn vn-b" cx="430" cy="108" rx="250" ry="86"/>
+  <ellipse class="vn vn-a" cx="626" cy="108" rx="180" ry="72"/>
+  <text class="num num-p" x="248" y="100" text-anchor="middle">285</text>
+  <text class="cap cap-p" x="248" y="126" text-anchor="middle">upstream skills</text>
+  <text class="num" x="580" y="100" text-anchor="middle">60</text>
+  <text class="cap" x="580" y="126" text-anchor="middle">overlap</text>
+  <text class="cap cap-i" x="760" y="100" text-anchor="middle">102</text>
+  <text class="cap" x="760" y="122" text-anchor="middle">mine</text>
+  <text class="lbl" x="180" y="34">upstream — I copied from here six months ago</text>
+  <text class="lbl" x="700" y="34">my setup today</text>
+  <line class="rule" x1="40" y1="212" x2="960" y2="212"/>
+  <text class="cap" x="40" y="234">From the non-overlapping side: <tspan class="cap-i">7</tspan> shortlisted → <tspan class="cap-p">1</tspan> adopted → and that one wouldn't run</text>
+</svg>
+<figcaption>Compared technique by technique, not by skill count. Most of the advertised techniques I already had, independently, in a stronger form.</figcaption>
+</figure>
+<ul>
+<li><strong>Santa Method → rejected.</strong> The adversarial review in my own pipeline is the superset. Not two reviewers but <strong>three lenses in parallel with an adjudicator that rebuts them</strong>, and the final gate is <strong>deterministic code</strong>, not an LLM verdict. The rubber-stamping failure Santa worries about is structurally impossible there</li>
+<li><strong>loop-design-check → checklist only.</strong> I already had its three core ideas: a <strong>free oracle</strong> (a build that passes on product criteria is the answer key, so every failure is an automation defect), a <strong>negative trial</strong> (evaluate the rule against the wrong screen too, and reject it if it matches anywhere), and a <strong>record / judge / diff split</strong> that makes re-adjudication cost nothing</li>
+<li><strong>click-path-audit → procedure only.</strong> The patterns assume the web and don’t fit, but <strong>the procedure — trace call order, trace which call reverts which state</strong> — ports to a game engine</li>
+<li><strong>delivery-gate → rejected.</strong> It duplicates a weekly human-approval gate and collides with my fail-closed principle</li>
+<li><strong>agent-sort → rejected.</strong> <strong>Two tools already do this job and I’ve run neither.</strong> A third isn’t a solution, it’s a deferral</li>
+</ul>
+<p><strong>Which leaves the one real gap — skill-comply.</strong> Everything I have checks <strong>artifacts</strong>: whether the docs match reality, whether the canonical copy has drifted, whether cases meet the format. <strong>There is nothing that measures whether an agent followed the rules</strong>, and I have never once measured compliance across my eighteen rule files.</p>
+<h2 id="so-i-ran-it--and-it-failed">So I ran it — and it failed</h2>
+<p>Being the one real gap, I ran it rather than trusting the docs. Every prerequisite was already in place.</p>
+<p><strong>First, four Windows blockers, found and fixed.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Root cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decode failure on Korean documents</td>
+<td>File reads specify no encoding → Windows uses the legacy code page</td>
+</tr>
+<tr>
+<td>Executable not found</td>
+<td><code>claude</code> is actually a <code>.CMD</code>, and process creation doesn’t do extension resolution</td>
+</tr>
+<tr>
+<td>Output written to the wrong path</td>
+<td>A Unix temp path hardcoded</td>
+</tr>
+<tr>
+<td>Decode failure on the write side</td>
+<td>Temp-file writes also specify no encoding</td>
+</tr>
+</tbody>
+</table>
+<p>All four are <strong>still present upstream.</strong> On Windows with non-ASCII content it dies on the first line. After the fix, all 33 unit tests still pass.</p>
+<p><strong>Then the actual measurement failed on all four combinations.</strong> The diagnosis:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>prompt_len = 2396   ← template substitution fine. Nothing to do with argument limits</span></span>
+<span class="line"><span>stdout_len = 34     ← the response is abnormally short</span></span>
+<span class="line"><span>actual      = "How can I help you? (current working directory: …"</span></span></code></pre>
+<p><strong>A 2.4 KB instruction gets ignored wholesale and a conversational greeting comes back.</strong> Parsing that greeting as YAML yields a string, and pulling a field out of a string is where it dies.</p>
+<p><strong>Established: the failure is in the contract layer, not encoding.</strong> The prompt assembles intact, the exit code is clean, and the promised format simply doesn’t arrive.</p>
+<p><strong>Not established: why it’s ignored.</strong> The leading hypothesis is that <strong>the subprocess inherits the global instructions and hooks wholesale, burying the embedded instruction.</strong> An isolated-environment test was invalidated by an authentication problem, so this stays an estimate.</p>
+<h2 id="verdict--not-taking-anything-is-the-result">Verdict — not taking anything is the result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The strength-tier idea for hooks</td>
+<td><strong>Adopted</strong> — it names exactly what’s wrong with binary on/off</td>
+</tr>
+<tr>
+<td>skill-comply</td>
+<td><strong>On hold</strong> — the tool is repaired; what remains is one confirmation of the hypothesis</td>
+</tr>
+<tr>
+<td>The five collapse modes</td>
+<td><strong>Adopted as a checklist</strong> — run against the next loop I design</td>
+</tr>
+<tr>
+<td>Santa · delivery-gate · agent-sort · full install</td>
+<td>⛔ <strong>Rejected</strong> — each with its resume condition written down</td>
+</tr>
+</tbody>
+</table>
+<p><strong>That there was almost nothing to take is itself the finding.</strong> My review chain and my unattended-loop conventions had <strong>independently reinvented the upstream’s headline techniques, in stronger form.</strong></p>
+<p>And the last layer is the one that stung. <strong>The one real gap was a measurement, not a feature — and the tool that measures it probably tripped over my own context bloat.</strong> Which is the thing this repository puts on its banner (<em>“optimize the context window”</em>), the thing it can’t obey itself, and the thing it names as collapse mode 5. <strong>The same disease, three layers deep.</strong></p>
+<p>The prescription is already in my hands: two tools for trimming context, installed six months ago and <strong>never once run.</strong> Running them is what this investigation left as first priority.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>네 개의 주기 — 자가진화 루프</title><meta name="description" content="학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 것</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/" aria-current="page"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/self-evolution/dead-channel/"><span class="t"><span>죽은 채널</span><span class="kpi">20.6MB</span></span><span class="s">정교한 쪽이 조용히 죽어 있었고, 그걸 진단한 제 문서도 두 군데가 틀렸습니다.</span></a><a href="/ko/built/self-evolution/tempo/" aria-current="page"><span class="t"><span>네 개의 주기</span><span class="kpi">4 tempo</span></span><span class="s">학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.</span></a><a href="/ko/built/self-evolution/detector/"><span class="t"><span>감지기</span><span class="kpi">오탐 1회</span></span><span class="s">죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 것</span><span class="st">진행 중</span></div><h1>네 개의 주기</h1><p class="sum">학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.</p><div class="meta"><span>4 tempo</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#캡처는-왜-자동이-아닌가">캡처는 왜 자동이 아닌가</a><a href="#통합에만-승인이-붙는-이유">통합에만 승인이 붙는 이유</a><a href="#적용은-왜-완전-자동인가">적용은 왜 완전 자동인가</a><a href="#감시가-나머지-셋을-지킨다">감시가 나머지 셋을 지킨다</a></nav><div class="prose"><p>원안이 과설계였던 진짜 이유가 여기 있다. <strong>“학습”을 하나로 놓고 거기에 자동화를 통으로 걸려고 했다.</strong></p>
+<p>쪼개 보니 주기가 넷이고, 자동화해도 되는 정도가 전부 다르다.</p>
+<table>
+<thead>
+<tr>
+<th>주기</th>
+<th>언제</th>
+<th>자동화</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>캡처</strong></td>
+<td>세션 도중 계속</td>
+<td>손으로</td>
+<td>새 정보가 들어오는 유일한 지점</td>
+</tr>
+<tr>
+<td><strong>통합</strong></td>
+<td>주 1회</td>
+<td>사람 승인</td>
+<td>지우는 판단이 들어간다</td>
+</tr>
+<tr>
+<td><strong>적용</strong></td>
+<td>매 세션</td>
+<td>완전 자동</td>
+<td>판단이 없어서 안전하다</td>
+</tr>
+<tr>
+<td><strong>감시</strong></td>
+<td>주 1회</td>
+<td>완전 자동</td>
+<td>아무것도 안 고치고 알리기만 한다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판단이 들어가는 자리만 사람이 지키면 된다.</strong> 나머지 셋은 자동이어도 조용히 죽지 않는다 — 넷째가 보고 있기 때문이다.</p>
+<h2 id="캡처는-왜-자동이-아닌가">캡처는 왜 자동이 아닌가</h2>
+<p>제일 자동화하고 싶은 자리다. 세션이 끝날 때마다 요약을 뽑아 메모리에 넣으면 되니까.</p>
+<p>그렇게 안 했다. 세션이 끝나면 <strong>후보 메모를 가공 없이 붙이기만</strong> 한다. 요약도 안 하고 판단도 안 한다. 모델을 안 부르니 비용이 0이다.</p>
+<p>이유는 <a href="/ko/built/self-evolution/dead-channel/">죽은 채널</a> 쪽 교훈 그대로다. 캡처를 자동 요약으로 만들면 <strong>무엇이 요약에서 빠졌는지를 아무도 안 본다.</strong> 그리고 그건 몇 달이 지나서야, 필요한 게 없을 때 드러난다.</p>
+<p>지금 구조에서 요약은 내가 메모리를 쓸 때 일어난다. 손이 가고, 그래서 눈에 들어온다.</p>
+<h2 id="통합에만-승인이-붙는-이유">통합에만 승인이 붙는 이유</h2>
+<p>넷 중 승인 게이트가 붙은 건 통합 하나다. 다른 셋에는 없다.</p>
+<p>기준은 <strong>되돌릴 수 있는가</strong>다.</p>
+<ul>
+<li>캡처는 붙이기만 하니 지우면 그만이다</li>
+<li>적용은 읽기라 아무것도 안 바꾼다</li>
+<li>감시는 알림만 보낸다</li>
+<li><strong>통합은 지운다.</strong> 그리고 지워진 메모는 되돌릴 방법이 없다</li>
+</ul>
+<p>무엇을 지울지 정하는 건 판단이고, 판단이 틀렸을 때 <strong>틀렸다는 사실을 알 방법이 없는</strong> 종류의 판단이다. 그래서 여기만 사람이 본다.</p>
+<h2 id="적용은-왜-완전-자동인가">적용은 왜 완전 자동인가</h2>
+<p>매 세션 메모리가 주입되는 건 자동이다. 판단이 없기 때문이다 — 파일을 읽어서 넣을 뿐이고, 무엇을 넣을지는 이미 정해져 있다.</p>
+<p>여기서 배운 게 하나 있다. <strong>“자동화해도 되는가”는 빈도가 아니라 판단 유무로 정해진다.</strong> 적용은 하루에 수십 번 도는데 완전 자동이고, 통합은 주 1회인데 승인이 붙는다. 자주 도는 걸 자동화하고 싶어지는 게 자연스럽지만, 그건 기준이 아니다.</p>
+<h2 id="감시가-나머지-셋을-지킨다">감시가 나머지 셋을 지킨다</h2>
+<p>감시는 아무것도 안 고친다. <strong>읽고 알리기만 한다.</strong></p>
+<p>그런데 이 하나가 있어서 나머지 셋을 자동으로 둘 수 있다. 앞의 장치가 몇 달을 죽어 있을 수 있었던 이유가 “산출물이 없어도 아무 일도 안 일어나서”였고, 감시기는 정확히 그 구멍을 막는다.</p>
+<p>멀티 PC 배려도 여기 들어 있다. 두 대에 다 등록해 두지만 <strong>지정한 한 대에서만 돈다.</strong> 안 그러면 같은 알림이 두 번 오고, 두 번 오는 알림은 곧 안 읽는 알림이 된다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

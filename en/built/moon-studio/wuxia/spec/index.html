@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Spec — Wuxia game (working title)</title><meta name="description" content="The rules from the design page as actual artifact — four lineages, the matchup cycle, three verdict constants, real telegraph durations."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="5"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/" aria-current="page"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Games</div><div class="plist"><a href="/en/built/moon-studio/wuxia/" aria-current="page"><span class="t"><span>Wuxia game (working title)</span><span class="kpi">44 forms</span></span><span class="s">An action RPG won by reading the enemy&#39;s pattern rather than out-reflexing it. The only slot in the studio still moving.</span></a><a href="/en/built/moon-studio/future-1/"><span class="t"><span>Future game 1</span><span class="kpi">empty slot</span></span><span class="s">The slot for a game that doesn&#39;t exist yet — carrying only the lessons from the wuxia game that can actually travel.</span></a><a href="/en/built/moon-studio/future-2/"><span class="t"><span>Future game 2</span><span class="kpi">empty slot</span></span><span class="s">The second empty slot. Its parts read the same as Future game 1 — there are two to show &quot;several,&quot; not because they differ.</span></a></div></nav><nav class="col col-l"><div class="col-head">Wuxia game (working title)</div><div class="plist"><a href="/en/built/moon-studio/wuxia/design/"><span class="t"><span>Design</span><span class="kpi">44 forms</span></span><span class="s">Turn &quot;win by reading the pattern&quot; into a rule and telegraph duration becomes the only dial you have.</span></a><a href="/en/built/moon-studio/wuxia/spec/" aria-current="page"><span class="t"><span>Spec</span><span class="kpi">one page</span></span><span class="s">The rules from the design page as actual artifact — four lineages, the matchup cycle, three verdict constants, real telegraph durations.</span></a><a href="/en/built/moon-studio/wuxia/world/"><span class="t"><span>World</span><span class="kpi">7 categories</span></span><span class="s">When the setting is decoration, the systems are left as bare numbers. Here factions become collectibles and identity becomes a stat.</span></a><a href="/en/built/moon-studio/wuxia/client/"><span class="t"><span>Client</span><span class="kpi">Unity 6</span></span><span class="s">The places handling time and hit resolution leaked. Every one of them failed quietly, without throwing.</span></a><a href="/en/built/moon-studio/wuxia/art/"><span class="t"><span>Art</span><span class="kpi">ΔY 0.22</span></span><span class="s">The data was complete and the visual assets were zero. And the gate I added to fix readability made readability worse.</span></a><a href="/en/built/moon-studio/wuxia/qa/"><span class="t"><span>QA</span><span class="kpi">wiring gate</span></span><span class="s">What a passing test isn&#39;t looking at. When zero means two different things, the test passes a broken build.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">in progress</span></div><h1>Spec</h1><p class="sum">The rules from the design page as actual artifact — four lineages, the matchup cycle, three verdict constants, real telegraph durations.</p><div class="meta"><span>one page</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#first--the-document-and-the-data-had-drifted-two-months-apart">First — the document and the data had drifted two months apart</a><a href="#and-then-i-misdiagnosed-the-fix">And then I misdiagnosed the fix</a><a href="#four-lineages-each-beating-exactly-one">Four lineages, each beating exactly one</a><a href="#the-verdict-splits-three-ways-and-the-middle-row-is-the-point">The verdict splits three ways, and the middle row is the point</a><a href="#the-telegraphs-were-measured-not-guessed">The telegraphs were measured, not guessed</a><a href="#its-only-a-martial-art-if-its-rare">It’s only a martial art if it’s rare</a><a href="#labels-for-the-boss-colour-for-the-battlefield">Labels for the boss, colour for the battlefield</a><a href="#not-yet-decided--11-items">Not yet decided — 11 items</a></nav><div class="prose"><p>Where <a href="/en/built/moon-studio/wuxia/design/">Design</a> is <em>why it was decided that way</em>, this is <strong>what was decided.</strong> Every value below is one that actually sits in the design docs and the code.</p>
+<h2 id="first--the-document-and-the-data-had-drifted-two-months-apart">First — the document and the data had drifted two months apart</h2>
+<p>Opening the repository to fill this page with the real thing turned up something else: <strong>the design doc was two months behind the game.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Design doc</th>
+<th>Actual data / code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of forms</td>
+<td>28 (7 patterns × 4)</td>
+<td><strong>44</strong> (11 patterns × 4)</td>
+</tr>
+<tr>
+<td>Lineage select</td>
+<td>Four strike keys</td>
+<td><strong>Mouse + 1 / 2 / 3 / Shift</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The GDD is dated 12 June; the form data 12 August. The four added patterns are <code>ㄱ</code> <code>N</code> <code>ㄷ</code> <code>◇</code>. Only the 26 artifacts agreed across doc, data and assets.</p>
+<p><strong>So the document got fixed — <a href="/spec/wuxia-gdd.html">GDD v0.6</a>.</strong> The dead control scheme is gone, the matrix was re-derived from the CSV, and the counter system built after v0.5 went in as a new §9.4.</p>
+<p>Publishing it unchanged as evidence was the other option, and it was the wrong one. Embalming an outdated document means the next person implements it. So there’s a rule now.</p>
+<blockquote>
+<p><strong>When the design changes, the design document changes in the same piece of work. What’s been dropped gets deleted, not kept.</strong></p>
+</blockquote>
+<h2 id="and-then-i-misdiagnosed-the-fix">And then I misdiagnosed the fix</h2>
+<p>The first cut of v0.6 said: <strong>“the strike keys changed from one four-key layout to another.”</strong> That was wrong.</p>
+<p>I read <code>enum SkillKey { Q, W, A, S }</code> in the code and concluded those were the keys. <strong>They aren’t keys — they’re the names the four lineages carry in data.</strong> The real input was recorded elsewhere.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Value</th>
+<th>Canonical source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What the player presses</td>
+<td>Draw with the mouse, pick lineage with <strong>1 · 2 · 3 · Shift</strong></td>
+<td><code>Doors.InputHint</code></td>
+</tr>
+<tr>
+<td>What the data calls it</td>
+<td><code>SkillKey.Q / W / A / S</code></td>
+<td><code>enum SkillKey</code>, CSV <code>Key</code> column</td>
+</tr>
+<tr>
+<td>Dropped old design</td>
+<td>The v0.5 four-key strike layout</td>
+<td>GDD v0.5</td>
+</tr>
+</tbody>
+</table>
+<p>So “document says X, code says Y” wasn’t a drift at all — it was <strong>two different layers set against each other.</strong> A drift existed, but not the one I named it.</p>
+<p><strong>The worst part is that the warning was already there.</strong> Line 51 of <code>PROJECT_LOG</code> says exactly this:</p>
+<blockquote>
+<p>This isn’t “the document says one thing and the code another” — it is two different layers being set against each other.</p>
+</blockquote>
+<p>I read that paragraph and <strong>quoted its second sentence while dropping its first</strong>, because the second one fit the story I was telling. The refutation was inside the same paragraph and I didn’t see it.</p>
+<p>So §8.5 now carries one more rule: <strong>write the actual input when describing controls in a test case or a bug report, and the identifier when pointing at data.</strong> Mix them and the same misdiagnosis comes back.</p>
+<p>Then, having fixed it, I swept the whole docs folder. <strong>It wasn’t one document — it was 21 files and 172 occurrences.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>What happens to it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11 live specs (UI mockup, data sheet, faction tree…)</td>
+<td>Get fixed</td>
+</tr>
+<tr>
+<td><strong>3 public-facing copy files</strong> (store page and campaign)</td>
+<td><strong>Most urgent</strong></td>
+</tr>
+<tr>
+<td>7 historical records (logs, QA reports)</td>
+<td><strong>Left alone</strong> — they’re true as of their date; editing them damages the record</td>
+</tr>
+</tbody>
+</table>
+<p>The middle row was the one that stung. The store copy still named keys the game no longer has. Left alone, the game ships on one scheme while the storefront tells buyers another — <strong>the drift walks past the internal docs and out to customers.</strong> Those three were updated the same day and re-scanned clean.</p>
+<p><strong>“The design doc says so” is not evidence.</strong> The data is the game and the document follows it — but building solo, the only person who updates the follower is me, so it drifts quietly. This page <strong>records the data side whenever the two disagree.</strong></p>
+<h2 id="four-lineages-each-beating-exactly-one">Four lineages, each beating exactly one</h2>
+<p>Four schools — <strong>Blade (劍門) · Fist (拳門) · Dao (道門) · Step (步門)</strong>. Despite the name, the Dao school carries the palm (掌) lineage.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Step → Blade → Fist → Palm → Step        (arrow = beats)</span></span></code></pre>
+<p><strong>There are four things to learn, not sixteen.</strong> And each relation carries a one-line reason, held as a string in the code.</p>
+<table>
+<thead>
+<tr>
+<th>Counter</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step beats Blade</td>
+<td>A sword has to reach you to cut you. It cannot cut a shadow</td>
+</tr>
+<tr>
+<td>Blade beats Fist</td>
+<td>The point arrives before the fist does</td>
+</tr>
+<tr>
+<td>Fist beats Palm</td>
+<td>Palm force isn’t dodged, it’s pierced</td>
+</tr>
+<tr>
+<td>Palm beats Step</td>
+<td>Palm force is a plane. There is nowhere to retreat to</td>
+</tr>
+</tbody>
+</table>
+<p>The reason column isn’t decoration. <strong>A matchup table without reasons has to be reopened every time; with reasons, you hear it once.</strong></p>
+<p>And <strong>no new vocabulary was invented.</strong> The player already picks a lineage and draws a stroke to produce a form. Putting enemy forms on that same axis made countering <strong>an input they already know</strong> — no new button, no new rule.</p>
+<h2 id="the-verdict-splits-three-ways-and-the-middle-row-is-the-point">The verdict splits three ways, and the middle row is the point</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="csharp"><code><span class="line"><span style="color:#24292E">ClashResult.Broken → ScaleDamage </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0f</span><span style="color:#6A737D">    // countered = 0 damage taken</span></span>
+<span class="line"><span style="color:#24292E">WrongDoorDamageScale             </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0.6f</span><span style="color:#6A737D">  // wrong lineage = 60%</span></span>
+<span class="line"><span style="color:#24292E">BreakCounterScale                </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 2.0f</span><span style="color:#6A737D">  // countering deals 2× back</span></span>
+<span class="line"><span style="color:#24292E">BreakStunSeconds                 </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 1.6f</span><span style="color:#6A737D">  // countering stuns for 1.6s</span></span></code></pre>
+<p>Answer with the right lineage and you take nothing, plus <strong>1.6 seconds of stun and double damage back.</strong> Wrong lineage takes 60%; no response takes a clean hit.</p>
+<p><strong>The middle row is the whole table.</strong> Make a wrong answer identical to no answer and nobody ever tries — and with no attempts there is no chance to learn the matchups at all. A wrong answer doesn’t close the window either: while the telegraph runs, you can try again.</p>
+<h2 id="the-telegraphs-were-measured-not-guessed">The telegraphs were measured, not guessed</h2>
+<p>One boss — the Black Serpent Chief — and his eight forms are the canonical set.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Forms</th>
+<th>Lineage</th>
+<th style="text-align: right">Telegraph</th>
+<th style="text-align: right">Damage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>two openers</td>
+<td>Blade</td>
+<td style="text-align: right">1.10 · 1.30</td>
+<td style="text-align: right">22 · 25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>three</td>
+<td>Fist, Palm, Step</td>
+<td style="text-align: right">0.90 · 1.50 · 0.80</td>
+<td style="text-align: right">28 · 30 · 18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>two</td>
+<td>Palm, Step</td>
+<td style="text-align: right">1.40 · 0.95</td>
+<td style="text-align: right">34 · 26</td>
+</tr>
+<tr>
+<td>Ultimate</td>
+<td><strong>one</strong></td>
+<td>Blade</td>
+<td style="text-align: right"><strong>2.40</strong></td>
+<td style="text-align: right"><strong>55</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Standard forms run <strong>0.80–1.50 seconds</strong> (mean 1.14); the ultimate is roughly double at <strong>2.40</strong>. It arrives <strong>once every 22 seconds</strong>, in phase 3 only, at 2.2× power.</p>
+<p>The ultimate is long for a reason. <strong>Kill someone in 0.5 seconds and they say “I never saw it”; give them 2.4 and they say “I saw it and still didn’t react.”</strong> Only the second makes anyone play differently next time.</p>
+<h2 id="its-only-a-martial-art-if-its-rare">It’s only a martial art if it’s rare</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Forms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Levy</td>
+<td>none — conscripts. They carry a blade, they never learned one</td>
+</tr>
+<tr>
+<td>Soldier</td>
+<td>none — trained, but no forms</td>
+</tr>
+<tr>
+<td>Captain</td>
+<td><strong>one signature form</strong> (of three: Blade, Fist, Palm)</td>
+</tr>
+<tr>
+<td>Boss</td>
+<td>a set per phase, plus an ultimate</td>
+</tr>
+</tbody>
+</table>
+<p>Forty enemies charging in with forty name-cards is not information, it’s <strong>noise.</strong></p>
+<p>A captain’s form comes from <strong>its own instance identity, not a random roll.</strong> Re-rolled each spawn, nobody could learn “that one glows red.” The three captains on screen differ from each other, and each keeps its own form to the end.</p>
+<h2 id="labels-for-the-boss-colour-for-the-battlefield">Labels for the boss, colour for the battlefield</h2>
+<p>A boss fight is one-on-one, so there’s time to read a label. A battlefield isn’t. So on the battlefield <strong>the body glows in the lineage colour</strong> — red is Fist, and Fist is broken by Blade. Nothing to read; you just see it.</p>
+<p>For colour-blind support, not only hue but <strong>value</strong> is separated: Blade pale blue-white → Fist red → Palm gold → Step dark green. All of it within the three-layer value structure in <a href="/en/built/moon-studio/wuxia/art/">Art</a>.</p>
+<h2 id="not-yet-decided--11-items">Not yet decided — 11 items</h2>
+<p>The most important section in a spec. Fail to record what’s undecided and it looks decided. The source marks <strong>11</strong> items as needing a decision, unfixed, or on hold; five touch the form system directly.</p>
+<ul>
+<li><strong>Scope of the heterodox school’s arts</strong> — the source labels this “most important.” Add a few, overwrite existing forms, or build a wholly separate set: undecided</li>
+<li><strong>Orthodox ↔ heterodox switching</strong> — free, reversible at a cost, or one-way</li>
+<li><strong>How much weight the heterodox line carries</strong> — a build option or a narrative branch</li>
+<li><strong>What gets implemented first</strong> — three arts, or one movement art as a proof of concept</li>
+<li><strong>A telegraph-window mismatch</strong> — the counter window computes its end time once, at the start, so lengthening a telegraph mid-run closes the counter window early. <strong>Deliberately left unfixed</strong>, with the resume condition written down: “when balancing work that actually adjusts telegraph length at runtime comes up”</li>
+</ul>
+<p>That last one is the most honest line in the spec. A known bug, left alone on purpose, <strong>with the condition for revisiting it recorded.</strong> And the heterodox document carries its own subtitle: <em>a proposal for review — not an implementation.</em></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

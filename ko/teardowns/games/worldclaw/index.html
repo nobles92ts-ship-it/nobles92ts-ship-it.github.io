@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hunyuan3D-WorldClaw — 게임 만들기</title><meta name="description" content="프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/" aria-current="page"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/games/elemental-sandbox/"><span class="t"><span>Elemental Sandbox</span><span class="kpi">규칙 1 → 43곳</span></span><span class="s">이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.</span></a><a href="/ko/teardowns/games/openmmo/"><span class="t"><span>OpenMMO</span><span class="kpi">내 요약 2건 정정</span></span><span class="s">1인 개발자가 라이브까지 올린 MMORPG. README만 보고 쓴 제 요약이 코드를 열자 두 군데 틀렸습니다.</span></a><a href="/ko/teardowns/games/worldclaw/" aria-current="page"><span class="t"><span>Hunyuan3D-WorldClaw</span><span class="kpi">코드 0 · 수치 0</span></span><span class="s">프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.</span></a><a href="/ko/teardowns/games/dynasty-warriors-origins/"><span class="t"><span>진삼국무쌍 오리진</span><span class="kpi">골격 12 중 남은 3</span></span><span class="s">제 게임에 뭘 더 넣을지 보려고 뜯었는데, 안 만들어도 되는 것 하나를 먼저 찾았습니다.</span></a><a href="/ko/teardowns/games/unity-releases/"><span class="t"><span>유니티 최근 업데이트</span><span class="kpi">breaking 188</span></span><span class="s">일주일 치를 정직하게 그으니 릴리스 5건이 전부였습니다. 그런데 그 안에 기능 추가가 아니라 이사가 들어 있었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>Hunyuan3D-WorldClaw</h1><p class="sum">프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.</p><div class="meta"><span>코드 0 · 수치 0</span><a class="src" href="https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw" target="_blank" rel="noopener">github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-하는-물건인가--레포부터-보면">무엇을 하는 물건인가 — 레포부터 보면</a><a href="#대표-기법--설계는-잘돼-있다">대표 기법 — 설계는 잘돼 있다</a><a href="#깨본-결과">깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>레포에 코드가 없고 논문에 수치가 없습니다.</strong> 텍스트 프롬프트 한 줄을 구역·지형·에셋·재질의 구조화 스펙으로 번역한 뒤, <strong>에이전트가 3D 도구를 직접 조작해</strong> 지형을 깔고 그 위에 오브젝트를 앉히는 시스템입니다. 결과물이 파노라마나 점구름이 아니라 <strong>인스턴스 단위로 편집 가능한 메시</strong>라는 게 주장의 축입니다. 그런데 레포에서 실제로 받을 수 있는 건 <strong>README 1,333바이트와 이미지뿐</strong>이고, 제목에 <em>“at Scale”</em> 을 걸어 놓고 <strong>논문 전체에 수치 표가 하나도 없습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="세 단계 파이프라인. 프롬프트에서 씬 스펙을 뽑고, 전역 지형을 만들고, 구역별로 오브젝트를 생성해 배치한다. 각 단계 끝에 렌더해서 점검하고 고치는 루프가 붙는다.">
+  <text class="lbl" x="8" y="22">전역 → 구역 → 인스턴스 — 넓은 데서 좁은 데로 내려간다</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="166" y="60" text-anchor="middle">① 의도 분석 · 계획</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">프롬프트에서 명시 제약을 뽑고</text>
+  <text class="cap" x="166" y="104" text-anchor="middle">빠진 건 스키마대로 채운다</text>
+  <path d="M324 76 H342" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="342" y="36" width="316" height="80" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="60" text-anchor="middle">② 전역 지형</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">높이장 = 구역 마스크 × (기준 + 노이즈 + 연산자)</text>
+  <text class="cap" x="500" y="104" text-anchor="middle">봉우리 · 사구 · 계단 · 침식</text>
+  <path d="M658 76 H676" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">③ 구역별 오브젝트</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">렌더 → 분할 → 개별 메시 복원</text>
+  <text class="cap" x="834" y="104" text-anchor="middle">광선 둘을 대응시켜 앉힌다</text>
+  <line class="rule" x1="8" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">⇒ 각 단계 끝에 <tspan class="cap-p">렌더 → 점검 → 수정</tspan> 루프가 붙는다 — 한 번에 만들고 끝내지 않는다</text>
+  <text class="cap" x="8" y="188">부유·관통·불안정 지지를 검출해서 지지 영역만 국소적으로 변형한다</text>
+  <text class="cap cap-i" x="8" y="220">⇒ 그리고 중간 표현이 전부 <tspan class="cap-p">사람이 열어볼 수 있는 형태</tspan>다</text>
+  <text class="cap" x="8" y="244">색으로 인코딩한 배치도 · 에셋 원형 · 구조화 스펙. 블랙박스 한 방 생성과 갈리는 지점이 여기다</text>
+</svg>
+<figcaption>파이프라인 자체는 잘 설계돼 있다. 문제는 이 그림의 근거가 논문 본문뿐이고 돌려볼 수가 없다는 것이다.</figcaption>
+</figure>
+<h2 id="무엇을-하는-물건인가--레포부터-보면">무엇을 하는 물건인가 — 레포부터 보면</h2>
+<p><strong>루트에 파일이 셋입니다.</strong> <code>.gitignore</code>(10바이트), <code>README.md</code>(1,333바이트), 이미지 폴더. <strong>파이썬 파일 0개, 요구사항 파일 0개, 라이선스 파일 0개.</strong> 커밋 2개. 레포 용량 180MB가 <strong>전부 티저와 파이프라인 이미지</strong>입니다.</p>
+<p><strong>README에 설치·사용·로드맵·라이선스 절이 전부 없습니다.</strong> 있는 건 소식·방법론 이미지 한 장·인용 서식뿐입니다. <strong>“곧 공개” 문구조차 없습니다</strong> — 공개 약속 자체가 없는 상태입니다.</p>
+<p><strong>이슈가 한 건 있습니다</strong> — <em>“코드를 커밋 안 했다. 재현할 수 없다.”</em> <strong>메인테이너 응답 0, 라벨 0, 담당자 0.</strong></p>
+<p>⚠ <strong>라이선스 파일이 없다는 건 「자유롭게 쓰라」가 아니라 「전권을 저자가 보유」한다는 뜻입니다.</strong> 이미지 에셋까지 포함해서입니다.</p>
+<h2 id="대표-기법--설계는-잘돼-있다">대표 기법 — 설계는 잘돼 있다</h2>
+<p><strong>세 단계로 좁혀 들어갑니다.</strong> 인스턴스 디테일에 들어가기 전에 <strong>의미와 지형이라는 공유 제약을 먼저 확정</strong>합니다. 그래서 <strong>구역 간 경계가 튀지 않고, 뒤 단계가 앞 단계를 못 깹니다.</strong></p>
+<p><strong>중간 표현이 전부 사람이 열어볼 수 있는 형태</strong>입니다. 색으로 인코딩한 배치도, 에셋 원형 이미지, 구조화 스펙. <strong>중간에서 검사하고 고칠 수 있다는 것</strong>이 블랙박스 한 방 생성과 갈리는 지점입니다.</p>
+<p><strong>높이장을 이름 붙은 변수의 합으로 만듭니다</strong> — 구역 마스크 × (기준 고도 + 노이즈 + 지형 연산자). 연산자는 봉우리·사구·계단·침식입니다. <strong>파라미터가 이름 있는 변수라서 에이전트가 되돌려 고칠 수 있습니다.</strong></p>
+<p><strong>재질은 두 경로를 병행합니다</strong> — 생성 텍스처와 절차적 노드 그래프. 지형처럼 <strong>스케일이 큰 면에서는 생성 텍스처만으로 반복이 드러나기</strong> 때문입니다.</p>
+<p><strong>그리고 각 단계마다 렌더-점검-수정 루프가 붙습니다.</strong> 부유·관통·불안정 지지를 검출해서 <strong>지지 영역만 국소 변형</strong>합니다.</p>
+<h2 id="깨본-결과">깨본 결과</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="레포 실태와 논문의 정량 평가 부재. 코드 파일이 0개이고 이슈 하나가 무응답이며, 제목에 규모를 걸어놓고 수치 표와 사용자 스터디와 생성 시간이 전부 없다. 저자들이 직접 적은 한계는 폐쇄 API 세 종에 묶여 있다는 것이다.">
+  <text class="lbl" x="8" y="22">두 축에서 각각 비어 있다</text>
+  <rect class="vn vn-b" x="8" y="36" width="484" height="98" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="250" y="60" text-anchor="middle">레포 — 코드가 없다</text>
+  <text class="cap" x="250" y="82" text-anchor="middle">루트 파일 3개 · 커밋 2개</text>
+  <text class="cap" x="250" y="102" text-anchor="middle">파이썬 0 · 요구사항 0 · 라이선스 0</text>
+  <text class="cap" x="250" y="122" text-anchor="middle">이슈 "재현 불가" 무응답</text>
+  <rect class="vn vn-b" x="508" y="36" width="484" height="98" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="750" y="60" text-anchor="middle">논문 — 수치가 없다</text>
+  <text class="cap" x="750" y="82" text-anchor="middle">제목에 "at Scale" 을 걸었는데</text>
+  <text class="cap" x="750" y="102" text-anchor="middle">수치 표 · 사용자 스터디 · 생성 시간</text>
+  <text class="cap" x="750" y="122" text-anchor="middle">에셋 개수 · 씬 면적 — 전부 0건</text>
+  <line class="rule" x1="8" y1="156" x2="992" y2="156"/>
+  <text class="cap cap-i" x="8" y="180">⚠ 그리고 저자들이 직접 적은 한계가 결정적이다</text>
+  <text class="cap cap-p" x="8" y="202">"오픈소스 모델로 대체하면 절차적 지형·재질 생성이 실패한다"</text>
+  <text class="cap" x="8" y="226">⇒ 코드가 나와도 폐쇄 API 세 종에 묶여 있다. 기각 근거는 성능 비판이 아니라 저자들의 한계 절 자체다</text>
+</svg>
+<figcaption>비판이 아니라 인용이다. 기각의 근거를 논문 저자들이 자기 한계 절에 직접 써 두었다.</figcaption>
+</figure>
+<p><strong>제목에 규모를 걸어 놓고 정량 평가가 0건입니다.</strong> 수치 표도, 사용자 스터디도, 생성 시간도, 에셋 개수도, 씬 면적도 없습니다. <em>“대규모”</em> 라고 주장하려면 <strong>무엇이 얼마나 큰지</strong>를 대야 하는데 그 자리가 비어 있습니다.</p>
+<p><strong>그리고 저자들이 직접 적은 한계가 결정적입니다</strong> — <em>“오픈소스 모델로 대체하면 절차적 지형·재질 생성이 실패한다.”</em> 즉 <strong>코드가 공개돼도 폐쇄 API 세 종에 묶여</strong> 있습니다. <strong>기각 근거가 제 성능 비판이 아니라 논문 자신의 한계 절</strong>입니다.</p>
+<p>⚠ <strong>공정하게 덧붙이면, 논문과 레포는 다른 물건입니다.</strong> 논문은 아이디어를 발표하는 것이고 코드 공개 의무가 있는 건 아닙니다. 다만 <strong>레포를 만들어 놓고 「재현 불가」 이슈에 답을 안 하는 것</strong>은 별개 문제입니다.</p>
+<h2 id="내-환경에-대봤다">내 환경에 대봤다</h2>
+<p><strong>도입할 게 없습니다</strong> — 받을 코드가 없습니다.</p>
+<p><strong>설계에서 둘을 가져옵니다.</strong></p>
+<p><strong>하나, 중간 표현을 사람이 열어볼 수 있게 둔다.</strong> 제 생성 파이프라인도 중간 산출물을 파일로 남기는데, <strong>그게 검사 가능한 형태냐</strong>는 따로 봐야 합니다. 색으로 인코딩한 배치도처럼 <strong>한눈에 틀린 게 보이는 형태</strong>로 만들면 사후 교정이 훨씬 싸집니다.</p>
+<p><strong>둘, 파라미터를 이름 있는 변수의 합으로 만든다.</strong> 높이장을 <em>“기준 + 노이즈 + 연산자들”</em> 의 가중합으로 두면 <strong>에이전트가 어느 항을 얼마나 바꿀지 말할 수 있습니다.</strong> 결과만 뱉는 함수는 되돌려 고칠 수가 없습니다.</p>
+<h2 id="판정">판정</h2>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>도구 도입</td>
+<td>⛔ <strong>기각.</strong> 받을 코드가 없다</td>
+</tr>
+<tr>
+<td><strong>중간 표현을 검사 가능한 형태로</strong></td>
+<td><strong>채택.</strong> 파일로 남기는 것과 열어볼 수 있는 것은 다르다</td>
+</tr>
+<tr>
+<td><strong>이름 있는 변수의 합으로 파라미터화</strong></td>
+<td><strong>채택.</strong> 되돌려 고칠 수 있는 형태</td>
+</tr>
+<tr>
+<td>논문 수치 인용</td>
+<td>⛔ <strong>금지.</strong> 인용할 수치 자체가 없다</td>
+</tr>
+<tr>
+<td>재개 조건</td>
+<td>코드가 실제로 커밋되고, <strong>폐쇄 API 의존이 풀렸을 때</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈은 이겁니다 — 별 481개가 코드의 존재를 보증하지 않습니다.</strong> 생성 5일 만의 숫자였고, 유입이 검색이 아니라 논문과 SNS였다는 정황이 레포 설정에 남아 있습니다(설명도 주제 태그도 비어 있고 홈페이지만 걸려 있습니다).</p>
+<p>그리고 ⚠ <strong>기각할 때 제 판단보다 저자의 한계 절이 더 강한 근거입니다.</strong> <em>“제가 보기엔 안 될 것 같다”</em> 보다 <em>“저자들이 오픈소스로는 실패한다고 적었다”</em> 가 훨씬 단단하고, <strong>나중에 재개 조건을 쓸 때도 그 문장이 그대로 조건이 됩니다.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

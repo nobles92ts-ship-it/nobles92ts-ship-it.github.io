@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A file management system — Context and memory</title><meta name="description" content="Five conclusions matched a design I'd built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/" aria-current="page"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>A file management system</h1><p class="sum">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</p><div class="meta"><span>5 agree · 3 I missed</span><a class="src" href="https://youtu.be/MM-MPS57qKA" target="_blank" rel="noopener">Source video — youtu.be/MM-MPS57qKA ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-the-video-says">What the video says</a><a href="#what-broke--same-answers-different-reasons">What broke — same answers, different reasons</a><a href="#held-against-my-own-setup--the-half-this-video-cant-cover">Held against my own setup — the half this video can’t cover</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>The value of this piece is arriving at the same answers for entirely different reasons.</strong> A nine-minute video about organising files <strong>agreed with my own folder design on five conclusions.</strong> And <strong>the reasoning does not overlap at all</strong> — he arrives via human factors, <em>“make it complicated and people run away”</em>; I arrived via systems, <em>“a path that depends on a taxonomy breaks.”</em> The video also <strong>named three gaps in my design precisely.</strong> One of them was <strong>a number I had picked with nothing behind it.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="The system's skeleton. Top-level folders are numbered and 99 is reserved for the archive. Date naming has four levels, with a boundary: year and quarter can be found by search, while month and day can only be found if you already know the parent folder.">
+  <text class="lbl" x="8" y="22">the skeleton — five levels deep at most, low numbers for what you use often</text>
+  <rect class="bx-code" x="8" y="36" width="984" height="52" rx="2"/>
+  <text class="bx-t" x="500" y="57" text-anchor="middle">[01] personal · [02] work · [03] reference · [04] temp sharing · [05] backup · [99] archive</text>
+  <text class="bx-s" x="500" y="78" text-anchor="middle">[99] is always reserved for the archive — the home of things you'll never reuse but can't delete</text>
+  <text class="lbl" x="8" y="114">four levels of date naming — with one boundary running through them</text>
+  <rect class="vn vn-b" x="8" y="126" width="484" height="72" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="250" y="150" text-anchor="middle">year · year+quarter</text>
+  <text class="cap" x="250" y="172" text-anchor="middle">findable by search</text>
+  <text class="cap" x="250" y="192" text-anchor="middle">you needn't know the parent folder</text>
+  <rect class="vn vn-a" x="508" y="126" width="484" height="72" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="750" y="150" text-anchor="middle">year+month · full date</text>
+  <text class="cap" x="750" y="172" text-anchor="middle">findable only via the parent folder</text>
+  <text class="cap" x="750" y="192" text-anchor="middle">the finer it gets, the less search helps</text>
+  <text class="cap cap-i" x="8" y="224">⇒ and every file carries <tspan class="cap-p">one standard keyword</tspan> — "project + keyword" hits 90% of the time</text>
+  <text class="cap" x="8" y="244">one of five — document, minutes, worksheet, briefing, template — is always in the name</text>
+</svg>
+<figcaption>The sharpest part of this system is that how precisely you write the date is itself the boundary of findability.</figcaption>
+</figure>
+<h2 id="what-the-video-says">What the video says</h2>
+<p><strong>It starts from a balance</strong> — between <em>“how tidy is it”</em> and <em>“how findable is it.”</em> The ceilings are <strong>five levels deep and ninety-nine folders wide.</strong> The reasoning is simple: <em>“past five, we get lost.”</em></p>
+<p><strong>It opens by openly mocking one numbering scheme.</strong> It puts an official <em>“two digits, decimal point, two digits”</em> rule on screen and says <em>“memorise this not-at-all-complicated numbering system and… wait, where are you going?”</em> <strong>Complicated systems don’t get used</strong> is this video’s consistent axis.</p>
+<p><strong>One folder is his own invention.</strong> <em>“Temp sharing”</em> — a place to isolate the parts you’ve carved out of confidential material to share. <strong>A legitimate temporary home for things that belong nowhere.</strong></p>
+<p><strong>The first of five tips matters most.</strong></p>
+<blockquote>
+<p>Organise by where you’ll use it, not by where you found it.</p>
+</blockquote>
+<p>The other four: <strong>learn your file manager’s search syntax</strong>, <strong>plant keywords in the description field for shared files you can’t rename</strong>, <strong>at most five stars</strong> (<em>“if everything is starred, nothing is”</em>), and <strong>when something is shared with you, choose one of copy, shortcut, or ignore</strong> — a shortcut lets you <strong>file it into your own system without moving the original.</strong></p>
+<p><strong>The conclusion is modest</strong> — <em>“there is no perfect file system. Over-optimising actually costs you productivity. Pick one and stick to it.”</em></p>
+<h2 id="what-broke--same-answers-different-reasons">What broke — same answers, different reasons</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 254" role="img" aria-label="Held against my design, the material split into three groups: five conclusions that agree, three where the answers diverge, and four areas the video never touches.">
+  <text class="lbl" x="8" y="22">held against my design — it split into three groups</text>
+  <rect class="vn vn-b" x="8" y="36" width="316" height="106" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="166" y="60" text-anchor="middle">five that agree</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">reject numbering · don't move originals</text>
+  <text class="cap" x="166" y="102" text-anchor="middle">cap the index · pick one and hold</text>
+  <text class="cap" x="166" y="124" text-anchor="middle">"organise by where you'll use it"</text>
+  <rect class="vn vn-a" x="342" y="36" width="316" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="60" text-anchor="middle">three that diverge</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">depth 5 vs 3 — my reasoning was thin</text>
+  <text class="cap" x="500" y="102" text-anchor="middle">number prefixes — depends on storage</text>
+  <text class="cap" x="500" y="124" text-anchor="middle">tags — my claim was too broad</text>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">four it never touches</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">directories machines use</text>
+  <text class="cap" x="834" y="102" text-anchor="middle">"is this safe to delete"</text>
+  <text class="cap" x="834" y="124" text-anchor="middle">time-series output · automated checks</text>
+  <line class="rule" x1="8" y1="164" x2="992" y2="164"/>
+  <text class="cap cap-i" x="8" y="188">⇒ five conclusions agree and <tspan class="cap-p">not one reason overlaps</tspan> — his is human factors, mine is systems</text>
+  <text class="cap" x="8" y="212">reaching the same point down different roads raises the odds that the point is right</text>
+  <text class="cap" x="8" y="236">⚠ and his own screen shows the system failing — the archive holds folders with duplicate numbers</text>
+</svg>
+<figcaption>Separate agreement, conflict and gaps, and the question stops being "who is right" and becomes "right under which conditions".</figcaption>
+</figure>
+<p><strong>The important conflict is the number prefix.</strong> He uses them. I banned them. <strong>Both are right</strong> — the conditions differ.</p>
+<p>He is on <strong>ID-based storage</strong>. Rename a folder and the links survive. I am on <strong>local absolute paths.</strong> The moment a number enters a path, <strong>the path becomes dependent on the taxonomy.</strong> The same technique is <strong>harmless on one side and fatal on the other.</strong> Folded into a rule: <strong>numbers are fine on ID-based storage and banned on path-based storage.</strong></p>
+<p><strong>And he is paying for it too.</strong> His own screen shows <strong>the archive containing folders with duplicate numbers.</strong> The numbers have lost their meaning. <strong>His system’s failure is captured on his own screen.</strong></p>
+<p><strong>I got two things wrong.</strong> Depth 3 was <strong>a number I picked on instinct</strong>, and his 5 has real usage behind it. But the levels were different — his 5 is document depth, my 3 is root-rule depth. <strong>Correction: root rules at 3, free below that, 5 as the overall recommended ceiling.</strong> And calling tags an anti-pattern was <strong>too broad a statement</strong> — <strong>for things you cannot rename, tags are the only tool available.</strong></p>
+<h2 id="held-against-my-own-setup--the-half-this-video-cant-cover">Held against my own setup — the half this video can’t cover</h2>
+<p><strong>Everything this video addresses is a document a human reads.</strong> No code repositories, no caches, no lock files, no pipeline output. A large share of my working folders are <strong>directories machines use</strong>, so <strong>this video doesn’t cover half of it.</strong></p>
+<p><strong>There is no “is this safe to delete” judgement.</strong> There is a backup folder but no concept of <strong>something being regenerable.</strong> Which is why the archive becomes a graveyard for <em>“things I can’t bring myself to delete”</em> — <strong>he says so himself.</strong> My design asks <em>“can I rebuild this”</em> first, which blocks that graveyard at the source.</p>
+<p><strong>There is no answer for time-series output either.</strong> Dates go only in filenames. <strong>When results accumulate automatically by the hundred or thousand</strong>, a naming convention alone collapses — you have to partition into folders.</p>
+<p><strong>And the only enforcement is human willpower.</strong> <em>“Pick one and stick to it”</em> is all there is. <strong>The result is printed on his screen as disorder.</strong> Without a script that checks the rules, rules decay with time.</p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A temporary home for things that belong nowhere</strong></td>
+<td><strong>adopt.</strong> My temp folder is defined to take only regenerable things, so <strong>anything unclassifiable had nowhere to go</strong></td>
+</tr>
+<tr>
+<td><strong>Cap the index</strong></td>
+<td><strong>adopt.</strong> “If everything is starred, nothing is” — a discipline device my design lacked</td>
+</tr>
+<tr>
+<td><strong>Correct the depth ceiling</strong></td>
+<td><strong>adopt.</strong> Root rules at 3, 5 overall. My 3 had nothing behind it</td>
+</tr>
+<tr>
+<td>Tags as anti-pattern</td>
+<td><strong>corrected.</strong> They must not replace primary structure, but <strong>for things you can’t rename they’re the only tool</strong></td>
+</tr>
+<tr>
+<td>Number prefixes</td>
+<td><strong>still rejected — conditionally.</strong> Fine on ID-based storage, banned on path-based</td>
+</tr>
+<tr>
+<td>Enforcement by willpower</td>
+<td><strong>rejected.</strong> This goes to automated checks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson I paid for here: that the reasons differed mattered more than that the conclusions agreed.</strong> Five matched, and not one reason overlapped. <strong>Reach the same point down different roads and the odds that the point is right go up.</strong></p>
+<p>And ⚠ <strong>a technique that “works for them but not for me” usually has a hidden condition.</strong> The number prefix was exactly that. Stopping at <em>“it works for him, not for me”</em> would have produced no rule; <strong>asking why it splits produced one — the kind of storage.</strong> Find the condition and you get a rule; miss it and you’re left with a preference.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

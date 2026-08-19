@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Silent failures — Loki</title><meta name="description" content="Almost every bug this project produced returned success and did nothing."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/" aria-current="page"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/loki/architecture/"><span class="t"><span>Architecture</span><span class="kpi">1 adapter</span></span><span class="s">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</span></a><a href="/en/built/loki/commands/"><span class="t"><span>Commands</span><span class="kpi">11 of them</span></span><span class="s">How much you can ask for through a chat box — and the two that changed how it feels.</span></a><a href="/en/built/loki/permissions/"><span class="t"><span>Permissions and guards</span><span class="kpi">3 tiers</span></span><span class="s">Opening an agent with shell access on your own PC to other people. And stopping is a feature.</span></a><a href="/en/built/loki/silent-failures/" aria-current="page"><span class="t"><span>Silent failures</span><span class="kpi">0 errors</span></span><span class="s">Almost every bug this project produced returned success and did nothing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">public</span></div><h1>Silent failures</h1><p class="sum">Almost every bug this project produced returned success and did nothing.</p><div class="meta"><span>0 errors</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#returning-success-while-doing-nothing">Returning success while doing nothing</a><a href="#read-the-structure-not-the-string">Read the structure, not the string</a><a href="#a-liveness-check-can-kill-the-thing-it-checks">A liveness check can kill the thing it checks</a><a href="#i-gave-up-on-one-piece-of-automatic-detection">I gave up on one piece of automatic detection</a><a href="#the-tests-were-editing-live-state">The tests were editing live state</a></nav><div class="prose"><p>Lining up the bugs collected while bolting features on, <strong>almost all of them had the same shape.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 252" role="img" aria-label="Two paths leave a bug. The ordinary failure throws, leaves a stack trace, and gets noticed. This project's failures return success, hand back an empty result, and leave clean logs, so they go undetected for weeks.">
+  <rect class="bx-code" x="10" y="90" width="104" height="52" rx="2"/>
+  <text class="bx-t" x="62" y="121" text-anchor="middle">A bug</text>
+  <text class="lbl" x="130" y="44">ORDINARY</text>
+  <text class="lbl" x="130" y="240">THIS PROJECT</text>
+  <g>
+    <rect class="bx-code" x="196" y="56" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="271" y="86" text-anchor="middle">Exception</text>
+    <text class="bx-s" x="271" y="105" text-anchor="middle">throw</text>
+    <rect class="bx-code" x="380" y="56" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="455" y="86" text-anchor="middle">Stack trace</text>
+    <text class="bx-s" x="455" y="105" text-anchor="middle">it's in the log</text>
+    <rect class="bx-code" x="564" y="56" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="639" y="86" text-anchor="middle">You notice</text>
+    <text class="bx-s" x="639" y="105" text-anchor="middle">then you fix it</text>
+    <path d="M114 100 H196 M346 87 H380 M530 87 H564" stroke="#0C0D10" stroke-width="1.5"/>
+  </g>
+  <g>
+    <rect class="bx-llm" x="196" y="156" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="271" y="186" text-anchor="middle">Returns success</text>
+    <text class="bx-s" x="271" y="205" text-anchor="middle">ok: true</text>
+    <rect class="bx-llm" x="380" y="156" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="455" y="186" text-anchor="middle">Empty result</text>
+    <text class="bx-s" x="455" y="205" text-anchor="middle">zero errors</text>
+    <rect class="bx-llm" x="564" y="156" width="150" height="62" rx="2"/>
+    <text class="bx-t" x="639" y="186" text-anchor="middle">Logs look fine</text>
+    <text class="bx-s" x="639" y="205" text-anchor="middle">nobody knows</text>
+    <path d="M114 130 V187 H196 M346 187 H380 M530 187 H564" stroke="#0C0D10" stroke-width="1.5" fill="none"/>
+  </g>
+  <text class="lbl" x="756" y="92">one hour</text>
+  <text class="lbl" x="756" y="192">weeks</text>
+</svg>
+<figcaption>Failures that throw are easy. This program's failures returned success and did nothing.</figcaption>
+</figure>
+<h2 id="returning-success-while-doing-nothing">Returning success while doing nothing</h2>
+<p>Someone running a fork sent three issues with diagnoses and patches attached, and all three were exactly this.</p>
+<p><strong>Decimal places</strong> — Slack’s history API, given a timestamp with more than six decimals, doesn’t error. It returns <strong><code>ok: true</code> and an empty list.</strong> Python’s <code>time.time()</code> usually gives seven. So reading channel context ran on empty history for weeks. Auditing every call site, this was <strong>the only place</strong> passing a float through — and that one place silently disabled an entire feature.</p>
+<p><strong>Deny beats allow</strong> — the <a href="/en/built/loki/permissions/">guest fence</a> blanket-denies other drives, so if the work folder lives on one of them, <strong>every allowlisted path dies.</strong> The only message you get is “permission denied,” which reads like a broken allowlist rather than a broken fence.</p>
+<p><strong>Aliases that save and never fire</strong> — the name-collision check hardcoded the shipped command names, so plugin commands were invisible to it. Saving succeeds. Calling it does nothing.</p>
+<h2 id="read-the-structure-not-the-string">Read the structure, not the string</h2>
+<p>This one started as a broken command and ended as a new feature.</p>
+<p>A human typing <code>!usage</code> into the Slack composer worked fine. But when <strong>a session on another machine sent it through the connector</strong>, every command missed. Slack appends an attribution to the end of the message text — on the same line, no newline.</p>
+<p>The symptom split two ways. Anchored commands failed to match at all and <strong>leaked through to the model</strong> (which duly replied “there’s no such command”), while looser ones matched with <strong>contaminated arguments.</strong></p>
+<p>My first move was to strip that phrase. <strong>Wrong approach — the attribution is translated into the workspace language.</strong> Korean, English, Japanese all arrive differently. Matching on words breaks the moment someone runs it in another locale.</p>
+<p>The answer wasn’t in the string but in <strong>the structure Slack already handed over.</strong> The attribution isn’t mixed into the body; it’s a separate trailing block, and the human’s own text stays intact next to it. And <strong>a human physically cannot produce that block from the composer</strong> — which means there are no false positives, by construction.</p>
+<p>Here’s the feature that came out of the fix. A session on another machine posts to Slack <strong>as me</strong>, and the Loki on this PC runs it and replies in the thread. Because it’s a human account rather than a bot, no second Slack app is required.</p>
+<h2 id="a-liveness-check-can-kill-the-thing-it-checks">A liveness check can kill the thing it checks</h2>
+<p>While building the watchdog, I wrote the worker-alive check as <code>os.kill(pid, 0)</code>. On Unix that’s the idiom — signal 0 sends nothing and only asks whether the process exists.</p>
+<p><strong>Windows Python implements that as process termination.</strong> Signal 0 included. The liveness check kills the worker.</p>
+<p>Replaced with a read-only query. There was one more trap in the same family: a restart once raced the five-minute watchdog and left <strong>three workers</strong> attached. Three sockets on one token means events get split. But the health check reads a single recorded pid, so it <strong>reports everything normal.</strong></p>
+<p>Detection now goes by <strong>process lineage, not count.</strong> Counting can’t work here: the launch method legitimately produces a parent and a child, so neither “two is wrong” nor “it must be one” holds.</p>
+<h2 id="i-gave-up-on-one-piece-of-automatic-detection">I gave up on one piece of automatic detection</h2>
+<p>I tried twice to automatically detect “this conversation is spinning in place” and wire it into <a href="/en/built/loki/commands/">the nudges</a>. Both attempts failed. They measured lexical novelty.</p>
+<p>The reason for rejecting it wasn’t a tuning failure — it was <strong>the measurement itself.</strong> The novelty range of a conversation that’s genuinely progressing <strong>overlaps</strong> with the range of one restating the same deadlock in new words. No threshold separates them.</p>
+<p>The reason is structural. “A new question on the same topic” and “the same deadlock, rephrased” <strong>use the same words.</strong> Tuning a threshold until three examples pass is overfitting, not evidence.</p>
+<p>So I went instead to <strong>things that need to understand nothing</strong> — a per-hour request cap, a cost ceiling, an explicit command to end a conversation. The cost figure was already arriving in the response and being thrown away.</p>
+<h2 id="the-tests-were-editing-live-state">The tests were editing live state</h2>
+<p>Burned twice by the same class. Each module <strong>binds its state path at import time</strong>, so unless the test setup blocks them one by one, live files get edited.</p>
+<p>The actual incident: an adapter test flowed a channel message through, that <strong>wrote to the live state file</strong>, and a warning I had just built silently switched off in production. <strong>Every test passed.</strong></p>
+<p>Now all seventeen state paths get redirected wholesale. And <strong>adding a new state file means adding it to that list</strong> — this is the kind of thing the person who built it forgets, not the next person.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

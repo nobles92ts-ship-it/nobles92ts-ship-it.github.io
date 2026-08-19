@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>그래프 엔지니어링 — 컨텍스트와 기억</title><meta name="description" content="영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/" aria-current="page"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>그래프 엔지니어링</h1><p class="sum">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</p><div class="meta"><span>8종 중 순증 1</span><a class="src" href="https://www.youtube.com/watch?v=SBLDc4R1d_E" target="_blank" rel="noopener">원본 영상 — youtube.com/watch?v=SBLDc4R1d_E ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-말한-영상인가">무엇을 말한 영상인가</a><a href="#깨본-결과">깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>영상이 그래프의 핵심이라고 부른 기능은, 제 52개 런에서 발동 조건이 한 번 나왔습니다.</strong> 14분짜리 개념 강의가 LLM 활용 기법의 계보를 <strong>프롬프트 → 컨텍스트 → 루프 → 그래프</strong> 네 단계로 세우고 마지막 단계를 설명합니다. 정리는 깔끔한데, 여덟 요소를 제 <a href="/ko/built/tc-team/">테스트 케이스 파이프라인</a>에 대고 세어 보니 <strong>일곱은 이미 코드로 들어가 있었고</strong>, 안 갖고 있던 <strong>병렬 실행 하나만이 실측상 진짜 이득</strong>이었습니다 — 실제 런 8건의 로그를 다시 분석해 <strong>런당 중앙값 9.9분</strong>이 나왔습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="영상이 쓰는 어휘. 그래프를 노드·엣지·상태·조건 넷으로만 설명하고, 패턴도 라우터·병렬·생성과 평가·사람 승인 넷으로 제한한다. 실질적 주장은 애매한 판단은 AI에게 확정 규칙은 코드에게 맡기라는 하나다.">
+  <text class="lbl" x="8" y="22">그래프를 넷으로만 설명한다 — 그리고 패턴도 넷으로 제한한다</text>
+  <rect class="vn vn-a" x="8" y="36" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="128" y="60" text-anchor="middle">노드</text>
+  <text class="cap" x="128" y="82" text-anchor="middle">작업 하나</text>
+  <rect class="vn vn-a" x="256" y="36" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="376" y="60" text-anchor="middle">엣지</text>
+  <text class="cap" x="376" y="82" text-anchor="middle">다음 작업으로 가는 길</text>
+  <rect class="vn vn-a" x="504" y="36" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="624" y="60" text-anchor="middle">상태</text>
+  <text class="cap" x="624" y="82" text-anchor="middle">작업 간 전달 정보</text>
+  <rect class="vn vn-a" x="752" y="36" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="872" y="60" text-anchor="middle">조건</text>
+  <text class="cap" x="872" y="82" text-anchor="middle">경로 결정 규칙</text>
+  <text class="lbl" x="8" y="128">패턴 넷 — "나머지는 굳이 이름 붙일 필요 없다"</text>
+  <rect class="vn vn-a" x="8" y="142" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="128" y="166" text-anchor="middle">라우터</text>
+  <text class="cap" x="128" y="188" text-anchor="middle">조건 따라 분배</text>
+  <rect class="vn vn-b" x="256" y="142" width="240" height="66" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="376" y="166" text-anchor="middle">병렬</text>
+  <text class="cap" x="376" y="188" text-anchor="middle">동시 실행 후 합류</text>
+  <rect class="vn vn-a" x="504" y="142" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="624" y="166" text-anchor="middle">생성 ↔ 평가</text>
+  <text class="cap" x="624" y="188" text-anchor="middle">만들고 검증하고 되돌린다</text>
+  <rect class="vn vn-a" x="752" y="142" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="872" y="166" text-anchor="middle">사람 승인</text>
+  <text class="cap" x="872" y="188" text-anchor="middle">"가장 중요한 요소"</text>
+  <text class="cap cap-i" x="8" y="238">⇒ 실질적 주장은 하나다 — <tspan class="cap-p">애매한 판단은 AI 에게, 반드시 지켜야 하는 규칙은 코드에게</tspan></text>
+</svg>
+<figcaption>파란 칸이 제가 유일하게 안 갖고 있던 것이다. 나머지 일곱은 이미 코드로 들어가 있었다.</figcaption>
+</figure>
+<h2 id="무엇을-말한-영상인가">무엇을 말한 영상인가</h2>
+<p><strong>순수 개념 강의입니다.</strong> 코드 0줄, 실행 데모 0회, 프레임워크 이름 0건. <strong>시장조사 기획이라는 가상 과제 하나</strong>를 (a) 단일 에이전트에 통째로 던지는 방식과 (b) 그래프로 쪼개는 방식으로 두 번 풀어 대비시키는 게 구성의 축입니다.</p>
+<p><strong>단일 에이전트의 한계를 짚는 대목이 정확합니다.</strong> 계획·검색·해석·검증이 <strong>한 상자 안에 있으면 결과가 틀렸다는 것만 알 수 있습니다</strong> — 어디서 틀렸는지는 모릅니다. 그래프로 쪼개는 이유가 여기서 나옵니다.</p>
+<p><strong>노드마다 수치화된 완료 조건을 붙이라고 합니다.</strong> 경쟁사 최소 10개, 시장 규모는 출처 필수, 사용자 의견 최소 20개. 그리고 <strong>그 판단을 누가 하는지를 성격으로 가릅니다</strong> — <code>경쟁사 ≥ 10</code> 은 코드가, <em>“어느 시장이 더 매력적인가”</em> 는 AI나 사람이.</p>
+<p><strong>적용 금지 구간을 따로 슬라이드로 뗀 게 드뭅니다.</strong> 툴 호출 한두 번이면 끝나는 일에 그래프를 쓰지 말라고 합니다 — <strong>구조 복잡도와 디버깅 지점과 비용이 늘고 “토큰이 그냥 녹는다”</strong> 고. 개념 강의가 자기 주제의 안 쓰는 조건을 말하는 경우는 많지 않습니다.</p>
+<h2 id="깨본-결과">깨본 결과</h2>
+<p><strong>“새로운 트렌드”가 아닙니다.</strong> 노드·엣지·조건부 엣지·상태로 작업 흐름을 짜는 건 <strong>워크플로 엔진의 수십 년 된 모델 그대로</strong>입니다. 영상 자신도 후반에 <em>“사실 개발자들과 늘 공존해온 패턴”</em> 이라고 인정하는데, <strong>제목과 도입부는 새 유행어로 팝니다.</strong></p>
+<p><strong>계보 서사가 앞뒤로 어긋납니다.</strong> 도입부 나레이션은 각 단계가 이전 단계의 <strong>상위 버전</strong>이라고 말하는데, 후반 슬라이드는 정반대로 <strong>동심원</strong>을 그립니다. 후자가 맞습니다 — <strong>프롬프트가 나쁜 그래프는 여전히 나쁩니다.</strong> 앞부분만 보고 <em>“이제 프롬프트는 안 중요하다”</em> 로 읽으면 오독입니다.</p>
+<p><strong>루프와 그래프의 구분이 공학적 구분이 아닙니다.</strong> 근거로 든 게 이름뿐입니다 — <em>“계속 도는 것”</em> vs <em>“노드와 엣지”</em>. <strong>루프는 역방향 엣지가 하나 있는 그래프</strong>라서 이 대비는 성립하지 않습니다. 영상이 실제로 짚으려던 차이는 <strong>제어 흐름이 에이전트 머릿속에 암묵적으로 있느냐, 밖에 명시적으로 있느냐</strong>인데 그 문장이 끝까지 안 나옵니다.</p>
+<p><strong>비용 주장이 자기모순입니다.</strong> <em>“AI를 덜 써서 돈을 아낀다”</em> 와 <em>“에이전트가 늘어 토큰이 그냥 녹는다”</em> 가 1분 간격으로 나옵니다. 둘 다 참일 수 있는데 <strong>어느 조건에서 어느 쪽인지를 말하지 않아</strong> 비용 논의가 방향 없이 남습니다.</p>
+<p><strong>그리고 그래프의 실패 모드가 통째로 빠졌습니다.</strong> <em>“디버깅 지점이 는다”</em> 한 줄이 전부입니다. 무한 재시도, 상태 비대, 부분 실패와 멱등성, <strong>되돌렸을 때 이미 쓴 비용은 회수가 안 된다는 것</strong> — 실제로 그래프를 운영할 때 사람을 잡는 것들이 하나도 없습니다.</p>
+<p><strong>검증 가능한 것이 0건입니다.</strong> 출처 0, 코드 0, 실행 0. 수치 주장은 화면의 <code>AI 노드 5개 · 런당 $2.40</code> 딱 하나인데 <strong>모델명도 토큰 수도 「1 런」의 정의도 없습니다.</strong> 애니메이션 소품에 가까워서 근거로 인용할 수 없습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 254" role="img" aria-label="영상의 여덟 요소를 내 파이프라인에 대조한 결과. 여섯은 이미 코드로 들어가 있었고, 병렬 실행 하나만 순증이며 실측으로 런당 중앙값 9.9분 단축이 확인됐다. 영상이 핵심이라 부른 되돌림 엣지는 52개 런에서 한 번만 조건이 나왔다.">
+  <text class="lbl" x="8" y="22">여덟 요소를 내 파이프라인에 대고 셌다</text>
+  <rect class="vn vn-a" x="8" y="36" width="984" height="60" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="500" y="58" text-anchor="middle">이미 코드로 들어가 있던 것 — 일곱</text>
+  <text class="cap" x="500" y="80" text-anchor="middle">7노드 분할 · 파일 계약으로 상태 전달 · 노드별 코드 게이트 4종 · 생성↔평가 · 사람 승인 · 하위 루프 · AI 최소화</text>
+  <rect class="vn vn-b" x="8" y="104" width="984" height="72" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="126" text-anchor="middle">순증 하나 — 병렬 실행</text>
+  <text class="cap" x="500" y="148" text-anchor="middle">적대 리뷰 3렌즈를 병렬로 돌리면 런당 중앙값 9.9분 단축</text>
+  <text class="cap" x="500" y="170" text-anchor="middle">실제 런 8건의 로그를 다시 분석해 얻은 값이다 — 총 런 시간의 8~9%</text>
+  <line class="rule" x1="8" y1="190" x2="992" y2="190"/>
+  <text class="cap cap-i" x="8" y="214">⚠ 영상이 <tspan class="cap-p">「그래프의 핵심」</tspan>이라 부른 것은 실측으로 기각됐다</text>
+  <text class="cap" x="8" y="238">실패하면 그 노드로 되돌아가기 — 내 52개 런에서 발동 조건이 단 1번 나왔다</text>
+</svg>
+<figcaption>대조표를 만들면 "좋은 개념"과 "내게 이득인 것"이 갈린다. 이 둘은 같은 줄에 있지 않았다.</figcaption>
+</figure>
+<h2 id="내-환경에-대봤다">내 환경에 대봤다</h2>
+<p><strong>노드 분할·상태 전달·노드별 코드 규칙은 형태만 다르지 같은 자리에 있었습니다.</strong> 상태는 단일 객체가 아니라 <strong>파일 계약</strong>입니다 — 작업 폴더에 json 30종이 누적되고 다음 노드가 그것만 봅니다. 노드별 규칙은 게이트 4종이 한 런에서 여덟 번 호출됩니다. 영상이 <em>“<code>경쟁사 ≥ 10</code> 은 코드로”</em> 라고 말한 바로 그 자리입니다.</p>
+<p><strong>생성↔평가는 제 쪽이 제일 활발합니다.</strong> 청크 재시도, 열 위반 교정, 게이트 교정 1라운드, 렌즈 산출 검증 재시도 — <strong>52개 런 중 36건이 실제로 발동</strong>했습니다.</p>
+<p><strong>그런데 영상이 그래프의 핵심이라 부른 것은 안 씁니다.</strong> <em>“검증 실패 시 어느 노드로 돌아갈지를 그래프에 미리 적어 둔다”</em> — 제 로그에서 <strong>그 조건이 발동한 건 52개 런 중 1번</strong>이었습니다. 이유는 명확합니다. 제 파이프라인은 <strong>되돌아가는 대신 그 자리에서 교정</strong>하기 때문입니다. 되돌리면 앞 노드가 이미 쓴 비용이 통째로 날아갑니다 — <strong>영상이 안 다룬 실패 모드가 바로 그것</strong>입니다.</p>
+<p><strong>남은 하나가 병렬 실행이었고, 이건 실측했습니다.</strong> 적대 리뷰 단계에서 렌즈 셋을 순차로 돌리고 있었는데, 실제 런 8건의 로그를 다시 분석하니 <strong>병렬로 바꾸면 런당 중앙값 9.9분</strong>이 줄어듭니다. 총 런 시간의 8~9%입니다.</p>
+<h2 id="판정">판정</h2>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>병렬 실행</strong></td>
+<td><strong>채택.</strong> 실측 근거가 있는 유일한 순증 — 런당 9.9분</td>
+</tr>
+<tr>
+<td>노드 분할 · 상태 전달 · 노드별 코드 규칙</td>
+<td><strong>이미 있음.</strong> 형태만 다르다</td>
+</tr>
+<tr>
+<td>생성 ↔ 평가</td>
+<td><strong>이미 있음.</strong> 제 쪽이 더 활발하다</td>
+</tr>
+<tr>
+<td>사람 승인 게이트</td>
+<td><strong>이미 있음</strong></td>
+</tr>
+<tr>
+<td><strong>조건부 되돌림 엣지</strong></td>
+<td><strong>기각.</strong> 52개 런 중 발동 1회. 되돌리면 앞 비용이 날아간다</td>
+</tr>
+<tr>
+<td>라우터 · 단일 상태 객체</td>
+<td><strong>기각.</strong> 파일 계약이 이미 그 자리를 채우고 있다</td>
+</tr>
+<tr>
+<td>영상을 근거로 인용</td>
+<td>⛔ <strong>금지.</strong> 출처 0 · 코드 0 · 실행 0 · 수치 1건(근거 없음)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈은 이겁니다 — 개념이 맞다는 것과 내게 이득이라는 것은 다른 문제입니다.</strong> 여덟 요소 전부 개념적으로는 옳았습니다. 그런데 <strong>일곱은 이미 있었고, 영상이 제일 강조한 하나는 제 로그에서 죽어 있었고, 실제 이득은 영상이 지나가듯 언급한 하나</strong>에 있었습니다.</p>
+<p><strong>그리고 그 차이는 개념으로는 절대 안 갈립니다.</strong> 52개 런의 로그를 다시 읽어야 나옵니다. 남의 정리를 읽고 <em>“우리도 이거 해야겠다”</em> 로 끝냈으면, <strong>저는 발동 1회짜리 기능을 만드느라 시간을 쓰고 9.9분짜리는 놓쳤을 겁니다.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

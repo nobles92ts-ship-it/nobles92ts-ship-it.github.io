@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>패턴 초식 무협 액션 · 기획서 (GDD v0.6)</title>
+<style>
+  :root{
+    /* v0.5: 무협 시대 톤 강화 */
+    --bg:#1a1610; --panel:#2a2218; --panel2:#332820; --ink:#e8ddc8; --mute:#a09078;
+    --paper:#e8dcb8;        /* 한지색 */
+    --ink-black:#1a1610;    /* 먹색 */
+    --vermillion:#a83a2a;   /* 주칠 (붉은 옻칠) */
+    --gold:#c8a04a;         /* 누런 황금 (옛 동전색) */
+    --bamboo:#5a6a3a;       /* 대나무 */
+    --silk-red:#7a2a2a;     /* 비단 진홍 */
+    --accent:#c8a04a; --accent2:#7ec5ff;
+    --danger:#c84a3a; --ok:#7a9a5a; --line:#4a3a28;
+    --red:#c84a3a; --blue:#7eb5d8; --green:#7a9a5a;
+    --purple:#9a7aaa; --pink:#d89aaa; --orange:#d89a4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Pretendard","Segoe UI","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;display:flex;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(200,160,74,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(168,58,42,0.04) 0%, transparent 50%);}
+  nav.toc{position:sticky;top:0;height:100vh;width:260px;background:#15110a;
+    border-right:2px solid var(--gold);padding:24px 18px;overflow-y:auto;flex-shrink:0;
+    box-shadow:inset 0 0 30px rgba(0,0,0,0.5);}
+  nav.toc h3{color:var(--gold);font-size:13px;margin:0 0 12px;letter-spacing:2px;
+    font-family:'나눔명조',serif;border-bottom:1px solid var(--line);padding-bottom:8px;}
+  nav.toc a{display:block;color:#c8b898;text-decoration:none;font-size:13px;
+    padding:6px 10px;border-radius:4px;margin-bottom:2px;border-left:2px solid transparent;}
+  nav.toc a:hover{background:#2a2218;border-left-color:var(--vermillion);color:var(--gold);}
+  nav.toc .new{color:var(--ok);font-weight:bold;}
+  .container{flex:1;max-width:1100px;padding:0;}
+  header{padding:48px 32px 32px;border-bottom:3px double var(--gold);
+    background:linear-gradient(135deg,#3a2218 0%,#2a1f15 50%,#1a1610 100%);
+    position:relative;}
+  header::before{content:'武俠';position:absolute;top:20px;right:30px;
+    font-family:'나눔명조',serif;font-size:80px;color:rgba(200,160,74,0.08);font-weight:bold;}
+  header h1{margin:0;font-size:32px;color:var(--gold);font-family:'나눔명조',serif;letter-spacing:1px;}
+  header .sub{color:var(--mute);margin-top:8px;font-size:14px;}
+  header .tags{margin-top:16px;}
+  header .tags span{display:inline-block;background:#2a2218;color:var(--gold);
+    padding:4px 12px;border-radius:0;font-size:12px;margin:2px 4px 2px 0;border:1px solid var(--gold);}
+  main{padding:32px;}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:4px;
+    padding:24px 28px;margin-bottom:20px;scroll-margin-top:20px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.3);position:relative;}
+  section h2{margin:0 0 16px;font-size:22px;color:var(--gold);
+    border-left:4px solid var(--vermillion);padding-left:12px;font-family:'나눔명조',serif;}
+  section h3{font-size:17px;color:#d8c898;margin:24px 0 10px;
+    border-bottom:1px dashed var(--line);padding-bottom:6px;font-family:'나눔명조',serif;}
+  section h4{font-size:14px;color:#c8b898;margin:14px 0 6px;}
+  p,li{font-size:14px;color:#d8ccb0;}
+  ul,ol{padding-left:22px;}
+  code{background:#1a1410;color:var(--gold);padding:2px 6px;border-radius:2px;font-size:13px;
+    border:1px solid #3a2818;}
+  pre{background:#1a1410;padding:14px;border-radius:4px;overflow-x:auto;
+    border:1px solid var(--line);font-size:13px;color:#d8ccb0;}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:#3a2818;color:var(--gold);font-weight:600;font-family:'나눔명조',serif;}
+  tr:nth-child(even) td{background:#2a2014;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .card{background:var(--panel2);border:1px solid var(--line);padding:14px 16px;border-radius:4px;}
+  .card h4{margin-top:0;color:var(--gold);}
+  .card.blue{border-left:3px solid var(--blue);}
+  .card.red{border-left:3px solid var(--red);}
+  .card.purple{border-left:3px solid var(--purple);}
+  .card.green{border-left:3px solid var(--green);}
+  .card.gold{border-left:3px solid var(--gold);}
+  .card.pink{border-left:3px solid var(--pink);}
+  .card.vermillion{border-left:3px solid var(--vermillion);}
+  .badge{display:inline-block;padding:1px 8px;border-radius:2px;font-size:11px;background:#3a2818;color:var(--gold);border:1px solid var(--line);}
+  .badge-red{background:#5a1a1a;color:#e89b9b;border:1px solid #7a2a2a;}
+  .badge-blue{background:#1a2a4a;color:#9bc9ff;border:1px solid #2a4a7a;}
+  .badge-purple{background:#3a1a4a;color:#c89bff;border:1px solid #5a2a6a;}
+  .badge-green{background:#2a4a2a;color:#9bcf9b;border:1px solid #3a6a3a;}
+  .badge-gold{background:#3a2a1a;color:var(--gold);border:1px solid #5a3a2a;}
+  .badge-new{background:#2a4a2a;color:#9bcf9b;border:1px solid #3a6a3a;font-weight:bold;}
+  .changelog{background:#2a4a2a;border-left:3px solid var(--ok);
+    padding:10px 14px;border-radius:2px;margin:6px 0;font-size:13px;color:#d8e8c8;}
+  .info{background:#1a3a4a;border-left:3px solid var(--accent2);
+    padding:10px 14px;border-radius:2px;margin:8px 0;font-size:13px;color:#c8e0e8;}
+  .warn{background:#4a2a1a;border-left:3px solid var(--vermillion);
+    padding:10px 14px;border-radius:2px;margin:8px 0;font-size:13px;color:#e8c8b8;}
+  /* 키 캡 스타일 */
+  .keycap{display:inline-block;min-width:28px;padding:4px 8px;text-align:center;
+    background:linear-gradient(180deg,#3a2818,#2a1c10);color:var(--gold);
+    border:2px solid var(--gold);border-radius:4px;font-weight:bold;
+    font-family:'Cascadia Mono',monospace;box-shadow:0 2px 4px rgba(0,0,0,0.5);
+    font-size:13px;margin:0 2px;}
+  /* 죽간 헤더 효과 */
+  .bamboo-title{display:inline-block;padding:6px 16px;background:linear-gradient(180deg,#5a3a1a,#3a2810);
+    color:var(--gold);border-radius:0;font-family:'나눔명조',serif;letter-spacing:2px;
+    border-left:3px solid var(--vermillion);border-right:3px solid var(--vermillion);}
+  footer{padding:24px;text-align:center;color:var(--mute);font-size:12px;
+    border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<nav class="toc">
+  <h3>目 次</h3>
+  <a href="#cl" class="new">v0.6 변경 내역</a>
+  <a href="#s1">一. 컨셉</a>
+  <a href="#s2">二. 세계관 (7대 분류)</a>
+  <a href="#s2h">三. 주인공·황자 서사</a>
+  <a href="#s2d">四. 신물·봉신 시스템</a>
+  <a href="#s3">五. 스토리 개요</a>
+  <a href="#s4">六. 일반 게임플레이</a>
+  <a href="#s5" class="new">七. 전투 화면 UI (무협 톤)</a>
+  <a href="#s6" class="new">八. 조작 체계 (마우스 + 1/2/3/Shift)</a>
+  <a href="#s7" class="new">九. 문파·초식 체계 (44초식)</a>
+  <a href="#s8">十. 성장 시스템</a>
+  <a href="#s9">十一. 콘텐츠 진행</a>
+  <a href="#s10" class="new">十二. 아트 (무협 시대 톤)</a>
+  <a href="#s11">十三. 기술 설계 (3D URP)</a>
+  <a href="#s12">十四. 확장성 가이드</a>
+  <a href="#s13">十五. 마일스톤</a>
+  <a href="#s14">十六. 작업 지시 템플릿</a>
+  <a href="#s15">十七. 백로그</a>
+  <a href="#s16">관련 문서</a>
+</nav>
+
+<div class="container">
+
+<header>
+  <h1>패턴 초식 무협 액션 · 기획서 (GDD v0.6)</h1>
+  <div class="sub">작업명: <code>WuxiaPatternAction</code> · 엔진: Unity 6.x 3D URP + Toon · 플랫폼: PC + 모바일 가로</div>
+  <div class="sub" style="margin-top:6px;color:var(--gold);">필체로 그리는 초식 · 계열 선택 발경 · 파훼 4순환 · 죽간과 먹의 무협 시대</div>
+  <div class="tags">
+    <span>#한국형신무협</span><span>#붓궤적</span><span>#마우스발경</span><span>#파훼상성</span><span>#죽간먹한지</span>
+    <span>#무극지체</span><span>#봉신시스템</span><span>#3D셀룩</span>
+  </div>
+</header>
+
+<main>
+
+<section id="cl">
+  <h2>v0.6 변경 내역 <span class="badge-new">2026-08-15</span></h2>
+
+  <div class="warn">⚠ <b>이 개정의 이유</b>: v0.5(2026-05-25)가 실제 데이터·코드(2026-08-12)보다 <b>두 달 뒤처져 있었다.</b>
+  <b>기획이 바뀌면 같은 작업 안에서 기획서도 고친다.</b> 폐기된 것은 남겨두지 않고 지운다 — 남겨두면 다음 사람이 그걸 구현한다.</div>
+
+  <div class="warn">🔴 <b>v0.6 초판(2026-08-15 오전)의 오류 — 같은 날 정정</b>:
+  초판은 발경 키를 «ZXCV → QWAS»로 바꿨는데 <b>그것이 틀렸다.</b>
+  <code>Q·W·A·S</code>는 <b>키가 아니라 <code>enum SkillKey</code>의 식별자 이름</b>이다.
+  <code>Doors.InputHint</code>가 정본이며 <b>플레이어 입력은 1·2·3·Shift</b>다.
+  «문서 ZXCV vs 코드 QWAS»는 <b>층위가 다른 둘을 맞세운 오진</b>이었다 — <code>PROJECT_LOG</code> L51이 이미 그렇게 경고해 두었는데 놓쳤다.</div>
+
+  <div class="changelog">✅ <b>조작 체계를 코드에서 재추출</b>: 패턴은 <b>마우스·터치</b>로 긋고,
+  계열은 <span class="keycap">1</span> 검 · <span class="keycap">2</span> 권 · <span class="keycap">3</span> 장 · <span class="keycap">Shift</span> 보로 고른다(<code>Doors.InputHint</code>).
+  <b>v0.5의 ZXCV 발경 배치는 폐기됐고, QWAS도 키가 아니다.</b> 문서에서 둘 다 키로 쓰지 않는다.</div>
+
+  <div class="changelog">✅ <b>28초식 → 44초식</b>: 7패턴 → <b>11패턴 × 4계열</b>. 추가 4패턴 <code>ㄱ</code> <code>N</code> <code>ㄷ</code> <code>◇</code>.
+  §9.2 매트릭스를 <code>Skills.csv</code>(44행)에서 다시 뽑았고 Tier 수치표를 추가했다.</div>
+
+  <div class="changelog">✅ <b>문(門) 선택 조작 명문화</b>: <span class="keycap">1</span> <span class="keycap">2</span> <span class="keycap">3</span> <span class="keycap">Shift</span> — v0.5에 아예 기재가 없었다.</div>
+
+  <div class="changelog">✅ <b>§9.4 파훼(破) 상성 체계 신설</b>: 적도 초식을 쓴다. 4순환 상성 + 판정 3수치 + 전조 시간 + 등급별 배분.
+  v0.5 이후 구현·확정된 것이 문서에 한 줄도 없었다.</div>
+
+  <div class="changelog">✅ 관련 문서 목록의 로컬 절대경로 제거 (문서는 저장소 기준 상대 이름으로만 가리킨다)</div>
+
+  <h3>v0.5에서 넘어온 것 (2026-05-25)</h3>
+  <div class="changelog">✅ <b>전체 디자인 톤 → 무협 시대</b>: 죽간(竹簡)·먹(墨)·한지(韓紙)·주칠(朱漆) 색조. (한지색 #e8dcb8 / 먹색 #1a1610 / 주칠 #a83a2a / 옛 동전 황금 #c8a04a)</div>
+  <div class="changelog">✅ <b>패턴 입력 = 붓 궤적</b>: <b>먹빛 잉크가 한지에 스며드는 붓 궤적</b>. 두께 자연 변화 + 잉크 번짐 + 끝부분 흩어짐.</div>
+  <div class="changelog">✅ 문서 인덱스 한자(目次/一二三..), 죽간 헤더 효과, 한자 大제목 폰트 (나눔명조)</div>
+</section>
+
+<section id="s1">
+  <h2>一. 한 줄 컨셉</h2>
+  <p>"<b>한지 위에 붓으로 글을 쓰듯 무공의 패턴을 그리고, 계열을 골라 발경(發勁)하여 무협 초식을 펼치는 3D 셀룩 액션 RPG.</b> 황제의 막내 황자가 무극지체를 비밀로 한 채 무림에 잠입해, 황실과 강호 양측의 그림자를 헤쳐 나간다. 보스 처치 시 동물 영혼을 봉인해 신의 권능을 얻는다."</p>
+</section>
+
+<section id="s2">
+  <h2>二. 세계관 (7대 분류 트리)</h2>
+  <p>중원 무림 + 황실 + 새외. 100년 전 <b>오대천왕의 난</b>으로 다극화. 무공은 외공·내공·심공.</p>
+  <table>
+    <thead><tr><th>분류</th><th>대표 세력</th><th>특징</th></tr></thead>
+    <tbody>
+      <tr><td>① 정파</td><td>무림맹(구파일방 10) + 오대세가(남궁·모용·당가·진가·황보)</td><td>협을 표방, 내부 권력투쟁</td></tr>
+      <tr><td>② 사파</td><td>음마곡·흑사방·녹림</td><td>독·암살·청부</td></tr>
+      <tr><td>③ 마교</td><td>혈천교·백련교·천마신교</td><td>흡정·강시·광신</td></tr>
+      <tr><td>④ 새외</td><td>북해문·남만독곡·서장밀종·동영</td><td>빙공·고독·금강기·검술</td></tr>
+      <tr><td>⑤ 황궁</td><td>금의위·동창서창·어림군</td><td>황실 직속, <b>주인공의 출신</b></td></tr>
+      <tr><td>⑥ 상단</td><td>만금상단·천하상단·표국</td><td>중원 경제·정보망</td></tr>
+      <tr><td>⑦ 하오문·중립</td><td>하오문·의가·은둔자</td><td>정보·치료·변수</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s2h">
+  <h2>三. 주인공 · 황자 서사 (v0.4 유지)</h2>
+  <p><b>이천린(李天隣) 14황자 + 혼원무극지체</b> · 본인·황제·진공공·제갈무영 4명만 신분 인지 · 신분 노출도 0~100 변수.</p>
+  <p>그림자 추적: 적대(혈천교 흑영대 / 황후파 / 동창 / 음마곡) + 보호(진공공 / 금의위 / 제갈무영).</p>
+  <p class="info">상세는 v0.4 §2.5 또는 <code>WuxiaPatternAction_Story.html</code> 참조.</p>
+</section>
+
+<section id="s2d">
+  <h2>四. 신물 · 봉신 시스템 (v0.4 유지)</h2>
+  <p>26세력 보스 처치 → 동물 영혼 봉인 → 신물 획득. 메인 1 + 서브 2 = 최대 3개 동시 장착. 무극지체 시너지로 주인공만 3개 가능.</p>
+  <p>발동 키: <span class="keycap">R</span> (메인) / <span class="keycap">Shift</span>+<span class="keycap">R</span> (서브 순환). 쿨다운 30~90초.</p>
+  <p class="info">26신물 매칭표는 v0.4 또는 <code>WuxiaPatternAction_Deities.csv</code> 참조.</p>
+</section>
+
+<section id="s3">
+  <h2>五. 스토리 개요 (3막)</h2>
+  <div class="grid-3">
+    <div class="card blue"><h4>1막 — 입문 (Ch.1~2)</h4><p>황실 탈출 + 강호 입문 + 첫 신물</p></div>
+    <div class="card purple"><h4>2막 — 그림자 (Ch.3~4)</h4><p>추적자 정체 + 황실 음모 단서 + 문파 선택</p></div>
+    <div class="card red"><h4>3막 — 황실 (Ch.5)</h4><p>황궁 회귀 + 진실 + 분기 엔딩 3종</p></div>
+  </div>
+  <p class="info">📖 상세: <code>WuxiaPatternAction_Story.html</code> v0.4 (이천린 황자 반영 완료)</p>
+</section>
+
+<section id="s4">
+  <h2>六. 일반 게임플레이 (v0.4 유지)</h2>
+  <p>월드맵 노드 이동 / 마을 9시설(객잔·무기점·약방·도장·의뢰소·표국·하오문·비무대·<b>신물 사당</b>) / 대화 선택지 / 의뢰 4등급 / 수련실 패턴 마스터리 / 비무대회·일주간 콘텐츠 / 신분 노출도 관리.</p>
+</section>
+
+<section id="s5">
+  <h2>七. 전투 화면 UI (무협 시대 톤) <span class="badge-new">갱신</span></h2>
+
+  <h3>7.1 디자인 핵심</h3>
+  <ul>
+    <li><b>전체 톤</b>: 죽간(竹簡)·먹(墨)·한지(韓紙)·주칠(朱漆) — 첨단 게임 UI 지양</li>
+    <li><b>패널 배경</b>: 한지색 (#e8dcb8) 반투명 + 닳은 죽간 9-slice border (테두리)</li>
+    <li><b>강조색</b>: 옛 동전 황금 #c8a04a + 주칠 #a83a2a</li>
+    <li><b>폰트</b>: 본문 Pretendard / 한자·강조 나눔명조 ExtraBold / 데미지 숫자 = 손글씨풍</li>
+    <li><b>트랜지션</b>: 묵 흘림 와이프 (다음 씬 전환 시)</li>
+  </ul>
+
+  <h3>7.2 패턴 입력 — 붓으로 글 쓰듯</h3>
+  <div class="warn">⚠ <b>핵심 변경</b>: 기존의 "점+황금 선" → <b>먹빛 붓 궤적</b>. 한지에 글을 쓰는 감각.</div>
+
+  <table>
+    <thead><tr><th>요소</th><th>v0.4 (옛)</th><th>v0.5 (붓 궤적)</th></tr></thead>
+    <tbody>
+      <tr><td>배경</td><td>반투명 어두운 파란 패널</td><td><b>닳은 한지 텍스처</b> + 죽간 테두리</td></tr>
+      <tr><td>점</td><td>회색 원 + 황금 활성</td><td><b>옅은 먹점</b> (한지에 떨어진 잉크 자국) + 활성 시 진해짐</td></tr>
+      <tr><td>궤적 선</td><td>황금 LineRenderer 6px</td><td><b>먹빛 붓 궤적</b> — 두께 자연 변화 (3→8→3), 끝부분 흩어짐, 잉크 번짐 효과</td></tr>
+      <tr><td>점 방문 효과</td><td>황금 글로우</td><td>잉크 번짐 (한지에 먹이 퍼지는 듯)</td></tr>
+      <tr><td>완성 효과</td><td>황금 빛 펄스</td><td><b>주칠(朱漆) 인장(印章) 도장 찍힘</b> + "탁" SFX</td></tr>
+      <tr><td>실패 (주화입마)</td><td>붉은 깜빡임</td><td>붓이 꺾이는 효과 + 먹 튀김 + 한지 찢어짐</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7.3 알파 페이드 (유지)</h3>
+  <p>대기 0.2 / 입력중 0.9 / 완료 후 0.4s 페이드.</p>
+
+  <h3>7.4 동적 카메라 (v0.4 유지)</h3>
+  <p>일반전 횡스크롤 / 엘리트 줌인 / 미니보스 반정면 / 보스 1:1 정면 / 시네마틱.</p>
+
+  <h3>7.5 화면 레이아웃 (가로 1920×1080 / 1280×720)</h3>
+<pre>┌─────────────────────────────────────────────────────────────────┐
+│ [죽간 HUD 상단]                                                   │
+│ HP●●●●●●○○ 내공●●●●●○○○ STAGE 1-3  콤보×5  노출[████]  ⚙       │
+│                                                                 │
+│                  보스 HP (보스전 시)                              │
+│                                                                 │
+│                  [3D 전투 영역 · 셀룩 + 동양화 배경]              │
+│                                                                 │
+│                                                                 │
+│ ┌────────────────┐                       ┌───────┐ [신물 슬롯]   │
+│ │ [한지 패널]     │  현재 초식: 天劍垂      │ Z  X  │              │
+│ │  ◦ ● ○         │  내공 15 · ×1.5        │       │              │
+│ │  ○ ● ○         │                        │ C  V  │              │
+│ │  ○ ○ ●         │                        └───────┘              │
+│ │  ↳붓궤적먹빛    │                                              │
+│ └────────────────┘                                              │
+└─────────────────────────────────────────────────────────────────┘
+   엄지(좌)/마우스          정보 표시              엄지(우)/키보드</pre>
+  <p class="info">상세 픽셀 명세 + 무협 톤 컬러: <code>WuxiaPatternAction_UIDesign.html</code> v0.2</p>
+</section>
+
+<section id="s6">
+  <h2>八. 조작 체계 (마우스 + 계열 1/2/3/Shift) <span class="badge-new">v0.6 갱신</span></h2>
+
+  <div class="info">📌 <b>층위를 먼저 가른다 — 이걸 섞어서 오진이 났다.</b>
+  <table>
+    <thead><tr><th>층위</th><th>값</th><th>정본</th></tr></thead>
+    <tbody>
+      <tr><td><b>플레이어 입력</b></td><td>마우스 드래그(패턴) + <span class="keycap">1</span><span class="keycap">2</span><span class="keycap">3</span><span class="keycap">Shift</span>(계열)</td><td><code>Doors.InputHint</code></td></tr>
+      <tr><td><b>데이터·코드 식별자</b></td><td><code>SkillKey.Q / W / A / S</code></td><td><code>enum SkillKey</code> · CSV <code>Key</code> 열 — <b>키보드 키가 아니다</b></td></tr>
+      <tr><td>폐기</td><td>Z·X·C·V 발경 배치</td><td>v0.5 설계. 현재 구현에 없다</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>8.1 키 매핑 (PC + 모바일 라벨 통일)</h3>
+  <table>
+    <thead><tr><th>키</th><th>의미</th><th>한자</th><th>기본 행동 (패턴 없음)</th><th>패턴 후 (1.5s)</th></tr></thead>
+    <tbody>
+      <tr><td>마우스 이동 / 방향키</td><td>이동·회전</td><td>行</td><td>이동 및 회전</td><td>—</td></tr>
+      <tr><td><span class="keycap">1</span></td><td><b>검(劍)</b> <code>SkillKey.Q</code></td><td>劍</td><td>약공격 (콤보 3타)</td><td>검 계열 초식 · 검으로 파훼</td></tr>
+      <tr><td><span class="keycap">2</span></td><td><b>권(拳)</b> <code>SkillKey.W</code></td><td>拳</td><td>강공격 (차지 + 강타)</td><td>권 계열 초식 · 권으로 파훼</td></tr>
+      <tr><td><span class="keycap">3</span></td><td><b>장(掌)</b> <code>SkillKey.A</code></td><td>掌</td><td>장풍 (원거리 약공)</td><td>장 계열 초식 · 장으로 파훼</td></tr>
+      <tr><td><span class="keycap">Shift</span></td><td><b>보(步)</b> <code>SkillKey.S</code></td><td>步</td><td>회피·대시 (무적프레임)</td><td>보 계열 초식 · 보로 파훼</td></tr>
+      <tr><td><span class="keycap">R</span></td><td>신물 (메인)</td><td>神</td><td>메인 신물 발동</td><td>—</td></tr>
+      <tr><td><span class="keycap">Shift</span>+<span class="keycap">R</span></td><td>신물 (서브)</td><td>—</td><td>서브1 → 서브2 순환</td><td>—</td></tr>
+      <tr><td><span class="keycap">F</span></td><td>카운터</td><td>反</td><td>보스 텔레그래프 카운터</td><td>—</td></tr>
+      <tr><td>마우스 드래그<br>또는 터치</td><td>패턴 입력</td><td>陣</td><td>—</td><td>—</td></tr>
+      <tr><td><span class="keycap">Space</span></td><td>점프·상호작용</td><td>—</td><td>점프 또는 NPC 대화</td><td>—</td></tr>
+      <tr><td><span class="keycap">Esc</span></td><td>일시정지</td><td>—</td><td>메뉴 열기</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.2 키 배치 (PC) — 마우스 중심</h3>
+<pre>왼손 (계열 선택 · 보조):
+   ┌───┐ ┌───┐ ┌───┐ ┌───┐    1 = 검(劍)  ← SkillKey.Q
+   │ 1 │ │ 2 │ │ 3 │ │ R │    2 = 권(拳)  ← SkillKey.W
+   └───┘ └───┘ └───┘ └───┘    3 = 장(掌)  ← SkillKey.A
+   ┌───────┐ ┌───┐ ┌───┐      Shift = 보(步) ← SkillKey.S
+   │ Shift │ │ F │ │Spc│      R = 신물 메인 / Shift+R = 서브
+   └───────┘ └───┘ └───┘      F = 카운터 · Space = 점프·상호작용
+
+오른손: 마우스 = 패턴 그리기 + 발경 (자동 슬로우모션)
+        — 패턴 시작 시 시간 0.3배, 이동·회전 자동 정지
+        — 획을 떼는 순간 미리 고른 계열로 발경</pre>
+
+  <div class="warn">⚠ <b>계열 선택은 키보드 4개가 아니라 1·2·3·Shift 넷이다.</b>
+  <code>SkillKey.Q/W/A/S</code>는 그 계열을 데이터에서 부르는 <b>이름</b>일 뿐, 눌러야 하는 키가 아니다.
+  이 둘을 같은 줄에 나란히 적어 두는 이유가 그것이다 — 떼어 놓으면 또 섞인다.</div>
+
+  <h3>8.3 모바일 가로 화면</h3>
+  <ul>
+    <li>좌하단: <b>패턴 입력 영역 (한지 패널)</b> — 엄지로 붓 그리듯</li>
+    <li>우하단: <b>계열 4 버튼</b> — 큰 한자(劍/拳/掌/步)로 표시. 모바일은 탭이므로 PC의 1·2·3·Shift에 대응</li>
+    <li>우상단: 신물 슬롯 3개 (탭으로 발동)</li>
+  </ul>
+
+  <h3>8.4 입력 우선순위 + 슬로우모션</h3>
+<pre>1. 패턴 입력 중 (마우스 드래그) → Time.timeScale = 0.3
+   · 이동·회전 자동 정지
+   · 계열 선택 입력 무시
+   · "기를 모아 패턴을 발하는 순간" — 무협 시간 압축 연출
+2. 패턴 완료 → Time.timeScale = 1.0 + 1.5초 윈도우 시작
+   · 윈도우 안 계열 선택(1/2/3/Shift) = 매칭된 초식 발동
+3. 윈도우 종료 후 → 계열 키 = 기본 행동 (1=약공, 2=차지강공, 3=장풍, Shift=회피대시)
+4. 주화입마 상태 → 1초 경직, 입력 불가</pre>
+  <p class="info">패턴 윈도우(초식 입력 유예): <b>1.5초</b> (2026-06-11 확정)</p>
+
+  <h3>8.5 키 변경 옵션 (설정)</h3>
+  <p>PC 사용자는 설정 메뉴에서 리바인딩 가능. 기본값 <b>1 · 2 · 3 · Shift</b>, 대체안 다음 제공:</p>
+  <ul>
+    <li><b>ZXCV 변형</b>: 검→Z, 권→X, 장→C, 보→V <span class="badge">v0.5 기본값이었던 배치</span></li>
+    <li><b>마우스 확장</b>: 좌클릭=검, 우클릭=권, 휠클릭=장, Shift=보</li>
+    <li><b>JKLI 변형</b>: 오른손 사용자용</li>
+  </ul>
+  <div class="warn">⚠ <b>리바인딩은 표시 계층만 바꾼다.</b> 어떤 배치를 고르든 데이터가 부르는 이름은
+  <code>SkillKey.Q/W/A/S</code> 그대로다 — <b>그건 키가 아니라 계열 식별자</b>이기 때문이다.
+  TC·버그 리포트에 조작을 적을 땐 <b>실제 입력(1·2·3·Shift)</b>을 쓰고, 데이터를 가리킬 땐 <b>식별자</b>를 쓴다. 섞어 쓰면 v0.6 초판과 같은 오진이 난다.</div>
+</section>
+
+<section id="s7">
+  <h2>九. 문파 · 초식 체계 (44초식) <span class="badge-new">v0.6 갱신</span></h2>
+
+  <h3>9.1 문파 4종 (Ch.3 종료 시 선택)</h3>
+  <div class="grid-4">
+    <div class="card blue">
+      <h4>검문 (劍門)</h4>
+      <p><b>특화:</b> 패턴 + <span class="keycap">1</span> <code>SkillKey.Q</code></p>
+      <p><b>강점:</b> 단일 강타, 검기 사거리</p>
+      <p><b>소속:</b> 화산·무당·남궁·모용</p>
+      <p><b>대표 초식:</b> 일섬참, 천검수, 태극검</p>
+    </div>
+    <div class="card red">
+      <h4>권문 (拳門)</h4>
+      <p><b>특화:</b> 패턴 + <span class="keycap">2</span> <code>SkillKey.W</code></p>
+      <p><b>강점:</b> 근접 다단, 콤보 지속</p>
+      <p><b>소속:</b> 소림·진가·황보·공동</p>
+      <p><b>대표 초식:</b> 붕권, 연환각, 금강권</p>
+    </div>
+    <div class="card purple">
+      <h4>도문 (道門)</h4>
+      <p><b>특화:</b> 패턴 + <span class="keycap">3</span> <code>SkillKey.A</code></p>
+      <p><b>강점:</b> 원거리 장풍, 내공 회복</p>
+      <p><b>소속:</b> 곤륜·종남·아미 (장계열)</p>
+      <p><b>대표 초식:</b> 벽력장, 혼원장, 건곤장</p>
+    </div>
+    <div class="card green">
+      <h4>보문 (步門)</h4>
+      <p><b>특화:</b> 패턴 + <span class="keycap">Shift</span> <code>SkillKey.S</code></p>
+      <p><b>강점:</b> 회피·암살·기동</p>
+      <p><b>소속:</b> 개방·하오문·음마곡(중립)</p>
+      <p><b>대표 초식:</b> 비연보, 잔영보, 축지법</p>
+    </div>
+  </div>
+
+  <h3>9.2 패턴 + 키 매트릭스 (11패턴 × 4계열 = 44초식)</h3>
+  <p class="info">이 표는 <code>WuxiaPatternAction_Skills.csv</code>(44행)에서 다시 뽑았다. <b>문서가 아니라 데이터가 정본이다.</b>
+  굵게 표시한 4패턴이 v0.5(7패턴/28초식) 이후 추가된 것.</p>
+  <table>
+    <thead><tr><th>패턴</th><th>PatternKey</th><th>검 <span class="keycap">1</span></th><th>권 <span class="keycap">2</span></th><th>장 <span class="keycap">3</span></th><th>보 <span class="keycap">Shift</span></th><th>Tier</th></tr></thead>
+    <tbody>
+      <tr><td><b>一</b></td><td><code>0-1-2</code></td><td>일섬참</td><td>붕권</td><td>벽력장</td><td>비연보</td><td>Beginner</td></tr>
+      <tr><td><b>丨</b></td><td><code>1-4-7</code></td><td>천검수</td><td>관산권</td><td>강하장</td><td>지룡잠</td><td>Beginner</td></tr>
+      <tr><td><b>ㄴ</b></td><td><code>0-3-6-7-8</code></td><td>횡소천군</td><td>연환각</td><td>천룡장</td><td>측영보</td><td>Skilled</td></tr>
+      <tr><td><b>Z</b></td><td><code>0-1-2-4-6-7-8</code></td><td>난마검</td><td>철산고</td><td>혼원장</td><td>잔영보</td><td>Skilled</td></tr>
+      <tr><td><b>ㄱ</b> <span class="badge-new">신규</span></td><td><code>0-1-2-5-8</code></td><td>절수검</td><td>절강권</td><td>절운장</td><td>절영보</td><td>Skilled</td></tr>
+      <tr><td><b>N</b> <span class="badge-new">신규</span></td><td><code>6-3-0-4-8-5-2</code></td><td>뇌전검</td><td>뇌격권</td><td>낙뢰장</td><td>뇌영보</td><td>Skilled</td></tr>
+      <tr><td><b>○</b></td><td><code>1-2-5-8-7-6-3-0-1</code></td><td>태극검</td><td>금강권</td><td>건곤장</td><td>회선보</td><td>Adept</td></tr>
+      <tr><td><b>X</b></td><td><code>0-4-8-2-6</code></td><td>십자참</td><td>유성권</td><td>오뢰장</td><td>축지법</td><td>Adept</td></tr>
+      <tr><td><b>ㄷ</b> <span class="badge-new">신규</span></td><td><code>2-1-0-3-6-7-8</code></td><td>반월참</td><td>포산권</td><td>회풍장</td><td>우회보</td><td>Adept</td></tr>
+      <tr><td><b>◇</b> <span class="badge-new">신규</span></td><td><code>1-5-7-3-1</code></td><td>사상검</td><td>사방권</td><td>사상장</td><td>능형보</td><td>Adept</td></tr>
+      <tr><td><b>△</b></td><td><code>1-6-8</code></td><td>삼재검</td><td>삼절권</td><td>삼화장</td><td>삼청보</td><td>Esoteric</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Tier 수치 (CSV 원문 값)</h4>
+  <table>
+    <thead><tr><th>Tier</th><th>UnlockLevel</th><th>MPCost</th><th>DamageMult</th><th>해당 패턴</th><th>초식 수</th></tr></thead>
+    <tbody>
+      <tr><td>Beginner</td><td>1</td><td>15</td><td>1.5 (步는 1.0)</td><td>一, 丨</td><td>8</td></tr>
+      <tr><td>Skilled</td><td>5</td><td>25</td><td>2.0 (步는 1.0)</td><td>ㄴ, Z, ㄱ, N</td><td>16</td></tr>
+      <tr><td>Adept</td><td>12</td><td>40</td><td>2.8 (步는 1.0)</td><td>○, X, ㄷ, ◇</td><td>16</td></tr>
+      <tr><td>Esoteric</td><td>20</td><td>60</td><td>4.0 (步는 1.0)</td><td>△</td><td>4</td></tr>
+    </tbody>
+  </table>
+  <p class="info">📊 정본 CSV: <code>WuxiaPatternAction_Skills.csv</code> (44행 · <code>Key</code> 열 = <code>Q/W/A/S</code> — <b>계열 식별자이지 키보드 키가 아니다</b>)<br>
+  <code>○</code> 패턴 4종만 <code>Door=Common</code>(계열 공용), 나머지는 <code>Sword</code>/<code>Fist</code>/<code>Palm</code>/<code>Step</code>.
+  <code>△</code> 패턴 4종의 <code>Sect</code>는 전부 <b>황실비전</b>.</p>
+
+  <h3>9.3 데이터 모델 (Unity)</h3>
+<pre>// SkillSO.cs (v0.5 갱신)
+public class SkillSO : ScriptableObject {
+    public string skillId;
+    public string displayName;
+    public string hanja;
+    public string patternKey;
+    public string patternName;
+    public SkillKey button;         // Q/W/A/S (enum 변경: ButtonType → SkillKey)
+    public Door door;               // Sword/Fist/Palm/Step/Common
+    public Tier tier;
+    // ... 나머지 v0.4 동일
+}
+
+public enum SkillKey { Q, W, A, S }
+public enum Door { Sword, Fist, Palm, Step, Common }</pre>
+
+  <h3>9.4 파훼(破) 상성 체계 <span class="badge-new">v0.6 신설</span></h3>
+  <div class="warn">⚠ <b>v0.5에 이 절이 통째로 없었다.</b> 적도 초식을 쓰고 플레이어가 그것을 파훼한다는 구조가
+  2026-08-12에 구현·확정됐는데 기획서에는 한 줄도 반영되지 않았다. 이번 개정의 핵심이다.</div>
+
+  <h4>9.4.1 4순환 상성</h4>
+<pre>步 → 劍 → 拳 → 掌 → 步        (화살표 = "깬다")</pre>
+  <p>각 문은 <b>정확히 하나를 깨고 하나에게 깨진다.</b> 외울 것이 16개가 아니라 4개다.
+  각 관계에는 한 줄짜리 이유를 데이터로 붙인다(<code>Doors.BreakReason</code>) — 이유 없는 상성표는 매번 표를 다시 봐야 한다.</p>
+  <table>
+    <thead><tr><th>파훼</th><th>이유 (<code>BreakReason</code>)</th><th>계열 색 (<code>Tint</code>)</th></tr></thead>
+    <tbody>
+      <tr><td>步가 劍을</td><td>칼은 닿아야 벤다. 그림자는 못 벤다</td><td>어두운 녹빛</td></tr>
+      <tr><td>劍이 拳을</td><td>주먹이 닿기 전에 칼끝이 먼저 닿는다</td><td>밝은 청백</td></tr>
+      <tr><td>拳이 掌을</td><td>장력은 피하는 게 아니라 뚫는 것</td><td>붉음</td></tr>
+      <tr><td>掌이 步를</td><td>장력은 면(面)이다. 물러설 자리가 없다</td><td>금빛</td></tr>
+    </tbody>
+  </table>
+  <p class="info">색약 대비로 <b>색상만이 아니라 명도까지 벌린다</b> — 청백 &gt; 붉음 &gt; 금빛 &gt; 어두운 녹빛.
+  새 어휘를 만들지 않았다: 플레이어는 이미 <span class="keycap">1</span><span class="keycap">2</span><span class="keycap">3</span><span class="keycap">Shift</span>로 문을 고르므로 파훼는 <b>이미 아는 조작</b>이다.</p>
+
+  <h4>9.4.2 판정 3수치 (<code>FormClash.cs</code> 상수)</h4>
+  <table>
+    <thead><tr><th>대응</th><th>상수</th><th>값</th><th>결과</th></tr></thead>
+    <tbody>
+      <tr><td>맞는 문</td><td><code>ClashResult.Broken → ScaleDamage</code></td><td><b>0f</b></td><td><b>破</b> — 피해 0 + 경직 <b>1.6초</b>(<code>BreakStunSeconds</code>) + 되받는 피해 <b>2배</b>(<code>BreakCounterScale</code>)</td></tr>
+      <tr><td>틀린 문</td><td><code>WrongDoorDamageScale</code></td><td><b>0.6f</b></td><td>피해 60% — 맞았지만 그냥 서 있던 것보다는 낫다</td></tr>
+      <tr><td>무대응</td><td>—</td><td>1.0</td><td>정타</td></tr>
+    </tbody>
+  </table>
+  <div class="info"><b>가운데 칸이 이 표의 전부다.</b> 오답을 정타와 같게 두면 아무도 시도하지 않고,
+  시도가 없으면 상성을 배울 기회 자체가 없다. <b>오답이라고 판정 창을 닫지도 않는다</b> — 전조가 남아 있으면 다시 낼 수 있다.</div>
+
+  <h4>9.4.3 전조(텔레그래프) 시간</h4>
+  <p>일반 초식 <b>0.80 ~ 1.50초</b>(평균 1.14) · 절초 <b>2.40초</b>(일반의 약 2배).
+  절초는 <code>FinisherIntervalSeconds = 22f</code> — <b>22초에 한 번</b>, 3페이즈에서만, 위력 <code>FinisherRatio = 2.2f</code>.</p>
+  <div class="warn">전조 길이는 <b>난이도 손잡이</b>다. 0.5초로 죽이면 "못 봤다"고 하고, 2.4초를 주면 "알고도 못 했다"고 한다.
+  뒤쪽만이 다음 판에 다르게 하게 만든다. ⚠ 따라서 <b>전조 값은 런타임에 조정 가능해야 한다.</b></div>
+
+  <h4>9.4.4 등급별 배분 — 드물어야 무공이다</h4>
+  <table>
+    <thead><tr><th>등급</th><th>무공</th><th>왜</th></tr></thead>
+    <tbody>
+      <tr><td>卒 잡졸</td><td>없음</td><td>징집병. 칼은 들었지만 배운 적이 없다</td></tr>
+      <tr><td>兵 무사</td><td>없음</td><td>훈련은 받았으나 초식은 없다</td></tr>
+      <tr><td>將 두목</td><td><b>서명초식 1종</b> (<code>ChampionForms</code> 3종 중)</td><td>개체마다 고정 — <code>instanceID</code>로 뽑는다. <b>난수 금지</b>(매번 다르면 학습 불가)</td></tr>
+      <tr><td>보스</td><td>페이즈별 세트 + 절초</td><td>문파 고수. 예: 흑사채주 7초식 + 절초 「사왕단혼」</td></tr>
+    </tbody>
+  </table>
+  <p class="info">표시 규칙 — <b>보스전은 표찰(읽을 여유가 있다), 전장은 몸이 계열 색으로 빛난다</b>(읽을 게 없고 보면 안다).
+  표찰 HUD는 자리가 비었을 때만 곁들인다(<code>ShowForm(form, force:false)</code>).</p>
+
+  <h4>9.4.5 아직 안 정한 것</h4>
+  <ul>
+    <li><b>전조 창 불일치 (미수정)</b> — <code>BossCounter.OpenCounterWindow</code>가 창 종료 시각을 시작 때 한 번 계산한다.
+      전조를 진행 중에 늘리면 반격 창만 먼저 닫힌다. <b>재개 조건: 전조 길이를 실시간 조정하며 밸런싱하는 작업이 실제로 생길 때.</b></li>
+    <li><b>오답 60%의 근거</b> — "정타와 달라야 한다"만 있고 60인지 40인지 잰 적이 없다</li>
+    <li><b>44초식의 계열 배분</b> — 현재 11패턴 × 4로 균등하나, 계열별 개수를 다르게 갈지 미정</li>
+    <li><b>26신물과 계열의 관계</b> — 신물이 계열을 바꾸는가, 계열 안에서 강화하는가</li>
+  </ul>
+</section>
+
+<section id="s8">
+  <h2>十. 성장 시스템 (v0.4 유지)</h2>
+  <ul>
+    <li>8스탯 + 신분 노출도</li>
+    <li>구결(초식 해금/진화) + 신물(26종 수집/진화/합성) + 장비(5슬롯/6등급)</li>
+    <li>위명 등급: 무명 → 신진 → 일류 → 절정 → 화경 → 천하제일</li>
+    <li>세력 호감도 8종 (-100~+100)</li>
+    <li>문파 선택 (Ch.3 종료): 검문/권문/도문/보문</li>
+  </ul>
+</section>
+
+<section id="s9">
+  <h2>十一. 콘텐츠 진행 (5장 + 외전)</h2>
+  <table>
+    <thead><tr><th>장</th><th>지역</th><th>보스</th><th>획득 신물</th><th>해금</th></tr></thead>
+    <tbody>
+      <tr><td>1장 출궁</td><td>황궁→대나무숲→청송촌</td><td>흑사방주</td><td>흑사(명부사신)</td><td>一·丨 + Z·X 행동</td></tr>
+      <tr><td>2장 낙양</td><td>객잔·낙양</td><td>혈수노조</td><td>구미호(구미선녀)</td><td>ㄴ·Z + C·V 행동, 신분 노출도</td></tr>
+      <tr><td>3장 음마곡</td><td>독무 협곡</td><td>구미독후</td><td>뱀(백사낭자)</td><td>○, 문파 선택, 그림자 추적 일부</td></tr>
+      <tr><td>4장 북해</td><td>설산·빙벽</td><td>설마제</td><td>설표(빙백신녀)</td><td>X, 무극지체 비밀 단서</td></tr>
+      <tr><td>5장 황실</td><td>흑사막→황궁</td><td>혈천마제 + 황실 음모자</td><td>박쥐(혈마) + 사신합일</td><td>△ + 9점 비전, 황자 신분 공개</td></tr>
+      <tr><td>외전</td><td>황궁·동영·서장</td><td>외전 보스</td><td>매·까마귀·사자</td><td>한정 신물</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s10">
+  <h2>十二. 아트 / 에셋 (무협 시대 톤) <span class="badge-new">갱신</span></h2>
+
+  <h3>12.1 비주얼 톤 (무협 시대 강화)</h3>
+  <ul>
+    <li><b>전경 캐릭터</b>: 3D 로우폴리 (Synty) + Toon Shader, 외곽선 굵게, 한국 만화풍 얼굴</li>
+    <li><b>배경</b>: 동양화풍 3D — 수묵 풍경 + 안개, 죽림, 단청 건축, 한지 텍스처</li>
+    <li><b>이펙트</b>: 먹빛 검기, 주칠 빛 폭발, 한지 찢어지는 충격파, 잉크 번짐</li>
+    <li><b>UI</b>: <b>죽간 9-slice border</b> + 묵 흘림 + 한지색 패널 + 한자 폰트</li>
+    <li><b>컬러 팔레트 (마스터)</b>:
+      <ul>
+        <li>한지색 <code>#e8dcb8</code> — 패널·종이 톤</li>
+        <li>먹색 <code>#1a1610</code> — 외곽선·텍스트</li>
+        <li>주칠 <code>#a83a2a</code> — 강조·인장·위험</li>
+        <li>옛 동전 황금 <code>#c8a04a</code> — UI 강조·신물</li>
+        <li>대나무 녹 <code>#5a6a3a</code> — 자연·배경 보조</li>
+        <li>비단 진홍 <code>#7a2a2a</code> — 의상 보조</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>12.2 추천 에셋 (v0.4 + 무협 강화)</h3>
+  <table>
+    <thead><tr><th>분류</th><th>이름</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>캐릭터</td><td>Synty POLYGON Samurai / Fantasy Heroes</td><td>3D 로우폴리</td></tr>
+      <tr><td>모션</td><td>Mixamo + Kung Fu Animset</td><td>무협 모션</td></tr>
+      <tr><td>셀 셰이더</td><td>NiloToonURP</td><td>외곽선 + 명암 단계화</td></tr>
+      <tr><td>붓 궤적 셰이더</td><td>커스텀 (또는 BrushStroke FX 에셋)</td><td>먹 잉크, 두께 변화</td></tr>
+      <tr><td>3D 이펙트</td><td>Hovl Studio 3D Magic FX (먹빛 변형)</td><td>색상 조정 필수</td></tr>
+      <tr><td>배경 (동양화풍)</td><td>POLYGON Oriental Pack / 외주 (수묵화 텍스처)</td><td>객잔/대나무/설산/사막/황궁</td></tr>
+      <tr><td>UI 텍스처</td><td>한지 텍스처 + 죽간 9-slice (외주 또는 무료 PSD)</td><td>패널 배경</td></tr>
+      <tr><td>UI 폰트</td><td>나눔명조 ExtraBold (무료) + Pretendard</td><td>한자 + 본문</td></tr>
+      <tr><td>BGM/SFX</td><td>Oriental Music Pack + 가야금·피리·태평소</td><td>전통 악기 강조</td></tr>
+    </tbody>
+  </table>
+
+  <h3>12.3 사운드 (먹·붓·금속)</h3>
+  <ul>
+    <li><b>붓 입력</b>: "쓱" (붓이 한지 위 미끄러지는 소리)</li>
+    <li><b>점 방문</b>: "톡" (먹 점이 떨어지는 소리)</li>
+    <li><b>패턴 완성</b>: "탁" (인장 도장 찍는 소리)</li>
+    <li><b>발경</b>: "휙" + 무기별 (검=쇳소리, 권=묵직한 타격, 장=바람, 보=비단 스치는 소리)</li>
+    <li><b>신물 발동</b>: "우웅" (영혼 강림) + 동물별 효과음</li>
+    <li><b>BGM</b>: 전통 악기 (가야금·피리·태평소·북)</li>
+  </ul>
+</section>
+
+<section id="s11">
+  <h2>十三. 기술 설계 (Unity 3D URP — v0.4 유지)</h2>
+  <p>폴더 구조·핵심 클래스·CameraSwitcher·DeityManager·ExposureSystem 등은 v0.4와 동일. 변경 사항:</p>
+  <ul>
+    <li><code>SkillSO.button</code> 타입: <code>ButtonType</code> → <b><code>SkillKey { Q, W, A, S }</code></b></li>
+    <li><code>InputRouter</code>: Z/X/C/V 키 매핑 추가, ABCD 별칭은 후방호환으로 유지 가능</li>
+    <li><code>PatternGridView</code>: LineRenderer → <b>BrushStrokeRenderer</b> (먹 잉크 효과, 두께 자연 변화)</li>
+    <li><code>UIThemeManager</code>: 무협 톤 컬러 토큰 중앙화</li>
+  </ul>
+  <p class="info">전체 §11 폴더 구조·클래스 표는 v0.4 GDD 동일.</p>
+</section>
+
+<section id="s12">
+  <h2>十四. 확장성 가이드 (v0.4 유지)</h2>
+  <p>FactionSO/NpcSO/SkillSO/DeitySO ScriptableObject 추가만으로 새 세력·NPC·초식·신물 확장. CSV → SO 자동 임포터.</p>
+</section>
+
+<section id="s13">
+  <h2>十五. 개발 마일스톤 (P0~P12, v0.4 유지)</h2>
+  <table>
+    <thead><tr><th>Phase</th><th>목표</th></tr></thead>
+    <tbody>
+      <tr><td>P0</td><td>Unity 3D URP, Toon Shader, 폴더, PC/모바일 빌드</td></tr>
+      <tr><td>P1</td><td><b>PatternGridView (붓 궤적 + 한지 패널) + 알파 페이드</b></td></tr>
+      <tr><td>P2</td><td><b>계열 4 기본 행동</b> (1/2/3/Shift · Synty 캐릭터 + Mixamo 모션)</td></tr>
+      <tr><td>P3</td><td>SkillSO + Resolver + Executor, 문파 시스템</td></tr>
+      <tr><td>P4</td><td>3D 모델 + Toon + 먹빛 VFX 5개</td></tr>
+      <tr><td>P5</td><td>일반전 (CameraSwitcher Wave, 적 AI, 1-1)</td></tr>
+      <tr><td>P6</td><td>월드맵 + 마을 9시설 (신물 사당 포함)</td></tr>
+      <tr><td>P7</td><td>대화 + 의뢰 + 신분 노출도</td></tr>
+      <tr><td>P8</td><td>성장 (구결·신물·장비·위명)</td></tr>
+      <tr><td>P9</td><td>보스전 1:1 (CameraSwitcher Boss, 페이즈)</td></tr>
+      <tr><td>P10</td><td>2~5장 콘텐츠 + 외전 + 신물 26종</td></tr>
+      <tr><td>P11</td><td>일/주간 콘텐츠, 비무대회</td></tr>
+      <tr><td>P12</td><td>모바일 최적화, 튜토리얼, 빌드</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s14">
+  <h2>十六. 작업 지시 템플릿 (현행 조작 반영)</h2>
+<pre>"P0: Unity 6.0 3D URP 'WuxiaPatternAction' 생성.
+§11 폴더 구조 그대로, NiloToonURP 임포트.
+Input System 활성화, Z/X/C/V/E/Space 키 등록.
+PC/Android/iOS 빌드 타겟. Boot씬에 GameManager + 더미 큐브 Toon."
+
+"P1: PatternGridView.cs + BrushStrokeRenderer.cs.
+화면 중앙 정렬 패턴 그리드 (풀스크린 stretch, 테두리 없음) — 2026-06-11 P10C 확정 디자인.
+3x3 격자점은 점 표식 숨김 + 8괘 한자 라벨 (점 간격 260px, 한자 fontSize 140),
+발동 스킬명은 화면 중앙 상단 표시. 마우스/터치 드래그 시 BrushStrokeRenderer로
+먹빛 붓 궤적 생성 — 두께 자연 변화(3px→8px→3px), 잉크 번짐, 끝부분 흩어짐.
+패턴 완성 시 주칠 인장 0.3초 펄스 + '탁' SFX.
+알파 페이드 7.3 규칙: 대기 0.2 / 입력중 0.9 / 완료 후 0.4s 페이드."
+
+"P2: 계열 4 기본 행동.
+1=검(약공 콤보3), 2=권(강공 차지), 3=장(원거리 약공), Shift=보(회피 무적프레임).
+⚠ enum 이름(SkillKey.Q/W/A/S)을 키 바인딩으로 쓰지 마라 — 식별자다.
+키 라벨은 화면에 큰 한자(劍/拳/掌/步). PC=키보드, 모바일=화면 버튼 동일 라벨.
+리바인딩 메뉴 추가(기본 1/2/3/Shift)."
+
+"P3: SkillSO + SkillResolver.
+SkillKey enum = { Q, W, A, S }. 44초식 데이터는
+Assets/_Project/Data/Csv/skills.csv 임포터로 자동 생성 (11패턴 × 4계열).
+패턴+키 조합 등록 + 문파 필터링."
+
+"P9-b: FormClash + Doors 파훼 체계 (§9.4).
+4순환 상성(步→劍→拳→掌→步) + BreakReason 문자열.
+판정 3수치: 破=0f / 오답=0.6f / 반격=2.0f / 경직=1.6f.
+將 서명초식은 instanceID 로 고정 — 난수 금지.
+전조 값은 런타임 조정 가능하게 (고정 대기 금지)."</pre>
+</section>
+
+<section id="s15">
+  <h2>十七. 향후 확장 (백로그)</h2>
+  <ul>
+    <li>PvP 비무 (1:1 룰)</li>
+    <li>길드(문파) 시스템</li>
+    <li>외전 캐릭터 플레이어블화</li>
+    <li>신물 합성 트리 확장</li>
+    <li>패턴 에디터 (유저 매크로)</li>
+    <li>3D 자유 카메라 모드</li>
+    <li>황실 외전 챕터</li>
+    <li>MOD 지원</li>
+  </ul>
+</section>
+
+<section id="s16">
+  <h2>관련 문서</h2>
+  <ul>
+    <li><b>본 문서 (GDD v0.6)</b> — <code>docs/WuxiaPatternAction_GDD.html</code></li>
+    <li><b>스토리 흐름도</b> — <code>WuxiaPatternAction_Story.html</code> (v0.4)</li>
+    <li><b>세계관 확장 템플릿</b> — <code>WuxiaPatternAction_World.html</code></li>
+    <li><b>NPC 30명</b> — <code>WuxiaPatternAction_NPCs.html</code></li>
+    <li><b>CH.1 대화 트리</b> — <code>WuxiaPatternAction_Dialogue_CH1.html</code></li>
+    <li><b>UI 디자인 시안 v0.2</b> — <code>WuxiaPatternAction_UIDesign.html</code> (붓 궤적 + 무협 톤) <span class="badge-red">⚠ ZXCV 11건 + 옛 키매핑 7건 — 갱신 필요</span></li>
+    <li><b>일러스트 컨셉</b> — <code>WuxiaPatternAction_IllustConcept.html</code></li>
+    <li><b>44초식 CSV</b> — <code>WuxiaPatternAction_Skills.csv</code> (44행 · <code>Key</code> 열 = Q/W/A/S) <span class="badge-green">정본</span></li>
+    <li><b>26신물 CSV</b> — <code>WuxiaPatternAction_Deities.csv</code></li>
+    <li><b>데이터시트</b> — <code>WuxiaPatternAction_DataSheet.html</code></li>
+    <li><b>HANDOFF</b> — <code>HANDOFF.md</code> <span class="badge-red">⚠ 28초식 4건 — 갱신 필요</span> (조작 표기는 이미 현행)</li>
+  </ul>
+
+  <h3>16.1 옛 표기 잔존 실측 (2026-08-15) — <b>21개 파일 · 172건</b></h3>
+  <div class="warn">⚠ <b>GDD 하나만 고쳐서 끝나는 문제가 아니었다.</b> 처음엔 "UIDesign·HANDOFF 두 건"으로 봤는데,
+  <code>docs</code> 전체를 훑으니 <b>21개 파일에 172건</b>이었다. 아래 세 갈래는 처리 방식이 서로 다르다.</div>
+
+  <table>
+    <thead><tr><th>갈래</th><th>무엇</th><th>어떻게</th></tr></thead>
+    <tbody>
+      <tr><td><b class="badge-red">A. 현행 사양</b></td>
+          <td>GDD v0.5 원본(ZXCV 20·옛키 21) · UIDesign(11·7) · FactionTree(8·5) · DataSheet(ZXCV 1·28초식 6·옛키 3) · AssetRoadmap(4·3) · HANDOFF(28초식 4) 등 <b>11개 파일</b></td>
+          <td><b>고친다.</b> 틀린 채로 읽히면 그대로 구현된다 — 이번 버그의 경로다</td></tr>
+      <tr><td><b class="badge-red">B. 대외 공개 문구</b></td>
+          <td><code>steam/steam_store_page.md</code>(ZXCV 2·28초식 5·<b>옛키 6</b>) · <code>steam_capsule_copy.md</code>(28초식 3) · <code>wishlist_campaign.md</code>(28초식 1)</td>
+          <td><span class="badge-green">2026-08-15 16:24 갱신 완료</span> 44초식·계열 1/2/3 표기로 교체됐고 재스캔 0건</td></tr>
+      <tr><td><b class="badge">C. 과거 기록물</b></td>
+          <td>PROJECT_LOG · qa 산출물 7종 · P2/P3 리포트 · 야간 보고 등</td>
+          <td><b>고치지 않는다.</b> 그 시점의 사실이라 고치면 기록이 훼손된다</td></tr>
+    </tbody>
+  </table>
+
+  <p class="info">📌 <code>PROJECT_LOG.md</code> L51~54가 <b>이미 이 문제를 지적해 뒀다</b> —
+  <i>"GDD에 ZXCV 20곳과 Q/W/A/S 3곳이 한 문서 안에 섞여 있는 것이 이 혼선의 출처다."</i>
+  실측(GDD ZXCV 20건)과 정확히 일치한다. <b>알고 있었는데 문서를 안 고쳐서 버그가 났다.</b></p>
+
+  <div class="changelog">✅ <b>Skills.csv 실측 확인 (2026-08-15)</b>: 데이터 44행 · <code>Key</code> 열 = Q·W·A·S <b>각 11건</b> (11패턴 × 4계열).
+  이 문서 §9.2는 이 CSV에서 뽑았다.</div>
+
+  <div class="warn">⚠ <b>v0.5(2026-06-12) 이후 한 번도 갱신 안 된 현행 문서</b>:
+  <code>World</code> · <code>NPCs</code> · <code>Dialogue_CH1</code> · <code>Deities.csv</code> · <code>Story</code> · <code>IllustConcept</code> (전부 2026-05-25) ·
+  <code>DataSheet</code> · <code>UIDesign</code> (2026-06-12).
+  <b>기획이 바뀌면 그 기획을 인용한 문서까지가 한 작업이다.</b></div>
+</section>
+
+<footer>
+  Wuxia Pattern Action · GDD v0.6 · 2026-08-15 (v0.5: 2026-05-25) · 武俠 動作 · 붓 궤적 · 계열 1/2/3/Shift · 파훼 4순환
+</footer>
+
+</main>
+</div>
+</body>
+</html>

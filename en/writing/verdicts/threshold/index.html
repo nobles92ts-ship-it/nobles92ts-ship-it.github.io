@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>I did not touch the threshold — Verdicts</title><meta name="description" content="One run, 126 cases, one failure. I knew how to make it pass, and didn't."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 Writing</div><div class="plist"><a href="/en/writing/verdicts/" aria-current="page"><span class="t"><span>Verdicts</span><span class="kpi">3 posts</span></span><span class="s">The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.</span></a><a href="/en/writing/measurement/"><span class="t"><span>Measurement</span><span class="kpi">1 post</span></span><span class="s">Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.</span></a><a href="/en/writing/agents/"><span class="t"><span>Running agents</span><span class="kpi">1 post</span></span><span class="s">The other side — loops, guards, and the things I decided not to automate.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/writing/verdicts/threshold/" aria-current="page"><span class="t"><span>I did not touch the threshold</span><span class="kpi">1 failure</span></span><span class="s">One run, 126 cases, one failure. I knew how to make it pass, and didn&#39;t.</span></a><a href="/en/writing/verdicts/version-docs/"><span class="t"><span>Is it broken, or not there yet?</span><span class="kpi">when</span></span><span class="s">In version documentation, half the feature description is wrong within six months. The date it appeared never is. And the date is usually what a verdict needs.</span></a><a href="/en/writing/verdicts/evidence-grades/"><span class="t"><span>&quot;Probably right&quot; is not a verdict</span><span class="kpi">6 grades of evidence</span></span><span class="s">Answering the same question with &quot;probably right&quot; or with &quot;right&quot; didn&#39;t come down to how hard I worked at it.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Writing</span><span class="st">in progress</span></div><h1>I did not touch the threshold</h1><p class="sum">One run, 126 cases, one failure. I knew how to make it pass, and didn&#39;t.</p><div class="meta"><span>1 failure</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#why-there-are-five-verdicts">Why there are five verdicts</a><a href="#the-one-failure">The one failure</a><a href="#the-diagnosis-i-got-wrong">The diagnosis I got wrong</a><a href="#where-the-time-went">Where the time went</a><a href="#verdict">Verdict</a></nav><div class="prose"><p>126 cases, start to finish. 937 seconds. One failure.</p>
+<p>I knew how to make that one pass. Widen the verdict window from 30 seconds to 60. One line.</p>
+<h2 id="why-there-are-five-verdicts">Why there are five verdicts</h2>
+<p>With only PASS and FAIL, automation lies. Cases the machine isn’t sure about have nowhere to go, so they get pushed into one of the two — and the one they get pushed into is usually PASS.</p>
+<p>So there are five. PASS and FAIL only when a log anchor lets the machine be certain. EVIDENCE when the screen was captured but nothing can be concluded. SKIP when the case never ran. NA when it’s out of scope.</p>
+<table>
+<thead>
+<tr>
+<th>Verdict</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVIDENCE</td>
+<td>66</td>
+</tr>
+<tr>
+<td>SKIP</td>
+<td>39</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>16</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>4</td>
+</tr>
+<tr>
+<td>FAIL</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The largest block is EVIDENCE, at 66. That means the machine decided on its own for fewer than half the cases — and not hiding that number is the whole point of splitting the verdicts up.</p>
+<h2 id="the-one-failure">The one failure</h2>
+<p>Two consecutive cases were judging the same action against the same log anchor. The first waited 30 seconds; the anchor arrived after that and was caught inside the second case’s window.</p>
+<p>The event fired normally. The first window simply missed it. Four other cases with the same title all passed in this run, and in the previous run the anchor arrived inside 30 seconds and this case passed too.</p>
+<p>Which is to say the result is decided by timing.</p>
+<blockquote>
+<p>Widen the window and this run goes green. The cause stays exactly where it was, and the next run wobbles in the same place.</p>
+</blockquote>
+<p>The structural problem is a duplicated anchor. The fix is to give the first case an anchor of its own, or merge the two — and either way the expected values have to be confirmed first. This run closed carrying one failure.</p>
+<h2 id="the-diagnosis-i-got-wrong">The diagnosis I got wrong</h2>
+<p>Nine of the 39 skips reported as “tap target unmapped.” I wrote that filling in the coordinates would recover them. <strong>I called it the cheapest coverage I could buy.</strong></p>
+<p>Wrong. Filling them in recovers nothing.</p>
+<p>Dumping all 7,455 widgets showed the targets existed and were named. What blocked them wasn’t coordinates — it was reach. One ancestor container was not visible, so the entire left HUD stayed folded, and it never opened once during the run.</p>
+<table>
+<thead>
+<tr>
+<th>Of 72 in-game dumps</th>
+<th>Appeared</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Right HUD</td>
+<td>72</td>
+</tr>
+<tr>
+<td>Left HUD</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Adding coordinates only changes the skip reason from “unmapped” to “action failed.” Growing coverage needs a route to that screen, not a mapping.</p>
+<p>One string dragged the entire diagnosis in the wrong direction. A reason string isn’t log decoration — it’s the interface a person reads to decide what to do next.</p>
+<h2 id="where-the-time-went">Where the time went</h2>
+<p>Of 937 seconds, 302 (32.3%) were bridge round trips. Of those, dumping the widget tree alone accounted for 186 seconds — 19.8% of the whole run.</p>
+<p>That’s what happens when every judgment pulls the entire tree. A call that asks for only the widgets in question would cut it. By how much, I don’t know until I measure before and after against the same set of cases.</p>
+<p>Until I saw these numbers I assumed shader compilation was the bottleneck.</p>
+<h2 id="verdict">Verdict</h2>
+<p>The one failure was not a product defect. And I still didn’t turn it green.</p>
+<p>Being able to write both of those sentences at once is why the verdicts are split five ways and why the reason strings get written down.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

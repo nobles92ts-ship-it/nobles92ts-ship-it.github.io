@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>파일 관리 체계 — 컨텍스트와 기억</title><meta name="description" content="제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/" aria-current="page"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>파일 관리 체계</h1><p class="sum">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</p><div class="meta"><span>일치 5 · 내가 놓친 3</span><a class="src" href="https://youtu.be/MM-MPS57qKA" target="_blank" rel="noopener">원본 영상 — youtu.be/MM-MPS57qKA ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-말한-영상인가">무엇을 말한 영상인가</a><a href="#깨본-결과--같은-답-다른-근거">깨본 결과 — 같은 답, 다른 근거</a><a href="#내-환경에-대봤다--영상이-못-덮는-절반">내 환경에 대봤다 — 영상이 못 덮는 절반</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>서로 다른 이유로 같은 답에 도달했다는 게 이 편의 값어치입니다.</strong> 9분짜리 파일 정리 영상이 제가 따로 만들어 둔 폴더 설계와 <strong>결론 다섯 개가 일치</strong>했습니다. 그런데 <strong>근거가 완전히 다릅니다</strong> — 그는 <em>“복잡하면 사람이 도망간다”</em> 는 인간공학으로, 저는 <em>“경로가 분류에 종속되면 깨진다”</em> 는 시스템공학으로 왔습니다. 그리고 이 영상이 <strong>제 설계의 공백 셋을 정확히 짚었습니다.</strong> 그중 하나는 제가 <strong>근거 없이 정한 숫자</strong>였습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="영상의 체계. 최상위 폴더에 번호를 붙이고 99를 아카이브로 예약한다. 날짜 명명은 네 단계인데, 연과 분기까지는 검색으로 찾을 수 있고 월과 일까지 내려가면 부모 폴더를 알아야만 찾을 수 있다는 경계가 있다.">
+  <text class="lbl" x="8" y="22">체계의 뼈대 — 깊이는 5레벨까지, 자주 쓰는 것에 낮은 번호</text>
+  <rect class="bx-code" x="8" y="36" width="984" height="52" rx="2"/>
+  <text class="bx-t" x="500" y="57" text-anchor="middle">[01] 개인 · [02] 업무 · [03] 참고 문서 · [04] 임시 공유 · [05] 백업 · [99] 보관</text>
+  <text class="bx-s" x="500" y="78" text-anchor="middle">[99] 는 항상 보관으로 예약한다 — 다시 안 쓸 게 뻔한데 차마 못 지우는 것들의 자리</text>
+  <text class="lbl" x="8" y="114">날짜 명명 네 단계 — 그리고 그 사이에 경계가 하나 있다</text>
+  <rect class="vn vn-b" x="8" y="126" width="484" height="72" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="250" y="150" text-anchor="middle">연 · 연+분기</text>
+  <text class="cap" x="250" y="172" text-anchor="middle">검색으로 찾는다</text>
+  <text class="cap" x="250" y="192" text-anchor="middle">부모 폴더를 몰라도 된다</text>
+  <rect class="vn vn-a" x="508" y="126" width="484" height="72" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="750" y="150" text-anchor="middle">연+월 · 연월일</text>
+  <text class="cap" x="750" y="172" text-anchor="middle">부모 폴더를 알아야만 찾는다</text>
+  <text class="cap" x="750" y="192" text-anchor="middle">정밀해질수록 검색이 안 듣는다</text>
+  <text class="cap cap-i" x="8" y="224">⇒ 그리고 모든 파일에 <tspan class="cap-p">표준 키워드 하나</tspan>를 넣는다 — "프로젝트명 + 키워드"로 90% 적중</text>
+  <text class="cap" x="8" y="244">문서 · 회의록 · 작업표 · 브리핑 · 양식 다섯 중 하나가 반드시 이름에 들어간다</text>
+</svg>
+<figcaption>날짜를 얼마나 정밀하게 쓰느냐에 검색 가능성의 경계가 있다는 게 이 체계에서 제일 예리한 부분이다.</figcaption>
+</figure>
+<h2 id="무엇을-말한-영상인가">무엇을 말한 영상인가</h2>
+<p><strong>출발점이 균형입니다</strong> — <em>“얼마나 깔끔한가”</em> 와 <em>“얼마나 검색되는가”</em> 사이. 그리고 <strong>깊이는 5레벨, 너비는 99폴더</strong>를 상한으로 잡습니다. 근거는 단순합니다 — <em>“다섯 개 넘으면 우리는 길을 잃는다.”</em></p>
+<p><strong>번호 체계 하나를 대놓고 조롱하면서 시작합니다.</strong> 공식 문서의 <em>“두 자리·소수점·두 자리”</em> 규칙을 띄워 놓고 <em>“이 전혀 복잡하지 않은 번호 체계를 외우고… 어, 어디 가세요?”</em> 라고 합니다. <strong>복잡한 체계는 사람이 안 쓴다</strong>는 게 이 영상의 일관된 축입니다.</p>
+<p><strong>직접 고안한 폴더가 하나 있습니다.</strong> <em>“임시 공유”</em> — 기밀 자료에서 일부만 떼어 공유용으로 격리하는 자리입니다. <strong>어디에도 안 속하는 것의 합법적 임시 거처</strong>입니다.</p>
+<p><strong>팁 다섯 중 첫째가 제일 중요합니다.</strong></p>
+<blockquote>
+<p>찾은 곳이 아니라 쓸 곳을 기준으로 정리하라.</p>
+</blockquote>
+<p>나머지 넷은 이렇습니다. <strong>파일 매니저의 검색 문법을 익힐 것</strong>, <strong>이름을 못 바꾸는 공유 파일은 설명 필드에 키워드를 심을 것</strong>, <strong>별표는 최대 5개</strong>(<em>“전부 별표면 아무것도 별표가 아니다”</em>), <strong>공유받으면 복사·바로가기·무시 셋 중 하나</strong> — 바로가기를 쓰면 <strong>원본을 안 옮기고도 내 체계로 정리</strong>됩니다.</p>
+<p><strong>결론이 겸손합니다</strong> — <em>“완벽한 파일 관리 시스템은 없다. 과잉 최적화는 오히려 생산성을 떨어뜨린다. 하나를 골라 고수하라.”</em></p>
+<h2 id="깨본-결과--같은-답-다른-근거">깨본 결과 — 같은 답, 다른 근거</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 254" role="img" aria-label="내 설계와 대조한 결과. 결론이 같은 것 다섯, 답이 갈린 것 셋, 영상이 아예 다루지 않는 영역 넷으로 나뉘었다.">
+  <text class="lbl" x="8" y="22">내 설계와 대조 — 세 덩어리로 갈렸다</text>
+  <rect class="vn vn-b" x="8" y="36" width="316" height="106" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="166" y="60" text-anchor="middle">결론이 같은 것 다섯</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">번호 체계 기각 · 원본 안 옮기기</text>
+  <text class="cap" x="166" y="102" text-anchor="middle">인덱스에 정원 두기 · 하나 골라 고수</text>
+  <text class="cap" x="166" y="124" text-anchor="middle">"쓸 곳 기준으로 정리"</text>
+  <rect class="vn vn-a" x="342" y="36" width="316" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="60" text-anchor="middle">답이 갈린 것 셋</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">깊이 5 vs 3 — 내 근거가 부족했다</text>
+  <text class="cap" x="500" y="102" text-anchor="middle">번호 접두어 — 저장소 종류에 달렸다</text>
+  <text class="cap" x="500" y="124" text-anchor="middle">태그 — 내 진술이 과했다</text>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">영상에 아예 없는 것 넷</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">기계가 쓰는 디렉터리 개념</text>
+  <text class="cap" x="834" y="102" text-anchor="middle">"지워도 되는가" 판정</text>
+  <text class="cap" x="834" y="124" text-anchor="middle">시간축 산출물 · 자동 검사</text>
+  <line class="rule" x1="8" y1="164" x2="992" y2="164"/>
+  <text class="cap cap-i" x="8" y="188">⇒ 다섯이 일치하는데 <tspan class="cap-p">근거가 하나도 안 겹친다</tspan> — 그는 인간공학, 나는 시스템공학</text>
+  <text class="cap" x="8" y="212">서로 다른 길로 같은 지점에 도달했다는 것이, 그 결론의 신뢰도를 올린다</text>
+  <text class="cap" x="8" y="236">⚠ 그리고 영상의 화면이 자기 체계의 실패를 보여준다 — 보관 폴더 안에 번호가 중복된 폴더가 들어 있다</text>
+</svg>
+<figcaption>일치·충돌·공백을 갈라 놓으면 "누가 맞나"가 아니라 "어느 조건에서 맞나"가 나온다.</figcaption>
+</figure>
+<p><strong>제일 중요한 충돌은 번호 접두어입니다.</strong> 그는 씁니다. 저는 금지했습니다. <strong>둘 다 맞습니다</strong> — 조건이 다르기 때문입니다.</p>
+<p>그는 <strong>파일 ID 기반 저장소</strong>를 씁니다. 폴더 이름을 바꿔도 링크가 안 깨집니다. 저는 <strong>로컬 절대경로</strong>를 씁니다. 번호가 경로에 들어가는 순간 <strong>경로가 분류에 종속됩니다.</strong> 같은 기법이 <strong>한쪽에선 무해하고 한쪽에선 치명적</strong>입니다. 규칙으로 접으면 이렇습니다 — <strong>ID 기반 저장소면 번호를 써도 되고, 경로 기반이면 금지.</strong></p>
+<p><strong>그리고 그도 대가를 치르고 있습니다.</strong> 영상 화면에 <strong>보관 폴더 안에 번호가 중복된 폴더</strong>가 들어 있습니다. 번호가 의미를 잃은 상태입니다. <strong>자기 체계의 실패가 자기 화면에 찍혀 있습니다.</strong></p>
+<p><strong>제가 틀린 것도 둘 있습니다.</strong> 깊이 3은 <strong>제가 감으로 정한 숫자</strong>였고 그의 5는 실사용 근거가 있습니다. 다만 층위가 달랐습니다 — 그의 5는 문서 깊이, 제 3은 루트 규칙 깊이입니다. <strong>정정: 루트 규칙은 3, 그 아래는 자유, 총 5를 권장 상한으로.</strong> 그리고 태그를 안티패턴이라고 쓴 건 <strong>진술이 과했습니다</strong> — <strong>이름을 바꿀 수 없는 대상에는 그게 유일한 수단</strong>입니다.</p>
+<h2 id="내-환경에-대봤다--영상이-못-덮는-절반">내 환경에 대봤다 — 영상이 못 덮는 절반</h2>
+<p><strong>이 영상의 대상은 100% 사람이 읽는 문서입니다.</strong> 코드 저장소도, 캐시도, 락 파일도, 파이프라인 산출물도 없습니다. 제 작업 폴더의 상당수가 <strong>기계가 쓰는 디렉터리</strong>라서, <strong>이 영상만으로는 절반도 못 덮습니다.</strong></p>
+<p><strong>「지워도 되는가」 판정이 없습니다.</strong> 백업 폴더는 있어도 <strong>재생성 가능한 것</strong>이라는 개념이 없습니다. 그래서 보관 폴더가 <em>“차마 못 지우는 것”</em> 의 무덤이 된다고 <strong>본인이 인정합니다.</strong> 제 설계에는 첫 질문이 <em>“이거 다시 만들 수 있나”</em> 라서 그 무덤이 원천 차단됩니다.</p>
+<p><strong>시간축 산출물 대응도 없습니다.</strong> 날짜를 파일명에만 넣습니다. <strong>결과가 수백에서 수천 건씩 자동으로 쌓이는 경우</strong> 파일명 규칙만으로는 무너집니다 — 폴더로 파티셔닝해야 합니다.</p>
+<p><strong>그리고 집행 수단이 사람 의지뿐입니다.</strong> <em>“골라서 고수하라”</em> 가 전부입니다. <strong>그 결과가 화면의 무질서로 그대로 찍혔습니다.</strong> 규칙을 검사하는 스크립트가 없으면 규칙은 시간이 지나면서 무너집니다.</p>
+<h2 id="판정">판정</h2>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>어디에도 안 속하는 것의 임시 거처</strong></td>
+<td><strong>채택.</strong> 제 임시 폴더는 「재생성 가능한 것」만 받게 정의돼 있어서, <strong>분류가 안 되는 것이 갈 곳이 없었다</strong></td>
+</tr>
+<tr>
+<td><strong>인덱스에 정원 두기</strong></td>
+<td><strong>채택.</strong> “전부 별표면 아무것도 별표가 아니다” — 제 설계에 없던 규율 장치</td>
+</tr>
+<tr>
+<td><strong>깊이 상한 정정</strong></td>
+<td><strong>채택.</strong> 루트 규칙 3 · 총 5 권장. 제 3은 근거가 없었다</td>
+</tr>
+<tr>
+<td>태그 = 안티패턴</td>
+<td><strong>정정.</strong> 1차 구조를 대체하면 안 되지만, <strong>이름을 못 바꾸는 대상에는 유일한 수단</strong></td>
+</tr>
+<tr>
+<td>번호 접두어</td>
+<td><strong>기각 유지 — 단 조건부.</strong> ID 기반이면 OK, 경로 기반이면 금지</td>
+</tr>
+<tr>
+<td>사람 의지에 맡기는 집행</td>
+<td><strong>기각.</strong> 자동 검사로 간다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈은 이겁니다 — 결론이 같다는 것보다 근거가 다르다는 게 더 중요한 정보였습니다.</strong> 다섯 개가 일치했는데 근거는 하나도 안 겹칩니다. <strong>서로 다른 길로 같은 지점에 도달하면 그 지점이 맞을 확률이 올라갑니다.</strong></p>
+<p>그리고 ⚠ <strong>“저 사람은 되는데 나는 안 되는” 기법에는 대개 조건이 숨어 있습니다.</strong> 번호 접두어가 그랬습니다. <em>“그는 되는데 나는 안 된다”</em> 로 끝냈으면 규칙이 안 나왔을 텐데, <strong>왜 갈리는지를 찾으니 저장소 종류라는 조건이 나왔습니다.</strong> 조건을 찾아야 규칙이 되고, 못 찾으면 취향으로 남습니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

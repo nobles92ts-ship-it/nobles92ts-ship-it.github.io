@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>토스 네뷸라 디바이스 팜 — QA 자동화</title><meta name="description" content="가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/" aria-current="page"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/qa/toss-nebula/" aria-current="page"><span class="t"><span>토스 네뷸라 디바이스 팜</span><span class="kpi">수확 0종</span></span><span class="s">가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.</span></a><a href="/ko/teardowns/qa/asleep-qa/"><span class="t"><span>에이슬립 QA 자동화</span><span class="kpi">11종 중 1</span></span><span class="s">11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.</span></a><a href="/ko/teardowns/qa/autoplay-test-tool/"><span class="t"><span>오토플레이 테스트 툴</span><span class="kpi">기법 4 중 2</span></span><span class="s">봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다.</span></a><a href="/ko/teardowns/qa/qa-infrastructure/"><span class="t"><span>QA 인프라 발표</span><span class="kpi">자막 0 · 슬라이드만</span></span><span class="s">자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>토스 네뷸라 디바이스 팜</h1><p class="sum">가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.</p><div class="meta"><span>수확 0종</span><a class="src" href="https://toss.tech/article/device-farm-nebula" target="_blank" rel="noopener">원문 — toss.tech/article/device-farm-nebula ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-만든-것인가">무엇을 만든 것인가</a><a href="#깨본-결과--135배는-동종-비교가-아니다">깨본 결과 — 13.5배는 동종 비교가 아니다</a><a href="#내-환경을-재봤다--그리고-대상이-틀렸다">내 환경을 재봤다 — 그리고 대상이 틀렸다</a><a href="#남은-건-남의-기법이-아니라-제-쪽-규율">남은 건 남의 기법이 아니라 제 쪽 규율</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>기법 0종, 도입 0건입니다.</strong> 초판에서 하나 채택했던 것이 <strong>2판에서 기각됐습니다</strong> — 근거로 삼은 실측이 맞았는데 <strong>그 호출이 제 파이프라인에 0건</strong>이었습니다. 게임 클라이언트는 화면을 네이티브 서피스 하나에 그려서 접근성 트리가 애초에 안 잡히고, <strong>그 사실은 제 프로젝트 문서에 이미 적혀 있었습니다.</strong> 그런데 이 조사가 헛되지 않았습니다 — 이 시스템의 원칙 하나를 자로 삼아 제 코드를 재보니 <strong>관문이 두 벌</strong>이었습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="네 계층 구조. 클라이언트는 공개 API 하나만 쓰고, 서버가 점유와 실행을 오케스트레이션하고, 호스트에서 도는 에이전트가 중계하고, 기기마다 상주 컨트롤러가 실제로 누른다. 네 번째 계층이 직접 만든 부분이자 이 글의 핵심이다.">
+  <text class="lbl" x="8" y="22">① 클라이언트 — 웹 콘솔 · SDK · CLI · API 직접 호출</text>
+  <rect class="vn vn-a" x="8" y="34" width="984" height="34" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="56" text-anchor="middle">모든 입구가 공개 API 하나만 쓴다</text>
+  <path d="M500 68 V84" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="102">② 서버 — 오케스트레이션</text>
+  <rect class="bx-code" x="8" y="112" width="486" height="42" rx="2"/>
+  <text class="bx-t" x="251" y="132" text-anchor="middle">점유 · 배정 · 해제 분산 락</text>
+  <text class="bx-s" x="251" y="149" text-anchor="middle">한 기기에 두 테스트가 붙는 간섭 차단</text>
+  <rect class="bx-code" x="506" y="112" width="486" height="42" rx="2"/>
+  <text class="bx-t" x="749" y="132" text-anchor="middle">실행 요청 큐 · 러너 여러 대</text>
+  <text class="bx-s" x="749" y="149" text-anchor="middle">실행량이 늘면 러너를 늘려 수평 확장</text>
+  <path d="M500 154 V170" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="188">③ 에이전트 — 호스트에서 도는 다리. 연결 기기를 자동 발견해 중계</text>
+  <rect class="vn vn-a" x="8" y="196" width="984" height="26" rx="2" fill-opacity=".06"/>
+  <text class="cap" x="500" y="214" text-anchor="middle">iOS 는 맥 · 안드로이드는 리눅스 — 호스트가 갈린다</text>
+  <text class="lbl cap-p" x="8" y="242">④ 기기 — 1대당 상주 컨트롤러. <tspan class="cap-i">직접 만든 계층이고 이 글의 핵심이다</tspan></text>
+</svg>
+<figcaption>기기 수백 대를 서버실에 24시간 물려두고, 전사 누구나 API 호출 하나로 점유해 조작하는 사내 공용 인프라.</figcaption>
+</figure>
+<h2 id="무엇을-만든-것인가">무엇을 만든 것인가</h2>
+<p><strong>팀마다 맥미니에 폰 대여섯씩 꽂아 각자 굴리던 작은 팜들을 하나로 통합한 것</strong>이 출발점이다. 맥미니 5대·기기 15대·개발자 1명으로 시작해 <strong>1년 만에 기기 100대를 넘겼다.</strong></p>
+<p>사용자가 보는 건 이게 전부다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>POST /device/occupy   { platform: "android", tags: ["smoke"] }</span></span>
+<span class="line"><span>POST /actions/click   { x: 540, y: 1200 }</span></span></code></pre>
+<p><strong>“기기 하나 잡아 줘 → 거기 (540,1200)을 눌러 줘.”</strong> 그 기기가 어느 맥미니에 물렸는지도, 드라이버 세팅도 알 필요가 없다.</p>
+<h3 id="기존-도구를-키우는-대신-기기-계층부터-새로-만들었다">기존 도구를 키우는 대신 기기 계층부터 새로 만들었다</h3>
+<p>이 글에서 제일 큰 결정이다. 규모를 키울수록 기존 자동화 프레임워크의 구조적 한계에 반복해서 부딪혔고, <strong>임시 수리보다 소유가 낫다고 판단했다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>무엇을 걷어냈나</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>세션 개념</strong></td>
+<td>세션 기동에 매번 <strong>15~40초</strong>, 규모가 커질수록 세션 실패가 급증, 관리 비용이 기기 수에 비례</td>
+</tr>
+<tr>
+<td>데스크톱 전제 미러링</td>
+<td>기존 도구는 “기기 화면 → 데스크톱 앱” 전제라 <strong>서버 경유 브라우저 다중 배포</strong>에 안 맞는다</td>
+</tr>
+<tr>
+<td>USB를 독점하는 캡처</td>
+<td>독점하면 조작과 공존이 안 된다. 다른 방식은 <strong>10~15fps 슬라이드쇼</strong></td>
+</tr>
+</tbody>
+</table>
+<p>세션을 걷어낸 자리에 <strong>상시 떠 있는 컨트롤러 + 상태 없는 HTTP 호출</strong>을 놓았다. 그리고 <strong>인터페이스를 스펙 하나로 정의해 클라이언트를 자동 생성한다.</strong></p>
+<p><strong>그 소유가 만든 부수 효과가 진짜 값어치다.</strong> 자체 한글 입력기(글자가 안 깨진다), 사내 빌드 즉시 설치, 보안 정책을 드라이버 규격 안에서 강제 — <strong>스펙을 소유하니 남의 도구가 지원해 주기를 기다릴 필요가 없다.</strong></p>
+<h2 id="깨본-결과--135배는-동종-비교가-아니다">깨본 결과 — 13.5배는 동종 비교가 아니다</h2>
+<p>간판 수치가 이렇다. 엘리먼트 클릭이 <strong>52ms 대 702ms = 13.5배.</strong></p>
+<p><strong>그런데 저자가 스스로 단서를 붙였다 — 격차의 약 80%가 기존 도구의 화면 안정 대기이고, 그 대기를 끄면 2~3배로 좁혀진다.</strong> 즉 <strong>안전장치를 켠 값과 끈 값의 비교</strong>다. 정직하게 밝힌 건 좋은데, 표에서 “13.5배”만 떼어 인용하면 틀린 말이 된다. 선택 자체는 합리적이다 — 실시간으로 보며 조작하는 용도엔 속도가 맞다. 다만 <strong>철학의 교환이지 공짜 이득이 아니다.</strong></p>
+<p><strong>더 큰 결손은 따로 있다. p50만 있고 p99가 없다.</strong> 테스트 자동화를 죽이는 건 <strong>중앙값이 아니라 꼬리</strong>다. 세션·명령 실패율, 기기 가동률, 플레이키 감소폭 — <strong>안정성 수치가 글 전체에 하나도 없다.</strong></p>
+<p>나머지도 적어 둔다. 효과 근거가 <strong>증언 두 건</strong>이고 측정 조건·표본이 없다. <strong>가장 가까운 오픈소스 선행 사례</strong>를 비교 대상에서 뺐다 — “왜 그게 아니라 자체 구축인가”가 답해지지 않았다. 그리고 iOS 캡처 경로가 특정 OS 계층이라 <strong>호스트를 통일 못 하는 구조적 비용</strong>이 생기는데 비용으로 서술되지 않았다. 마지막으로 드라이버가 비공개라 <strong>제3자가 표의 수치를 검증할 수 없다.</strong></p>
+<h2 id="내-환경을-재봤다--그리고-대상이-틀렸다">내 환경을 재봤다 — 그리고 대상이 틀렸다</h2>
+<p>실기기 하나로 읽기 전용 항목만 쟀다(조작계는 기기 상태를 바꾸므로 제외).</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="구간 분해 결과. 스크린샷과 UI 덤프 모두 시간의 대부분이 기기 안에서 소모되고 전송은 5퍼센트, 프로세스 기동은 4퍼센트에 불과하다. 그래서 케이블 교체와 호스트 최적화 두 가설이 모두 기각됐다.">
+  <text class="lbl" x="8" y="24">구간 분해 — 병목이 어디인가</text>
+  <text class="cap cap-i" x="200" y="56" text-anchor="end">UI 덤프 2,350ms</text>
+  <rect class="bar bar-p" x="216" y="42" width="762" height="22" rx="1"/>
+  <text class="cap cap-on" x="228" y="58">기기 안에서 소모 — 사실상 100%</text>
+  <text class="cap cap-i" x="200" y="98" text-anchor="end">스크린샷 1,863ms</text>
+  <rect class="bar bar-p" x="216" y="84" width="724" height="22" rx="1"/>
+  <rect class="bar" x="944" y="84" width="34" height="22" rx="1"/>
+  <text class="cap cap-on" x="228" y="100">기기 안에서 소모 95%</text>
+  <text class="cap" x="906" y="122">전송 5%</text>
+  <text class="cap cap-i" x="200" y="146" text-anchor="end">프로세스 기동</text>
+  <rect class="bar" x="216" y="132" width="30" height="22" rx="1"/>
+  <text class="cap" x="256" y="148">왕복 73ms = 4%</text>
+  <line class="rule" x1="8" y1="172" x2="992" y2="172"/>
+  <text class="cap cap-i" x="8" y="194">⇒ “케이블로 바꾸면 빨라진다” <tspan class="cap-p">기각</tspan> — 최대 이득 5% · “호스트에 상시 프로세스를 띄운다” <tspan class="cap-p">기각</tspan> — 최대 4%</text>
+  <text class="cap" x="8" y="216">저쪽의 이득은 호스트가 아니라 <tspan class="cap-i">기기 안</tspan>에서 나온다. 호스트 최적화로 오독하면 헛수고한다</text>
+  <text class="cap cap-p" x="8" y="234">그리고 더 큰 것 — 위 UI 덤프 호출이 내 파이프라인에 0건이었다</text>
+</svg>
+<figcaption>읽기 전용 항목만 n=5~7로 측정. 전송 구간과 프로세스 기동을 따로 떼어 재보니 둘 다 병목이 아니었다.</figcaption>
+</figure>
+<p>UI 덤프가 <strong>2,350ms</strong>로 저쪽의 10배 느렸다. 그래서 초판에서 <strong>기기 안 상주 컨트롤러를 유일한 수확으로 채택했다.</strong></p>
+<p><strong>2판에서 기각됐다.</strong> 코드를 전수 대조하니 <strong>제 파이프라인에 그 호출이 0건</strong>이었다.</p>
+<p>이유는 제 프로젝트 문서에 <strong>이미 적혀 있었다.</strong> 게임 클라이언트는 화면 전체를 네이티브 서피스 하나에 그린다 — <strong>접근성 트리가 애초에 안 잡힌다.</strong> 그래서 제 화면 조작은 스크린샷 → 비전 → 좌표 탭 루프다. 그 도구를 붙여도 <strong>빈 트리가 온다.</strong> 10배 빨라질 대상 자체가 존재하지 않는다.</p>
+<blockquote>
+<p><strong>2,350ms는 실측이 맞았는데 대상이 틀렸다.</strong> 벤치마크를 재기 전에 **“이 호출이 내 런에서 실제로 일어나는가”**를 먼저 확인했어야 했다.</p>
+</blockquote>
+<p>같은 실측이 가설 두 개를 더 기각했다. <strong>“케이블로 바꾸면 빨라진다”</strong> — 전송 구간이 전체의 5%라 최대 이득이 5%다. <strong>“프로세스를 상시 띄워 재사용한다”</strong> — 왕복이 73ms라 최대 4%다. <strong>저쪽의 이득은 호스트가 아니라 기기 안에서 나오는데, 그걸 호스트 최적화로 오독하면 헛수고한다.</strong></p>
+<h2 id="남은-건-남의-기법이-아니라-제-쪽-규율">남은 건 남의 기법이 아니라 제 쪽 규율</h2>
+<p>이 글에서 **“모든 도구가 공개 API 하나로 만들어졌다”**고 한 지점을 자로 삼아 제 코드를 재봤다.</p>
+<p>게이트웨이를 우회해 명령을 직접 부르는 곳이 <strong>7개 파일 14건</strong>이었다. 래퍼를 경유하는 파일과 거의 반반이다.</p>
+<p><strong>그런데 더 나쁜 게 나왔다. 우회 파일이 문제가 아니라 관문 자체가 두 벌이었다.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>락</th>
+<th>에러 분류</th>
+<th>실제 런이 쓰는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정식 관문</td>
+<td>있음</td>
+<td>있음</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>다른 한 벌</td>
+<td>없음</td>
+<td>없음</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>정식 관문의 방어가 실제 런에는 하나도 안 걸려 있었다.</strong> 나중에 계측기를 붙일 때도 이 사실 때문에 방어 없는 쪽에 달아야 했다.</p>
+<h2 id="판정">판정</h2>
+<p><strong>기법 0종, 도입 0건.</strong> 이 조사가 만든 건 <strong>제 코드에 대한 발견 하나</strong>다.</p>
+<p>그게 벤치마킹의 정직한 결과일 때가 있다. <strong>남의 시스템에서 베낄 게 없어도, 그 시스템의 원칙을 자로 삼아 제 걸 재보면 갈라진 데가 보인다.</strong></p>
+<p>기각한 것에도 재개 조건을 붙여 뒀다 — <strong>대상이 일반 앱이 되거나, 빌드가 접근성 노드를 노출하도록 바뀔 때.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

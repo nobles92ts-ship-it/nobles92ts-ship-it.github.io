@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The unattended loop — An adb-based game QA server</title><meta name="description" content="Assume the product passes everything and every FAIL becomes an automation defect. A free oracle."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/" aria-current="page"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/android-qa/driving/"><span class="t"><span>Driving and judging</span><span class="kpi">RPC &gt; screen</span></span><span class="s">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</span></a><a href="/en/built/android-qa/loop/" aria-current="page"><span class="t"><span>The unattended loop</span><span class="kpi">9h57m</span></span><span class="s">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</span></a><a href="/en/built/android-qa/findings/"><span class="t"><span>What came out</span><span class="kpi">147 / 300</span></span><span class="s">The first thing that wasn&#39;t an automation defect. And it isn&#39;t something to brag about.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">in progress</span></div><h1>The unattended loop</h1><p class="sum">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</p><div class="meta"><span>9h57m</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#a-free-oracle">A free oracle</a><a href="#the-convergence-condition-is-written-first">The convergence condition is written first</a><a href="#overnight">Overnight</a><a href="#these-numbers-must-not-be-quoted-as-performance">These numbers must not be quoted as performance</a><a href="#unattended-requires-failures-to-stay-local">Unattended requires failures to stay local</a></nav><div class="prose"><p>The loop’s design is a little unusual. It runs <strong>a case set the build is already known to pass in full.</strong></p>
+<h2 id="a-free-oracle">A free oracle</h2>
+<p>Which licenses one premise:</p>
+<blockquote>
+<p>If the product is ALL PASS, then every FAIL the automation produces is <strong>a defect in the automation itself.</strong></p>
+</blockquote>
+<p>It’s grading the automation against an answer key. The hardest question when building an automation tool is <strong>“is this failure the product’s problem or mine?”</strong> — and that question disappears entirely.</p>
+<p>The cycle: run, diagnose, fix, write down what was learned, run again.</p>
+<p><strong>Re-running without diagnosing is forbidden.</strong> Without that rule “let’s just try it again” becomes the default, and then an intermittently passing case never gets fixed while still moving the statistics.</p>
+<h2 id="the-convergence-condition-is-written-first">The convergence condition is written first</h2>
+<p>When it ends was decided up front — <strong>every case machine-judged PASS, zero BLOCKED, two cycles running.</strong></p>
+<p>Two consecutive cycles is the part that matters. Passing everything once can be luck, and in an unattended loop <strong>repetition is the only thing that separates luck from stability.</strong></p>
+<p>And without writing it down, it never ends. There’s always a little more to fix in automation, so with no exit condition it continues indefinitely under “not perfect yet.”</p>
+<h2 id="overnight">Overnight</h2>
+<p><strong>300 cycles · 9 hours 57 minutes · unattended · zero failures · zero crashes.</strong></p>
+<p>All 26 verification points held every cycle. Median cycle 111.5 seconds (min 98.8, max 161.8). The battery went from 96% to 95%.</p>
+<p>The battery is worth recording. It runs tethered over USB, and <strong>if drain outpaces charge, an overnight run simply isn’t possible.</strong> One percent means it could go for days.</p>
+<h2 id="these-numbers-must-not-be-quoted-as-performance">These numbers must not be quoted as performance</h2>
+<p>⚠ <strong>The per-stage timings must not be quoted as performance figures.</strong> They contain fixed waits from my own scripts.</p>
+<p>“3.2 seconds for a screen transition” isn’t product performance if two of those seconds are a <code>sleep</code> I put there. About the only segment readable as genuine product loading is the world-entry transition, and <strong>turning load time into a real metric needs separate instrumentation.</strong></p>
+<p>Not writing that distinction down is how you end up fooled by your own numbers six months later. And worse is what happens after you show them to someone else — <strong>a number, once quoted, travels with its caveats stripped off.</strong></p>
+<h2 id="unattended-requires-failures-to-stay-local">Unattended requires failures to stay local</h2>
+<p>What made a full unattended run possible wasn’t performance, it was the <strong>recovery structure.</strong></p>
+<p>The silent freeze was the hardest. It stops without anything failing, so the error counter never sees it. So <strong>screen-change magnitude became its own axis</strong> — no change triggers staged recovery attempts, and failing those, a hard cut.</p>
+<p>Cutting matters. In a run nobody is watching, <strong>waiting forever is worse than failing.</strong> A failure lands in the log and moves to the next case; a wait does nothing all night and is still there in the morning.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Frame budget — /watch</title><meta name="description" content="Almost all the cost is frames — and the budget triples while the length grows sixtyfold."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/" aria-current="page"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/watch/budget/" aria-current="page"><span class="t"><span>Frame budget</span><span class="kpi">100 max</span></span><span class="s">Almost all the cost is frames — and the budget triples while the length grows sixtyfold.</span></a><a href="/en/built/watch/transcript/"><span class="t"><span>Transcript</span><span class="kpi">two paths</span></span><span class="s">Having captions and not having them are entirely different routes. And what leaves the machine is audio, never video.</span></a><a href="/en/built/watch/boundary/"><span class="t"><span>Boundary and failure</span><span class="kpi">nothing leaves</span></span><span class="s">A tool handling other people&#39;s videos states what leaves the machine. And when something can&#39;t be done, it says so.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">in progress</span></div><h1>Frame budget</h1><p class="sum">Almost all the cost is frames — and the budget triples while the length grows sixtyfold.</p><div class="meta"><span>100 max</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#even-with-a-transcript-you-need-the-frames">Even with a transcript, you need the frames</a><a href="#which-is-why-long-videos-get-cut">Which is why long videos get cut</a><a href="#the-same-video-is-never-watched-twice">The same video is never watched twice</a><a href="#the-resolution-stays-where-it-is">The resolution stays where it is</a></nav><div class="prose"><p>The cost structure is simple. A transcript for a ten-minute video costs a few thousand tokens. <strong>The frames are everything</strong> — 80 of them at 512px wide runs 50–80k tokens, and raising the resolution to 1024 roughly quadruples the per-frame cost.</p>
+<p>So there is a ceiling: <strong>100 frames total, 2 fps.</strong> Within that, the budget is allocated by duration.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 246" role="img" aria-label="Frame budget and effective frame rate by video length. The budget grows only about threefold, from 30 frames at 30 seconds to 100 frames at 30 minutes, while length grows sixtyfold, so the effective rate collapses from 1 frame per second to 0.06.">
+  <text class="lbl" x="124" y="28">FRAME BUDGET — BARELY GROWS</text>
+  <text class="lbl" x="624" y="28">EFFECTIVE RATE — COLLAPSES</text>
+  <text class="lbl" x="112" y="61" text-anchor="end">30 sec</text>
+  <rect class="bx-code" x="124" y="40" width="144" height="32" rx="2"/>
+  <text class="bx-s" x="256" y="61" text-anchor="end">30</text>
+  <rect class="bx-llm" x="624" y="40" width="260" height="32" rx="2"/>
+  <text class="gt" x="892" y="61">1.0</text>
+  <text class="lbl" x="112" y="101" text-anchor="end">1 min</text>
+  <rect class="bx-code" x="124" y="80" width="192" height="32" rx="2"/>
+  <text class="bx-s" x="304" y="101" text-anchor="end">40</text>
+  <rect class="bx-llm" x="624" y="80" width="174" height="32" rx="2"/>
+  <text class="gt" x="806" y="101">0.67</text>
+  <text class="lbl" x="112" y="141" text-anchor="end">3 min</text>
+  <rect class="bx-code" x="124" y="120" width="288" height="32" rx="2"/>
+  <text class="bx-s" x="400" y="141" text-anchor="end">60</text>
+  <rect class="bx-llm" x="624" y="120" width="86" height="32" rx="2"/>
+  <text class="gt" x="718" y="141">0.33</text>
+  <text class="lbl" x="112" y="181" text-anchor="end">10 min</text>
+  <rect class="bx-code" x="124" y="160" width="384" height="32" rx="2"/>
+  <text class="bx-s" x="496" y="181" text-anchor="end">80</text>
+  <rect class="bx-llm" x="624" y="160" width="34" height="32" rx="2"/>
+  <text class="gt" x="666" y="181">0.13</text>
+  <text class="lbl" x="112" y="221" text-anchor="end">30 min</text>
+  <rect class="bx-code" x="124" y="200" width="480" height="32" rx="2"/>
+  <text class="bx-s" x="592" y="221" text-anchor="end">100</text>
+  <rect class="bx-llm" x="624" y="200" width="16" height="32" rx="2"/>
+  <text class="gt" x="648" y="221">0.06</text>
+</svg>
+<figcaption>Left is the budget; right is how many frames per second that budget actually buys. The left side triples while the right side drops to a seventeenth.</figcaption>
+</figure>
+<p>The problem is visible there. <strong>The budget grows about threefold, from 30 frames to 100. The length grows sixtyfold.</strong> Hand it a thirty-minute video whole and you are looking at <strong>one frame every eighteen seconds.</strong> Everything in between is known only from the transcript.</p>
+<h2 id="even-with-a-transcript-you-need-the-frames">Even with a transcript, you need the frames</h2>
+<p>“Wouldn’t the transcript be enough?” was my own first thought too. Transcripts are cheap and frames are expensive.</p>
+<p>It isn’t enough. <strong>Too much never gets said out loud.</strong> Screen layout, which button sits where, which way a graph bends, what actually moves in the demo — the presenter says “as you can see here” and moves on. What survives in the transcript is the word “here.”</p>
+<p>And for someone watching in order to build, <strong>the “here” is usually the part that matters.</strong> So the frames get bought, expensive as they are.</p>
+<h2 id="which-is-why-long-videos-get-cut">Which is why long videos get cut</h2>
+<p>Sampling a long video sparsely is almost always worse than <strong>sampling the part you need densely.</strong> Name a range and the whole budget goes inside it — 2:15 to 2:45 at 3 fps puts 90 frames into those thirty seconds.</p>
+<p>Same 90 frames, sixtyfold difference in coverage. Spread across thirty minutes it’s one frame every twenty seconds; concentrated into thirty seconds it’s three per second.</p>
+<p>So a long video gets a question first: <strong>which part.</strong> The most wasteful tokens are the ones burnt before deciding that. And past ten minutes a warning prints, which the answer is required to repeat — because <strong>having sampled sparsely is itself part of the result.</strong></p>
+<h2 id="the-same-video-is-never-watched-twice">The same video is never watched twice</h2>
+<p>A follow-up question in the same session <strong>does not re-run anything.</strong> The frames and transcript are already in context; extracting them again is paying the same cost twice.</p>
+<p>There’s a reason that has to be written down as a rule. From the calling side, “new question, new run” feels natural — so leave it unsaid and the second question spends another 80k tokens.</p>
+<h2 id="the-resolution-stays-where-it-is">The resolution stays where it is</h2>
+<p>The default is 512px wide. At 1024 the per-frame token cost roughly quadruples, which puts <strong>80 frames at 200–300k tokens.</strong></p>
+<p>There is exactly one case worth raising it for: needing to read small text on screen. And even then, only <strong>that range</strong> goes up. Full-length high resolution makes the entire budget design meaningless.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

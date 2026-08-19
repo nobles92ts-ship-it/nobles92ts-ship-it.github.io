@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>세션 간 메시징 — 에이전트 하네스</title><meta name="description" content="영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/" aria-current="page"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">96 중 1</span></span><span class="s">스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.</span></a><a href="/ko/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">285 중 1</span></span><span class="s">제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.</span></a><a href="/ko/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">1등 수확이 재발견</span></span><span class="s">코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.</span></a><a href="/ko/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">7종 중 순증 1.5</span></span><span class="s">도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.</span></a><a href="/ko/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">규율 5 중 1</span></span><span class="s">문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.</span></a><a href="/ko/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">4줄 중 1줄</span></span><span class="s">별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.</span></a><a href="/ko/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">수확 7종 → 0</span></span><span class="s">41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.</span></a><a href="/ko/teardowns/harness/session-messaging/" aria-current="page"><span class="t"><span>세션 간 메시징</span><span class="kpi">소켓 0 · 이미 라이브</span></span><span class="s">영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.</span></a><a href="/ko/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz 그룹챗</span><span class="kpi">데모 2 중 1</span></span><span class="s">채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.</span></a><a href="/ko/teardowns/harness/four-plugins/"><span class="t"><span>플러그인 4종 추천</span><span class="kpi">4종 중 이미 기각 2</span></span><span class="s">44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.</span></a><a href="/ko/teardowns/harness/meta-prompting/"><span class="t"><span>메타 프롬프팅</span><span class="kpi">3단계 · 검증 0</span></span><span class="s">프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.</span></a><a href="/ko/teardowns/harness/fable-field-guide/"><span class="t"><span>Fable 현장 가이드</span><span class="kpi">기법 6 · 새것 3</span></span><span class="s">모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.</span></a><a href="/ko/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">수확 3 → 1</span></span><span class="s">프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.</span></a><a href="/ko/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">기각 · 재개조건 5</span></span><span class="s">제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.</span></a><a href="/ko/teardowns/harness/payg-image-routing/"><span class="t"><span>스킬 하나로 광고 이미지 · 종량제 라우팅</span><span class="kpi">수확 1 · 반증 4</span></span><span class="s">스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>세션 간 메시징</h1><p class="sum">영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.</p><div class="meta"><span>소켓 0 · 이미 라이브</span><a class="src" href="https://www.instagram.com/reels/DbxtPGODv9k/" target="_blank" rel="noopener">원본 영상 — instagram.com/reels/DbxtPGODv9k ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-주장한-영상인가">무엇을 주장한 영상인가</a><a href="#영상을-깨본-결과">영상을 깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정--그리고-제가-두-번-틀렸습니다">판정 — 그리고 제가 두 번 틀렸습니다</a></nav><div class="prose"><p><strong>영상이 시킨 대로 하면 제 PC에서는 무조건 실패합니다 — 그리고 그게 이 편의 시작일 뿐입니다.</strong> 1분 53초짜리 릴이 Claude Code 세션끼리 메시지를 주고받는 기전을 파일시스템에서 직접 파냈습니다. 소켓 디렉터리 하나가 곧 세션 목록이라는, 꽤 깔끔한 발견입니다. <strong>다만 영상은 자기가 어느 OS에서 찍었는지 한 번도 말하지 않았고, 그 경로는 Windows에 없습니다.</strong> 명명 파이프 600개를 전수 조회해서 세션 소켓 0개를 확인했습니다. 그런데 정작 제가 원했던 것 — <strong>세션끼리 대화하고 남의 세션 로그를 읽는 것</strong> — 은 이 PC에서 이미 라이브였고, 그걸 확인하는 과정에서 <strong>제 판정이 두 번 뒤집혔습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="영상이 파낸 기전. 소켓 디렉터리 하나가 세션 목록이 되고, 설계 결정이 넷이다. 파일명이 프로세스 ID이고, 권한은 소유자 전용이며, 새 프로토콜 대신 기존 도구의 범위만 넓혔고, 기능 유무가 소켓의 존재로 드러난다.">
+  <text class="lbl" x="8" y="22">영상이 파낸 기전 — 디렉터리 하나가 곧 세션 목록이다</text>
+  <rect class="bx-code" x="8" y="36" width="984" height="56" rx="2"/>
+  <text class="bx-t" x="500" y="57" text-anchor="middle">/tmp/cc-socks/ — 10757.sock · 15360.sock · 8146.sock</text>
+  <text class="bx-s" x="500" y="78" text-anchor="middle">세션 하나에 소켓 하나 · drwx------ 소유자 전용 · 세션 목록 조회가 사실상 ls 다</text>
+  <text class="lbl" x="8" y="112">설계 결정 넷 — 새 프로토콜을 만들지 않았다</text>
+  <rect class="vn vn-a" x="8" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="128" y="148" text-anchor="middle">PID 네임스페이싱</text>
+  <text class="cap" x="128" y="170" text-anchor="middle">파일명이 프로세스 ID</text>
+  <rect class="vn vn-a" x="256" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="376" y="148" text-anchor="middle">소유자 전용 권한</text>
+  <text class="cap" x="376" y="170" text-anchor="middle">인증 대신 OS 권한에 위임</text>
+  <rect class="vn vn-b" x="504" y="124" width="240" height="66" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="624" y="148" text-anchor="middle">범위만 넓혔다</text>
+  <text class="cap" x="624" y="170" text-anchor="middle">145일 된 도구의 도달 범위</text>
+  <rect class="vn vn-a" x="752" y="124" width="240" height="66" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="872" y="148" text-anchor="middle">게이트가 관측된다</text>
+  <text class="cap" x="872" y="170" text-anchor="middle">소켓을 여느냐로 드러남</text>
+  <line class="rule" x1="8" y1="204" x2="992" y2="204"/>
+  <text class="cap cap-i" x="8" y="226">⇒ 기능 유무가 설정 파일이 아니라 <tspan class="cap-p">소켓의 존재</tspan>로 드러난다 — 그래서 영상의 검증이 가능했다</text>
+  <text class="cap" x="8" y="246">발표문을 옮긴 게 아니라 파일시스템을 뒤져 확인한 콘텐츠다. 그 태도는 이 영상의 제일 좋은 부분이다</text>
+</svg>
+<figcaption>레지스트리도 인증 계층도 만들지 않았다. 디렉터리 리스팅과 OS 권한에 전부 위임한 설계다.</figcaption>
+</figure>
+<h2 id="무엇을-주장한-영상인가">무엇을 주장한 영상인가</h2>
+<p><strong>Claude Code v2.1.224에서 세션끼리 직접 메시지를 주고받는 기능이 열렸다는 것</strong>, 그리고 그 사실을 <strong>발표문이 아니라 파일시스템을 직접 뒤져 확인했다는 것</strong>이 골격입니다. 화면은 <code>ls -la /tmp/</code> 로 시작해 <code>/tmp/cc-socks/</code> 를 찾아내고, 소켓 3개를 보여주고, 권한이 소유자 전용인 것을 짚고, <strong>버전 2.1.223에서는 소켓이 0개라는 대조까지</strong> 보여줍니다.</p>
+<p>그리고 반전이 하나 있습니다. <strong>완전히 없던 기능이 생긴 게 아닙니다.</strong> 메시지 전송 도구 자체는 145일 전부터 서브에이전트 재개용으로 존재했고, 2.1.224가 새로 연 것은 <strong>도달 범위</strong>입니다 — 서브에이전트 안에서만 닿던 것이 독립 세션까지 닿게 됐습니다. <em>“기능이 아니라 경계가 움직였다”</em> 는 프레이밍은 정확합니다. 실제로 지금 이 세션의 도구 목록에도 그 도구가 독립적으로 존재합니다.</p>
+<p>화면에 뜬 공식 문서 원문은 이렇습니다.</p>
+<blockquote>
+<p>When a change in one session breaks what another is building on, Claude can warn that session before you notice.</p>
+</blockquote>
+<p>그 전까지 왜 안 됐는지도 이슈 원문으로 보여줍니다 — <em>“Sessions are completely isolated, even when running on the same machine working on the same codebase.”</em></p>
+<h2 id="영상을-깨본-결과">영상을 깨본 결과</h2>
+<p><strong>치명적 누락은 플랫폼입니다.</strong> 영상은 <code>/tmp/cc-socks</code> 를 아무 전제 없이 제시하고, macOS나 Linux라고 <strong>한 번도 말하지 않습니다.</strong> Windows에는 <code>/tmp</code> 가 없고, Node가 경로를 리슨하면 파일이 아니라 명명 파이프가 됩니다. <em>“터미널 열고 <code>ls /tmp/cc-socks</code> 쳐보세요”</em> 를 그대로 따라 한 Windows 사용자는 <strong>무조건 실패합니다.</strong></p>
+<p><strong>날짜 산술이 이틀 다 +1일씩 밀려 있습니다.</strong> 144일을 145일로, 139일을 140일로 적었습니다. 시작일 포함 계산으로 보이고 결론은 안 바뀝니다. 다만 <em>“직접 실측했다”</em> 를 간판으로 건 콘텐츠라 <strong>정확도 표본으로는 남습니다.</strong></p>
+<p><strong>제일 약한 고리는 「다른 머신까지」입니다.</strong> 영상이 슬라이드로만 주장하는데, 유닉스 도메인 소켓은 로컬 전용이라 원격은 다른 기전이어야 합니다. <strong>그 기전을 제시하지 않았습니다.</strong> 공식 문서 URL·이슈 실재 여부·릴리스 노트 기재 여부도 화면 캡처만 봤고 1차 출처로 대조하지 않았습니다 — 인용할 때는 여기까지 한정해야 합니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 254" role="img" aria-label="내 PC 실측 결과. 영상의 절차는 소켓 0개로 재현되지 않았고 기능 코드는 바이너리에 실려 있었다. 그런데 원하던 기능은 다른 경로로 이미 켜져 있었고, 자는 세션에 메시지를 쏘자 사람 개입 없이 스스로 깨어나 지시를 수행했다.">
+  <text class="lbl" x="8" y="22">① 영상의 절차를 내 PC에서 그대로 재현했다</text>
+  <text class="cap cap-i" x="8" y="48">소켓 디렉터리</text>
+  <text class="cap cap-p" x="430" y="48">없음</text>
+  <text class="cap cap-i" x="8" y="70">명명 파이프 600개 전수 조회</text>
+  <text class="cap cap-p" x="430" y="70">세션 소켓 0개</text>
+  <text class="cap cap-i" x="8" y="92">바이너리 안 기능 코드</text>
+  <text class="cap cap-p" x="430" y="92">있음 — 코드는 실렸는데 런타임에 안 뜬다</text>
+  <line class="rule" x1="8" y1="106" x2="992" y2="106"/>
+  <text class="lbl" x="8" y="130">② 그런데 원하던 것은 이미 켜져 있었다 — 자는 세션에 메시지를 쐈다</text>
+  <rect class="vn vn-b" x="8" y="142" width="984" height="60" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-i" x="500" y="164" text-anchor="middle">메시지 발사 → 사람 개입 0 → idle 세션이 스스로 깨어나 지시를 수행</text>
+  <text class="cap" x="500" y="186" text-anchor="middle">대역 외 산출물로 검증했다 — 파일 실재 + 바이트 일치. 왕복이 사실상 즉시</text>
+  <text class="cap cap-i" x="8" y="226">⇒ 푸시가 된다 — <tspan class="cap-p">폴링 데몬도, 최신만 남는 게시판도 필요 없었다</tspan></text>
+  <text class="cap" x="8" y="248">⚠ 다만 예약 실행된 무인 세션에는 배달 자체가 안 된다. 이 한 줄만이 진짜 빈틈이다</text>
+</svg>
+<figcaption>대조표의 왼쪽은 영상의 절차, 오른쪽은 그 절차가 내 환경에서 낸 값이다. 아래는 그 절차와 무관하게 이미 있던 경로다.</figcaption>
+</figure>
+<h2 id="내-환경에-대봤다">내 환경에 대봤다</h2>
+<p><strong>기능 코드는 Windows 빌드에 실려 있는데 런타임에 안 뜹니다.</strong> 실행 파일 안에 세션 목록 조회 도구의 문자열이 세 번 나오고, CLI 버전도 게이트를 넘습니다(2.1.226). 그런데 그 CLI 프로세스가 두 개 떠 있는 상태에서도 <strong>소켓도 파이프도 0개</strong>였습니다. 한정을 붙이면 <em>“Windows에서 영원히 안 된다”</em> 가 아니라 <em>“이 날짜 이 PC에서 관측되지 않는다”</em> 입니다.</p>
+<p><strong>그리고 제가 물었던 것은 이미 답이 있었습니다.</strong> 질문은 <em>“세션끼리 대화 가능하지 않을까, 실시간 로그 보듯이”</em> 였는데, 그 기능은 소켓이 아니라 <strong>데스크톱 앱의 세션 관리 도구 다섯 종</strong>에 이미 있었습니다. 다른 세션 목록을 보고, <strong>다른 세션의 트랜스크립트를 그대로 읽고</strong>, 전 세션 본문을 전문검색하고, 다른 세션에 메시지를 배달합니다. 파일 로그를 tail 하는 것보다 한 단계 위입니다 — <strong>로그가 아니라 대화 자체를 읽습니다.</strong></p>
+<h2 id="판정--그리고-제가-두-번-틀렸습니다">판정 — 그리고 제가 두 번 틀렸습니다</h2>
+<p><strong>첫 번째 오판: “자는 세션은 못 깨운다.”</strong> 도구 설명을 읽고 <em>“클로드 세션은 턴이 끝나면 자니까 진짜 빈틈은 트리거다”</em> 라고 적었습니다. 확인하려고 대역 외 오라클을 썼습니다 — 배달됐는지가 아니라 <strong>실행했는지</strong>를 봐야 하니까, 대상 세션에 파일 하나를 쓰게 시키고 그 파일을 제가 직접 확인했습니다. 결과는 <strong>사람 개입 0으로 idle 세션이 스스로 깨어나 실행</strong>. 판정이 뒤집혔습니다. <strong>푸시가 되는데 폴링용 게시판을 깔 이유가 없습니다.</strong></p>
+<p><strong>두 번째 오판: “메시지가 사람이 친 것으로 위장된다.”</strong> 인젝션 통로가 된다고 적었는데, 수신 세션의 원문을 직접 열어 보니 <strong>발신 세션 ID와 제목이 명시된 봉투</strong>에 담겨 옵니다. 사용자 턴으로 도착하는 건 맞지만 <strong>출처가 라벨링</strong>되어 있어서, 수신 측이 <em>“이건 채팅이 아니라 다른 세션에서 온 것”</em> 이라고 정확히 판별했습니다.</p>
+<p><strong>그리고 예상 못 한 게 둘 나왔습니다.</strong> 수신 세션이 시키는 대로 하면서 스스로 게이트를 걸었습니다 — 로컬 임시 파일 쓰기는 그냥 했지만, <strong>바깥으로 나가는 발신은 사람 승인 없이는 안 하겠다고 멈췄습니다.</strong> 위험도로 등급을 가른 겁니다. 방향은 옳지만 ⚠ <strong>이건 모델의 판단이지 코드로 강제된 경계가 아닙니다</strong> — 다른 세션은 순순히 응할 수 있습니다.</p>
+<p><strong>두 번째가 더 중요합니다. 이 채널의 실전 실패 모드는 보안이 아니라 오배송이었습니다.</strong> 제가 보낸 메시지에서 수신 세션이 오류를 두 개 잡아냈습니다 — 날짜를 하루 착각한 것, 그리고 <strong>답장 대상을 지목하면서 제 세션 제목을 잘못 기억한 것</strong>. 그대로 따랐다면 엉뚱한 세션으로 갔습니다. <strong>발신자가 자기 자신을 잘못 식별할 수 있다</strong>는 게 이 채널의 진짜 위험이고, 수신 측 검증이 없었으면 오배송이 났습니다.</p>
+<table>
+<thead>
+<tr>
+<th>안</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>세션 인수인계를 기존 도구로 처리</td>
+<td><strong>채택 · 즉시.</strong> 구축 비용 0</td>
+</tr>
+<tr>
+<td>세션 전용 파일 버스 신규 구축</td>
+<td><strong>기각.</strong> 채널이 이미 넷인데 푸시까지 되면 게시판은 불필요</td>
+</tr>
+<tr>
+<td>폴링 데몬 · 무인 상시 루프</td>
+<td><strong>기각.</strong> 푸시가 되는데 폴링할 이유가 없다</td>
+</tr>
+<tr>
+<td>영상 절차 재현 시도</td>
+<td><strong>기각.</strong> 런타임에 안 뜬다</td>
+</tr>
+<tr>
+<td>세션 간 수신 지시를 안전 경계에 등재</td>
+<td><strong>신규 검토.</strong> 수신 측 게이트가 코드 강제가 아니라 재현 미보장</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈 하나만 남기면 — 도구 설명을 읽고 내린 판정은 실측 한 번에 뒤집힙니다.</strong> 두 번 다 그랬습니다. 그리고 뒤집힌 판정을 지우지 않고 남겨 두는 편이, 다음에 같은 자리에서 같은 추정을 하는 걸 막아 줍니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

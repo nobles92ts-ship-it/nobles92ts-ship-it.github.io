@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>오토플레이 테스트 툴 — QA 자동화</title><meta name="description" content="봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/" aria-current="page"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/qa/toss-nebula/"><span class="t"><span>토스 네뷸라 디바이스 팜</span><span class="kpi">수확 0종</span></span><span class="s">가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.</span></a><a href="/ko/teardowns/qa/asleep-qa/"><span class="t"><span>에이슬립 QA 자동화</span><span class="kpi">11종 중 1</span></span><span class="s">11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.</span></a><a href="/ko/teardowns/qa/autoplay-test-tool/" aria-current="page"><span class="t"><span>오토플레이 테스트 툴</span><span class="kpi">기법 4 중 2</span></span><span class="s">봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다.</span></a><a href="/ko/teardowns/qa/qa-infrastructure/"><span class="t"><span>QA 인프라 발표</span><span class="kpi">자막 0 · 슬라이드만</span></span><span class="s">자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>오토플레이 테스트 툴</h1><p class="sum">봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다.</p><div class="meta"><span>기법 4 중 2</span><a class="src" href="https://www.youtube.com/watch?v=EDarROsi23w" target="_blank" rel="noopener">원본 영상 — youtube.com/watch?v=EDarROsi23w ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-만든-물건인가">무엇을 만든 물건인가</a><a href="#대표-기법--끼임을-데이터의-모순으로-잡는다">대표 기법 — 끼임을 「데이터의 모순」으로 잡는다</a><a href="#깨본-결과">깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>제가 이미 하고 있는 일을 더 잘하는 방법이 여기 있었습니다.</strong> 콘솔 게임에 <strong>탑재형 무인 오토플레이 성능 테스트 툴</strong>을 만든 발표입니다. 그래픽 옵션 30가지를 매 빌드마다 손으로 재는 게 불가능해서 <strong>봇이 스스로 맵을 돌며 성능을 측정하게</strong> 만들었습니다. 저도 봇을 맵에 풀어 놓는 일을 하고 있는데, <strong>끼임을 판정하는 방식이 제 것보다 정확했습니다</strong> — 그리고 그 차이가 코드 몇 줄입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="두 개의 제약이 설계를 결정했다. 그래픽 옵션 조합이 서른 가지라 손으로 못 재고, 콘솔은 외부 자동화 도구를 붙일 수 없어 게임 패키지 안에 탑재해야 했다. 그래서 완벽한 재현 대신 멈추지 않고 데이터를 모으는 쪽으로 설계됐다.">
+  <text class="lbl" x="8" y="22">제약 둘이 설계를 통째로 결정했다</text>
+  <rect class="vn vn-a" x="8" y="36" width="484" height="82" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="250" y="60" text-anchor="middle">벽 1 — 조합</text>
+  <text class="cap" x="250" y="82" text-anchor="middle">플랫폼별 그래픽 옵션을 합치면 약 30가지</text>
+  <text class="cap" x="250" y="104" text-anchor="middle">매 빌드마다 손으로? 불가능하다</text>
+  <rect class="vn vn-b" x="508" y="36" width="484" height="82" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="750" y="60" text-anchor="middle">벽 2 — 플랫폼</text>
+  <text class="cap" x="750" y="82" text-anchor="middle">콘솔은 외부 자동화 도구를 못 붙인다</text>
+  <text class="cap" x="750" y="104" text-anchor="middle">→ 게임 패키지 안에 탑재하는 수밖에</text>
+  <line class="rule" x1="8" y1="136" x2="992" y2="136"/>
+  <rect class="bx-code" x="8" y="150" width="984" height="52" rx="2"/>
+  <text class="bx-t" x="500" y="171" text-anchor="middle">그래서 철학이 하나로 정해진다</text>
+  <text class="bx-s" x="500" y="192" text-anchor="middle">완벽한 재현은 포기한다 — 무슨 일이 있어도 멈추지 않고 데이터를 이어 모은다</text>
+  <text class="cap cap-i" x="8" y="228">⇒ 뒤에 나오는 설계 넷이 전부 <tspan class="cap-p">이 한 문장에서 파생된다</tspan></text>
+  <text class="cap" x="8" y="246">폴백도 타임아웃 가드도 텔레포트도, "멈추지 않는다"를 지키려고 붙은 장치다</text>
+</svg>
+<figcaption>제약이 둘뿐인데 설계 전체가 거기서 나온다. 철학이 먼저가 아니라 제약이 먼저였다.</figcaption>
+</figure>
+<h2 id="무엇을-만든-물건인가">무엇을 만든 물건인가</h2>
+<p><strong>게임 패키지 안에 들어가는 무인 테스트 봇입니다.</strong> 성능 최적화는 <em>“측정 → 작업 → 같은 조건에서 재측정”</em> 의 반복인데, <strong>같은 조건을 30번 만들어 주는 사람</strong>이 없으면 성립하지 않습니다. 그래서 봇이 대신 돕니다.</p>
+<p><strong>콘솔이 설계를 지배했습니다.</strong> PC라면 밖에서 스크립트를 붙이면 되는데, <strong>콘솔은 보안·규격상 외부 도구를 못 붙입니다.</strong> 그러니 자동화가 <strong>게임 안에</strong> 있어야 하고, 이 전제가 이후 전부를 결정합니다.</p>
+<p>네 덩어리로 만들었습니다 — <strong>경로 탐색 · 전투 · 미션 판별 · 아키텍처.</strong></p>
+<table>
+<thead>
+<tr>
+<th>덩어리</th>
+<th>무엇을 푸나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>경로 탐색</strong></td>
+<td>복잡한 레벨에서 봇이 길을 못 찾거나 끼는 문제</td>
+</tr>
+<tr>
+<td><strong>전투</strong></td>
+<td>몬스터가 수십 마리 쏟아질 때 타겟 스캔이 프레임을 먹는 문제</td>
+</tr>
+<tr>
+<td><strong>미션 판별</strong></td>
+<td>사람이 입력한 데이터의 오타로 매칭이 깨지는 문제</td>
+</tr>
+<tr>
+<td><strong>아키텍처</strong></td>
+<td>한 곳이 멈추면 전체가 서는 문제</td>
+</tr>
+</tbody>
+</table>
+<h2 id="대표-기법--끼임을-데이터의-모순으로-잡는다">대표 기법 — 끼임을 「데이터의 모순」으로 잡는다</h2>
+<p><strong>길찾기는 3단계 폴백입니다.</strong> ①표준 경로 탐색 → ②잘 끼는 연결 구간의 비용을 무한대로 올려 우회 → ③연결 구간과 높이 변화를 전부 배제하고 평지 우선. <strong>셋 다 실패하면 텔레포트</strong>합니다.</p>
+<p><strong>그런데 제일 좋은 건 끼임을 감지하는 방식입니다.</strong> 길찾기는 <em>“통과 가능”</em> 이라고 했는데 실제로는 좁은 틈에 낀 상태 — 이걸 <strong>두 값의 모순</strong>으로 잡습니다.</p>
+<ul>
+<li><strong>가속도가 있다</strong> — 이동 입력은 유지되고 있다. <strong>봇은 가려고 한다.</strong></li>
+<li><strong>평면 속도가 10cm/s 미만이다</strong> — 실제로는 안 가고 있다.</li>
+</ul>
+<p><strong>둘이 동시에 참이면 물리적으로 모순</strong>이고, 그게 끼임입니다.</p>
+<p><strong>그리고 여기서 한 겹을 더 씁니다.</strong> 즉시 텔레포트하면 오탐이 납니다 — <strong>스킬을 쓰느라 또는 상호작용하느라 의도적으로 멈춘 정상 상태</strong>를 끼임으로 오인합니다. 그래서 <strong>타이머 둘의 AND 게이트</strong>로만 확정합니다.</p>
+<table>
+<thead>
+<tr>
+<th>타이머</th>
+<th>재는 것</th>
+<th>임계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력은 있는데 안 움직인 누적 시간</td>
+<td>가속도 있음 + 속도 &lt;10cm/s</td>
+<td><strong>1.5초</strong></td>
+</tr>
+<tr>
+<td>목표까지 거리가 안 줄어든 누적 시간</td>
+<td>벽에 막혀 제자리걸음</td>
+<td><strong>1.2초</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>둘 다 넘는 순간만 진짜 끼임</strong>입니다. 단순한 논리 하나로 길찾기 우회 로직을 통째로 걷어냈습니다.</p>
+<p>나머지 둘도 실용적입니다. <strong>전투는 전체 스캔을 캐시가 비었을 때만</strong> 하고 이후엔 가까운 K개만 갱신합니다 — 몬스터가 어그로로 다가온다는 성질을 이용한 겁니다. <strong>미션 판별은 문자열 비교 대신 편집 거리로 유사도 75% 이상</strong>이면 같은 타입으로 봅니다. <strong>사람이 입력한 데이터의 오타 하나로 봇이 미션에서 이탈하는 것</strong>을 막는 장치입니다.</p>
+<h2 id="깨본-결과">깨본 결과</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="끼임 판정 구조와 내 방식의 대조. 두 값의 모순으로 후보를 잡고 타이머 두 개의 논리곱으로 확정한다. 내 쪽은 시간 하나로만 판정해 의도적으로 멈춘 정상 상태를 끼임으로 오인한다.">
+  <text class="lbl" x="8" y="22">끼임 판정 — 후보를 모순으로 잡고, 확정을 AND 로 건다</text>
+  <rect class="vn vn-b" x="8" y="36" width="316" height="74" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="166" y="60" text-anchor="middle">모순 감지</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">가려는 입력은 있는데</text>
+  <text class="cap" x="166" y="102" text-anchor="middle">실제 속도는 10cm/s 미만</text>
+  <path d="M324 73 H342" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="342" y="36" width="316" height="74" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="60" text-anchor="middle">타이머 둘의 AND</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">안 움직인 시간 1.5초 초과</text>
+  <text class="cap" x="500" y="102" text-anchor="middle">거리 안 줄어든 시간 1.2초 초과</text>
+  <path d="M658 73 H676" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="74" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">확정 → 텔레포트</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">멈추지 않고 계속 돈다</text>
+  <text class="cap" x="834" y="102" text-anchor="middle">데이터 수집이 안 끊긴다</text>
+  <line class="rule" x1="8" y1="132" x2="992" y2="132"/>
+  <text class="cap cap-i" x="8" y="156">내 쪽은 <tspan class="cap-p">시간 하나로만 판정</tspan>한다 — 그래서 의도적으로 멈춘 것도 끼임으로 센다</text>
+  <text class="cap" x="8" y="180">모순 감지가 후보를 좁히고, AND 게이트가 오탐을 걷는다. 둘이 다른 일을 한다</text>
+  <line class="rule" x1="8" y1="196" x2="992" y2="196"/>
+  <text class="cap cap-i" x="8" y="220">⚠ 그리고 이 툴이 못 잡는 것을 발표가 먼저 말한다 — <tspan class="cap-p">시각 버그는 판단 불가</tspan></text>
+  <text class="cap" x="8" y="240">성능은 숫자로 나오지만 "화면이 이상한가"는 봇이 못 본다. 그 자리는 여전히 사람이다</text>
+</svg>
+<figcaption>모순 감지와 AND 게이트는 같은 문제를 푸는 게 아니다. 하나는 후보를 만들고 하나는 오탐을 걷는다.</figcaption>
+</figure>
+<p><strong>수치가 붙어 있는 게 이 발표의 강점입니다.</strong> 최적화 사례를 <strong>렌더 스레드 시간 평균 −48.9%, 상위 5% 구간 −42.6%</strong> 로 제시하고, <strong>툴 자체 오버헤드는 프레임당 최대 1.1ms</strong>(목표 2ms 이내)라고 밝힙니다. <strong>재는 도구가 재는 대상을 얼마나 방해하는지를 같이 재서 내놓은 것</strong>이 드뭅니다.</p>
+<p><strong>한계도 스스로 말합니다</strong> — <strong>시각 버그는 판단 불가.</strong> 성능은 숫자로 나오지만 <em>“화면이 이상한가”</em> 는 봇이 못 봅니다.</p>
+<p>⚠ <strong>다만 −48.9%는 최적화 작업의 효과이지 툴의 효과가 아닙니다.</strong> 툴은 그 효과를 <strong>재준</strong> 것입니다. 인용할 때 이 둘을 붙이면 과장이 됩니다.</p>
+<p>⚠ <strong>그리고 임계값 1.5초·1.2초의 근거가 없습니다.</strong> 어떻게 정했는지, 다른 값에서 오탐이 어땠는지가 발표에 없습니다. <strong>제 환경에 그대로 가져오면 안 되고 다시 재야 하는 숫자</strong>입니다.</p>
+<h2 id="내-환경에-대봤다">내 환경에 대봤다</h2>
+<p><strong>저도 봇을 맵에 풀어 놓고 걷다 빠지는 지점을 찾습니다.</strong> 그런데 <strong>끼임 판정을 시간 하나로만</strong> 하고 있었습니다 — <em>“N초 동안 위치가 안 변하면 끼임”</em>. 그래서 <strong>의도적으로 멈춘 정상 상태를 끼임으로 셉니다.</strong></p>
+<p><strong>모순 감지가 제 쪽에 없던 것입니다.</strong> <em>“가려는 입력은 있는데 실제로 안 간다”</em> 는 <strong>위치만 봐서는 절대 안 나오는 신호</strong>입니다. 위치가 안 변한 것은 끼임일 수도 있고 그냥 서 있는 것일 수도 있는데, <strong>입력을 같이 보면 둘이 갈립니다.</strong></p>
+<p><strong>AND 게이트는 그다음 층입니다.</strong> 모순이 잡혀도 순간적일 수 있으니, <strong>두 시계가 동시에 임계를 넘을 때만</strong> 확정합니다. 제 것은 층이 하나뿐이라 <strong>후보와 확정이 같은 판정</strong>이었습니다.</p>
+<p><strong>전투 캐싱과 미션 판별은 제 상황과 안 맞습니다.</strong> 제 봇은 전투를 안 하고, 미션 이름을 문자열로 매칭하는 자리도 없습니다.</p>
+<h2 id="판정">판정</h2>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>모순 감지 — 입력과 실제를 같이 본다</strong></td>
+<td><strong>채택.</strong> 위치만 봐서는 안 나오는 신호다</td>
+</tr>
+<tr>
+<td><strong>타이머 AND 게이트로 오탐 걷기</strong></td>
+<td><strong>채택.</strong> 후보와 확정을 층으로 나눈다</td>
+</tr>
+<tr>
+<td>3단계 경로 폴백</td>
+<td><strong>보류.</strong> 제 쪽은 폴백이 필요할 만큼 레벨이 복잡하지 않다</td>
+</tr>
+<tr>
+<td>전투 K개 캐싱 · 편집 거리 매칭</td>
+<td><strong>해당 없음.</strong> 그 문제가 제게 없다</td>
+</tr>
+<tr>
+<td><strong>1.5초 · 1.2초 임계값</strong></td>
+<td>⚠ <strong>그대로 쓰지 않는다.</strong> 근거가 발표에 없다 — 제 환경에서 다시 잰다</td>
+</tr>
+<tr>
+<td>−48.9% 수치 인용</td>
+<td>⛔ <strong>금지.</strong> 최적화의 효과이지 툴의 효과가 아니다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈은 이겁니다 — 같은 문제를 이미 풀고 있어도, 남이 한 겹 더 쌓아 둔 것이 보입니다.</strong> 저는 끼임을 시간으로 판정하고 있었고 그게 틀린 건 아닙니다. 다만 <strong>후보를 잡는 층과 오탐을 걷는 층을 나누지 않았을 뿐</strong>입니다. 층을 나누자마자 <strong>오탐의 원인이 이름을 갖게 됐습니다</strong> — <em>“의도적으로 멈춘 정상 상태”</em>.</p>
+<p>그리고 ⚠ <strong>도구가 대상을 얼마나 방해하는지를 같이 재는 습관</strong>은 그대로 가져올 만합니다. 제 QA 자동화도 게임 안에서 돌면서 게임을 느리게 만들 수 있는데, <strong>그걸 재본 적이 없습니다.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

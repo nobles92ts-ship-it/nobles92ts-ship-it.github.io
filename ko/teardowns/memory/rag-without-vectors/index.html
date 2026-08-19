@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>벡터DB 없는 RAG — 컨텍스트와 기억</title><meta name="description" content="구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">15편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 열다섯 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">9편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 아홉 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">4편 · 기법 3</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/" aria-current="page"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>벡터DB 없는 RAG</h1><p class="sum">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</p><div class="meta"><span>구조 6/6 · 숫자 1/5</span><a class="src" href="https://www.threads.com/@gptaku_ai/post/DbpB3WZE6p6" target="_blank" rel="noopener">원문 — threads.com/@gptaku_ai/post/DbpB3WZE6p6 ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-읽은-것인가">무엇을 읽은 것인가</a><a href="#검증--구조는-견디고-숫자는-못-견딘다">검증 — 구조는 견디고 숫자는 못 견딘다</a><a href="#그리고-제-환경을-재봤습니다">그리고 제 환경을 재봤습니다</a><a href="#그런데-전제가-46만-채워져-있었다">그런데 전제가 4.6%만 채워져 있었다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>구조는 채택했고 숫자는 인용을 금지했습니다.</strong> 이 글이 편 주장 열 개를 1차 출처에 하나씩 대조했더니, <strong>구조적 주장 여섯은 전부 맞았고 못 믿을 것은 구체 숫자 네 건에 몰려 있었습니다</strong>(거기에 연도 오기 하나). 2차 정리물의 실패가 어디서 나는지가 정확히 보입니다. 그리고 이 글이 그은 경계선을 제 환경에 대봤더니 — <strong>제가 이미 그 자리에 서 있었고, 다만 전제가 4.6%만 채워져 있었습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 236" role="img" aria-label="문서 규모를 축으로 네 구간을 나눈 결정선. 수백 페이지까지는 통째로 컨텍스트에 넣고, 수백에서 수천 페이지는 YAML 프론트매터와 파일 탐색만으로 충분하며, 수천에서 수만 건은 벡터DB와 리랭킹, 그 이상은 벡터와 그래프와 SQL 하이브리드가 필요하다. 내 문서 자산은 두 번째 구간에 있다.">
+  <text class="lbl" x="8" y="22">문서 규모 ──────────────────────────────────────────────▶</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="58" text-anchor="middle">~ 수백 페이지</text>
+  <text class="cap" x="126" y="80" text-anchor="middle">통째로 컨텍스트에</text>
+  <text class="cap" x="126" y="98" text-anchor="middle">검색 자체가 불필요</text>
+  <rect class="bx-llm" x="256" y="36" width="236" height="70" rx="2"/>
+  <text class="bx-t" x="374" y="58" text-anchor="middle">수백 ~ 수천</text>
+  <text class="bx-s" x="374" y="80" text-anchor="middle">YAML 프론트매터</text>
+  <text class="bx-s" x="374" y="98" text-anchor="middle">+ 파일 탐색 · grep 보조</text>
+  <rect class="vn vn-a" x="504" y="36" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="622" y="58" text-anchor="middle">수천 ~ 수만</text>
+  <text class="cap" x="622" y="80" text-anchor="middle">벡터DB</text>
+  <text class="cap" x="622" y="98" text-anchor="middle">+ 리랭킹 2단</text>
+  <rect class="vn vn-a" x="752" y="36" width="240" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="872" y="58" text-anchor="middle">수만 건 이상</text>
+  <text class="cap" x="872" y="80" text-anchor="middle">하이브리드</text>
+  <text class="cap" x="872" y="98" text-anchor="middle">벡터 + 그래프 + SQL</text>
+  <path d="M374 106 V132" stroke="#2563EB" stroke-width="1.5"/>
+  <path d="M374 132 l-5 -9 h10 z" fill="#2563EB" transform="translate(0,9)"/>
+  <text class="cap cap-p" x="374" y="152" text-anchor="middle">내 문서 자산이 서 있는 칸</text>
+  <text class="cap" x="374" y="170" text-anchor="middle">위키 볼트 1,021개 · 메모리 서랍 156개</text>
+  <line class="rule" x1="8" y1="192" x2="992" y2="192"/>
+  <text class="cap cap-i" x="8" y="214">전환 트리거는 원문이 직접 적어 뒀다 — “문서가 수만 건을 넘거나 <tspan class="cap-p">응답 속도가 중요해지는 시점</tspan>”</text>
+  <text class="cap" x="8" y="232">대부분의 글은 “벡터DB를 어떻게 쓰나”로 시작한다. 이 글은 “쓸지 말지”를 규모로 먼저 판정한다</text>
+</svg>
+<figcaption>이 글의 진짜 산출물. “만능은 없다”는 결론은 흔한데, 없다는 걸 규모 축으로 잘라 경계선을 명시한 게 값어치다.</figcaption>
+</figure>
+<h2 id="무엇을-읽은-것인가">무엇을 읽은 것인가</h2>
+<p><strong>커뮤니티 실전 토론에 작성자의 조사를 덧붙인 2차 정리물이다.</strong> 형식이 특이한데 — 본문은 두 줄뿐이고 <strong>내용 전부가 이미지 열 장에 텍스트로 들어 있다.</strong> 텍스트 크롤링으로는 아무것도 안 잡히고, 이미지를 내려받아 판독해야만 내용에 닿는다.</p>
+<p>그리고 <strong>1차 출처를 링크하지 않고 문장으로 요약해 붙였다.</strong> 그래서 수치를 쓰려면 검증이 선행돼야 한다 — 이 페이지의 절반이 그 얘기다.</p>
+<p>내용을 관통하는 축이 셋이고, <strong>축마다 “문서의 성격”이 결정변수</strong>라는 게 이 글의 논지다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>결정변수</th>
+<th>갈림</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>파싱</strong></td>
+<td>born-digital인가</td>
+<td>워드·PPT에서 바로 뽑은 PDF면 텍스트 레이어가 이미 있어 <strong>OCR 자체가 불필요</strong></td>
+</tr>
+<tr>
+<td><strong>청킹·임베딩</strong></td>
+<td>무엇을 벡터화하나</td>
+<td>⚠<strong>원문 전체가 아니라 “이 조각이 어느 문서·어느 맥락인가”라는 50~100토큰 요약과 파일 경로를 벡터화.</strong> 실제 원문 처리는 경로를 받은 LLM이</td>
+</tr>
+<tr>
+<td><strong>검색</strong></td>
+<td>질문의 종류</td>
+<td>무엇이 비슷한가 = 벡터 / 어떻게 연결되는가 = 그래프 / 어떤 조건에 맞는가 = SQL</td>
+</tr>
+</tbody>
+</table>
+<p>두 번째 축이 이 글에서 제일 값나가는 전환이다. <strong>문서를 통째로 임베딩하는 게 아니라 설명만 임베딩하고 원문은 경로로 넘긴다.</strong></p>
+<h2 id="검증--구조는-견디고-숫자는-못-견딘다">검증 — 구조는 견디고 숫자는 못 견딘다</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 214" role="img" aria-label="인용된 주장 열 건을 1차 출처에 대조한 결과. 구조적 주장 여섯은 전부 확인됐고, 구체 숫자 다섯 건 중 확인된 것은 하나뿐이며 셋은 1차 출처를 못 찾았고 하나는 연도가 틀렸다.">
+  <text class="lbl" x="8" y="24">1차 출처에 하나씩 대조한 결과</text>
+  <text class="cap cap-i" x="220" y="58" text-anchor="end">구조적 주장</text>
+  <rect class="bar bar-p" x="236" y="44" width="612" height="24" rx="1"/>
+  <text class="cap cap-p" x="860" y="59">6 / 6 확인</text>
+  <text class="cap cap-on" x="248" y="61">역할 분담 · 하이브리드 수렴 · 규모 경계선 · 설명만 색인</text>
+  <text class="cap cap-i" x="220" y="106" text-anchor="end">구체 숫자</text>
+  <rect class="bar bar-p" x="236" y="92" width="102" height="24" rx="1"/>
+  <rect class="bar" x="342" y="92" width="306" height="24" rx="1"/>
+  <text class="cap cap-on" x="352" y="109">1차 출처를 못 찾음 — 3건</text>
+  <rect class="bar" x="652" y="92" width="102" height="24" rx="1"/>
+  <text class="cap cap-on" x="662" y="109">연도 오기</text>
+  <text class="cap" x="766" y="107">1 / 5 확인</text>
+  <line class="rule" x1="236" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">⚠ 못 찾은 셋 중 하나는 <tspan class="cap-p">통념과 반대되는 주장</tspan>이다 — 출처 없이 채택하면 특히 위험하다</text>
+  <text class="cap" x="8" y="186">그리고 표준 벤치마크는 “정확도 %”가 아니라 오류율 체계다 — 다른 벤치의 숫자를 섞었을 가능성이 크다</text>
+  <text class="cap cap-i" x="8" y="208">⇒ <tspan class="cap-p">구조는 채택, 숫자는 인용 금지.</tspan> 2차 정리물을 쓰는 올바른 방법이다</text>
+</svg>
+<figcaption>2차 정리물의 실패가 어디에 몰리는지가 이 그림이다. 흩어져 있지 않고 한 종류에 뭉쳐 있다.</figcaption>
+</figure>
+<p><strong>구조적 주장 여섯은 전부 맞았다.</strong> 파서 두 종이 경쟁이 아니라 역할 분담이라는 것, 검색 아키텍처가 세 종류로 수렴한다는 것, 규모 경계선, 그리고 지식 위키 패턴이 실재하며 <strong>그 패턴이 그은 경계선까지 정확히 일치한다는 것.</strong></p>
+<p><strong>믿을 만한 숫자는 하나였다.</strong> 청크마다 맥락 설명을 덧붙여 임베딩하면 상위 20개 기준 검색 실패율이 <strong>5.7%에서 3.7%로 떨어진다</strong>는 것 — 발표문과 정확히 일치했다. <strong>오히려 신뢰 가점을 줄 대목이 있다:</strong> 같은 발표문에 검색 방식을 병행하면 2.9%, 리랭킹까지 더하면 1.9%라는 더 좋은 숫자가 있는데 <strong>원문은 보수적으로 단독 수치만 인용했다.</strong></p>
+<p><strong>나머지 넷은 못 쓴다.</strong></p>
+<ul>
+<li><strong>OCR 정확도 세 건</strong> — 1차 출처를 못 찾았다. 이 계열의 표준 벤치마크는 지표 체계가 <strong>“정확도 %“가 아니라 오류율</strong>이라, <strong>서로 다른 벤치의 숫자를 섞었을 가능성이 크다</strong></li>
+<li><strong>청크 크기와 “오버랩은 무용하다”</strong> — 출처가 없다. 특히 뒤쪽은 <strong>통념과 정반대되는 주장</strong>이라 출처 없이 채택하면 위험하다</li>
+<li><strong>리랭커 지연</strong> — 출처를 못 찾았고, 그 지연은 보통 <strong>배치 단위로 보고되지 조각 단위로 잘 쓰지 않는다</strong></li>
+<li><strong>비용 절감 수치</strong> — 값 자체는 정확한데 <strong>발표 연도가 한 해 틀렸다</strong></li>
+</ul>
+<p><strong>패턴에 이름을 붙일 만하다. 구조는 2차 정리를 견디고, 구체 숫자는 못 견딘다.</strong> 옮겨 적는 사람이 구조는 통째로 옮기지만 숫자는 기억이나 다른 자료에서 끌어오기 때문이다. <strong>그래서 구조는 채택하고 숫자는 인용을 금한다</strong> — 이 글을 쓰는 올바른 방법이다.</p>
+<h2 id="그리고-제-환경을-재봤습니다">그리고 제 환경을 재봤습니다</h2>
+<p>이 글이 그은 경계선에 제 것을 대봤다. <strong>놀랍게도 제가 이미 그 칸에 서 있었고, 심지어 그 패턴을 독립적으로 재발명해 굴리고 있었다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>제 자산</th>
+<th>실측</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위키 볼트</td>
+<td>마크다운 <strong>1,021개</strong> · 15MB</td>
+<td>규모가 정확히 스위트스팟</td>
+</tr>
+<tr>
+<td>메모리 서랍</td>
+<td>156개 + <strong>마스터 인덱스 한 장</strong>(항목당 한 줄 + 여는 조건)</td>
+<td>✅ <strong>이미 라이브</strong> — 지식 위키 패턴 그 자체</td>
+</tr>
+<tr>
+<td>전문 검색 색인</td>
+<td>벡터 없이 키워드 색인</td>
+<td>✅ 이미 라이브 — 원문의 <code>grep</code>보다 한 단계 위</td>
+</tr>
+<tr>
+<td>파이프라인의 대조 단계</td>
+<td>색인을 조회해 참조를 뽑아 넘김</td>
+<td>✅ <strong>프로덕션</strong> — 벡터DB 없는 검색이 이미 업무 런에서 돈다</td>
+</tr>
+<tr>
+<td>다루는 기획 문서</td>
+<td>전부 born-digital</td>
+<td><strong>파서 논의 자체가 해당 없음</strong></td>
+</tr>
+</tbody>
+</table>
+<p>메모리 서랍이 특히 그렇다. <strong>항목당 한 줄 포인터 + “언제 이 문서를 여는가” 한 줄</strong> — 그게 정확히 이 글이 말하는 마스터 인덱스의 라우팅 힌트다. 제가 필요해서 만든 건데, <strong>왜 그게 되는지의 이론적 근거를 이 글이 제공한다.</strong></p>
+<h2 id="그런데-전제가-46만-채워져-있었다">그런데 전제가 4.6%만 채워져 있었다</h2>
+<p>이 조사의 최대 발견은 남의 아키텍처가 아니라 제 숫자였다.</p>
+<blockquote>
+<p><strong>볼트 마크다운 1,021개 중 프론트매터가 있는 건 47개. 4.6%다.</strong></p>
+</blockquote>
+<p>이 패턴이 통하는 이유가 <strong>프론트매터가 검색의 의미적 고리 역할을 하기 때문</strong>이다. 그리고 원문의 진단은 **“검색 실패의 상당수는 답변 생성이 아니라 관련 문서를 못 찾는 검색 단계에서 발생한다”**이고, 그 처방이 **“경로·태그·요약을 명시하라”**다.</p>
+<p>제 볼트는 <strong>그 처방이 가장 잘 듣는 규모에 서 있는데 처방을 47개 파일에만 적용한 상태</strong>였다. 지금은 구조화된 위키가 아니라 <strong>마크다운 더미 + 사람 기억</strong>에 가깝다.</p>
+<p>즉 여기서 검색이 안 될 때 원인은 <strong>“도구가 없어서”가 아니라 “메타데이터가 비어서”일 가능성이 높다.</strong> 벡터DB를 얹는 것보다 프론트매터를 채우는 쪽이 훨씬 싸고 효과가 크다.</p>
+<p>⚠ <strong>다만 이건 아직 가설이다.</strong> 저는 <strong>“검색이 실제로 실패하고 있는가”를 재지 않았다.</strong> 순서를 지켜야 한다 — <strong>채우기 전에 실패 사례를 몇 건 표본으로 잡아 원인이 메타데이터 부재인지 먼저 확인한다.</strong> 안 그러면 4.6%에서 100%까지 가는 작업량은 다 지불하고, 효과는 끝내 추정치로만 말하게 된다.</p>
+<h2 id="판정">판정</h2>
+<p><strong>도구 도입 0.</strong> 벡터DB도 그래프도 리랭커도 지금 규모에서는 전부 과잉이고, <strong>원문 스스로 그은 경계선에 아직 도달하지 않았다.</strong></p>
+<p><strong>가져온 것은 원칙 둘.</strong> 하나는 <strong>“문서 전체가 아니라 요약과 메타데이터만 색인하고 실제 처리는 원문 경로를 넘겨 맡긴다”</strong> — 제 쪽 세 곳이 이미 이걸 따로따로 재발명한 상태라 규약이 서로 다른데, 이름이 생겼으니 통일할 수 있다. 다른 하나는 이 페이지의 제목이다.</p>
+<blockquote>
+<p><strong>구조는 채택하고 숫자는 인용을 금한다.</strong></p>
+</blockquote>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

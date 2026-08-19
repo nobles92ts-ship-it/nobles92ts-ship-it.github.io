@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ASIDE — Agent harnesses</title><meta name="description" content="It won't install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/" aria-current="page"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>ASIDE</h1><p class="sum">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</p><div class="meta"><span>rejected · 5 triggers</span><a class="src" href="https://aside.com/" target="_blank" rel="noopener">Official site — aside.com ↗</a><a class="src" href="https://docs.aside.com/help/security" target="_blank" rel="noopener">Permissions doc — docs.aside.com/help/security ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is">What it is</a><a href="#the-design-decisions">The design decisions</a><a href="#what-broke">What broke</a><a href="#held-against-my-own-setup">Held against my own setup</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>It won’t install.</strong> macOS 15 or newer only, and both of my machines run Windows. If it ended there this would be a one-line rejection — except <strong>the “no Windows plans” I wrote down turned out to be wrong.</strong> It isn’t on the download page, but <strong>Windows builds appear three times in the changelog.</strong> And the <em>“first place on agent benchmarks”</em> they lead with is <strong>a self-reported number, scored by themselves, in their own repository.</strong> The overall verdict is unchanged — rejected — but <strong>the clock on the reopening condition moved a long way forward.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 290" role="img" aria-label="This is not a browser extension but a browser in its own right. With no separate integration it operates sites you are already logged into. Permissions are set across four domains with three-valued rules, and a per-task layer sits on top of the agent defaults. Models attach through three routes: subscription reuse, your own API key, and a reverse connection.">
+  <text class="lbl" x="8" y="22">not an extension — the browser itself: "there is no minimum browser version, we are the browser"</text>
+  <rect class="vn vn-b" x="8" y="36" width="484" height="88" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="250" y="60" text-anchor="middle">what it sells — no integrations, just the logged-in web</text>
+  <text class="cap" x="250" y="82" text-anchor="middle">mail, dashboards and internal tools, clicked like a person would</text>
+  <text class="cap" x="250" y="104" text-anchor="middle">browsing history becomes memory, so context isn't re-fed</text>
+  <rect class="vn vn-a" x="504" y="36" width="488" height="88" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="748" y="60" text-anchor="middle">three places Claude attaches</text>
+  <text class="cap" x="748" y="82" text-anchor="middle">reuse a subscription · your own API key · reverse connection</text>
+  <text class="cap" x="748" y="104" text-anchor="middle">reverse = this browser becomes a tool for another agent</text>
+  <text class="lbl" x="8" y="152">permissions — four domains, three values, deny wins. and two layers</text>
+  <rect class="vn vn-a" x="8" y="164" width="238" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="127" y="191" text-anchor="middle">OS sandbox</text>
+  <rect class="vn vn-a" x="256" y="164" width="238" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="375" y="191" text-anchor="middle">files</text>
+  <rect class="vn vn-a" x="504" y="164" width="238" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="623" y="191" text-anchor="middle">tools</text>
+  <rect class="vn vn-b" x="752" y="164" width="240" height="44" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="872" y="191" text-anchor="middle">passwords</text>
+  <line class="rule" x1="8" y1="226" x2="992" y2="226"/>
+  <text class="cap cap-i" x="8" y="250">⇒ <tspan class="cap-p">saved password values stay hidden from the agent</tspan> — policy and URL are checked, then injected into the page</text>
+  <text class="cap" x="8" y="274">a per-task setting overrides the agent default — loose most of the time, narrow only where it matters</text>
+</svg>
+<figcaption>The feature list isn't the substance; the permission design is. Operate someone's logged-in session and that's the first question you have to answer.</figcaption>
+</figure>
+<h2 id="what-it-is">What it is</h2>
+<p><strong>An AI agent browser.</strong> Not an extension — they built the browser, and the docs nail it down: <em>“There is no separate minimum browser version because Aside is the browser.”</em></p>
+<p>What it sells is <strong>operating sites you are already logged into, with no separate integration.</strong> No API to wire up; it does the clicking a person used to do.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>a Chromium-based desktop browser you install</td>
+</tr>
+<tr>
+<td>Origin · size</td>
+<td>2025 autumn accelerator batch · <strong>five people</strong> · shipped 2026-06-23</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td><strong>macOS 15+ only.</strong> No public Windows or Linux build, and no waitlist</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>free $0 (500 credits/mo) / Pro $20 / Max $200</td>
+</tr>
+<tr>
+<td>Claude routes</td>
+<td>subscription reuse · API key · <strong>reverse connection</strong>, all three open</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>“Just use it on the web” isn’t available.</strong> The public site is a landing and download page, not the product. There is no console, no web app entry point — only a download button.</p>
+<h2 id="the-design-decisions">The design decisions</h2>
+<p>The four permission decisions are what’s worth reading here.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>What it does</th>
+<th>Why this decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credentials never reach the model</strong></td>
+<td>Saved password values are hidden from the agent; after policy and URL checks they are <strong>injected straight into the page</strong></td>
+<td>Effectively the only way to use a logged-in session without showing the agent the password</td>
+</tr>
+<tr>
+<td>Three session modes</td>
+<td>read-only / guard (default) / full. Guard works <strong>only inside approved folders</strong> and asks about anything outside</td>
+<td>So file access can be tightened per task</td>
+</tr>
+<tr>
+<td>Allow, ask, deny + <strong>two layers</strong></td>
+<td>Three-valued, deny wins. <strong>A per-task setting overlays the agent default</strong></td>
+<td>A concession to the fact that policy can’t be set in one place</td>
+</tr>
+<tr>
+<td>History as memory</td>
+<td>it knows on its own which site goes with which job</td>
+<td>Removes the cost of re-feeding context each time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-broke">What broke</h2>
+<p><strong>The first-place claim is self-scored.</strong> The home page leads with <em>“first on three agent benchmarks — ahead of OpenAI, Anthropic and Browser Use”</em> and attaches a 99.0% figure. That number is <strong>self-reported, using their own scoring setup, in their own repository.</strong> No third party has reproduced it, and they don’t appear on the independent leaderboards at all.</p>
+<p>⚠ <strong>And the comparison is asymmetric.</strong> This benchmark compares <em>model + tools + policy</em> as a system, but the Claude entry they stand up against is <strong>a bare model with no tooling.</strong> That is how the sentence <em>“ahead of Anthropic”</em> got made.</p>
+<p><strong>The URL handed over as a security document isn’t one.</strong> Open it and it’s a permissions UI guide. Encryption, storage location, whether data is used for training, audit logging — <strong>all absent.</strong> The home page line about <em>“nothing is shared with model providers unless you use external API keys”</em> is currently a marketing sentence with no document behind it.</p>
+<p><strong>And one of my own judgements was wrong.</strong> The download page has no Windows, so I wrote <em>“no plans”</em> — <strong>then read the whole changelog and found Windows three times.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 296" role="img" aria-label="Windows builds appear three times in the changelog and then go quiet for two months. Extensions bundled into Windows packages in May, profile import in June, menu work on release day, and then nine releases between late June and mid August with no mention of Windows at all. So this reads as deprioritised rather than imminent.">
+  <text class="lbl" x="8" y="22">the download page says "not here". the changelog says "we were building it"</text>
+  <line class="rule" x1="60" y1="74" x2="940" y2="74"/>
+  <line class="tick" x1="150" y1="64" x2="150" y2="84"/>
+  <line class="tick" x1="330" y1="64" x2="330" y2="84"/>
+  <line class="tick" x1="510" y1="64" x2="510" y2="84"/>
+  <line class="tick" x1="940" y1="64" x2="940" y2="84"/>
+  <text class="cap cap-p" x="150" y="56" text-anchor="middle">05-12</text>
+  <text class="cap cap-p" x="330" y="56" text-anchor="middle">06-01</text>
+  <text class="cap cap-p" x="510" y="56" text-anchor="middle">06-23</text>
+  <text class="cap" x="940" y="56" text-anchor="middle">08-13</text>
+  <text class="cap" x="150" y="102" text-anchor="middle">extensions in the</text>
+  <text class="cap" x="150" y="122" text-anchor="middle">Windows package</text>
+  <text class="cap" x="330" y="102" text-anchor="middle">Windows profile</text>
+  <text class="cap" x="330" y="122" text-anchor="middle">import lands</text>
+  <text class="cap" x="510" y="102" text-anchor="middle">Windows menus</text>
+  <text class="cap" x="510" y="122" text-anchor="middle">— on launch day</text>
+  <rect class="vn vn-a" x="530" y="140" width="410" height="40" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="735" y="165" text-anchor="middle">nine releases since · zero mentions of Windows</text>
+  <line class="rule" x1="8" y1="200" x2="992" y2="200"/>
+  <text class="cap cap-i" x="8" y="224">⇒ not "no plans" but <tspan class="cap-p">"started, then pushed down the list"</tspan> — the clock moves, not the verdict</text>
+  <text class="cap" x="8" y="248">the command line, by contrast, is firmly shut — the installer exits immediately off macOS</text>
+  <text class="cap" x="8" y="272">⚠ what it downloads is a macOS app bundle. Porting is a recompile, not a flag</text>
+</svg>
+<figcaption>Rejections come in kinds. "Never going to happen" and "the condition could actually arrive" deserve different watch intervals.</figcaption>
+</figure>
+<h2 id="held-against-my-own-setup">Held against my own setup</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Required</th>
+<th>Mine</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>macOS 15+</td>
+<td>Windows 11, both machines</td>
+<td><strong>impossible</strong></td>
+</tr>
+<tr>
+<td>Claude seat</td>
+<td>subscription or API key</td>
+<td>have it</td>
+<td>met</td>
+</tr>
+<tr>
+<td><strong>“operate the logged-in web, no integration”</strong></td>
+<td>the thing it sells</td>
+<td><strong>already solved</strong> — a browser connector drives my real logged-in Chrome</td>
+<td><strong>duplicate</strong></td>
+</tr>
+<tr>
+<td>Work tools</td>
+<td>click the web UI like a person</td>
+<td><strong>direct API</strong> through dedicated connectors</td>
+<td><strong>worse</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Only one row decides it.</strong> The rest of the comparison is moot — it doesn’t install. ⚠ <strong>And buying a machine to gain something that already works is a return near zero.</strong></p>
+<p><strong>The command-line route is firmly shut too.</strong> I had marked that <code>estimated</code> at first, then opened the installer script and confirmed it — anything that isn’t macOS exits immediately. What it fetches is <strong>an app bundle</strong>, so a port is a recompile. Across forty-odd releases the command line is mentioned <strong>zero times</strong>.</p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt the tool</td>
+<td><strong>rejected — platform.</strong> It doesn’t install</td>
+</tr>
+<tr>
+<td>Credential-free injection</td>
+<td><strong>check first.</strong> I will not call my own test-account handling “improvable” <strong>without having opened it</strong></td>
+</tr>
+<tr>
+<td>Allow/ask/deny + task overlay</td>
+<td><strong>hold.</strong> Three-valued rules already exist. The only new part is <strong>the per-task override</strong></td>
+</tr>
+<tr>
+<td>History as memory</td>
+<td><strong>already have it.</strong> My notes drawer does the same job</td>
+</tr>
+<tr>
+<td>Citing the benchmark</td>
+<td>⚠ <strong>don’t.</strong> It is self-scored</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The execution order is “do nothing.”</strong> The return is zero right now, so there is nowhere to spend. The permission technique gets looked at <strong>when I next touch that gate anyway</strong> — no standalone start.</p>
+<p><strong>Five reopening conditions, written down.</strong> ① a public Windows browser build ② <strong>a Windows command-line tool</strong> — that’s the real one ③ if I end up with a macOS machine ④ listing on an audited third-party leaderboard ⑤ a published security white paper. The watch points are recorded too — whether the installer grows a branch, whether a button appears on the download page.</p>
+<p><strong>The lesson I paid for here is about where you check that something is absent.</strong> Look only at the download page and it isn’t there; read the whole changelog and it was being built. <strong>The verdict doesn’t move, but the reopening condition changes character — from “someday” to “this could actually arrive.”</strong></p>
+<p>And ⚠ <strong>half of this piece is not inflating the haul.</strong> I wrote down two permission techniques, then held them up and found half of it was already in place. <strong>One remained.</strong> That is why the verdict says hold, not adopt.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

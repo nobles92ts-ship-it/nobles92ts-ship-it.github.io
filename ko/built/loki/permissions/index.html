@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>권한과 가드 — Loki</title><meta name="description" content="내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/ko/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a></div><div class="foot"><a class="lang" href="/en/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 것</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/" aria-current="page"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/loki/architecture/"><span class="t"><span>구조</span><span class="kpi">어댑터 1</span></span><span class="s">플랫폼도 두뇌도 갈아 끼우는데 코어는 하나입니다. 그 사이에 사람이 지키는 선이 있습니다.</span></a><a href="/ko/built/loki/commands/"><span class="t"><span>기능</span><span class="kpi">11종</span></span><span class="s">채팅창 하나로 무엇까지 시킬 수 있나. 그리고 그중 둘이 체감을 바꿨습니다.</span></a><a href="/ko/built/loki/permissions/" aria-current="page"><span class="t"><span>권한과 가드</span><span class="kpi">3티어</span></span><span class="s">내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다.</span></a><a href="/ko/built/loki/silent-failures/"><span class="t"><span>조용한 고장</span><span class="kpi">0 에러</span></span><span class="s">이 프로젝트에서 잡은 버그가 거의 전부 성공을 리턴하면서 아무것도 안 했습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 것</span><span class="st">공개</span></div><h1>권한과 가드</h1><p class="sum">내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다.</p><div class="meta"><span>3티어</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#읽기를-막으면-셸로-읽는다">읽기를 막으면 셸로 읽는다</a><a href="#조직은-파일-한-장이다">조직은 파일 한 장이다</a><a href="#자격증명은-되돌리지-않고-알린다">자격증명은 되돌리지 않고 알린다</a><a href="#멈추는-것도-기능이다">멈추는 것도 기능이다</a><a href="#바깥으로-나가는-것">바깥으로 나가는 것</a></nav><div class="prose"><p>내 PC에 셸 권한을 가진 에이전트는 챗봇과 위험 등급이 다르다. 그래서 제일 오래 걸린 게 에이전트 루프가 아니라 <strong>가드</strong>였다.</p>
+<table>
+<thead>
+<tr>
+<th>티어</th>
+<th>어디서</th>
+<th>할 수 있는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>오너</strong></td>
+<td>DM · 모든 채널</td>
+<td>전권 — 셸 · 파일 · 스킬</td>
+</tr>
+<tr>
+<td><strong>조직 멤버</strong></td>
+<td>바인딩된 채널</td>
+<td>그 조직 파일에 적힌 폴더만, 읽기 전용</td>
+</tr>
+<tr>
+<td><strong>손님</strong></td>
+<td>초대된 채널</td>
+<td>허용 목록 폴더만. <code>Bash</code> · <code>Skill</code> 차단</td>
+</tr>
+</tbody>
+</table>
+<h2 id="읽기를-막으면-셸로-읽는다">읽기를 막으면 셸로 읽는다</h2>
+<p>손님 티어에서 <strong><code>Bash</code>를 같이 막는 게 핵심</strong>이다. 파일 읽기 권한만 잠그고 셸을 열어 두면, 셸로 파일을 읽는다. 같은 이유로 스킬 실행과 하위 작업 생성도 막는다 — <strong>간접 실행 경로가 하나라도 열려 있으면 직접 경로를 막은 의미가 없다.</strong></p>
+<p>여기서 실무적인 함정이 하나 있었다. 차단 규칙이 <strong>468개까지 늘어난다.</strong> 이걸 명령줄로 넘기면 셸의 명령줄 길이 한계에 걸려 <strong>실행 자체가 안 된다.</strong> 에러 메시지는 “명령줄이 너무 깁니다” 한 줄이라 원인을 짚기 어렵다. 지금은 설정 파일로 넘긴다.</p>
+<p>그리고 매니페스트가 비어 있으면 <strong>전부 허용이 아니라 전부 차단</strong>이다. 실수로 파일을 비웠을 때 잠기는 쪽이 열리는 쪽보다 낫다.</p>
+<h2 id="조직은-파일-한-장이다">조직은 파일 한 장이다</h2>
+<p><strong>파일 하나 = 조직 하나.</strong> 그 안에 멤버, 바인딩된 채널, 읽을 수 있는 폴더, 쓸 수 있는 명령, 시간당 상한이 들어 있다.</p>
+<p>해석 순서가 정해져 있다 — 오너 &gt; 명시 멤버 &gt; 채널 바인딩 &gt; 무소속. 그리고 조직끼리는 격리되고, 조직 파일은 읽기 전용이다.</p>
+<p>파일로 둔 이유는 <strong>손으로 열어 볼 수 있어야 하기 때문</strong>이다. 권한 설정이 데이터베이스나 명령 이력에만 있으면, “지금 이 사람이 뭘 볼 수 있나”에 답하려면 도구를 돌려야 한다. 파일이면 열어 보면 된다.</p>
+<h2 id="자격증명은-되돌리지-않고-알린다">자격증명은 되돌리지 않고 알린다</h2>
+<p>설정 파일을 직접 고치면 <strong>되돌리고 오너에게 알린다.</strong></p>
+<p>절반만 적용된 자격증명이 아예 안 바꾼 것보다 나쁘기 때문이다. 반쯤 바뀐 상태로 도는 에이전트는 어느 계정으로 무엇을 했는지가 흐려진다.</p>
+<p>이 가드에 내가 한 번 걸렸다. 토큰을 손으로 넣었는데 다음에 보니 사라져 있어서 <strong>“저장이 안 됐다”고 오진하고 한 시간을 썼다.</strong> 되돌릴 때 알림이 오는데 그걸 먼저 안 봤다. 가드가 잘 돌아서 생긴 혼란이라, 지금은 “사라졌으면 알림부터 확인”이 첫 단계다.</p>
+<h2 id="멈추는-것도-기능이다">멈추는 것도 기능이다</h2>
+<p>긴 파이프라인을 스레드에서 재개할 때, Loki는 <strong>선택지와 그 대가를 먼저 보여주고 멈춘다.</strong> 승인해야 실행한다.</p>
+<p>이 게이트에는 성질이 두 개 있다.</p>
+<p><strong>게이트는 두뇌를 부르지 않는다.</strong> 그래서 구독 한도가 바닥나 있어도 확인까지는 정상 동작한다. 한도가 없어서 재개를 못 하는 상황에서 재개 확인이 안 되면, 그건 두 번 막히는 것이다.</p>
+<p><strong>대기 상태는 디스크에 남는다.</strong> 처음엔 메모리에 15분만 들고 있었는데 첫 실사용에서 바로 깨졌다 — 물음 15:27, 답 16:53. 85분 뒤였다. 만료된 확인이 조용히 두뇌로 새어 들어갔고, <strong>두뇌는 “수동으로 실행할까요?“라고 지어냈다.</strong></p>
+<p>15분이 짧아서 틀린 게 아니다. <strong>재개는 한도 리셋을 기다렸다 하는 일</strong>이라 분 단위 수명이 현실과 안 맞았고, 워커 재기동에도 살아남아야 했다.</p>
+<p>낡은 답의 위험은 시간으로 막지 않는다. 답이 왔을 때 <strong>선택지를 다시 계산해 물었을 때와 같은지 대조</strong>하고, 다르면 실행 대신 되묻는다. 만료된 것도 조용히 흘리지 않고 “만료됐다”고 알린다.</p>
+<h2 id="바깥으로-나가는-것">바깥으로 나가는 것</h2>
+<p>발행, push, 티켓 등록. 전부 <strong>준비까지는 자동으로 하고 멈춰서 사람을 기다린다.</strong></p>
+<p>기준이 하나다 — <strong>이 기계 밖에 흔적이 남는가.</strong> 파일을 고치는 건 되돌릴 수 있고, 올라간 글은 되돌려도 본 사람이 있다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span class="badge">기계 보조 번역</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

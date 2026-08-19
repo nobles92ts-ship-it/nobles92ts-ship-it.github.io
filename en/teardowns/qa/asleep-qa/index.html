@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Asleep&#39;s QA automation — QA automation</title><meta name="description" content="Ten of the eleven decisions I had already arrived at. The value wasn't transfer — it was independent confirmation."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/" aria-current="page"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Asleep&#39;s QA automation</h1><p class="sum">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</p><div class="meta"><span>1 of 11</span><a class="src" href="https://brunch.co.kr/@jiwonleeqa/394" target="_blank" rel="noopener">source, 1 of 8 — brunch.co.kr/@jiwonleeqa/394 ↗</a><a class="src" href="https://brunch.co.kr/@jiwonleeqa/398" target="_blank" rel="noopener">on simultaneous control — brunch.co.kr/@jiwonleeqa/398 ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#who-built-it">Who built it</a><a href="#the-core-is-simultaneous-control--not-parallel-execution">The core is simultaneous control — not parallel execution</a><a href="#what-broke--there-is-no-defect-detection-data">What broke — there is no defect-detection data</a><a href="#one-thing-came-across">One thing came across</a><a href="#and-i-corrected-myself-twice">And I corrected myself twice</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>Exactly one technique transferred.</strong> Pulling eleven design decisions from eighteen months of writing by the sole QA engineer at a sleep-tech company and holding them against mine, <strong>ten were places I had already reached.</strong> The one remaining is this page’s harvest — but <strong>the real return of this investigation wasn’t that one thing. It was that under the same constraints, someone else independently reached the same decisions.</strong> And getting to that verdict, <strong>my own conclusion was overturned twice.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="What's under test for a sleep-measurement app isn't a screen transition but an entire night. A microphone collects breathing sounds and uploads every 30 seconds, a server analyses asynchronously every five minutes, results return by callback, and a report only exists once the session ends. Four constraints bite at once.">
+  <text class="lbl" x="8" y="22">under test = not a screen transition but an entire night</text>
+  <rect class="bx-code" x="8" y="36" width="228" height="46" rx="2"/>
+  <text class="bx-t" x="122" y="57" text-anchor="middle">microphone capture</text>
+  <text class="bx-s" x="122" y="74" text-anchor="middle">uploads every 30s</text>
+  <rect class="bx-code" x="260" y="36" width="228" height="46" rx="2"/>
+  <text class="bx-t" x="374" y="57" text-anchor="middle">async server analysis</text>
+  <text class="bx-s" x="374" y="74" text-anchor="middle">on a 5-minute cycle</text>
+  <rect class="bx-code" x="512" y="36" width="228" height="46" rx="2"/>
+  <text class="bx-t" x="626" y="57" text-anchor="middle">callback</text>
+  <text class="bx-s" x="626" y="74" text-anchor="middle">results come back</text>
+  <rect class="bx-llm" x="764" y="36" width="228" height="46" rx="2"/>
+  <text class="bx-t" x="878" y="57" text-anchor="middle">report after session end</text>
+  <text class="bx-s" x="878" y="74" text-anchor="middle">only now can you judge</text>
+  <path d="M236 59 H260 M488 59 H512 M740 59 H764" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="lbl" x="8" y="112">and four things bite at once</text>
+  <rect class="vn vn-a" x="8" y="124" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="143" text-anchor="middle">duration</text>
+  <text class="cap" x="126" y="164" text-anchor="middle">below a minimum length</text>
+  <text class="cap" x="126" y="185" text-anchor="middle">no report — that's the spec</text>
+  <rect class="vn vn-a" x="256" y="124" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="374" y="143" text-anchor="middle">persistence</text>
+  <text class="cap" x="374" y="164" text-anchor="middle">permission and audio session</text>
+  <text class="cap" x="374" y="185" text-anchor="middle">must survive all night</text>
+  <rect class="vn vn-a" x="504" y="124" width="236" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="622" y="143" text-anchor="middle">asynchrony</text>
+  <text class="cap" x="622" y="164" text-anchor="middle">“did it measure” and</text>
+  <text class="cap" x="622" y="185" text-anchor="middle">“is the value sane” are separate</text>
+  <rect class="vn vn-a" x="752" y="124" width="240" height="70" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="872" y="143" text-anchor="middle">identity</text>
+  <text class="cap" x="872" y="164" text-anchor="middle">get it wrong and it measures</text>
+  <text class="cap" x="872" y="185" text-anchor="middle">but never attaches to the account</text>
+  <line class="rule" x1="8" y1="204" x2="992" y2="204"/>
+  <text class="cap cap-i" x="8" y="226">A few seconds of tapping surfaces <tspan class="cap-p">none of the four</tspan></text>
+  <text class="cap" x="8" y="246">And the matrix is 3 products × 2 environments × 2 platforms = 12, with web on top of that</text>
+</svg>
+<figcaption>What makes this series unusual isn't the techniques, it's the subject. When the subject is hard, tool choice stops being taste and becomes a constraint.</figcaption>
+</figure>
+<h2 id="who-built-it">Who built it</h2>
+<p><strong>The sole QA engineer at a company making a sleep-measurement app.</strong> Eight posts between January 2025 and August 2026, at very different levels — one on career motivation, one on post-deploy monitoring, one on code standards for large-scale automation, one debugging a memory collapse during a 24-hour run, one on building an on-premise device farm, and a retrospective on their own QA platform.</p>
+<p><strong>It matters that they tried to stay on the cloud first.</strong> A cloud device farm’s beta failed during an audio-injection trial, and the vendor’s proposed fix was <strong>downgrading to a framework version that had been end-of-life for five years.</strong> They pushed back — that version predates the shift from synchronous to asynchronous architecture — and it eventually worked on the current release. <strong>Even so, the way audio injection works turned out to be wrong for validating this product, and mobile left the cloud.</strong></p>
+<p><strong>And the author’s conclusion is honest.</strong> Having argued a cloud vendor down and won, it ends on <strong>“for most people, cloud is the right answer.”</strong> On-premise is a good direction only when a special requirement can’t be met in the cloud and can be designed well as hub-and-node. <strong>Writing that declines to generalise its own choice is rare.</strong></p>
+<h2 id="the-core-is-simultaneous-control--not-parallel-execution">The core is simultaneous control — not parallel execution</h2>
+<p>Conflate the two and you misread the whole series. They’re <strong>completely different axes</strong>, and the one the author calls the core is the second.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Parallel execution</th>
+<th><strong>Simultaneous control</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What N devices do</td>
+<td>different tests each</td>
+<td><strong>the same action, at once</strong></td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>throughput, overnight sweeps</td>
+<td>compare behaviour across models by eye</td>
+</tr>
+<tr>
+<td>Hardest part</td>
+<td>session collisions, dirty device state</td>
+<td><strong>pressing the same button</strong></td>
+</tr>
+<tr>
+<td>Solution</td>
+<td>hub scans free nodes and queues</td>
+<td>target <strong>the real on-screen element</strong>, not coordinates</td>
+</tr>
+</tbody>
+</table>
+<p>The author defines simultaneous control as <strong>“not a convenience feature but the feature that changes how much verification one QA engineer can carry.”</strong> Checking twelve configurations one device at a time means repeating every action once per device; <strong>simultaneous control deletes the repetition — two devices or ten take about the same time.</strong></p>
+<p><strong>Two conditions had to hold.</strong></p>
+<ul>
+<li><strong>Accuracy</strong> — ratio-computed coordinates drift with each model’s margins and status-bar height, <strong>missing by over 100px on the same screen.</strong> So targeting moved to finding the actual element</li>
+<li><strong>Latency</strong> — if one device lags, the whole set feels out of step. So they bypassed the standard framework for a direct device connection, and measured <strong>14 ms for a screen tap and 4–7 ms for a keystroke over wireless</strong></li>
+</ul>
+<p><strong>And the best-formed number in the whole series happens to sit here.</strong> It states its conditions (“measured over wireless”) and separates the two operations.</p>
+<h2 id="what-broke--there-is-no-defect-detection-data">What broke — there is no defect-detection data</h2>
+<p>One gap runs through all eight posts.</p>
+<blockquote>
+<p>A device farm, a platform, a natural-language verification engine, 900 of their own tests — and <strong>nowhere is there a number for “we caught N defects that manual testing would have missed.”</strong></p>
+</blockquote>
+<p>Everything is evaluated on <strong>whether it runs</strong>, and nothing on <strong>whether it finds.</strong> <strong>That is precisely where automation most commonly fails.</strong></p>
+<p>The rest, on the record. <strong>“Recovers within 45 seconds” can’t be verified</strong> — the detection mechanism isn’t described, so it’s likely <strong>a configured timeout rather than a measured recovery latency.</strong> In which case 45 seconds is a parameter, not an achievement. <strong>“900 of our own tests” is a vanity metric</strong> — no coverage, no defect count, and <strong>since the same person wrote both the platform and its tests, it’s a self-referential oracle that replicates its own blind spots.</strong></p>
+<p><strong>Zero evidence on the most fragile component</strong> also stands out. Unattended natural-language scenario verification is the most brittle part of the platform, and there isn’t a line on accuracy, flakiness, or behaviour under ambiguity.</p>
+<p>And the memory-collapse post is <strong>half an expansion of a wrong hypothesis.</strong> The three-layer timeout material is useful knowledge but wasn’t the cause; the actual fix was one line — <strong>write recording segments straight to disk instead of accumulating them in the heap.</strong> And raising every timeout to 30 hours <strong>switched off the hang detector.</strong> Justified for a 24-hour test, but as a standing default it removes any way to <strong>distinguish a stalled session from a long one.</strong></p>
+<h2 id="one-thing-came-across">One thing came across</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Of eleven design decisions, ten were places I had already reached, and only the one that didn't overlap actually transferred.">
+  <ellipse class="vn vn-b" cx="470" cy="112" rx="238" ry="86"/>
+  <ellipse class="vn vn-a" cx="590" cy="112" rx="238" ry="86"/>
+  <text class="num" x="530" y="104" text-anchor="middle">10</text>
+  <text class="cap cap-i" x="530" y="130" text-anchor="middle">already the same conclusion</text>
+  <text class="cap" x="530" y="150" text-anchor="middle">on-prem · fail-closed on live · unattended regression · element targeting</text>
+  <text class="num num-p" x="286" y="104" text-anchor="middle">1</text>
+  <text class="cap cap-p" x="286" y="130" text-anchor="middle">actually harvested</text>
+  <text class="lbl" x="220" y="34">their 11 design decisions</text>
+  <text class="lbl" x="810" y="34">what I was already doing</text>
+  <line class="rule" x1="40" y1="218" x2="960" y2="218"/>
+  <text class="cap cap-i" x="40" y="240">The size of the overlap is the finding — <tspan class="cap-p">a conclusion with a sample size of one now has two</tspan></text>
+</svg>
+<figcaption>Few techniques transferring and the investigation being wasted are two different statements. The overlapping ten are this page's real return.</figcaption>
+</figure>
+<p>The one that came across:</p>
+<blockquote>
+<p><strong>Count the devices that failed element lookup and got tapped by coordinate instead — and show that count immediately.</strong></p>
+</blockquote>
+<p>I have the coordinate fallback. I don’t have <strong>the counter.</strong> So a tap that hit its target precisely and <strong>a tap that missed the element and got approximated by coordinates are recorded as the same PASS.</strong></p>
+<p><strong>There are two kinds of PASS and the report records one.</strong> The fallback path is exactly where the next build breaks quietly, and <strong>without a count you won’t see it growing.</strong></p>
+<h2 id="and-i-corrected-myself-twice">And I corrected myself twice</h2>
+<p><strong>First.</strong> I recorded silent-connection detection as a new harvest. Wrong — opening my own code, <strong>it was already there.</strong> A separate axis tracking screen change, wired to a staged recovery. <strong>I had mistaken a written operating rule for an implemented one</strong>, which is the identical error I made in <a href="/en/teardowns/harness/prime-agent/">Prime Agent</a>.</p>
+<p><strong>Second.</strong> So I tried to close at “zero new adoptions,” and <strong>that was wrong too.</strong> The section the author himself calls the core hadn’t made it into my initial extract, and <strong>the one adoption above was sitting in it.</strong></p>
+<blockquote>
+<p><strong>A thin extract changes the conclusion wholesale.</strong></p>
+</blockquote>
+<h2 id="verdict">Verdict</h2>
+<p><strong>One technique transferred.</strong> The real value of this investigation was elsewhere.</p>
+<p>Under the same constraints — <strong>one QA engineer, real devices, long sessions, unattended regression</strong> — <strong>someone else independently reached the same decisions.</strong> On-premise, fail-closed on live by default, unattended regression, element-based targeting. Those were conclusions I’d arrived at alone, which meant <strong>a sample size of one. Now it’s two.</strong></p>
+<p>Few techniques transferring and the investigation being wasted are <strong>two different statements.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

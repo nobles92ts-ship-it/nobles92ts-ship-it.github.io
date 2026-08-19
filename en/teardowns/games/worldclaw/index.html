@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hunyuan3D-WorldClaw — Making games</title><meta name="description" content="A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">15 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Fifteen taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">9 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all nine, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">4 written · 3 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/" aria-current="page"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/games/elemental-sandbox/"><span class="t"><span>Elemental Sandbox</span><span class="kpi">1 rule → 43 places</span></span><span class="s">The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.</span></a><a href="/en/teardowns/games/openmmo/"><span class="t"><span>OpenMMO</span><span class="kpi">2 corrections to my own summary</span></span><span class="s">An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.</span></a><a href="/en/teardowns/games/worldclaw/" aria-current="page"><span class="t"><span>Hunyuan3D-WorldClaw</span><span class="kpi">0 code · 0 numbers</span></span><span class="s">A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.</span></a><a href="/en/teardowns/games/dynasty-warriors-origins/"><span class="t"><span>Dynasty Warriors Origins</span><span class="kpi">3 left of 12</span></span><span class="s">I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.</span></a><a href="/en/teardowns/games/unity-releases/"><span class="t"><span>Recent Unity releases</span><span class="kpi">188 breaking</span></span><span class="s">Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>Hunyuan3D-WorldClaw</h1><p class="sum">A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.</p><div class="meta"><span>0 code · 0 numbers</span><a class="src" href="https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw" target="_blank" rel="noopener">github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is--start-from-the-repository">What it is — start from the repository</a><a href="#the-design-is-good">The design is good</a><a href="#what-broke">What broke</a><a href="#held-against-my-own-setup">Held against my own setup</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>The repository has no code and the paper has no numbers.</strong> The system translates one line of text prompt into a structured spec of regions, terrain, assets and materials, then has <strong>an agent drive 3D tools directly</strong> to lay terrain and seat objects on it. The claim rests on the output being <strong>an editable mesh at instance granularity</strong> rather than a panorama or a point cloud. But what you can actually download from the repository is <strong>a 1,333-byte README and some images</strong>, and while the title promises <em>“at Scale”</em>, <strong>the entire paper contains not one numeric table.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="A three-stage pipeline. It extracts a scene spec from the prompt, builds global terrain, then generates and places objects region by region. A render, inspect and repair loop is attached to the end of each stage.">
+  <text class="lbl" x="8" y="22">global → region → instance — it narrows from wide to narrow</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="166" y="60" text-anchor="middle">① read intent, plan</text>
+  <text class="cap" x="166" y="82" text-anchor="middle">pull explicit constraints from the prompt</text>
+  <text class="cap" x="166" y="104" text-anchor="middle">fill the gaps from a schema</text>
+  <path d="M324 76 H342" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="342" y="36" width="316" height="80" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="60" text-anchor="middle">② global terrain</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">heightfield = mask × (base + noise + ops)</text>
+  <text class="cap" x="500" y="104" text-anchor="middle">peaks · dunes · terraces · erosion</text>
+  <path d="M658 76 H676" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="676" y="36" width="316" height="80" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="834" y="60" text-anchor="middle">③ objects per region</text>
+  <text class="cap" x="834" y="82" text-anchor="middle">render → segment → recover meshes</text>
+  <text class="cap" x="834" y="104" text-anchor="middle">seated by matching two rays</text>
+  <line class="rule" x1="8" y1="140" x2="992" y2="140"/>
+  <text class="cap cap-i" x="8" y="164">⇒ every stage ends with a <tspan class="cap-p">render → inspect → repair</tspan> loop — nothing is generated once and left</text>
+  <text class="cap" x="8" y="188">it detects floating, intersecting and unstably supported objects and deforms only the support area</text>
+  <text class="cap cap-i" x="8" y="220">⇒ and every intermediate representation is <tspan class="cap-p">something a person can open</tspan></text>
+  <text class="cap" x="8" y="244">colour-encoded layout maps · asset prototypes · a structured spec. That's what separates it from one-shot black boxes</text>
+</svg>
+<figcaption>The pipeline itself is well designed. The problem is that the only evidence for this diagram is the paper's prose, and you can't run it.</figcaption>
+</figure>
+<h2 id="what-it-is--start-from-the-repository">What it is — start from the repository</h2>
+<p><strong>Three files in the root.</strong> <code>.gitignore</code> (10 bytes), <code>README.md</code> (1,333 bytes), and an image folder. <strong>Zero Python files, zero requirements files, zero licence files.</strong> Two commits. The 180MB repository is <strong>entirely teaser and pipeline images.</strong></p>
+<p><strong>The README has no install, usage, roadmap or licence section.</strong> What it has is news, one methodology image and a citation block. <strong>There isn’t even a “coming soon”</strong> — no commitment to release exists.</p>
+<p><strong>There is one issue</strong> — <em>“the code was never committed. This can’t be reproduced.”</em> <strong>Zero maintainer replies, zero labels, zero assignees.</strong></p>
+<p>⚠ <strong>No licence file does not mean “use it freely”, it means the authors retain all rights</strong> — including the image assets.</p>
+<h2 id="the-design-is-good">The design is good</h2>
+<p><strong>It narrows in three stages.</strong> Before touching instance detail, it <strong>fixes the shared constraints of meaning and terrain first.</strong> So <strong>region boundaries don’t jump, and later stages can’t break earlier ones.</strong></p>
+<p><strong>Every intermediate representation is something a person can open</strong> — colour-encoded layout maps, asset prototype images, a structured spec. <strong>Being able to inspect and repair mid-flight</strong> is the line between this and one-shot black-box generation.</p>
+<p><strong>The heightfield is built as a sum of named variables</strong> — region mask × (base elevation + noise + terrain operators), the operators being peaks, dunes, terraces and erosion. <strong>Because the parameters are named variables, the agent can go back and change them.</strong></p>
+<p><strong>Materials take two paths at once</strong> — generated textures and a procedural node graph. On <strong>large surfaces like terrain, generated texture alone shows its repetition.</strong></p>
+<p><strong>And a render-inspect-repair loop attaches to each stage</strong>, detecting floating, intersecting and unstably supported objects and <strong>deforming only the support region.</strong></p>
+<h2 id="what-broke">What broke</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 244" role="img" aria-label="The state of the repository and the absence of quantitative evaluation in the paper. There are no code files and one issue is unanswered, and while the title promises scale there are no numeric tables, no user study and no generation times. The limitation the authors state themselves is that it is bound to three closed APIs.">
+  <text class="lbl" x="8" y="22">empty on two axes at once</text>
+  <rect class="vn vn-b" x="8" y="36" width="484" height="98" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="250" y="60" text-anchor="middle">repository — no code</text>
+  <text class="cap" x="250" y="82" text-anchor="middle">3 root files · 2 commits</text>
+  <text class="cap" x="250" y="102" text-anchor="middle">0 Python · 0 requirements · 0 licence</text>
+  <text class="cap" x="250" y="122" text-anchor="middle">"cannot reproduce" issue, unanswered</text>
+  <rect class="vn vn-b" x="508" y="36" width="484" height="98" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="750" y="60" text-anchor="middle">paper — no numbers</text>
+  <text class="cap" x="750" y="82" text-anchor="middle">the title promises "at Scale", and yet</text>
+  <text class="cap" x="750" y="102" text-anchor="middle">numeric tables · user study · generation time</text>
+  <text class="cap" x="750" y="122" text-anchor="middle">asset counts · scene area — all zero</text>
+  <line class="rule" x1="8" y1="156" x2="992" y2="156"/>
+  <text class="cap cap-i" x="8" y="180">⚠ and the limitation the authors wrote themselves is decisive</text>
+  <text class="cap cap-p" x="8" y="202">"substituting open-source models causes procedural terrain and material generation to fail"</text>
+  <text class="cap" x="8" y="226">⇒ even with code, it stays bound to three closed APIs. The grounds for rejection are their own limitations section</text>
+</svg>
+<figcaption>This isn't criticism, it's quotation. The grounds for rejecting it were written by the authors, in their own limitations section.</figcaption>
+</figure>
+<p><strong>The title promises scale and the quantitative evaluation is zero.</strong> No numeric tables, no user study, no generation times, no asset counts, no scene areas. To claim <em>“large scale”</em> you have to say <strong>what is how large</strong>, and that space is empty.</p>
+<p><strong>And the limitation the authors state is decisive</strong> — <em>“substituting open-source models causes procedural terrain and material generation to fail.”</em> So <strong>even if the code ships, it stays bound to three closed APIs.</strong> <strong>The grounds for rejection are not my performance critique but the paper’s own limitations section.</strong></p>
+<p>⚠ <strong>To be fair, a paper and a repository are different things.</strong> A paper announces an idea and carries no obligation to publish code. <strong>Creating a repository and then not answering a “cannot reproduce” issue</strong> is a separate matter.</p>
+<h2 id="held-against-my-own-setup">Held against my own setup</h2>
+<p><strong>There is nothing to adopt</strong> — there is no code to take.</p>
+<p><strong>Two things come across from the design.</strong></p>
+<p><strong>One, keep intermediate representations openable by a person.</strong> My generation pipeline also writes intermediates to files, but <strong>whether those are in an inspectable form</strong> is a separate question. Made <strong>into a form where the error is visible at a glance</strong> — like a colour-encoded layout map — after-the-fact correction gets much cheaper.</p>
+<p><strong>Two, parameterise as a sum of named variables.</strong> Express a heightfield as a weighted sum of <em>“base + noise + operators”</em> and <strong>the agent can say which term to change and by how much.</strong> A function that only emits a result cannot be walked back.</p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt the tool</td>
+<td>⛔ <strong>rejected.</strong> There is no code to take</td>
+</tr>
+<tr>
+<td><strong>Intermediates in an inspectable form</strong></td>
+<td><strong>adopt.</strong> Writing to a file and being openable are different things</td>
+</tr>
+<tr>
+<td><strong>Parameterise as a sum of named variables</strong></td>
+<td><strong>adopt.</strong> A form you can walk back</td>
+</tr>
+<tr>
+<td>Citing the paper’s numbers</td>
+<td>⛔ <strong>don’t.</strong> There are no numbers to cite</td>
+</tr>
+<tr>
+<td>Reopening condition</td>
+<td>when code is actually committed <strong>and the closed-API dependency is lifted</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson I paid for here: 481 stars do not guarantee the existence of code.</strong> That was the count five days after creation, and the repository settings carry traces that the traffic came from the paper and social posts rather than search — the description and topic tags are empty, with only a homepage link set.</p>
+<p>And ⚠ <strong>when rejecting something, the authors’ limitations section is stronger grounds than my own judgement.</strong> <em>“I don’t think this will work”</em> is far weaker than <em>“the authors wrote that it fails on open-source models”</em> — and when it comes time to write the reopening condition, <strong>that sentence becomes the condition, verbatim.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Permissions and guards — Loki</title><meta name="description" content="Opening an agent with shell access on your own PC to other people. And stopping is a feature."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"><link rel="stylesheet" href="/_astro/Shell.CVEKqjIG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><a class="brand" href="/en/">MOON HYEONGGEUN</a><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a></div><div class="foot"><a class="lang" href="/ko/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 Built</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/" aria-current="page"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/loki/architecture/"><span class="t"><span>Architecture</span><span class="kpi">1 adapter</span></span><span class="s">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</span></a><a href="/en/built/loki/commands/"><span class="t"><span>Commands</span><span class="kpi">11 of them</span></span><span class="s">How much you can ask for through a chat box — and the two that changed how it feels.</span></a><a href="/en/built/loki/permissions/" aria-current="page"><span class="t"><span>Permissions and guards</span><span class="kpi">3 tiers</span></span><span class="s">Opening an agent with shell access on your own PC to other people. And stopping is a feature.</span></a><a href="/en/built/loki/silent-failures/"><span class="t"><span>Silent failures</span><span class="kpi">0 errors</span></span><span class="s">Almost every bug this project produced returned success and did nothing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Built</span><span class="st">public</span></div><h1>Permissions and guards</h1><p class="sum">Opening an agent with shell access on your own PC to other people. And stopping is a feature.</p><div class="meta"><span>3 tiers</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#deny-reads-and-they-read-with-the-shell">Deny reads and they read with the shell</a><a href="#an-org-is-one-file">An org is one file</a><a href="#credentials-get-reverted-and-reported">Credentials get reverted, and reported</a><a href="#stopping-is-a-feature">Stopping is a feature</a><a href="#anything-that-leaves-the-machine">Anything that leaves the machine</a></nav><div class="prose"><p>An agent with shell access on your own PC is a different risk class from a chatbot. Which is why the longest part wasn’t the agent loop — it was the <strong>guards</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Where</th>
+<th>What they get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Owner</strong></td>
+<td>DM · every channel</td>
+<td>Everything — shell, files, skills</td>
+</tr>
+<tr>
+<td><strong>Org member</strong></td>
+<td>Bound channels</td>
+<td>Only the folders named in that org’s file, read-only</td>
+</tr>
+<tr>
+<td><strong>Guest</strong></td>
+<td>Invited channels</td>
+<td>Only allowlisted folders. <code>Bash</code> and <code>Skill</code> blocked</td>
+</tr>
+</tbody>
+</table>
+<h2 id="deny-reads-and-they-read-with-the-shell">Deny reads and they read with the shell</h2>
+<p>Blocking <code>Bash</code> in the guest tier <strong>is the important half.</strong> Lock file reads and leave the shell open, and they read files with the shell. Skill execution and sub-task spawning are blocked for the same reason — <strong>one open indirect path makes closing the direct path meaningless.</strong></p>
+<p>There was a practical trap here. The deny rules grow to <strong>468 entries.</strong> Passed on the command line, that hits the shell’s command-length limit and <strong>nothing runs at all.</strong> The error is a single line about the command being too long, which makes the cause hard to find. They go through a settings file now.</p>
+<p>And an empty manifest means <strong>deny everything, not allow everything.</strong> If someone empties the file by accident, locking is better than opening.</p>
+<h2 id="an-org-is-one-file">An org is one file</h2>
+<p><strong>One file, one org.</strong> Members, bound channels, readable folders, permitted commands, and an hourly cap all live in it.</p>
+<p>Resolution order is fixed — owner, then explicit member, then channel binding, then unaffiliated. Orgs are isolated from each other, and org files are read-only.</p>
+<p>They’re files because <strong>you have to be able to open one and look.</strong> If permission state only exists in a database or a command history, answering “what can this person see right now” means running a tool. With a file you just read it.</p>
+<h2 id="credentials-get-reverted-and-reported">Credentials get reverted, and reported</h2>
+<p>Editing the config file directly gets <strong>reverted, with a notification to the owner.</strong></p>
+<p>Because a half-applied credential change is worse than none. An agent running half-switched blurs which account did what.</p>
+<p>I got caught by this guard myself. I put a token in by hand, saw it gone later, and <strong>misdiagnosed it as “the save failed,” losing an hour.</strong> The revert sends a notification and I hadn’t looked at it. Confusion caused by the guard working correctly — so now “if it vanished, check the alert first” is step one.</p>
+<h2 id="stopping-is-a-feature">Stopping is a feature</h2>
+<p>When resuming a long pipeline from a thread, Loki <strong>shows the options and what each one costs, then stops.</strong> Nothing runs until it’s approved.</p>
+<p>Two properties matter here.</p>
+<p><strong>The gate never calls the brain.</strong> So it keeps working even when the subscription quota is exhausted. Being unable to confirm a resume in the exact situation where quota is why you can’t resume would be blocked twice over.</p>
+<p><strong>The pending state lives on disk.</strong> The first version held it in memory for fifteen minutes, and the very first real use broke it — asked at 15:27, answered at 16:53. Eighty-six minutes. The expired confirmation leaked quietly into the model, and <strong>the model invented an answer: “shall I run it manually?”</strong></p>
+<p>Fifteen minutes wasn’t wrong for being short. <strong>Resuming is something you do after waiting for a quota reset</strong>, so a lifetime measured in minutes never matched reality — and it had to survive a worker restart.</p>
+<p>The risk of a stale answer isn’t handled with a clock. When the answer arrives, the options are <strong>recomputed and compared against what was originally asked</strong> — and if they differ, it asks again instead of running. Expired ones aren’t dropped silently either; they’re reported as expired.</p>
+<h2 id="anything-that-leaves-the-machine">Anything that leaves the machine</h2>
+<p>Publishing, pushing, filing tickets. All of it <strong>prepares automatically, then stops and waits for a human.</strong></p>
+<p>One criterion: <strong>does a trace end up outside this machine?</strong> Editing a file is reversible; a published post can be deleted, but somebody has already seen it.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    const load = () => (loading ??= fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>
