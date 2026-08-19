@@ -57,7 +57,7 @@ while (Time.time - t0 &lt; x) yield return null;</p></div>
 <p><strong>Returning to the pool fires no physics callback.</strong> <code>SetActive(false)</code> sends it back without triggering <code>OnTriggerExit</code>, so a returned object stays on the “currently inside my range” roster. Respawn that same instance across the map and <strong>you get hit from there.</strong></p>
 <p><strong>Death doesn’t switch it off immediately, because of game feel.</strong> While the death animation plays, <code>activeSelf</code> is still true — so a scanner that only checks that treats <strong>a corpse as a valid target.</strong></p>
 <p>Both point the same way. Stop using <code>activeSelf</code> as a synonym for alive — put actual health or a death flag in the condition, and re-verify position when the roster is consumed. Better to build so that <strong>it holds regardless of what the contamination source is.</strong></p>
-</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/built/moon-studio/wuxia/client/" hreflang="ko">Machine-assisted translation · Korean original</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/built/moon-studio/wuxia/client/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
 const none = "nothing found";
 
   // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다

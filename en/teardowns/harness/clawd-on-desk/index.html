@@ -179,7 +179,7 @@
 <p>The cost gets the same honesty. The hook <strong>spawns an extra process per tool call</strong>, so a pipeline run could slow down — but <strong>I didn’t measure it.</strong> That’s deduced from the wiring, not observed, so it stays an estimate. Promoting it means running the same input before and after and comparing stage times.</p>
 <p>The safety verdict has an expiry date too. What I checked was <strong>one snapshot immediately after install</strong>, and this app <strong>re-syncs its hooks on every launch.</strong> The same merge repeats from now on, and if an update changes that logic it changes quietly. Re-checking the hook count and my own hooks after the next update is what keeps this verdict alive.</p>
 <p>⚠ And a standing guard. <strong>If a tool use comes back denied when I never denied it, suspect the app being closed while its permission hook is still wired.</strong> That single dashed line in the diagram above is the path — and the symptom is quiet enough to lose an entire unattended run.</p>
-</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/harness/clawd-on-desk/" hreflang="ko">Machine-assisted translation · Korean original</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/harness/clawd-on-desk/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
 const none = "nothing found";
 
   // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다

@@ -60,7 +60,7 @@
 <p>Burned twice by the same class. Each module <strong>binds its state path at import time</strong>, so unless the test setup blocks them one by one, live files get edited.</p>
 <p>The actual incident: an adapter test flowed a channel message through, that <strong>wrote to the live state file</strong>, and a warning I had just built silently switched off in production. <strong>Every test passed.</strong></p>
 <p>Now all seventeen state paths get redirected wholesale. And <strong>adding a new state file means adding it to that list</strong> — this is the kind of thing the person who built it forgets, not the next person.</p>
-</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/built/loki/silent-failures/" hreflang="ko">Machine-assisted translation · Korean original</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/built/loki/silent-failures/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
 const none = "nothing found";
 
   // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
