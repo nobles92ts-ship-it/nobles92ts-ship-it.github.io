@@ -2,7 +2,16 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<!-- ⚠ 이 파일은 `public/` 에 손으로 둔 정적 한 장이라 Shell.astro 를 안 탄다 —
+     사이트가 head 에 넣어 주는 것이 하나도 안 붙는다(2026-08-21 적대리뷰 확정).
+     ⚠ 그중 `viewport` 가 없던 것이 제일 나빴다: 검색 문제가 아니라 **모바일에서 못 읽는** 문제였다.
+     ⚠ 여기를 고칠 때 `dist/` 를 고치지 말 것 — 다음 빌드에 통째로 덮인다. 정본은 `public/` 이다. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>패턴 초식 무협 액션 · 기획서 (GDD v0.6)</title>
+<meta name="description" content="패턴 초식 무협 액션 게임의 기획서(GDD v0.6). 상성·전조·페이즈 설계 전문.">
+<!-- 사이트 본문이 아니라 **딸린 자료**다. 색인은 막되 링크는 따라가게 둔다 -->
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://nobles92ts-ship-it.github.io/spec/wuxia-gdd.html">
 <style>
   :root{
     /* v0.5: 무협 시대 톤 강화 */

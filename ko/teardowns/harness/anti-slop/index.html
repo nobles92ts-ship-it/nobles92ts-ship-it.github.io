@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>anti-slop — 에이전트 하네스</title><meta name="description" content="규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="anti-slop — 에이전트 하네스"><meta property="og:description" content="규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="anti-slop — 에이전트 하네스"><meta name="twitter:description" content="규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/anti-slop/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/anti-slop/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>나온 것</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/harness/anti-slop/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/" aria-current="page"><span class="t"><span>에이전트 하네스</span><span class="kpi">20편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스무 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">10편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">96 중 1</span></span><span class="s">스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.</span></a><a href="/ko/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">285 중 1</span></span><span class="s">제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.</span></a><a href="/ko/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">1등 수확이 재발견</span></span><span class="s">코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.</span></a><a href="/ko/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">7종 중 순증 1.5</span></span><span class="s">도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.</span></a><a href="/ko/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">규율 5 중 1</span></span><span class="s">문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.</span></a><a href="/ko/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">4줄 중 1줄</span></span><span class="s">별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.</span></a><a href="/ko/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">수확 7종 → 0</span></span><span class="s">41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.</span></a><a href="/ko/teardowns/harness/session-messaging/"><span class="t"><span>세션 간 메시징</span><span class="kpi">소켓 0 · 이미 라이브</span></span><span class="s">영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.</span></a><a href="/ko/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz 그룹챗</span><span class="kpi">데모 2 중 1</span></span><span class="s">채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.</span></a><a href="/ko/teardowns/harness/four-plugins/"><span class="t"><span>플러그인 4종 추천</span><span class="kpi">4종 중 이미 기각 2</span></span><span class="s">44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.</span></a><a href="/ko/teardowns/harness/meta-prompting/"><span class="t"><span>메타 프롬프팅</span><span class="kpi">3단계 · 검증 0</span></span><span class="s">프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.</span></a><a href="/ko/teardowns/harness/fable-field-guide/"><span class="t"><span>Fable 현장 가이드</span><span class="kpi">기법 6 · 새것 3</span></span><span class="s">모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.</span></a><a href="/ko/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">수확 3 → 1</span></span><span class="s">프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.</span></a><a href="/ko/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">기각 · 재개조건 5</span></span><span class="s">제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.</span></a><a href="/ko/teardowns/harness/payg-image-routing/"><span class="t"><span>스킬 하나로 광고 이미지 · 종량제 라우팅</span><span class="kpi">수확 1 · 반증 4</span></span><span class="s">스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.</span></a><a href="/ko/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">수확 5 → 0</span></span><span class="s">181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.</span></a><a href="/ko/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">기법 7 → 0</span></span><span class="s">코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.</span></a><a href="/ko/teardowns/harness/anti-slop/" aria-current="page"><span class="t"><span>anti-slop</span><span class="kpi">규칙 15 → 0</span></span><span class="s">규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.</span></a><a href="/ko/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">수확 4 → 1</span></span><span class="s">간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.</span></a><a href="/ko/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">수확 2 → 0</span></span><span class="s">8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>anti-slop</h1><p class="sum">규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.</p><div class="meta"><span>규칙 15 → 0</span><a class="src" href="https://github.com/dmmulroy/anti-slop" target="_blank" rel="noopener">github.com/dmmulroy/anti-slop ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-하는-물건인가">무엇을 하는 물건인가</a><a href="#대표-기법--값나가는-건-규칙이-아니라-배포-쪽이다">대표 기법 — 값나가는 건 규칙이 아니라 배포 쪽이다</a><a href="#깨본-결과--자기주장-열하나-중-아홉이-안-버텼다">깨본 결과 — 자기주장 열하나 중 아홉이 안 버텼다</a><a href="#내-환경에-대봤다--면적이-770줄이었다">내 환경에 대봤다 — 면적이 770줄이었다</a><a href="#수확-셋을-적었고-하나만-살아남았다">수확 셋을 적었고 하나만 살아남았다</a><a href="#판정">판정</a><a href="#이-조사가-실제로-바꾼-것은-남의-린터가-아니었다">이 조사가 실제로 바꾼 것은 남의 린터가 아니었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>규칙 15종을 제 코드 전부에 돌려 27건을 잡았고, 한 건도 안 고치기로 했습니다.</strong> anti-slop 은 TypeScript 에서 「타입 증거를 버리는」 구문 16종을 금지하는 Oxlint 플러그인입니다. <strong>타입체커를 한 번도 부르지 않고</strong> 파일 한 장의 구문 트리만으로 판정하는 게 정체입니다. 제가 연 이유는 규칙이 아니라 <strong>에이전트가 읽고 바로 행동하도록 쓴 진단 문구</strong> 쪽이었는데, 붙일 자리를 찾으려 제 발행 게이트 체인을 열었다가 훨씬 비싼 걸 봤습니다 — <strong>제가 공개하면 안 되는 내부 용어를 막는 유일한 스캔이, 참조 파일 하나가 사라지면 출력 한 줄 없이 건너뛰어지는 <code>if</code> 위에 서 있었습니다.</strong> 대상 쪽에서도 같은 게 나왔습니다. 이 레포는 자기 소스에 자기 플러그인을 <strong>한 번도 돌린 적이 없습니다.</strong> 관통선은 하나입니다 — <strong>게이트는 존재가 아니라 실행으로 센다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 306" role="img" aria-label="anti-slop 의 두 축. 배포는 npm 이 아니라 소스 복사이고, 정본과 사본을 CI 가 바이트로 묶은 뒤 설치 스킬이 남의 저장소로 복사한다. 판정은 타입체커를 부르지 않고 파일 한 장의 구문 트리와 손으로 만든 별칭 표만 쓰며 자동 수정은 하나도 없다. 그런데 이 저장소에는 oxlint 설정 파일이 없어 플러그인이 자기 소스에 한 번도 돌지 않았다.">
+  <text class="lbl" x="8" y="22">① 배포 — npm 에 안 낸다. 소스 .ts 를 남의 저장소 안으로 복사해 넣는다</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="166" y="58" text-anchor="middle">src/ 정본 — 규칙 16종</text>
+  <text class="cap" x="166" y="80" text-anchor="middle">커밋 13개 · 기여자 1명 · PR 비활성</text>
+  <path d="M324 64 H340" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="340" y="36" width="316" height="56" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="498" y="58" text-anchor="middle">CI 바이트 동일성 게이트</text>
+  <text class="cap" x="498" y="80" text-anchor="middle">정본과 사본을 utf8 로 대조한다</text>
+  <path d="M656 64 H672" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="672" y="36" width="316" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="830" y="58" text-anchor="middle">남의 저장소로 복사</text>
+  <text class="cap" x="830" y="80" text-anchor="middle">결정론 코드 21줄 + 산문 5단계</text>
+  <text class="lbl" x="8" y="134">② 판정 — 타입체커를 한 번도 부르지 않는다</text>
+  <rect class="vn vn-a" x="8" y="148" width="316" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="166" y="170" text-anchor="middle">파일 한 장의 구문 트리</text>
+  <text class="cap" x="166" y="192" text-anchor="middle">import 한 타입은 안 보인다</text>
+  <path d="M324 176 H340" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="340" y="148" width="316" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="498" y="170" text-anchor="middle">손으로 만든 별칭 표</text>
+  <text class="cap" x="498" y="192" text-anchor="middle">최상위 선언만 훑어 만든다</text>
+  <path d="M656 176 H672" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="672" y="148" width="316" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="830" y="170" text-anchor="middle">규칙 16종 · report-only</text>
+  <text class="cap" x="830" y="192" text-anchor="middle">자동 수정이 하나도 없다</text>
+  <line class="rule" x1="8" y1="234" x2="992" y2="234"/>
+  <text class="cap cap-i" x="8" y="258">⇒ 가운데 칸은 <tspan class="cap-p">진짜다</tspan> — 이 레포에서 안 깨진 자기주장 둘 중 하나가 저 게이트다</text>
+  <text class="cap" x="8" y="282">⚠ 그런데 이 저장소에는 oxlint 설정 파일이 없다. 플러그인이 자기 소스에 한 번도 돌지 않았다</text>
+</svg>
+<figcaption>배포와 판정, 두 축이 다 특이하다. 그리고 두 축 사이에 자기 자신이 빠져 있다.</figcaption>
+</figure>
+<h2 id="무엇을-하는-물건인가">무엇을 하는 물건인가</h2>
+<p><strong>「값이 무엇인지 알고 있는데 그 정보를 버리는 구문」을 금지하는 규칙 모음입니다.</strong> Oxlint 1.78 이 새로 연 JS 플러그인 API 위에 얹혀 있고, 아무 데나 켜는 <strong>범용 15종</strong>과 특정 프레임워크에서만 켜는 <strong>옵트인 1종</strong>으로 갈라져 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>무엇을 막나</th>
+<th>어떤 구문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>넓은 타입을 경계 밖으로 흘리기</td>
+<td>파라미터·반환·타입 별칭 자리의 <code>unknown</code> · <code>any</code> · <code>object</code> · <code>{}</code></td>
+</tr>
+<tr>
+<td>열린 사전 타입</td>
+<td><code>Record&lt;string, unknown&gt;</code> 류 — 키가 무엇이든 통과한다</td>
+</tr>
+<tr>
+<td>타입 세탁</td>
+<td><code>x as unknown as T</code> 연쇄 단언</td>
+</tr>
+<tr>
+<td>넓혔다가 도로 좁히기</td>
+<td>알려진 값을 넓게 선언해 두고 나중에 단언으로 되돌리는 흐름</td>
+</tr>
+<tr>
+<td>런타임으로 도망가기</td>
+<td><code>typeof</code> 분기 · <code>Reflect.get</code> · <code>Reflect.apply</code> · 모듈 목킹</td>
+</tr>
+<tr>
+<td>근거 없는 단언</td>
+<td>단언 앞에 <code>SAFETY:</code> 주석으로 불변식을 진술하게 강제</td>
+</tr>
+</tbody>
+</table>
+<p><strong>특이한 건 이걸 하는 방법입니다 — 타입체커를 안 부릅니다.</strong> 파일 한 장의 구문 트리에서 <strong>최상위 선언만 훑어 타입 별칭 표를 직접 만든 뒤</strong> 그 표로 별칭을 재귀 치환합니다. <code>Record</code> · <code>Partial</code> 같은 빌트인 여덟 개는 이름을 상수로 박아 뒀고, 두 타입이 같은지도 <strong>소스에서 공백을 지운 문자열 비교</strong>로 근사합니다. 대가는 명확합니다 — import 한 타입도, 블록 안에서 선언한 별칭도 안 보입니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실측 (2026-08-22)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규모</td>
+<td>파일 66개 · 62KB · 런타임 의존성 1개</td>
+</tr>
+<tr>
+<td>별 · 포크</td>
+<td>3,313 · 63 (피드가 08-20 에 찍은 값은 2,871 — 이틀에 +442)</td>
+</tr>
+<tr>
+<td>커밋</td>
+<td><strong>13개. 전부 08-12 ~ 08-18</strong> · 릴리스 0 · 태그 0</td>
+</tr>
+<tr>
+<td>기여자</td>
+<td>1명. 그리고 <strong>PR 이 비활성화</strong>돼 있다</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td>규칙 16종 중 <strong>3종은 테스트 파일이 아예 없다</strong></td>
+</tr>
+<tr>
+<td>자동 수정</td>
+<td><strong>0개.</strong> 오토픽스가 런타임 의미를 바꾼다는 제보를 받고 픽서를 전부 지웠다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>배포도 보통이 아닙니다.</strong> npm 에 안 냅니다 — 패키지가 <code>private</code> 이고 진입점이 빌드 산출물이 아니라 소스 파일입니다. 설치는 <strong>에이전트 스킬이 소스 <code>.ts</code> 를 남의 저장소 안으로 복사</strong>하는 것이고, README 가 이유를 밝힙니다: 고정 의존성으로 두지 말고 복사해 읽고 팀 기준에 맞게 고쳐 쓰라는 것.</p>
+<h2 id="대표-기법--값나가는-건-규칙이-아니라-배포-쪽이다">대표 기법 — 값나가는 건 규칙이 아니라 배포 쪽이다</h2>
+<p>벤더링 자체는 위에서 봤고, 그 위에 얹힌 다섯이 이렇습니다.</p>
+<table>
+<thead>
+<tr>
+<th>기법</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>스킬이 곧 설치 프로그램</strong></td>
+<td>결정론 코드는 21줄(복사 하나)뿐. 나머지 다섯 단계 — 패키지 매니저 판별 · 최신 버전 조회 · 설정 병합 · 규칙 활성화 · 검증 — 는 <strong>산문으로 적혀 LLM 이 수행한다</strong></td>
+</tr>
+<tr>
+<td><strong>절차에 에이전트 행동 제약을 박는다</strong></td>
+<td>「네가 기억하는 버전을 믿지 말고 조회하라」, 「규칙을 억제하거나 unsafe cast 로 통과시켜 린트를 넘기지 말라」가 설치 절차의 한 항목</td>
+</tr>
+<tr>
+<td><strong>정본↔사본 바이트 동일성 CI 게이트</strong></td>
+<td>파일 목록과 utf8 내용을 둘 다 대조해 다르면 체인을 세운다. 벤더링의 대표 실패를 CI 로 봉쇄</td>
+</tr>
+<tr>
+<td><strong>오토픽스 전면 포기</strong></td>
+<td>픽서가 「키 생략」을 「키를 undefined 로 설정」으로 바꾼 사고 이후 16종 전부 report-only</td>
+</tr>
+<tr>
+<td><strong>에이전트 겨냥 진단 문구</strong></td>
+<td>「이게 틀렸다」가 아니라 「경계에서 파싱하고 이름 있는 도메인 타입을 반환하라」. 커밋 하나를 통째로 이 작업에 썼다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>제가 이 레포를 연 이유가 마지막 줄에 있습니다.</strong> 제 발행 게이트들의 1차 독자가 사람이 아니라 세션이라서요.</p>
+<h2 id="깨본-결과--자기주장-열하나-중-아홉이-안-버텼다">깨본 결과 — 자기주장 열하나 중 아홉이 안 버텼다</h2>
+<p><strong>이 도구는 문서 수준에서 자기 자신에게 면제돼 있습니다.</strong> 이게 핵심 반증입니다.</p>
+<ul>
+<li>저장소 어디에도 <strong>oxlint 설정 파일이 없습니다.</strong> <code>lint</code> 스크립트는 기본 규칙만 돌고, 플러그인은 자기 소스에 <strong>단 한 번도 적용된 적이 없습니다.</strong></li>
+<li>그 결과 21줄짜리 공용 모듈 하나가 <strong>자기 규칙 최소 4종을 어깁니다</strong> — 파라미터 자리의 <code>unknown</code>, <code>typeof</code> 런타임 분기, <code>as unknown as</code> 연쇄 단언, 그 단언 앞에 <code>SAFETY:</code> 주석 없음. 62KB 코드베이스라 「규모가 커서」로 방어되지 않습니다.</li>
+<li>README 와 설치 절차는 <strong>사용자에게도</strong> 벤더링된 사본을 린트 제외 목록에 넣으라고 지시합니다.</li>
+</ul>
+<p><strong>핵심 규칙 하나는 빈 주석으로 뚫립니다.</strong> 단언에 근거를 적게 만드는 규칙의 검사가 <code>SAFETY:</code> 마커가 <strong>있는지만</strong> 보고 내용은 안 봅니다. <code>// SAFETY:</code> 한 줄이면 CI 가 정확히 이 규칙이 막으려던 캐스팅을 승인합니다. 설치 절차가 산문으로 금지한 「린트를 통과시키려고 타입을 세탁하는 짓」을 에이전트가 <strong>정확히 이 경로로 자동 수행</strong>할 수 있습니다. 미탐도 같은 모양입니다 — 별칭 표를 최상위에서만 만들어서 <code>type Identity&lt;T&gt; = T</code> 같은 투명 별칭을 한 번 거치면 규칙 여럿이 동시에 눈이 멉니다.</p>
+<p><strong>유일한 <code>perf:</code> 커밋은 상류 문서가 부정합니다.</strong> 규칙 15종을 새 API 로 옮기며 성능 개선이라 적었는데, 근거가 된 상류 공식 문서가 「지금 더 빠른가」에 대해 <strong>“지금은 아니다. 하지만 곧 그렇게 될 것이다”</strong> 라고 적어 놨습니다. 저장소 안에 전후 수치가 없고, 닷새 뒤 추가된 마지막 규칙은 <strong>구 API 로 되돌아가 있습니다.</strong> 배포 모델도 이미 우회당했습니다 — 뜯기 하루 전에 커뮤니티가 같은 규칙을 번들해 npm 에 올렸고, 그건 취향이 아니라 필요였습니다. oxlint 가 공유 설정에서 상대경로 플러그인 지정자를 지원하지 않아 <strong>공유 설정을 쓰는 조직은 벤더링으로 도입 자체가 불가능</strong>합니다.</p>
+<p><strong>버틴 것도 적어 둡니다.</strong> 정본↔사본 동일성 CI 게이트는 깰 거리가 없었고, 옵트인 규칙이 스스로 밝힌 범위 한계도 코드와 일치했습니다. <strong>위험한 걸 하면서 한계를 적어 두는 쪽</strong>입니다. 나쁜 건 공급자입니다 — 08-18 이후 정지, 이슈 15건 전부 무응답, 그중 여섯은 <strong>패치까지 붙은 제보</strong>인데 PR 이 비활성이라 포크 링크로만 제출돼 있습니다.</p>
+<h2 id="내-환경에-대봤다--면적이-770줄이었다">내 환경에 대봤다 — 면적이 770줄이었다</h2>
+<p><strong>먼저 잰 건 규칙이 아니라 적용 면적입니다.</strong> 제 작업 폴더 전체에서 손으로 쓴 TypeScript 는 <strong>개인 사이트 7개 파일 770줄이 전부</strong>입니다. 나머지 프로젝트는 파이썬·파워셸·CommonJS 라 TS 가 0개입니다. 이 도구는 대형 모노레포를 겨냥해 만들어졌습니다 — 외부 적용 보고 하나가 568,443줄·4,421파일 규모였습니다. 그 770줄에 15종을 전부 켜고 돌렸습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 296" role="img" aria-label="규칙 15종을 내 코드 전부에 돌린 결과 27건의 규칙별 분포. 단언에 SAFETY 주석을 요구하는 규칙이 18건으로 3분의 2를 차지하고, 알려진 값 넓히기가 7건, 런타임 typeof 가 2건이며, 유일한 고유 명분으로 꼽았던 연쇄 단언 규칙과 나머지 11종은 전부 0건이다.">
+  <text class="lbl" x="8" y="22">규칙 15종을 내 코드 전부에 돌린 결과 — 27건. 규칙별로 갈라 보면</text>
+  <rect class="bar bar-p" x="238" y="34" width="700" height="20" rx="2"/>
+  <text class="cap" x="230" y="49" text-anchor="end">단언에 SAFETY 주석 요구</text>
+  <text class="cap cap-p" x="946" y="49">18건</text>
+  <rect class="bar" x="238" y="62" width="272" height="20" rx="2"/>
+  <text class="cap" x="230" y="77" text-anchor="end">알려진 값 넓히기</text>
+  <text class="cap" x="518" y="77">7건</text>
+  <rect class="bar" x="238" y="90" width="78" height="20" rx="2"/>
+  <text class="cap" x="230" y="105" text-anchor="end">런타임 typeof</text>
+  <text class="cap" x="324" y="105">2건</text>
+  <rect class="bar" x="238" y="118" width="4" height="20" rx="2"/>
+  <text class="cap" x="230" y="133" text-anchor="end">연쇄 단언 — 유일한 고유 명분</text>
+  <text class="cap cap-p" x="250" y="133">0건</text>
+  <rect class="bar" x="238" y="146" width="4" height="20" rx="2"/>
+  <text class="cap" x="230" y="161" text-anchor="end">나머지 11종</text>
+  <text class="cap" x="250" y="161">0건</text>
+  <line class="rule" x1="8" y1="184" x2="992" y2="184"/>
+  <text class="cap cap-i" x="8" y="208">⇒ 18건은 전부 <tspan class="cap-p">라우트 파라미터를 좁히는 한 패턴</tspan>의 페이지별 반복이다 — 경계라 없앨 수 없다</text>
+  <text class="cap" x="8" y="232">7건 중 값이 있는 건 안쪽이 열린 사전 타입 한둘. 나머지는 상류 이슈가 이미 신고해 둔 오탐군이다</text>
+  <text class="cap" x="8" y="256">고유 명분으로 꼽았던 연쇄 단언은 0건 — 문자열로 직접 찾아도 0건이었다</text>
+  <text class="cap cap-p" x="8" y="280">⇒ 게이트로 켜면 exit 1. 맨 oxlint 는 exit 0 — 값어치는 전부 기반 쪽에 있고 플러그인 쪽에 없다</text>
+</svg>
+<figcaption>건수가 아니라 분포를 봐야 한다. 27건이 27가지 문제가 아니라 사실상 두 가지였다.</figcaption>
+</figure>
+<p><strong>27건 중 18건이 한 패턴입니다.</strong> 프레임워크가 라우트 파라미터를 「문자열이거나 없음」으로 주기 때문에 페이지마다 그걸 좁히는 단언이 한 줄씩 있습니다. 규칙은 그 18곳 <strong>전부에</strong> 주석을 요구하는데, 경계에서 강제되는 것이라 없앨 수 없고 주석을 18개 붙여도 코드는 한 글자도 안전해지지 않습니다. 7건 쪽은 키가 이미 닫혀 있는 사전 타입까지 잡습니다 — 외부 실측에서 <strong>150건 중 117건이 「고쳐도 타입이 동일」함이 컴파일러로 증명된</strong> 오탐군과 같은 종류입니다.</p>
+<p><strong>예상 반증도 하나 나왔는데, 나쁜 쪽으로 나왔습니다.</strong> 저는 이 린터가 사이트 템플릿 파일을 못 읽을 거라 가정했는데 실제로는 프런트매터를 파싱해 정상 보고합니다. 적용 면적이 16장 더 늘어난 셈인데 <strong>늘어난 만큼이 전부 위의 18건짜리 노이즈였습니다.</strong> 면적이 커진 것이 이득이 아니라 손해로 나온 사례입니다. 속도는 기각 사유가 아니었습니다 — 웜 260ms → 450ms 로 70% 늘지만 절대값이 무시할 수준입니다.</p>
+<h2 id="수확-셋을-적었고-하나만-살아남았다">수확 셋을 적었고 하나만 살아남았다</h2>
+<p>실질 산출은 플러그인이 아니라 그 <strong>밑에 깔린 맨 oxlint</strong> 였습니다. 제 사이트에는 정식 린터가 하나도 없습니다 — eslint · prettier · biome · typescript 전부 미설치고 <code>tsconfig.json</code> 도 없습니다. 품질 게이트 세 개는 제가 짠 <strong>도메인 검사기</strong>라 미사용 변수 같은 범용 결함을 안 봅니다.</p>
+<table>
+<thead>
+<tr>
+<th>수확 후보</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>맨 oxlint 를 발행 체인에 편입</strong></td>
+<td><strong>채택</strong></td>
+<td>무설정 실행이 exit 0 이라 오늘 넣어도 배포가 안 막힌다. 발행 파이프라인 코드에서 진짜 결함 2건을 즉시 잡았다</td>
+</tr>
+<tr>
+<td>진단 문구를 지시문으로</td>
+<td><strong>축소</strong></td>
+<td>「13곳 전부 지시문이 없다」가 틀렸다. 두 곳은 이미 실행 명령까지 인쇄하고 나머지도 결과절을 달고 있다. 4줄 다듬기로 축소</td>
+</tr>
+<tr>
+<td>정본↔사본 동일성 게이트</td>
+<td><strong>축소 · 방향 정정</strong></td>
+<td>겨냥한 실패 모드를 퍼블리시 절차가 이미 없애 놨다. 실제 감시 부재는 <strong>반대 방향</strong>이었다</td>
+</tr>
+</tbody>
+</table>
+<div class="ex">
+<div class="x"><b>BAD — 무엇이 틀렸는지만 있다</b>
+<p>✖ 죽은 링크 3건 — push 하지 않고 멈춥니다</p></div>
+<div class="o"><b>GOOD — 다음 행동이 문장으로 들어 있다</b>
+<p>✖ 죽은 링크 3건. 아래 주소를 고치거나 해당 문서를 만든 뒤 다시 돌릴 것 <em>(링크를 지우는 것도 수정이다 — 자동으로 하지 않는다)</em></p></div>
+</div>
+<p><strong>축소된 쪽에서 값을 치른 교훈이 나옵니다.</strong> 동기화 게이트는 「사본이 낡는 걸 못 잡는다」고 적었는데 실측하니 <strong>오늘 낡은 사본이 0건</strong>이었습니다. 조립 단계가 매번 전량 재복사를 해서 그 실패 모드가 이미 없어져 있었습니다. 더 나쁜 건 설계 쪽입니다 — 사본이 정본과 다른 이유의 본체가 제가 가정한 경로 치환이 아니라 <strong>대응표가 아예 존재하지 않는 용어 살균</strong>이라 「반나절」이라는 견적이 성립하지 않습니다. 그대로 켰으면 첫 실행에 허위경보 열 건이 떴을 겁니다. 채택한 쪽에도 정정이 붙었습니다 — 오탐을 2건이라 셌는데 실제로는 3건이었습니다. <strong>한 파일을 빠뜨려 놓고 「전수」라고 적었습니다.</strong></p>
+<h2 id="판정">판정</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anti-slop 플러그인 도입</td>
+<td><strong>기각.</strong> 면적 770줄 · 27건 중 25건이 경계 노이즈와 기지 오탐 · 고유 명분 0건</td>
+</tr>
+<tr>
+<td>맨 oxlint 편입</td>
+<td><strong>채택.</strong> 오늘 넣어도 발행이 안 막힌다</td>
+</tr>
+<tr>
+<td>지시문 진단 · 동기화 게이트</td>
+<td><strong>축소.</strong> 절반은 이미 되어 있었고, 하나는 방향이 틀렸다</td>
+</tr>
+<tr>
+<td>다시 여는 조건</td>
+<td>TS 를 1,500줄 이상 쓰는 프로젝트를 시작할 때 · 연쇄 단언 패턴이 내 코드에 실제로 나타날 때 · 상류가 오탐 두 규칙에 옵션을 붙일 때 · 타입 인지 린팅이 안정판이 될 때</td>
+</tr>
+</tbody>
+</table>
+<p><strong>공급자 리스크가 마지막 한 겹입니다.</strong> 벤더링이라 도입하면 방치된 패치를 제가 사본에 직접 발라야 하고, 그 순간부터 상류와 영구히 갈라지며 유지비를 제가 집니다. 별 3,313개는 이걸 하나도 가려 주지 않습니다.</p>
+<h2 id="이-조사가-실제로-바꾼-것은-남의-린터가-아니었다">이 조사가 실제로 바꾼 것은 남의 린터가 아니었다</h2>
+<p><strong>수확을 붙일 자리를 찾으려고 제 퍼블리시 절차를 열었다가, 유출 방어의 단일 지점이 fail-open 인 걸 봤습니다.</strong> 그 절차에는 스캔이 두 번 들어갑니다 — 푸시 전과 푸시 후. 둘 다 이렇게 시작합니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> [ </span><span style="color:#D73A49">-f</span><span style="color:#032F62"> "&lt;도메인 테이블맵 경로&gt;"</span><span style="color:#24292E"> ]; </span><span style="color:#D73A49">then</span></span>
+<span class="line"><span style="color:#6F42C1">  grep</span><span style="color:#005CC5"> -nE</span><span style="color:#032F62"> "\b(&lt;테이블 이름 54종&gt;)_[A-Za-z]"</span><span style="color:#032F62"> ...</span></span>
+<span class="line"><span style="color:#D73A49">fi</span></span></code></pre>
+<p><strong><code>else</code> 가 없습니다.</strong> 참조 파일이 사라지면 스캔이 통째로 건너뛰어지고, 출력은 한 줄도 안 나오며, 다음 줄에서 게이트는 그대로 통과합니다. 푸시 후 쪽은 grep 에 에러 무음 처리까지 붙어 이중 침묵입니다.</p>
+<p><strong>이게 왜 비싼지는 같은 문서가 스스로 밝혀 놨습니다.</strong> 제가 막아야 하는 이름 중 한 부류는 <strong>살균 전 이름과 살균 후 이름의 모양이 완전히 같습니다.</strong> 구조적 정규식으로 구분이 안 되니 이 부류는 패턴 목록 34개가 아니라 <strong>오직 저 테이블맵 조회만이 잡습니다.</strong> 그리고 이게 이론이 아닌 이유가 이번 조사에서 실물로 나왔습니다 — 공개용 사본과 정본을 대조해 보니 <strong>실제로 살균된 항목이 정확히 그 부류</strong>였습니다. 파일은 지금 살아 있습니다. 하지만 경로가 두 곳에 하드코딩돼 있고, 저는 이미 작업 폴더 구조를 한 번 통째로 갈아엎은 적이 있습니다.</p>
+<p><strong>여기서 값을 치른 교훈은 대상이 준 것의 반대쪽입니다.</strong> anti-slop 은 오토픽스 사고 이후 픽서를 전부 지웠습니다 — 틀리게 고치느니 안 고치겠다는 판단이고 옳습니다. 그런데 게이트는 반대입니다. <strong>틀리게 울리는 것보다 안 울리는 쪽이 훨씬 위험합니다.</strong> 허위경보는 사람이 보고 지우지만 침묵은 아무도 안 봅니다.</p>
+<h2 id="못-한-것">못 한 것</h2>
+<ul>
+<li><strong>그 한 줄을 아직 안 고쳤습니다.</strong> 찾기만 했습니다. 고치기 전에 퍼블리시 절차 전체를 다시 읽어 <strong>다른 fail-open 이 더 있는지</strong>부터 세야 해서 별건으로 남겼습니다.</li>
+<li><strong>커뮤니티 npm 포크를 안 돌려봤습니다.</strong> 「발행 하루짜리라 신뢰 근거가 없다」고 적고 건너뛰었는데, 그건 <strong>안 잰 이유이지 잰 결과가 아닙니다.</strong></li>
+<li><strong>규칙 정밀도는 남의 숫자를 인용했습니다.</strong> 568,443줄 실측은 외부 사용자가 올린 것이고 제 측정 면적은 770줄뿐입니다. 「대형 코드베이스에서도 노이즈다」라고는 못 합니다 — 제가 말할 수 있는 건 <strong>제 코드에서 값이 0이었다</strong>는 것까지입니다.</li>
+<li><strong>상류에 아무것도 제출하지 않았습니다.</strong> 자기 규칙 4중 위반은 이슈 하나로 낼 만한데, PR 이 막혀 있고 제보 15건이 전부 무응답인 걸 보고 안 냈습니다. 판단이었지 확인은 아닙니다.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

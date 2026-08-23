@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dsh-anchored-standard — 컨텍스트와 기억</title><meta name="description" content="설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="dsh-anchored-standard — 컨텍스트와 기억"><meta property="og:description" content="설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="dsh-anchored-standard — 컨텍스트와 기억"><meta name="twitter:description" content="설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>나온 것</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/memory/dsh-anchored-standard/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">20편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스무 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">10편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a><a href="/ko/teardowns/memory/dsh-anchored-standard/" aria-current="page"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">수확 4 → 0 · 미실행 24일</span></span><span class="s">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>dsh-anchored-standard</h1><p class="sum">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</p><div class="meta"><span>수확 4 → 0 · 미실행 24일</span><a class="src" href="https://github.com/xiaobright/dsh-anchored-standard" target="_blank" rel="noopener">github.com/xiaobright/dsh-anchored-standard ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-하는-물건인가">무엇을 하는 물건인가</a><a href="#잘-만든-건-앵커가-아니라-실패했을-때의-태도다">잘 만든 건 앵커가 아니라 실패했을 때의 태도다</a><a href="#간판-점수를-반증한-것은-대체로-저자-자신이다">간판 점수를 반증한 것은 대체로 저자 자신이다</a><a href="#내-하네스엔-이-물건을-끼울-나사-구멍이-없다">내 하네스엔 이 물건을 끼울 나사 구멍이 없다</a><a href="#판정--이-조사가-실제로-찾은-것은-대상-밖에-있었다">판정 — 이 조사가 실제로 찾은 것은 대상 밖에 있었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>기각입니다. 다만 사유가 「별로다」가 아니라 「끼울 자리가 없다」였습니다.</strong> 이 프리셋 묶음은 세션의 <strong>첫 모델 요청</strong>에서 도구 카탈로그를 두 개로 줄이고 자동 주입 컨텍스트를 통째로 비워, 모델이 첫 문장을 어떤 문체로 시작하는지를 고정합니다. <a href="/ko/teardowns/memory/headroom/">Headroom</a>과 같은 축 — 컨텍스트 예산 — 의 다음 편입니다. 간판 점수 98/99 는 <strong>저자 자신의 README 로 반증됩니다</strong>(같은 표에서 공식 Minimal 프리셋이 99·96 입니다). 독립 재현은 3개 OS·11런에서 85~90 이었고, 능력 차는 +3.3점 · 95% 신뢰구간 [−2.6, +9.3] 으로 0 을 품습니다. 그리고 이 편에서 제일 값비싼 사실은 대상이 아니라 저에 관한 것이었습니다 — <strong>제 <code>~/.claude</code> 자체가 남의 프리셋 묶음을 통째로 복사한 결과</strong>이고, 그 이식 때 <strong>바로 이 문제를 재려고 같이 집어온 측정 스킬이 24일 동안 한 번도 실행되지 않았습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 296" role="img" aria-label="이 프리셋은 세션을 두 토막으로 쪼갠다. 첫 요청에서는 도구를 두 개로 줄이고 자동 주입 컨텍스트를 비우며, 첫 도구 호출이나 첫 응답이 세션 이벤트 로그에 남는 순간 승급해 작은 상주 카탈로그를 연다. 컴팩션이 끝나면 에포크가 갱신돼 두 번째 첫 요청으로 되돌아간다. 같은 두 토막을 변주한 모드가 일곱 벌이다.">
+  <text class="lbl" x="8" y="22">세션을 두 토막으로 쪼갠다 — 단계는 메모리가 아니라 세션 이벤트 로그에서 파생된다</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="96" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="62" text-anchor="middle">① 요청 #1 — bootstrap</text>
+  <text class="cap" x="168" y="86" text-anchor="middle">도구는 bash · 편집기 2종뿐</text>
+  <text class="cap" x="168" y="110" text-anchor="middle">자동 주입 컨텍스트는 통째로 비운다</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="62" text-anchor="middle">② 승급 — durable 이벤트</text>
+  <text class="cap" x="500" y="86" text-anchor="middle">첫 tool/call 또는 첫 응답</text>
+  <text class="cap" x="500" y="110" text-anchor="middle">상주 세트 = 2 + 발견도구 3 + 해금분</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="62" text-anchor="middle">③ compaction/end — epoch 갱신</text>
+  <text class="cap" x="832" y="86" text-anchor="middle">승급을 지우고 「두 번째 첫 요청」으로</text>
+  <text class="cap" x="832" y="110" text-anchor="middle">이번엔 편집·검색 7종만 연다</text>
+  <text class="lbl" x="8" y="160">같은 두 토막을 변주한 모드 일곱 벌 — 프리셋 디렉터리를 통째로 복사해 설치한다</text>
+  <rect class="vn vn-a" x="8" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="102" y="200" text-anchor="middle">preset — 기준</text>
+  <rect class="vn vn-a" x="204" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="298" y="200" text-anchor="middle">zero-anchored · whoami</text>
+  <rect class="vn vn-a" x="400" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="494" y="200" text-anchor="middle">eternal-minimal</text>
+  <rect class="vn vn-a" x="596" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="690" y="200" text-anchor="middle">wire-think-standard</text>
+  <rect class="vn vn-b" x="792" y="174" width="200" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="892" y="200" text-anchor="middle">combo · prefab</text>
+  <line class="rule" x1="8" y1="236" x2="992" y2="236"/>
+  <text class="cap cap-i" x="8" y="260">⇒ 노리는 것은 능력이 아니라 <tspan class="cap-p">모델의 첫 문체</tspan>다 — we 로 시작하나 let me 로 시작하나</text>
+  <text class="cap" x="8" y="284">승급 뒤에도 도구 25종을 전부 쏟지 않는다. 전체 덤프가 궤적을 되돌렸다는 게 저자 측정이다</text>
+</svg>
+<figcaption>기능을 늘리는 물건이 아니다. 첫 요청의 표면을 좁히는 조건 하나를 일곱 번 변주한 것이다.</figcaption>
+</figure>
+<h2 id="무엇을-하는-물건인가">무엇을 하는 물건인가</h2>
+<p><strong>DeepSeek Harness(이하 DSH)라는 코딩 에이전트 하네스에 끼우는 프리셋 디렉터리 일곱 벌입니다.</strong> 모델도 라이브러리도 아니고 프롬프트 조립 파이프라인 중간에 걸리는 필터입니다. 설치는 <code>.agent-presets/&lt;id&gt;/</code> 아래로 디렉터리를 <strong>통째 복사</strong>하는 방식이라 <code>node_modules</code> 를 가질 수 없습니다 — 서드파티 의존성 0은 미학이 아니라 이 제약의 결과입니다.</p>
+<p>동작 규칙은 한 줄입니다. <strong>세션을 두 토막으로 쪼갠다.</strong> 요청 #1 에서는 <code>system-prompt/assemble</code> 워터폴을 가로채 조립이 끝난 도구 배열을 셸과 편집기 둘로 필터링하고, 자동 주입 컨텍스트(작업지침 다이제스트·스킬 카탈로그·시간·훅)를 전부 걷어냅니다. 세션 이벤트 로그에 첫 도구 호출이나 첫 응답이 남는 순간 게이트가 열립니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (status.promoted) {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> keep</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Set</span><span style="color:#24292E">([</span><span style="color:#D73A49">...</span><span style="color:#24292E">bootstrapTools, </span><span style="color:#D73A49">...</span><span style="color:#005CC5">RESIDENT_DISCOVERY_TOOLS</span><span style="color:#24292E">, </span><span style="color:#D73A49">...</span><span style="color:#6F42C1">unlockedFor</span><span style="color:#24292E">(</span><span style="color:#D73A49">...</span><span style="color:#24292E">)]);</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#6F42C1"> keepTools</span><span style="color:#24292E">(assembled, keep, </span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>눈여겨볼 건 승급 판정을 <strong>프로세스 메모리가 아니라 durable 세션 이벤트에서 파생</strong>시킨다는 점입니다 — resume 해도 단계가 보존됩니다. 그리고 승급 뒤에도 전체 카탈로그를 쏟지 않고, 무거운 도구는 검색 도구를 한 번 거쳐 해금됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실측 (2026-08-22)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규모</td>
+<td>추적 파일 126 · <code>.mjs</code> 94 · 1,282KB</td>
+</tr>
+<tr>
+<td>커밋</td>
+<td><strong>56건이 나흘에 전부</strong> (08-14 ~ 08-17) · 태그 0 · 릴리스 0</td>
+</tr>
+<tr>
+<td>별 / 포크 / 기여자</td>
+<td>3,696 / 111 / 13명</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td><code>node --test</code> <strong>205개 전부 통과</strong>(763ms) · 자립성 검사 exit 0</td>
+</tr>
+<tr>
+<td>문서</td>
+<td>README 38.8KB + 중문 35.6KB + 인수인계 16.4KB</td>
+</tr>
+<tr>
+<td>라이선스</td>
+<td>실질 MIT — 단 GitHub 은 <code>NOASSERTION</code> 으로 분류한다</td>
+</tr>
+</tbody>
+</table>
+<p>일곱 벌은 기능이 다른 게 아니라 <strong>같은 두 토막을 다르게 변주</strong>한 것입니다.</p>
+<table>
+<thead>
+<tr>
+<th>모드</th>
+<th>무엇을 바꾸나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>preset</strong></td>
+<td>2단계 앵커 그 자체. 나머지는 전부 여기서 갈라진다</td>
+</tr>
+<tr>
+<td>zero-anchored · whoami</td>
+<td>도구 0개짜리 합성 앵커 턴을 한 번 끼운다</td>
+</tr>
+<tr>
+<td><strong>eternal-minimal</strong></td>
+<td>승급을 없앤다. 나머지 도구는 셸 게이트웨이로 실행</td>
+</tr>
+<tr>
+<td>wire-think-standard</td>
+<td>와이어에 <code>tool_choice:"none"</code> — 보이되 호출 불가</td>
+</tr>
+<tr>
+<td>combo-anchored</td>
+<td>사고/실행 분할 + 숙고 심도 게이트 + 지시문 드립</td>
+</tr>
+<tr>
+<td><strong>prefab</strong></td>
+<td>모델 호출 0회. 미리 굴려 둔 세션 트랜스크립트를 재생 주입</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>파일 수를 그대로 세면 이 물건을 세 배로 읽습니다.</strong> 모드 디렉터리 안의 <code>.mjs</code> 대부분은 <code>shared/</code> 한 벌에서 복사돼 커밋된 <strong>생성물</strong>입니다. 실제 공유 코드는 2,940줄이고, 그보다 많은 3,105줄이 테스트입니다.</p>
+<h2 id="잘-만든-건-앵커가-아니라-실패했을-때의-태도다">잘 만든 건 앵커가 아니라 실패했을 때의 태도다</h2>
+<p>읽을 값이 있는 건 앵커링 아이디어 자체가 아니라, 그 아이디어를 남의 하네스 위에 얹으면서 부딪힌 문제들의 처리 방식이었습니다.</p>
+<ul>
+<li><strong>통합 주입 게이트 — 소스를 나열하지 않고 경로 두 개를 닫는다.</strong> denylist 로 열거하는 대신, 조립 경로에서는 컨텍스트 배열을 통째로 비우고 pre-step 워터폴에서는 그 스텝이 주장한 메시지 배치를 baseline 으로 잡아 <strong>거기 없는 모든 추가를 default-deny</strong> 로 버립니다 — <em>“아직 존재하지 않는 소스까지 덮기 위해.”</em></li>
+<li><strong>compaction epoch — 「두 번째 첫 요청」을 인정한다.</strong> 컴팩션은 모델이 보는 표면을 다시 씁니다. 그래서 승급 상태를 불리언이 아니라 <code>(경계, 승급여부)</code> 쌍으로 두고, 컴팩션 종료 이벤트의 순번보다 뒤에 온 승급만 유효로 칩니다.</li>
+<li><strong>anchor mass — 되돌아오는 슬라이스만 센다.</strong> 직렬화 규칙상 도구 호출을 포함한 메시지의 추론만 다음 요청으로 되돌아갑니다. 그래서 채점기가 전체 분량이 아니라 <strong>실제로 되돌아가는 슬라이스</strong>에서만 문체 지표를 계산합니다 — <em>“전체 추론 위에서 잰 숫자는 클론이 실제로 받는 앵커를 과대평가한다.”</em></li>
+<li><strong>deny 채널을 결과 반환 통로로 쓴다.</strong> <code>eternal-minimal</code> 은 셸 명령을 가로채 진짜 도구를 실행하는데, pre-dispatch 단계에 결과를 대체할 수 있는 정식 채널이 <strong>deny 뿐</strong>입니다. 그래서 성공 결과조차 거부로 돌아오고, 첫 줄에 「실행됐고 출력이 아래에 있다」를 평문으로 적어 모델이 에러가 아니라 출력으로 읽게 만듭니다.</li>
+</ul>
+<p>값을 치르고 배운 건 다섯 번째입니다. <strong>실패 철학이 두 갈래로 갈려 있습니다</strong> — 장식용 필터가 실패하면 전부 「전체 카탈로그 노출」로 degrade 하고 경고를 한 번만 내는데, 설정이 잘못됐으면 mount 시점에 즉시 throw 하고 모르는 설정 키는 아예 거부합니다. <em>“부트스트랩 도구가 없어졌다고 던지지 않는다 — 조성 드리프트가 세션의 모든 요청을 벽돌로 만들면 안 되니까.”</em> <strong>필터는 열어 두고 실패하고, 설정은 닫고 실패한다</strong> — 이 구분을 코드로 일관되게 지킨 저장소는 흔치 않습니다.</p>
+<h2 id="간판-점수를-반증한-것은-대체로-저자-자신이다">간판 점수를 반증한 것은 대체로 저자 자신이다</h2>
+<p><strong>대상 주장</strong>: 특정 평가 세트에서 anchored 계열이 98·99·99 를 기록했고, 대조군은 91·92 였다.</p>
+<p>이 숫자가 세 갈래로 무너집니다.</p>
+<ul>
+<li><strong>그 3런은 현재 코드가 낸 점수가 아닙니다.</strong> 이슈 하나가 당시 커밋과 동결 스냅샷을 대조해 그 런들이 지금과 다른 첫 요청 표면 + 승급 시 전체 덤프 구성이었음을 입증했고, <strong>저자가 README 에 출처 주석을 달아 인정</strong>했습니다.</li>
+<li><strong>같은 README 가 결정타를 갖고 있습니다.</strong> 114~115행이 <strong>공식 Minimal 프리셋 점수를 99·96 으로</strong> 적습니다. 플러그인을 하나도 깔지 않고 상류 기본만 써도 98.7 대 97.5 — 관측 잡음 안입니다.</li>
+<li><strong>독립 재현이 둘 다 실패했습니다.</strong> 3개 OS·11런에서 85~90 이 나왔고, 3×3 무작위 블록 재현은 <strong>+3.3점 · 95% CI [−2.6, +9.3]</strong> 로 0 을 품었으며 프리셋 내 런간 표준편차가 2.98점 — README 의 두 런이 암시하는 ~1점보다 세 배 시끄럽습니다.</li>
+</ul>
+<p><strong>버틴 것도 적어 둡니다.</strong> 「첫 요청 도구 schema 가 궤적을 정한다」는 오히려 강해졌습니다 — 같은 독립 재현에서 도구 26개 조건은 let-me 144<del>241, 도구 2개 조건은 we 155</del>289 로 <strong>9/9 완전 분리, 겹침 0</strong> 이었습니다. 다만 궤적과 점수의 상관은 다른 보고가 부정하고, 지시문 한 줄만 스톡으로 바꾼 팔이 <strong>일을 35% 덜 하고도 구분 불가한 점수</strong>를 냈습니다.</p>
+<p><strong>그런데 채택 관점에서 진짜 문제는 성능이 아니라 부패 속도였습니다.</strong> 이 프리셋은 상류 rc.5 의 스냅샷인데 상류는 그 사이 릴리스를 네 번 냈습니다. rc.6 이 해금 체인의 검색 도구를 무력화했고, <strong>rc.8 이 공식 Minimal 에 Windows 지속 PowerShell 을 기본 탑재해 「공식 Minimal 과 바이트 동일」이라는 존재 근거를 무효화</strong>했으며 세션 저장 포맷까지 비호환으로 바꿨습니다 — 이 설계의 모든 상태가 그 저장소에서 파생되는데 말입니다. 게다가 <strong>태그 0 · 릴리스 0 · 버전 고정 + 디렉터리 통째 복사</strong> 라서 누구도 자기 사본이 어느 스냅샷인지 알 방법이 없고, 「세션이 아예 응답을 안 한다」는 가장 파괴적인 보고가 정확히 이 구조에서 나왔습니다. 그 위에 두 겹 — 승급 후 프리셋이 스스로 주입하는 지시문 한 줄이 애써 잡은 궤적을 되돌린다는 통제실험 보고가 있고, prefab 은 「기본 모드로 지정」 경로에서 시드를 아예 안 돌립니다.</p>
+<p><strong>공정하게 덧붙이면 코드 위생은 진짜입니다.</strong> 테스트 205개가 전부 통과하고 자립성 검사가 드리프트를 exit 1 로 잡습니다. 무너진 건 코드가 아니라 <strong>그 코드가 낸 숫자와 그 코드가 서 있는 지반</strong>입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 324" role="img" aria-label="간판 숫자 셋을 다시 확인한 결과. 98 대 99 대 99 는 현재 조성이 아니라고 저자가 직접 정정했고, 같은 README 가 공식 Minimal 을 99 와 96 으로 적으며, 첫 요청 도구 스키마가 궤적을 정한다는 주장만 버텼다. 그런데 능력 차이는 플러스 3.3점에 95퍼센트 신뢰구간이 마이너스 2.6부터 플러스 9.3까지로 0을 품는다.">
+  <text class="lbl" x="8" y="22">간판 숫자 셋 — 반증한 것이 대체로 저자 자신이거나 저자의 README 다</text>
+  <line class="rule" x1="8" y1="34" x2="992" y2="34"/>
+  <text class="cap cap-i" x="8" y="60">평가 점수 98 / 99 / 99</text>
+  <text class="cap" x="404" y="60">→</text>
+  <text class="cap cap-p" x="436" y="60">현재 조성이 아니다 — 저자가 README 에 직접 정정</text>
+  <line class="rule" x1="8" y1="76" x2="992" y2="76"/>
+  <text class="cap cap-i" x="8" y="102">플러그인이 기본 프리셋을 이겼다</text>
+  <text class="cap" x="404" y="102">→</text>
+  <text class="cap cap-p" x="436" y="102">같은 README 가 공식 Minimal 을 99 · 96 으로 적는다</text>
+  <line class="rule" x1="8" y1="118" x2="992" y2="118"/>
+  <text class="cap cap-i" x="8" y="144">첫 요청 도구 schema 가 궤적을 정한다</text>
+  <text class="cap" x="404" y="144">→</text>
+  <text class="cap cap-p" x="436" y="144">여기는 버텼다 — 독립 재현 9/9 분리, 겹침 0</text>
+  <line class="rule" x1="8" y1="160" x2="992" y2="160"/>
+  <text class="lbl" x="8" y="188">그런데 궤적이 갈려도 능력 차는 0 을 품는다 — 3×3 무작위 블록 독립 재현</text>
+  <rect class="bar" x="356" y="204" width="476" height="18" rx="2"/>
+  <text class="cap" x="348" y="217" text-anchor="end">anchored − standard</text>
+  <text class="cap cap-on" x="592" y="217" text-anchor="middle">+3.3</text>
+  <line class="tick" x1="460" y1="196" x2="460" y2="226"/>
+  <text class="cap" x="356" y="246" text-anchor="middle">−2.6</text>
+  <text class="cap cap-p" x="460" y="246" text-anchor="middle">0</text>
+  <text class="cap" x="832" y="246" text-anchor="middle">+9.3</text>
+  <line class="rule" x1="8" y1="264" x2="992" y2="264"/>
+  <text class="cap cap-i" x="8" y="288">⇒ 도구를 좁히면 <tspan class="cap-p">문체는 확실히 갈린다</tspan>. 점수가 따라 오른다는 증거는 없다</text>
+  <text class="cap" x="8" y="312">지시문 한 줄만 바꾼 팔이 일을 35% 덜 하고도 구분 불가한 점수를 냈다</text>
+</svg>
+<figcaption>궤적 분리는 재현됐고 점수 이득은 재현되지 않았다. 이 둘을 한 덩어리로 파는 것이 이 저장소의 약점이다.</figcaption>
+</figure>
+<h2 id="내-하네스엔-이-물건을-끼울-나사-구멍이-없다">내 하네스엔 이 물건을 끼울 나사 구멍이 없다</h2>
+<p><strong>먼저 대상이 「앵커를 깬다」고 지목한 그것을 제 환경에서 직접 셌습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>세션 첫 요청에 상시 주입되는 것</th>
+<th>실측 문자수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전역 룰 20종</td>
+<td>24,407</td>
+</tr>
+<tr>
+<td>자동 메모리 인덱스</td>
+<td>19,124</td>
+</tr>
+<tr>
+<td>전역 작업지침</td>
+<td>2,669</td>
+</tr>
+<tr>
+<td>스킬 99종의 설명 프론트매터</td>
+<td>23,671</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>69,871자</strong></td>
+</tr>
+</tbody>
+</table>
+<p>토큰 환산은 한·영이 섞여 있고 토크나이저에 접근할 수 없어 점추정을 못 합니다 — <strong>3.0만~4.8만 토큰 [estimated]</strong> 구간으로만 적습니다.</p>
+<p><strong>그리고 마운트 지점에서 막혔습니다.</strong> 제 설정에서 배선 가능한 훅 이벤트는 여섯 종뿐이고, 대상이 가로채는 조립 워터폴·pre-step 메시지 배치·요청 페이로드에 해당하는 게 <strong>하나도 없습니다.</strong> 세션 시작 훅은 컨텍스트를 <strong>더할 수만 있고 뺄 수 없습니다.</strong> 포팅 난이도가 아니라 이식 자체가 성립하지 않습니다.</p>
+<p><strong>그다음이 더 허무했습니다.</strong> 「작은 상주 카탈로그 + 발견 도구를 거친 해금」은 제가 쓰는 하네스가 이미 네이티브로 합니다 — 상시 노출 약 40종, 지연 로딩 250여 종. 대상이 플러그인 일곱 벌·2,940줄로 재현한 조건이 제 기본값입니다. <strong>이득 0.</strong></p>
+<p>그래도 1차에는 수확 네 종을 적었습니다. 적대 검증에서 <strong>넷 다 내려갔습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>1차 수확</th>
+<th>판정</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>안전 가드를 fail-closed 로</td>
+<td><strong>보류</strong></td>
+<td>지목한 실패모드가 락 생성 코드상 성립하지 않았다. 진짜 구멍 둘(매처가 특정 편집 도구만 잡음 · 락 해제 ≠ 런 종료)은 이미 문서로 확정돼 있다</td>
+</tr>
+<tr>
+<td>「되돌아오는 슬라이스만 센다」 산식 정정</td>
+<td><strong>흡수</strong></td>
+<td>37.6배 과대계상은 재현됐지만, 그 도구가 한 번도 안 돌아 <strong>잘못 유도한 판단이 0건</strong>이었다</td>
+</tr>
+<tr>
+<td>이식성 lint 신설</td>
+<td><strong>기각</strong></td>
+<td>더 넓은 스캔이 제 배포 스킬 안에 이미 있었다. 정본으로 삼으려던 파일에는 정작 그 패턴이 없었다</td>
+</tr>
+<tr>
+<td>스킬별 도구 선언 시범</td>
+<td><strong>삭제</strong></td>
+<td>적용처 둘 중 하나는 이미 선언을 갖고 있었고, 나머지는 상위 계층의 사람 승인 게이트가 담당한다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>넷의 공통점이 이 편의 교훈입니다 — 전부 「기법이 없어서」가 아니라 「있는 걸 안 돌려서」 생긴 공백이었습니다.</strong> 남의 저장소를 자로 삼아 제 결함 넷을 찾았다고 적었는데, 실제로는 <strong>제 서랍을 안 열어 본 것</strong>이었습니다.</p>
+<h2 id="판정--이-조사가-실제로-찾은-것은-대상-밖에-있었다">판정 — 이 조사가 실제로 찾은 것은 대상 밖에 있었다</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>판정</th>
+<th>사유 · 재개 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프리셋 도입·포팅</td>
+<td>⛔ <strong>기각</strong></td>
+<td>마운트 지점 부재. 재개 = 조립 단계에서 컨텍스트를 <strong>빼는</strong> 훅이 생길 때</td>
+</tr>
+<tr>
+<td>2단계 카탈로그</td>
+<td><strong>이미 있음</strong></td>
+<td>제 하네스가 네이티브로 한다. 이득 0</td>
+</tr>
+<tr>
+<td>개별 모드(prefab · eternal-minimal · wire-think)</td>
+<td>⛔ <strong>기각</strong></td>
+<td>본체와 같은 마운트 지점을 쓴다</td>
+</tr>
+<tr>
+<td>수확 4종</td>
+<td><strong>0종</strong></td>
+<td>위 표 참조</td>
+</tr>
+<tr>
+<td>재제안</td>
+<td><strong>금지</strong></td>
+<td>별이 붙거나 모드가 늘어도 설치 불가라는 사실은 안 바뀐다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>그리고 이번이 세 번째 라운드였습니다.</strong> 「남의 프리셋 묶음을 통째로 도입할까」에 저는 이미 두 번 같은 답을 냈습니다 — <a href="/ko/teardowns/harness/ecc/">ECC</a> 선별 이식, 그리고 2주 뒤 정밀 재분석의 <em>“가져올 게 거의 없었다”</em>.</p>
+<p><strong>이 조사가 실제로 밝힌 가장 값비싼 사실은 대상에 관한 것이 아니었습니다.</strong> 제 <code>~/.claude</code> 자체가 남의 프리셋 묶음을 파일로 통째 복사한 결과입니다. 스킬 55/98, 룰 14, 훅 10/12 가 거기서 왔고 자작 훅은 둘뿐입니다. 그리고 <strong>그 이식 때 정확히 이 문제를 재려고 컨텍스트 예산 측정 스킬을 같이 집어왔습니다.</strong></p>
+<ul>
+<li>설치 07-29 → 오늘 08-22, <strong>24일간 실행 0회</strong></li>
+<li>받쳐 줄 슬래시 커맨드는 <strong>애초에 만들어지지 않았습니다</strong>(커맨드 37개 전수 확인)</li>
+<li>산식은 스킬 오버헤드를 <strong>37.6배 과대계상</strong>합니다 — 스킬 문서 전체 890,428자를 세는데, 실제 상시 노출은 설명 프론트매터 23,671자(2.7%)뿐입니다</li>
+</ul>
+<p>같은 메모에 <em>“비대한 상시 컨텍스트가 내가 유일하게 못 지키는 항목”</em> 이라고 적어 두고서 그렇습니다.</p>
+<h2 id="못-한-것">못 한 것</h2>
+<p>⚠ <strong>제 상시 주입 69,871자가 실제로 첫 응답 품질을 떨어뜨리는지는 재지 못했습니다.</strong> 뺄 수 있는 훅이 없어 <strong>대조군을 만들 수단이 없습니다.</strong> 「문제가 없다」가 아니라 「측정 불가」입니다. 대상의 n=9 짜리 근거로 제 환경을 판정하지 않습니다.</p>
+<p>⚠ 대상이 정말 안 좋은지도 저는 모릅니다. 확인한 건 <strong>그 숫자가 검증되지 않았다</strong>는 것과 <strong>제 환경에 설치할 수 없다</strong>는 것뿐이고, DSH 를 쓰는 사람에게 값을 하는지는 이 조사의 사정거리 밖입니다.</p>
+<p>재개 조건은 셋입니다. ① 조립 단계에서 컨텍스트나 도구 카탈로그를 <strong>빼는</strong> 훅이 열릴 때. ② 공식 기본 프리셋 대비 헤드투헤드가 셀당 n≥20 으로 나와 신뢰구간 하한이 0 을 넘을 때. ③ 무처리 홀드아웃으로 제 쪽 대조군을 만들 수 있게 될 때.</p>
+<p><strong>이 편에서 값을 치른 교훈은 기법이 아니라 순서입니다 — 컨텍스트를 줄이자는 남의 프리셋을 세 번째로 열어보는 동안, 줄일 대상을 잴 계기는 이미 서랍에 있었고 눈금이 37.6배 틀린 채로 24일을 쉬었습니다.</strong> 도구를 모으는 것과 재는 것은 다른 일이고, 전자가 후자를 계속 뒤로 밉니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

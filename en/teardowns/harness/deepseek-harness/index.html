@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DeepSeek Harness — Agent harnesses</title><meta name="description" content="I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="DeepSeek Harness — Agent harnesses"><meta property="og:description" content="I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="DeepSeek Harness — Agent harnesses"><meta name="twitter:description" content="I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/deepseek-harness/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/deepseek-harness/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">20 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/" aria-current="page"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>DeepSeek Harness</h1><p class="sum">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</p><div class="meta"><span>5 harvests → 0</span><a class="src" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">github.com/deepseek-ai/deepseek-harness ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#this-is-not-a-product-it-is-a-swappable-list-of-rows">This is not a product, it is a swappable list of rows</a><a href="#a-capability-is-a-seam-only-when-all-three-roles-are-present">A capability is a seam only when all three roles are present</a><a href="#what-broke--the-first-line-of-the-readme-does-not-hold-right-now">What broke — the first line of the README does not hold right now</a><a href="#booting-it-anyway-was-worth-something">Booting it anyway was worth something</a><a href="#what-killed-all-five-harvests-was-sitting-in-my-own-store">What killed all five harvests was sitting in my own store</a><a href="#verdict--and-where-i-was-wrong">Verdict — and where I was wrong</a></nav><div class="prose"><p><strong>I tried to harvest five techniques, and all five died.</strong> DeepSeek Harness (<code>dsh</code>) takes a coding agent apart entirely and rebuilds it as <strong>a list of rows in a config file</strong>. The model adapter, the tool registry, the session log, even the agent loop itself — each is swapped by editing one row. The design is real. But when I held the harvest up against my own setup, three of the five collapsed against <strong>two skills already sitting in <code>~/.claude</code> that had never once been executed</strong>, and the other two folded from “import a technique” into “edit two lines”. What I was missing was not a tool but <strong>a record of running one</strong>. As a bonus, the install command on the first line of the README sat silent for 300 seconds on this machine and then died (EXIT=124), and the only workaround crashed on first run.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 292" role="img" aria-label="How dsh boots. A base bundle plants 78 rows at once, and on top of it a profile bundle, a home patch and a launch-time overlay each overwrite in turn. The rows that result form capability seams, and a capability counts as a seam only when it has a row defining the interface, a row implementing it, and a tool row the model sees. So swapping the one implementation row makes the rest move with it.">
+  <text class="lbl" x="8" y="22">① boot = stacking rows — each layer overwrites the last, left to right</text>
+  <rect class="vn vn-b" x="8" y="36" width="240" height="54" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="128" y="59" text-anchor="middle">base bundle</text>
+  <text class="cap" x="128" y="80" text-anchor="middle">78 rows in one go</text>
+  <rect class="vn vn-a" x="256" y="36" width="240" height="54" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="376" y="59" text-anchor="middle">profile bundle</text>
+  <text class="cap" x="376" y="80" text-anchor="middle">web · headless · tui</text>
+  <rect class="vn vn-a" x="504" y="36" width="240" height="54" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="624" y="59" text-anchor="middle">home patch</text>
+  <text class="cap" x="624" y="80" text-anchor="middle">one file in ~/.dsh</text>
+  <rect class="vn vn-a" x="752" y="36" width="240" height="54" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="872" y="59" text-anchor="middle">--patch overlay</text>
+  <text class="cap" x="872" y="80" text-anchor="middle">once, at launch</text>
+  <text class="lbl" x="8" y="118">② what those rows build — a capability is a seam only with all three roles</text>
+  <rect class="vn vn-a" x="8" y="132" width="320" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="168" y="154" text-anchor="middle">define — interface only</text>
+  <text class="cap" x="168" y="175" text-anchor="middle">shell/shell</text>
+  <rect class="vn vn-b" x="340" y="132" width="320" height="52" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="154" text-anchor="middle">provide — the swappable slot</text>
+  <text class="cap" x="500" y="175" text-anchor="middle">bash-local · bash-sandbox</text>
+  <rect class="vn vn-a" x="672" y="132" width="320" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="154" text-anchor="middle">consume — the tool the model sees</text>
+  <text class="cap" x="832" y="175" text-anchor="middle">shell/tool-bash</text>
+  <line class="rule" x1="8" y1="204" x2="992" y2="204"/>
+  <text class="cap cap-i" x="8" y="228">⇒ swap the middle slot and <tspan class="cap-p">shell · filesystem · language server all move with it</tspan></text>
+  <text class="cap" x="8" y="252">what deserves the name core narrows to boot glue plus one invariant — "no privileged core" overstates it</text>
+  <text class="cap" x="8" y="276">⚠ all of the above is the design the repo states about itself. whether it boots I measured separately</text>
+</svg>
+<figcaption>"Plugin tree" does not show you this. Splitting a capability into three is what this thing actually is.</figcaption>
+</figure>
+<h2 id="this-is-not-a-product-it-is-a-swappable-list-of-rows">This is not a product, it is a swappable list of rows</h2>
+<p><strong><code>dsh</code> is an open-source agent harness from DeepSeek.</strong> What actually runs is a “plugin tree”, and booting is not calling code in order but <strong>stacking config rows</strong>. A base bundle plants 78 rows at once, the bundle the profile picked lands on top, a patch left in the home directory covers that, and finally the overlay handed in at launch covers everything. A patch names a row by id and <strong>does not merge the config — it replaces the row whole.</strong> There is no half-mixed state.</p>
+<p>At the centre of the runtime rules sits one more invariant. <strong>“What the model sees is what was recorded”</strong> — everything that reaches a model request must be reconstructible from an append-only session log, and the runtime enforces that. Forking, resuming, transcripts and telemetry all derive from this single stream.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured 2026-08-22</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scale</td>
+<td>7,903 files · 26MB of TypeScript · <strong>227</strong> pnpm workspaces (50 groups)</td>
+</tr>
+<tr>
+<td>Source vs. tests</td>
+<td>src 1,389 files 10.53MB ↔ tests 909 files <strong>12.56MB</strong> — by bytes, the tests are bigger</td>
+</tr>
+<tr>
+<td>Popularity</td>
+<td>★<strong>181,214</strong> · 19,815 forks — public since 2026-08-13, so <strong>that is nine days</strong></td>
+</tr>
+<tr>
+<td>Engagement</td>
+<td>792 watchers (0.44% of stars) · Issues and PRs <strong>both closed</strong> · 3,894 discussions</td>
+</tr>
+<tr>
+<td>Contribution</td>
+<td>13,145 commits · the top contributor alone is <strong>40.1%</strong> · top three 61.1%</td>
+</tr>
+<tr>
+<td>Releases</td>
+<td>4, <strong>all rc</strong> · 0 stable tags · session format version 0 (no compatibility promise)</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>MIT — except the subagent backend pulls in a <strong>non-permissive SDK</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Thirteen thousand commits in nine public days.</strong> The dates on the decision records reach back two months — this was built privately for a long time and then published history and all. One thing here cost me something to learn: <strong>181,214 stars and “proven software” are different axes.</strong> When watchers are 0.44% of stars and both Issues and PRs are shut, that 181,214 is a bookmark count, not a usage count.</p>
+<p><strong>And the number moved while I was writing it down.</strong> My collector caught 170,925 at 07:11 on 08-20; the morning I started the teardown it was 181,170; filling the table above it was 181,214; writing this paragraph it is <strong>181,723</strong>. That is <strong>+10,798 in two days</strong>, and <strong>+553</strong> in the hours it took to write this. So read the ★ in that table as <strong>a timestamp, not a value</strong>. This repository demonstrated for me why not using stars as evidence isn’t a preference.</p>
+<h2 id="a-capability-is-a-seam-only-when-all-three-roles-are-present">A capability is a seam only when all three roles are present</h2>
+<p>The most valuable rule in this repository is not the plugin system but <strong>the unit it slices a capability into</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Three roles enforced per seam</strong></td>
+<td>A capability needs all three roles — the <strong>definition</strong> declaring the interface, the <strong>provider</strong> implementing it, and the <strong>consumer</strong> using it (usually the tool the model sees). The rules state flatly that one role alone is not a seam, and the package name is the role</td>
+</tr>
+<tr>
+<td><strong>Provenance comments on rows</strong></td>
+<td>Dump the merged config and each span carries <code># == which layer, patched by which layer</code>. The config writes down for itself which layer wrote last</td>
+</tr>
+<tr>
+<td><strong>What is off stays in place</strong></td>
+<td>A profile does not delete the base’s row; it covers it with <code>disabled: true</code>. “Absent” and “switched off” stay distinguishable</td>
+</tr>
+<tr>
+<td><strong>Code Mode</strong></td>
+<td>The whole tool schema is folded down to a single <code>run_code</code> for the model, and sub-calls run inside the program. Each sub-call is recorded, but only the tidied outer result enters model history</td>
+</tr>
+<tr>
+<td><strong>Docs generated, then re-verified</strong></td>
+<td>Catalogues and module graphs are generated from code, and the same script is run again with <code>--check</code> to see whether it matches the committed bytes</td>
+</tr>
+<tr>
+<td><strong>Decision records managed by path</strong></td>
+<td>When a status changes, the folder moves (proposed/implemented/rejected/archived). A central index file is <strong>forbidden</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two of these — provenance comments and disabled rows — I would never have seen by reading the code.</strong> They only came into view once I actually booted it and took a dump.</p>
+<h2 id="what-broke--the-first-line-of-the-readme-does-not-hold-right-now">What broke — the first line of the README does not hold right now</h2>
+<p><strong>Install it the way the docs tell you and it does not install.</strong> In an isolated folder I ran <code>npm install @deepseek-ai/dsh</code> with a 300-second limit, and it sat silent with a <strong>0-byte log file</strong> until it timed out (EXIT=124). Add <code>--legacy-peer-deps</code> to the same command and it finishes in 30 seconds — meaning the cause is not the network but backtracking through the peer dependency graph. Install it for real and you get 430 packages, 260MB — and the first run dies with <code>ERR_MODULE_NOT_FOUND</code>. The boot-glue package declares exactly one <code>dependencies</code> entry and puts <strong>all nine packages boot cannot start without into <code>peerDependencies</code></strong>, and that flag is precisely the one that does not install peers.</p>
+<p>There is an irony here. <strong>The rule I praised above — a seam needs all three roles — shipped from the published packages with the definition role missing.</strong> The rule is enforced inside the repository only; nothing hangs it on the publish pipeline.</p>
+<p>The three headline claims checked out like this.</p>
+<ul>
+<li><strong>“Fail-closed process isolation” is a file-write fence.</strong> The repo’s own documentation says <strong>“file effects are the whole of the policy vocabulary”</strong>, and the actual profiles carry no network-blocking argument. In the default mode a sandboxed tool can read <code>~/.ssh</code> and ship it out over an unrestricted network.</li>
+<li><strong>“What the model sees is what was recorded” only guarantees the write side.</strong> After an interrupted turn the writer restarts sequence numbers from a stale counter, the log becomes unreadable whole, and in one report <strong>127 events actually vanished.</strong> Because the log is the only original, one writer bug destroys a whole session — this is the price of a single-source design, realised.</li>
+<li><strong>Some of the 39 gates are not wired into any CI at all.</strong> And the unwired ones are red on the default branch right now. The number 39 meant “these exist”, not “these run”.</li>
+</ul>
+<figure class="fig">
+<svg viewBox="0 0 1000 330" role="img" aria-label="The result of measuring the install three ways, and the verdict on five harvest candidates. Following the docs gives 300 seconds of silence and a timeout, the community workaround installs but crashes on first run, and installing the missing dependencies by hand exits cleanly in 884 milliseconds. Of the five harvest candidates two were cut down and three rejected, leaving nothing.">
+  <text class="lbl" x="8" y="22">I measured the install three times — as documented → community workaround → my own recipe</text>
+  <line class="rule" x1="8" y1="34" x2="992" y2="34"/>
+  <text class="cap cap-i" x="8" y="60">① npm install, exactly as documented</text>
+  <text class="cap" x="440" y="60">→</text>
+  <text class="cap cap-p" x="472" y="60">300s of silence · 0-byte log · EXIT=124</text>
+  <line class="rule" x1="8" y1="76" x2="992" y2="76"/>
+  <text class="cap cap-i" x="8" y="102">② --legacy-peer-deps</text>
+  <text class="cap" x="440" y="102">→</text>
+  <text class="cap cap-p" x="472" y="102">430 packages, 260MB in 30s · first run crashes</text>
+  <line class="rule" x1="8" y1="118" x2="992" y2="118"/>
+  <text class="cap cap-i" x="8" y="144">③ ② plus the missing deps by hand</text>
+  <text class="cap" x="440" y="144">→</text>
+  <text class="cap" x="472" y="144">884ms · EXIT=0 — a path documented nowhere</text>
+  <line class="rule" x1="8" y1="160" x2="992" y2="160"/>
+  <text class="lbl" x="8" y="186">five harvest candidates — what survived adversarial review</text>
+  <rect class="vn vn-a" x="8" y="196" width="188" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="102" y="218" text-anchor="middle">merged-config dump</text>
+  <text class="cap" x="102" y="239" text-anchor="middle">cut down · half owned</text>
+  <rect class="vn vn-a" x="207" y="196" width="188" height="52" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="301" y="218" text-anchor="middle">regeneration gate</text>
+  <text class="cap" x="301" y="239" text-anchor="middle">cut down · two lines</text>
+  <rect class="vn vn-b" x="406" y="196" width="188" height="52" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="500" y="218" text-anchor="middle">disabled rows</text>
+  <text class="cap" x="500" y="239" text-anchor="middle">rejected · duplicate rule</text>
+  <rect class="vn vn-b" x="605" y="196" width="188" height="52" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="699" y="218" text-anchor="middle">dep-declaration guard</text>
+  <text class="cap" x="699" y="239" text-anchor="middle">rejected · 0 use sites</text>
+  <rect class="vn vn-b" x="804" y="196" width="188" height="52" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="898" y="218" text-anchor="middle">rule profiles</text>
+  <text class="cap" x="898" y="239" text-anchor="middle">rejected · no switch</text>
+  <line class="rule" x1="8" y1="266" x2="992" y2="266"/>
+  <text class="cap cap-i" x="8" y="290">⇒ what killed three was not someone else's repo but <tspan class="cap-p">two skills installed and never once run</tspan></text>
+  <text class="cap" x="8" y="314">measure the gap by inventory alone — what you own — and you go out to buy what is already in the store</text>
+</svg>
+<figcaption>The install measurement and the harvest verdict are different axes. Adoption was blocked by the install; the harvest was blocked by my own store.</figcaption>
+</figure>
+<h2 id="booting-it-anyway-was-worth-something">Booting it anyway was worth something</h2>
+<p><strong>After installing the missing dependencies by hand, I dumped the merged config.</strong> 503 lines · <strong>135 rows</strong> · <strong>25</strong> of them <code>disabled: true</code> · 24 provenance comments splitting three ways (written by base / base overwritten by the profile / newly written by the profile). You cannot see this by reading the code. <strong>The web profile does not delete the base’s rows; it leaves them in place and switches them off</strong> — 25 rows out of 135.</p>
+<p>Held against my own side, the picture was exactly inverted. The agents under <code>~/.claude</code> have 46 active ones scattered among 24 <code>.bak*</code> files and 7 in <code>archive/</code>, so <strong>you cannot count the active ones from the file listing alone.</strong> “Switched off” is split across two mechanisms: renaming the extension, and moving the folder.</p>
+<p>And I weighed my always-on instruction stack for the first time — 20 rules plus the index memory plus the descriptions of 99 skills comes to <strong>roughly 27,244 tokens</strong>. ⚠ That is an estimate from a character-count heuristic rather than a real tokeniser, so <strong>assume ±30%</strong>. Not one of those pieces has a switch.</p>
+<h2 id="what-killed-all-five-harvests-was-sitting-in-my-own-store">What killed all five harvests was sitting in my own store</h2>
+<p>In the stage where I break my own verdict, five candidates fell one after another.</p>
+<ul>
+<li><strong>Merged-config dump → cut down.</strong> Half the output — the size inventory — is already done by the <code>context-budget</code> skill. The other half aimed at an incident that was already closed: a config import being <strong>ignored without a single warning</strong> depending on which folder it sat in, so the same file came out as 50,000 tokens in one place and 0 in another. That was measured, checked exhaustively, and written into a standing decision. I was proposing an approximating script to replace a measurement I had already taken.</li>
+<li><strong>Regeneration verification gate → cut down.</strong> The hole was real but the technique was oversized. The target repo splits generation from verification because CI must not write to the repository — my site’s <code>scripts/deploy.mjs</code> <strong>already writes freely.</strong> What is needed here is not verification but regeneration, and calling the generator in two lines before the build ends it.</li>
+<li><strong><code>disabled</code> row convention → rejected.</strong> The <code>config-gc</code> skill already carries a <strong>soft delete → trash folder → reason log</strong> convention. Adding one more manifest on top would mean inventing <strong>a fourth convention</strong> in the name of fixing convention sprawl.</li>
+<li><strong>Dependency-declaration guard → rejected.</strong> The publish checklist already has two items of the same family, and decisively, <strong>none of the repos I publish is an npm package.</strong> It was not “free because it takes ten minutes” — it was free because the benefit is zero.</li>
+<li><strong>Rule profiles → rejected.</strong> The ladder for narrowing scope is already canonical in my memory, and it is already measured that a global rule propagates all the way into child sessions, so <strong>there is physically no way to switch one off.</strong> Filing this as “on hold” would just bring the same proposal back in six months.</li>
+</ul>
+<p><strong>Both skills that killed three of the five had zero execution history.</strong> <code>context-budget</code> leaves no trace beyond a one-line note about where it came from, and <code>config-gc</code> — the log file and the trash folder it instructs you to create — <strong>neither of them exists.</strong> It has never run.</p>
+<p>⚠ The worse part is that this is not the first time. The last line of <a href="/en/teardowns/harness/ecc/">the ECC teardown</a> read <strong>“two tools for trimming context, installed six months ago and never once run — running them is what this investigation left as first priority.”</strong> <strong>The same two tools.</strong> I wrote “first priority”, never ran them, and then tore apart another repository to fill the same gap.</p>
+<h2 id="verdict--and-where-i-was-wrong">Verdict — and where I was wrong</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt the tool</td>
+<td><strong>Rejected.</strong> Both install paths are blocked, 0 stable releases, Issues and PRs shut</td>
+</tr>
+<tr>
+<td>The five harvests</td>
+<td><strong>0 adopted.</strong> 3 rejected · 2 cut down to “run what I already own”</td>
+</tr>
+<tr>
+<td>Reopen when</td>
+<td>① at least one stable tag ② it installs in under five minutes with no flags and <code>--help</code> exits cleanly ③ Issues or PRs open — <strong>all three</strong> before I measure again</td>
+</tr>
+<tr>
+<td>And even then</td>
+<td>A real quality comparison needs an API key. If key issuance is not approved, re-evaluation is permanently rejected</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>My first-pass verdict was wrong twice.</strong> I first wrote “there is no CLI, only a web UI” — in fact the CLI is the product launcher and <code>web</code> is a subcommand of it. I had transcribed the community’s complaint that “there is no TUI” as “there is no CLI”. And I coined the name “fail-closed process isolation” myself, when the reality is a file-write fence. <strong>Get the name wrong and the name contaminates the next verdict</strong> — that was the slide straight into “there is a sandbox, so I can treat it as a trust boundary”.</p>
+<p><strong>What I did not do, on the record.</strong> First, <strong>I could not measure whether this harness makes outcomes better.</strong> The project’s own benchmark document contains no numbers at all, running it needs an API key, and creating accounts is on my prohibited list. Second, the install measurement was taken on one rc version on one Windows machine, so it does not generalise to other environments. Third, for the session-log corruption I only confirmed someone else’s report against the code; I did not reproduce it. Fourth, the 27,244-token instruction stack is an estimate.</p>
+<p><strong>What cost me something in this teardown is not a technique but a method for gap analysis — measure only “what do I have” and never “have I ever switched it on”, and you conclude that you should go out and buy what is already in your store.</strong> Of the four tasks this investigation actually produced, not one came from dsh. Two are five-line edits to my own site scripts, and the other two are <strong>running a skill I installed six months ago, once.</strong></p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/harness/deepseek-harness/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

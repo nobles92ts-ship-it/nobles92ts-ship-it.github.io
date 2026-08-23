@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dsh-anchored-standard — Context and memory</title><meta name="description" content="Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn't run it in 24 days."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="dsh-anchored-standard — Context and memory"><meta property="og:description" content="Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn't run it in 24 days."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="dsh-anchored-standard — Context and memory"><meta name="twitter:description" content="Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn't run it in 24 days."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/memory/dsh-anchored-standard/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">20 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a><a href="/en/teardowns/memory/dsh-anchored-standard/" aria-current="page"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">4 takeaways → 0 · 24 days unrun</span></span><span class="s">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>dsh-anchored-standard</h1><p class="sum">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</p><div class="meta"><span>4 takeaways → 0 · 24 days unrun</span><a class="src" href="https://github.com/xiaobright/dsh-anchored-standard" target="_blank" rel="noopener">github.com/xiaobright/dsh-anchored-standard ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is">What it is</a><a href="#what-is-well-made-isnt-the-anchor--its-the-posture-toward-failure">What is well made isn’t the anchor — it’s the posture toward failure</a><a href="#the-headline-scores-were-refuted-mostly-by-the-author-himself">The headline scores were refuted mostly by the author himself</a><a href="#my-harness-has-no-screw-holes-to-mount-this-on">My harness has no screw holes to mount this on</a><a href="#verdict--what-this-investigation-actually-found-lay-outside-the-target">Verdict — what this investigation actually found lay outside the target</a><a href="#what-i-didnt-do">What I didn’t do</a></nav><div class="prose"><p><strong>Rejected. But the grounds were not “it isn’t good” — they were “there is nowhere to mount it.”</strong> This preset bundle takes the <strong>first model request</strong> of a session, cuts the tool catalogue down to two, empties the auto-injected context wholesale, and thereby fixes the register the model opens its first sentence in. It sits on the same axis as <a href="/en/teardowns/memory/headroom/">Headroom</a> — the context budget — one instalment later. The headline 98/99 is <strong>refuted by the author’s own README</strong>: the same table lists the official Minimal preset at 99 and 96. Independent replications landed at 85–90 across three operating systems and eleven runs, and the capability gap came out at +3.3 points with a 95% confidence interval of [−2.6, +9.3], which contains zero. And the most expensive fact in this piece was not about the target but about me — <strong>my own <code>~/.claude</code> is itself a wholesale copy of somebody else’s preset bundle</strong>, and the measurement skill I picked up in that same transplant <strong>specifically to measure this problem has not run once in 24 days.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 296" role="img" aria-label="This preset cuts the session in two. On the first request it narrows the tools to two and empties the auto-injected context; the moment a first tool call or a first reply lands in the durable session event log it promotes and opens a small resident catalogue. When compaction ends the epoch is bumped and the session falls back to a second first request. Seven modes are variations on those same two halves.">
+  <text class="lbl" x="8" y="22">the session is cut in two — the stage comes from the session event log, not from process memory</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="96" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="62" text-anchor="middle">① request #1 — bootstrap</text>
+  <text class="cap" x="168" y="86" text-anchor="middle">tools: bash and one editor, nothing else</text>
+  <text class="cap" x="168" y="110" text-anchor="middle">auto-injected context is emptied whole</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="62" text-anchor="middle">② promotion — a durable event</text>
+  <text class="cap" x="500" y="86" text-anchor="middle">first tool call, or the first reply</text>
+  <text class="cap" x="500" y="110" text-anchor="middle">resident = 2 + 3 discovery + unlocked</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="62" text-anchor="middle">③ compaction/end — epoch bumped</text>
+  <text class="cap" x="832" y="86" text-anchor="middle">promotion cleared — a second first request</text>
+  <text class="cap" x="832" y="110" text-anchor="middle">this time only 7 edit/search tools open</text>
+  <text class="lbl" x="8" y="160">seven modes vary those same two halves — installed by copying a whole preset directory</text>
+  <rect class="vn vn-a" x="8" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="102" y="200" text-anchor="middle">preset — the baseline</text>
+  <rect class="vn vn-a" x="204" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="298" y="200" text-anchor="middle">zero-anchored · whoami</text>
+  <rect class="vn vn-a" x="400" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="494" y="200" text-anchor="middle">eternal-minimal</text>
+  <rect class="vn vn-a" x="596" y="174" width="188" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="690" y="200" text-anchor="middle">wire-think-standard</text>
+  <rect class="vn vn-b" x="792" y="174" width="200" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="892" y="200" text-anchor="middle">combo · prefab</text>
+  <line class="rule" x1="8" y1="236" x2="992" y2="236"/>
+  <text class="cap cap-i" x="8" y="260">⇒ the target isn't capability, it's <tspan class="cap-p">the model's opening register</tspan> — "we" or "let me"</text>
+  <text class="cap" x="8" y="284">even after promotion it never dumps all 25 tools. The author measured that a full dump undoes the trajectory</text>
+</svg>
+<figcaption>This is not a thing that adds features. It is one condition that narrows the first request's surface, varied seven ways.</figcaption>
+</figure>
+<h2 id="what-it-is">What it is</h2>
+<p><strong>Seven preset directories that plug into a coding-agent harness called DeepSeek Harness (DSH).</strong> Not a model, not a library — a filter that hooks into the middle of a prompt-assembly pipeline. Installation means copying a directory <strong>wholesale</strong> under <code>.agent-presets/&lt;id&gt;/</code>, so it cannot own a <code>node_modules</code>; zero third-party dependencies is not an aesthetic here, it is the consequence of that constraint.</p>
+<p>The operating rule is one line. <strong>Cut the session in two.</strong> On request #1 it intercepts the <code>system-prompt/assemble</code> waterfall, filters the assembled tool array down to two — a shell and an editor — and strips out every auto-injected context source — the instruction digest, the skill catalogue, the clock, the hooks. The gate opens the moment a first tool call or a first reply lands in the session event log.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (status.promoted) {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> keep</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Set</span><span style="color:#24292E">([</span><span style="color:#D73A49">...</span><span style="color:#24292E">bootstrapTools, </span><span style="color:#D73A49">...</span><span style="color:#005CC5">RESIDENT_DISCOVERY_TOOLS</span><span style="color:#24292E">, </span><span style="color:#D73A49">...</span><span style="color:#6F42C1">unlockedFor</span><span style="color:#24292E">(</span><span style="color:#D73A49">...</span><span style="color:#24292E">)]);</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#6F42C1"> keepTools</span><span style="color:#24292E">(assembled, keep, </span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>The part worth noting is that the promotion decision is <strong>derived from durable session events rather than process memory</strong> — the stage survives a resume. And even after promotion it does not pour out the whole catalogue; heavy tools are unlocked only after a search tool has been used once.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured (2026-08-22)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scale</td>
+<td>126 tracked files · 94 <code>.mjs</code> · 1,282KB</td>
+</tr>
+<tr>
+<td>Commits</td>
+<td><strong>all 56 inside four days</strong> (08-14 → 08-17) · 0 tags · 0 releases</td>
+</tr>
+<tr>
+<td>Stars / forks / contributors</td>
+<td>3,696 / 111 / 13 people</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td><code>node --test</code> <strong>205 passing</strong> (763ms) · self-containment check exits 0</td>
+</tr>
+<tr>
+<td>Docs</td>
+<td>README 38.8KB + Chinese 35.6KB + handover 16.4KB</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>effectively MIT — but GitHub classifies it as <code>NOASSERTION</code></td>
+</tr>
+</tbody>
+</table>
+<p>The seven are not seven feature sets. They are <strong>the same two halves, varied</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>preset</strong></td>
+<td>The two-stage anchor itself. Everything else forks from here</td>
+</tr>
+<tr>
+<td>zero-anchored · whoami</td>
+<td>Inserts one synthetic anchor turn carrying zero tools</td>
+</tr>
+<tr>
+<td><strong>eternal-minimal</strong></td>
+<td>Removes promotion entirely. Other tools run through a shell gateway</td>
+</tr>
+<tr>
+<td>wire-think-standard</td>
+<td><code>tool_choice:"none"</code> on the wire — visible but not callable</td>
+</tr>
+<tr>
+<td>combo-anchored</td>
+<td>Think/act split + a deliberation-depth gate + an instruction drip</td>
+</tr>
+<tr>
+<td><strong>prefab</strong></td>
+<td>Zero model calls. Replays a pre-rolled session transcript as injection</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>Count the files literally and you will read this thing at three times its real size.</strong> Most of the <code>.mjs</code> inside the mode directories are <strong>generated artifacts</strong> copied from one <code>shared/</code> tree and committed. The actual shared code is 2,940 lines, and the tests, at 3,105 lines, outweigh it.</p>
+<h2 id="what-is-well-made-isnt-the-anchor--its-the-posture-toward-failure">What is well made isn’t the anchor — it’s the posture toward failure</h2>
+<p>The value worth reading is not the anchoring idea itself, but how the author handled the problems that came from bolting that idea onto somebody else’s harness.</p>
+<ul>
+<li><strong>A unified injection gate — close two paths instead of enumerating sources.</strong> Rather than listing sources in a denylist, the assembly path empties the context array whole, and the pre-step waterfall takes the message batch that step claimed as a baseline and <strong>default-denies every addition that isn’t in it</strong> — <em>“so that sources which don’t exist yet are covered too.”</em></li>
+<li><strong>The compaction epoch — admitting there is a “second first request.”</strong> Compaction rewrites the surface the model sees. So promotion state is not a boolean but a <code>(boundary, promoted)</code> pair, and only a promotion that came after the compaction-end event’s sequence number counts.</li>
+<li><strong>Anchor mass — count only the slice that comes back.</strong> By the serialization rules, only the reasoning of messages that contain a tool call returns on the next request. So the scorer computes its register metrics <strong>only over the slice that actually returns</strong> — <em>“a number measured over the whole reasoning overestimates the anchor the clone really receives.”</em></li>
+<li><strong>Using the deny channel as a return path for results.</strong> <code>eternal-minimal</code> intercepts shell commands and runs the real tool, but at the pre-dispatch stage the only sanctioned channel that can substitute a result is <strong>deny</strong>. So even successful results come back as refusals, and the first line states in plain prose that the command ran and its output follows, so the model reads it as output rather than an error.</li>
+</ul>
+<p>The one I paid for is the fifth. <strong>The failure philosophy is deliberately split in two</strong> — a decorative filter that fails degrades to “expose the full catalogue” and warns exactly once, while a bad configuration throws immediately at mount time and an unknown config key is refused outright. <em>“We don’t throw because a bootstrap tool went missing — a composition drift must not brick every request in the session.”</em> <strong>Filters fail open, configuration fails closed</strong> — repositories that hold that distinction consistently in code are rare.</p>
+<h2 id="the-headline-scores-were-refuted-mostly-by-the-author-himself">The headline scores were refuted mostly by the author himself</h2>
+<p><strong>Target’s claim</strong>: on a particular evaluation set the anchored family scored 98, 99 and 99, against a control at 91 and 92.</p>
+<p>Those numbers collapse three ways.</p>
+<ul>
+<li><strong>Those three runs are not what the current code scores.</strong> One issue compared the commit of the day against a frozen snapshot and established that those runs used a different first-request surface plus a full dump on promotion, and <strong>the author acknowledged it with a provenance note in the README</strong>.</li>
+<li><strong>The same README holds the decisive blow.</strong> Lines 114–115 record the <strong>official Minimal preset at 99 and 96</strong>. Install no plugin at all, run stock upstream, and it is 98.7 against 97.5 — inside observation noise.</li>
+<li><strong>Both independent replications failed.</strong> Three operating systems and eleven runs produced 85–90, and a 3×3 randomised block replication produced <strong>+3.3 points with a 95% CI of [−2.6, +9.3]</strong>, containing zero, with a within-preset run-to-run standard deviation of 2.98 points — three times noisier than the ~1 point the README’s two runs imply.</li>
+</ul>
+<p><strong>What held is worth recording too.</strong> “The first-request tool schema sets the trajectory” came out stronger — in the same independent replication, the 26-tool condition produced let-me counts of 144–241 and the 2-tool condition produced we counts of 155–289, a <strong>complete 9/9 separation with zero overlap</strong>. But other reports deny any correlation between trajectory and score, and an arm that swapped a single instruction line back to stock <strong>did 35% less work and scored indistinguishably</strong>.</p>
+<p><strong>From an adoption standpoint, though, the real problem was not performance but the rate of decay.</strong> This preset is a snapshot of upstream rc.5, and upstream has shipped four releases since. rc.6 neutered the search tool in the unlock chain, and <strong>rc.8 shipped a persistent Windows PowerShell in the official Minimal by default, voiding the “byte-identical to official Minimal” reason for existing</strong> — and it changed the session storage format incompatibly, when every piece of state in this design derives from that store. On top of that, <strong>0 tags, 0 releases, version pinning plus wholesale directory copying</strong> means nobody can tell which snapshot their own copy is, and the most destructive report of all — “the session stops responding entirely” — came out of exactly this structure. Two more layers sit above it: a controlled experiment reports that the single instruction line the preset injects after promotion undoes the trajectory it worked to establish, and prefab never runs its seed at all on the “set as default mode” path.</p>
+<p><strong>In fairness, the code hygiene is real.</strong> All 205 tests pass and the self-containment check catches drift with exit 1. What collapsed is not the code — it is <strong>the numbers that code produced and the ground that code stands on</strong>.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 324" role="img" aria-label="Re-checking the three headline numbers. The 98 versus 99 versus 99 result was corrected by the author himself as not being the current build, the same README lists the official Minimal at 99 and 96, and only the claim that the first-request tool schema sets the trajectory held. Yet the capability gap is plus 3.3 points with a 95 percent confidence interval running from minus 2.6 to plus 9.3, which contains zero.">
+  <text class="lbl" x="8" y="22">three headline numbers — refuted mostly by the author himself, or by his own README</text>
+  <line class="rule" x1="8" y1="34" x2="992" y2="34"/>
+  <text class="cap cap-i" x="8" y="60">evaluation scores 98 / 99 / 99</text>
+  <text class="cap" x="404" y="60">→</text>
+  <text class="cap cap-p" x="436" y="60">not the current build — corrected by the author in the README</text>
+  <line class="rule" x1="8" y1="76" x2="992" y2="76"/>
+  <text class="cap cap-i" x="8" y="102">the plugin beat the stock preset</text>
+  <text class="cap" x="404" y="102">→</text>
+  <text class="cap cap-p" x="436" y="102">the same README lists official Minimal at 99 · 96</text>
+  <line class="rule" x1="8" y1="118" x2="992" y2="118"/>
+  <text class="cap cap-i" x="8" y="144">first-request tool schema sets the trajectory</text>
+  <text class="cap" x="404" y="144">→</text>
+  <text class="cap cap-p" x="436" y="144">this one held — replication separated 9/9, zero overlap</text>
+  <line class="rule" x1="8" y1="160" x2="992" y2="160"/>
+  <text class="lbl" x="8" y="188">yet with the trajectory split, the capability gap still contains zero — 3×3 randomised block replication</text>
+  <rect class="bar" x="356" y="204" width="476" height="18" rx="2"/>
+  <text class="cap" x="348" y="217" text-anchor="end">anchored − standard</text>
+  <text class="cap cap-on" x="592" y="217" text-anchor="middle">+3.3</text>
+  <line class="tick" x1="460" y1="196" x2="460" y2="226"/>
+  <text class="cap" x="356" y="246" text-anchor="middle">−2.6</text>
+  <text class="cap cap-p" x="460" y="246" text-anchor="middle">0</text>
+  <text class="cap" x="832" y="246" text-anchor="middle">+9.3</text>
+  <line class="rule" x1="8" y1="264" x2="992" y2="264"/>
+  <text class="cap cap-i" x="8" y="288">⇒ narrow the tools and <tspan class="cap-p">the register really does split</tspan>. That the score follows is unevidenced</text>
+  <text class="cap" x="8" y="312">one arm changed a single instruction line, did 35% less work, and scored indistinguishably</text>
+</svg>
+<figcaption>The trajectory split replicated. The score gain did not. Selling those two as one package is this repository's weak point.</figcaption>
+</figure>
+<h2 id="my-harness-has-no-screw-holes-to-mount-this-on">My harness has no screw holes to mount this on</h2>
+<p><strong>First I counted, in my own environment, the very thing the target names as the anchor-breaker.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Injected into every session’s first request</th>
+<th>Measured characters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20 global rules</td>
+<td>24,407</td>
+</tr>
+<tr>
+<td>Auto memory index</td>
+<td>19,124</td>
+</tr>
+<tr>
+<td>Global instructions</td>
+<td>2,669</td>
+</tr>
+<tr>
+<td>Description front matter of 99 skills</td>
+<td>23,671</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>69,871 characters</strong></td>
+</tr>
+</tbody>
+</table>
+<p>I cannot give a point estimate in tokens — the text mixes Korean and English and I have no access to the tokenizer — so I record it only as a range: <strong>30k–48k tokens [estimated]</strong>.</p>
+<p><strong>Then I hit the mount point.</strong> My configuration exposes exactly six wireable hook events, and <strong>not one of them</strong> corresponds to the assembly waterfall, the pre-step message batch, or the request payload that the target intercepts. The session-start hook can <strong>only add context, never remove it.</strong> This is not a porting-difficulty problem; the transplant does not exist as an operation.</p>
+<p><strong>What came next was more deflating.</strong> “A small resident catalogue plus discovery-gated unlocking” is something the harness I use already does natively — roughly 40 tools always exposed, some 250 lazily loaded. The condition the target reproduces with seven plugins and 2,940 lines is my default. <strong>Benefit: zero.</strong></p>
+<p>I still wrote down four takeaways on the first pass. The adversarial pass <strong>took all four down.</strong></p>
+<table>
+<thead>
+<tr>
+<th>First-pass takeaway</th>
+<th>Call</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make the safety guard fail-closed</td>
+<td><strong>hold</strong></td>
+<td>The failure mode I named does not hold given the lock-creation code. The two real holes (the matcher only catches one edit tool · releasing the lock ≠ ending the run) are already settled in writing</td>
+</tr>
+<tr>
+<td>Fix the “count only the returning slice” formula</td>
+<td><strong>absorbed</strong></td>
+<td>The 37.6× overcount reproduced, but the tool had never run once, so <strong>it had misled zero decisions</strong></td>
+</tr>
+<tr>
+<td>Add a portability lint</td>
+<td><strong>rejected</strong></td>
+<td>A broader scan already existed inside my publishing skill. The file I meant to make canonical did not even contain that pattern</td>
+</tr>
+<tr>
+<td>Pilot per-skill tool declarations</td>
+<td><strong>deleted</strong></td>
+<td>One of the two target sites already had a declaration, and the other is covered by a human approval gate one layer up</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What the four share is the lesson of this piece — none of them were gaps from “the technique was missing,” they were gaps from “I never ran what I already had.”</strong> I had written that I used somebody else’s repository as a ruler and found four defects of my own. In fact I had <strong>just not opened my own drawer.</strong></p>
+<h2 id="verdict--what-this-investigation-actually-found-lay-outside-the-target">Verdict — what this investigation actually found lay outside the target</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Call</th>
+<th>Why · what would reopen it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt or port the presets</td>
+<td>⛔ <strong>rejected</strong></td>
+<td>No mount point. Reopen when a hook appears that can <strong>remove</strong> context at the assembly stage</td>
+</tr>
+<tr>
+<td>Two-stage catalogue</td>
+<td><strong>already have it</strong></td>
+<td>My harness does it natively. Benefit zero</td>
+</tr>
+<tr>
+<td>Individual modes (prefab · eternal-minimal · wire-think)</td>
+<td>⛔ <strong>rejected</strong></td>
+<td>They use the same mount point as the main body</td>
+</tr>
+<tr>
+<td>The four takeaways</td>
+<td><strong>zero</strong></td>
+<td>See the table above</td>
+</tr>
+<tr>
+<td>Re-proposing</td>
+<td><strong>not allowed</strong></td>
+<td>More stars or more modes will not change the fact that it cannot be installed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>And this was the third round.</strong> To the question “should I adopt somebody else’s preset bundle wholesale,” I have already given the same answer twice — the selective transplant from <a href="/en/teardowns/harness/ecc/">ECC</a>, and, two weeks later, a precise re-analysis whose conclusion was <em>“there was almost nothing to take.”</em></p>
+<p><strong>The most expensive fact this investigation surfaced was not about the target.</strong> My own <code>~/.claude</code> is itself a wholesale file copy of somebody else’s preset bundle. 55 of 98 skills, 14 rules and 10 of 12 hooks came from there; exactly two hooks are mine. And <strong>in that same transplant I picked up a context-budget measurement skill specifically to measure this problem.</strong></p>
+<ul>
+<li>Installed 07-29 → today 08-22, <strong>0 runs in 24 days</strong></li>
+<li>The slash command meant to drive it <strong>was never created at all</strong> (verified across all 37 commands)</li>
+<li>The formula <strong>overcounts skill overhead by 37.6×</strong> — it counts all 890,428 characters of skill documentation, when the actual standing exposure is 23,671 characters of description front matter, 2.7% of that</li>
+</ul>
+<p>And I had written in the same note that <em>“bloated standing context is the one item I never manage to keep.”</em></p>
+<h2 id="what-i-didnt-do">What I didn’t do</h2>
+<p>⚠ <strong>I did not measure whether my 69,871 standing characters actually degrade the first response.</strong> With no hook that can remove them, <strong>I have no way to build a control arm.</strong> That is “not measurable,” not “no problem here.” I will not use the target’s n=9 evidence to render a verdict on my own environment.</p>
+<p>⚠ I also do not know whether the target is genuinely bad. What I established is only that <strong>its numbers are unverified</strong> and that <strong>it cannot be installed in my environment</strong>; whether it earns its keep for someone running DSH is outside this investigation’s range.</p>
+<p>There are three reopening conditions. ① A hook opens that can <strong>remove</strong> context or the tool catalogue at the assembly stage. ② A head-to-head against the official stock preset comes in at n≥20 per cell with the confidence interval’s lower bound above zero. ③ An untreated holdout becomes available so I can build a control arm on my side.</p>
+<p><strong>The lesson I paid for here is not a technique but an order of operations — while I opened a third stranger’s preset for shrinking context, the instrument for measuring what to shrink was already in my drawer, sitting idle for 24 days with its scale off by a factor of 37.6.</strong> Collecting tools and measuring with them are different jobs, and the first keeps pushing the second back.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/memory/dsh-anchored-standard/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

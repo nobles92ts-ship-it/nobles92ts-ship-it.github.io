@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ip-as-logo — Agent harnesses</title><meta name="description" content="A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="ip-as-logo — Agent harnesses"><meta property="og:description" content="A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ip-as-logo — Agent harnesses"><meta name="twitter:description" content="A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ip-as-logo-skill/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/ip-as-logo-skill/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">20 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/" aria-current="page"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>ip-as-logo</h1><p class="sum">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</p><div class="meta"><span>7 techniques → 0</span><a class="src" href="https://github.com/s1dashu/ip-as-logo-skill" target="_blank" rel="noopener">github.com/s1dashu/ip-as-logo-skill ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is--the-product-is-114-lines-of-prose">What it is — the product is 114 lines of prose</a><a href="#the-techniques--aesthetics-written-as-numbers-not-adjectives">The techniques — aesthetics written as numbers, not adjectives</a><a href="#what-broke--a-core-invention-sat-in-a-file-the-agent-never-reads">What broke — a core invention sat in a file the agent never reads</a><a href="#held-against-my-own-setup--installing-it-leaves-nothing-to-call">Held against my own setup — installing it leaves nothing to call</a><a href="#and-then-the-last-takeaway-vanished--my-own-log-had-already-answered-it">And then the last takeaway vanished — my own log had already answered it</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>There is not one line of code in this repository.</strong> Five files, zero executable code, zero tests, zero dependencies. The substance is a single 114-line instruction sheet telling an image-generation agent how to draw a mascot, which makes it the best specimen I have torn down for seeing <strong>the minimum unit of a skill</strong>. But one of the two pillars I had called its core invention <strong>lives only in <code>README.md</code> and appears nowhere in <code>SKILL.md</code></strong> — and <code>SKILL.md</code> is the only file the agent loads, so its runtime effect is zero. The other pillar, a set of numeric budgets, was a value that flipped four times inside 45 hours. The verdict is rejection, and the ground is not taste: <strong>this machine has zero image-generation tools, so installing it leaves nothing to call.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 286" role="img" aria-label="The structure of this skill. The product body is a single instruction sheet holding a thirteen-step workflow and a set of hand-off rules. The six candidate images are not free generation but three directions times two variants, with lower-left and lower-right pre-assigned by label. One of its headline inventions, however, lives only in the README and never runs.">
+  <text class="lbl" x="8" y="22">five files ship, but the agent reads only SKILL.md</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="88" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="60" text-anchor="middle">① one prompt file = the product</text>
+  <text class="cap" x="168" y="82" text-anchor="middle">SKILL.md — 114 lines · 16,976 B</text>
+  <text class="cap" x="168" y="104" text-anchor="middle">code, tests, deps all zero</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="88" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="60" text-anchor="middle">② a 13-step workflow</text>
+  <text class="cap" x="500" y="82" text-anchor="middle">skim the repo → one question round</text>
+  <text class="cap" x="500" y="104" text-anchor="middle">3 directions → approval → 6 images</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="88" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="60" text-anchor="middle">③ hand-off rules</text>
+  <text class="cap" x="832" y="82" text-anchor="middle">no check, filter, retry or fixup</text>
+  <text class="cap" x="832" y="104" text-anchor="middle">label them all, pass them through</text>
+  <text class="lbl" x="8" y="152">the six aren't free generation — one variable moves, the slots are pre-assigned by label</text>
+  <rect class="vn vn-b" x="8" y="164" width="156" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="86" y="190" text-anchor="middle">A1 lower-left</text>
+  <rect class="vn vn-a" x="173" y="164" width="156" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="251" y="190" text-anchor="middle">A2 lower-right</text>
+  <rect class="vn vn-b" x="338" y="164" width="156" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="416" y="190" text-anchor="middle">B1 lower-left</text>
+  <rect class="vn vn-a" x="503" y="164" width="156" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="581" y="190" text-anchor="middle">B2 lower-right</text>
+  <rect class="vn vn-b" x="668" y="164" width="156" height="42" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="746" y="190" text-anchor="middle">C1 lower-left</text>
+  <rect class="vn vn-a" x="833" y="164" width="156" height="42" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="911" y="190" text-anchor="middle">C2 lower-right</text>
+  <line class="rule" x1="8" y1="224" x2="992" y2="224"/>
+  <text class="cap cap-i" x="8" y="248">⇒ a <tspan class="cap-p">deterministic experiment design</tspan> laid over a stochastic generator — the least obvious part</text>
+  <text class="cap" x="8" y="272">⚠ yet the other invention I credited sits in README, not in SKILL.md</text>
+</svg>
+<figcaption>Counting five files tells you nothing about this thing. One instruction sheet is the product, and every executing party is the host agent.</figcaption>
+</figure>
+<h2 id="what-it-is--the-product-is-114-lines-of-prose">What it is — the product is 114 lines of prose</h2>
+<p><strong>One skill in the Agent Skills format.</strong> <code>SKILL.md</code> plus its frontmatter is the whole of it — no parser, no validator, no post-processor, no style reference images. So “installing” is copying a file, “fixing a bug” is editing a sentence, and the concept of a release does not exist.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured 2026-08-22</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files</td>
+<td>5 · 739,374 B checked out — <strong>96% of that is one showcase image</strong> (713 KB, zero runtime role)</td>
+</tr>
+<tr>
+<td>The product</td>
+<td><code>SKILL.md</code>, 114 lines / 16,976 B. A 13-step workflow plus an 8-line prompt skeleton</td>
+</tr>
+<tr>
+<td>Code</td>
+<td><strong>0 lines.</strong> The GitHub languages API answers with <code>{}</code></td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td>0. The one runtime dependency is “the host agent owns an image generator”</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>3,481 stars · 171 forks · <strong>3 watchers</strong> · 1 contributor · 0 external PRs</td>
+</tr>
+<tr>
+<td>Versioning</td>
+<td>0 releases · 0 tags · 0 changelog — users tell versions apart by commit timestamp</td>
+</tr>
+<tr>
+<td>Lifespan</td>
+<td>29 commits packed into <strong>45 hours</strong>, then a stop</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The operating rules all sit in those 13 steps.</strong> With no subject given and the current workspace being a product repo, it read-only skims the README, the package metadata and the landing copy → if that still isn’t enough it fires background questions in <strong>exactly one round</strong> (a second questionnaire is forbidden) → it offers three one-line directions and <strong>generates nothing before agreement.</strong> On approval it makes two variants per direction, six images in total.</p>
+<p>The prompt is pinned down too, as a fixed eight-line format: <code>Background / Subject / Complexity / Color behavior / Composition / Style / Finish / Constraints</code>. So what this repository actually is, is <strong>one hardened prompt plus a procedure for when and how to fire it.</strong></p>
+<h2 id="the-techniques--aesthetics-written-as-numbers-not-adjectives">The techniques — aesthetics written as numbers, not adjectives</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>What it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complexity budget</strong></td>
+<td>Outer silhouette = 4–7 large shapes, ≤1 species-identifying feature, ≤2 interior colour regions, 85–95% canvas coverage. It closes with a shrink test: “if it doesn’t read at 32×32, enlarge, merge or delete”</td>
+</tr>
+<tr>
+<td><strong>Three-colour semantic palette</strong></td>
+<td>Colours are counted <strong>as meanings, not pixels.</strong> Value and saturation variation is explicitly declared incidental drift inside one colour family, not a violation</td>
+</tr>
+<tr>
+<td><strong>Corner emergence + deterministic assignment</strong></td>
+<td>The character rises out of the lower-left or lower-right corner rather than the centre, and placement is fixed by label rather than by feel (A1·B1·C1 = left, A2·B2·C2 = right). An odd count must have its imbalance written into the report</td>
+</tr>
+<tr>
+<td><strong>Purpose-hiding prompts</strong></td>
+<td>Even though the repo is named ip-as-logo, the model is <strong>never</strong> told the output is a <code>logo</code>, <code>brand mark</code> or <code>app icon</code>. The reasoning is that naming the purpose drags the model toward cards, frames, masks and text</td>
+</tr>
+<tr>
+<td><strong>Constraint routing</strong></td>
+<td>Negative constraints travel by a different channel per model generation — newer models get one inline <code>Constraints:</code> line, older ones exposing <code>negative_prompt</code> get the dedicated parameter and the inline line is deleted (no double delivery)</td>
+</tr>
+<tr>
+<td><strong>One-pass unvetted hand-off</strong></td>
+<td>The most unusual part. Inspecting, grading, retrying or post-processing the output is <strong>entirely forbidden</strong>; whatever came back is labelled and passed through</td>
+</tr>
+</tbody>
+</table>
+<p>The sentence behind the unvetted hand-off is this one — <em>“Treat generation as a stochastic draw, not a conformance test.”</em> It was not that way from the start: <strong>the author tore his own review loop out within two days.</strong></p>
+<p><strong>What this section cost me to learn — writing a number and enforcing a number are different jobs.</strong> The 4–7 and the 85–95% are targets thrown at a probabilistic model in natural language, and the lines of code that count compliance number zero. The author himself renamed the section from “What it enforces” to <strong>“What it guides”</strong>, conceding that it does not enforce.</p>
+<h2 id="what-broke--a-core-invention-sat-in-a-file-the-agent-never-reads">What broke — a core invention sat in a file the agent never reads</h2>
+<p><strong>The rule that “95–100% of open briefs should be a familiar animal” is not in <code>SKILL.md</code>.</strong> Grepping, <code>animal</code> appears in two places: the frontmatter lists animals, robots, ghosts, plants and objects as <strong>equals</strong>, and line 18 of the body says the opposite — <em>“don’t line up three animals with no reason.”</em> <code>95</code>, <code>clock</code> and <code>vehicle</code> appear zero times. That rule lives only in <code>README.md</code>, and as the README itself states, the agent loads exactly one file: <code>SKILL.md</code>. <strong>In the docs and absent from the artifact means zero runtime effect.</strong></p>
+<p><strong>The “must read at 32×32” requirement doesn’t lack a judging device — it had one and it was deleted.</strong> An earlier revision carried an eleven-item “when to mark as not recommended” checklist whose first line was <em>“it collapses at small sizes.”</em> One commit removed that section and the retry loop wholesale and replaced them with the hand-off rules. Today, inside the same file, line 41 (merge or delete if it’s small) and line 113 (never block hand-off over detail or composition) <strong>cancel each other out.</strong></p>
+<p><strong>The compatibility claim didn’t hold either.</strong> The README lists seven supported agents, but the canonical target list of the <strong>one install command the same README prescribes</strong> is missing four of them. Conversely, most of the installable targets lack the “built-in generator that returns images as assets” the README declares mandatory. The real intersection is about two, which matches the field reports in the open issues.</p>
+<p><strong>And there is one place where it shot its own foot.</strong> The author scoped his own “never name the purpose” rule with <em>“this rule applies to generation prompts only”</em> — and then, in the same commit, <strong>stripped logo, mascot and app-icon out of the frontmatter <code>description</code>.</strong> That sentence is the only text an agent reads when deciding whether to auto-invoke the skill. Not one keyword is left for “make me a logo” to catch on.</p>
+<p><strong>What held up is worth recording too.</strong> 3,481 stars · 171 forks · 3 watchers matched my measurement, and so did the 739 KB checkout. My first-pass line that <em>“all three external issues went unanswered”</em> <strong>I retract</strong> — the maintainer replied to all three, but engaged only with the collaboration offer and <strong>selectively skipped the two technical defects.</strong> That is not neglect, it is selective avoidance, and the distinction is what sharpens the verdict.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 336" role="img" aria-label="Five rules the repository advertises, checked directly against the executable artifact. The animal rule appears zero times in SKILL.md and lives only in the README, the 32 by 32 requirement had its review checklist deleted by the author, four of the seven supported agents are absent from the install CLI target list, the canvas coverage number changed four times in 45 hours, and while it asks for the saved path to be reported no sentence says where to save.">
+  <text class="lbl" x="8" y="22">five advertised rules — checked directly against the executable artifact</text>
+  <line class="rule" x1="8" y1="34" x2="992" y2="34"/>
+  <text class="cap cap-i" x="8" y="60">95–100% familiar animals</text>
+  <text class="cap" x="430" y="60">→</text>
+  <text class="cap cap-p" x="462" y="60">zero hits in SKILL.md — it lives only in README</text>
+  <line class="rule" x1="8" y1="76" x2="992" y2="76"/>
+  <text class="cap cap-i" x="8" y="102">must read at 32×32</text>
+  <text class="cap" x="430" y="102">→</text>
+  <text class="cap cap-p" x="462" y="102">the 11-item review checklist was deleted</text>
+  <line class="rule" x1="8" y1="118" x2="992" y2="118"/>
+  <text class="cap cap-i" x="8" y="144">7 supported agents</text>
+  <text class="cap" x="430" y="144">→</text>
+  <text class="cap cap-p" x="462" y="144">4 are absent from the install CLI target list</text>
+  <line class="rule" x1="8" y1="160" x2="992" y2="160"/>
+  <text class="cap cap-i" x="8" y="186">85–95% canvas coverage</text>
+  <text class="cap" x="430" y="186">→</text>
+  <text class="cap cap-p" x="462" y="186">changed 4 times in 45 hours · 3 hours old</text>
+  <line class="rule" x1="8" y1="202" x2="992" y2="202"/>
+  <text class="cap cap-i" x="8" y="228">report the saved path</text>
+  <text class="cap" x="430" y="228">→</text>
+  <text class="cap cap-p" x="462" y="228">not one sentence says where to save it</text>
+  <line class="rule" x1="8" y1="244" x2="992" y2="244"/>
+  <text class="cap cap-i" x="8" y="274">⇒ four of the five aren't false — they <tspan class="cap-p">never run</tspan>. In the docs, absent from the artifact</text>
+  <text class="cap" x="8" y="298">the same commit stripped logo and mascot from the frontmatter, so "make me a logo" never fires it</text>
+  <text class="cap" x="8" y="322">7 candidate techniques · 0 adopted — zero action items, only reopen conditions remain</text>
+</svg>
+<figcaption>What broke was not whether the numbers were true, but whether they run at all. Two sources of truth always drift apart.</figcaption>
+</figure>
+<h2 id="held-against-my-own-setup--installing-it-leaves-nothing-to-call">Held against my own setup — installing it leaves nothing to call</h2>
+<p><strong>This skill’s single runtime dependency does not hold on my machine.</strong> I swept the full text of all 99 of my <code>SKILL.md</code> files for image-generation vocabulary and got eight hits — <strong>every one a false positive</strong>, <code>dall</code> matching inside <code>ReadAll</code> and <code>findAll</code>. Zero local diffusion stack, zero generation tools in the session tool roster. Install it and there is no call site.</p>
+<p>Held against the remaining intellectual assets, my side was already stronger.</p>
+<table>
+<thead>
+<tr>
+<th>Their technique</th>
+<th>My counterpart</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complexity budget (numeric ceilings)</td>
+<td>This site’s <code>scripts/check-weight.mjs</code> — 10 numeric ceilings, <strong>the derivation of each number re-derived in a comment</strong>, and <code>exit 1</code> blocking the deploy on breach</td>
+<td>strict superset</td>
+</tr>
+<tr>
+<td>Output review gate (which they deleted)</td>
+<td>The mindmap generator’s <code>check.py</code> — three deterministic checks over a probabilistic artifact; without <code>RESULT: PASS</code> it cannot enter a report</td>
+<td>opposite direction</td>
+</tr>
+<tr>
+<td>One-round question ceiling</td>
+<td>My comprehension skill’s <code>SKILL.md</code> — <strong>at most one</strong> calibration question, none if the answer is obvious. And it is explicit-invocation only, so the ordinary question count is zero</td>
+<td>already stronger</td>
+</tr>
+<tr>
+<td>Absorbing repo context first</td>
+<td>15 global rule documents injected in full at session start, plus the project <code>CLAUDE.md</code> importing <code>DESIGN.md</code></td>
+<td>wiring, not instruction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>They wrote numbers down; I enforce numbers.</strong> Where the difference comes from is visible in the measurements too — this repository deleted its most quantitative element, the colour band (OKLCH ranges, contrast-ratio targets), <strong>12.5 hours after introducing it</strong>, with no stated reason anywhere. Whether it was dropped for having no effect or because the model ignored it is unknowable, which means someone repeats the same investigation six months from now.</p>
+<p><strong>There is also no slot for the output.</strong> This site’s design contract is locked with <em>“no photographs on cards”</em> and <em>“every body figure is inline SVG”</em>, and the real contents of <code>public/</code> are a 327 B favicon and two share cards. There is nowhere to hang a 1536×1536 raster mascot. One side risk as well: this skill’s <code>description</code> runs 415 characters and contains <strong>none</strong> of <code>logo</code>, <code>mascot</code>, <code>brand</code> or <code>icon</code>. It would cost standing tokens and never fire.</p>
+<h2 id="and-then-the-last-takeaway-vanished--my-own-log-had-already-answered-it">And then the last takeaway vanished — my own log had already answered it</h2>
+<p><strong>In the first pass I kept one.</strong> I wrote that I would add “when fanning out candidates, move one variable and pre-assign the slots by label” as a section of my own hook playbook. The stated benefit was <em>“today only the chosen sentence survives, not what I changed to win, so after thirty-odd issues I still can’t count performance by hook type.”</em></p>
+<p><strong>That statement was false.</strong> Opening the publishing log, every issue already records its hook type as a label, marks first-time types with an <code>(unused)</code> tag 25 times over, runs an explicit single-variable discipline in lines like <em>“format and length changed together — not a single variable”</em>, and <strong>already aggregates performance by sentence form</strong> in a top-ten table. There is even a recorded rejected hypothesis: seeing reach fall as star counts rose, I had written <em>“the strategy of using stars as social proof is rejected.”</em> Worse, the experimental axis I was proposing was <strong>an axis already judged low-yield</strong> — two deliberately matched replications, aligned item by item on hook, format, length and topic, came out <strong>18,000 against 423, a factor of 43.</strong></p>
+<p><strong>The most expensive fact in this piece is not about the target but about my own assets — what I was trying to learn from someone else’s repository, I had already been doing for thirty-odd issues, and what that accumulation concluded was “changing the hook doesn’t help.”</strong> The same disease shows on both sides. They deleted their own numbers without a line of reasoning; I kept my records and then failed to read them, so I went shopping for someone else’s. <strong>Keeping a record and reading that record are different jobs.</strong></p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install the skill</td>
+<td><strong>Rejected</strong> — its one runtime dependency (an image generator) is zero on this machine</td>
+</tr>
+<tr>
+<td>Complexity budget</td>
+<td><strong>Rejected</strong> — <code>check-weight.mjs</code> is a strict superset (enforcing code plus stated derivation)</td>
+</tr>
+<tr>
+<td>One-round question ceiling · absorbing context first</td>
+<td><strong>Rejected</strong> — already wired more strongly</td>
+</tr>
+<tr>
+<td>One-pass unvetted hand-off</td>
+<td><strong>Cautionary example</strong> — every gate of mine is fail-closed</td>
+</tr>
+<tr>
+<td>Purpose-hiding prompts</td>
+<td><strong>On hold</strong> — not a duplicate, but <strong>there is no surface to apply it to.</strong> My card pipeline is HTML rendering, so the prompt surface itself is zero</td>
+</tr>
+<tr>
+<td>Candidate fan-out labelling</td>
+<td><strong>Adopted → rejected</strong> — my publishing log was already doing it, and that axis is already low-yield</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zero action items.</strong> What remains is only the reopen conditions. ① When an image-generation path exists on this machine. What I would measure then is the difference between “paste the prompt skeleton only” and “install the skill.” ② When my game work actually needs mascots or icons. Games sit outside this site’s figure policy, which releases one of the rejection grounds. ③ When upstream acquires a concept of versions. Conversely, <strong>a rising star count is not a reopen signal</strong> — stars ticked from 3,480 to 3,487 over this teardown while watchers stayed at 3, contributors at 1, and external PRs at 0.</p>
+<p><strong>Here is what I did not do.</strong> I <strong>never generated a single image.</strong> So this repository’s central claim — whether 4–7 shapes, three colours and 85–95% canvas coverage actually hold — <strong>stands at a sample size of zero.</strong> They didn’t measure it and neither did I; what this page established is “is the rule in the executable artifact”, not “does the rule land in the picture.” The deployed site renders client-side, so I could not machine-fetch the text of its terms of service, and the site source is split into a private repository and cannot be audited. <strong>The rights to a generated image are decided not by the repository’s MIT licence but by the terms of whichever image model you attached</strong> — and that fact is disclosed nowhere in the repository.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/harness/ip-as-logo-skill/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

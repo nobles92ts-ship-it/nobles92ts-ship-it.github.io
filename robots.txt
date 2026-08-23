@@ -1,0 +1,10 @@
+# 전부 열어 둔다. 막을 것이 없다 — 로그인도, 관리 화면도, 개인 데이터도 없는 정적 사이트다.
+User-agent: *
+Allow: /
+
+# ⚠ 색인 파일은 사람이 읽는 페이지가 아니라 검색창이 쓰는 데이터다.
+#   막지 않으면 본문 조각이 검색 결과에 페이지처럼 뜬다.
+Disallow: /search-index-ko.json
+Disallow: /search-index-en.json
+
+Sitemap: https://nobles92ts-ship-it.github.io/sitemap.xml

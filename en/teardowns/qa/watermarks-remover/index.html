@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>watermarks-remover — QA automation</title><meta name="description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="watermarks-remover — QA automation"><meta property="og:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="watermarks-remover — QA automation"><meta name="twitter:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="stylesheet" href="/_astro/Shell.CRY3Y6I_.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/watermarks-remover/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">20 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/" aria-current="page"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>watermarks-remover</h1><p class="sum">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</p><div class="meta"><span>4 takeaways → 1.5</span><a class="src" href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">github.com/guillaumemeyer/watermarks-remover ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is--it-refuses-to-add-verified-and-best-effort-together-in-one-report">What it is — it refuses to add “verified” and “best-effort” together in one report</a><a href="#the-techniques--the-value-isnt-the-erasing-code-its-what-it-does-when-it-doesnt-know">The techniques — the value isn’t the erasing code, it’s what it does when it doesn’t know</a><a href="#what-broke--the-dominant-failure-isnt-malfunction-its-a-false-acquittal">What broke — the dominant failure isn’t malfunction, it’s a false acquittal</a><a href="#held-against-my-own-setup--there-was-nothing-to-catch">Held against my own setup — there was nothing to catch</a><a href="#takeaways--from-four-down-to-one-and-a-half">Takeaways — from four down to one and a half</a><a href="#incidentally--my-collector-nominated-the-clone-not-the-original">Incidentally — my collector nominated the clone, not the original</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>I erased nothing, and instead found my own deploy script breaking my own rule.</strong> watermarks-remover is a Python engine that strips provenance markers out of AI-generated files. 16,619 stars in eleven days. I opened it not to strip anything but <strong>to audit the inspection gate in my publishing pipeline</strong> — is the pre-deploy marker scan leaking anywhere, and can “even sentence rhythm”, a rule of mine with exactly zero checkers behind it, be turned into deterministic code. I rejected the tool wholesale. Running this repository’s scanner over my 6.1MB publishing corpus returned <strong>zero markers</strong>. But when I ran the one metric I did want over my own writing, the most expensive fact of the piece came out — <strong>the metric built to catch AI caught what I had written by hand, first.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 350" role="img" aria-label="This tool sends every input through a router that decides the kind first, and unknown bytes are refused rather than passed through. From there it splits three ways: the deterministic layer that removes invisible Unicode and the file metadata layer are both verifiable, while the layer that attacks token-sampling watermarks by LLM rewriting is declared unverifiable by the repository itself. The same engine ships as a CLI, as a dependency-free HTTP service, and as an agent skill that contains no code.">
+  <text class="lbl" x="8" y="20">one input, three branches — the router decides the kind first</text>
+  <rect class="vn vn-a" x="8" y="32" width="984" height="54" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="54" text-anchor="middle">router — extension first, magic bytes second, into five kinds</text>
+  <text class="cap" x="500" y="76" text-anchor="middle">no match → unknown: it writes no file and dies with exit code 2 (fail-closed)</text>
+  <path d="M500 86 V100" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="8" y="100" width="320" height="86" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="126" text-anchor="middle">A. Invisible Unicode</text>
+  <text class="cap" x="168" y="148" text-anchor="middle">zero-width · bidi · tags · noncharacters</text>
+  <text class="cap" x="168" y="170" text-anchor="middle">the count removed is verifiable</text>
+  <rect class="vn vn-a" x="340" y="100" width="320" height="86" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="126" text-anchor="middle">B. Token-sampling watermark</text>
+  <text class="cap" x="500" y="148" text-anchor="middle">attacked by LLM rewriting</text>
+  <text class="cap" x="500" y="170" text-anchor="middle">declared unverifiable by design</text>
+  <rect class="vn vn-a" x="672" y="100" width="320" height="86" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="126" text-anchor="middle">File layer — C2PA · EXIF · XMP</text>
+  <text class="cap" x="832" y="148" text-anchor="middle">images · docs · audio, 20+ formats</text>
+  <text class="cap" x="832" y="170" text-anchor="middle">rescans its own output afterwards</text>
+  <text class="lbl" x="8" y="214">the same engine ships three faces — and the heavy parts are left out</text>
+  <rect class="vn vn-a" x="8" y="226" width="320" height="44" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="168" y="253" text-anchor="middle">CLI — inspect · clean · audit</text>
+  <rect class="vn vn-a" x="340" y="226" width="320" height="44" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="500" y="253" text-anchor="middle">stdlib HTTP service, zero deps</text>
+  <rect class="vn vn-a" x="672" y="226" width="320" height="44" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="832" y="253" text-anchor="middle">agent skill — no code, just curl</text>
+  <line class="rule" x1="8" y1="292" x2="992" y2="292"/>
+  <text class="cap cap-i" x="8" y="316">⇒ what it can claim to erase is <tspan class="cap-p">A and the file layer only</tspan> — B is written up as unverifiable by the repo itself</text>
+  <text class="cap" x="8" y="340">Heavy backends — pixel removal, scoring — aren't bundled; they're pulled from outside at pinned commits, for licence isolation</text>
+</svg>
+<figcaption>Counting twenty formats tells you nothing about this thing. Splitting the verifiable layer from the unverifiable one at the code path is what it is.</figcaption>
+</figure>
+<h2 id="what-it-is--it-refuses-to-add-verified-and-best-effort-together-in-one-report">What it is — it refuses to add “verified” and “best-effort” together in one report</h2>
+<p><strong>An engine that strips the evidence of “an AI made this” out of files an AI made.</strong> It treats that evidence as three separate species. Carriers planted as invisible Unicode, statistical watermarks planted by skewing token-selection probability at generation time, and provenance metadata embedded as structure inside the file.</p>
+<p><strong>The design centres on admitting that those three are not the same kind of thing.</strong> Unicode is removed by deterministic code and the count removed is handed back. File metadata is removed and then the tool rescans its own output and reports what survived. The statistical watermark, by contrast, has no attack other than asking an external LLM to rewrite the prose, and that cannot be verified. The repository policy says so: <em>“reports must separate verifiable work from best-effort work.”</em> <strong>That single line is the most valuable sentence in here.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured 2026-08-22</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scale</td>
+<td>151 files · ~1.13MB · 16,619 stars · 1,902 forks</td>
+</tr>
+<tr>
+<td>Engine / tests</td>
+<td><code>service/scripts</code> <strong>14,141 LOC</strong> · 41 test files, 10,592 LOC · <code>def test_</code> <strong>549</strong></td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td><strong>zero at runtime</strong> (Python 3.10+ stdlib). Four dev deps, exactly pinned</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>MIT — ⚠ the pixel-side backends sit outside the umbrella (no licence upstream / non-commercial research)</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>created 08-11 → last push 08-21. <strong>Eleven days alive</strong>, 141 commits, 5 releases</td>
+</tr>
+<tr>
+<td>Contributors</td>
+<td>27 people, but the owner has 63/122 — <strong>bus factor 1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>This is an eleven-day sprint.</strong> 16,619 stars is virality, not adoption, and there is no long-term maintenance record yet. CI runs a three-OS matrix with lint, dependency audit and OpenAPI schema validation, which looks solid for its age — and what that solidity fails to catch comes later.</p>
+<h2 id="the-techniques--the-value-isnt-the-erasing-code-its-what-it-does-when-it-doesnt-know">The techniques — the value isn’t the erasing code, it’s what it does when it doesn’t know</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fail-closed routing</strong></td>
+<td>Input that matches neither an extension nor a magic byte used to fall back to text. Now it writes no file and dies with exit code 2. And <em>“it won’t decode as UTF-8”</em> alone is not treated as proof of binary, so text in other encodings survives</td>
+</tr>
+<tr>
+<td><strong>context-aware stripping</strong></td>
+<td>The same codepoint is handled differently depending on its neighbours — ZWJ survives only between emoji, the Hangul filler only after the same jamo. Unassigned characters are matched by <strong>explicit ranges, not</strong> by Unicode category. The reason sits in a comment: <strong>“the Cn rule destroys freshly assigned real characters.”</strong> They shipped that bug and repaired it afterwards</td>
+</tr>
+<tr>
+<td><strong>two-stage PDF pipeline</strong></td>
+<td>The metadata tool updates PDFs incrementally — exit code 0, invisible in a viewer, and <strong>the original bytes are still there and recoverable.</strong> The only clue is that the file gets bigger. So a re-serialisation stage was bolted on behind it to actually drop the orphaned objects</td>
+</tr>
+<tr>
+<td><strong>rescan after cleaning</strong></td>
+<td>It doesn’t stop at <em>“removed”</em> — the output goes back through inspection and residue is reported. “Clean” and “cleaned but residue remains” are different exit codes</td>
+</tr>
+<tr>
+<td><strong>four confidence grades</strong></td>
+<td>Every finding maps to confirmed / probable / informational / <strong>likely_false_positive</strong>, and the whole-byte scan demotes itself to the lowest grade: <strong>“a scanner hit is a signal, not a verdict.”</strong></td>
+</tr>
+<tr>
+<td><strong>tool version probing</strong></td>
+<td>Being on PATH does not make a tool available — it actually runs <code>--version</code> and reads the exit code: <strong>“<code>which</code> alone answers the wrong question.”</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>And there is one more — the protagonist of this piece.</strong> Bolted alongside the watermark work is a scorer that grades <strong>“AI smell”</strong> statistically. It is a weighted sum of three terms: cliché-dictionary density 0.45, <strong>coefficient of variation of sentence length</strong> 0.45, lexical diversity 0.10. With fewer than two sentences the CV term is dropped and the rest renormalised.</p>
+<h2 id="what-broke--the-dominant-failure-isnt-malfunction-its-a-false-acquittal">What broke — the dominant failure isn’t malfunction, it’s a false acquittal</h2>
+<p><strong>Even the half it calls certain wobbles.</strong> The C2PA 2.x standard includes a soft-binding resolution API as a first-class feature: when the manifest embedded in the file is torn out, an invisible watermark or perceptual fingerprint queries a remote store and recovers the provenance. <strong>What this repository removes is precisely the side the standard already designed to be removable</strong>, and the repository says soft bindings are out of scope.</p>
+<p><strong>Two of the four headline vendor-coverage cells have no live detection path.</strong> Anthropic’s marker is, per the public statement, a statistical watermark that changes the randomness source of token generation, not a Unicode carrier. Which means the deterministically verifiable layer cannot touch it at all, and the corresponding detector in the code is a reserved slot with no logic. The Gemini cell has its death certificate written by the repository itself — upstream withdrew text watermarking from the API.</p>
+<p><strong>There are no efficacy numbers anywhere.</strong> In 73,956 bytes of README there are <strong>zero</strong> efficacy figures in percentage form, and <strong>zero</strong> committed benchmark results in the bench folder. And <strong>the owner opened two PRs that would have made results producible, then closed both unmerged.</strong> It isn’t that the numbers don’t exist yet — the apparatus to produce them was brought in twice and withdrawn twice.</p>
+<p><strong>The recurring defect has one shape: it failed to remove something and then certified the file clean.</strong> Nine issues of the same shape opened in six days. A truncated audio tag is reported as zero findings and that file gets a clean certificate; a dead image scorer and a genuine absence of watermark both read as <code>clean</code>. <strong>It folds a parse failure into “nothing found”</strong>, it is being fixed case by case, and the remaining formats should be assumed to hold more of it. One of them is irreversible — run the in-place fix twice and the backup file is overwritten with the cleaned copy, destroying the original permanently, while the docstring of that same function promises <em>“the original is never partially lost.”</em></p>
+<p><strong>Why 549 tests don’t catch this</strong> is answered on the tracker. Asked <em>“are contributors using Claude”</em>, the owner said yes. Fourteen thousand lines of code plus 10.6k lines of tests in eleven days. <strong>When code and tests come out of the same generator on the same pass, the tests cannot in principle cover the generator’s blind spots.</strong> That matters more than the missing coverage gate.</p>
+<p><strong>In fairness, I withdraw two of my own first-pass calls.</strong> The issue claiming the advertised video path corrupts files <strong>was already fixed</strong> — the box to be deleted is replaced by a zero-filled box of the same size, so the offset table stays valid. ⚠ Reading “the related string isn’t in the code” as “not fixed” is a misdiagnosis. The other was that I carried over <strong>the word SSRF from the issue title</strong>, and that was an overstatement — the endpoint comes from an operator environment variable, not attacker input, so the real defect is not an internal-network pivot but auth tokens and bodies leaking on redirect. <strong>An issue title is not a fact; it is somebody else’s verdict.</strong></p>
+<p><strong>What I could not do.</strong> I could not run this repository’s own benchmark — it needs a GPU and four external checkouts, and all eight corpus seeds are English. So <em>“how much does it actually erase”</em> <strong>remains unmeasured on this page too.</strong> I have also never pointed this tool at a file that actually carries a watermark, because there is no such file in my environment.</p>
+<h2 id="held-against-my-own-setup--there-was-nothing-to-catch">Held against my own setup — there was nothing to catch</h2>
+<p>I imported the scanner from the repository HEAD as-is and ran it over my entire publishing corpus.</p>
+<table>
+<thead>
+<tr>
+<th>What I measured</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invisible Unicode — 196 documents + 238 static HTML pages + 7 drafts (6.1MB)</td>
+<td><strong>zero</strong></td>
+</tr>
+<tr>
+<td>Clean-function round trip — same 196, both default and paranoid</td>
+<td><strong>196/196 byte-identical</strong> = a pure no-op</td>
+</tr>
+<tr>
+<td>C2PA and AI metadata across 14 published images</td>
+<td><strong>14/14 absent</strong> — headless-render output never carries any</td>
+</tr>
+<tr>
+<td>Widened to local brain files (195 skills + 180 memory notes)</td>
+<td>7 hits across 5 files — all outside the publishing path, no action needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>There was no target.</strong> A gate with zero risk of damage and zero changes made is not a gate, it is decoration.</p>
+<p><strong>The one thing I did want, the AI-smell scorer, loses half of itself in Korean.</strong> Of 24 cliché patterns, <strong>zero</strong> are non-ASCII, so a term carrying weight 0.45 is permanently zero. Scoring a matched control in both languages gave English 0.887 (HIGH) against Korean 0.438 (LOW) — <strong>the 0.65 threshold is unreachable in Korean</strong> (theoretical ceiling about 0.55). So I pulled out the one language-neutral term and measured again.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 320" role="img" aria-label="Coefficient of variation of sentence length, run over three corpora with the same script. The 98 long-form site documents have a median of 0.668, comfortably high, but one short piece I had already written and published sits at 0.298, below the 0.35 threshold. The Korean AI control is 0.055. A short human piece sits closer to the AI end than a long human piece does.">
+  <text class="lbl" x="8" y="20">Coefficient of variation of sentence length — lower is more even. Same script over three corpora</text>
+  <line class="tick" x1="588" y1="30" x2="588" y2="174"/>
+  <rect class="bar" x="238" y="36" width="668" height="20" rx="2"/>
+  <text class="cap" x="230" y="51" text-anchor="end">site long-form, median of 98</text>
+  <text class="cap" x="914" y="51">0.668</text>
+  <rect class="bar bar-p" x="238" y="64" width="230" height="20" rx="2"/>
+  <text class="cap" x="230" y="79" text-anchor="end">└ lowest of the 2 below</text>
+  <text class="cap cap-p" x="476" y="79">0.230</text>
+  <rect class="bar" x="238" y="92" width="550" height="20" rx="2"/>
+  <text class="cap" x="230" y="107" text-anchor="end">shorts — highest of 6</text>
+  <text class="cap" x="796" y="107">0.550</text>
+  <rect class="bar bar-p" x="238" y="120" width="298" height="20" rx="2"/>
+  <text class="cap" x="230" y="135" text-anchor="end">└ lowest, already published</text>
+  <text class="cap cap-p" x="544" y="135">0.298</text>
+  <rect class="bar bar-p" x="238" y="148" width="55" height="20" rx="2"/>
+  <text class="cap" x="230" y="163" text-anchor="end">Korean AI control</text>
+  <text class="cap cap-p" x="301" y="163">0.055</text>
+  <text class="cap cap-p" x="588" y="192" text-anchor="middle">threshold 0.35</text>
+  <line class="rule" x1="8" y1="210" x2="992" y2="210"/>
+  <text class="cap cap-i" x="8" y="234">⇒ <tspan class="cap-p">one already-published human piece sits below the line</tspan> — 1 in 6 false positives among the shorts</text>
+  <text class="cap" x="8" y="258">Long pieces scatter their rhythm; short ones are even no matter who writes them. This measures length, not authorship</text>
+  <text class="cap" x="8" y="282">So the 0.35 threshold was demoted to long-form only. The wiring for short channels was withdrawn</text>
+  <text class="cap cap-p" x="8" y="306">⚠ The control is a single piece I wrote — the absolute separation is untrustworthy. Only the relative comparison holds</text>
+</svg>
+<figcaption>In long-form, 2 of 98 fell below the line. Measured again on the shorts, where the gate would actually sit, it was 1 in 6.</figcaption>
+</figure>
+<p><strong>The 98 long-form site documents have a median of 0.668, spread comfortably wide.</strong> Only two sit below the 0.35 threshold, both short index-like pages, so the first pass wrote it off at <em>“2% false positives.”</em> <strong>But the place this gate was actually going to sit was not long-form — it was the short publishing drafts.</strong> Measuring those six again, they were squeezed into a narrow band from 0.298 to 0.550, and one of them — <strong>a piece I wrote by hand and had already published</strong> — sat at 0.298, below the line. Short writing is even, even when a human does it. <strong>What this metric measures is not who wrote it but how long they wrote.</strong></p>
+<h2 id="takeaways--from-four-down-to-one-and-a-half">Takeaways — from four down to one and a half</h2>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Call</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The sentence-rhythm CV term</strong></td>
+<td><strong>adopt (half)</strong></td>
+<td>A deterministic rhythm checker really is at zero on my side. But <strong>long-form only</strong>, and no threshold for short channels gets built until I measure a separate corpus</td>
+</tr>
+<tr>
+<td>The three-term weighted sum + renormalising a missing term</td>
+<td>⛔ <strong>rejected</strong></td>
+<td>I built a better version of this three weeks ago — the confidence scorer in my <a href="/en/built/tc-team/">test-case pipeline</a> has a rule table, clamped ceilings, optional inputs, a reverse-solved threshold sweep and a locked expectation table, with trap repairs like <em>“deductions on different axes must not cancel”</em> written into the comments</td>
+</tr>
+<tr>
+<td>fail-closed file selection</td>
+<td><strong>principle only</strong></td>
+<td>Not a technique to learn from someone else — <strong>one compliance defect of my own.</strong> Below</td>
+</tr>
+<tr>
+<td>The invisible-Unicode detection set</td>
+<td><strong>conditional hold</strong></td>
+<td>The measured benefit is zero, so it is justified only as insurance. A host already exists — my link checker walks all of <code>dist/</code> and loops over visible characters. This is three lines inside it, not a new file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The third row is the actual output of this investigation.</strong> The first line of my global rules says <em>“when in doubt or on failure, the default is to not do it”</em>, and the header comment of my deploy gate’s library describes itself as fail-closed. Yet the way that gate picks files is <strong>an extension whitelist</strong> — it inspects only the extensions it knows, which is fail-<strong>open</strong>. Real leakage today is zero, but the moment something like <code>.mjs</code> or <code>.rss</code> appears in the output, it passes uninspected <strong>without a single warning line.</strong></p>
+<p>⚠ <strong>And here I decided not to bring in someone else’s implementation.</strong> The repository decides with 28 magic-byte signatures plus NUL plus a control-character ratio, and at a scale of 259 files that table is maintenance debt. I get the same fail-closed behaviour in three lines — if an extension appears that is on none of the known lists, just stop. <strong>Principle adopted, implementation rejected.</strong></p>
+<h2 id="incidentally--my-collector-nominated-the-clone-not-the-original">Incidentally — my collector nominated the clone, not the original</h2>
+<p><code>Leutenegger/watermarks-remover</code> had come up in my candidate list. What the feed actually carried was <code>guillaumemeyer/watermarks-remover ★16,619</code>. <strong>They are different repositories.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Original</th>
+<th>Clone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created</td>
+<td>2026-08-11</td>
+<td><strong>2026-08-19</strong> (eight days later)</td>
+</tr>
+<tr>
+<td>Stars</td>
+<td>16,619</td>
+<td>929 (<strong>in three days</strong>)</td>
+</tr>
+<tr>
+<td>Fork flag</td>
+<td>false</td>
+<td><strong>false</strong> — not a GitHub fork</td>
+</tr>
+<tr>
+<td>README</td>
+<td>1,120 lines</td>
+<td><strong>1,058 of 1,063 lines identical</strong> to the original (99.5%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fifteen links pointing back to the original author’s repository are still sitting inside the clone’s README</strong> — the CI badges point at someone else’s repository. It is a whole-cloth copy with only the fork relationship severed. My candidate bridge looks at star counts and word rules only, so <strong>it cannot tell an original from a copy.</strong> Stars accumulating fast is not a signal that the tool is good, it is a signal that the topic caught fire — and a clone only has to borrow the topic.</p>
+<h2 id="verdict">Verdict</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt the repo, service, skill or Docker image</td>
+<td>⛔ <strong>Rejected.</strong> Not one file enters my tree</td>
+</tr>
+<tr>
+<td>The file-metadata / image / document paths</td>
+<td>⛔ <strong>Rejected.</strong> If I ever need them I will call the off-the-shelf tools directly — they don’t edit in place, so destroying an original is structurally impossible</td>
+</tr>
+<tr>
+<td>Takeaways</td>
+<td><strong>1.5</strong> — the rhythm CV term (long-form only) + restoring my own fail-closed compliance</td>
+</tr>
+<tr>
+<td>Bringing it into a work pipeline</td>
+<td>⛔ <strong>Inappropriate.</strong> Separate from the technical verdict</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Four conditions that reopen this</strong> — ① the semiannual rescan turns up its first marker, even one. ② a text-watermark detector validated in Korean appears; until then the rewriting layer has no means of verification, so no verdict on it is possible at all. ③ the PRs for the four data-loss and false-clean defects get merged and a release follows. ⚠ Even then, <strong>a fixed tool with no target is still a rejection</strong>, so I go back and measure ① first. ④ a workflow appears that distributes images or PDFs externally.</p>
+<p><strong>The lesson I paid for here isn’t a technique, it’s an order of operations — measure the false-positive rate on your own corpus before you bring in a detector.</strong> And measure it <strong>on the corpus where the gate will actually sit.</strong> I measured on site long-form, wrote “2% false positives”, then moved to the channel where that rule would live and it was 1 in 6 — and the piece it flagged was one I had written.</p>
+<p>One more thing. I tore down a repository with 16,619 stars, and what I was left with was <strong>one self-comparison: a line in my own deploy script breaks a line in my own rule document.</strong> The value of looking at someone else’s work is not only in what you carry back — hold up someone else’s principle against your own code and you see what your own principle never showed you.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/qa/watermarks-remover/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>
