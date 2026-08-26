@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nobles92ts-ship-it.github.io/en/</loc>
-    <lastmod>2026-08-26T00:52:18+09:00</lastmod>
+    <lastmod>2026-08-26T10:25:34+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"/>
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/ko/</loc>
-    <lastmod>2026-08-26T00:52:18+09:00</lastmod>
+    <lastmod>2026-08-26T10:25:34+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"/>
@@ -1626,14 +1626,14 @@
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/en/writing/</loc>
-    <lastmod>2026-08-18T19:07:06+09:00</lastmod>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/"/>
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/ko/writing/</loc>
-    <lastmod>2026-08-18T19:07:06+09:00</lastmod>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/"/>
@@ -1665,6 +1665,34 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/agents/silent-success/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/silent-success/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/agents/silent-success/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/en/writing/choosing/</loc>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/choosing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/ko/writing/choosing/</loc>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/choosing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/</loc>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/</loc>
+    <lastmod>2026-08-26T10:25:11+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/"/>
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/en/writing/measurement/</loc>
