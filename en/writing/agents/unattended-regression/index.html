@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Unattended regression is built by recovery, not speed — Running agents</title><meta name="description" content="A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="Unattended regression is built by recovery, not speed — Running agents"><meta property="og:description" content="A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unattended regression is built by recovery, not speed — Running agents"><meta name="twitter:description" content="A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="stylesheet" href="/_astro/Shell.BwZWVmkn.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/writing/agents/unattended-regression/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 Writing</div><div class="plist"><a href="/en/writing/verdicts/"><span class="t"><span>Verdicts</span><span class="kpi">3 posts</span></span><span class="s">The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.</span></a><a href="/en/writing/measurement/"><span class="t"><span>Measurement</span><span class="kpi">1 post</span></span><span class="s">Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.</span></a><a href="/en/writing/agents/" aria-current="page"><span class="t"><span>Running agents</span><span class="kpi">2 posts</span></span><span class="s">The other side — loops, guards, and the things I decided not to automate.</span></a><a href="/en/writing/choosing/"><span class="t"><span>Choosing</span><span class="kpi">2 posts</span></span><span class="s">Deciding whether to bring someone else&#39;s work in. What counts as grounds for rejection, and when a rejection gets reopened.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/writing/agents/silent-success/"><span class="t"><span>Agents are quiet when they fail</span><span class="kpi">88.3 minutes lost</span></span><span class="s">Running one unattended, the frightening thing isn&#39;t a wrong answer. A wrong answer is visible when you read it. The frightening thing is exit code 0.</span></a><a href="/en/writing/agents/unattended-regression/" aria-current="page"><span class="t"><span>Unattended regression is built by recovery, not speed</span><span class="kpi">one night, 300 cycles held</span></span><span class="s">A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Writing</span><span class="st">public</span></div><h1>Unattended regression is built by recovery, not speed</h1><p class="sum">A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off.</p><div class="meta"><span>one night, 300 cycles held</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#questions-this-answers">Questions this answers</a><a href="#ten-unattended-hours-were-built-by-recovery-not-by-speed">Ten unattended hours were built by recovery, not by speed</a><a href="#one-battery-point-is-the-pass-condition-for-running-unattended">One battery point is the pass condition for running unattended</a><a href="#a-wrong-tap-and-a-wrong-verdict-cost-different-amounts--so-i-split-the-evidence">A wrong tap and a wrong verdict cost different amounts — so I split the evidence</a><a href="#waiting-is-worse-than-failing-when-nobody-is-watching">Waiting is worse than failing when nobody is watching</a><a href="#grade-against-an-answer-key-and-every-failure-gets-a-subject">Grade against an answer key and every failure gets a subject</a><a href="#what-unattended-repetition-produces-is-accumulation-not-discovery">What unattended repetition produces is accumulation, not discovery</a><a href="#the-device-dependency-lived-in-exactly-one-bottom-layer">The device dependency lived in exactly one bottom layer</a><a href="#what-i-could-not-do">What I could not do</a></nav><div class="prose"><p>What made the overnight automation work was not fast code but <strong>knowing how to cut things off</strong>. One real device on a USB cable ran <strong>300 cycles across 9 hours 57 minutes</strong> unattended, with zero failures and zero crashes, and three parts made that finish possible — a recovery ladder that keeps a failure local, a cutoff so nothing waits forever, and putting the verdict in the logs rather than in pixels. Cycle wall-clock had a median of 111.5s but swung as high as 161.8s (<strong>1.45× the median</strong>), and it still finished, not because it was fast but because <strong>the swing did not spread sideways</strong>. The battery went from 96% to 95%, a net drop of one point — if drain outruns charging, no amount of correct code makes an overnight run possible, so that figure is not a performance metric but a <strong>pass condition</strong>. And what the unattended run actually produced was not a discovery. In <strong>147 of 300 cycles (49%)</strong> the same warning appeared in the log; it had been there the whole time and nobody had ever counted it. <strong>Frequency is a kind of evidence a human cannot produce.</strong> Finally, how long this asset survives came down to what the cases depend on — 126 written for the real device came back to life on a PC build once only the transport layer was swapped, and that was not good design but the fact that the device vocabulary lived in <strong>exactly one bottom layer</strong>. Half of that was luck.</p>
+<h2 id="questions-this-answers">Questions this answers</h2>
+<ul>
+<li><a href="#ten-unattended-hours-were-built-by-recovery-not-by-speed">How long can a real device run unattended</a></li>
+<li><a href="#one-battery-point-is-the-pass-condition-for-running-unattended">Can an Android device run overnight on a cable with nobody watching</a></li>
+<li><a href="#a-wrong-tap-and-a-wrong-verdict-cost-different-amounts--so-i-split-the-evidence">A game client exposes no UI tree — how do you drive it</a></li>
+<li><a href="#a-wrong-tap-and-a-wrong-verdict-cost-different-amounts--so-i-split-the-evidence">What does it mean to put the verdict in the logs</a></li>
+<li><a href="#waiting-is-worse-than-failing-when-nobody-is-watching">What happens if an overnight regression stalls halfway</a></li>
+<li><a href="#grade-against-an-answer-key-and-every-failure-gets-a-subject">How do I tell whether a FAIL is the product or my automation</a></li>
+<li><a href="#what-unattended-repetition-produces-is-accumulation-not-discovery">What can you actually find by running all night</a></li>
+<li><a href="#the-device-dependency-lived-in-exactly-one-bottom-layer">Can device test cases be reused on a PC build</a></li>
+<li><a href="#what-i-could-not-do">What does unattended regression fail to see</a></li>
+</ul>
+<p>How to locate a bottleneck when a run is slow is in <a href="/en/writing/measurement/baselines/">all four times the numbers were right</a>, and where a result goes when it is neither PASS nor FAIL is in <a href="/en/writing/verdicts/threshold/">the threshold piece</a>. This piece covers only what sits between them — <strong>how a loop survives when nobody is looking.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 322" role="img" aria-label="An anatomy of one night. 300 cycles ran unattended across 9 hours 57 minutes and cycle wall-clock ranged from a minimum of 98.8 seconds through a median of 111.5 to a maximum of 161.8. The finish conditions were zero failures, zero crashes, all 26 verification points holding across every cycle, and a battery drop from 96 to 95 percent. The maximum is 1.45 times the median, and what produced the finish was not speed but the swing failing to spread into the next cycle.">
+  <text class="lbl" x="8" y="22">One night, taken apart — 300 cycles · 9h57m · unattended · one real device on USB</text>
+  <text class="lbl" x="8" y="52">Cycle wall-clock (n=300)</text>
+  <line class="rule" x1="120" y1="96" x2="620" y2="96"/>
+  <line class="tick" x1="120" y1="86" x2="120" y2="106"/>
+  <line class="tick" x1="226" y1="82" x2="226" y2="110"/>
+  <line class="tick" x1="620" y1="86" x2="620" y2="106"/>
+  <rect class="bar bar-p" x="120" y="90" width="106" height="12" rx="1"/>
+  <text class="cap" x="120" y="76" text-anchor="middle">98.8s</text>
+  <text class="cap cap-p" x="226" y="76" text-anchor="middle">median 111.5s</text>
+  <text class="cap" x="620" y="76" text-anchor="middle">161.8s</text>
+  <text class="cap cap-i" x="120" y="130">Max is 1.45× the median — read that spread as "optimise this" and you fix the wrong thing</text>
+  <text class="lbl" x="8" y="170">Finish conditions — software metrics and the hardware balance, together</text>
+  <rect class="vn vn-a" x="8" y="184" width="320" height="56" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="168" y="208" text-anchor="middle">0 failures · 0 crashes</text>
+  <text class="cap" x="168" y="230" text-anchor="middle">across the whole night</text>
+  <rect class="vn vn-a" x="340" y="184" width="320" height="56" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="500" y="208" text-anchor="middle">26 verification points</text>
+  <text class="cap" x="500" y="230" text-anchor="middle">held in all 300 cycles</text>
+  <rect class="vn vn-b" x="672" y="184" width="320" height="56" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="832" y="208" text-anchor="middle">battery 96% → 95%</text>
+  <text class="cap cap-i" x="832" y="230" text-anchor="middle">−1 point · pass condition</text>
+  <line class="rule" x1="8" y1="262" x2="992" y2="262"/>
+  <text class="cap cap-i" x="8" y="286">⇒ The finish came from that spread not reaching the next cycle, not from speed</text>
+  <text class="cap" x="8" y="310">⚠ Per-step timings contain fixed waits from my own script — not citable as performance</text>
+</svg>
+<figcaption>One device, one build, one night. The variance across multiple nights and multiple devices was never measured.</figcaption>
+</figure>
+<h2 id="ten-unattended-hours-were-built-by-recovery-not-by-speed">Ten unattended hours were built by recovery, not by speed</h2>
+<p>One real device on a USB cable ran <strong>300 cycles across 9 hours 57 minutes</strong> with nobody present. Zero failures, zero crashes, and all 26 verification points per cycle held across every one of the 300. These 300 cycles are <strong>a smoke run taken after convergence</strong> — the loop that fixed the automation was a separate thing, and this night was run only after that loop reached two consecutive clean passes.</p>
+<p>The number worth looking at here is not the total duration but <strong>the spread</strong>. Cycle wall-clock had a median of 111.5s, a minimum of 98.8s and a maximum of 161.8s. <strong>The maximum is 1.45× the median.</strong> In a ten-hour unattended run some cycles took nearly half again as long as others, and with a real device that swing cannot be removed — the hardware warms up, the server slows for a moment, a load spikes once.</p>
+<p>Read that spread as something to optimise and you would go work on performance: get the cycle from 111s down to 90s. But <strong>what produced the finish was not that work — it was the recovery ladder that kept the spread from reaching the next cycle.</strong> One 161.8s cycle happened and the next one started again at 111s. Had a stretched cycle contaminated the state the following one inherited, that contamination would have compounded across 300 rounds and stopped somewhere.</p>
+<p>The arithmetic makes it plainer. Cut the cycle by 20% and a ten-hour night becomes eight. Not a bad improvement. But if the structure is one where <strong>a single failure eats the next five cycles</strong>, three such incidents in a night burn fifteen cycles and at some point the loop simply cannot come back. The first improvement makes the night <strong>shorter</strong>; the second makes the night <strong>end</strong>. Unattended work needs the second, and doing only the first gives you a fast loop that is dead by morning.</p>
+<p>One clarification. These 300 cycles are <strong>a run taken after the automation was already fixed.</strong> The fixing is not inside this number, and that loop is covered further down. So “zero failures” here does not mean the automation was robust to begin with — it means this is a measurement taken after it became robust.</p>
+<p><strong>The lesson that cost something here is that the metric for unattended work is not the average.</strong> What matters is not “how many seconds is a cycle” but <strong>“how many cycles does one failure eat.”</strong> Those are different jobs, and taking them in the wrong order produces a loop that is quick and never finishes.</p>
+<h2 id="one-battery-point-is-the-pass-condition-for-running-unattended">One battery point is the pass condition for running unattended</h2>
+<p>After 9 hours 57 minutes unattended on a USB cable, the battery had gone from <strong>96% to 95%</strong> — a net drop of one point. The measurement resolution is a single whole percent, so the figure itself is coarse, but this one line decides whether an overnight run is possible at all, before any software metric gets a say.</p>
+<p>The reason is simple. On a cable, charging and drain happen at once, and <strong>if drain outruns charging the overnight run is impossible</strong>, full stop. However correct the code and however dense the recovery ladder, a device that is off in the morning makes that night worth zero. So this is not a performance metric but a <strong>pass condition</strong> — not a number that is nice to beat, but one that renders everything else moot when missed.</p>
+<p>No document told me to measure this. Automation writing measures pass rates and durations, while <strong>the first failure mode of an overnight run is “the device was off.”</strong> That is a power-budget problem, not a code defect, and it appears nowhere in the software metrics. The report says “run aborted” and nothing more; why it aborted requires picking the hardware up.</p>
+<p>The figure’s coarseness has to be stated too. With one whole percent of resolution, 96 → 95 means the <strong>true drop could be 0.01 points or 1.99</strong>. So you cannot step from here to “then it could run for days” — at 1.99 the balance flips somewhere around twenty hours. All this piece can claim is that <strong>one ten-hour night fit inside the power budget.</strong></p>
+<p><strong>The lesson that cost something here is that this value cannot be recovered afterwards.</strong> Unless the battery is recorded at <strong>both</strong> the start and the end, the next morning it is gone for good — no amount of log-digging recovers last night’s 11pm battery level. That is why an unattended run needs its own list of “things to capture before starting”, and that list is not code but <strong>preparation for the run itself.</strong></p>
+<h2 id="a-wrong-tap-and-a-wrong-verdict-cost-different-amounts--so-i-split-the-evidence">A wrong tap and a wrong verdict cost different amounts — so I split the evidence</h2>
+<p>This screen offers nothing to grab. The client paints the whole thing onto one native surface, so pulling an accessibility tree gives back <strong>nothing usable: no button names, no text, no coordinates</strong>. So <a href="/en/built/android-qa/driving/">the only driving path is screenshot → vision → coordinate tap</a>, and since that path’s accuracy cannot be trusted, it is built to <strong>look again whenever a tap fails to change the screen</strong>.</p>
+<p>The problem appears when the same tool is used for the verdict too. That is what I did first, and it was the single most wrong call in the project. <strong>A wrong tap and a wrong verdict cost different amounts.</strong> A wrong tap recovers — the screen fails to change, so it looks again. The cost is one retry, absorbed inside that cycle. A wrong verdict <strong>becomes the result.</strong> There is no point to roll back to, and the number is already in the report you read in the morning. Worse, the error is biased in one direction — vision looking at an ambiguous screen tends to lean <strong>toward pass</strong>, so one more green light quietly appears.</p>
+<p>With a human present this difference never surfaces, because when something is ambiguous a person looks at the screen and decides. <strong>Unattended, that person does not exist.</strong> Which turns “where does the verdict live” from an accuracy improvement into the question of <strong>whether unattended operation is possible at all.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="A comparison of what happens after a wrong tap versus after a wrong verdict. A wrong tap leaves the screen unchanged, the system looks again, and it recovers, so the cost is one retry. A wrong verdict becomes the result, lands in the report, and there is no point to roll back to. That is why the evidence priority puts received RPC and state transitions above the screen.">
+  <text class="lbl" x="8" y="22">Why one tool cannot do both — what comes next is different</text>
+  <rect class="vn vn-a" x="8" y="36" width="984" height="82" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="24" y="64">A wrong tap</text>
+  <text class="cap" x="230" y="64">→ screen does not change → look again → recovers</text>
+  <text class="cap cap-i" x="700" y="64">cost = one retry</text>
+  <text class="cap" x="24" y="98">So driving by vision is fine. Assume it will be wrong and the structure absorbs it</text>
+  <rect class="vn vn-b" x="8" y="130" width="984" height="82" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="24" y="158">A wrong verdict</text>
+  <text class="cap cap-i" x="230" y="158">→ becomes the result → lands in the report → nothing to roll back to</text>
+  <text class="cap cap-p" x="700" y="158">cost = the whole night</text>
+  <text class="cap" x="24" y="192">Unattended, there is nobody to call on an ambiguous screen. So the verdict left vision</text>
+  <line class="rule" x1="8" y1="236" x2="992" y2="236"/>
+  <text class="cap cap-i" x="8" y="260">⇒ Evidence priority — received RPC &gt; state transition &gt; screen. The first two live in a file the engine writes</text>
+  <text class="cap" x="8" y="284">⚠ I had asserted "logs cannot tell me the internal state". Only the standard channel was closed</text>
+</svg>
+<figcaption>Drive by eye, judge by log. Without that split, long unattended runs do not hold.</figcaption>
+</figure>
+<p>The evidence priority was fixed as <strong>«received RPC &gt; state transition &gt; screen»</strong>. The first two were available purely because my initial assertion was wrong. I had written down that “logs cannot tell me the internal state”, when <strong>the only closed channel was standard output.</strong> The file the engine drops inside the device held every state transition and every RPC exchange, and opening that file once was the cheapest improvement this project ever got.</p>
+<p>The same ordering was needed when evaluating other people’s techniques. A device farm’s screen dump measured at 2,350ms looked worth harvesting, until <a href="/en/teardowns/qa/toss-nebula/">a full code sweep found zero calls to it in my pipeline</a>. With no accessibility tree on this screen there was nothing for a 10× speedup to act on. And that fact was already written in my own project documentation — reading someone else’s benchmark took longer than opening one page of my own.</p>
+<p>The driving side has its own cost. Tapping by coordinate means <strong>a precise hit and a rough one are recorded as the same pass.</strong> The screen changed, so the loop moves on and a green light lands in the report. I currently have no counter separating the two, so I could not tell you whether fallback taps are increasing. That is not something moving the verdict to logs solved — it is <strong>a problem still sitting on the driving side.</strong></p>
+<h2 id="waiting-is-worse-than-failing-when-nobody-is-watching">Waiting is worse than failing when nobody is watching</h2>
+<p>The most expensive state in an unattended run is not failure. It is <strong>stopping and waiting.</strong> A failed case leaves a record and the loop moves on, so the rest of the night survives. A waiting loop does not advance a single step until morning, and ten hours produce nothing. The same ten hours, and one yields something partial while the other yields nothing at all.</p>
+<p><strong>Symptomless stalls</strong> were the hardest part. No exception is raised, no verdict is wrong, and the loop simply stands still. Anything that counts errors cannot see this — there is nothing to count in the first place, and making the counter more sophisticated changes nothing. So <a href="/en/built/android-qa/loop/">detection was hung on whether the screen changes rather than on failure counts</a>, and when nothing changes for a while, recovery is attempted in stages and finally <strong>cut off</strong>. The moment it is cut, the state converts from “waiting” to “failing” — and failing is a state the loop knows how to handle.</p>
+<p>Building this made one thing clear. <strong>A recovery ladder and a cutoff have to exist together.</strong> Recovery without a cutoff turns the recovery attempts themselves into a new infinite wait; a cutoff without recovery ends the night over one flickering frame. That is why the stages are split three ways — try the cheap things first, and if none of them takes, abandon that cycle and move on.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 314" role="img" aria-label="A comparison of the three states an unattended run can be in. A failure increments the error counter, leaves a log, and moves to the next case. A wait sits with the counter at zero, doing nothing until morning. A cutoff is detected by the screen-change axis, tries staged recovery, and severs. Only the middle state has an error counter of zero, which is why counting errors never catches it.">
+  <text class="lbl" x="8" y="22">Three states in an unattended run — only the middle one has a counter of zero</text>
+  <rect class="vn vn-a" x="8" y="40" width="324" height="132" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="170" y="70" text-anchor="middle">Failure</text>
+  <text class="cap" x="170" y="98" text-anchor="middle">leaves a log</text>
+  <text class="cap" x="170" y="122" text-anchor="middle">moves to the next case</text>
+  <text class="cap cap-i" x="170" y="152" text-anchor="middle">error counter +1</text>
+  <rect class="vn vn-b" x="338" y="40" width="324" height="132" rx="2" fill-opacity=".14"/>
+  <text class="cap cap-p" x="500" y="70" text-anchor="middle">Wait</text>
+  <text class="cap" x="500" y="98" text-anchor="middle">nothing fails</text>
+  <text class="cap" x="500" y="122" text-anchor="middle">still there in the morning</text>
+  <text class="cap cap-p" x="500" y="152" text-anchor="middle">counter 0 ← never caught</text>
+  <rect class="vn vn-a" x="668" y="40" width="324" height="132" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="830" y="70" text-anchor="middle">Cutoff</text>
+  <text class="cap" x="830" y="98" text-anchor="middle">screen-change axis detects</text>
+  <text class="cap" x="830" y="122" text-anchor="middle">staged recovery → sever</text>
+  <text class="cap cap-i" x="830" y="152" text-anchor="middle">turns a wait into a failure</text>
+  <line class="rule" x1="8" y1="200" x2="992" y2="200"/>
+  <text class="cap cap-i" x="8" y="224">⇒ The detection axis must be separate from the error counter. A symptomless stall has zero errors</text>
+  <text class="cap" x="8" y="248">A timeout is not a performance parameter but a required part — the only device that converts waits</text>
+  <text class="cap" x="8" y="272">⚠ Counterexample — someone raised every timeout to 30 hours to run a 24-hour test</text>
+  <text class="cap" x="8" y="296">That switches the stall detector off. As a standing default, "stalled" and "long" become indistinguishable</text>
+</svg>
+<figcaption>Reducing failures and eliminating waits pull in opposite directions. Raise the timeout and failures fall while waits rise.</figcaption>
+</figure>
+<p>A counterexample turned up in someone else’s retrospective. <a href="/en/teardowns/qa/asleep-qa/">Every timeout was raised to 30 hours in order to run a 24-hour test</a>, which is <strong>switching the stall detector off.</strong> Justified for that one test, but as a standing default it removes any means of telling “a stalled session” from “a long session”.</p>
+<p>The same shape exists outside device runs. <strong>This is a different system</strong> — in my own working harness, <a href="/en/teardowns/harness/clawd-on-desk/">when a companion app is off while its permission hook stays live</a>, a “tool use was rejected” appears when I rejected nothing. There is no permission hook in a device run, but the character is identical: <strong>the symptom is quiet, so it can waste an entire unattended run.</strong></p>
+<p><strong>The lesson that cost something here is that the detection axis has to be separated.</strong> “Reduce failures” and “eliminate waits” pull in opposite directions; raising the timeout lowers failures and raises waits, and unattended that trade is a loss. And a symptomless stall has zero errors, so <strong>an error-counting axis will never catch it.</strong> How expensive a run that exits 0 having done nothing really is, is covered in <a href="/en/writing/agents/silent-success/">the scariest thing in unattended regression</a>.</p>
+<h2 id="grade-against-an-answer-key-and-every-failure-gets-a-subject">Grade against an answer key and every failure gets a subject</h2>
+<p>The subject of this section is not the overnight 300 cycles but <strong>the loop before it, which repeatedly ran a 126-case sheet and fixed the automation.</strong> The two loops are different.</p>
+<p>That loop had an unusual design. The build under test was run against <strong>a case set already confirmed to pass in full.</strong> That establishes a premise — <strong>if the product passes everything, every FAIL the automation produces is the automation’s own defect.</strong> The single hardest question in building this kind of tool is whether a given failure belongs to the product or to me, and <a href="/en/built/android-qa/loop/">grading against a key you already know removes that question entirely</a>.</p>
+<p>Why that question is expensive becomes obvious once you have paid it. Suspect the product and you have to reproduce across builds; suspect yourself and you have to take the script apart. <strong>Not knowing which means doing both</strong>, and usually it means doing both and finishing neither. Making the answer key known in advance deletes the fork — every FAIL has “me” as its subject from the start.</p>
+<p>It is not free, of course. In this arrangement <strong>product defects cannot be found.</strong> Full passing is the premise, so anything newly wrong on the product side is out of view by definition, and the only output of this loop is “how much sturdier the automation got”. So this is not regression testing but <strong>the automation’s own exam</strong>, and mixing the two purposes into one run makes the subject of a FAIL blurry again.</p>
+<p>The cycle protocol was fixed too: run → diagnose → fix → write it in the ledger → run again. <strong>Re-running without diagnosing is forbidden.</strong> Without that one line, “let’s just run it once more” becomes the thing your hand reaches for, and then a case that passes intermittently gets counted in the pass rate without ever being touched. The number improves and the automation does not.</p>
+<p>The stop condition was written before starting — <strong>full machine-verdict pass, zero blocked, twice in a row.</strong> The overnight 300 cycles are a run taken <strong>after</strong> this loop converged, which is why the failures are zero. Read the two numbers as belonging to the same loop and they contradict.</p>
+<p><strong>The lesson that cost something here is that the stop condition has to be written before starting.</strong> Without it there is no ending — there is always a bit more to fix, so with no criterion it continues forever as “not perfect yet”. <strong>Twice in a row</strong> was added for the same reason. A single full pass and a stable loop look identical, and <strong>repetition is the only thing that separates them.</strong></p>
+<h2 id="what-unattended-repetition-produces-is-accumulation-not-discovery">What unattended repetition produces is accumulation, not discovery</h2>
+<p>The one thing from that night that was <strong>not</strong> an automation defect was not found because the automation was clever. <strong>The signal had been there all along; repetition simply grew it to a size that could not be ignored.</strong></p>
+<p><a href="/en/built/android-qa/findings/">In 147 of one night’s 300 cycles, the same warning sat in the log</a> — a render setting specified plainly in a file yet not actually taking effect. It is not a new warning. It was there all 300 times, and in any single cycle it is one line that the eye slides past. Only once it took the shape of <strong>147/300</strong> did it become impossible to ignore.</p>
+<p>This is what unattended repetition actually produces. <strong>The automation did not see something it previously could not.</strong> The verdict logic did not and still does not know how to look at this warning. The only thing that changed is that the same signal was collected 300 times, and collecting is the part a human cannot do — running it by hand 300 times means sitting there for ten hours, and sitting there means not reading 300 logs.</p>
+<p>What matters here is that the <strong>sample</strong>, not the ratio, does the work. Run it ten times by hand and see it five times and the ratio is identically half. But that stays “happens sometimes” and calls for no action. The same half, as 147/300, becomes <strong>something you can file a bug report from.</strong> Identical ratio, and only one of them prompts behaviour; what made the difference was not insight but repeat count.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 296" role="img" aria-label="A comparison of frequency accumulation. Running by hand ten times and seeing it five is dismissed as happening sometimes, but 147 out of 300 is a different kind of fact. Both ratios are nearly half; the sample size differs by thirty times. Frequency is a kind of evidence a human cannot produce.">
+  <text class="lbl" x="8" y="22">Same ratio, different fact — sample size changes the kind of evidence</text>
+  <text class="cap" x="200" y="66" text-anchor="end">by hand, 10 → 5</text>
+  <rect class="bar" x="216" y="52" width="26" height="18" rx="1"/>
+  <rect class="bar bar-p" x="216" y="52" width="13" height="18" rx="1"/>
+  <text class="cap" x="256" y="66">"happens sometimes" — moves on</text>
+  <text class="cap cap-p" x="200" y="118" text-anchor="end">300 cycles → 147</text>
+  <rect class="bar" x="216" y="104" width="760" height="18" rx="1"/>
+  <rect class="bar bar-p" x="216" y="104" width="372" height="18" rx="1"/>
+  <text class="cap cap-on" x="228" y="118">147</text>
+  <text class="cap" x="600" y="118">= 49%, a size you cannot ignore</text>
+  <line class="rule" x1="8" y1="152" x2="992" y2="152"/>
+  <text class="cap cap-i" x="8" y="176">⇒ Both ratios are nearly half. The only difference is sample size</text>
+  <text class="cap" x="8" y="200">So one verdict item was added — every run now emits a frequency table by warning type</text>
+  <text class="cap" x="8" y="224">It emits on fully passing runs too. That is the only window into what green lights hide</text>
+  <line class="rule" x1="8" y1="248" x2="992" y2="248"/>
+  <text class="cap" x="8" y="272">⚠ It stops one step short — not "confirmed a product defect" but "not an automation defect"</text>
+</svg>
+<figcaption>Frequency is a kind of evidence a human cannot produce. Ten runs and five sightings is an impression, not data.</figcaption>
+</figure>
+<p>After this, one verdict item was added. <strong>Every run now emits a frequency table by warning type.</strong> The important part is that this table <strong>emits on fully passing runs too.</strong> It is the only window into what was piling up behind an all-green run, and unless it is decoupled from pass/fail nobody looks at it on the nights that pass. Opening logs only on nights that failed is a natural habit, but <strong>this kind of signal accumulates precisely on the nights that succeed.</strong></p>
+<p><strong>The lesson that cost something here surfaced only after the frequency table existed.</strong> What became countable was the frequency; <strong>the starting point is still uncountable</strong> — nobody knows when this signal began. Whether it was in the first night’s logs, or in the build before, there is no way to check. Which is why stopping one step short mattered here: this is not a confirmed product defect, only <strong>“not an automation defect.”</strong></p>
+<h2 id="the-device-dependency-lived-in-exactly-one-bottom-layer">The device dependency lived in exactly one bottom layer</h2>
+<p><strong>The number in this section comes from a run of the same case set on a PC build.</strong> 126 cases written for the real device had to move to another platform, and rather than rewriting them <a href="/en/built/android-qa/">only the transport layer was swapped</a> — a file bridge was slotted into the place where the harness expected device commands, leaving the command surface untouched. The result was a full 126-case run on the PC build finishing in <strong>937 seconds</strong>.</p>
+<p>It worked not because the design was good but <strong>because the cases were never interested in the device.</strong> All a case knows is «tap here, wait, check that this appeared», and nothing in that sentence mentions Android. The word “device” existed in exactly one bottom passage, and changing only that brought all 126 above it across untouched.</p>
+<p>But this result must not be read as “portable design”. Count what actually lives in that layer and the answer appears — what is there is <strong>one channel that sends and receives device commands</strong>, and it was concentrated in one layer because there was never another option. With no way to grab the screen, driving narrowed to a single coordinate tap, and a narrow surface is easy to swap. This is <strong>portability produced by constraint</strong>, not portability I designed.</p>
+<p>The comparison makes it clear. Had this been an app with a proper accessibility tree, the cases would obviously have used it — “tap the button named Confirm” beats “tap (620, 880)” in every respect. And at that moment each case takes on that platform’s vocabulary, and porting becomes <strong>not a one-layer swap but 126 rewrites</strong>. The reason that did not happen here is not restraint on my part but that <strong>there was no vocabulary available in the first place.</strong></p>
+<p><strong>The lesson that cost something here is that this success cannot be used as grounds.</strong> The device vocabulary living in one layer was half luck, and <strong>there is no reason to expect the same luck on the next platform.</strong> What this port does offer is not a design principle but <strong>one checklist item</strong>: open the case bodies and count how many platform-specific words are in them, and you get a rough read on how much of that set survives a move. In this set the count was zero.</p>
+<h2 id="what-i-could-not-do">What I could not do</h2>
+<ul>
+<li><strong>Per-step timings cannot be cited as performance figures.</strong> They contain fixed waits from my own script. A logged “screen transition 3.2s” is not a product number when two of those seconds are a wait I put there myself. Using load time as a real metric requires separate instrumentation, and I have not added it.</li>
+<li><strong>The continuous-run limit of the battery was never measured.</strong> A one-point drop is the same size as the measurement resolution, so the true value could be 0.01 or 1.99 points. A single step cannot support a multiplier, so “could run for days” does not appear in this piece. There is a promotion path — <strong>record the battery in mAh rather than percent and the next night measures it.</strong></li>
+<li><strong>I am not counting the coordinate-fallback rate.</strong> A tap that hit precisely and a tap that landed roughly after failing to find the element are recorded as the same pass. There are two kinds of pass and the report shows one. Fallbacks are where the next build breaks quietly, and without a count I would not even see them increasing.</li>
+<li><strong>I have never measured how much the automation disturbs its subject.</strong> I have seen work that publishes its own observer overhead alongside its numbers; I have no such value at all. So I also do not know how much of this piece’s cycle distribution is the automation’s own weight.</li>
+<li><strong>Visual bugs are still invisible.</strong> That is the price of putting the verdict in the logs. A broken texture or a missing effect still passes as long as the state transitions and RPC look right. That part belongs to a human, and the larger the unattended surface grows, the blurrier that human’s remit becomes.</li>
+<li><strong>Thresholds were never re-measured.</strong> A few frame and load thresholds I saw in someone else’s talk were tagged by the source itself as needing re-measurement, so they are not cited here — and I have not measured them on my side either.</li>
+<li><strong>The sample is one night.</strong> 300 cycles is the distribution of one device, one build, one night. Variance across nights and devices was never measured, so I cannot say whether “max is 1.45× median” is a property of this night or of this setup.</li>
+<li><strong>Half of this list is “not measured, so unknown” — not “measured and fine.”</strong> The most dangerous sentence in unattended regression is <strong>“nothing has gone wrong so far”</strong>, and unless the unmeasured spots are named and left on the page, that sentence accumulates as if it were evidence.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/writing/agents/unattended-regression/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>
