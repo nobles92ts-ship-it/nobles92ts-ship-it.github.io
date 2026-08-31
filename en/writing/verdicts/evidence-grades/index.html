@@ -2,7 +2,7 @@
 <p>I saw in somebody else’s talk that the difference between them isn’t effort.</p>
 <h2 id="one-query-beats-hundreds-of-pulls">One query beats hundreds of pulls</h2>
 <p>The job is confirming that a gacha rate matches the design. Without access, that meant <strong>pulling hundreds of times and estimating the rate from the sample.</strong> Once read access existed, it meant <strong>reading the source in five seconds with one query.</strong></p>
-<p>It didn’t get faster. <strong>The character of the conclusion changed.</strong> Hundreds of pulls gets you as far as <em>“probably right.”</em> Reading the source is <strong>right or wrong.</strong></p>
+<p>It didn’t get faster. <strong>The grade of the evidence changed</strong> — <a href="/en/teardowns/qa/qa-infrastructure/">a sample moved to a direct read</a>, which on this table is a jump of several rows. And the verdict changes with it: one form can only ever reach <em>probably</em>, the other settles the question.</p>
 <p>And what made that difference wasn’t a tool, it was <strong>access.</strong></p>
 <h2 id="i-graded-them-and-held-my-own-verdicts-against-it">I graded them and held my own verdicts against it</h2>
 <table>
@@ -49,7 +49,7 @@
 <p>The table isn’t novel. What earned its keep was counting <strong>what grade the evidence I actually used was.</strong></p>
 <h2 id="the-place-i-got-it-wrong-most-was-documentation">The place I got it wrong most was documentation</h2>
 <p>I summarised an MMO server repository from the README alone. Opening the code showed <strong>two things wrong, pointing in opposite directions</strong> — I claimed a feature that doesn’t exist and denied a privilege that does.</p>
-<p><strong>The README didn’t lie.</strong> That document said it was a <em>design document</em>, and the not-started marker was inside the same file. <strong>Reading grade 6 as grade 1 was on me.</strong></p>
+<p><strong>What was wrong was not the document but the grade I handed it.</strong> That file <a href="/en/teardowns/games/openmmo/">stated plainly what it was and how far it had been built</a>. All I did was <strong>seat it in grade 1</strong> — and ungraded, grade 6 takes that seat without resistance.</p>
 <p>There was a worse one. Benchmarking an action game, I <strong>remembered</strong> that the reward for a perfect dodge was slow motion, and on the strength of that memory I was about to build a prerequisite. Cross-checking the sources showed the actual reward is a resource gain and <strong>slow motion was confirmed nowhere.</strong></p>
 <p><strong>Memory isn’t on the table at all.</strong></p>
 <h2 id="i-treated-a-self-report-as-evidence-twice">I treated a self-report as evidence twice</h2>
@@ -57,7 +57,7 @@
 <p>Another framework has a policy of <em>“we don’t change it without evidence”</em> — and <strong>that evidence lives in a separate repository</strong>, so it can be neither verified nor refuted.</p>
 <p><strong>Both claims may well be true.</strong> They are still grade 6, and <strong>you don’t decide an adoption on grade 6.</strong></p>
 <h2 id="evidence-that-isnt-there-looks-like-evidence-unless-you-count-it">Evidence that isn’t there looks like evidence unless you count it</h2>
-<p>One talk runs 31 minutes, and <strong>with no captions I reconstructed it from slides alone.</strong> Fourteen minutes of Q&amp;A never arrived. I know what the audience wanted to know and <strong>not what the speaker said.</strong></p>
+<p>One talk runs 31 minutes, and <strong>with no captions I reconstructed it from slides alone.</strong> <a href="/en/teardowns/qa/qa-infrastructure/">Only half of it was analysable</a>, and the missing half was the answers. What survived is <strong>a list of questions</strong>, and a list of questions is not a finding.</p>
 <p>Write only the summary without recording the gap, and later, when that page gets cited for something, <strong>the hole is invisible.</strong> Which is why that piece opens with <em>“this piece has to start by admitting its evidence is thin.”</em></p>
 <h2 id="what-i-didnt-do">What I didn’t do</h2>
 <p><strong>Nothing enforces the grades.</strong> Right now I hold to them by hand while writing. My automated pipelines do leave grounds behind for every ruling, but <strong>they never record what grade those grounds are.</strong> Leaving a record and grading it are different jobs.</p>
