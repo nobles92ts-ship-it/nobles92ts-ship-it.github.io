@@ -1485,6 +1485,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/"/>
   </url>
   <url>
+    <loc>https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"/>
+  </url>
+  <url>
     <loc>https://nobles92ts-ship-it.github.io/en/teardowns/memory/rag-without-vectors/</loc>
     <lastmod>2026-08-16T11:43:08+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/rag-without-vectors/"/>

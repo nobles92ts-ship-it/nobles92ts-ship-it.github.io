@@ -1,0 +1,644 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>public-apis — 컨텍스트와 기억</title><meta name="description" content="별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="public-apis — 컨텍스트와 기억"><meta property="og:description" content="별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="public-apis — 컨텍스트와 기억"><meta name="twitter:description" content="별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 것</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 것</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>소개</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>나온 것</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/memory/public-apis/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 것</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">20편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스무 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a><a href="/ko/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">수확 4 → 0 · 미실행 24일</span></span><span class="s">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</span></a><a href="/ko/teardowns/memory/public-apis/" aria-current="page"><span class="t"><span>public-apis</span><span class="kpi">1,756건 · 게이트 400일</span></span><span class="s">별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 것</span><span class="st">공개</span></div><h1>public-apis</h1><p class="sum">별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.</p><div class="meta"><span>1,756건 · 게이트 400일</span><a class="src" href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#api-목록이-아니라-api-문서로-가는-링크-목록이다">API 목록이 아니라 API 문서로 가는 링크 목록이다</a><a href="#분류-51개-중-손에-잡히는-것은-다섯-중-하나뿐이다">분류 51개 중 손에 잡히는 것은 다섯 중 하나뿐이다</a><a href="#설계-결정-넷은-저마다-성립-조건을-하나씩-달고-있다">설계 결정 넷은 저마다 성립 조건을 하나씩 달고 있다</a><a href="#매일-도는-링크-검사는-400일-동안-링크를-한-번도-보지-않았다">매일 도는 링크 검사는 400일 동안 링크를 한 번도 보지 않았다</a><a href="#그래서-직접-300건을-불러-봤다--아홉-중-하나가-죽어-있다">그래서 직접 300건을 불러 봤다 — 아홉 중 하나가 죽어 있다</a><a href="#유명한-것만-골라도-사망률은-똑같았다">유명한 것만 골라도 사망률은 똑같았다</a><a href="#제가-찾으러-간-목록은-이미-제-폴더-안에-있었다">제가 찾으러 간 목록은 이미 제 폴더 안에 있었다</a><a href="#판정--도구를-들이는-일이-아니라-이미-있는-것의-눈금을-켜는-일이었다">판정 — 도구를 들이는 일이 아니라 이미 있는 것의 눈금을 켜는 일이었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>목록은 진짜인데 「살아 있는 목록」은 아니었습니다.</strong> 별 47만 개가 붙은 이 저장소는 누구나 쓸 수 있는 공개 API를 표 한 장에 모아 둔 것입니다. 그 표에 매일 도는 링크 검사가 붙어 있는데, <strong>400일 연속 실패</strong>하고 있었습니다. 원인이 링크가 많아서가 아니라 <strong>중복 URL 네 건이 검사 앞단에서 스크립트를 죽여 생사 검사가 한 번도 실행되지 않은 것</strong>이었습니다. 그 상태로 무작위 300건을 직접 불러 보니 <strong>아홉 중 하나가 확실히 죽어</strong> 있었습니다. 그런데 이 편에서 제일 값비싼 사실은 대상이 아니라 제 쪽에 있었습니다 — <strong>제가 찾으러 간 목록의 83.5%는 이미 제 폴더 안 카탈로그에 들어 있었고</strong>, 그 카탈로그에만 있는 한국 공공 API 619건은 원본에 아예 없습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 314" role="img" aria-label="저장소의 실체는 마크다운 표 한 장이다. 기여자가 표에 한 줄을 더하는 풀 리퀘스트를 열면 형식 검사와 새 링크 생사 검사가 돌고, 머지되면 README 파일 자체가 배포물이 된다. 게이트는 셋인데 앞의 둘은 풀 리퀘스트 때 형식과 새 줄만 보고, 셋째만 매일 자정에 전체 링크를 훑는다. 빌드도 릴리스도 버전도 없다.">
+  <text class="lbl" x="8" y="22">저장소의 실체 — 표 한 장과 그것을 지키는 스크립트 둘</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="96" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="62" text-anchor="middle">① 기여자 — 표에 한 줄</text>
+  <text class="cap" x="168" y="86" text-anchor="middle">인증 · HTTPS · CORS 3열</text>
+  <text class="cap" x="168" y="110" text-anchor="middle">PR 하나에 링크 하나</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="62" text-anchor="middle">② 게이트 셋이 돈다</text>
+  <text class="cap" x="500" y="86" text-anchor="middle">형식 · 새 링크 · 전체 링크</text>
+  <text class="cap" x="500" y="110" text-anchor="middle">사람 리뷰는 눈 하나</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="62" text-anchor="middle">③ 머지 = 배포</text>
+  <text class="cap" x="832" y="86" text-anchor="middle">README.md 247KB 한 장</text>
+  <text class="cap" x="832" y="110" text-anchor="middle">빌드 · 릴리스 · 버전 없음</text>
+  <text class="lbl" x="8" y="160">게이트 셋 — 앞의 둘은 PR 때, 셋째만 매일 전체를 훑는다</text>
+  <rect class="vn vn-a" x="8" y="174" width="320" height="60" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="168" y="198" text-anchor="middle">format.py — 표 형식</text>
+  <text class="cap" x="168" y="222" text-anchor="middle">열 개수 · 인증 허용값 5종</text>
+  <rect class="vn vn-a" x="340" y="174" width="320" height="60" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="198" text-anchor="middle">새로 추가된 링크만</text>
+  <text class="cap" x="500" y="222" text-anchor="middle">PR 에서 바뀐 줄</text>
+  <rect class="vn vn-b" x="672" y="174" width="320" height="60" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="832" y="198" text-anchor="middle">links.py — 전체 링크</text>
+  <text class="cap" x="832" y="222" text-anchor="middle">매일 00:00 UTC</text>
+  <line class="rule" x1="8" y1="254" x2="992" y2="254"/>
+  <text class="cap cap-i" x="8" y="278">⇒ 무엇이 들어오는지를 판정하는 것은 <tspan class="cap-p">셋째 게이트 하나</tspan>다</text>
+  <text class="cap" x="8" y="302">기여 마찰이 0 에 가까워서 유입은 무한한데, 나머지 둘은 형식만 봅니다</text>
+</svg>
+<figcaption>저장소 안에 API 서버도 검색 UI도 패키지도 없다. 표 한 장과 그것을 지키는 게이트 셋이 전부다.</figcaption>
+</figure>
+<h2 id="api-목록이-아니라-api-문서로-가는-링크-목록이다">API 목록이 아니라 API 문서로 가는 링크 목록이다</h2>
+<p>이름이 주는 인상과 실체가 다릅니다. 표의 첫 칸은 호출할 엔드포인트가 아니라 <strong>문서 페이지 주소</strong>입니다. 저장소를 클론해도 나오는 것은 <code>README.md</code> 한 장(247KB)과 파이썬 스크립트 두 개뿐이고, 그 밖에는 아무것도 없습니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실측 (2026-09-09)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표에서 파싱되는 항목</td>
+<td><strong>1,756건 · 51개 분류</strong></td>
+</tr>
+<tr>
+<td>저장소 크기</td>
+<td>README 247KB + 검사기 <code>format.py</code> 8.5KB · <code>links.py</code> 8.0KB</td>
+</tr>
+<tr>
+<td>별 / 포크 / 기여자</td>
+<td>477,439 / 52,699 / 422명</td>
+</tr>
+<tr>
+<td>생성 / 최종 푸시</td>
+<td>2016-03-20 / 2026-09-05 — 방치 저장소가 아니다</td>
+</tr>
+<tr>
+<td>머지된 PR / 대기 PR</td>
+<td>3,695 / <strong>1,877</strong></td>
+</tr>
+<tr>
+<td>라이선스</td>
+<td>MIT — 데이터를 재가공해 내 카탈로그로 만들어도 된다</td>
+</tr>
+<tr>
+<td>후원</td>
+<td>README 최상단 전체가 APILayer 광고이고 저장소 홈페이지 링크도 그쪽이다</td>
+</tr>
+</tbody>
+</table>
+<p>메타데이터는 세 열입니다. 그중 실제로 판단에 쓰이는 건 CORS 한 열인데, <strong>절반 이상이 「미상」입니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>열</th>
+<th>값 분포</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인증</td>
+<td>불필요 834(47.5%) · apiKey 765(43.6%) · OAuth 150(8.5%)</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>지원 1,664(94.8%) — 사실상 전부라 필터 가치가 없다</td>
+</tr>
+<tr>
+<td>CORS</td>
+<td>Yes 606(34.5%) · No 162(9.2%) · <strong>Unknown 988(56.3%)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>여기서 값을 치르고 배운 것 하나 —</strong> 자기 신고 메타는 갱신을 강제할 방법이 없으면 시간이 지날수록 「미상」 쪽으로 무너집니다. 무너지는 방향이 「틀림」이 아니라 「미상」이라 화면에서는 아무 일도 안 일어난 것처럼 보입니다.</p>
+<h2 id="분류-51개-중-손에-잡히는-것은-다섯-중-하나뿐이다">분류 51개 중 손에 잡히는 것은 다섯 중 하나뿐이다</h2>
+<p>키 발급 없이 브라우저에서 바로 부를 수 있어야 실용적입니다. 인증 불필요 + CORS Yes + HTTPS Yes 로 걸면 <strong>1,756 중 341건(19.4%)</strong> 이 남습니다. 분류별로는 이렇게 갈립니다.</p>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th>전체</th>
+<th>바로 부를 수 있는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>160</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Government</td>
+<td>106</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Games &amp; Comics</td>
+<td>103</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Geocoding</td>
+<td>96</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>80</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Cryptocurrency</td>
+<td>79</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>71</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Open Data</td>
+<td>56</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>51</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>49</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>48</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Sports &amp; Fitness</td>
+<td>48</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Science &amp; Math</td>
+<td>41</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Health</td>
+<td>39</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Weather</td>
+<td>39</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Documents &amp; Productivity</td>
+<td>39</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Machine Learning</td>
+<td>36</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>35</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Business</td>
+<td>32</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Photography</td>
+<td>31</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Test Data</td>
+<td>31</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>26</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Food &amp; Drink</td>
+<td>26</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Books</td>
+<td>25</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Personality</td>
+<td>25</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Art &amp; Design · Email</td>
+<td>24 · 24</td>
+<td>6 · 6</td>
+</tr>
+<tr>
+<td>Environment · Jobs · News</td>
+<td>23 · 23 · 23</td>
+<td>4 · 6 · 4</td>
+</tr>
+<tr>
+<td>Currency Exchange</td>
+<td>22</td>
+<td>6</td>
+</tr>
+<tr>
+<td>URL Shorteners</td>
+<td>20</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Anime · Text Analysis</td>
+<td>19 · 19</td>
+<td>8 · <strong>0</strong></td>
+</tr>
+<tr>
+<td>Calendar · Cloud Storage · Shopping</td>
+<td>18 · 18 · 18</td>
+<td>4 · 1 · 1</td>
+</tr>
+<tr>
+<td>Entertainment</td>
+<td>17</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Anti-Malware</td>
+<td>16</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Blockchain</td>
+<td>15</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Dictionaries</td>
+<td>13</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Tracking</td>
+<td>11</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Data Validation · Vehicle</td>
+<td>10 · 10</td>
+<td><strong>0</strong> · 1</td>
+</tr>
+<tr>
+<td>Open Source Projects</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Auth · Phone</td>
+<td>7 · 7</td>
+<td><strong>0</strong> · 1</td>
+</tr>
+<tr>
+<td>CI · Programming · Patent · Events</td>
+<td>6 · 5 · 4 · 3</td>
+<td>전부 <strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>빈 칸이 정보입니다.</strong> Photography·Text Analysis·Tracking·Data Validation·인증 분류는 바로 부를 수 있는 것이 하나도 없습니다 — 그 도메인은 무료 공개가 성립하지 않는다는 뜻이고, 목록을 뒤지는 대신 처음부터 유료를 보는 편이 빠릅니다.</p>
+<h2 id="설계-결정-넷은-저마다-성립-조건을-하나씩-달고-있다">설계 결정 넷은 저마다 성립 조건을 하나씩 달고 있다</h2>
+<table>
+<thead>
+<tr>
+<th>결정</th>
+<th>왜 이렇게 했나</th>
+<th>이게 깨지면 안 먹힌다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DB 대신 마크다운 표</td>
+<td>기여 마찰을 0으로. 웹에서 연필 아이콘 눌러 한 줄 쓰면 끝</td>
+<td><strong>읽는 쪽이 사람일 때만.</strong> 기계로 쓰려면 매번 파싱해야 한다</td>
+</tr>
+<tr>
+<td>PR 하나에 링크 하나</td>
+<td>리뷰 단위를 최소화해 판단 비용을 낮춘다</td>
+<td><strong>유입이 처리량보다 작을 때만.</strong> 지금 대기 1,877건으로 깨져 있다</td>
+</tr>
+<tr>
+<td>인증·HTTPS·CORS 3열</td>
+<td>「지금 쓸 수 있나」를 목록 단계에서 거르게 한다</td>
+<td><strong>값이 최신일 때만.</strong> CORS 56.3%가 미상이라 절반은 죽은 필터다</td>
+</tr>
+<tr>
+<td>링크만 검사, 응답은 안 봄</td>
+<td>키가 없으면 실제 호출을 못 한다</td>
+<td><strong>문서 생존 = 서비스 생존일 때만.</strong> 도메인이 팔려 다른 사이트가 된 항목은 원리적으로 못 잡는다</td>
+</tr>
+</tbody>
+</table>
+<p>네 번째의 값을 치른 결과가 실제로 최근 PR 제목에 있습니다 — <em>“Removed repurposed site domains”</em>(용도가 바뀐 도메인 제거). 검사기가 못 잡으니 사람이 손으로 걷어내고 있습니다.</p>
+<h2 id="매일-도는-링크-검사는-400일-동안-링크를-한-번도-보지-않았다">매일 도는 링크 검사는 400일 동안 링크를 한 번도 보지 않았다</h2>
+<p>저장소에는 <code>validate_links.yml</code> 이 있고 <code>cron: '0 0 * * *'</code> 로 매일 돕니다. 기여 안내서도 <em>“PR을 열면 전체 링크 유효성 빌드가 돈다”</em> 고 적어 두었습니다. 그래서 실행 이력을 전량 받았습니다.</p>
+<ul>
+<li>최근 <strong>400회 조회 — 성공 0회.</strong> 2025-08-05 부터 2026-09-08 까지 전부 <code>failure</code></li>
+<li>실패 단계는 5번 <code>Validate all links from README.md</code></li>
+<li>잡 시작 <code>00:29:49</code> → 실패 <code>00:30:03</code>. <strong>14초</strong>입니다. 링크 1,756개를 검사한 시간이 아닙니다</li>
+</ul>
+<p>로그의 마지막 다섯 줄이 원인을 그대로 보여 줍니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Checking for duplicate links...</span></span>
+<span class="line"><span>Found duplicate links:</span></span>
+<span class="line"><span>https://isitdownstatus.com</span></span>
+<span class="line"><span>https://tastedive.com/read/api</span></span>
+<span class="line"><span>https://api.nasa.gov</span></span>
+<span class="line"><span>https://open-meteo.com</span></span>
+<span class="line"><span>##[error]Process completed with exit code 1.</span></span></code></pre>
+<p><code>links.py</code> 의 <code>main()</code> 은 중복 검사를 <strong>먼저</strong> 부르고, 그 함수는 중복을 찾으면 <code>sys.exit(1)</code> 로 프로세스를 끝냅니다. 바로 다음 줄에 있는 생사 검사는 <strong>영원히 도달하지 않습니다.</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#24292E">links </span><span style="color:#D73A49">=</span><span style="color:#24292E"> find_links_in_file(filename)</span></span>
+<span class="line"><span style="color:#24292E">start_duplicate_links_checker(links)      </span><span style="color:#6A737D"># 중복이면 여기서 sys.exit(1)</span></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#D73A49"> not</span><span style="color:#24292E"> only_duplicate_links_checker:</span></span>
+<span class="line"><span style="color:#24292E">    start_links_working_checker(links)    </span><span style="color:#6A737D"># 400일 동안 도달 0회</span></span></code></pre>
+<p>오늘 받은 README에도 위 네 개 중 둘은 여전히 두 번씩 들어 있습니다. <strong>값싼 검사를 비싼 검사 앞에 두고 종료로 끊으면, 비싼 검사는 한 번도 실행되지 않은 채로 「매일 돌고 있다」처럼 보입니다.</strong> 화면에 매일 빨간 X가 뜨는데도 아무도 안 고친 이유는 원인이 중복 네 건이라 사소해 보였기 때문입니다. 조용한 게이트보다 나쁜 것은 <strong>막힌 게이트</strong>입니다 — 조용한 쪽은 아무 신호도 안 주지만, 막힌 쪽은 매일 신호를 주면서 그 신호가 무의미하다는 것까지 학습시킵니다.</p>
+<h2 id="그래서-직접-300건을-불러-봤다--아홉-중-하나가-죽어-있다">그래서 직접 300건을 불러 봤다 — 아홉 중 하나가 죽어 있다</h2>
+<p>1,756건에서 고정 시드로 300건을 뽑아 브라우저 UA로 GET 했습니다(타임아웃 9초, 리다이렉트 추적, 동시 30).</p>
+<table>
+<thead>
+<tr>
+<th>결과</th>
+<th>건수</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정상 2xx/3xx</td>
+<td>247 (82.3%)</td>
+<td>살아 있음</td>
+</tr>
+<tr>
+<td>404 · DNS 소멸 · 연결 거부</td>
+<td>16 · 9 · 2</td>
+<td><strong>확실 사망 27건 = 9.0% ±3.2pp</strong></td>
+</tr>
+<tr>
+<td>403</td>
+<td>14</td>
+<td>대부분 봇 차단 — 저장소 검사기도 이건 정상으로 친다. 사망으로 세면 안 된다</td>
+</tr>
+<tr>
+<td>타임아웃 · 인증서 만료 · 5xx · 400</td>
+<td>11</td>
+<td>회색지대</td>
+</tr>
+</tbody>
+</table>
+<p>측정치에 신뢰구간과 라벨을 붙이는 규약은 <a href="/ko/teardowns/memory/headroom/">Headroom</a> 편에서 정한 것을 그대로 씁니다. 403을 사망으로 세면 사망률이 13.7%로 뛰는데, <strong>그 수치는 대상을 나쁘게 보이게 만들 뿐 사실이 아닙니다.</strong></p>
+<p>분류별 편차가 큽니다. 암호화폐 50%(9/18) · 스포츠 50%(3/6) · 소셜 30% · 지오코딩 25% · 개발 24%가 비정상이었고, 반대로 공공데이터 0%(0/11) · 건강 0%(0/7) · 게임 6%(1/17)는 거의 멀쩡했습니다. <strong>돈 냄새가 나는 분류일수록 잘 죽습니다.</strong> 이건 목록의 품질 문제가 아니라 그 바닥의 수명 문제입니다.</p>
+<p>기계로 쓰려는 사람이 제일 먼저 찾는 공식 JSON API <code>api.publicapis.org</code> 는 <strong>DNS 조회 자체가 안 됩니다.</strong> 같은 시점 <code>raw.githubusercontent.com</code> 은 200으로 답했으니 제 회선 문제가 아닙니다. 인터넷에 남아 있는 <em>“엔드포인트를 부르면 목록이 JSON으로 옵니다”</em> 류의 안내는 전부 낡았습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 322" role="img" aria-label="매일 도는 링크 검사가 400일 연속 실패한 원인. links.py 의 메인 함수가 중복 링크 검사를 먼저 부르고, 중복 네 건을 찾으면 그 자리에서 프로세스를 종료한다. 그래서 뒤에 있는 링크 생사 검사는 한 번도 실행되지 않았다. 그 상태에서 무작위 300건을 직접 불러 보니 정상이 247건, 확실히 죽은 것이 27건, 판정이 애매한 회색이 26건이었다.">
+  <text class="lbl" x="8" y="22">게이트는 링크가 많아서가 아니라 순서 때문에 죽었다</text>
+  <rect class="vn vn-b" x="8" y="36" width="300" height="76" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="158" y="62" text-anchor="middle">① 중복 링크 검사</text>
+  <text class="cap" x="158" y="88" text-anchor="middle">중복 4건 → sys.exit(1)</text>
+  <text class="cap" x="320" y="80">→</text>
+  <rect class="vn vn-a" x="344" y="36" width="300" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="494" y="62" text-anchor="middle">② 링크 생사 검사</text>
+  <text class="cap" x="494" y="88" text-anchor="middle">실행 도달 0회</text>
+  <text class="cap" x="656" y="80">→</text>
+  <rect class="vn vn-a" x="680" y="36" width="312" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="836" y="62" text-anchor="middle">매일 00:00 UTC</text>
+  <text class="cap" x="836" y="88" text-anchor="middle">400회 연속 실패</text>
+  <line class="rule" x1="8" y1="130" x2="992" y2="130"/>
+  <text class="lbl" x="8" y="156">그 상태의 목록을 무작위 300건 직접 호출 — 브라우저 UA · 타임아웃 9초</text>
+  <text class="cap" x="230" y="183" text-anchor="end">정상 2xx/3xx</text>
+  <rect class="bar" x="240" y="170" width="494" height="18" rx="2"/>
+  <text class="cap cap-p" x="744" y="183">247 · 82.3%</text>
+  <text class="cap" x="230" y="213" text-anchor="end">확실 사망</text>
+  <rect class="bar" x="240" y="200" width="54" height="18" rx="2"/>
+  <text class="cap cap-p" x="304" y="213">27 · 9.0% ±3.2pp</text>
+  <text class="cap" x="230" y="243" text-anchor="end">회색 — 403 · 타임아웃</text>
+  <rect class="bar" x="240" y="230" width="52" height="18" rx="2"/>
+  <text class="cap" x="302" y="243">26 · 봇 차단이 대부분</text>
+  <line class="rule" x1="8" y1="262" x2="992" y2="262"/>
+  <text class="cap cap-i" x="8" y="286">⇒ 목록에 있다는 것은 <tspan class="cap-p">언젠가 살아 있었다</tspan>는 뜻이다</text>
+  <text class="cap" x="8" y="310">분류 편차가 크다 — 암호화폐 50% · 스포츠 50% 가 죽었고, 공공데이터 · 건강은 0% 였다</text>
+</svg>
+<figcaption>사망률보다 중요한 것은 그것이 걸러지지 않은 채로 400일을 지났다는 사실이다.</figcaption>
+</figure>
+<h2 id="유명한-것만-골라도-사망률은-똑같았다">유명한 것만 골라도 사망률은 똑같았다</h2>
+<p>목록의 메타값을 믿지 않고, 문서 페이지가 아니라 <strong>실제 데이터 엔드포인트</strong>를 열여섯 개 골라 직접 불렀습니다. 살아남은 것이 열셋(81%)입니다 — 무작위 표본의 82.3%와 사실상 같습니다. <strong>제가 「유명하다」고 고른 것도 사망률이 다르지 않았습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>결과</th>
+<th>쓸 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DiceBear <code>pixel-art</code></td>
+<td>200 · 358ms · CORS <code>*</code></td>
+<td>도트 아바타를 시드로 무한 생성 — 캐릭터 저작권을 안 건드리는 유일한 후보</td>
+</tr>
+<tr>
+<td>Nager.Date 공휴일</td>
+<td>200 · 418ms</td>
+<td>영업일 계산 · 게임 안 계절 이벤트</td>
+</tr>
+<tr>
+<td>Open-Meteo</td>
+<td>200 · 1,881ms</td>
+<td>데스크톱 컴패니언의 날씨 반응</td>
+</tr>
+<tr>
+<td>Sunrise-Sunset</td>
+<td>200 · 907ms</td>
+<td>같은 물건의 낮/밤 상태 전환</td>
+</tr>
+<tr>
+<td>httpbin</td>
+<td>503/200 · ~850ms</td>
+<td><strong>테스트 러너의 재시도·타임아웃 회귀</strong> — 임의 상태코드를 실물로 만들어 준다</td>
+</tr>
+<tr>
+<td>RandomUser · DummyJSON · JSONPlaceholder</td>
+<td>200</td>
+<td>목 데이터</td>
+</tr>
+<tr>
+<td>Lorem Picsum · UUID · 환율 · GitHub</td>
+<td>200 · 276~1,545ms</td>
+<td>보조</td>
+</tr>
+<tr>
+<td><strong>FakerAPI</strong></td>
+<td><strong>502</strong></td>
+<td>죽어 있다</td>
+</tr>
+<tr>
+<td><strong>Random Data API</strong></td>
+<td><strong>DNS 소멸</strong></td>
+<td>죽어 있다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>죽은 둘이 하필 <code>Test Data</code> 분류였습니다.</strong> 31건짜리 그 분류는 QA 하는 사람이 제일 먼저 여는 곳입니다. 목록에서 그럴듯한 이름 둘을 집었더니 둘 다 없는 서비스였다는 게 이 편의 실용적 결론입니다 — <strong>쓰기 전에 한 번 부르는 30초가 목록을 믿는 것보다 싸다.</strong></p>
+<h2 id="제가-찾으러-간-목록은-이미-제-폴더-안에-있었다">제가 찾으러 간 목록은 이미 제 폴더 안에 있었다</h2>
+<p>여기까지 쓰고 나서 제 <code>_생성스크립트</code> 폴더를 열었습니다. <strong>한 달 전에 만들어 둔 것이 그대로 있었습니다</strong> — 마크다운 표를 파싱해 검색·분류·인증·링크상태 필터가 붙은 자립형 HTML 한 장으로 굽는 생성기와, 그 산출물 1,791건짜리 카탈로그입니다. 한 자료는 딱 한 자리에 둔다는 규칙은 <a href="/ko/teardowns/memory/llm-wiki-obsidian/">옵시디언 LLM 위키</a> 편에서 가져온 것인데, 정작 그 자리를 제가 안 찾아본 것입니다.</p>
+<p>겹침을 실측했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>대조</th>
+<th>값</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원본 1,756건 중 카탈로그가 이미 가진 것</td>
+<td><strong>1,466 · 83.5%</strong></td>
+<td>새로 도입할 이유가 없다</td>
+</tr>
+<tr>
+<td>원본에만 있는 것</td>
+<td>290 · 16.5%</td>
+<td>8월 중순 이후 유입분</td>
+</tr>
+<tr>
+<td>카탈로그에만 있는 것</td>
+<td><strong>619</strong></td>
+<td>기상 예보 · 부동산 실거래가 · 금융 공공데이터 등 <strong>한국 공공 API</strong></td>
+</tr>
+<tr>
+<td>카탈로그의 링크 실측 범위</td>
+<td>한국분 300건뿐</td>
+<td>나머지 1,491건은 미검증 — 위 사망 9%가 그대로 숨어 있다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정이 여기서 뒤집혔습니다.</strong> 「원본이 더 크니 원본을 봐야지」가 아닙니다. 한국에서 쓰는 기준으로는 <strong>제 카탈로그가 원본보다 낫습니다</strong> — 원본에 한국 공공데이터 포털 링크는 딱 한 줄입니다. 원본에서 가져올 것은 목록이 아니라 <strong>「8월 이후 신규 290건」이라는 델타 하나</strong>뿐이고, 카탈로그가 참조하는 한국어 파생본은 글로벌 쪽 갱신이 사실상 멈춰 있어서 그냥 당겨받는 것만으로는 그 290건이 안 들어옵니다.</p>
+<h2 id="판정--도구를-들이는-일이-아니라-이미-있는-것의-눈금을-켜는-일이었다">판정 — 도구를 들이는 일이 아니라 이미 있는 것의 눈금을 켜는 일이었다</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>판정</th>
+<th>사유 · 되돌리기 비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원본을 새 참조처로 도입</td>
+<td>⛔ <strong>기각</strong></td>
+<td>이득 0 — 83.5%를 이미 갖고 있다</td>
+</tr>
+<tr>
+<td>카탈로그에 원본 직접 파싱 소스 추가</td>
+<td>✅ <strong>채택</strong></td>
+<td>누락 290건 편입 + 이후 자동 동기 · <strong>되돌리기 0</strong>(소스 하나 제거)</td>
+</tr>
+<tr>
+<td>링크 실측을 전체 행으로 확대</td>
+<td>✅ <strong>채택</strong></td>
+<td>숨어 있는 사망 <strong>≈134건</strong>[estimated] 이 화면에 걸린다 · <strong>되돌리기 0</strong></td>
+</tr>
+<tr>
+<td>도트 아바타 · 날씨 · 공휴일 · httpbin</td>
+<td><strong>보류</strong></td>
+<td>실측 생존은 확인. 다만 지금 아픈 데가 없다</td>
+</tr>
+<tr>
+<td>링크 검사기 코드 차용</td>
+<td>⛔ <strong>기각</strong></td>
+<td>이 저장소에서 베낄 코드는 없다. 남길 것은 <strong>게이트 순서 함정</strong> 하나</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 편에서 값을 치른 교훈은 대상이 아니라 순서에 관한 것입니다.</strong> 게이트를 하나 더 만드는 것보다, 이미 있는 게이트가 <strong>정말 뒤까지 도달하는지</strong>를 한 번 확인하는 쪽이 값이 큽니다. 저쪽은 400일을 그렇게 보냈고, 저는 한 달 전에 만든 카탈로그의 링크 검사가 <strong>전체의 17%에만 걸려 있다</strong>는 걸 이번에 알았습니다. 둘 다 같은 모양의 결함입니다 — <strong>돌고 있다는 신호와 일하고 있다는 사실은 다릅니다.</strong></p>
+<h2 id="못-한-것">못 한 것</h2>
+<p>⚠ <strong>403 열네 건을 끝까지 가르지 못했습니다.</strong> 봇 차단으로 보이지만 그중 진짜로 죽은 것이 섞여 있을 수 있습니다. 가르려면 사람이 브라우저로 하나씩 열어야 하고, 그 비용이 얻는 정확도보다 큽니다. 그래서 <strong>회색으로 남겨 두고 사망률을 하한(9.0%)으로 적었습니다.</strong></p>
+<p>⚠ <strong>표본은 300건이라 분류별 수치는 신뢰구간이 넓습니다.</strong> 암호화폐 50%는 18건 중 9건이고, 스포츠 50%는 6건 중 3건입니다. 「분류별로 다르다」까지는 말할 수 있지만 「정확히 몇 퍼센트」는 못 말합니다.</p>
+<p>⚠ <strong>전수 검사는 하지 않았습니다.</strong> 1,756건 전부를 부르는 것은 가능하지만, 그건 대상 저장소가 매일 하기로 해 놓고 안 하고 있는 일이고 <strong>제가 대신 해 줄 이유가 없습니다.</strong> 제 카탈로그 안의 것만 실측하면 제 쪽 목적은 끝납니다.</p>
+<p>재개 조건은 둘입니다. ① 중복 네 건이 고쳐져 일일 검사가 실제로 통과하기 시작하면 — 그때는 저쪽 결과를 신뢰할 수 있으니 제 실측을 줄일 수 있습니다. ② 공식 JSON API가 되살아나면 파싱 대신 그쪽을 씁니다. 둘 다 한 달에 한 번 확인이면 충분합니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>

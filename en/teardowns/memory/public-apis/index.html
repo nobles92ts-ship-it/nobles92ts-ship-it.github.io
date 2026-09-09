@@ -1,0 +1,644 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>public-apis — Context and memory</title><meta name="description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="MOON HYEONGGEUN"><meta property="og:title" content="public-apis — Context and memory"><meta property="og:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="MOON HYEONGGEUN — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="public-apis — Context and memory"><meta name="twitter:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>Built</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>Teardowns</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Writing</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>About</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>Just out</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/memory/public-apis/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 Teardowns</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">20 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a><a href="/en/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">4 takeaways → 0 · 24 days unrun</span></span><span class="s">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</span></a><a href="/en/teardowns/memory/public-apis/" aria-current="page"><span class="t"><span>public-apis</span><span class="kpi">1,756 entries · gate dead 400 days</span></span><span class="s">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Teardowns</span><span class="st">public</span></div><h1>public-apis</h1><p class="sum">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</p><div class="meta"><span>1,756 entries · gate dead 400 days</span><a class="src" href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#it-is-not-a-list-of-apis-it-is-a-list-of-links-to-api-docs">It is not a list of APIs, it is a list of links to API docs</a><a href="#across-51-categories-only-one-in-five-is-something-you-can-actually-call">Across 51 categories, only one in five is something you can actually call</a><a href="#each-of-the-four-design-decisions-carries-one-condition-it-depends-on">Each of the four design decisions carries one condition it depends on</a><a href="#the-daily-link-check-has-not-looked-at-a-link-in-400-days">The daily link check has not looked at a link in 400 days</a><a href="#so-i-called-300-of-them-myself--one-in-nine-is-dead">So I called 300 of them myself — one in nine is dead</a><a href="#picking-only-the-famous-ones-gave-exactly-the-same-death-rate">Picking only the famous ones gave exactly the same death rate</a><a href="#the-list-i-went-looking-for-was-already-in-my-own-folder">The list I went looking for was already in my own folder</a><a href="#verdict--this-was-not-about-adopting-a-tool-it-was-about-switching-on-a-gauge-i-already-had">Verdict — this was not about adopting a tool, it was about switching on a gauge I already had</a><a href="#what-i-did-not-do">What I did not do</a></nav><div class="prose"><p><strong>The list is real. A <em>live</em> list it is not.</strong> This 477,000-star repository collects public APIs anyone can call into a single markdown table. A link check runs against that table every day — and it had <strong>failed 400 days in a row</strong>. Not because there are too many links: <strong>four duplicate URLs kill the script before the liveness check, so that check has never actually run.</strong> With the gate stuck open like that, I pulled 300 entries at random and called them myself: <strong>one in nine is definitively dead.</strong> But the most expensive fact in this teardown was about me, not about the target — <strong>83.5% of the list I went looking for was already inside a catalogue in my own folder</strong>, and the 619 Korean public APIs that catalogue has do not exist upstream at all.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 314" role="img" aria-label="The repository is really just one markdown table. A contributor opens a pull request adding one row, a format check and a new-link check run, and once it merges the README file itself is the release. There are three gates: the first two only look at formatting and the newly changed lines, and only the third sweeps every link, once a day at midnight. There is no build, no release, no version.">
+  <text class="lbl" x="8" y="22">What the repo actually is — one table, and two scripts guarding it</text>
+  <rect class="vn vn-b" x="8" y="36" width="320" height="96" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="62" text-anchor="middle">① Contributor — one row</text>
+  <text class="cap" x="168" y="86" text-anchor="middle">Auth · HTTPS · CORS columns</text>
+  <text class="cap" x="168" y="110" text-anchor="middle">one link per pull request</text>
+  <rect class="vn vn-a" x="340" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="62" text-anchor="middle">② Three gates run</text>
+  <text class="cap" x="500" y="86" text-anchor="middle">format · new links · all links</text>
+  <text class="cap" x="500" y="110" text-anchor="middle">human review is one pair of eyes</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="62" text-anchor="middle">③ Merge = release</text>
+  <text class="cap" x="832" y="86" text-anchor="middle">README.md, 247KB, one file</text>
+  <text class="cap" x="832" y="110" text-anchor="middle">no build · no release · no version</text>
+  <text class="lbl" x="8" y="160">The three gates — the first two fire on a PR, only the third sweeps everything</text>
+  <rect class="vn vn-a" x="8" y="174" width="320" height="60" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="168" y="198" text-anchor="middle">format.py — table shape</text>
+  <text class="cap" x="168" y="222" text-anchor="middle">column count · 5 allowed auth values</text>
+  <rect class="vn vn-a" x="340" y="174" width="320" height="60" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="198" text-anchor="middle">newly added links only</text>
+  <text class="cap" x="500" y="222" text-anchor="middle">the lines this PR changed</text>
+  <rect class="vn vn-b" x="672" y="174" width="320" height="60" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="832" y="198" text-anchor="middle">links.py — every link</text>
+  <text class="cap" x="832" y="222" text-anchor="middle">daily at 00:00 UTC</text>
+  <line class="rule" x1="8" y1="254" x2="992" y2="254"/>
+  <text class="cap cap-i" x="8" y="278">⇒ What decides quality is <tspan class="cap-p">the third gate alone</tspan></text>
+  <text class="cap" x="8" y="302">Contribution friction is near zero, so intake is unbounded — and the other two only check shape</text>
+</svg>
+<figcaption>There is no API server, no search UI, no package inside. One table and three gates, that is all.</figcaption>
+</figure>
+<h2 id="it-is-not-a-list-of-apis-it-is-a-list-of-links-to-api-docs">It is not a list of APIs, it is a list of links to API docs</h2>
+<p>The name and the substance differ. The first cell of each row is not an endpoint you can call — it is <strong>a documentation page URL</strong>. Clone the repository and you get <code>README.md</code> (247KB) and two Python scripts. Nothing else.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured (2026-09-09)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entries parsed from the table</td>
+<td><strong>1,756 across 51 categories</strong></td>
+</tr>
+<tr>
+<td>Repo contents</td>
+<td>README 247KB + <code>format.py</code> 8.5KB · <code>links.py</code> 8.0KB</td>
+</tr>
+<tr>
+<td>Stars / forks / contributors</td>
+<td>477,439 / 52,699 / 422</td>
+</tr>
+<tr>
+<td>Created / last push</td>
+<td>2016-03-20 / 2026-09-05 — this is not an abandoned repo</td>
+</tr>
+<tr>
+<td>PRs merged / open</td>
+<td>3,695 / <strong>1,877</strong></td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>MIT — I may re-process the data into my own catalogue</td>
+</tr>
+<tr>
+<td>Sponsorship</td>
+<td>The entire top of the README is an APILayer ad, and so is the repo homepage link</td>
+</tr>
+</tbody>
+</table>
+<p>There are three metadata columns. The one that actually drives a decision is CORS — and <strong>more than half of it says “unknown.”</strong></p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth</td>
+<td>none 834 (47.5%) · apiKey 765 (43.6%) · OAuth 150 (8.5%)</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>yes 1,664 (94.8%) — effectively everything, so it filters nothing</td>
+</tr>
+<tr>
+<td>CORS</td>
+<td>Yes 606 (34.5%) · No 162 (9.2%) · <strong>Unknown 988 (56.3%)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson this section paid for:</strong> self-declared metadata with no refresh mechanism decays toward “unknown,” not toward “wrong.” Decaying that direction is invisible — nothing on screen ever looks broken.</p>
+<h2 id="across-51-categories-only-one-in-five-is-something-you-can-actually-call">Across 51 categories, only one in five is something you can actually call</h2>
+<p>To be practical it has to work from a browser with no key. Filter on no-auth + CORS yes + HTTPS yes and <strong>341 of 1,756 (19.4%)</strong> survive. By category:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Total</th>
+<th>Callable from a browser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>160</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Government</td>
+<td>106</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Games &amp; Comics</td>
+<td>103</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Geocoding</td>
+<td>96</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>80</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Cryptocurrency</td>
+<td>79</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>71</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Open Data</td>
+<td>56</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>51</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>49</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>48</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Sports &amp; Fitness</td>
+<td>48</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Science &amp; Math</td>
+<td>41</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Health</td>
+<td>39</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Weather</td>
+<td>39</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Documents &amp; Productivity</td>
+<td>39</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Machine Learning</td>
+<td>36</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>35</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Business</td>
+<td>32</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Photography</td>
+<td>31</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Test Data</td>
+<td>31</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>26</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Food &amp; Drink</td>
+<td>26</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Books</td>
+<td>25</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Personality</td>
+<td>25</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Art &amp; Design · Email</td>
+<td>24 · 24</td>
+<td>6 · 6</td>
+</tr>
+<tr>
+<td>Environment · Jobs · News</td>
+<td>23 · 23 · 23</td>
+<td>4 · 6 · 4</td>
+</tr>
+<tr>
+<td>Currency Exchange</td>
+<td>22</td>
+<td>6</td>
+</tr>
+<tr>
+<td>URL Shorteners</td>
+<td>20</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Anime · Text Analysis</td>
+<td>19 · 19</td>
+<td>8 · <strong>0</strong></td>
+</tr>
+<tr>
+<td>Calendar · Cloud Storage · Shopping</td>
+<td>18 · 18 · 18</td>
+<td>4 · 1 · 1</td>
+</tr>
+<tr>
+<td>Entertainment</td>
+<td>17</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Anti-Malware</td>
+<td>16</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Blockchain</td>
+<td>15</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Dictionaries</td>
+<td>13</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Tracking</td>
+<td>11</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Data Validation · Vehicle</td>
+<td>10 · 10</td>
+<td><strong>0</strong> · 1</td>
+</tr>
+<tr>
+<td>Open Source Projects</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Auth · Phone</td>
+<td>7 · 7</td>
+<td><strong>0</strong> · 1</td>
+</tr>
+<tr>
+<td>CI · Programming · Patent · Events</td>
+<td>6 · 5 · 4 · 3</td>
+<td>all <strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The zeroes are the information.</strong> Photography, text analysis, tracking, data validation and auth have nothing you can call directly. That domain does not sustain free public access — so skip the list and go straight to paid.</p>
+<h2 id="each-of-the-four-design-decisions-carries-one-condition-it-depends-on">Each of the four design decisions carries one condition it depends on</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Why</th>
+<th>Breaks when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A markdown table instead of a database</td>
+<td>Drive contribution friction to zero — click the pencil, add a row, done</td>
+<td><strong>Only holds if the reader is human.</strong> A machine has to re-parse it every time</td>
+</tr>
+<tr>
+<td>One link per pull request</td>
+<td>Minimise the review unit, minimise the cost of judging</td>
+<td><strong>Only holds while intake is smaller than throughput.</strong> 1,877 open PRs says it broke</td>
+</tr>
+<tr>
+<td>Auth · HTTPS · CORS columns</td>
+<td>Let you filter on “can I use this right now” at list level</td>
+<td><strong>Only holds while the values are current.</strong> 56.3% unknown means half the filter is dead</td>
+</tr>
+<tr>
+<td>Check links, never the response</td>
+<td>Without a key you cannot make a real call</td>
+<td><strong>Only holds if doc alive means service alive.</strong> A domain that got sold and became something else is structurally invisible</td>
+</tr>
+</tbody>
+</table>
+<p>The price of the fourth one shows up in a recent PR title: <em>“Removed repurposed site domains.”</em> The checker cannot catch those, so a human sweeps them out by hand.</p>
+<h2 id="the-daily-link-check-has-not-looked-at-a-link-in-400-days">The daily link check has not looked at a link in 400 days</h2>
+<p>The repo has <code>validate_links.yml</code> on <code>cron: '0 0 * * *'</code>. The contributing guide says <em>“opening a pull request will trigger a build to check the validity of all links.”</em> So I pulled the full run history.</p>
+<ul>
+<li>Last <strong>400 runs — zero successes.</strong> Every one from 2025-08-05 to 2026-09-08 is <code>failure</code></li>
+<li>The failing step is #5, <code>Validate all links from README.md</code></li>
+<li>Job start <code>00:29:49</code> → failure <code>00:30:03</code>. <strong>Fourteen seconds.</strong> That is not the time it takes to check 1,756 links</li>
+</ul>
+<p>The last five lines of the log say exactly what happened.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Checking for duplicate links...</span></span>
+<span class="line"><span>Found duplicate links:</span></span>
+<span class="line"><span>https://isitdownstatus.com</span></span>
+<span class="line"><span>https://tastedive.com/read/api</span></span>
+<span class="line"><span>https://api.nasa.gov</span></span>
+<span class="line"><span>https://open-meteo.com</span></span>
+<span class="line"><span>##[error]Process completed with exit code 1.</span></span></code></pre>
+<p><code>main()</code> in <code>links.py</code> calls the duplicate check <strong>first</strong>, and that function ends the process with <code>sys.exit(1)</code> when it finds one. The liveness check on the very next line <strong>is never reached.</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#24292E">links </span><span style="color:#D73A49">=</span><span style="color:#24292E"> find_links_in_file(filename)</span></span>
+<span class="line"><span style="color:#24292E">start_duplicate_links_checker(links)      </span><span style="color:#6A737D"># duplicates → sys.exit(1) right here</span></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#D73A49"> not</span><span style="color:#24292E"> only_duplicate_links_checker:</span></span>
+<span class="line"><span style="color:#24292E">    start_links_working_checker(links)    </span><span style="color:#6A737D"># reached zero times in 400 days</span></span></code></pre>
+<p>Two of those four URLs are still in the README twice as of today. <strong>Put a cheap check in front of an expensive one and exit on failure, and the expensive one looks like it “runs daily” while never running at all.</strong> Nobody fixed it because the cause — four duplicates — looks trivial. A blocked gate is worse than a silent one: the silent one gives you no signal, while the blocked one gives you a signal every single day and teaches you that the signal means nothing.</p>
+<h2 id="so-i-called-300-of-them-myself--one-in-nine-is-dead">So I called 300 of them myself — one in nine is dead</h2>
+<p>I sampled 300 of the 1,756 with a fixed seed and issued a GET with a browser user agent (9s timeout, redirects followed, 30 concurrent).</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Count</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2xx/3xx</td>
+<td>247 (82.3%)</td>
+<td>alive</td>
+</tr>
+<tr>
+<td>404 · DNS gone · connection refused</td>
+<td>16 · 9 · 2</td>
+<td><strong>definitively dead: 27 = 9.0% ±3.2pp</strong></td>
+</tr>
+<tr>
+<td>403</td>
+<td>14</td>
+<td>mostly bot blocking — the repo’s own checker treats these as fine. Do not count them as dead</td>
+</tr>
+<tr>
+<td>timeout · expired cert · 5xx · 400</td>
+<td>11</td>
+<td>grey zone</td>
+</tr>
+</tbody>
+</table>
+<p>The convention of attaching a confidence interval and a label to a measurement comes from the <a href="/en/teardowns/memory/headroom/">Headroom</a> teardown. Counting the 403s as dead would push the rate to 13.7% — <strong>a number that makes the target look worse without being true.</strong></p>
+<p>The spread by category is wide. Crypto 50% (9/18), sports 50% (3/6), social 30%, geocoding 25% and development 24% came back broken, while open data 0% (0/11), health 0% (0/7) and games 6% (1/17) were nearly clean. <strong>The categories that smell of money die fastest.</strong> That is not a defect in the list; it is the lifespan of that market.</p>
+<p>The official JSON API at <code>api.publicapis.org</code> — the first thing anyone reaches for when they want to consume this by machine — <strong>does not even resolve in DNS.</strong> At the same moment <code>raw.githubusercontent.com</code> answered 200, so this is not my connection. Every guide still saying <em>“just call the entries endpoint”</em> is stale.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 322" role="img" aria-label="Why the daily link check failed 400 days running. The main function in links.py calls the duplicate check first, and on finding four duplicates it ends the process on the spot, so the liveness check behind it never runs. With the list in that state, calling 300 random entries returned 247 alive, 27 definitively dead, and 26 in a grey zone.">
+  <text class="lbl" x="8" y="22">The gate died from ordering, not from volume</text>
+  <rect class="vn vn-b" x="8" y="36" width="300" height="76" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="158" y="62" text-anchor="middle">① duplicate check</text>
+  <text class="cap" x="158" y="88" text-anchor="middle">4 duplicates → sys.exit(1)</text>
+  <text class="cap" x="320" y="80">→</text>
+  <rect class="vn vn-a" x="344" y="36" width="300" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="494" y="62" text-anchor="middle">② liveness check</text>
+  <text class="cap" x="494" y="88" text-anchor="middle">reached zero times</text>
+  <text class="cap" x="656" y="80">→</text>
+  <rect class="vn vn-a" x="680" y="36" width="312" height="76" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="836" y="62" text-anchor="middle">daily at 00:00 UTC</text>
+  <text class="cap" x="836" y="88" text-anchor="middle">400 consecutive failures</text>
+  <line class="rule" x1="8" y1="130" x2="992" y2="130"/>
+  <text class="lbl" x="8" y="156">Calling 300 random entries from that list — browser UA, 9s timeout</text>
+  <text class="cap" x="230" y="183" text-anchor="end">alive 2xx/3xx</text>
+  <rect class="bar" x="240" y="170" width="494" height="18" rx="2"/>
+  <text class="cap cap-p" x="744" y="183">247 · 82.3%</text>
+  <text class="cap" x="230" y="213" text-anchor="end">definitively dead</text>
+  <rect class="bar" x="240" y="200" width="54" height="18" rx="2"/>
+  <text class="cap cap-p" x="304" y="213">27 · 9.0% ±3.2pp</text>
+  <text class="cap" x="230" y="243" text-anchor="end">grey — 403 · timeout</text>
+  <rect class="bar" x="240" y="230" width="52" height="18" rx="2"/>
+  <text class="cap" x="302" y="243">26 · mostly bot blocking</text>
+  <line class="rule" x1="8" y1="262" x2="992" y2="262"/>
+  <text class="cap cap-i" x="8" y="286">⇒ Being on the list means <tspan class="cap-p">it was alive once</tspan></text>
+  <text class="cap" x="8" y="310">The spread is wide — crypto 50% and sports 50% dead, open data and health at 0%</text>
+</svg>
+<figcaption>The death rate matters less than the fact that it went 400 days without being caught.</figcaption>
+</figure>
+<h2 id="picking-only-the-famous-ones-gave-exactly-the-same-death-rate">Picking only the famous ones gave exactly the same death rate</h2>
+<p>Rather than trust the metadata, I picked sixteen and called the <strong>actual data endpoint</strong>, not the doc page. Thirteen survived (81%) — statistically the same as the 82.3% from the random sample. <strong>The ones I hand-picked as “well known” died at the same rate.</strong></p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Result</th>
+<th>Where it would go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DiceBear <code>pixel-art</code></td>
+<td>200 · 358ms · CORS <code>*</code></td>
+<td>Pixel-art avatars generated from a seed — the only candidate that touches no character copyright</td>
+</tr>
+<tr>
+<td>Nager.Date holidays</td>
+<td>200 · 418ms</td>
+<td>Working-day arithmetic · in-game seasonal events</td>
+</tr>
+<tr>
+<td>Open-Meteo</td>
+<td>200 · 1,881ms</td>
+<td>Weather reactions in a desktop companion</td>
+</tr>
+<tr>
+<td>Sunrise-Sunset</td>
+<td>200 · 907ms</td>
+<td>Day/night state for the same thing</td>
+</tr>
+<tr>
+<td>httpbin</td>
+<td>503/200 · ~850ms</td>
+<td><strong>Retry and timeout regression for a test runner</strong> — arbitrary status codes as a real target</td>
+</tr>
+<tr>
+<td>RandomUser · DummyJSON · JSONPlaceholder</td>
+<td>200</td>
+<td>Mock data</td>
+</tr>
+<tr>
+<td>Lorem Picsum · UUID · FX · GitHub</td>
+<td>200 · 276–1,545ms</td>
+<td>Supporting</td>
+</tr>
+<tr>
+<td><strong>FakerAPI</strong></td>
+<td><strong>502</strong></td>
+<td>dead</td>
+</tr>
+<tr>
+<td><strong>Random Data API</strong></td>
+<td><strong>DNS gone</strong></td>
+<td>dead</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Both dead ones were in <code>Test Data</code>.</strong> That 31-entry category is the first place anyone doing QA opens. I picked two plausible names out of it and both were services that no longer exist. Which is the practical conclusion of this teardown: <strong>the thirty seconds it takes to call something is cheaper than trusting the list.</strong></p>
+<h2 id="the-list-i-went-looking-for-was-already-in-my-own-folder">The list I went looking for was already in my own folder</h2>
+<p>Having written all of the above, I opened my own generator folder. <strong>What I had built a month earlier was sitting right there</strong> — a script that parses the markdown tables and bakes them into one self-contained HTML page with search, category, auth and link-state filters, plus its 1,791-entry output. The rule that one document lives in exactly one place came out of the <a href="/en/teardowns/memory/llm-wiki-obsidian/">Obsidian LLM wiki</a> teardown; I just never looked in that place.</p>
+<p>I measured the overlap.</p>
+<table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Of the 1,756 upstream, already in my catalogue</td>
+<td><strong>1,466 · 83.5%</strong></td>
+<td>there is no reason to adopt it as new</td>
+</tr>
+<tr>
+<td>Upstream only</td>
+<td>290 · 16.5%</td>
+<td>everything added since mid-August</td>
+</tr>
+<tr>
+<td>Catalogue only</td>
+<td><strong>619</strong></td>
+<td>weather forecasts, property transaction prices, financial public data — <strong>Korean public APIs</strong></td>
+</tr>
+<tr>
+<td>Link liveness actually measured in my catalogue</td>
+<td>the 300 Korean rows only</td>
+<td>the other 1,491 are unverified — the 9% death rate above is hiding in there</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This is where the verdict flipped.</strong> Not “upstream is bigger, so use upstream.” Measured against what I actually build, <strong>my catalogue beats upstream</strong> — upstream carries exactly one line for Korea’s public data portal. What is worth taking from upstream is not the list but <strong>one delta: the 290 entries added since August.</strong> And the Korean derivative my catalogue reads from has effectively frozen its global half, so simply pulling it does not bring those 290 across.</p>
+<h2 id="verdict--this-was-not-about-adopting-a-tool-it-was-about-switching-on-a-gauge-i-already-had">Verdict — this was not about adopting a tool, it was about switching on a gauge I already had</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Verdict</th>
+<th>Reason · cost to undo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adopt upstream as a new reference</td>
+<td>⛔ <strong>rejected</strong></td>
+<td>zero gain — 83.5% already held</td>
+</tr>
+<tr>
+<td>Add a direct upstream parser to the catalogue</td>
+<td>✅ <strong>adopted</strong></td>
+<td>pulls the missing 290 in and stays in sync · <strong>undo cost 0</strong> (delete one source)</td>
+</tr>
+<tr>
+<td>Extend liveness measurement to every row</td>
+<td>✅ <strong>adopted</strong></td>
+<td>surfaces roughly <strong>134 dead entries</strong>[estimated] currently hidden · <strong>undo cost 0</strong></td>
+</tr>
+<tr>
+<td>Pixel avatars · weather · holidays · httpbin</td>
+<td><strong>held</strong></td>
+<td>verified alive. But nothing hurts right now</td>
+</tr>
+<tr>
+<td>Borrowing the link-checker code</td>
+<td>⛔ <strong>rejected</strong></td>
+<td>there is no code here worth copying. What survives is one trap: <strong>gate ordering</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson this teardown paid for is about sequence, not about the target.</strong> Confirming that an existing gate actually reaches the end is worth more than adding another gate. Upstream spent 400 days that way. I found out that the link check in the catalogue I built a month ago only covers <strong>17% of its rows</strong>. Same defect, same shape: <strong>a signal that it is running is not evidence that it is working.</strong></p>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<p>⚠ <strong>I could not resolve the fourteen 403s.</strong> They look like bot blocking, but genuinely dead ones may be hiding among them. Separating them means a human opening each in a browser, and that costs more than the accuracy it buys. So I left them grey and reported the death rate as a <strong>lower bound (9.0%).</strong></p>
+<p>⚠ <strong>300 is a small sample, so per-category figures have wide intervals.</strong> Crypto’s 50% is 9 of 18; sports’ 50% is 3 of 6. “It varies by category” is supportable; “exactly this percent” is not.</p>
+<p>⚠ <strong>I did not sweep all 1,756.</strong> It is feasible, but that is precisely the job the target repository committed to doing daily and is not doing, and <strong>there is no reason for me to do it on their behalf.</strong> Measuring only what sits in my own catalogue satisfies my purpose.</p>
+<p>Two conditions would reopen this. First, the four duplicates get fixed and the daily check starts passing — then their results become trustworthy and I can measure less. Second, the official JSON API comes back, at which point I consume that instead of parsing. Checking once a month is enough for both.</p>
+</div></article><footer class="pagefoot"><span>© 2026 MOON HYEONGGEUN</span><a class="badge" href="/ko/teardowns/memory/public-apis/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script></body></html>
