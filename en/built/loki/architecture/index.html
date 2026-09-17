@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Architecture — Loki</title><meta name="description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Architecture — Loki"><meta property="og:description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Architecture — Loki"><meta name="twitter:description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/built/loki/architecture/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 My tools</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/" aria-current="page"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/loki/architecture/" aria-current="page"><span class="t"><span>Architecture</span><span class="kpi">1 adapter</span></span><span class="s">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</span></a><a href="/en/built/loki/commands/"><span class="t"><span>Commands</span><span class="kpi">11 of them</span></span><span class="s">How much you can ask for through a chat box — and the two that changed how it feels.</span></a><a href="/en/built/loki/permissions/"><span class="t"><span>Permissions and guards</span><span class="kpi">3 tiers</span></span><span class="s">Opening an agent with shell access on your own PC to other people. And stopping is a feature.</span></a><a href="/en/built/loki/silent-failures/"><span class="t"><span>Silent failures</span><span class="kpi">0 errors</span></span><span class="s">Almost every bug this project produced returned success and did nothing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>My tools</span><span class="st">public</span></div><h1>Architecture</h1><p class="sum">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</p><div class="meta"><span>1 adapter</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#an-adapter-has-four-obligations">An adapter has four obligations</a><a href="#the-brain-swaps-too">The brain swaps too</a><a href="#what-a-dead-provider-taught">What a dead provider taught</a></nav><div class="prose"><figure class="fig">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Architecture — Loki</title><meta name="description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Architecture — Loki"><meta property="og:description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Architecture — Loki"><meta name="twitter:description" content="The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/loki/architecture/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/built/loki/architecture/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 My tools</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/" aria-current="page"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/loki/architecture/" aria-current="page"><span class="t"><span>Architecture</span><span class="kpi">1 adapter</span></span><span class="s">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</span></a><a href="/en/built/loki/commands/"><span class="t"><span>Commands</span><span class="kpi">11 of them</span></span><span class="s">How much you can ask for through a chat box — and the two that changed how it feels.</span></a><a href="/en/built/loki/permissions/"><span class="t"><span>Permissions and guards</span><span class="kpi">3 tiers</span></span><span class="s">Opening an agent with shell access on your own PC to other people. And stopping is a feature.</span></a><a href="/en/built/loki/silent-failures/"><span class="t"><span>Silent failures</span><span class="kpi">0 errors</span></span><span class="s">Almost every bug this project produced returned success and did nothing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>My tools</span><span class="st">public</span></div><h1>Architecture</h1><p class="sum">The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.</p><div class="meta"><span>1 adapter</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-swaps-out-means">What “swaps out” means</a><a href="#a-connector-has-four-obligations-and-no-more">A connector has four obligations and no more</a><a href="#swapping-the-ai-works-unusually">Swapping the AI works unusually</a><a href="#and-this-is-where-it-cost-something--a-provider-closed-suddenly">And this is where it cost something — “a provider closed, suddenly”</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#an-adapter-has-four-obligations">An adapter has four obligations</a><a href="#the-brain-swaps-too">The brain swaps too</a><a href="#what-a-dead-provider-taught">What a dead provider taught</a></nav><div class="prose"><p><strong>The messenger swaps out and the AI swaps out, and the body in the middle stays one thing. With one line in between that a human holds.</strong></p>
+<figure class="fig">
 <svg viewBox="0 0 1000 168" role="img" aria-label="Messages from Slack and Discord pass through an adapter, cross a trust boundary, go through the job queue and sessions to a brain CLI, and execute shell, files and skills on my PC.">
   <text class="lbl" x="2" y="26">OUTSIDE — ANYONE CAN TALK</text>
   <text class="lbl" x="410" y="26">MY MACHINE — THINGS RUN HERE</text>
@@ -23,6 +24,97 @@
 </svg>
 <figcaption>The platform is only a handle; everything past the adapter is shared. Adding Discord meant writing exactly one new adapter.</figcaption>
 </figure>
+<h2 id="what-swaps-out-means">What “swaps out” means</h2>
+<p>This thing is built so <strong>both ends can change.</strong></p>
+<table>
+<thead>
+<tr>
+<th>End</th>
+<th>What can change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Front</strong></td>
+<td>Slack, Discord, any other messenger</td>
+</tr>
+<tr>
+<td><strong>Back</strong></td>
+<td>Which AI does the answering</td>
+</tr>
+</tbody>
+</table>
+<p>And <strong>the middle is one thing.</strong> So adding Discord meant <strong>writing one connector.</strong> Everything else was reused.</p>
+<h2 id="a-connector-has-four-obligations-and-no-more">A connector has four obligations and no more</h2>
+<p>To attach a new messenger you have to do <strong>four things.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Obligation</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normalise what comes in</strong></td>
+<td>Every messenger shapes messages differently</td>
+</tr>
+<tr>
+<td><strong>Decide permission</strong></td>
+<td>Is this person allowed to ask for this</td>
+</tr>
+<tr>
+<td><strong>Hand it to the job runner</strong></td>
+<td>To where the work happens</td>
+</tr>
+<tr>
+<td><strong>Return the answer</strong></td>
+<td>To where it came from</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Four and no more</strong> matters. Long obligation lists make every new messenger painful, and painful means <strong>you never add one.</strong></p>
+<h2 id="swapping-the-ai-works-unusually">Swapping the AI works unusually</h2>
+<p>Normally you <strong>get a key from the AI vendor</strong> and paste it in. Then you pay per use.</p>
+<p>This is different. <strong>It runs a program already installed and signed in on this machine.</strong></p>
+<p>The program I use every day is already there and already authenticated, so <strong>it just calls that.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>The key approach</th>
+<th>This one</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Signing in</td>
+<td>Issue a separate key</td>
+<td><strong>Use what is already signed in</strong></td>
+</tr>
+<tr>
+<td>Billing</td>
+<td>Per use</td>
+<td><strong>Inside the monthly fee</strong></td>
+</tr>
+<tr>
+<td>Where it works</td>
+<td>Anywhere</td>
+<td><strong>Only on that machine</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The last row is the price. <strong>This approach is tied to my PC.</strong> Since the whole thing is <em>give my PC a job</em>, that constraint never bit.</p>
+<h2 id="and-this-is-where-it-cost-something--a-provider-closed-suddenly">And this is where it cost something — “a provider closed, suddenly”</h2>
+<p>One of the AI providers in use <strong>closed its doors to personal accounts.</strong> Not just the free tier — <strong>the paid subscription went too.</strong></p>
+<p>What makes that frightening is <strong>it was not my fault and there was nothing I could have done.</strong> One day it simply stops.</p>
+<p>Which taught this:</p>
+<blockquote>
+<p><strong>Making it swappable is not for convenience. It is so that the thing survives one side dying.</strong></p>
+</blockquote>
+<p>Had it been welded to that provider, <strong>the whole thing would have died that day.</strong> Because it swaps, <strong>one connector was replaced and it carried on.</strong></p>
+<p>Structure like that <strong>looks like waste most of the time.</strong> If you never swap, it is machinery you did not need. <strong>It repays everything the one time you need it.</strong></p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
 <h2 id="an-adapter-has-four-obligations">An adapter has four obligations</h2>
 <p>A platform adapter owes exactly four things — <strong>normalize what came in, decide authorization, hand it to a job, return the answer.</strong></p>
 <p>Past that, the core has no idea whether it’s talking to Slack or Discord. Which is why adding Discord meant writing one adapter.</p>

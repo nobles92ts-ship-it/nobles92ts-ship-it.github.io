@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Driving and judging — An adb-based game QA server</title><meta name="description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Driving and judging — An adb-based game QA server"><meta property="og:description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Driving and judging — An adb-based game QA server"><meta name="twitter:description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/built/android-qa/driving/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 My tools</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/" aria-current="page"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/android-qa/driving/" aria-current="page"><span class="t"><span>Driving and judging</span><span class="kpi">RPC &gt; screen</span></span><span class="s">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</span></a><a href="/en/built/android-qa/loop/"><span class="t"><span>The unattended loop</span><span class="kpi">9h57m</span></span><span class="s">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</span></a><a href="/en/built/android-qa/findings/"><span class="t"><span>What came out</span><span class="kpi">147 / 300</span></span><span class="s">The first thing that wasn&#39;t an automation defect. And it isn&#39;t something to brag about.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>My tools</span><span class="st">in progress</span></div><h1>Driving and judging</h1><p class="sum">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</p><div class="meta"><span>RPC &gt; screen</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#the-best-improvement-was-moving-the-verdict">The best improvement was moving the verdict</a><a href="#why-the-screen-comes-last">Why the screen comes last</a><a href="#vision-stayed-on-the-driving-side">Vision stayed on the driving side</a><a href="#where-it-still-bites">Where it still bites</a></nav><div class="prose"><p>With no handles on the screen, the path has to look like this.</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Driving and judging — An adb-based game QA server</title><meta name="description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Driving and judging — An adb-based game QA server"><meta property="og:description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Driving and judging — An adb-based game QA server"><meta name="twitter:description" content="Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/built/android-qa/driving/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 My tools</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/" aria-current="page"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">5 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/android-qa/driving/" aria-current="page"><span class="t"><span>Driving and judging</span><span class="kpi">RPC &gt; screen</span></span><span class="s">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</span></a><a href="/en/built/android-qa/loop/"><span class="t"><span>The unattended loop</span><span class="kpi">9h57m</span></span><span class="s">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</span></a><a href="/en/built/android-qa/findings/"><span class="t"><span>What came out</span><span class="kpi">147 / 300</span></span><span class="s">The first thing that wasn&#39;t an automation defect. And it isn&#39;t something to brag about.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>My tools</span><span class="st">in progress</span></div><h1>Driving and judging</h1><p class="sum">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</p><div class="meta"><span>RPC &gt; screen</span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#pressing-has-to-be-done-by-sight">Pressing has to be done by sight</a><a href="#but-judging-cannot-be-done-that-way">But judging cannot be done that way</a><a href="#why-judging-by-screen-fails--it-cannot-separate-two-things">Why judging by screen fails — it cannot separate two things</a><a href="#so-i-moved-to-reading-logs--and-i-had-declared-that-impossible">So I moved to reading logs — and I had declared that impossible</a><a href="#so-the-structure-now">So the structure now</a><a href="#where-it-still-bites">Where it still bites</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#the-best-improvement-was-moving-the-verdict">The best improvement was moving the verdict</a><a href="#why-the-screen-comes-last">Why the screen comes last</a><a href="#vision-stayed-on-the-driving-side">Vision stayed on the driving side</a><a href="#where-it-still-bites-1">Where it still bites</a></nav><div class="prose"><p><strong>A game screen has no handles, so it gets pressed by sight, like a person. But trying to <em>judge</em> by sight as well was badly wrong. Moving the verdict off the pixels and onto the log was this project’s biggest improvement.</strong></p>
 <figure class="fig">
 <svg viewBox="0 0 1000 250" role="img" aria-label="Two paths leave the device. The upper drive path goes screenshot to vision to coordinate tap. The lower verdict path reads the engine's file log for RPCs and state transitions. A dashed line marks the abandoned original path from vision to verdict.">
   <rect class="bx-code" x="10" y="86" width="104" height="52" rx="2"/>
@@ -30,6 +30,96 @@
 </svg>
 <figcaption>Driving happens by sight; judging happens by log. Judging by vision was the biggest mistake in this project.</figcaption>
 </figure>
+<h2 id="pressing-has-to-be-done-by-sight">Pressing has to be done by sight</h2>
+<p>With no named parts on screen, it <strong>takes a picture, decides “there,” and presses.</strong> The same as a person.</p>
+<p>There is no alternative. <strong>For driving, sight is still the only method.</strong></p>
+<h2 id="but-judging-cannot-be-done-that-way">But judging cannot be done that way</h2>
+<p>At first it was. Press, then <strong>confirm from a picture that the screen changed.</strong></p>
+<p><strong>That was the single most wrong call in this project.</strong></p>
+<h2 id="why-judging-by-screen-fails--it-cannot-separate-two-things">Why judging by screen fails — it cannot separate two things</h2>
+<p>The screen shows <strong>only the outcome.</strong> Which makes these two <strong>look identical.</strong></p>
+<table>
+<thead>
+<tr>
+<th>What is actually true</th>
+<th>On screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>It was processed correctly</strong></td>
+<td>Moves to the next screen</td>
+</tr>
+<tr>
+<td><strong>Processing failed and the screen moved anyway</strong></td>
+<td><strong>The same next screen</strong></td>
+</tr>
+</tbody>
+</table>
+<p>And the reverse also happens.</p>
+<table>
+<thead>
+<tr>
+<th>What is actually true</th>
+<th>On screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>It worked</strong>, but the animation is slow</td>
+<td><strong>Looks like a failure</strong></td>
+</tr>
+<tr>
+<td>A real failure</td>
+<td>Does not change</td>
+</tr>
+</tbody>
+</table>
+<p>So <strong>the same screen can mean different things, and the same thing can look different on screen.</strong></p>
+<h2 id="so-i-moved-to-reading-logs--and-i-had-declared-that-impossible">So I moved to reading logs — and I had declared that impossible</h2>
+<p>Where this cost something.</p>
+<p>I first concluded <strong>“logs cannot tell me the game’s internal state.”</strong> My grounds were that <strong>the standard logging channel was blocked.</strong></p>
+<p>But that was <strong>one channel being blocked</strong>, not the absence of logs. Through another channel, <strong>everything the game exchanged with its server</strong> was being recorded.</p>
+<p>That contains far more than the screen ever shows — <strong>what was requested, what the server answered, success or failure.</strong></p>
+<p><strong>Better evidence than the screen was available the whole time</strong>, and I had <strong>taken one blocked door as proof there were none.</strong></p>
+<h2 id="so-the-structure-now">So the structure now</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>By what</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pressing</strong></td>
+<td>The screen (no alternative)</td>
+</tr>
+<tr>
+<td><strong>First choice for judging</strong></td>
+<td><strong>The record of traffic with the server</strong></td>
+</tr>
+<tr>
+<td><strong>Second</strong></td>
+<td>Other records the game leaves</td>
+</tr>
+<tr>
+<td><strong>Last resort</strong></td>
+<td>The screen</td>
+</tr>
+</tbody>
+</table>
+<p>The screen was not discarded. <strong>It moved to the bottom of the list.</strong></p>
+<h2 id="where-it-still-bites">Where it still bites</h2>
+<p>Written down honestly. Four things remain.</p>
+<p><strong>One — “stopping with nothing happening” does not show up in an error counter.</strong></p>
+<p>Errors can be counted. But sometimes <strong>nothing fails and it simply stops.</strong> Nothing failed, so the counter reads zero.</p>
+<p>So <strong>how much the screen changes</strong> is measured separately, and <strong>when it stops changing it attempts staged recovery</strong> before cutting the run.</p>
+<p><strong>Two — a picture has to be taken <em>before</em> the first press.</strong> A freshly started process has no screen-scale information until one capture fills it in.</p>
+<p><strong>Three — restarting re-exposes old records.</strong> So <strong>the records have to be cleared and read from the start.</strong> Otherwise <strong>last night’s result gets read as tonight’s.</strong></p>
+<p><strong>Four — the first screen can only be measured from a truly fresh state.</strong> Auto-login runs straight through on a remembered account, so <strong>seeing what a first-time user sees</strong> requires wiping the app data and starting again.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>With no handles on the screen, the path has to look like this.</p>
 <h2 id="the-best-improvement-was-moving-the-verdict">The best improvement was moving the verdict</h2>
 <p>I started out certain that logs couldn’t tell me anything about game state, because the standard log channel was suppressed.</p>
 <p><strong>Wrong.</strong> Only that one channel was suppressed. <strong>The engine writes its own file log on the device, and it contains the full state-machine transitions and every RPC sent and received.</strong></p>
@@ -53,7 +143,7 @@
 <li><strong>Judging becomes the result when it’s wrong.</strong> A case wrongly marked PASS is never revisited.</li>
 </ul>
 <p>So <strong>vision sits where being wrong is survivable, and logs sit where it isn’t.</strong> Using one tool for both purposes while demanding different reliability from each doesn’t hold up.</p>
-<h2 id="where-it-still-bites">Where it still bites</h2>
+<h2 id="where-it-still-bites-1">Where it still bites</h2>
 <ul>
 <li><strong>A silent freeze doesn’t trip the error counter.</strong> Nothing fails; it just stops. So screen-change magnitude is tracked as its own axis, with staged recovery and a hard cut when nothing moves</li>
 <li><strong>Capture before you tap</strong> — a fresh process has no screen-scale state yet</li>
