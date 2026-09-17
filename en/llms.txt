@@ -138,7 +138,7 @@ Before reading the list —
 
 - [Who I am](https://nobles92ts-ship-it.github.io/en/about/): Who is doing all this, and why.
 - [About](https://nobles92ts-ship-it.github.io/en/about/me/index.md): I'm not a developer. The AI writes the code. I've spent twelve years finding where it breaks.
-- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/index.md): This site collects nothing from you directly. It does fetch fonts from elsewhere, and the host keeps access logs.
+- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/index.md): The only thing this site collects from you is how many times a page has been opened. It also fetches fonts from elsewhere, and the host keeps access logs.
 
 ## AI news today
 

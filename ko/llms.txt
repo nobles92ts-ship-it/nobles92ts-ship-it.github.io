@@ -138,7 +138,7 @@
 
 - [나는 누구](https://nobles92ts-ship-it.github.io/ko/about/): 이걸 다 누가, 왜 하고 있는가.
 - [소개](https://nobles92ts-ship-it.github.io/ko/about/me/index.md): 비개발자입니다. 코드는 AI가 씁니다. 저는 그게 어디서 부러지는지 찾는 일을 12년 했습니다.
-- [개인정보처리방침](https://nobles92ts-ship-it.github.io/ko/about/privacy/index.md): 이 사이트가 방문자에게서 직접 수집하는 정보는 없습니다. 다만 글꼴을 외부에서 받아오고, 호스팅 업체가 접속 기록을 남깁니다.
+- [개인정보처리방침](https://nobles92ts-ship-it.github.io/ko/about/privacy/index.md): 이 사이트가 방문자에게서 모으는 것은 「몇 번 열렸나」 하나뿐입니다. 다만 글꼴을 외부에서 받아오고, 호스팅 업체가 접속 기록을 남깁니다.
 
 ## 오늘의 AI 소식
 
