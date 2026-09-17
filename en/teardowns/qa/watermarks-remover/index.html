@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>watermarks-remover — QA automation</title><meta name="description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="watermarks-remover — QA automation"><meta property="og:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="watermarks-remover — QA automation"><meta name="twitter:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/watermarks-remover/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/" aria-current="page"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>watermarks-remover</h1><p class="sum">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</p><div class="meta"><span>4 takeaways → 1.5</span><a class="src" href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">github.com/guillaumemeyer/watermarks-remover ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-it-is--it-refuses-to-add-verified-and-best-effort-together-in-one-report">What it is — it refuses to add “verified” and “best-effort” together in one report</a><a href="#the-techniques--the-value-isnt-the-erasing-code-its-what-it-does-when-it-doesnt-know">The techniques — the value isn’t the erasing code, it’s what it does when it doesn’t know</a><a href="#what-broke--the-dominant-failure-isnt-malfunction-its-a-false-acquittal">What broke — the dominant failure isn’t malfunction, it’s a false acquittal</a><a href="#held-against-my-own-setup--there-was-nothing-to-catch">Held against my own setup — there was nothing to catch</a><a href="#takeaways--from-four-down-to-one-and-a-half">Takeaways — from four down to one and a half</a><a href="#incidentally--my-collector-nominated-the-clone-not-the-original">Incidentally — my collector nominated the clone, not the original</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>I erased nothing, and instead found my own deploy script breaking my own rule.</strong> watermarks-remover is a Python engine that strips provenance markers out of AI-generated files. 16,619 stars in eleven days. I opened it not to strip anything but <strong>to audit the inspection gate in my publishing pipeline</strong> — is the pre-deploy marker scan leaking anywhere, and can “even sentence rhythm”, a rule of mine with exactly zero checkers behind it, be turned into deterministic code. I rejected the tool wholesale. Running this repository’s scanner over my 6.1MB publishing corpus returned <strong>zero markers</strong>. But when I ran the one metric I did want over my own writing, the most expensive fact of the piece came out — <strong>the metric built to catch AI caught what I had written by hand, first.</strong></p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>watermarks-remover — QA automation</title><meta name="description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="watermarks-remover — QA automation"><meta property="og:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="watermarks-remover — QA automation"><meta name="twitter:description" content="I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/watermarks-remover/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/" aria-current="page"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>watermarks-remover</h1><p class="sum">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</p><div class="meta"><span>4 takeaways → 1.5</span><a class="src" href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">github.com/guillaumemeyer/watermarks-remover ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#first--what-an-ai-fingerprint-is">First — what an “AI fingerprint” is</a><a href="#i-did-not-open-it-to-strip-anything">I did not open it to strip anything</a><a href="#what-is-well-made--the-posture-toward-not-knowing">What is well made — the posture toward not knowing</a><a href="#run-against-my-own-corpus-there-was-nothing-to-catch">Run against my own corpus, there was nothing to catch</a><a href="#then-i-ran-the-one-metric-i-wanted-against-my-own-writing">Then I ran the one metric I wanted against my own writing</a><a href="#so-i-took-half-of-it">So I took half of it</a><a href="#the-real-harvest-was-a-defect-in-my-own-code">The real harvest was a defect in my own code</a><a href="#a-bonus--my-collector-fetched-the-clone-not-the-original">A bonus — my collector fetched the clone, not the original</a><a href="#conditions-to-reopen">Conditions to reopen</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-it-is--it-refuses-to-add-verified-and-best-effort-together-in-one-report">What it is — it refuses to add “verified” and “best-effort” together in one report</a><a href="#the-techniques--the-value-isnt-the-erasing-code-its-what-it-does-when-it-doesnt-know">The techniques — the value isn’t the erasing code, it’s what it does when it doesn’t know</a><a href="#what-broke--the-dominant-failure-isnt-malfunction-its-a-false-acquittal">What broke — the dominant failure isn’t malfunction, it’s a false acquittal</a><a href="#held-against-my-own-setup--there-was-nothing-to-catch">Held against my own setup — there was nothing to catch</a><a href="#takeaways--from-four-down-to-one-and-a-half">Takeaways — from four down to one and a half</a><a href="#incidentally--my-collector-nominated-the-clone-not-the-original">Incidentally — my collector nominated the clone, not the original</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>A tool that strips the “made by AI” marks out of AI-generated files. I opened it not to strip anything but to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.</strong></p>
 <figure class="fig">
 <svg viewBox="0 0 1000 350" role="img" aria-label="This tool sends every input through a router that decides the kind first, and unknown bytes are refused rather than passed through. From there it splits three ways: the deterministic layer that removes invisible Unicode and the file metadata layer are both verifiable, while the layer that attacks token-sampling watermarks by LLM rewriting is declared unverifiable by the repository itself. The same engine ships as a CLI, as a dependency-free HTTP service, and as an agent skill that contains no code.">
   <text class="lbl" x="8" y="20">one input, three branches — the router decides the kind first</text>
@@ -31,6 +31,148 @@
 </svg>
 <figcaption>Counting twenty formats tells you nothing about this thing. Splitting the verifiable layer from the unverifiable one at the code path is what it is.</figcaption>
 </figure>
+<h2 id="first--what-an-ai-fingerprint-is">First — what an “AI fingerprint” is</h2>
+<p>When AI writes text or draws an image, the output can carry <strong>a hidden marker saying it was AI-made.</strong> Three ways.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>The analogy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invisible characters</strong></td>
+<td>Ghost letters of zero width woven between the words</td>
+</tr>
+<tr>
+<td><strong>Baked into word choice</strong></td>
+<td>Probabilities nudged at generation time so a pattern emerges</td>
+</tr>
+<tr>
+<td><strong>A label inside the file</strong></td>
+<td>A note in the corner of an image file saying who made it and when</td>
+</tr>
+</tbody>
+</table>
+<p>This tool finds and removes all three. It gathered <strong>16,619 likes in 11 days.</strong></p>
+<h2 id="i-did-not-open-it-to-strip-anything">I did not open it to strip anything</h2>
+<p>To be clear about motive: I opened it <strong>to audit the check that runs before I publish this site.</strong> Two questions.</p>
+<ol>
+<li>Is there <strong>a leak</strong> in my check</li>
+<li>There is one rule I have <strong>written down but never built a checker for</strong> — can a machine measure it</li>
+</ol>
+<p>The short version: the tool is <strong>rejected outright</strong>, one of the two questions got answered, and <strong>something I did not expect came out.</strong></p>
+<h2 id="what-is-well-made--the-posture-toward-not-knowing">What is well made — the posture toward not knowing</h2>
+<p>The valuable part is not the erasing code but <strong>how it handles situations it cannot classify.</strong> Four things.</p>
+<p><strong>One — an unknown file is left alone and the program dies.</strong> It used to guess <em>probably text</em> when it could not identify something. Now it <strong>writes nothing and exits with an error.</strong> Better to stop than to touch and corrupt.</p>
+<p><strong>Two — the same character is treated differently depending on its neighbours.</strong> Some of those invisible characters are <strong>legitimately used</strong> — the one that joins emoji together, for instance. So the rule is not <em>always delete this character</em> but <strong>keep it when it sits between emoji</strong> — it looks at position.</p>
+<p>One comment in particular stood out: <strong>“classifying by category destroys genuine, newly-assigned characters.”</strong> The trace of having had that accident and fixed it is in the file.</p>
+<p><strong>Three — it re-checks after erasing.</strong> It does not stop at <em>erased</em>; it <strong>feeds the output back through the detector.</strong> So <strong>clean</strong> and <strong>erased but residue remains</strong> come out as different results.</p>
+<p><strong>Four — it distrusts its own findings.</strong> Findings are graded <strong>four ways</strong>, and the crudest detection method is <strong>demoted to the lowest grade by the tool itself.</strong> The comment says why: <strong>“a scanner hit is a signal, not a verdict.”</strong></p>
+<h2 id="run-against-my-own-corpus-there-was-nothing-to-catch">Run against my own corpus, there was nothing to catch</h2>
+<p>This settled the rejection. I imported their scanner and ran it <strong>over everything I publish.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Measured</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>196 documents + 238 built pages (6.1MB)</td>
+<td><strong>0 findings</strong></td>
+</tr>
+<tr>
+<td>Ran the cleaner and diffed before and after</td>
+<td><strong>All 196 byte-identical</strong></td>
+</tr>
+<tr>
+<td>14 published images</td>
+<td><strong>All 14 carry no label</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>There was nothing to strip in the first place.</strong> Not a bad tool — <strong>a problem I do not have.</strong></p>
+<p>→ What I took: <strong>run a detector against your own data before adopting it.</strong> Adopt one that finds zero and you have installed a cost with no benefit.</p>
+<h2 id="then-i-ran-the-one-metric-i-wanted-against-my-own-writing">Then I ran the one metric I wanted against my own writing</h2>
+<p>The line in the title.</p>
+<p>The tool ships a separate scorer for <strong>AI smell.</strong> It weighs three things; the one I wanted was <strong>how uneven the sentence lengths are.</strong></p>
+<p>The reasoning: <strong>human writing varies wildly in sentence length.</strong> A three-word sentence next to a forty-word one. <strong>AI writing tends toward evenness.</strong></p>
+<p>I wanted it because my own writing rules carry <em>do not let the rhythm flatten</em> <strong>as a rule with no checker behind it.</strong></p>
+<p>So I ran it on my writing. <strong>It flagged text I had written by hand.</strong></p>
+<p>The tool is not broken. <strong>“Sentence lengths are even” and “AI wrote this” are not the same claim</strong>, and this metric measures only the first. Prose that a person tidied up gets flagged exactly the same.</p>
+<p>→ <strong>Check that what the ruler measures and what you want to judge are the same thing.</strong></p>
+<h2 id="so-i-took-half-of-it">So I took half of it</h2>
+<p>I took the rhythm metric <strong>with conditions attached.</strong></p>
+<ul>
+<li><strong>Long-form only.</strong> With few sentences there is no unevenness to measure</li>
+<li><strong>No threshold for short pieces</strong> until I measure a short-form corpus of my own</li>
+<li><strong>Never used to judge whether AI wrote something.</strong> Only to see whether my own prose has flattened</li>
+</ul>
+<h2 id="the-real-harvest-was-a-defect-in-my-own-code">The real harvest was a defect in my own code</h2>
+<p>The actual output of this research was not someone’s technique but <strong>one violation of my own rule.</strong></p>
+<p>The first line of my global rules reads <strong>when it is ambiguous or it fails, the default is not to act.</strong> And the header comment on my publish gate states that it behaves that way.</p>
+<p><strong>The code did the opposite.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>What was written</th>
+<th>What ran</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On meeting an unknown file type</td>
+<td>Stop</td>
+<td><strong>Wave it through</strong></td>
+</tr>
+</tbody>
+</table>
+<p>It selected files to check by <strong>known extension only.</strong> Unknown extensions fall silently out of scope.</p>
+<p>Nothing leaks today. But <strong>the moment one new kind of file appears in the output it passes unchecked, with no warning</strong> — and <strong>that appears on no screen at all.</strong></p>
+<h2 id="a-bonus--my-collector-fetched-the-clone-not-the-original">A bonus — my collector fetched the clone, not the original</h2>
+<p>One more thing fell out.</p>
+<p>My automated collector put this tool on the candidate list, and <strong>it had fetched a clone rather than the original.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Original</th>
+<th>Clone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created</td>
+<td>11 Aug</td>
+<td><strong>19 Aug</strong> (8 days later)</td>
+</tr>
+<tr>
+<td>Likes</td>
+<td>16,619</td>
+<td>929 (<strong>in 3 days</strong>)</td>
+</tr>
+<tr>
+<td>Description file</td>
+<td>1,120 lines</td>
+<td>1,063 lines, of which <strong>1,058 match the original</strong></td>
+</tr>
+</tbody>
+</table>
+<p>It is a clone <strong>with no clone marker on it.</strong> Copied wholesale and re-uploaded, so the platform counts it as a separate artifact. <strong>Without a human comparing them, they do not separate.</strong></p>
+<h2 id="conditions-to-reopen">Conditions to reopen</h2>
+<p>Rejected, but not forever. Any one of four.</p>
+<ol>
+<li>The twice-yearly rescan <strong>turns up a marker for the first time</strong></li>
+<li><strong>A detector validated for Korean</strong> appears — right now there is no way to validate at all</li>
+<li>The known defects are fixed and a new release lands — ⚠ but <strong>a fixed tool with no target is still a rejection</strong>, so condition 1 gets measured again first</li>
+<li>I start <strong>distributing images or documents externally</strong></li>
+</ol>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>I erased nothing, and instead found my own deploy script breaking my own rule.</strong> watermarks-remover is a Python engine that strips provenance markers out of AI-generated files. 16,619 stars in eleven days. I opened it not to strip anything but <strong>to audit the inspection gate in my publishing pipeline</strong> — is the pre-deploy marker scan leaking anywhere, and can “even sentence rhythm”, a rule of mine with exactly zero checkers behind it, be turned into deterministic code. I rejected the tool wholesale. Running this repository’s scanner over my 6.1MB publishing corpus returned <strong>zero markers</strong>. But when I ran the one metric I did want over my own writing, the most expensive fact of the piece came out — <strong>the metric built to catch AI caught what I had written by hand, first.</strong></p>
 <h2 id="what-it-is--it-refuses-to-add-verified-and-best-effort-together-in-one-report">What it is — it refuses to add “verified” and “best-effort” together in one report</h2>
 <p><strong>An engine that strips the evidence of “an AI made this” out of files an AI made.</strong> It treats that evidence as three separate species. Carriers planted as invisible Unicode, statistical watermarks planted by skewing token-selection probability at generation time, and provenance metadata embedded as structure inside the file.</p>
 <p><strong>The design centres on admitting that those three are not the same kind of thing.</strong> Unicode is removed by deterministic code and the count removed is handed back. File metadata is removed and then the tool rescans its own output and reports what survived. The statistical watermark, by contrast, has no attack other than asking an external LLM to rewrite the prose, and that cannot be verified. The repository policy says so: <em>“reports must separate verifiable work from best-effort work.”</em> <strong>That single line is the most valuable sentence in here.</strong></p>

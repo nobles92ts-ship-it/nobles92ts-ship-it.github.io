@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>public-apis — Context and memory</title><meta name="description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="public-apis — Context and memory"><meta property="og:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="public-apis — Context and memory"><meta name="twitter:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/memory/public-apis/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a><a href="/en/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">4 takeaways → 0 · 24 days unrun</span></span><span class="s">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</span></a><a href="/en/teardowns/memory/public-apis/" aria-current="page"><span class="t"><span>public-apis</span><span class="kpi">1,756 entries · gate dead 400 days</span></span><span class="s">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>public-apis</h1><p class="sum">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</p><div class="meta"><span>1,756 entries · gate dead 400 days</span><a class="src" href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#it-is-not-a-list-of-apis-it-is-a-list-of-links-to-api-docs">It is not a list of APIs, it is a list of links to API docs</a><a href="#across-51-categories-only-one-in-five-is-something-you-can-actually-call">Across 51 categories, only one in five is something you can actually call</a><a href="#each-of-the-four-design-decisions-carries-one-condition-it-depends-on">Each of the four design decisions carries one condition it depends on</a><a href="#the-daily-link-check-has-not-looked-at-a-link-in-400-days">The daily link check has not looked at a link in 400 days</a><a href="#so-i-called-300-of-them-myself--one-in-nine-is-dead">So I called 300 of them myself — one in nine is dead</a><a href="#picking-only-the-famous-ones-gave-exactly-the-same-death-rate">Picking only the famous ones gave exactly the same death rate</a><a href="#the-list-i-went-looking-for-was-already-in-my-own-folder">The list I went looking for was already in my own folder</a><a href="#verdict--this-was-not-about-adopting-a-tool-it-was-about-switching-on-a-gauge-i-already-had">Verdict — this was not about adopting a tool, it was about switching on a gauge I already had</a><a href="#what-i-did-not-do">What I did not do</a></nav><div class="prose"><p><strong>The list is real. A <em>live</em> list it is not.</strong> This 477,000-star repository collects public APIs anyone can call into a single markdown table. A link check runs against that table every day — and it had <strong>failed 400 days in a row</strong>. Not because there are too many links: <strong>four duplicate URLs kill the script before the liveness check, so that check has never actually run.</strong> With the gate stuck open like that, I pulled 300 entries at random and called them myself: <strong>one in nine is definitively dead.</strong> But the most expensive fact in this teardown was about me, not about the target — <strong>83.5% of the list I went looking for was already inside a catalogue in my own folder</strong>, and the 619 Korean public APIs that catalogue has do not exist upstream at all.</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>public-apis — Context and memory</title><meta name="description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="public-apis — Context and memory"><meta property="og:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="public-apis — Context and memory"><meta name="twitter:description" content="The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/memory/public-apis/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a><a href="/en/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">4 takeaways → 0 · 24 days unrun</span></span><span class="s">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</span></a><a href="/en/teardowns/memory/public-apis/" aria-current="page"><span class="t"><span>public-apis</span><span class="kpi">1,756 entries · gate dead 400 days</span></span><span class="s">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>public-apis</h1><p class="sum">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</p><div class="meta"><span>1,756 entries · gate dead 400 days</span><a class="src" href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis ↗</a></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#first--what-a-public-api-is">First — what a public API is</a><a href="#but-the-name-and-the-thing-differ">But the name and the thing differ</a><a href="#only-one-in-five-is-actually-usable">Only one in five is actually usable</a><a href="#the-daily-check-has-not-looked-at-a-link-in-400-days">The daily check has not looked at a link in 400 days</a><a href="#so-i-called-300-of-them-myself">So I called 300 of them myself</a><a href="#surely-the-famous-ones-are-better-was-also-wrong">“Surely the famous ones are better” was also wrong</a><a href="#and-the-sharpest-fact--what-i-went-looking-for-was-already-mine">And the sharpest fact — what I went looking for was already mine</a><a href="#so-what-this-research-actually-did">So what this research actually did</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#it-is-not-a-list-of-apis-it-is-a-list-of-links-to-api-docs">It is not a list of APIs, it is a list of links to API docs</a><a href="#across-51-categories-only-one-in-five-is-something-you-can-actually-call">Across 51 categories, only one in five is something you can actually call</a><a href="#each-of-the-four-design-decisions-carries-one-condition-it-depends-on">Each of the four design decisions carries one condition it depends on</a><a href="#the-daily-link-check-has-not-looked-at-a-link-in-400-days">The daily link check has not looked at a link in 400 days</a><a href="#so-i-called-300-of-them-myself--one-in-nine-is-dead">So I called 300 of them myself — one in nine is dead</a><a href="#picking-only-the-famous-ones-gave-exactly-the-same-death-rate">Picking only the famous ones gave exactly the same death rate</a><a href="#the-list-i-went-looking-for-was-already-in-my-own-folder">The list I went looking for was already in my own folder</a><a href="#verdict--this-was-not-about-adopting-a-tool-it-was-about-switching-on-a-gauge-i-already-had">Verdict — this was not about adopting a tool, it was about switching on a gauge I already had</a><a href="#what-i-did-not-do">What I did not do</a></nav><div class="prose"><p><strong>A list gathering public data services into one table. It carries 477,000 likes. The check that was supposed to verify those links daily had not looked at a link in 400 days. And the list I went looking for was already sitting in my own folder.</strong></p>
 <figure class="fig">
 <svg viewBox="0 0 1000 314" role="img" aria-label="The repository is really just one markdown table. A contributor opens a pull request adding one row, a format check and a new-link check run, and once it merges the README file itself is the release. There are three gates: the first two only look at formatting and the newly changed lines, and only the third sweeps every link, once a day at midnight. There is no build, no release, no version.">
   <text class="lbl" x="8" y="22">What the repo actually is — one table, and two scripts guarding it</text>
@@ -30,6 +30,166 @@
 </svg>
 <figcaption>There is no API server, no search UI, no package inside. One table and three gates, that is all.</figcaption>
 </figure>
+<h2 id="first--what-a-public-api-is">First — what a public API is</h2>
+<p>When you build something, <strong>you can pull in data someone else has prepared</strong> — weather, exchange rates, public holidays.</p>
+<p>The counter they open for that is called an API. Think of it as <strong>a phone number</strong>: dial the agreed number and an answer comes back in an agreed format.</p>
+<p>This repository is <strong>1,756 of those counters gathered into one table.</strong></p>
+<h2 id="but-the-name-and-the-thing-differ">But the name and the thing differ</h2>
+<p><em>A list of APIs</em> suggests <strong>addresses you can call.</strong> It is not.</p>
+<p>The first column is <strong>a link to a documentation page.</strong> So it is <strong>a “go here and read” list</strong>, not a “call this address” list.</p>
+<p>Download the whole repository and you get <strong>one description file (247KB) and two checking programs.</strong> No server, no search.</p>
+<h2 id="only-one-in-five-is-actually-usable">Only one in five is actually usable</h2>
+<p>To judge usefulness you have to set conditions. Practically, it must be callable <strong>without signing up, straight from a browser, over a secure connection.</strong></p>
+<p>Filtering on those three leaves <strong>341 of 1,756 — 19.4%.</strong></p>
+<p>By category it splits hard.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Total</th>
+<th>Actually callable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development tools</td>
+<td>160</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Games and comics</td>
+<td>103</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Government data</td>
+<td>106</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Photography</td>
+<td>31</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Documents and productivity</td>
+<td>39</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A row reading <em>31, of which 0</em> tells you what this list is. <strong>In some categories it is effectively empty.</strong></p>
+<h2 id="the-daily-check-has-not-looked-at-a-link-in-400-days">The daily check has not looked at a link in 400 days</h2>
+<p>The centre of this piece.</p>
+<p>The repository runs <strong>an automatic link check at midnight every day.</strong> The contributing guide says a full link validation runs when you submit an entry.</p>
+<p>I pulled the entire run history. <strong>It had failed 400 days running.</strong></p>
+<p>The cause was unexpected. Not too many links, not a slow server.</p>
+<p><strong>Four duplicate addresses existed in the table, and the step that checks for duplicates sits <em>before</em> the link check.</strong> Dying at the earlier step meant <strong>the later step never started once.</strong></p>
+<p>→ This is the trap I took from the piece.</p>
+<blockquote>
+<p><strong>Put a cheap check in front of an expensive one and the expensive one can go unrun forever while the whole thing still looks like it is checking.</strong></p>
+</blockquote>
+<p>On screen there is <strong>one identical “check failed” line.</strong> Whether the earlier or the later step failed does not appear.</p>
+<h2 id="so-i-called-300-of-them-myself">So I called 300 of them myself</h2>
+<p>With the check dead, nobody knows the real state. I <strong>sampled 300 at random and connected to each.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fine</td>
+<td>247 (82.3%)</td>
+</tr>
+<tr>
+<td><strong>Definitely dead</strong> (missing page, address gone, refused)</td>
+<td><strong>27 (9.0%)</strong></td>
+</tr>
+<tr>
+<td>Bot-blocked — <strong>must not be counted as dead</strong></td>
+<td>14</td>
+</tr>
+<tr>
+<td>Ambiguous (timeouts and so on)</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One in nine was definitively dead.</strong></p>
+<p>The third row is called out for a reason. <strong>“You don’t look like a human, blocked” means the service is alive.</strong> Count those as dead and the rate inflates. Their own checker treats them as fine too.</p>
+<h2 id="surely-the-famous-ones-are-better-was-also-wrong">“Surely the famous ones are better” was also wrong</h2>
+<p>Suspecting my random sample, I <strong>hand-picked 16 well-known ones</strong> and called them — this time hitting <strong>the real data addresses</strong>, not the documentation pages.</p>
+<p><strong>13 survived (81%).</strong> Effectively identical to the random sample’s 82.3%.</p>
+<p><strong>Picking by reputation made no difference to the death rate.</strong></p>
+<p>A few live ones were useful to me:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where I would use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generated pixel avatars</td>
+<td><strong>Character art that touches nobody’s copyright</strong></td>
+</tr>
+<tr>
+<td>Public holidays</td>
+<td>Working-day maths, in-game seasonal events</td>
+</tr>
+<tr>
+<td>Weather and sunrise/sunset</td>
+<td>Day/night behaviour for a desktop companion</td>
+</tr>
+<tr>
+<td><strong>A server that fails on purpose</strong></td>
+<td><strong>Testing whether my retry logic actually works</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The last is the good one. Testing <em>does it retry properly when the server dies</em> requires <strong>a server that dies on demand</strong>, and that stands in for it.</p>
+<h2 id="and-the-sharpest-fact--what-i-went-looking-for-was-already-mine">And the sharpest fact — what I went looking for was already mine</h2>
+<p>After writing all of the above I opened my own folder.</p>
+<p><strong>Something I had built a month earlier was sitting there.</strong> A generator that reads the same table and <strong>bakes it into a single page with search, categories and filters</strong>, plus its output — <strong>a catalogue of 1,791 entries.</strong></p>
+<p>Compared:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Of the 1,756, <strong>already in my catalogue</strong></td>
+<td><strong>1,466 (83.5%)</strong></td>
+<td>No reason to adopt anything</td>
+</tr>
+<tr>
+<td>Only in theirs</td>
+<td>290</td>
+<td>Recent additions</td>
+</tr>
+<tr>
+<td><strong>Only in mine</strong></td>
+<td><strong>619</strong></td>
+<td><strong>Korean public data</strong> — absent from their list entirely</td>
+</tr>
+</tbody>
+</table>
+<p>The last row is decisive. <strong>Mine is better.</strong> Those 619 do not exist on their side.</p>
+<p>What stings more: <strong>I had taken the rule “one source lives in exactly one place” from another piece and written it down</strong> — and <strong>never looked in that one place.</strong></p>
+<h2 id="so-what-this-research-actually-did">So what this research actually did</h2>
+<p>It was not about adopting a tool. It was <strong>about switching on a gauge I already had.</strong></p>
+<p>My catalogue has the same hole. <strong>Link liveness has only been verified for the 300 Korean entries</strong>; the other 1,491 are unchecked. Which means <strong>the 9% death rate measured above is sitting inside my catalogue too.</strong></p>
+<p>I went to take apart someone else’s warehouse and <strong>found the same defect in my own.</strong></p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>The list is real. A <em>live</em> list it is not.</strong> This 477,000-star repository collects public APIs anyone can call into a single markdown table. A link check runs against that table every day — and it had <strong>failed 400 days in a row</strong>. Not because there are too many links: <strong>four duplicate URLs kill the script before the liveness check, so that check has never actually run.</strong> With the gate stuck open like that, I pulled 300 entries at random and called them myself: <strong>one in nine is definitively dead.</strong> But the most expensive fact in this teardown was about me, not about the target — <strong>83.5% of the list I went looking for was already inside a catalogue in my own folder</strong>, and the 619 Korean public APIs that catalogue has do not exist upstream at all.</p>
 <h2 id="it-is-not-a-list-of-apis-it-is-a-list-of-links-to-api-docs">It is not a list of APIs, it is a list of links to API docs</h2>
 <p>The name and the substance differ. The first cell of each row is not an endpoint you can call — it is <strong>a documentation page URL</strong>. Clone the repository and you get <code>README.md</code> (247KB) and two Python scripts. Nothing else.</p>
 <table>
