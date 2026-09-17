@@ -1,17 +1,102 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기</title><meta name="description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기"><meta property="og:description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기"><meta name="twitter:description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/writing/agents/unattended-regression/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 쓴 글</div><div class="plist"><a href="/ko/writing/verdicts/"><span class="t"><span>판정</span><span class="kpi">글 5</span></span><span class="s">PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.</span></a><a href="/ko/writing/measurement/"><span class="t"><span>측정</span><span class="kpi">글 1</span></span><span class="s">어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.</span></a><a href="/ko/writing/agents/" aria-current="page"><span class="t"><span>부리기</span><span class="kpi">글 2</span></span><span class="s">AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.</span></a><a href="/ko/writing/choosing/"><span class="t"><span>고르기</span><span class="kpi">글 2</span></span><span class="s">남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/writing/agents/silent-success/"><span class="t"><span>에이전트는 실패할 때 조용하다</span><span class="kpi">손실 88.3분</span></span><span class="s">무인으로 굴릴 때 무서운 건 틀린 답이 아니다. 틀린 답은 읽으면 보인다. 무서운 건 종료 코드 0이다.</span></a><a href="/ko/writing/agents/unattended-regression/" aria-current="page"><span class="t"><span>무인 회귀는 성능이 아니라 복구 구조가 만든다</span><span class="kpi">밤 하나 300사이클 유지</span></span><span class="s">실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>쓴 글</span><span class="st">공개</span></div><h1>무인 회귀는 성능이 아니라 복구 구조가 만든다</h1><p class="sum">실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.</p><div class="meta"><span>밤 하나 300사이클 유지</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#이-글이-답하는-질문">이 글이 답하는 질문</a><a href="#무인-10시간을-만든-것은-성능이-아니라-복구-구조다">무인 10시간을 만든 것은 성능이 아니라 복구 구조다</a><a href="#배터리-1p-가-무인의-통과-조건이다">배터리 1%p 가 무인의 통과 조건이다</a><a href="#조작이-틀리는-비용과-판정이-틀리는-비용은-다르다--그래서-증거를-갈랐다">조작이 틀리는 비용과 판정이 틀리는 비용은 다르다 — 그래서 증거를 갈랐다</a><a href="#무인에서-실패보다-나쁜-것은-대기다">무인에서 실패보다 나쁜 것은 대기다</a><a href="#정답을-아는-시험지로-돌리면-실패의-주어가-정해진다">정답을 아는 시험지로 돌리면 실패의 주어가 정해진다</a><a href="#무인-반복이-하는-일은-발견이-아니라-누적이다">무인 반복이 하는 일은 발견이 아니라 누적이다</a><a href="#기기-의존은-맨-아래-한-층뿐이었다">기기 의존은 맨 아래 한 층뿐이었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p>밤새 도는 자동화를 만든 것은 빠른 코드가 아니라 <strong>끊는 법</strong>이었다. 실기기 한 대를 USB로 물려 <strong>300 사이클 · 9시간 57분</strong>을 무인으로 완주했고 실패 0 · 크래시 0이었는데, 그 완주를 만든 부품은 셋이다 — 실패해도 국소적으로 끝나는 복구 사다리, 영원히 기다리지 않게 하는 끊기, 그리고 판정을 픽셀이 아니라 로그에 둔 것. 사이클은 중앙값 111.5초인데 최대 161.8초까지 흔들렸고(중앙값의 <strong>1.45배</strong>), 그래도 완주한 이유는 빨라서가 아니라 <strong>흔들림이 옆으로 번지지 않아서</strong>였다. 배터리는 96%에서 95%로 1%p 줄었다 — 소모가 충전보다 빠르면 코드가 아무리 완벽해도 밤샘은 성립하지 않으므로, 이건 성능 지표가 아니라 <strong>통과 조건</strong>이다. 그리고 무인이 실제로 산출한 것은 새로운 발견이 아니었다. 300 사이클 중 <strong>147회(49%)</strong>에서 같은 경고가 로그에 찍혔는데, 그 경고는 내내 거기 있었고 아무도 세지 않았을 뿐이다. <strong>빈도는 사람이 못 세는 종류의 증거다.</strong> 마지막으로, 이 자산이 얼마나 오래 사는지는 케이스가 무엇에 의존하느냐로 정해졌다 — 실기기용으로 쓴 126개가 전송층만 갈아끼우자 PC 빌드에서 그대로 살아났고, 그건 설계를 잘해서가 아니라 기기 어휘가 <strong>맨 아래 한 층에만</strong> 있었기 때문이며 반쯤 운이었다.</p>
-<h2 id="이-글이-답하는-질문">이 글이 답하는 질문</h2>
-<ul>
-<li><a href="#%EB%AC%B4%EC%9D%B8-10%EC%8B%9C%EA%B0%84%EC%9D%84-%EB%A7%8C%EB%93%A0-%EA%B2%83%EC%9D%80-%EC%84%B1%EB%8A%A5%EC%9D%B4-%EC%95%84%EB%8B%88%EB%9D%BC-%EB%B3%B5%EA%B5%AC-%EA%B5%AC%EC%A1%B0%EB%8B%A4">실기기를 무인으로 얼마나 오래 돌릴 수 있나</a></li>
-<li><a href="#%EB%B0%B0%ED%84%B0%EB%A6%AC-1p-%EA%B0%80-%EB%AC%B4%EC%9D%B8%EC%9D%98-%ED%86%B5%EA%B3%BC-%EC%A1%B0%EA%B1%B4%EC%9D%B4%EB%8B%A4">안드로이드 실기기를 밤새 물려 무인으로 돌릴 수 있나</a></li>
-<li><a href="#%EC%A1%B0%EC%9E%91%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EA%B3%BC-%ED%8C%90%EC%A0%95%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EC%9D%80-%EB%8B%A4%EB%A5%B4%EB%8B%A4--%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%A6%9D%EA%B1%B0%EB%A5%BC-%EA%B0%88%EB%9E%90%EB%8B%A4">게임 클라이언트는 UI 트리가 안 잡히는데 어떻게 조작하나</a></li>
-<li><a href="#%EC%A1%B0%EC%9E%91%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EA%B3%BC-%ED%8C%90%EC%A0%95%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EC%9D%80-%EB%8B%A4%EB%A5%B4%EB%8B%A4--%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%A6%9D%EA%B1%B0%EB%A5%BC-%EA%B0%88%EB%9E%90%EB%8B%A4">게임 QA 자동화에서 판정을 로그로 한다는 게 무슨 뜻인가</a></li>
-<li><a href="#%EB%AC%B4%EC%9D%B8%EC%97%90%EC%84%9C-%EC%8B%A4%ED%8C%A8%EB%B3%B4%EB%8B%A4-%EB%82%98%EC%81%9C-%EA%B2%83%EC%9D%80-%EB%8C%80%EA%B8%B0%EB%8B%A4">무인 야간 회귀가 도중에 멈추면 무슨 일이 생기나</a></li>
-<li><a href="#%EC%A0%95%EB%8B%B5%EC%9D%84-%EC%95%84%EB%8A%94-%EC%8B%9C%ED%97%98%EC%A7%80%EB%A1%9C-%EB%8F%8C%EB%A6%AC%EB%A9%B4-%EC%8B%A4%ED%8C%A8%EC%9D%98-%EC%A3%BC%EC%96%B4%EA%B0%80-%EC%A0%95%ED%95%B4%EC%A7%84%EB%8B%A4">자동화가 낸 FAIL 이 제품 문제인지 내 문제인지 어떻게 가르나</a></li>
-<li><a href="#%EB%AC%B4%EC%9D%B8-%EB%B0%98%EB%B3%B5%EC%9D%B4-%ED%95%98%EB%8A%94-%EC%9D%BC%EC%9D%80-%EB%B0%9C%EA%B2%AC%EC%9D%B4-%EC%95%84%EB%8B%88%EB%9D%BC-%EB%88%84%EC%A0%81%EC%9D%B4%EB%8B%A4">밤새 돌려서 실제로 무엇을 찾을 수 있나</a></li>
-<li><a href="#%EA%B8%B0%EA%B8%B0-%EC%9D%98%EC%A1%B4%EC%9D%80-%EB%A7%A8-%EC%95%84%EB%9E%98-%ED%95%9C-%EC%B8%B5%EB%BF%90%EC%9D%B4%EC%97%88%EB%8B%A4">실기기용 테스트 케이스를 PC 빌드에 그대로 쓸 수 있나</a></li>
-<li><a href="#%EB%AA%BB-%ED%95%9C-%EA%B2%83">무인 회귀가 무엇을 못 보나</a></li>
-</ul>
-<p>런이 느릴 때 <strong>어디가 병목인지 짚는 방법</strong>은 <a href="/ko/writing/measurement/baselines/">네 번 다 숫자는 맞았다</a>에 있고, 결과가 <strong>PASS 도 FAIL 도 아닐 때 어디에 넣는지</strong>는 <a href="/ko/writing/verdicts/threshold/">판정 임계 편</a>에 있다. 이 글은 그 사이 — <strong>사람이 안 볼 때 루프가 어떻게 살아남는가</strong>만 다룬다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기</title><meta name="description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기"><meta property="og:description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="무인 회귀는 성능이 아니라 복구 구조가 만든다 — 부리기"><meta name="twitter:description" content="실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="writing" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/writing/agents/unattended-regression/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 쓴 글</div><div class="plist"><a href="/ko/writing/verdicts/"><span class="t"><span>판정</span><span class="kpi">글 5</span></span><span class="s">PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.</span></a><a href="/ko/writing/measurement/"><span class="t"><span>측정</span><span class="kpi">글 1</span></span><span class="s">어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.</span></a><a href="/ko/writing/agents/" aria-current="page"><span class="t"><span>부리기</span><span class="kpi">글 2</span></span><span class="s">AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.</span></a><a href="/ko/writing/choosing/"><span class="t"><span>고르기</span><span class="kpi">글 2</span></span><span class="s">남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/writing/agents/silent-success/"><span class="t"><span>에이전트는 실패할 때 조용하다</span><span class="kpi">손실 88.3분</span></span><span class="s">무인으로 굴릴 때 무서운 건 틀린 답이 아니다. 틀린 답은 읽으면 보인다. 무서운 건 종료 코드 0이다.</span></a><a href="/ko/writing/agents/unattended-regression/" aria-current="page"><span class="t"><span>무인 회귀는 성능이 아니라 복구 구조가 만든다</span><span class="kpi">밤 하나 300사이클 유지</span></span><span class="s">실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>쓴 글</span><span class="st">공개</span></div><h1>무인 회귀는 성능이 아니라 복구 구조가 만든다</h1><p class="sum">실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.</p><div class="meta"><span>밤 하나 300사이클 유지</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무인이-무슨-뜻인가">「무인」이 무슨 뜻인가</a><a href="#답--빠르기가-아니라-끊는-법입니다">답 — 빠르기가 아니라 「끊는 법」입니다</a><a href="#실패보다-나쁜-것은-대기입니다">「실패보다 나쁜 것은 대기」입니다</a><a href="#실패의-주어를-미리-정해-뒀습니다">실패의 주어를 «미리» 정해 뒀습니다</a><a href="#조작이-틀리는-비용과-판정이-틀리는-비용은-다릅니다">「조작이 틀리는 비용」과 「판정이 틀리는 비용」은 다릅니다</a><a href="#그리고-배터리-1가-통과-조건이었습니다">그리고 「배터리 1%」가 통과 조건이었습니다</a><a href="#무인-반복이-하는-일은-발견이-아니라-누적입니다">무인 반복이 하는 일은 「발견」이 아니라 「누적」입니다</a><a href="#못-한-것--그리고-이-목록이-왜-중요한가">못 한 것 — 그리고 이 목록이 왜 중요한가</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#이-글이-답하는-질문">이 글이 답하는 질문</a><a href="#무인-10시간을-만든-것은-성능이-아니라-복구-구조다">무인 10시간을 만든 것은 성능이 아니라 복구 구조다</a><a href="#배터리-1p-가-무인의-통과-조건이다">배터리 1%p 가 무인의 통과 조건이다</a><a href="#조작이-틀리는-비용과-판정이-틀리는-비용은-다르다--그래서-증거를-갈랐다">조작이 틀리는 비용과 판정이 틀리는 비용은 다르다 — 그래서 증거를 갈랐다</a><a href="#무인에서-실패보다-나쁜-것은-대기다">무인에서 실패보다 나쁜 것은 대기다</a><a href="#정답을-아는-시험지로-돌리면-실패의-주어가-정해진다">정답을 아는 시험지로 돌리면 실패의 주어가 정해진다</a><a href="#무인-반복이-하는-일은-발견이-아니라-누적이다">무인 반복이 하는 일은 발견이 아니라 누적이다</a><a href="#기기-의존은-맨-아래-한-층뿐이었다">기기 의존은 맨 아래 한 층뿐이었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>실제 휴대폰을 밤새 물려 놓고 300번을 사람 없이 완주했습니다. 완주를 만든 건 «빠른 코드»가 아니라 «끊는 법»이었습니다.</strong></p>
+<h2 id="무인이-무슨-뜻인가">「무인」이 무슨 뜻인가</h2>
+<p>밤에 걸어 두고 자면, 아침에 결과가 나와 있어야 합니다.</p>
+<p>그런데 대부분의 자동화는 <strong>밤새 못 돕니다.</strong> 어딘가에서 멈춥니다. 그리고 멈추면 <strong>아침까지 그대로</strong> 서 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>새벽 2시에 멈춤</td>
+<td><strong>6시간 낭비.</strong> 아침에 발견</td>
+</tr>
+<tr>
+<td>끝까지 돌고 실패 목록만 남김</td>
+<td><strong>아침에 목록을 읽으면 됨</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 차이를 만드는 게 무엇인지가 이 글의 주제입니다.</p>
+<h2 id="답--빠르기가-아니라-끊는-법입니다">답 — 빠르기가 아니라 「끊는 법」입니다</h2>
+<p>직관적으로는 <strong>더 빠르게 만들면</strong> 될 것 같습니다. 아닙니다.</p>
+<blockquote>
+<p><strong>한 곳이 실패했을 때 그 실패가 «어디까지 번지느냐»가 정합니다.</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>실패가</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>전체로 번지면</strong></td>
+<td>거기서 밤이 끝남</td>
+</tr>
+<tr>
+<td><strong>그 하나로 갇히면</strong></td>
+<td><strong>나머지는 계속 돎</strong></td>
+</tr>
+</tbody>
+</table>
+<p>그리고 이 판정은 <a href="/ko/built/android-qa/loop/">같은 루프를 만들 때도 나왔습니다</a> — 거기서도 완주를 만든 건 속도가 아니라 실패를 가두는 구조였습니다. <strong>성능을 두 배로 올려도 멈추는 자리가 그대로면 밤은 똑같이 끝납니다.</strong></p>
+<h2 id="실패보다-나쁜-것은-대기입니다">「실패보다 나쁜 것은 대기」입니다</h2>
+<p>이게 제일 중요한 한 줄입니다.</p>
+<p>실패는 <strong>기록에 남고 아침에 읽을 수 있습니다.</strong> 대기는 <strong>아무것도 안 남습니다.</strong></p>
+<p>「응답을 기다리는 중」으로 6시간 서 있으면, 아침에 보이는 건 <strong>「아직 진행 중」</strong>입니다. 실패한 것도 아니고 성공한 것도 아닙니다. <strong>그 밤에 무슨 일이 있었는지 알 수가 없습니다.</strong></p>
+<p>그래서 <strong>기다리는 자리마다 「여기까지만 기다린다」를 정해</strong> 뒀습니다. 시간이 넘으면 <strong>실패로 적고 다음으로</strong> 갑니다.</p>
+<p><strong>실패로 적히면 정보가 되고, 기다리면 아무것도 안 남습니다.</strong></p>
+<h2 id="실패의-주어를-미리-정해-뒀습니다">실패의 주어를 «미리» 정해 뒀습니다</h2>
+<p>또 하나의 장치입니다.</p>
+<p>돌리는 검사 목록을 <strong>이미 전부 통과하는 걸로 확인된 것</strong>으로 잡았습니다. 그러면 실패가 나올 때 <strong>의심할 대상이 하나로 좁혀집니다</strong> — 제품은 어제까지 통과했으니 남는 건 제 쪽입니다.</p>
+<p>이 장치를 <a href="/ko/built/android-qa/loop/">루프 쪽에서는 「공짜 판정관」이라 불렀습니다</a>. 판정해 주는 물건을 따로 만든 게 아니라, <strong>무엇을 돌릴지 고르는 것만으로</strong> 그 역할이 생겼기 때문입니다.</p>
+<p>그래서 아침에 목록을 열 때 <strong>「이게 제품 문제인가 내 문제인가」를 한 건씩 가릴 필요가 없습니다.</strong></p>
+<h2 id="조작이-틀리는-비용과-판정이-틀리는-비용은-다릅니다">「조작이 틀리는 비용」과 「판정이 틀리는 비용」은 다릅니다</h2>
+<p>그래서 <strong>증거를 갈랐습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>틀리면</th>
+<th>무엇으로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>조작</strong>(누르기)</td>
+<td><strong>다시 누르면 됨</strong> — 싸다</td>
+<td>화면을 보고</td>
+</tr>
+<tr>
+<td><strong>판정</strong>(됐는지 확인)</td>
+<td><strong>틀린 결과가 기록에 남음</strong> — 비싸다</td>
+<td><strong>기록을 읽어서</strong></td>
+</tr>
+</tbody>
+</table>
+<p>비용이 다르니 <strong>같은 증거를 쓰면 안 됩니다.</strong> 조작은 대충 맞아도 되고, 판정은 정확해야 합니다.</p>
+<h2 id="그리고-배터리-1가-통과-조건이었습니다">그리고 「배터리 1%」가 통과 조건이었습니다</h2>
+<p>작은데 재미있는 발견입니다.</p>
+<p>밤새 돌리려면 <strong>기기가 아침까지 살아 있어야</strong> 합니다. 그래서 밤 동안 배터리가 얼마나 줄었는지를 봤는데, <strong>1%포인트</strong>였습니다.</p>
+<p>이게 <strong>무인의 통과 조건 중 하나</strong>가 됐습니다. 아무리 잘 돌아도 <strong>배터리가 아침 전에 나가면 무인이 아닙니다.</strong></p>
+<h2 id="무인-반복이-하는-일은-발견이-아니라-누적입니다">무인 반복이 하는 일은 「발견」이 아니라 「누적」입니다</h2>
+<p>마지막 통찰입니다.</p>
+<p>한 번 돌려서 안 나오던 게, <strong>300번 돌리니 나왔습니다.</strong> 그런데 그건 <strong>자동화가 똑똑해서가 아닙니다.</strong></p>
+<p><strong>드물게 일어나는 일은 많이 돌려야 한 번 나옵니다.</strong> 자동화가 하는 일은 <strong>많이 돌리는 것</strong>이지 잘 찾는 게 아닙니다.</p>
+<p>이걸 구분해야 하는 이유는 — <strong>「우리 자동화가 버그를 잡았다」와 「많이 돌렸더니 나왔다」는 다음에 할 일이 다르기</strong> 때문입니다. 앞엣것이면 자동화를 더 똑똑하게 만들고, 뒤엣것이면 <strong>더 많이 돌리면</strong> 됩니다.</p>
+<h2 id="못-한-것--그리고-이-목록이-왜-중요한가">못 한 것 — 그리고 이 목록이 왜 중요한가</h2>
+<p>아래 자세한 기록에 <strong>못 한 것이 여덟 가지</strong> 적혀 있습니다. 여기서 한 줄만 옮겨 둡니다.</p>
+<blockquote>
+<p><strong>이 목록의 절반은 「안 재서 모른다」이지 「재 봤더니 괜찮다」가 아닙니다.</strong></p>
+</blockquote>
+<p>왜 굳이 적냐면 — 무인 회귀에서 제일 위험한 문장이 <strong>「지금까지 아무 일 없었다」</strong>이기 때문입니다.</p>
+<p>아무 일 없었던 건 <strong>괜찮아서</strong>일 수도, <strong>안 보고 있어서</strong>일 수도 있습니다. 그리고 <strong>안 잰 자리를 이름 붙여 남기지 않으면, 그 침묵이 근거처럼 쌓입니다.</strong></p>
+<p>특히 하나만 짚어 두면 — <strong>시각적인 버그는 여전히 못 봅니다.</strong> 판정을 기록에 둔 구조의 대가입니다. 화면이 깨져도 <strong>기록상 정상이면 통과로 찍힙니다.</strong> 그 자리는 사람 몫이고, <strong>무인이 커질수록 그 사람 몫이 어디인지가 더 흐려집니다.</strong></p>
 <figure class="fig">
 <svg viewBox="0 0 1000 322" role="img" aria-label="밤 하나의 해부. 300 사이클을 9시간 57분 동안 무인으로 돌렸고 사이클 벽시계는 최소 98.8초 중앙값 111.5초 최대 161.8초로 흔들렸다. 완주 조건은 실패 0 크래시 0 사이클당 검증 지점 26개 전부 성립이고, 배터리는 96퍼센트에서 95퍼센트로 1포인트 줄었다. 최대는 중앙값의 1.45배이며, 완주를 만든 것은 속도가 아니라 흔들림이 다음 사이클로 번지지 않은 것이다.">
   <text class="lbl" x="8" y="22">밤 하나의 해부 — 300 사이클 · 9시간 57분 · 무인 · 실기기 1대 USB 연결</text>
@@ -41,6 +126,21 @@
 </svg>
 <figcaption>한 기기 · 한 빌드 · 한 밤의 분포다. 여러 밤·여러 기기의 분산은 재지 않았다.</figcaption>
 </figure>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>밤새 도는 자동화를 만든 것은 빠른 코드가 아니라 <strong>끊는 법</strong>이었다. 실기기 한 대를 USB로 물려 <strong>300 사이클 · 9시간 57분</strong>을 무인으로 완주했고 실패 0 · 크래시 0이었는데, 그 완주를 만든 부품은 셋이다 — 실패해도 국소적으로 끝나는 복구 사다리, 영원히 기다리지 않게 하는 끊기, 그리고 판정을 픽셀이 아니라 로그에 둔 것. 사이클은 중앙값 111.5초인데 최대 161.8초까지 흔들렸고(중앙값의 <strong>1.45배</strong>), 그래도 완주한 이유는 빨라서가 아니라 <strong>흔들림이 옆으로 번지지 않아서</strong>였다. 배터리는 96%에서 95%로 1%p 줄었다 — 소모가 충전보다 빠르면 코드가 아무리 완벽해도 밤샘은 성립하지 않으므로, 이건 성능 지표가 아니라 <strong>통과 조건</strong>이다. 그리고 무인이 실제로 산출한 것은 새로운 발견이 아니었다. 300 사이클 중 <strong>147회(49%)</strong>에서 같은 경고가 로그에 찍혔는데, 그 경고는 내내 거기 있었고 아무도 세지 않았을 뿐이다. <strong>빈도는 사람이 못 세는 종류의 증거다.</strong> 마지막으로, 이 자산이 얼마나 오래 사는지는 케이스가 무엇에 의존하느냐로 정해졌다 — 실기기용으로 쓴 126개가 전송층만 갈아끼우자 PC 빌드에서 그대로 살아났고, 그건 설계를 잘해서가 아니라 기기 어휘가 <strong>맨 아래 한 층에만</strong> 있었기 때문이며 반쯤 운이었다.</p>
+<h2 id="이-글이-답하는-질문">이 글이 답하는 질문</h2>
+<ul>
+<li><a href="#%EB%AC%B4%EC%9D%B8-10%EC%8B%9C%EA%B0%84%EC%9D%84-%EB%A7%8C%EB%93%A0-%EA%B2%83%EC%9D%80-%EC%84%B1%EB%8A%A5%EC%9D%B4-%EC%95%84%EB%8B%88%EB%9D%BC-%EB%B3%B5%EA%B5%AC-%EA%B5%AC%EC%A1%B0%EB%8B%A4">실기기를 무인으로 얼마나 오래 돌릴 수 있나</a></li>
+<li><a href="#%EB%B0%B0%ED%84%B0%EB%A6%AC-1p-%EA%B0%80-%EB%AC%B4%EC%9D%B8%EC%9D%98-%ED%86%B5%EA%B3%BC-%EC%A1%B0%EA%B1%B4%EC%9D%B4%EB%8B%A4">안드로이드 실기기를 밤새 물려 무인으로 돌릴 수 있나</a></li>
+<li><a href="#%EC%A1%B0%EC%9E%91%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EA%B3%BC-%ED%8C%90%EC%A0%95%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EC%9D%80-%EB%8B%A4%EB%A5%B4%EB%8B%A4--%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%A6%9D%EA%B1%B0%EB%A5%BC-%EA%B0%88%EB%9E%90%EB%8B%A4">게임 클라이언트는 UI 트리가 안 잡히는데 어떻게 조작하나</a></li>
+<li><a href="#%EC%A1%B0%EC%9E%91%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EA%B3%BC-%ED%8C%90%EC%A0%95%EC%9D%B4-%ED%8B%80%EB%A6%AC%EB%8A%94-%EB%B9%84%EC%9A%A9%EC%9D%80-%EB%8B%A4%EB%A5%B4%EB%8B%A4--%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%A6%9D%EA%B1%B0%EB%A5%BC-%EA%B0%88%EB%9E%90%EB%8B%A4">게임 QA 자동화에서 판정을 로그로 한다는 게 무슨 뜻인가</a></li>
+<li><a href="#%EB%AC%B4%EC%9D%B8%EC%97%90%EC%84%9C-%EC%8B%A4%ED%8C%A8%EB%B3%B4%EB%8B%A4-%EB%82%98%EC%81%9C-%EA%B2%83%EC%9D%80-%EB%8C%80%EA%B8%B0%EB%8B%A4">무인 야간 회귀가 도중에 멈추면 무슨 일이 생기나</a></li>
+<li><a href="#%EC%A0%95%EB%8B%B5%EC%9D%84-%EC%95%84%EB%8A%94-%EC%8B%9C%ED%97%98%EC%A7%80%EB%A1%9C-%EB%8F%8C%EB%A6%AC%EB%A9%B4-%EC%8B%A4%ED%8C%A8%EC%9D%98-%EC%A3%BC%EC%96%B4%EA%B0%80-%EC%A0%95%ED%95%B4%EC%A7%84%EB%8B%A4">자동화가 낸 FAIL 이 제품 문제인지 내 문제인지 어떻게 가르나</a></li>
+<li><a href="#%EB%AC%B4%EC%9D%B8-%EB%B0%98%EB%B3%B5%EC%9D%B4-%ED%95%98%EB%8A%94-%EC%9D%BC%EC%9D%80-%EB%B0%9C%EA%B2%AC%EC%9D%B4-%EC%95%84%EB%8B%88%EB%9D%BC-%EB%88%84%EC%A0%81%EC%9D%B4%EB%8B%A4">밤새 돌려서 실제로 무엇을 찾을 수 있나</a></li>
+<li><a href="#%EA%B8%B0%EA%B8%B0-%EC%9D%98%EC%A1%B4%EC%9D%80-%EB%A7%A8-%EC%95%84%EB%9E%98-%ED%95%9C-%EC%B8%B5%EB%BF%90%EC%9D%B4%EC%97%88%EB%8B%A4">실기기용 테스트 케이스를 PC 빌드에 그대로 쓸 수 있나</a></li>
+<li><a href="#%EB%AA%BB-%ED%95%9C-%EA%B2%83">무인 회귀가 무엇을 못 보나</a></li>
+</ul>
+<p>런이 느릴 때 <strong>어디가 병목인지 짚는 방법</strong>은 <a href="/ko/writing/measurement/baselines/">네 번 다 숫자는 맞았다</a>에 있고, 결과가 <strong>PASS 도 FAIL 도 아닐 때 어디에 넣는지</strong>는 <a href="/ko/writing/verdicts/threshold/">판정 임계 편</a>에 있다. 이 글은 그 사이 — <strong>사람이 안 볼 때 루프가 어떻게 살아남는가</strong>만 다룬다.</p>
 <h2 id="무인-10시간을-만든-것은-성능이-아니라-복구-구조다">무인 10시간을 만든 것은 성능이 아니라 복구 구조다</h2>
 <p>실기기 한 대를 USB로 물려 <strong>300 사이클 · 9시간 57분</strong>을 사람 없이 돌렸다. 실패 0, 크래시 0, 사이클당 검증 지점 26개가 300회 전부 성립했다. 이 300 사이클은 <strong>수렴이 끝난 뒤의 스모크 런</strong>이다 — 자동화를 고치는 루프는 따로 있었고, 그 루프가 두 사이클 연속 전건 통과에 도달한 다음에 돌린 것이 이 밤이다.</p>
 <p>여기서 눈여겨볼 값은 완주 시간이 아니라 <strong>분포</strong>다. 사이클 벽시계는 중앙값 111.5초, 최소 98.8초, 최대 161.8초였다. <strong>최대가 중앙값의 1.45배</strong>다. 열 시간짜리 무인 런에서 어떤 사이클은 다른 사이클보다 절반 가까이 더 걸렸다는 뜻이고, 그런 흔들림은 실기기를 쓰는 한 없앨 수 없다 — 기기가 열을 받고, 서버가 잠깐 느려지고, 로딩이 한 번 튄다.</p>
