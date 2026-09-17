@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>옵시디언 LLM 위키 — 컨텍스트와 기억</title><meta name="description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="옵시디언 LLM 위키 — 컨텍스트와 기억"><meta property="og:description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="옵시디언 LLM 위키 — 컨텍스트와 기억"><meta name="twitter:description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/memory/llm-wiki-obsidian/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">21편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/" aria-current="page"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a><a href="/ko/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">수확 4 → 0 · 미실행 24일</span></span><span class="s">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</span></a><a href="/ko/teardowns/memory/public-apis/"><span class="t"><span>public-apis</span><span class="kpi">1,756건 · 게이트 400일</span></span><span class="s">별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>옵시디언 LLM 위키</h1><p class="sum">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</p><div class="meta"><span>4겹침 · 순증 2</span><a class="src" href="https://www.youtube.com/watch?v=ttrnbB_9LZI" target="_blank" rel="noopener">원본 영상 — youtube.com/watch?v=ttrnbB_9LZI ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#무엇을-하는-물건인가">무엇을 하는 물건인가</a><a href="#대표-기법--제일-실용적인-건-녹화였다">대표 기법 — 제일 실용적인 건 녹화였다</a><a href="#깨본-결과">깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>구조를 배우러 갔다가 위생 규칙 둘을 얻어 왔습니다.</strong> 25분짜리 영상이 <strong>LLM 위키</strong>라는 공개 구조를 옵시디언과 Claude Code로 구현한 사례를 보여줍니다. 원천 자료·위키·규칙 <strong>3계층</strong>으로 회사의 두뇌를 만들고, AI가 직접 읽고 정리하게 하는 방식입니다. 제 것과 대조해 보니 <strong>계층은 이미 제 쪽이 더 세분화돼 있었고</strong>, 야간 자동 점검도 승인 게이트까지 붙여 돌고 있었습니다. 실제로 남은 건 <strong>구조가 아니라 운영 규칙 둘</strong>이었고, 제일 탐났던 하나는 <strong>보류</strong>했습니다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>옵시디언 LLM 위키 — 컨텍스트와 기억</title><meta name="description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="옵시디언 LLM 위키 — 컨텍스트와 기억"><meta property="og:description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="옵시디언 LLM 위키 — 컨텍스트와 기억"><meta name="twitter:description" content="3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/memory/llm-wiki-obsidian/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">21편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/" aria-current="page"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a><a href="/ko/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">수확 4 → 0 · 미실행 24일</span></span><span class="s">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</span></a><a href="/ko/teardowns/memory/public-apis/"><span class="t"><span>public-apis</span><span class="kpi">1,756건 · 게이트 400일</span></span><span class="s">별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>옵시디언 LLM 위키</h1><p class="sum">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</p><div class="meta"><span>4겹침 · 순증 2</span><a class="src" href="https://www.youtube.com/watch?v=ttrnbB_9LZI" target="_blank" rel="noopener">원본 영상 — youtube.com/watch?v=ttrnbB_9LZI ↗</a></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#이-사람이-푼-문제--매번-같은-설명을-다시-하는-것">이 사람이 푼 문제 — 「매번 같은 설명을 다시 하는 것」</a><a href="#도서관을-세-칸으로-나눴습니다">도서관을 세 칸으로 나눴습니다</a><a href="#운영-규칙-다섯-개--여기가-이-편의-본론입니다">운영 규칙 다섯 개 — 여기가 이 편의 본론입니다</a><a href="#제일-실용적이었던-기능--일하는-걸-녹화하면-설명서가-나온다">제일 실용적이었던 기능 — 「일하는 걸 녹화하면 설명서가 나온다」</a><a href="#그런데-제-것과-대-보니--구조는-제가-더-앞서-있었습니다">그런데 제 것과 대 보니 — 구조는 제가 더 앞서 있었습니다</a><a href="#그런데-구조만-보고-닫았으면-둘을-놓쳤습니다">그런데 구조만 보고 닫았으면 둘을 놓쳤습니다</a><a href="#제일-탐났던-것은-보류했습니다">제일 탐났던 것은 보류했습니다</a><a href="#인용하지-않는-것">인용하지 않는 것</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#무엇을-하는-물건인가">무엇을 하는 물건인가</a><a href="#대표-기법--제일-실용적인-건-녹화였다">대표 기법 — 제일 실용적인 건 녹화였다</a><a href="#깨본-결과">깨본 결과</a><a href="#내-환경에-대봤다">내 환경에 대봤다</a><a href="#판정">판정</a></nav><div class="prose"><p><strong>회사의 지식을 한곳에 모아 두고 AI가 직접 읽게 만든 사례를 본 기록입니다. 구조를 배우러 갔는데, 정작 배워 온 것은 구조가 아니라 「청소 규칙」 두 개였습니다.</strong></p>
 <figure class="fig">
 <svg viewBox="0 0 1000 250" role="img" aria-label="LLM 위키의 3계층 구조. 원천 자료는 손대지 않고 보존하고, AI가 읽어 정리한 파생 지식을 위키에 쌓고, 운영 규칙을 별도 계층으로 둔다. 그 위에 수집·질의·점검 세 동작이 돈다.">
   <text class="lbl" x="8" y="22">3계층 — 지식을 매번 다시 넣지 않고 한 번 컴파일해 쌓는다</text>
@@ -27,6 +27,123 @@
 </svg>
 <figcaption>세 계층 자체보다 그 위에 도는 동작 셋이 중요하다. 특히 마지막 「점검」이 있느냐 없느냐가 갈린다.</figcaption>
 </figure>
+<h2 id="이-사람이-푼-문제--매번-같은-설명을-다시-하는-것">이 사람이 푼 문제 — 「매번 같은 설명을 다시 하는 것」</h2>
+<p>AI에게 일을 시킬 때 흔한 불편이 있습니다. <strong>새 대화를 시작할 때마다 배경 설명을 처음부터 다시</strong> 해야 합니다.</p>
+<p>「우리 회사는 이런 걸 만들고, 이 프로젝트는 이런 상태고, 이런 규칙이 있고…」를 매번 반복합니다. 이게 쌓이면 상당한 시간입니다.</p>
+<p>이 사람의 해법은 이겁니다 — <strong>한 번 정리해서 도서관을 만들어 두고, AI를 그 도서관에 붙인다.</strong></p>
+<p>핵심 문장이 이랬습니다.</p>
+<blockquote>
+<p><strong>지식을 매번 다시 입력하지 말고, 한 번 정리해서 계속 쌓아라.</strong></p>
+</blockquote>
+<h2 id="도서관을-세-칸으로-나눴습니다">도서관을 세 칸으로 나눴습니다</h2>
+<table>
+<thead>
+<tr>
+<th>칸</th>
+<th>무엇이 들어가나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>원본 자료</strong></td>
+<td>받은 문서, 녹화, 회의록 — 손대지 않은 것</td>
+</tr>
+<tr>
+<td><strong>정리된 지식</strong></td>
+<td>그걸 읽고 정리한 것</td>
+</tr>
+<tr>
+<td><strong>규칙</strong></td>
+<td>어떻게 정리할지에 대한 약속</td>
+</tr>
+</tbody>
+</table>
+<p>원본을 그대로 두는 게 중요합니다. 정리하다 잘못 요약해도 <strong>원본이 남아 있으면 다시 할 수 있습니다.</strong></p>
+<h2 id="운영-규칙-다섯-개--여기가-이-편의-본론입니다">운영 규칙 다섯 개 — 여기가 이 편의 본론입니다</h2>
+<p>구조보다 이쪽이 값이 나갔습니다.</p>
+<table>
+<thead>
+<tr>
+<th>규칙</th>
+<th>무슨 사고를 막나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>확정된 것만 넣는다</strong></td>
+<td>작업 중인 초안이 섞이면 뭘 믿어야 할지 모르게 됨</td>
+</tr>
+<tr>
+<td><strong>한 자료는 딱 한 자리</strong></td>
+<td>복사본이 여러 개면 <strong>어느 게 최신인지 모르게 됨</strong></td>
+</tr>
+<tr>
+<td><strong>애매하면 임시 칸에</strong></td>
+<td>어디 둘지 고민하다 <strong>아예 안 넣게 되는 것</strong>을 막음</td>
+</tr>
+<tr>
+<td><strong>지우지 말고 옮긴다</strong></td>
+<td>지웠는데 나중에 필요해지는 사고</td>
+</tr>
+<tr>
+<td><strong>누가 언제 봤는지 기록</strong></td>
+<td>AI가 무엇을 근거로 답했는지 나중에 추적 가능</td>
+</tr>
+</tbody>
+</table>
+<p>세 번째가 특히 실용적입니다. <strong>판단을 미룰 수 있게 해 주는 규칙</strong>입니다. 「어디 둘지 모르겠으니 일단 여기」가 허용되면 <strong>안 넣고 흘려보내는 일이 없어집니다.</strong></p>
+<h2 id="제일-실용적이었던-기능--일하는-걸-녹화하면-설명서가-나온다">제일 실용적이었던 기능 — 「일하는 걸 녹화하면 설명서가 나온다」</h2>
+<p>기술적으로 제일 재미있던 부분입니다.</p>
+<p>업무를 하면서 화면을 녹화하면, <strong>어디를 클릭했는지·그때 화면이 어땠는지</strong>를 같이 잡아서 <strong>설명서 문서로 자동 정리</strong>해 줍니다.</p>
+<p>「이 작업 어떻게 하는 거예요」라는 질문에 답하려면 보통 설명서를 따로 써야 하는데, <strong>그냥 한 번 하면서 녹화하면 끝납니다.</strong></p>
+<h2 id="그런데-제-것과-대-보니--구조는-제가-더-앞서-있었습니다">그런데 제 것과 대 보니 — 구조는 제가 더 앞서 있었습니다</h2>
+<p>솔직하게 적습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>이 사례</th>
+<th>제 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>칸 나누기</td>
+<td>3칸</td>
+<td><strong>4칸</strong> — 더 잘게 나눠 씀</td>
+</tr>
+<tr>
+<td>밤에 자동 정리</td>
+<td>있음</td>
+<td>있음 + <strong>사람 승인 단계까지</strong></td>
+</tr>
+<tr>
+<td>관계도 보기</td>
+<td>있음</td>
+<td><strong>이미 만들어 둠</strong></td>
+</tr>
+</tbody>
+</table>
+<p>구조만 보면 <strong>배울 게 없었습니다.</strong></p>
+<h2 id="그런데-구조만-보고-닫았으면-둘을-놓쳤습니다">그런데 구조만 보고 닫았으면 둘을 놓쳤습니다</h2>
+<p>여기가 이 편에서 값을 치른 자리입니다.</p>
+<p>구조는 제가 앞서 있었는데, <strong>운영 규칙은 제가 뒤져 있었습니다.</strong> 앞의 표에 있는 다섯 규칙 중 둘이 제게 없었습니다.</p>
+<ul>
+<li><strong>한 자료는 딱 한 자리</strong> — 저는 중복이 생기면 나중에 찾아서 지웠습니다. 애초에 안 생기게 하는 규칙이 없었습니다</li>
+<li><strong>AI 접근 기록</strong> — 여러 경로가 같은 설정을 공유하는 지금, 누가 뭘 봤는지 알 방법이 없었습니다</li>
+</ul>
+<p>→ 배운 것: <strong>남이 나보다 앞선 부분과 뒤진 부분은 같은 자료 안에 섞여 있습니다.</strong> 앞선 쪽만 보고 「배울 게 없네」로 닫으면, 뒤진 쪽에 있는 것을 통째로 놓칩니다.</p>
+<h2 id="제일-탐났던-것은-보류했습니다">제일 탐났던 것은 보류했습니다</h2>
+<p>화면 녹화로 설명서를 만드는 기능이 제일 탐났습니다. 그런데 <strong>안 가져왔습니다.</strong></p>
+<p>이유는 하나입니다 — <strong>제가 그 불편을 겪은 적이 0번</strong>입니다.</p>
+<p>좋아 보인다고 다 가져오면 <strong>쓰지도 않을 장치가 쌓입니다.</strong> 그래서 조건을 붙여 보류했습니다.</p>
+<blockquote>
+<p><strong>다시 볼 조건: 작업 절차를 못 적어서 실제로 막히는 일이 생길 때.</strong></p>
+</blockquote>
+<h2 id="인용하지-않는-것">인용하지 않는 것</h2>
+<p>이 영상의 <strong>숫자는 하나도 인용하지 않습니다. 측정된 값이 하나도 없습니다.</strong> 「빨라졌다」 「편해졌다」는 있는데, 무엇을 어떻게 재서 나온 말인지가 없습니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>구조를 배우러 갔다가 위생 규칙 둘을 얻어 왔습니다.</strong> 25분짜리 영상이 <strong>LLM 위키</strong>라는 공개 구조를 옵시디언과 Claude Code로 구현한 사례를 보여줍니다. 원천 자료·위키·규칙 <strong>3계층</strong>으로 회사의 두뇌를 만들고, AI가 직접 읽고 정리하게 하는 방식입니다. 제 것과 대조해 보니 <strong>계층은 이미 제 쪽이 더 세분화돼 있었고</strong>, 야간 자동 점검도 승인 게이트까지 붙여 돌고 있었습니다. 실제로 남은 건 <strong>구조가 아니라 운영 규칙 둘</strong>이었고, 제일 탐났던 하나는 <strong>보류</strong>했습니다.</p>
 <h2 id="무엇을-하는-물건인가">무엇을 하는 물건인가</h2>
 <p><strong>공개된 구조 하나를 실제로 굴려 본 사례입니다.</strong> 핵심 명제는 슬라이드 한 줄입니다 — <em>“지식을 매번 재입력하지 않고, 한 번 컴파일해 계속 축적한다.”</em> 매번 자료를 새로 주는 대신 <strong>한 번 만든 허브에 AI를 붙입니다.</strong></p>
 <p><strong>본인은 이걸 「도서관」이라 부르고 공간을 다섯으로 나눕니다.</strong> 작업장 / 도서관 / 개인 금고 / 대화 채널 / 매뉴얼 아카이브. <strong>일은 작업장에서, 기억은 도서관에, 개인은 금고에</strong> — 그리고 <strong>승인·검토가 끝난 확정본만 도서관으로 옮깁니다.</strong> 2~3개월째 운영 중이라고 합니다.</p>
