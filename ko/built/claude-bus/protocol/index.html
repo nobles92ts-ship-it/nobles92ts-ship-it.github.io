@@ -1,4 +1,118 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>프로토콜 — claude-bus</title><meta name="description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="프로토콜 — claude-bus"><meta property="og:description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="프로토콜 — claude-bus"><meta name="twitter:description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/claude-bus/protocol/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/" aria-current="page"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/claude-bus/protocol/" aria-current="page"><span class="t"><span>프로토콜</span><span class="kpi">writer 1</span></span><span class="s">양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.</span></a><a href="/ko/built/claude-bus/timing/"><span class="t"><span>타이밍</span><span class="kpi">14%</span></span><span class="s">3분이 어디로 가는지 구간을 갈라 재봤습니다. 일하는 시간은 14%였습니다.</span></a><a href="/ko/built/claude-bus/safety/"><span class="t"><span>안전</span><span class="kpi">셸 0</span></span><span class="s">남의 지시가 내 기계에서 실행되기 직전에 무엇이 막는가. 셸이 아니라 사람에게 보냅니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>프로토콜</h1><p class="sum">양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.</p><div class="meta"><span>writer 1</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#폴더마다-쓰는-쪽이-하나다">폴더마다 쓰는 쪽이 하나다</a><a href="#반쯤-쓰인-파일은-복제되지-않는다">반쯤 쓰인 파일은 복제되지 않는다</a><a href="#식별자가-파일명과-같다">식별자가 파일명과 같다</a><a href="#침묵과-작업-중을-구분한다">침묵과 작업 중을 구분한다</a><a href="#찾은-버그--head-of-line-starvation">찾은 버그 — head-of-line starvation</a></nav><div class="prose"><p>파일 두 개가 전부다. 요청 하나, 응답 하나. 그 위에 규약이 몇 개 얹혀 있다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>프로토콜 — claude-bus</title><meta name="description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="프로토콜 — claude-bus"><meta property="og:description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="프로토콜 — claude-bus"><meta name="twitter:description" content="양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/claude-bus/protocol/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/" aria-current="page"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/claude-bus/protocol/" aria-current="page"><span class="t"><span>프로토콜</span><span class="kpi">writer 1</span></span><span class="s">양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.</span></a><a href="/ko/built/claude-bus/timing/"><span class="t"><span>타이밍</span><span class="kpi">14%</span></span><span class="s">3분이 어디로 가는지 구간을 갈라 재봤습니다. 일하는 시간은 14%였습니다.</span></a><a href="/ko/built/claude-bus/safety/"><span class="t"><span>안전</span><span class="kpi">셸 0</span></span><span class="s">남의 지시가 내 기계에서 실행되기 직전에 무엇이 막는가. 셸이 아니라 사람에게 보냅니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>프로토콜</h1><p class="sum">양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.</p><div class="meta"><span>writer 1</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#충돌-사본이-왜-생기는가">충돌 사본이 왜 생기는가</a><a href="#그래서-그-상황이-생길-수-없게-만들었습니다">그래서 그 상황이 «생길 수 없게» 만들었습니다</a><a href="#반쯤-쓰다-만-파일이-건너가면-안-됩니다">반쯤 쓰다 만 파일이 건너가면 안 됩니다</a><a href="#식별-번호가-파일-이름과-같습니다">식별 번호가 파일 이름과 같습니다</a><a href="#침묵과-일하는-중을-구분합니다">「침묵」과 「일하는 중」을 구분합니다</a><a href="#찾은-버그--앞줄이-막아서-뒷줄이-영원히-못-들어감">찾은 버그 — 「앞줄이 막아서 뒷줄이 영원히 못 들어감」</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#폴더마다-쓰는-쪽이-하나다">폴더마다 쓰는 쪽이 하나다</a><a href="#반쯤-쓰인-파일은-복제되지-않는다">반쯤 쓰인 파일은 복제되지 않는다</a><a href="#식별자가-파일명과-같다">식별자가 파일명과 같다</a><a href="#침묵과-작업-중을-구분한다">침묵과 작업 중을 구분한다</a><a href="#찾은-버그--head-of-line-starvation">찾은 버그 — head-of-line starvation</a></nav><div class="prose"><p><strong>양쪽이 같은 폴더를 쓰는데 왜 충돌이 안 나는가. 답은 «폴더마다 쓰는 쪽을 하나로» 정했기 때문입니다.</strong></p>
+<h2 id="충돌-사본이-왜-생기는가">충돌 사본이 왜 생기는가</h2>
+<p>자동 동기화 폴더를 써 보신 분은 <strong>「어떤 파일 (충돌본)」</strong> 같은 게 생기는 걸 보셨을 겁니다.</p>
+<p>원인은 하나입니다. <strong>두 컴퓨터가 «같은 파일»을 «동시에» 고친 것</strong>입니다.</p>
+<table>
+<thead>
+<tr>
+<th>A 컴퓨터</th>
+<th>B 컴퓨터</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파일을 고침</td>
+<td>같은 파일을 고침</td>
+<td><strong>어느 쪽이 맞는지 동기화 도구가 모름</strong> → 둘 다 남김</td>
+</tr>
+</tbody>
+</table>
+<p>그러면 <strong>어느 게 최신인지 사람이 골라야</strong> 합니다. 자동화가 안 됩니다.</p>
+<h2 id="그래서-그-상황이-생길-수-없게-만들었습니다">그래서 그 상황이 «생길 수 없게» 만들었습니다</h2>
+<p>고치는 게 아니라 <strong>애초에 안 생기게</strong> 했습니다. 폴더를 갈라서 <strong>각 폴더에 쓰는 쪽을 하나로</strong> 정했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>폴더</th>
+<th><strong>쓰는 쪽</strong></th>
+<th>읽는 쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>받은 편지함</td>
+<td><strong>보내는 사람들</strong></td>
+<td>주인</td>
+</tr>
+<tr>
+<td>보낸 편지함</td>
+<td><strong>주인만</strong></td>
+<td>보냈던 사람들</td>
+</tr>
+<tr>
+<td>기록</td>
+<td><strong>주인만</strong></td>
+<td>누구나</td>
+</tr>
+</tbody>
+</table>
+<p><strong>쓰는 쪽이 하나면 「동시에 고침」이 성립할 수가 없습니다.</strong></p>
+<p>읽는 건 여럿이 해도 충돌이 안 납니다. 읽기는 아무것도 안 바꾸니까요.</p>
+<blockquote>
+<p><strong>충돌을 «잘 처리하는» 것보다 «생길 수 없게 만드는» 편이 훨씬 쌉니다.</strong></p>
+</blockquote>
+<h2 id="반쯤-쓰다-만-파일이-건너가면-안-됩니다">반쯤 쓰다 만 파일이 건너가면 안 됩니다</h2>
+<p>두 번째 문제입니다.</p>
+<p>파일을 쓰는 데는 시간이 걸립니다. 그런데 동기화 도구는 <strong>쓰는 도중에도 파일을 발견</strong>할 수 있습니다. 그러면 <strong>반쯤 쓰인 파일이 건너가고</strong>, 받는 쪽이 그걸 읽다 깨집니다.</p>
+<p>해법은 간단합니다.</p>
+<ol>
+<li><strong>임시 이름</strong>으로 다 씁니다 — 동기화 도구가 무시하는 이름으로</li>
+<li>다 쓰고 나서 <strong>이름을 바꿉니다</strong></li>
+</ol>
+<p>이름 바꾸기는 <strong>한순간에 끝납니다.</strong> 그래서 동기화 도구가 그 파일을 발견하는 시점에는 <strong>이미 완성된 파일</strong>입니다.</p>
+<h2 id="식별-번호가-파일-이름과-같습니다">식별 번호가 파일 이름과 같습니다</h2>
+<p>작은데 편한 설계입니다.</p>
+<p>요청의 식별 번호를 <strong>파일 이름과 똑같이</strong> 만들었고, 그 안에 <strong>보낸 사람 이름</strong>도 들어 있습니다.</p>
+<p>그래서 <strong>폴더를 눈으로 보기만 해도</strong> 누가 뭘 보냈는지 압니다. 파일을 열어 볼 필요가 없습니다.</p>
+<h2 id="침묵과-일하는-중을-구분합니다">「침묵」과 「일하는 중」을 구분합니다</h2>
+<p>이게 이 방식의 제일 어려운 문제였습니다.</p>
+<p>메신저는 <strong>오류가 나면 오류가 보입니다.</strong> 이 방식은 다릅니다.</p>
+<blockquote>
+<p><strong>비동기 채널은 오류가 아니라 «침묵»으로 고장 납니다.</strong></p>
+</blockquote>
+<p>그리고 <strong>침묵은 「아직 일하는 중」과 구분이 안 됩니다.</strong> 둘 다 <strong>아무 일도 안 일어나는 것으로 보입니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>실제</th>
+<th>보이는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>열심히 일하는 중</td>
+<td><strong>아무것도 안 옴</strong></td>
+</tr>
+<tr>
+<td><strong>감시자가 죽음</strong></td>
+<td><strong>아무것도 안 옴</strong></td>
+</tr>
+<tr>
+<td>파일을 못 읽음</td>
+<td><strong>아무것도 안 옴</strong></td>
+</tr>
+</tbody>
+</table>
+<p>그래서 <strong>「받았다」를 먼저 알리게</strong> 했습니다. 일이 끝나기 전에 <strong>「접수했고 시작한다」</strong>를 보냅니다.</p>
+<p>그러면 침묵이 두 종류로 갈립니다 — <strong>접수 표시가 온 침묵</strong>(일하는 중)과 <strong>접수 표시도 안 온 침묵</strong>(뭔가 고장).</p>
+<h2 id="찾은-버그--앞줄이-막아서-뒷줄이-영원히-못-들어감">찾은 버그 — 「앞줄이 막아서 뒷줄이 영원히 못 들어감」</h2>
+<p>여기가 값을 치른 자리입니다.</p>
+<p>한 번에 처리할 개수를 제한하는 코드가 있었습니다. 「한 번에 5개까지만」 같은 식입니다.</p>
+<p>그런데 그 제한이 <strong>이미 답한 요청을 걸러 내기 «전»에</strong> 걸려 있었습니다.</p>
+<p>무슨 일이 생기냐면 —</p>
+<ol>
+<li>폴더에서 요청을 읽음</li>
+<li><strong>먼저 5개로 자름</strong> ← 여기가 문제</li>
+<li>그중 이미 답한 것을 걸러 냄</li>
+<li><strong>남은 게 없음</strong> → 아무것도 처리 안 함</li>
+</ol>
+<p>이미 답한 요청 5개가 앞에 있으면, <strong>그 뒤에 있는 새 요청은 영원히 차례가 안 옵니다.</strong> 5개를 자르고 나면 전부 걸러지니까요.</p>
+<p>그리고 <strong>아무 오류도 안 납니다.</strong> 그냥 조용히 아무것도 안 합니다.</p>
+<p>고치는 건 <strong>순서를 바꾸는 것뿐</strong>이었습니다 — <strong>거르고 나서 자릅니다.</strong></p>
+<p>→ <strong>같은 두 동작인데 순서가 바뀌면 결과가 완전히 달라지고, 그 차이가 화면에 안 나타납니다.</strong></p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>파일 두 개가 전부다. 요청 하나, 응답 하나. 그 위에 규약이 몇 개 얹혀 있다.</p>
 <h2 id="폴더마다-쓰는-쪽이-하나다">폴더마다 쓰는 쪽이 하나다</h2>
 <p>양방향 동기화는 <strong>두 기계가 같은 파일을 고칠 때</strong> 충돌 사본을 만든다. 그래서 그 상황이 애초에 안 생기게 폴더를 갈랐다.</p>
 <table>

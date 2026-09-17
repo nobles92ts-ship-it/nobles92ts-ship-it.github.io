@@ -1,4 +1,99 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>구조 — QA 위젯</title><meta name="description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="구조 — QA 위젯"><meta property="og:description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="구조 — QA 위젯"><meta name="twitter:description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/qa-widget/architecture/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/qa-widget/architecture/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/qa-widget/architecture/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/" aria-current="page"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/qa-widget/screen/"><span class="t"><span>화면</span><span class="kpi">항상 위</span></span><span class="s">숫자만 보여주면 안 됩니다. 어떻게 나온 숫자인지와, 그 자리에서 할 수 있는 일이 같이 있어야 합니다.</span></a><a href="/ko/built/qa-widget/architecture/" aria-current="page"><span class="t"><span>구조</span><span class="kpi">파일 1개</span></span><span class="s">위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.</span></a><a href="/ko/built/qa-widget/delivery/"><span class="t"><span>배포</span><span class="kpi">OK/NG</span></span><span class="s">남의 기계에 도구를 올리는 일이 도구를 만드는 일보다 어려웠습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>구조</h1><p class="sum">위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.</p><div class="meta"><span>파일 1개</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#ui가-멈추면-사람이-닫는다">UI가 멈추면 사람이 닫는다</a><a href="#실패해도-직전-값이-남는다">실패해도 직전 값이 남는다</a><a href="#마일스톤은-코드가-아니라-설정이다">마일스톤은 코드가 아니라 설정이다</a></nav><div class="prose"><p>이게 구조의 핵심이다. 위젯은 <strong>파일 하나를 읽어서 그린다.</strong> 시트와 이슈 트래커를 훑어 그 파일을 쓰는 건 별도 스크립트다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>구조 — QA 위젯</title><meta name="description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="구조 — QA 위젯"><meta property="og:description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="구조 — QA 위젯"><meta name="twitter:description" content="위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/qa-widget/architecture/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/qa-widget/architecture/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/qa-widget/architecture/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/" aria-current="page"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/qa-widget/screen/"><span class="t"><span>화면</span><span class="kpi">항상 위</span></span><span class="s">숫자만 보여주면 안 됩니다. 어떻게 나온 숫자인지와, 그 자리에서 할 수 있는 일이 같이 있어야 합니다.</span></a><a href="/ko/built/qa-widget/architecture/" aria-current="page"><span class="t"><span>구조</span><span class="kpi">파일 1개</span></span><span class="s">위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.</span></a><a href="/ko/built/qa-widget/delivery/"><span class="t"><span>배포</span><span class="kpi">OK/NG</span></span><span class="s">남의 기계에 도구를 올리는 일이 도구를 만드는 일보다 어려웠습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>구조</h1><p class="sum">위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.</p><div class="meta"><span>파일 1개</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#구조가-두-덩어리입니다">구조가 두 덩어리입니다</a><a href="#갈라-놓은-이유-하나--멈추면-사람이-닫습니다">갈라 놓은 이유 하나 — 「멈추면 사람이 닫습니다」</a><a href="#갈라-놓은-이유-둘--실패해도-직전-값이-남습니다">갈라 놓은 이유 둘 — 「실패해도 직전 값이 남습니다」</a><a href="#설정을-코드에서-뺐습니다">설정을 코드에서 뺐습니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#ui가-멈추면-사람이-닫는다">UI가 멈추면 사람이 닫는다</a><a href="#실패해도-직전-값이-남는다">실패해도 직전 값이 남는다</a><a href="#마일스톤은-코드가-아니라-설정이다">마일스톤은 코드가 아니라 설정이다</a></nav><div class="prose"><p><strong>위젯은 «조회»를 하지 않습니다. 파일 하나를 읽어서 그립니다. 그리고 그 파일을 쓰는 건 «다른» 프로그램입니다.</strong></p>
+<h2 id="구조가-두-덩어리입니다">구조가 두 덩어리입니다</h2>
+<table>
+<thead>
+<tr>
+<th>누가</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>수집 프로그램</strong></td>
+<td>표와 이슈 목록을 훑어서 <strong>파일 하나에 씀</strong></td>
+</tr>
+<tr>
+<td><strong>위젯</strong></td>
+<td><strong>그 파일을 읽어서 그림</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>위젯은 원격 조회를 절대 안 합니다.</strong></p>
+<h2 id="갈라-놓은-이유-하나--멈추면-사람이-닫습니다">갈라 놓은 이유 하나 — 「멈추면 사람이 닫습니다」</h2>
+<p>원격 조회는 <strong>몇 초씩</strong> 걸립니다. 서버가 느리면 더 걸립니다.</p>
+<p>만약 위젯이 직접 조회하면, <strong>그동안 창이 굳습니다.</strong> 드래그도 안 되고 버튼도 안 눌립니다.</p>
+<p>그리고 <strong>굳는 창은 사람이 닫습니다.</strong> 한 번 닫으면 다시 안 엽니다.</p>
+<p>이 위젯의 존재 이유가 <strong>「항상 떠 있는 것」</strong>인데, <strong>닫히면 존재 이유가 없어집니다.</strong></p>
+<blockquote>
+<p><strong>항상 떠 있어야 하는 물건은, 절대 굳으면 안 됩니다.</strong></p>
+</blockquote>
+<h2 id="갈라-놓은-이유-둘--실패해도-직전-값이-남습니다">갈라 놓은 이유 둘 — 「실패해도 직전 값이 남습니다」</h2>
+<p>이게 더 중요합니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>위젯이 직접 조회하면</th>
+<th>파일을 읽으면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조회 성공</td>
+<td>새 값</td>
+<td>새 값</td>
+</tr>
+<tr>
+<td><strong>조회 실패</strong></td>
+<td><strong>빈 화면 / 오류</strong></td>
+<td><strong>직전 값이 그대로</strong></td>
+</tr>
+</tbody>
+</table>
+<p>「직전 값」이 왜 좋냐면 — <strong>어제 값이라도 없는 것보다 낫기</strong> 때문입니다.</p>
+<p>그리고 <strong>빈 화면은 두 가지를 구분 못 합니다.</strong></p>
+<ul>
+<li>아직 데이터가 없는 상태</li>
+<li><strong>데이터가 있는데 못 가져온 상태</strong></li>
+</ul>
+<p>직전 값이 남아 있으면 <strong>「갱신 시각」을 보고 판단</strong>할 수 있습니다. 「어? 3시간째 그대로네」 하고 알아챕니다.</p>
+<h2 id="설정을-코드에서-뺐습니다">설정을 코드에서 뺐습니다</h2>
+<p>이 프로젝트는 <strong>차수가 바뀔 때마다</strong> 같은 일을 반복합니다. 그때 <strong>고칠 게 없어야</strong> 했습니다.</p>
+<p>그래서 차수마다 달라지는 걸 <strong>전부 설정 파일 항목으로</strong> 뺐습니다.</p>
+<table>
+<thead>
+<tr>
+<th>설정으로 뺀 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어느 표를 볼지</td>
+</tr>
+<tr>
+<td>리포트 주소</td>
+</tr>
+<tr>
+<td>차수 이름</td>
+</tr>
+<tr>
+<td>알림 보낼 곳</td>
+</tr>
+<tr>
+<td>배포 폴더</td>
+</tr>
+<tr>
+<td>서식 파일 위치</td>
+</tr>
+</tbody>
+</table>
+<p>이렇게 해 두면 <strong>새 차수를 시작할 때 코드를 안 열어도</strong> 됩니다. 설정 파일 몇 줄만 고칩니다.</p>
+<p>왜 중요하냐면 — <strong>코드를 열면 다른 것도 건드리게</strong> 되고, 그러면 <strong>지난 차수에 잘 되던 게 깨집니다.</strong> 그리고 그 사고는 <strong>한참 뒤에</strong> 드러납니다.</p>
+<blockquote>
+<p><strong>주기적으로 반복되는 일은, 반복할 때 «코드를 안 여는 것»이 목표입니다.</strong></p>
+</blockquote>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>이게 구조의 핵심이다. 위젯은 <strong>파일 하나를 읽어서 그린다.</strong> 시트와 이슈 트래커를 훑어 그 파일을 쓰는 건 별도 스크립트다.</p>
 <h2 id="ui가-멈추면-사람이-닫는다">UI가 멈추면 사람이 닫는다</h2>
 <p>갈라 놓은 첫 번째 이유다. 원격 조회는 몇 초씩 걸리는데, 그동안 창이 굳으면 <strong>사람은 그 위젯을 닫는다.</strong></p>
 <p>그래서 갱신은 비동기로 던지고 <strong>타이머가 완료를 확인</strong>한다. 창은 계속 움직이고, 값이 늦게 도착하면 늦게 바뀐다.</p>

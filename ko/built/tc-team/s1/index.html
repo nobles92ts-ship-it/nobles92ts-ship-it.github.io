@@ -1,4 +1,90 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>S1 · 설계 — tc-team</title><meta name="description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="S1 · 설계 — tc-team"><meta property="og:description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="S1 · 설계 — tc-team"><meta name="twitter:description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/tc-team/s1/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/" aria-current="page"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/tc-team/s1/" aria-current="page"><span class="t"><span>S1 · 설계</span><span class="kpi">LLM</span></span><span class="s">기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.</span></a><a href="/ko/built/tc-team/s2/"><span class="t"><span>S2 · 격리 게이트</span><span class="kpi">결정론</span></span><span class="s">전개하기 전에 &quot;이 설계가 전개 가능한가&quot;를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.</span></a><a href="/ko/built/tc-team/s3/"><span class="t"><span>S3 · 문장화</span><span class="kpi">25행 청크</span></span><span class="s">구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.</span></a><a href="/ko/built/tc-team/s4/"><span class="t"><span>S4 · 적대 리뷰</span><span class="kpi">3렌즈</span></span><span class="s">1차와 2차가 서로의 영역을 보지 않습니다. 그리고 같은 지적이 몇 번째인지를 셉니다.</span></a><a href="/ko/built/tc-team/s5/"><span class="t"><span>S5 · 적용</span><span class="kpi">게이트 4종</span></span><span class="s">수정 계획을 적용하고 게이트 넷을 통과시킵니다. 거부가 정상 동작인 단계입니다.</span></a><a href="/ko/built/tc-team/s6/"><span class="t"><span>S6 · 시트 기록</span><span class="kpi">1회 접촉</span></span><span class="s">라이브 시트를 딱 한 번 만지고, 쓴 뒤에 다시 읽어 대조합니다. 남기는 질문에도 기준이 있습니다.</span></a><a href="/ko/built/tc-team/s7/"><span class="t"><span>S7 · 완료처리</span><span class="kpi">try/continue</span></span><span class="s">절차는 규칙 문서가 소유하고 실행기는 그걸 읽어 돌립니다. 여기서는 실패해도 멈추지 않습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>S1 · 설계</h1><p class="sum">기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.</p><div class="meta"><span>LLM</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#분류는-정리가-아니라-셋업-계층이다">분류는 정리가 아니라 셋업 계층이다</a><a href="#없는-데이터로는-케이스를-만들지-않는다">없는 데이터로는 케이스를 만들지 않는다</a><a href="#누락과-압축은-다른-실패다">누락과 압축은 다른 실패다</a><a href="#되돌아오는-비용이-0이어야-한다">되돌아오는 비용이 0이어야 한다</a></nav><div class="prose"><p>기획서 원문을 읽어 <strong>분석 문서</strong>와 <strong>설계 문서</strong> 두 장을 만든다. 앞의 것은 원문을 정리하고 테스트 후보를 뽑는 문서고, 뒤의 것은 그 후보를 분류 트리와 케이스로 전개한 문서다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>S1 · 설계 — tc-team</title><meta name="description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="S1 · 설계 — tc-team"><meta property="og:description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="S1 · 설계 — tc-team"><meta name="twitter:description" content="기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/tc-team/s1/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/" aria-current="page"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">안에 든 것</div><div class="plist"><a href="/ko/built/tc-team/s1/" aria-current="page"><span class="t"><span>S1 · 설계</span><span class="kpi">LLM</span></span><span class="s">기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.</span></a><a href="/ko/built/tc-team/s2/"><span class="t"><span>S2 · 격리 게이트</span><span class="kpi">결정론</span></span><span class="s">전개하기 전에 &quot;이 설계가 전개 가능한가&quot;를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.</span></a><a href="/ko/built/tc-team/s3/"><span class="t"><span>S3 · 문장화</span><span class="kpi">25행 청크</span></span><span class="s">구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.</span></a><a href="/ko/built/tc-team/s4/"><span class="t"><span>S4 · 적대 리뷰</span><span class="kpi">3렌즈</span></span><span class="s">1차와 2차가 서로의 영역을 보지 않습니다. 그리고 같은 지적이 몇 번째인지를 셉니다.</span></a><a href="/ko/built/tc-team/s5/"><span class="t"><span>S5 · 적용</span><span class="kpi">게이트 4종</span></span><span class="s">수정 계획을 적용하고 게이트 넷을 통과시킵니다. 거부가 정상 동작인 단계입니다.</span></a><a href="/ko/built/tc-team/s6/"><span class="t"><span>S6 · 시트 기록</span><span class="kpi">1회 접촉</span></span><span class="s">라이브 시트를 딱 한 번 만지고, 쓴 뒤에 다시 읽어 대조합니다. 남기는 질문에도 기준이 있습니다.</span></a><a href="/ko/built/tc-team/s7/"><span class="t"><span>S7 · 완료처리</span><span class="kpi">try/continue</span></span><span class="s">절차는 규칙 문서가 소유하고 실행기는 그걸 읽어 돌립니다. 여기서는 실패해도 멈추지 않습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">공개</span></div><h1>S1 · 설계</h1><p class="sum">기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.</p><div class="meta"><span>LLM</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#이-단계가-만드는-것--문서-두-장">이 단계가 만드는 것 — 문서 두 장</a><a href="#제일-중요한-규칙--분류는-정리가-아니라-준비물-계층입니다">제일 중요한 규칙 — 「분류는 정리가 아니라 준비물 계층입니다」</a><a href="#없는-데이터로는-케이스를-안-만듭니다">없는 데이터로는 케이스를 안 만듭니다</a><a href="#검문소를-둘로-나눈-이유--두-실패는-다릅니다">검문소를 둘로 나눈 이유 — 「두 실패는 다릅니다」</a><a href="#되돌아오는-비용을-0으로-만들었습니다">되돌아오는 비용을 0으로 만들었습니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#분류는-정리가-아니라-셋업-계층이다">분류는 정리가 아니라 셋업 계층이다</a><a href="#없는-데이터로는-케이스를-만들지-않는다">없는 데이터로는 케이스를 만들지 않는다</a><a href="#누락과-압축은-다른-실패다">누락과 압축은 다른 실패다</a><a href="#되돌아오는-비용이-0이어야-한다">되돌아오는 비용이 0이어야 한다</a></nav><div class="prose"><p><strong>기획서를 읽고 «설계 뼈대»를 뽑는 단계입니다. 여덟 단계 중 판단이 제일 많이 들어가는 자리라, 여기만 더 좋은 AI를 씁니다.</strong></p>
+<h2 id="이-단계가-만드는-것--문서-두-장">이 단계가 만드는 것 — 문서 두 장</h2>
+<p>기획서를 바로 표로 바꾸지 않습니다. <strong>중간에 문서를 두 장</strong> 거칩니다.</p>
+<table>
+<thead>
+<tr>
+<th>문서</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>분석 문서</strong></td>
+<td>기획서를 정리하고, <strong>확인해야 할 것 후보</strong>를 뽑음</td>
+</tr>
+<tr>
+<td><strong>설계 문서</strong></td>
+<td>그 후보를 <strong>분류와 케이스로 펼침</strong></td>
+</tr>
+</tbody>
+</table>
+<p>왜 한 번에 안 하냐면 — <strong>「무엇을 확인해야 하나」와 「그걸 어떻게 나눌까」는 다른 일</strong>이기 때문입니다. 섞으면 <strong>나누기 좋은 것만 뽑게</strong> 됩니다.</p>
+<h2 id="제일-중요한-규칙--분류는-정리가-아니라-준비물-계층입니다">제일 중요한 규칙 — 「분류는 정리가 아니라 준비물 계층입니다」</h2>
+<p>이 단계에서 제일 값나가는 한 줄입니다.</p>
+<p>테스트 케이스를 묶을 때 보통 <strong>주제별로</strong> 묶습니다 — 「강화 관련」 「상점 관련」처럼요. 보기 좋습니다.</p>
+<p>그런데 그렇게 묶으면 <strong>실제로 테스트할 때 고생합니다.</strong></p>
+<p>왜냐면 테스트는 <strong>준비물이 필요</strong>하기 때문입니다. 강화를 테스트하려면 강화할 아이템과 재료가 있어야 합니다. 그리고 <strong>준비물을 갖추는 게 제일 오래 걸립니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>어떻게 묶나</th>
+<th>테스트할 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>주제별</strong></td>
+<td>준비물이 뒤죽박죽 → <strong>케이스마다 세팅을 다시</strong></td>
+</tr>
+<tr>
+<td><strong>준비물별</strong></td>
+<td>한 번 세팅하고 <strong>여러 개를 연달아</strong></td>
+</tr>
+</tbody>
+</table>
+<p>그래서 이 도구는 <strong>분류를 「준비물이 같은 것끼리」</strong>로 잡습니다. 보기에는 덜 정돈돼 보이는데, <strong>실제로 돌릴 때 훨씬 빠릅니다.</strong></p>
+<blockquote>
+<p><strong>분류를 정하는 일이 곧 테스트 준비 방식을 정하는 일입니다.</strong></p>
+</blockquote>
+<h2 id="없는-데이터로는-케이스를-안-만듭니다">없는 데이터로는 케이스를 안 만듭니다</h2>
+<p>케이스에 <strong>아이템 이름이 실제 이름으로</strong> 나와야 합니다. 「어떤 아이템」이 아니라 「강화석(중급)」처럼요.</p>
+<p>그 이름은 기획서에 없고 <strong>게임 데이터 표에</strong> 있습니다.</p>
+<p>그래서 설계 직전에 그 표를 훑어 <strong>실제 이름 사전</strong>을 만들어 AI에게 같이 줍니다.</p>
+<p>안 주면 어떻게 되냐면 — <strong>AI가 그럴듯한 이름을 지어냅니다.</strong> 「강화의 돌」 같은 게 나오는데, <strong>게임에 없는 아이템</strong>입니다. 그리고 그건 <strong>테스트할 때가 돼서야</strong> 드러납니다.</p>
+<h2 id="검문소를-둘로-나눈-이유--두-실패는-다릅니다">검문소를 둘로 나눈 이유 — 「두 실패는 다릅니다」</h2>
+<p>설계가 끝나면 검문을 붙입니다. 처음엔 <strong>하나만</strong> 뒀다가 데었습니다.</p>
+<p>빠지는 방식이 <strong>두 가지</strong>였습니다.</p>
+<table>
+<thead>
+<tr>
+<th>검문소</th>
+<th>무엇과 무엇을 대조</th>
+<th>잡는 실패</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>위쪽</strong></td>
+<td>기획서 ↔ 분석 후보</td>
+<td><strong>누락</strong> — 애초에 후보로도 안 올라옴</td>
+</tr>
+<tr>
+<td><strong>아래쪽</strong></td>
+<td>분석 후보 ↔ 설계 케이스</td>
+<td><strong>압축</strong> — 후보는 있는데 <strong>케이스로 안 펴짐</strong></td>
+</tr>
+</tbody>
+</table>
+<p>둘의 차이가 중요합니다.</p>
+<p><strong>누락</strong>은 기획서의 한 문단을 통째로 못 본 것입니다. <strong>압축</strong>은 봤고 후보로도 적었는데, <strong>케이스로 펼칠 때 한 줄로 뭉개 버린</strong> 것입니다.</p>
+<p><strong>아래쪽만 보면 누락이 안 걸리고, 위쪽만 보면 압축이 안 걸립니다.</strong> 그리고 겉으로는 둘 다 <strong>「케이스가 좀 적네」</strong>로만 보입니다.</p>
+<h2 id="되돌아오는-비용을-0으로-만들었습니다">되돌아오는 비용을 0으로 만들었습니다</h2>
+<p>뒤 단계에서 막혀서 이 단계로 되돌아올 때가 있습니다. 그때 <strong>설계를 처음부터 다시 시키면 시간과 돈이 다시 나갑니다.</strong></p>
+<p>그래서 <strong>설계 내용이 그대로면 이 단계를 통째로 건너뜁니다.</strong> 내용을 지문처럼 찍어 두고 비교합니다.</p>
+<p>이게 있어야 <strong>「되돌아가기」가 실제로 쓸 수 있는 선택지</strong>가 됩니다. 되돌아가는 게 비싸면, 막혔을 때 <strong>되돌아가는 대신 어떻게든 밀고 가게</strong> 됩니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>기획서 원문을 읽어 <strong>분석 문서</strong>와 <strong>설계 문서</strong> 두 장을 만든다. 앞의 것은 원문을 정리하고 테스트 후보를 뽑는 문서고, 뒤의 것은 그 후보를 분류 트리와 케이스로 전개한 문서다.</p>
 <p>이 파이프라인에서 <strong>판단이 가장 많이 들어가는 자리</strong>고, 그래서 여기만 상위 모델을 쓴다.</p>
 <h2 id="분류는-정리가-아니라-셋업-계층이다">분류는 정리가 아니라 셋업 계층이다</h2>
 <p>이게 이 단계에서 제일 중요한 규칙이다.</p>

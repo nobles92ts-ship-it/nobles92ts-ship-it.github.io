@@ -1,4 +1,111 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>설계 — (가칭) 무협 게임</title><meta name="description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="설계 — (가칭) 무협 게임"><meta property="og:description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="설계 — (가칭) 무협 게임"><meta name="twitter:description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/design/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/design/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="5"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/moon-studio/wuxia/design/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/" aria-current="page"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">게임</div><div class="plist"><a href="/ko/built/moon-studio/wuxia/" aria-current="page"><span class="t"><span>(가칭) 무협 게임</span><span class="kpi">44초식</span></span><span class="s">반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오에서 유일하게 계속 굴러가는 칸입니다.</span></a><a href="/ko/built/moon-studio/future-1/"><span class="t"><span>미래 게임 1</span><span class="kpi">빈 칸</span></span><span class="s">아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.</span></a><a href="/ko/built/moon-studio/future-2/"><span class="t"><span>미래 게임 2</span><span class="kpi">빈 칸</span></span><span class="s">두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.</span></a></div></nav><nav class="col col-l"><div class="col-head">(가칭) 무협 게임</div><div class="plist"><a href="/ko/built/moon-studio/wuxia/design/" aria-current="page"><span class="t"><span>설계</span><span class="kpi">44초식</span></span><span class="s">패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.</span></a><a href="/ko/built/moon-studio/wuxia/spec/"><span class="t"><span>기획</span><span class="kpi">스펙 1장</span></span><span class="s">설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.</span></a><a href="/ko/built/moon-studio/wuxia/world/"><span class="t"><span>세계</span><span class="kpi">7대 분류</span></span><span class="s">세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.</span></a><a href="/ko/built/moon-studio/wuxia/client/"><span class="t"><span>구현</span><span class="kpi">Unity 6</span></span><span class="s">시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.</span></a><a href="/ko/built/moon-studio/wuxia/art/"><span class="t"><span>아트</span><span class="kpi">ΔY 0.22</span></span><span class="s">데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.</span></a><a href="/ko/built/moon-studio/wuxia/qa/"><span class="t"><span>검증</span><span class="kpi">배선 게이트</span></span><span class="s">통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">진행 중</span></div><h1>설계</h1><p class="sum">패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.</p><div class="meta"><span>44초식</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#읽을-게-있어야-읽는다">읽을 게 있어야 읽는다</a><a href="#스킬을-주는-것과-무공을-주는-것은-다르다">스킬을 주는 것과 무공을 주는 것은 다르다</a><a href="#새-어휘를-만들지-않는다">새 어휘를 만들지 않는다</a><a href="#가운데-칸이-학습을-만든다">가운데 칸이 학습을 만든다</a><a href="#전부에게-주면-아무-의미가-없다">전부에게 주면 아무 의미가 없다</a><a href="#무엇을-보고-담나">무엇을 보고 담나</a></nav><div class="prose"><p>44초식과 26신물. 기둥은 하나다 — <strong>반사신경으로 이기지 않는다.</strong></p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>설계 — (가칭) 무협 게임</title><meta name="description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="설계 — (가칭) 무협 게임"><meta property="og:description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="설계 — (가칭) 무협 게임"><meta name="twitter:description" content="패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/design/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/design/"><link rel="stylesheet" href="/_astro/Shell.EbYqjUMa.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="5"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/moon-studio/wuxia/design/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.</span></a><a href="/ko/built/moon-studio/" aria-current="page"><span class="t"><span>문스튜디오</span><span class="kpi">게임 5종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">게임</div><div class="plist"><a href="/ko/built/moon-studio/wuxia/" aria-current="page"><span class="t"><span>(가칭) 무협 게임</span><span class="kpi">44초식</span></span><span class="s">반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오에서 유일하게 계속 굴러가는 칸입니다.</span></a><a href="/ko/built/moon-studio/future-1/"><span class="t"><span>미래 게임 1</span><span class="kpi">빈 칸</span></span><span class="s">아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.</span></a><a href="/ko/built/moon-studio/future-2/"><span class="t"><span>미래 게임 2</span><span class="kpi">빈 칸</span></span><span class="s">두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.</span></a></div></nav><nav class="col col-l"><div class="col-head">(가칭) 무협 게임</div><div class="plist"><a href="/ko/built/moon-studio/wuxia/design/" aria-current="page"><span class="t"><span>설계</span><span class="kpi">44초식</span></span><span class="s">패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.</span></a><a href="/ko/built/moon-studio/wuxia/spec/"><span class="t"><span>기획</span><span class="kpi">스펙 1장</span></span><span class="s">설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.</span></a><a href="/ko/built/moon-studio/wuxia/world/"><span class="t"><span>세계</span><span class="kpi">7대 분류</span></span><span class="s">세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.</span></a><a href="/ko/built/moon-studio/wuxia/client/"><span class="t"><span>구현</span><span class="kpi">Unity 6</span></span><span class="s">시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.</span></a><a href="/ko/built/moon-studio/wuxia/art/"><span class="t"><span>아트</span><span class="kpi">ΔY 0.22</span></span><span class="s">데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.</span></a><a href="/ko/built/moon-studio/wuxia/qa/"><span class="t"><span>검증</span><span class="kpi">배선 게이트</span></span><span class="s">통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">진행 중</span></div><h1>설계</h1><p class="sum">패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.</p><div class="meta"><span>44초식</span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#먼저--읽을-게-있어야-읽습니다">먼저 — 「읽을 게 있어야 읽습니다」</a><a href="#그리고-손잡이가-하나뿐이었습니다">그리고 손잡이가 하나뿐이었습니다</a><a href="#스킬을-주는-것과-무공을-주는-것은-다릅니다">「스킬을 주는 것」과 「무공을 주는 것」은 다릅니다</a><a href="#새-어휘를-만들지-않습니다">새 어휘를 만들지 않습니다</a><a href="#가운데-칸이-학습을-만듭니다">「가운데 칸」이 학습을 만듭니다</a><a href="#전부에게-주면-아무-의미가-없습니다">전부에게 주면 아무 의미가 없습니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#읽을-게-있어야-읽는다">읽을 게 있어야 읽는다</a><a href="#스킬을-주는-것과-무공을-주는-것은-다르다">스킬을 주는 것과 무공을 주는 것은 다르다</a><a href="#새-어휘를-만들지-않는다">새 어휘를 만들지 않는다</a><a href="#가운데-칸이-학습을-만든다">가운데 칸이 학습을 만든다</a><a href="#전부에게-주면-아무-의미가-없다">전부에게 주면 아무 의미가 없다</a><a href="#무엇을-보고-담나">무엇을 보고 담나</a></nav><div class="prose"><p><strong>「패턴을 읽어 이긴다」는 말을 실제 규칙으로 옮기는 일입니다. 옮기고 보니 손잡이가 «전조 시간» 하나였습니다.</strong></p>
+<h2 id="먼저--읽을-게-있어야-읽습니다">먼저 — 「읽을 게 있어야 읽습니다」</h2>
+<p>「패턴을 읽는 게임」을 만들려면, <strong>읽을 수 있는 게 화면에 있어야</strong> 합니다.</p>
+<p>당연해 보이는데 실제로는 잘 안 됩니다. 적이 그냥 때리면 <strong>읽을 게 없습니다.</strong> 반응만 있습니다.</p>
+<p>그래서 적이 공격하기 <strong>직전에 표시</strong>를 띄웁니다. 그 표시가 <strong>어떤 종류의 공격인지</strong> 알려 줍니다.</p>
+<h2 id="그리고-손잡이가-하나뿐이었습니다">그리고 손잡이가 하나뿐이었습니다</h2>
+<p>여기가 설계에서 제일 중요한 발견입니다.</p>
+<p>「읽고 대응한다」를 쉽게 하거나 어렵게 하려면 뭘 만져야 할까요. 후보가 여럿 같은데, <strong>실제로는 하나</strong>였습니다.</p>
+<blockquote>
+<p><strong>표시가 떠 있는 시간(전조 시간).</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>전조 시간이</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>길면</strong></td>
+<td>보고 생각하고 고를 여유가 있음 → <strong>쉬움</strong></td>
+</tr>
+<tr>
+<td><strong>짧으면</strong></td>
+<td>보자마자 손이 나가야 함 → <strong>어려움</strong></td>
+</tr>
+<tr>
+<td><strong>너무 짧으면</strong></td>
+<td><strong>읽을 수가 없음</strong> → 이 게임이 아니게 됨</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 줄이 중요합니다. <strong>너무 짧게 만들면 「읽는 게임」이 「반응하는 게임」으로</strong> 바뀝니다. 난이도만 오르는 게 아니라 <strong>장르가 바뀝니다.</strong></p>
+<p>그래서 난이도를 올릴 때 <strong>전조를 줄이는 대신 다른 걸 건드려야</strong> 합니다 — 패턴 종류를 늘리거나, 섞어 내거나.</p>
+<h2 id="스킬을-주는-것과-무공을-주는-것은-다릅니다">「스킬을 주는 것」과 「무공을 주는 것」은 다릅니다</h2>
+<p>이것도 설계에서 갈린 자리입니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>스킬</th>
+<th>무공</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>얻으면</td>
+<td><strong>선택지가 늘어남</strong></td>
+<td><strong>할 수 있는 «종류»가 늘어남</strong></td>
+</tr>
+<tr>
+<td>쓰는 법</td>
+<td>버튼 하나 더</td>
+<td><strong>대응할 수 있는 상황이 늘어남</strong></td>
+</tr>
+<tr>
+<td>안 쓰면</td>
+<td>그냥 안 씀</td>
+<td><strong>그 패턴에 못 대응함</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 게임은 뒤쪽입니다. 새로 배우면 <strong>버튼이 하나 느는 게 아니라 「이제 이 패턴을 받아넘길 수 있다」</strong>가 됩니다.</p>
+<p>그래서 <strong>획득이 곧 공략</strong>입니다. 못 이기던 적을 <strong>새 무공을 배워서</strong> 이깁니다.</p>
+<h2 id="새-어휘를-만들지-않습니다">새 어휘를 만들지 않습니다</h2>
+<p>작은데 중요한 규칙입니다.</p>
+<p>게임을 만들다 보면 <strong>새 용어를 만들고 싶어집니다.</strong> 세계관에 맞는 멋있는 이름을요.</p>
+<p>그런데 새 용어를 하나 만들 때마다 <strong>플레이어가 외워야 할 게 하나 늘어납니다.</strong> 그리고 이 게임은 이미 <strong>외울 게 많은 게임</strong>입니다 — 패턴을 외우는 게 핵심이니까요.</p>
+<p>그래서 <strong>시스템 쪽 어휘는 최대한 안 늘립니다.</strong> 외우는 예산을 <strong>패턴에 몰아줍니다.</strong></p>
+<h2 id="가운데-칸이-학습을-만듭니다">「가운데 칸」이 학습을 만듭니다</h2>
+<p>제일 마음에 드는 설계입니다.</p>
+<p>대응 결과가 <strong>둘이 아니라 셋</strong>입니다.</p>
+<table>
+<thead>
+<tr>
+<th>결과</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>맞게 고름</td>
+<td><strong>완벽하게 막고 반격</strong></td>
+</tr>
+<tr>
+<td><strong>틀리게 고름</strong></td>
+<td><strong>60%만 맞음</strong> ← 가운데 칸</td>
+</tr>
+<tr>
+<td>아무것도 안 함</td>
+<td><strong>다 맞음</strong></td>
+</tr>
+</tbody>
+</table>
+<p>가운데 칸이 왜 필요하냐면 — <strong>틀린 시도와 안 한 시도를 구분</strong>해야 하기 때문입니다.</p>
+<p>만약 틀리면 다 맞는다면, 플레이어는 <strong>확신이 없을 때 아무것도 안 하게</strong> 됩니다. 어차피 결과가 같으니까요.</p>
+<p>가운데 칸이 있으면 <strong>모르겠어도 일단 시도하는 게 이득</strong>입니다. 그리고 <strong>시도해야 배웁니다.</strong></p>
+<blockquote>
+<p><strong>틀려도 조금 나은 결과가 있어야, 사람이 시도하고 배웁니다.</strong></p>
+</blockquote>
+<h2 id="전부에게-주면-아무-의미가-없습니다">전부에게 주면 아무 의미가 없습니다</h2>
+<p>마지막 규칙입니다.</p>
+<p>좋은 기능을 만들면 <strong>모든 적에게 다 붙이고 싶어집니다.</strong> 그런데 그러면 <strong>그 기능이 특별하지 않게</strong> 됩니다.</p>
+<p>전조가 모든 공격에 다 뜨면, 플레이어는 <strong>전조를 안 보게</strong> 됩니다. 항상 있는 건 배경이 되니까요.</p>
+<p><strong>어떤 공격에는 전조가 없어야, 있는 공격의 전조가 신호가 됩니다.</strong></p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>44초식과 26신물. 기둥은 하나다 — <strong>반사신경으로 이기지 않는다.</strong></p>
 <h2 id="읽을-게-있어야-읽는다">읽을 게 있어야 읽는다</h2>
 <p>패턴을 읽어 이기는 전투는 말은 쉬운데, 규칙으로 옮기면 요구가 하나 나온다. <strong>적의 모든 위협 동작에 전조가 있어야 한다.</strong></p>
 <p>전조가 없으면 남는 건 반응 속도뿐이고, 그건 이 게임이 하려는 것과 정반대다. 그래서 전조는 연출이 아니라 <strong>규칙</strong>이다. 빼면 그 적은 설계 위반이다.</p>
