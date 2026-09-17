@@ -7,6 +7,7 @@ Three things about these pages that the pages themselves do not announce:
 - **Every document has two layers.** The top is a plain-language explanation written for a reader who knows nothing about the subject. Below a heading — "The detailed record starts here", or "여기부터는 자세한 기록입니다" in Korean — the original, unsimplified analysis continues untouched. All 113 written pages are shaped this way. Stop at that heading for the gist; read past it for the evidence and the numbers.
 - **Korean is the original; the English is a machine-assisted translation of it.** Where the two disagree, the Korean page is authoritative. Every page exists in both languages at the same path — `/ko/<path>/` and `/en/<path>/` are the same document.
 - **Four of the five sections are written by hand (My tools, What I took apart, Things I wrote, Who I am); the fifth is not.** "AI news today" (`/ai-issue/`) is rebuilt every morning by a collector. Its cards carry no permanent URLs of their own and are gone within days, so cite the category pages rather than the cards.
+- **Every hand-written page has a clean markdown twin.** Append `index.md` to a document URL — `/en/about/me/` becomes `/en/about/me/index.md` — and you get the same text with the site chrome stripped and every diagram replaced by its written description. Pages built from data (the section indexes, the news feed, the glossary) have no twin; an HTML page that has one declares it with `<link rel="alternate" type="text/markdown">`.
 
 ## Indexes
 
@@ -15,11 +16,11 @@ Three things about these pages that the pages themselves do not announce:
 
 ## Start here
 
-- [Who I am](https://nobles92ts-ship-it.github.io/en/about/me/): What the author does, what he does not do, and what is deliberately missing from this site.
+- [Who I am](https://nobles92ts-ship-it.github.io/en/about/me/index.md): What the author does, what he does not do, and what is deliberately missing from this site.
 - [My tools](https://nobles92ts-ship-it.github.io/en/built/): Things built to run unattended and still be trusted in the morning.
 - [What I took apart](https://nobles92ts-ship-it.github.io/en/teardowns/): Repos and services opened up — and what was kept from each.
 
 ## Optional
 
 - [sitemap.xml](https://nobles92ts-ship-it.github.io/sitemap.xml): Every URL on the site in both languages, with lastmod.
-- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/): Nothing is collected here; the page says which third parties still see a visitor.
+- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/index.md): Nothing is collected here; the page says which third parties still see a visitor.

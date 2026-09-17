@@ -7,6 +7,7 @@
 - **문서는 전부 두 층이다.** 위는 아무것도 모르는 사람에게 설명하는 쉬운 글이고, 「여기부터는 자세한 기록입니다」라는 제목 **아래**가 원래의 분석이다. 요지만 필요하면 그 제목 앞에서 멈추면 되고, 근거와 수치가 필요하면 그 아래가 손대지 않은 원본이다.
 - **한국어가 원문이다.** 영문(`/en/…`)은 같은 글을 기계 보조로 옮긴 것이라, 둘이 어긋나면 이쪽이 맞다. 주소는 언어만 바꾸면 서로 짝이 된다.
 - **다섯 분류 중 하나는 사람이 안 쓴다.** 「오늘의 AI 소식」은 매일 아침 수집기가 다시 만든다. 카드에는 자기 주소가 없고 며칠이면 사라지니, **인용은 분류 페이지로 한다.**
+- **밑의 문서 주소는 «마크다운 판»이다**(`…/index.md`). 사람이 보는 화면은 `index.md` 를 뗀 주소이고, 마크다운 판은 같은 글에서 **껍데기를 걷고 도판을 글로 바꾼 것**이다. 분류 색인·피드·용어사전은 마크다운 판이 없어서 HTML 주소 그대로 걸었다.
 - 분류가 뜻하는 것 —
   - **만든 도구** — 직접 만들어 매일 돌리고 있는 도구들.
   - **뜯어본 생각** — 레포·서비스를 분해하고, 무엇을 가져왔는지.
@@ -17,127 +18,127 @@
 ## 만든 도구
 
 - [만든 도구](https://nobles92ts-ship-it.github.io/ko/built/): 직접 만들어 매일 돌리고 있는 도구들.
-- [/watch](https://nobles92ts-ship-it.github.io/ko/built/watch/): 영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.
-- [/watch · 프레임 예산](https://nobles92ts-ship-it.github.io/ko/built/watch/budget/): 비용은 거의 전부 프레임에 있고, 예산은 세 배 느는데 길이는 예순 배 늡니다.
-- [/watch · 대본](https://nobles92ts-ship-it.github.io/ko/built/watch/transcript/): 자막이 있을 때와 없을 때는 완전히 다른 길입니다. 그리고 나가는 건 영상이 아니라 오디오뿐입니다.
-- [/watch · 경계와 실패](https://nobles92ts-ship-it.github.io/ko/built/watch/boundary/): 남의 영상을 다루는 도구라 무엇이 나가는지 문서에 박아 뒀습니다. 그리고 안 되면 그냥 안 된다고 말합니다.
-- [자가진화 루프](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/): 이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.
-- [자가진화 루프 · 죽은 채널](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/dead-channel/): 정교한 쪽이 조용히 죽어 있었고, 그걸 진단한 제 문서도 두 군데가 틀렸습니다.
-- [자가진화 루프 · 네 개의 주기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/tempo/): 학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.
-- [자가진화 루프 · 감지기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/detector/): 죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.
-- [tc-team](https://nobles92ts-ship-it.github.io/ko/built/tc-team/): 기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.
-- [tc-team · S1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/): 기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.
-- [tc-team · S2 · 격리 게이트](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/): 전개하기 전에 "이 설계가 전개 가능한가"를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.
-- [tc-team · S3 · 문장화](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/): 구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.
-- [tc-team · S4 · 적대 리뷰](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/): 1차와 2차가 서로의 영역을 보지 않습니다. 그리고 같은 지적이 몇 번째인지를 셉니다.
-- [tc-team · S5 · 적용](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s5/): 수정 계획을 적용하고 게이트 넷을 통과시킵니다. 거부가 정상 동작인 단계입니다.
-- [tc-team · S6 · 시트 기록](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/): 라이브 시트를 딱 한 번 만지고, 쓴 뒤에 다시 읽어 대조합니다. 남기는 질문에도 기준이 있습니다.
-- [tc-team · S7 · 완료처리](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s7/): 절차는 규칙 문서가 소유하고 실행기는 그걸 읽어 돌립니다. 여기서는 실패해도 멈추지 않습니다.
-- [Loki](https://nobles92ts-ship-it.github.io/ko/built/loki/): 내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.
-- [Loki · 구조](https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/): 플랫폼도 두뇌도 갈아 끼우는데 코어는 하나입니다. 그 사이에 사람이 지키는 선이 있습니다.
-- [Loki · 기능](https://nobles92ts-ship-it.github.io/ko/built/loki/commands/): 채팅창 하나로 무엇까지 시킬 수 있나. 그리고 그중 둘이 체감을 바꿨습니다.
-- [Loki · 권한과 가드](https://nobles92ts-ship-it.github.io/ko/built/loki/permissions/): 내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다.
-- [Loki · 조용한 고장](https://nobles92ts-ship-it.github.io/ko/built/loki/silent-failures/): 이 프로젝트에서 잡은 버그가 거의 전부 성공을 리턴하면서 아무것도 안 했습니다.
-- [QA 위젯](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/): 화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.
-- [QA 위젯 · 화면](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/screen/): 숫자만 보여주면 안 됩니다. 어떻게 나온 숫자인지와, 그 자리에서 할 수 있는 일이 같이 있어야 합니다.
-- [QA 위젯 · 구조](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/): 위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.
-- [QA 위젯 · 배포](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/delivery/): 남의 기계에 도구를 올리는 일이 도구를 만드는 일보다 어려웠습니다.
-- [claude-bus](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/): 회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.
-- [claude-bus · 프로토콜](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/): 양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.
-- [claude-bus · 타이밍](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/timing/): 3분이 어디로 가는지 구간을 갈라 재봤습니다. 일하는 시간은 14%였습니다.
-- [claude-bus · 안전](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/safety/): 남의 지시가 내 기계에서 실행되기 직전에 무엇이 막는가. 셸이 아니라 사람에게 보냅니다.
-- [adb 기반 게임 QA 서버](https://nobles92ts-ship-it.github.io/ko/built/android-qa/): 게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.
-- [adb 기반 게임 QA 서버 · 조작과 판정](https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/): 조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다.
-- [adb 기반 게임 QA 서버 · 무인 루프](https://nobles92ts-ship-it.github.io/ko/built/android-qa/loop/): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
-- [adb 기반 게임 QA 서버 · 나온 것](https://nobles92ts-ship-it.github.io/ko/built/android-qa/findings/): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
-- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.
-- [문스튜디오 · (가칭) 무협 게임](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오에서 유일하게 계속 굴러가는 칸입니다.
-- [문스튜디오 · (가칭) 무협 게임 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
-- [문스튜디오 · (가칭) 무협 게임 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/spec/): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.
-- [문스튜디오 · (가칭) 무협 게임 · 세계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/world/): 세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.
-- [문스튜디오 · (가칭) 무협 게임 · 구현](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/client/): 시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.
-- [문스튜디오 · (가칭) 무협 게임 · 아트](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/art/): 데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.
-- [문스튜디오 · (가칭) 무협 게임 · 검증](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/qa/): 통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.
-- [문스튜디오 · 미래 게임 1](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/): 아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.
-- [문스튜디오 · 미래 게임 1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/design/): 이기는 방식을 두 문장으로 못 쓰면 아직 설계가 아닙니다. 넘어오는 규칙 하나와, 게임마다 다시 정해야 하는 것.
-- [문스튜디오 · 미래 게임 1 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/spec/): 규칙은 한 화면에 들어와야 하고, 안 정한 것은 적혀 있어야 합니다. 스펙에서 제일 중요한 절은 「아직 안 정한 것」입니다.
-- [문스튜디오 · 미래 게임 1 · 아트](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/art/): 혼자 만들 때 진짜 병목은 코드가 아닙니다. 무엇을 안 만들지 먼저 정해야 하는 칸.
-- [문스튜디오 · 미래 게임 1 · 검증](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/qa/): 통과가 무엇을 뜻하는지 한 문장으로 말할 수 없으면 그 테스트는 아직 검증이 아닙니다.
-- [문스튜디오 · 미래 게임 2](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-2/): 두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.
+- [/watch](https://nobles92ts-ship-it.github.io/ko/built/watch/index.md): 영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.
+- [/watch · 프레임 예산](https://nobles92ts-ship-it.github.io/ko/built/watch/budget/index.md): 비용은 거의 전부 프레임에 있고, 예산은 세 배 느는데 길이는 예순 배 늡니다.
+- [/watch · 대본](https://nobles92ts-ship-it.github.io/ko/built/watch/transcript/index.md): 자막이 있을 때와 없을 때는 완전히 다른 길입니다. 그리고 나가는 건 영상이 아니라 오디오뿐입니다.
+- [/watch · 경계와 실패](https://nobles92ts-ship-it.github.io/ko/built/watch/boundary/index.md): 남의 영상을 다루는 도구라 무엇이 나가는지 문서에 박아 뒀습니다. 그리고 안 되면 그냥 안 된다고 말합니다.
+- [자가진화 루프](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/index.md): 이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.
+- [자가진화 루프 · 죽은 채널](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/dead-channel/index.md): 정교한 쪽이 조용히 죽어 있었고, 그걸 진단한 제 문서도 두 군데가 틀렸습니다.
+- [자가진화 루프 · 네 개의 주기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/tempo/index.md): 학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.
+- [자가진화 루프 · 감지기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/detector/index.md): 죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.
+- [tc-team](https://nobles92ts-ship-it.github.io/ko/built/tc-team/index.md): 기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.
+- [tc-team · S1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/index.md): 기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.
+- [tc-team · S2 · 격리 게이트](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/index.md): 전개하기 전에 "이 설계가 전개 가능한가"를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.
+- [tc-team · S3 · 문장화](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/index.md): 구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.
+- [tc-team · S4 · 적대 리뷰](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/index.md): 1차와 2차가 서로의 영역을 보지 않습니다. 그리고 같은 지적이 몇 번째인지를 셉니다.
+- [tc-team · S5 · 적용](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s5/index.md): 수정 계획을 적용하고 게이트 넷을 통과시킵니다. 거부가 정상 동작인 단계입니다.
+- [tc-team · S6 · 시트 기록](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/index.md): 라이브 시트를 딱 한 번 만지고, 쓴 뒤에 다시 읽어 대조합니다. 남기는 질문에도 기준이 있습니다.
+- [tc-team · S7 · 완료처리](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s7/index.md): 절차는 규칙 문서가 소유하고 실행기는 그걸 읽어 돌립니다. 여기서는 실패해도 멈추지 않습니다.
+- [Loki](https://nobles92ts-ship-it.github.io/ko/built/loki/index.md): 내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.
+- [Loki · 구조](https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/index.md): 플랫폼도 두뇌도 갈아 끼우는데 코어는 하나입니다. 그 사이에 사람이 지키는 선이 있습니다.
+- [Loki · 기능](https://nobles92ts-ship-it.github.io/ko/built/loki/commands/index.md): 채팅창 하나로 무엇까지 시킬 수 있나. 그리고 그중 둘이 체감을 바꿨습니다.
+- [Loki · 권한과 가드](https://nobles92ts-ship-it.github.io/ko/built/loki/permissions/index.md): 내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다.
+- [Loki · 조용한 고장](https://nobles92ts-ship-it.github.io/ko/built/loki/silent-failures/index.md): 이 프로젝트에서 잡은 버그가 거의 전부 성공을 리턴하면서 아무것도 안 했습니다.
+- [QA 위젯](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/index.md): 화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.
+- [QA 위젯 · 화면](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/screen/index.md): 숫자만 보여주면 안 됩니다. 어떻게 나온 숫자인지와, 그 자리에서 할 수 있는 일이 같이 있어야 합니다.
+- [QA 위젯 · 구조](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/index.md): 위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.
+- [QA 위젯 · 배포](https://nobles92ts-ship-it.github.io/ko/built/qa-widget/delivery/index.md): 남의 기계에 도구를 올리는 일이 도구를 만드는 일보다 어려웠습니다.
+- [claude-bus](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/index.md): 회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.
+- [claude-bus · 프로토콜](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/index.md): 양방향 동기화에서 충돌 사본이 안 생기는 이유는 폴더마다 쓰는 쪽이 하나이기 때문입니다.
+- [claude-bus · 타이밍](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/timing/index.md): 3분이 어디로 가는지 구간을 갈라 재봤습니다. 일하는 시간은 14%였습니다.
+- [claude-bus · 안전](https://nobles92ts-ship-it.github.io/ko/built/claude-bus/safety/index.md): 남의 지시가 내 기계에서 실행되기 직전에 무엇이 막는가. 셸이 아니라 사람에게 보냅니다.
+- [adb 기반 게임 QA 서버](https://nobles92ts-ship-it.github.io/ko/built/android-qa/index.md): 게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다.
+- [adb 기반 게임 QA 서버 · 조작과 판정](https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/index.md): 조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다.
+- [adb 기반 게임 QA 서버 · 무인 루프](https://nobles92ts-ship-it.github.io/ko/built/android-qa/loop/index.md): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
+- [adb 기반 게임 QA 서버 · 나온 것](https://nobles92ts-ship-it.github.io/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
+- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.
+- [문스튜디오 · (가칭) 무협 게임](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/index.md): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오에서 유일하게 계속 굴러가는 칸입니다.
+- [문스튜디오 · (가칭) 무협 게임 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
+- [문스튜디오 · (가칭) 무협 게임 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.
+- [문스튜디오 · (가칭) 무협 게임 · 세계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/world/index.md): 세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.
+- [문스튜디오 · (가칭) 무협 게임 · 구현](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/client/index.md): 시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.
+- [문스튜디오 · (가칭) 무협 게임 · 아트](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/art/index.md): 데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.
+- [문스튜디오 · (가칭) 무협 게임 · 검증](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/qa/index.md): 통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.
+- [문스튜디오 · 미래 게임 1](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/index.md): 아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.
+- [문스튜디오 · 미래 게임 1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/design/index.md): 이기는 방식을 두 문장으로 못 쓰면 아직 설계가 아닙니다. 넘어오는 규칙 하나와, 게임마다 다시 정해야 하는 것.
+- [문스튜디오 · 미래 게임 1 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/spec/index.md): 규칙은 한 화면에 들어와야 하고, 안 정한 것은 적혀 있어야 합니다. 스펙에서 제일 중요한 절은 「아직 안 정한 것」입니다.
+- [문스튜디오 · 미래 게임 1 · 아트](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/art/index.md): 혼자 만들 때 진짜 병목은 코드가 아닙니다. 무엇을 안 만들지 먼저 정해야 하는 칸.
+- [문스튜디오 · 미래 게임 1 · 검증](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/qa/index.md): 통과가 무엇을 뜻하는지 한 문장으로 말할 수 없으면 그 테스트는 아직 검증이 아닙니다.
+- [문스튜디오 · 미래 게임 2](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-2/index.md): 두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.
 
 ## 뜯어본 생각
 
 - [뜯어본 생각](https://nobles92ts-ship-it.github.io/ko/teardowns/): 레포·서비스를 분해하고, 무엇을 가져왔는지.
-- [에이전트 하네스](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/): 에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.
-- [에이전트 하네스 · mattpocock/skills](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/mattpocock-skills/): 스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.
-- [에이전트 하네스 · ECC](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ecc/): 제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.
-- [에이전트 하네스 · Prime Agent](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/prime-agent/): 코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.
-- [에이전트 하네스 · Clawd on Desk](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/clawd-on-desk/): 도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.
-- [에이전트 하네스 · Odysseus](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/odysseus/): 문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.
-- [에이전트 하네스 · ponytail](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ponytail/): 별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.
-- [에이전트 하네스 · OmniRoute](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/omniroute/): 41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.
-- [에이전트 하네스 · 세션 간 메시징](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/session-messaging/): 영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.
-- [에이전트 하네스 · Buzz 그룹챗](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/buzz-groupchat/): 채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.
-- [에이전트 하네스 · 플러그인 4종 추천](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/four-plugins/): 44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.
-- [에이전트 하네스 · 메타 프롬프팅](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/meta-prompting/): 프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.
-- [에이전트 하네스 · Fable 현장 가이드](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/fable-field-guide/): 모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.
-- [에이전트 하네스 · obra/superpowers](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/superpowers/): 프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.
-- [에이전트 하네스 · ASIDE](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/aside/): 제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.
-- [에이전트 하네스 · 스킬 하나로 광고 이미지 · 종량제 라우팅](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/payg-image-routing/): 스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.
-- [에이전트 하네스 · DeepSeek Harness](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/deepseek-harness/): 181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.
-- [에이전트 하네스 · ip-as-logo](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ip-as-logo-skill/): 코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.
-- [에이전트 하네스 · anti-slop](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/): 규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.
-- [에이전트 하네스 · DSH better-sidebar](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/dsh-better-sidebar/): 간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.
-- [에이전트 하네스 · cumora](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/cumora/): 8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.
-- [에이전트 하네스 · eli5 — 실행 코드가 0줄인 플러그인](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/eli5/): 「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.
-- [컨텍스트와 기억](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/): 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
-- [컨텍스트와 기억 · 벡터DB 없는 RAG](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/rag-without-vectors/): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
-- [컨텍스트와 기억 · Headroom](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/headroom/): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.
-- [컨텍스트와 기억 · 당근 SEED](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/karrot-seed/): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
-- [컨텍스트와 기억 · 세컨드 브레인 강의](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-course/): 커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.
-- [컨텍스트와 기억 · 그래프 엔지니어링](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/graph-engineering/): 영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.
-- [컨텍스트와 기억 · 옵시디언 LLM 위키](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/): 3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.
-- [컨텍스트와 기억 · 세컨드 브레인 인터뷰](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-interview/): 자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.
-- [컨텍스트와 기억 · 파일 관리 체계](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/file-management/): 제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.
-- [컨텍스트와 기억 · 세컨드 브레인 4단계](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-4steps/): 이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.
-- [컨텍스트와 기억 · dsh-anchored-standard](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/): 설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.
-- [컨텍스트와 기억 · public-apis](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/): 별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.
-- [QA 자동화](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/): 제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.
-- [QA 자동화 · 토스 네뷸라 디바이스 팜](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/toss-nebula/): 가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.
-- [QA 자동화 · 에이슬립 QA 자동화](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/asleep-qa/): 11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.
-- [QA 자동화 · 오토플레이 테스트 툴](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/autoplay-test-tool/): 봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다.
-- [QA 자동화 · QA 인프라 발표](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/qa-infrastructure/): 자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.
-- [QA 자동화 · watermarks-remover](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/): AI 티를 지우는 도구를 검사 게이트 점검용으로 열었습니다. 그런데 AI를 잡으라고 만든 지표가, 사람이 쓴 제 글을 먼저 잡았습니다.
-- [게임 만들기](https://nobles92ts-ship-it.github.io/ko/teardowns/games/): 엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.
-- [게임 만들기 · Elemental Sandbox](https://nobles92ts-ship-it.github.io/ko/teardowns/games/elemental-sandbox/): 이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.
-- [게임 만들기 · OpenMMO](https://nobles92ts-ship-it.github.io/ko/teardowns/games/openmmo/): 1인 개발자가 라이브까지 올린 MMORPG. README만 보고 쓴 제 요약이 코드를 열자 두 군데 틀렸습니다.
-- [게임 만들기 · Hunyuan3D-WorldClaw](https://nobles92ts-ship-it.github.io/ko/teardowns/games/worldclaw/): 프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.
-- [게임 만들기 · 진삼국무쌍 오리진](https://nobles92ts-ship-it.github.io/ko/teardowns/games/dynasty-warriors-origins/): 제 게임에 뭘 더 넣을지 보려고 뜯었는데, 안 만들어도 되는 것 하나를 먼저 찾았습니다.
-- [게임 만들기 · 유니티 최근 업데이트](https://nobles92ts-ship-it.github.io/ko/teardowns/games/unity-releases/): 일주일 치를 정직하게 그으니 릴리스 5건이 전부였습니다. 그런데 그 안에 기능 추가가 아니라 이사가 들어 있었습니다.
+- [에이전트 하네스](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/index.md): 에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.
+- [에이전트 하네스 · mattpocock/skills](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/mattpocock-skills/index.md): 스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.
+- [에이전트 하네스 · ECC](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ecc/index.md): 제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.
+- [에이전트 하네스 · Prime Agent](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/prime-agent/index.md): 코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.
+- [에이전트 하네스 · Clawd on Desk](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/clawd-on-desk/index.md): 도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.
+- [에이전트 하네스 · Odysseus](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/odysseus/index.md): 문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.
+- [에이전트 하네스 · ponytail](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ponytail/index.md): 별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.
+- [에이전트 하네스 · OmniRoute](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/omniroute/index.md): 41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.
+- [에이전트 하네스 · 세션 간 메시징](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/session-messaging/index.md): 영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.
+- [에이전트 하네스 · Buzz 그룹챗](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/buzz-groupchat/index.md): 채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.
+- [에이전트 하네스 · 플러그인 4종 추천](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/four-plugins/index.md): 44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.
+- [에이전트 하네스 · 메타 프롬프팅](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/meta-prompting/index.md): 프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.
+- [에이전트 하네스 · Fable 현장 가이드](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/fable-field-guide/index.md): 모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.
+- [에이전트 하네스 · obra/superpowers](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/superpowers/index.md): 프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.
+- [에이전트 하네스 · ASIDE](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/aside/index.md): 제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.
+- [에이전트 하네스 · 스킬 하나로 광고 이미지 · 종량제 라우팅](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/payg-image-routing/index.md): 스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.
+- [에이전트 하네스 · DeepSeek Harness](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/deepseek-harness/index.md): 181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.
+- [에이전트 하네스 · ip-as-logo](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ip-as-logo-skill/index.md): 코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.
+- [에이전트 하네스 · anti-slop](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/index.md): 규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.
+- [에이전트 하네스 · DSH better-sidebar](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/dsh-better-sidebar/index.md): 간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.
+- [에이전트 하네스 · cumora](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/cumora/index.md): 8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.
+- [에이전트 하네스 · eli5 — 실행 코드가 0줄인 플러그인](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/eli5/index.md): 「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.
+- [컨텍스트와 기억](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
+- [컨텍스트와 기억 · 벡터DB 없는 RAG](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/rag-without-vectors/index.md): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
+- [컨텍스트와 기억 · Headroom](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/headroom/index.md): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.
+- [컨텍스트와 기억 · 당근 SEED](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/karrot-seed/index.md): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
+- [컨텍스트와 기억 · 세컨드 브레인 강의](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-course/index.md): 커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.
+- [컨텍스트와 기억 · 그래프 엔지니어링](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/graph-engineering/index.md): 영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.
+- [컨텍스트와 기억 · 옵시디언 LLM 위키](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/index.md): 3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.
+- [컨텍스트와 기억 · 세컨드 브레인 인터뷰](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-interview/index.md): 자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.
+- [컨텍스트와 기억 · 파일 관리 체계](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/file-management/index.md): 제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.
+- [컨텍스트와 기억 · 세컨드 브레인 4단계](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-4steps/index.md): 이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.
+- [컨텍스트와 기억 · dsh-anchored-standard](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/index.md): 설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.
+- [컨텍스트와 기억 · public-apis](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/index.md): 별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.
+- [QA 자동화](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/index.md): 제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.
+- [QA 자동화 · 토스 네뷸라 디바이스 팜](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/toss-nebula/index.md): 가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.
+- [QA 자동화 · 에이슬립 QA 자동화](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/asleep-qa/index.md): 11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.
+- [QA 자동화 · 오토플레이 테스트 툴](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/autoplay-test-tool/index.md): 봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡고 오탐을 두 타이머로 걷어내는 방식이 제 것보다 나았습니다.
+- [QA 자동화 · QA 인프라 발표](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/qa-infrastructure/index.md): 자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.
+- [QA 자동화 · watermarks-remover](https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/index.md): AI 티를 지우는 도구를 검사 게이트 점검용으로 열었습니다. 그런데 AI를 잡으라고 만든 지표가, 사람이 쓴 제 글을 먼저 잡았습니다.
+- [게임 만들기](https://nobles92ts-ship-it.github.io/ko/teardowns/games/index.md): 엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.
+- [게임 만들기 · Elemental Sandbox](https://nobles92ts-ship-it.github.io/ko/teardowns/games/elemental-sandbox/index.md): 이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.
+- [게임 만들기 · OpenMMO](https://nobles92ts-ship-it.github.io/ko/teardowns/games/openmmo/index.md): 1인 개발자가 라이브까지 올린 MMORPG. README만 보고 쓴 제 요약이 코드를 열자 두 군데 틀렸습니다.
+- [게임 만들기 · Hunyuan3D-WorldClaw](https://nobles92ts-ship-it.github.io/ko/teardowns/games/worldclaw/index.md): 프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.
+- [게임 만들기 · 진삼국무쌍 오리진](https://nobles92ts-ship-it.github.io/ko/teardowns/games/dynasty-warriors-origins/index.md): 제 게임에 뭘 더 넣을지 보려고 뜯었는데, 안 만들어도 되는 것 하나를 먼저 찾았습니다.
+- [게임 만들기 · 유니티 최근 업데이트](https://nobles92ts-ship-it.github.io/ko/teardowns/games/unity-releases/index.md): 일주일 치를 정직하게 그으니 릴리스 5건이 전부였습니다. 그런데 그 안에 기능 추가가 아니라 이사가 들어 있었습니다.
 
 ## 쓴 글
 
 - [쓴 글](https://nobles92ts-ship-it.github.io/ko/writing/): 커밋 메시지로는 안 되던 것들.
-- [판정](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/): PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.
-- [판정 · 임계값을 만지지 않았다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/threshold/): 126케이스 한 런에서 FAIL은 하나. 그 하나를 통과시키는 방법을 알고 있었고, 쓰지 않았다.
-- [판정 · 안 되는 게 결함인가, 아직 없는 건가](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/version-docs/): 버전 문서에서 기능 설명은 6개월이면 반이 틀립니다. 등장 시점은 안 틀립니다. 그리고 판정에 필요한 건 대개 후자입니다.
-- [판정 · 「아마 맞다」는 판정이 아니다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/evidence-grades/): 같은 질문에 "아마 맞다"로 답하느냐 "맞다"로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다.
-- [판정 · 고아 53개는 오보였다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/false-alarm/): 린터가 끊겼다고 보고한 메모리 53개는 전부 살아 있었다. 그 보고를 믿고 되살렸다면 인덱스가 한도의 124%가 됐다.
-- [판정 · 새로 깐 것이 범인처럼 보였다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/new-install-suspect/): 집 네트워크가 끊기기 시작했고, 며칠 전에 깐 Tailscale 을 지우려 했다. 설치 시각과 증상 시작 시각을 각각 재니 이상 지표가 설치보다 18~127일 앞서 있었다.
-- [측정](https://nobles92ts-ship-it.github.io/ko/writing/measurement/): 어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.
-- [측정 · 네 번 다 숫자는 맞았다](https://nobles92ts-ship-it.github.io/ko/writing/measurement/baselines/): 측정이 틀리는 방식은 대개 수치가 아니다. 네 번 틀렸는데 네 번 다 계산은 정확했고, 틀린 건 무엇에 대고 쟀느냐였다.
-- [부리기](https://nobles92ts-ship-it.github.io/ko/writing/agents/): AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.
-- [부리기 · 에이전트는 실패할 때 조용하다](https://nobles92ts-ship-it.github.io/ko/writing/agents/silent-success/): 무인으로 굴릴 때 무서운 건 틀린 답이 아니다. 틀린 답은 읽으면 보인다. 무서운 건 종료 코드 0이다.
-- [부리기 · 무인 회귀는 성능이 아니라 복구 구조가 만든다](https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/): 실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.
-- [고르기](https://nobles92ts-ship-it.github.io/ko/writing/choosing/): 남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.
-- [고르기 · 마흔 번 기각했고, 사유는 대개 대상 밖에 있었다](https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/): 남의 도구 마흔 건을 뜯어 실제로 들인 것은 하나다. 그런데 값이 나가는 건 1/40 이라는 비율이 아니라 기각 사유 쪽이었다.
-- [고르기 · 마지막으로 켠 날짜가 없으면 갖고 있는 게 아니다](https://nobles92ts-ship-it.github.io/ko/writing/choosing/already-have-it/): 설치돼 있다는 것은 세 층 중 첫 층일 뿐이다. 세 번의 조사가 같은 두 도구를 지목했고, 세 번 다 그 도구는 안 돌아 있었다.
+- [판정](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/index.md): PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.
+- [판정 · 임계값을 만지지 않았다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/threshold/index.md): 126케이스 한 런에서 FAIL은 하나. 그 하나를 통과시키는 방법을 알고 있었고, 쓰지 않았다.
+- [판정 · 안 되는 게 결함인가, 아직 없는 건가](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/version-docs/index.md): 버전 문서에서 기능 설명은 6개월이면 반이 틀립니다. 등장 시점은 안 틀립니다. 그리고 판정에 필요한 건 대개 후자입니다.
+- [판정 · 「아마 맞다」는 판정이 아니다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/evidence-grades/index.md): 같은 질문에 "아마 맞다"로 답하느냐 "맞다"로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다.
+- [판정 · 고아 53개는 오보였다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/false-alarm/index.md): 린터가 끊겼다고 보고한 메모리 53개는 전부 살아 있었다. 그 보고를 믿고 되살렸다면 인덱스가 한도의 124%가 됐다.
+- [판정 · 새로 깐 것이 범인처럼 보였다](https://nobles92ts-ship-it.github.io/ko/writing/verdicts/new-install-suspect/index.md): 집 네트워크가 끊기기 시작했고, 며칠 전에 깐 Tailscale 을 지우려 했다. 설치 시각과 증상 시작 시각을 각각 재니 이상 지표가 설치보다 18~127일 앞서 있었다.
+- [측정](https://nobles92ts-ship-it.github.io/ko/writing/measurement/index.md): 어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.
+- [측정 · 네 번 다 숫자는 맞았다](https://nobles92ts-ship-it.github.io/ko/writing/measurement/baselines/index.md): 측정이 틀리는 방식은 대개 수치가 아니다. 네 번 틀렸는데 네 번 다 계산은 정확했고, 틀린 건 무엇에 대고 쟀느냐였다.
+- [부리기](https://nobles92ts-ship-it.github.io/ko/writing/agents/index.md): AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.
+- [부리기 · 에이전트는 실패할 때 조용하다](https://nobles92ts-ship-it.github.io/ko/writing/agents/silent-success/index.md): 무인으로 굴릴 때 무서운 건 틀린 답이 아니다. 틀린 답은 읽으면 보인다. 무서운 건 종료 코드 0이다.
+- [부리기 · 무인 회귀는 성능이 아니라 복구 구조가 만든다](https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/index.md): 실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.
+- [고르기](https://nobles92ts-ship-it.github.io/ko/writing/choosing/index.md): 남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.
+- [고르기 · 마흔 번 기각했고, 사유는 대개 대상 밖에 있었다](https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/index.md): 남의 도구 마흔 건을 뜯어 실제로 들인 것은 하나다. 그런데 값이 나가는 건 1/40 이라는 비율이 아니라 기각 사유 쪽이었다.
+- [고르기 · 마지막으로 켠 날짜가 없으면 갖고 있는 게 아니다](https://nobles92ts-ship-it.github.io/ko/writing/choosing/already-have-it/index.md): 설치돼 있다는 것은 세 층 중 첫 층일 뿐이다. 세 번의 조사가 같은 두 도구를 지목했고, 세 번 다 그 도구는 안 돌아 있었다.
 
 ## 나는 누구
 
 - [나는 누구](https://nobles92ts-ship-it.github.io/ko/about/): 이걸 다 누가, 왜 하고 있는가.
-- [소개](https://nobles92ts-ship-it.github.io/ko/about/me/): 비개발자입니다. 코드는 AI가 씁니다. 저는 그게 어디서 부러지는지 찾는 일을 12년 했습니다.
-- [개인정보처리방침](https://nobles92ts-ship-it.github.io/ko/about/privacy/): 이 사이트가 방문자에게서 직접 수집하는 정보는 없습니다. 다만 글꼴을 외부에서 받아오고, 호스팅 업체가 접속 기록을 남깁니다.
+- [소개](https://nobles92ts-ship-it.github.io/ko/about/me/index.md): 비개발자입니다. 코드는 AI가 씁니다. 저는 그게 어디서 부러지는지 찾는 일을 12년 했습니다.
+- [개인정보처리방침](https://nobles92ts-ship-it.github.io/ko/about/privacy/index.md): 이 사이트가 방문자에게서 직접 수집하는 정보는 없습니다. 다만 글꼴을 외부에서 받아오고, 호스팅 업체가 접속 기록을 남깁니다.
 
 ## 오늘의 AI 소식
 
