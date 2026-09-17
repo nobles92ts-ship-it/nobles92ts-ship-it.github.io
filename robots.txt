@@ -7,4 +7,23 @@ Allow: /
 Disallow: /search-index-ko.json
 Disallow: /search-index-en.json
 
+# ⛔ 마크다운 판(`…/index.md` 226장)은 **일부러 안 막았다** (2026-09-17 형근님 결정).
+#   빠뜨린 게 아니다. 여기에 `Disallow: /*/index.md$` 를 넣기 전에 아래를 읽을 것.
+#
+#   ⚠ 막으면 **robots 를 지키는 AI 에이전트도 같이 막힌다.** 그게 유일한 독자라서,
+#     막는 순간 226장을 낸 이유가 사라진다 — 바로 위 두 줄(검색 색인)이 이미 그 상태다.
+#     그래서 llms.txt 는 색인 파일을 «못 건다». 막는 것과 안 쓰이는 것이 같은 뜻이 되는 자리다.
+#   ⚠ 안 막았을 때의 위험은 「생마크다운이 검색 결과에 뜬다」 하나인데, 발견 경로가 좁다 —
+#     2026-09-17 실측으로 sitemap 에 0건, 사람이 누르는 `<a>` 링크 0건. 통로는
+#     `<head>` 의 `<link rel="alternate" type="text/markdown">` 하나뿐이다.
+#   ⚠ 이 규격을 쓰는 곳들도 안 막는다(같은 날 robots.txt 원문 확인) —
+#     developers.openai.com `Allow: /` · docs.claude.com 은 `/api/` 하나뿐 · fastht.ml 은 지시문 0줄.
+#   ⚠ GitHub Pages 는 헤더를 못 붙인다. `X-Robots-Tag: noindex` 도 md 안의 canonical 도 불가라,
+#     쓸 수 있는 건 이 파일뿐이고 선택은 「전부 열기 / 전부 막기」로 갈린다.
+#
+#   되돌리는 신호: 구글에 `site:nobles92ts-ship-it.github.io index.md` 가 실제로 걸릴 때.
+#   ⛔ 그때도 **검색엔진만 막는 우회는 조심할 것** — robots.txt 는 그룹을 합치지 않는다.
+#     `User-agent: Googlebot` 그룹을 새로 만들면 Googlebot 은 위 `User-agent: *` 를 **통째로 무시**해서,
+#     위 검색 색인 두 줄을 **그 그룹에 다시 적지 않으면 Googlebot 한테만 조용히 열린다.**
+
 Sitemap: https://nobles92ts-ship-it.github.io/sitemap.xml
