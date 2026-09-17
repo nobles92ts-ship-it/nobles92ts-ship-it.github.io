@@ -1,0 +1,25 @@
+# AI TRY
+
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years. He does not write the code — the AI does — and his work is finding where it breaks. The site holds the tools he built and runs every day, teardowns of other people's repos and services, notes that outgrew a commit message, and an AI news feed a collector fills each morning.
+
+Three things about these pages that the pages themselves do not announce:
+
+- **Every document has two layers.** The top is a plain-language explanation written for a reader who knows nothing about the subject. Below a heading — "The detailed record starts here", or "여기부터는 자세한 기록입니다" in Korean — the original, unsimplified analysis continues untouched. All 113 written pages are shaped this way. Stop at that heading for the gist; read past it for the evidence and the numbers.
+- **Korean is the original; the English is a machine-assisted translation of it.** Where the two disagree, the Korean page is authoritative. Every page exists in both languages at the same path — `/ko/<path>/` and `/en/<path>/` are the same document.
+- **Four of the five sections are written by hand (My tools, What I took apart, Things I wrote, Who I am); the fifth is not.** "AI news today" (`/ai-issue/`) is rebuilt every morning by a collector. Its cards carry no permanent URLs of their own and are gone within days, so cite the category pages rather than the cards.
+
+## Indexes
+
+- [English index](https://nobles92ts-ship-it.github.io/en/llms.txt): Every hand-written page in English, grouped by section, one line of summary each.
+- [Korean index](https://nobles92ts-ship-it.github.io/ko/llms.txt): 같은 목록의 한국어판 — 이쪽이 원문이다.
+
+## Start here
+
+- [Who I am](https://nobles92ts-ship-it.github.io/en/about/me/): What the author does, what he does not do, and what is deliberately missing from this site.
+- [My tools](https://nobles92ts-ship-it.github.io/en/built/): Things built to run unattended and still be trusted in the morning.
+- [What I took apart](https://nobles92ts-ship-it.github.io/en/teardowns/): Repos and services opened up — and what was kept from each.
+
+## Optional
+
+- [sitemap.xml](https://nobles92ts-ship-it.github.io/sitemap.xml): Every URL on the site in both languages, with lastmod.
+- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/): Nothing is collected here; the page says which third parties still see a visitor.
