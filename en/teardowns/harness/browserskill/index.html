@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BrowserSkill — lending an agent my browser — Agent harnesses</title><meta name="description" content="Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="BrowserSkill — lending an agent my browser — Agent harnesses"><meta property="og:description" content="Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="BrowserSkill — lending an agent my browser — Agent harnesses"><meta name="twitter:description" content="Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><link rel="stylesheet" href="/_astro/Shell.H5N3hKR7.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/browserskill/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">5 written · 4.5 techniques</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a><a href="/en/teardowns/harness/eli5/"><span class="t"><span>eli5 — a plugin with zero lines of code</span><span class="kpi">865 bytes · 1 run</span></span><span class="s">One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.</span></a><a href="/en/teardowns/harness/browserskill/" aria-current="page"><span class="t"><span>BrowserSkill — lending an agent my browser</span><span class="kpi">on hold · 2 harvested</span></span><span class="s">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>BrowserSkill — lending an agent my browser</h1><p class="sum">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</p><div class="meta"><span>on hold · 2 harvested</span><a class="src" href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">github.com/Tencent/BrowserSkill ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#anything-behind-a-login-was-the-part-agents-could-never-reach">Anything behind a login was the part agents could never reach</a><a href="#so-instead-of-a-new-browser-it-builds-a-new-window">So instead of a new browser, it builds a new window</a><a href="#to-touch-a-tab-of-mine-it-has-to-borrow-it--and-put-it-back">To touch a tab of mine, it has to borrow it — and put it back</a><a href="#but-it-has-to-borrow-only-covers-writing">But “it has to borrow” only covers writing</a><a href="#the-doorman-checks-the-costume-not-the-face">The doorman checks the costume, not the face</a><a href="#i-decided-not-to-install-it-because-it-is-already-handled">I decided not to install it, because it is already handled</a><a href="#so-i-wrote-down-what-would-reopen-it">So I wrote down what would reopen it</a><a href="#two-things-came-home-anyway">Two things came home anyway</a><a href="#and-one-principle-that-survives-the-rejection">And one principle that survives the rejection</a><a href="#what-i-did-not-do">What I did not do</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-the-thing-actually-is">What the thing actually is</a><a href="#the-design-decisions-each-with-its-precondition">The design decisions, each with its precondition</a><a href="#what-broke--four-findings-from-source-and-issues">What broke — four findings from source and issues</a><a href="#measured-against-my-own-setup--one-new-cell">Measured against my own setup — one new cell</a><a href="#the-principle-that-survives">The principle that survives</a><a href="#what-i-did-not-do-1">What I did not do</a></nav><div class="prose"><p><strong>BrowserSkill is a tool Tencent open-sourced in June 2026, and it lets an AI assistant drive the browser on my own machine.</strong> The interesting word is not <em>browser</em>, it is <strong>my</strong> — it does not launch a clean one, it uses the Chromium I am already signed into.</p>
+<p>Which creates an immediate problem. While the agent is using my browser, <strong>what am I supposed to do?</strong> A tab that wanders off mid-sentence is not an assistant, it is an interruption. The problem this tool actually solves is not “drive the web” — it is <strong>“two parties share one browser.”</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="How BrowserSkill is wired. The top row is a chain of five boxes: the AI assistant, a bsk shell command, a relay process, the browser extension, and finally my own Chrome with its logins intact. The bottom row shows the browser split in two: an agent-only window where the agent works, and my own windows which it cannot touch until it borrows a tab.">
+  <text class="lbl" x="8" y="22">The agent never talks to the browser — three pieces sit in between</text>
+  <rect class="vn vn-a" x="8" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="88" y="72" text-anchor="middle">AI assistant</text>
+  <text class="cap" x="88" y="100" text-anchor="middle">any that runs a shell</text>
+  <text class="cap cap-i" x="187" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="206" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="286" y="72" text-anchor="middle">one bsk command</text>
+  <text class="cap" x="286" y="100" text-anchor="middle">a plain terminal call</text>
+  <text class="cap cap-i" x="385" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="404" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="484" y="72" text-anchor="middle">relay process</text>
+  <text class="cap" x="484" y="100" text-anchor="middle">stays on this machine</text>
+  <text class="cap cap-i" x="583" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="602" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="682" y="72" text-anchor="middle">browser extension</text>
+  <text class="cap" x="682" y="100" text-anchor="middle">the part that clicks</text>
+  <text class="cap cap-i" x="781" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-b" x="800" y="40" width="160" height="88" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="880" y="72" text-anchor="middle">my Chrome</text>
+  <text class="cap cap-p" x="880" y="100" text-anchor="middle">logins left intact</text>
+  <text class="lbl" x="8" y="172">And inside that Chrome a partition goes up — that partition is the product</text>
+  <rect class="vn vn-b" x="8" y="186" width="470" height="94" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="243" y="214" text-anchor="middle">agent-only window</text>
+  <text class="cap" x="243" y="242" text-anchor="middle">opens fresh, the agent works only</text>
+  <text class="cap" x="243" y="268" text-anchor="middle">here, and it closes when done</text>
+  <rect class="vn vn-a" x="500" y="186" width="460" height="94" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="730" y="214" text-anchor="middle">the windows I was using</text>
+  <text class="cap" x="730" y="242" text-anchor="middle">out of reach by default.</text>
+  <text class="cap cap-p" x="730" y="268" text-anchor="middle">one tab at a time, only if borrowed</text>
+</svg>
+<figcaption>The chain is long for compatibility, not for safety — cutting it at a shell command is what made the tool indifferent to which assistant you run.</figcaption>
+</figure>
+<h2 id="anything-behind-a-login-was-the-part-agents-could-never-reach">Anything behind a login was the part agents could never reach</h2>
+<p>Driving the web from an agent is not new. But most approaches spin up <strong>a clean browser nobody has signed into</strong>. Public pages work. My inbox, my order history, anything that exists only after a login — those do not.</p>
+<p>Two workarounds existed. <strong>Give the agent its own test account</strong> — useless, because the thing I want to see lives in <em>my</em> account. Or <strong>hand over my username and password</strong> — a line I do not cross.</p>
+<p>BrowserSkill takes a third route: <strong>use the session that is already open.</strong> No credential ever changes hands, because no login ever has to happen again.</p>
+<h2 id="so-instead-of-a-new-browser-it-builds-a-new-window">So instead of a new browser, it builds a new window</h2>
+<p>This is the part the project got right. Rather than handing the agent the whole browser, it <strong>opens a separate window and confines the agent to it.</strong> Sign-in state belongs to the browser profile, so it survives into that window; the windows I was reading stay untouched.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Usually</th>
+<th>Here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser the agent drives</td>
+<td>a fresh one, signed into nothing</td>
+<td><strong>mine, still signed in</strong></td>
+</tr>
+<tr>
+<td>The screen I was reading</td>
+<td>shared, so it gets taken</td>
+<td><strong>a different window, so it does not</strong></td>
+</tr>
+<tr>
+<td>When the job ends</td>
+<td>the mess stays</td>
+<td>that window closes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson is that partitioning comes before scheduling.</strong> When two parties need one resource, the first move is making them invisible to each other — taking turns is the second.</p>
+<h2 id="to-touch-a-tab-of-mine-it-has-to-borrow-it--and-put-it-back">To touch a tab of mine, it has to borrow it — and put it back</h2>
+<p>Sometimes the request really is <em>“this page I am looking at right now.”</em> Then the agent <strong>names that tab and borrows it.</strong> A confirmation appears, and nothing proceeds until I say yes.</p>
+<p>A borrowed tab is <strong>physically moved</strong> into the agent window. When the work ends it comes home — and the implementation <strong>records which window and which slot it came from</strong> beforehand, then restores it there.</p>
+<p>That last clause is where I spent the most time. Everyone thinks of borrowing. Almost nobody <strong>writes down the seat</strong>. Skip it and the return becomes “somewhere, roughly,” which means a human goes looking.</p>
+<h2 id="but-it-has-to-borrow-only-covers-writing">But “it has to borrow” only covers writing</h2>
+<p>Here is where the reading cost me something. The pitch says, in so many words, that the agent <strong>must borrow a tab explicitly</strong>. I read that as <em>my tabs are untouchable until I allow it</em>.</p>
+<p>The source says otherwise. Tools are <strong>sorted into three kinds by effect</strong>, and the ones that <strong>only look, never poke, skip the check entirely.</strong> Lifting the structure of a page, pulling its error log or its network log — none of that needs a borrow.</p>
+<div class="ex">
+<p class="bad"><b>What I read</b> — nothing happens to my tabs without permission</p>
+<p class="good"><b>What is true</b> — permission gates <i>changing</i> things; <i>looking</i> is free</p>
+</div>
+<p><strong>This is undocumented design, not a bug.</strong> The developer docs carry a line about it and the code comments state the intent. What breaks is <strong>the sentence on the front page</strong>.</p>
+<p><strong>The lesson: a safety rule compressed into one sentence has to be read together with its scope.</strong> “It must borrow” was true. The word <em>touch</em> was narrower than I assumed.</p>
+<h2 id="the-doorman-checks-the-costume-not-the-face">The doorman checks the costume, not the face</h2>
+<p>The architecture doc says connections are screened by an <strong>extension allow-list</strong>. “Allow-list” reads as <em>only our extension gets in</em>.</p>
+<p>The actual check asks one question: <strong>is this name 32 characters long, and are they all letters between a and p?</strong> That is the whole test. Every browser extension ID looks like that. So <strong>anything shaped like an extension walks through.</strong></p>
+<p>The part that stopped me was the next line. <strong>Directly above that function, the authors left a comment admitting it</strong> — that it should be narrowed to an ID obtained from config or pairing, that it is not, and that <strong>a side-loaded extension on the same machine currently passes the gate</strong>. Someone outside filed the same finding a day before I looked. It is still open.</p>
+<p><strong>The lesson: the word “allow-list” and the expression that implements it are two different objects.</strong> And in this case <strong>the code comment was more honest than the marketing line</strong> — I would have got there faster by opening the source instead of reading more docs.</p>
+<h2 id="i-decided-not-to-install-it-because-it-is-already-handled">I decided not to install it, because it is already handled</h2>
+<p>Good tool, wrong slot. The reason is not performance, it is <strong>overlap</strong>.</p>
+<p>I already run two browser automations, and between them they cover <strong>almost everything</strong> this one offers. One leaves my browser alone; the other uses my real sign-in state. <strong>The only cell BrowserSkill owns by itself is “both at once.”</strong></p>
+<p>The price tag on that one cell is the problem. Using it means <strong>planting somebody else’s extension, with access-every-site permission, into the Chrome profile where all of my work is signed in.</strong> And the doorman from the previous section is that house’s front door.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>What I gain</th>
+<th>What I pay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Today</td>
+<td>one cell sits empty</td>
+<td>nothing</td>
+</tr>
+<tr>
+<td>If I install</td>
+<td>that cell fills</td>
+<td>a third-party extension inside a signed-in profile · uninstalling <strong>cannot un-expose what already passed through</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson is that giving “cost to undo” its own column makes this call fast.</strong> An extension is trivial to delete. <strong>The sessions it saw in the meantime cannot be deleted.</strong> Splitting reversible from irreversible answered the question on its own.</p>
+<h2 id="so-i-wrote-down-what-would-reopen-it">So I wrote down what would reopen it</h2>
+<p>A hold with no conditions guarantees the same investigation from scratch in six months. So there are three: <strong>when what I use today fails to open something</strong> · <strong>when a job genuinely requires my Chrome’s sign-in state</strong> · <strong>when the doorman issue closes.</strong> Any one of them flips it back onto the table.</p>
+<h2 id="two-things-came-home-anyway">Two things came home anyway</h2>
+<p>Rejecting a tool does not mean rejecting its design. This is the actual harvest.</p>
+<p><strong>First: return three values, not two — with “unknown” as a first-class citizen.</strong> Browser operations here report <strong>nothing happened / definitely committed / unknown</strong>, and retrying on <em>unknown</em> is <strong>forbidden by the written protocol.</strong> If the operation was a file upload, one more click on “not sure” means the file goes up twice.</p>
+<p>I have paid for this three times already: <strong>reading “dispatched” as “succeeded.”</strong> Every time I wrote a warning note about it. And every time, <strong>the value being returned stayed two-valued.</strong> A warning only works if a human reads it. A value works whether anyone reads it or not.</p>
+<p><strong>Second: default-deny, borrow one at a time, hand it back.</strong> My own dangerous automations do sit behind approval gates — but re-reading them, <strong>the handing-back is missing.</strong> There are doors that were opened once and never closed.</p>
+<h2 id="and-one-principle-that-survives-the-rejection">And one principle that survives the rejection</h2>
+<p>A permission split into <em>can</em> and <em>cannot</em> pushes everything that actually needed <strong>“just this one, and I will return it”</strong> into the <em>can</em> pile.</p>
+<p>A browser is an especially bad fit for that split. Grant everything and the screen I was reading disappears; grant nothing and the sign-in state — the whole point — is unusable. <strong>One at a time, time-boxed, returned was the only answer left.</strong></p>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<ul>
+<li><strong>I never installed it.</strong> Every judgement here comes from <strong>reading source and issues</strong>; I did not measure whether it works well even once. The reason I did not install is “installing is the risk,” so the verification path is closed by my own conclusion.</li>
+<li><strong>I did not run the evaluation suite they ship.</strong> It was the one route to a measured success rate, and I skipped it.</li>
+<li><strong>I only read the remote mode.</strong> Everything I say about security applies <strong>to running it on one machine.</strong></li>
+<li><strong>I did not line up the alternatives.</strong> Putting two competing automations side by side would have made the verdict sturdier. I did not.</li>
+</ul>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>What this repository is worth is its boundary design, not its binary.</strong> BrowserSkill is an MIT project Tencent published on 2026-06-22: a <strong>local bridge</strong> between an agent harness (Claude Code, Cursor, Codex and others) and the user’s signed-in Chromium. The pitch is “use the browser you are already logged into without interrupting your own work,” delivered through three mechanisms — <strong>agent-window isolation, tab borrow/return, and a human-handoff call</strong>. The design holds up. Reading the source, however, turns up the fact that <strong>the local daemon authenticates extensions by shape rather than identity</strong>, a gap <strong>the code comments concede outright</strong>. Verdict: adoption <strong>on hold</strong>, <strong>two techniques adopted</strong>.</p>
+<h2 id="what-the-thing-actually-is">What the thing actually is</h2>
+<p><strong>It is a shell CLI, not an MCP server.</strong> That is the first design decision and the reason it carries no harness lock-in: the precondition is “any agent that can call a shell.” Harnesses get a single 15.4KB instruction file that teaches the command surface.</p>
+<p>Four layers, and the agent never addresses the browser directly.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Role</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bsk</code> CLI</td>
+<td>verb-noun subcommands (<code>bsk session start</code>, <code>bsk click</code>)</td>
+<td>invoked from a shell</td>
+</tr>
+<tr>
+<td><code>bsk daemon</code></td>
+<td>session routing · <strong>one serialized queue per session</strong> · idle shutdown</td>
+<td>CLI ↔ daemon over local IPC</td>
+</tr>
+<tr>
+<td>extension (MV3)</td>
+<td>21 tool handlers · session manager · element-reference store</td>
+<td>daemon ↔ extension over loopback WebSocket</td>
+</tr>
+<tr>
+<td>browser</td>
+<td>agent window · borrowed tabs</td>
+<td>extension → Chrome over the DevTools protocol</td>
+</tr>
+</tbody>
+</table>
+<p>Size is <strong>47,773 lines of Rust plus 98,924 of TypeScript</strong> (measured 2026-09-18, tests included). <strong>4,439 stars</strong>, <strong>16 contributors</strong> — but six of them account for nearly every commit, which makes this an internal team’s project released publicly rather than a community one. 31 issues open, 61 closed. Releases land <strong>two weeks apart</strong> (0.2.0 on 09-02, 0.2.1 on 09-09, 0.3.0 on 09-16): energetic, and also a sign the surface has not settled.</p>
+<p>⚠ <strong>The repository publishes no performance numbers at all.</strong> No benchmark boast, no “N% success.” Instead it ships deterministic local pages and an agent-neutral capability evaluation. That is the honest posture — and inverted, it means <strong>nobody over there has the number either.</strong></p>
+<h2 id="the-design-decisions-each-with-its-precondition">The design decisions, each with its precondition</h2>
+<p>A technique moved without its precondition does not survive the move. So the question for each is: what constraint forced this?</p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Implementation</th>
+<th>Holds only when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent-window isolation</strong></td>
+<td>a write tool whose target window differs from the session’s agent window returns <code>permission_denied</code></td>
+<td>the browser can <strong>partition by window</strong>. In tab-centric interfaces the boundary becomes invisible to the human — there is an open request for exactly that</td>
+</tr>
+<tr>
+<td><strong>Borrow / return</strong></td>
+<td>borrowing <strong>physically moves</strong> the tab; the original window and slot index are recorded and restored on return</td>
+<td><strong>the seat is written down first.</strong> Otherwise returning becomes a human’s job</td>
+</tr>
+<tr>
+<td><strong>The switch of record lives in the browser, not the CLI</strong></td>
+<td>0.3.0 <strong>neutered rather than deleted</strong> the unattended flags — still accepted, no longer able to beat the saved browser settings</td>
+<td><strong>a human is in front of that screen.</strong> It does not hold unattended, which is why unattended use was pushed to “turn the switch off in the extension”</td>
+</tr>
+<tr>
+<td><strong>Human handoff</strong></td>
+<td>captcha, sign-in, OTP and payment hand control back, then resume; five distinct outcome values</td>
+<td><strong>“refused” and “feature disabled” are different values.</strong> The docs nail down that disabled means no human confirmed anything and no permission was granted</td>
+</tr>
+<tr>
+<td><strong>Three-valued results</strong></td>
+<td>operations report <code>none</code> / <code>committed</code> / <code>unknown</code>; <code>unknown</code> <strong>survives</strong> timeout and transport loss, and blind retry is prohibited</td>
+<td><strong>retry cost is asymmetric.</strong> Over-engineering for idempotent reads</td>
+</tr>
+<tr>
+<td><strong>Reference table discarded per page</strong></td>
+<td>each observation rebuilds the element references and reusing stale ones is forbidden by protocol</td>
+<td><strong>the page can change between looking and acting.</strong> Unnecessary on static pages</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-broke--four-findings-from-source-and-issues">What broke — four findings from source and issues</h2>
+<h3 id="1-the-extension-allow-list-screens-shape-not-identity">1. The extension allow-list screens shape, not identity</h3>
+<p>The gate function checks only whether the text after <code>chrome-extension://</code> is <strong>32 characters, all within a–p</strong>. Every MV3 extension ID matches that, so <strong>any extension-shaped origin passes</strong>. And <strong>the comment immediately above records the gap</strong>: it should be narrowed to an ID from config or pairing, it is not, and a side-loaded extension on the same machine walks through. An external report of the same issue was filed on 2026-09-17 and remains open.</p>
+<p>The listener is bound to loopback, so <strong>this is not a remote attack.</strong> It does mean that one more extension on the same machine can drive the browser — the browser holding every login the user has.</p>
+<h3 id="2-borrowing-gates-writes-only">2. Borrowing gates writes only</h3>
+<p>Tools are classified by effect into three kinds, and the policy is a single line: <strong>passive reads, locally, skip the check.</strong> So lifting a static accessibility tree, or pulling console and network records, <strong>reaches a user tab without borrowing</strong> (checked exhaustively in both files — zero window-scope calls).</p>
+<p>⚠ In fairness this is <strong>undocumented design rather than a defect</strong>; the developer docs carry the line “passive reads may inspect user tabs.” What breaks is <strong>the front-page sentence</strong>. Note also that the main observation tool is classified as transient <em>input</em> rather than a passive read — because its hover probe genuinely touches the live page — and is therefore forced inside the agent window. That distinction was drawn correctly.</p>
+<h3 id="3-windows-is-the-soft-spot">3. Windows is the soft spot</h3>
+<p>Scanning the 31 open issues, Windows reports cluster visibly: an auto-spawned daemon dying with its parent process tree, the diagnostic command hanging forever when no extension is connected, an unsigned executable blocked by OS security, session stop unable to kill a wedged command. <strong>Four of the six fixes in 0.2.1 are Windows.</strong> Evidence of repair, and equally evidence of where the pain lives.</p>
+<h3 id="4-a-background-click-reports-success-while-delivering-nothing">4. A background click reports success while delivering nothing</h3>
+<p>With the agent window left unfocused, click <strong>reports success without dispatching input</strong> — an open issue from 2026-09-14.</p>
+<p>⚠ The irony is that <strong>the same repository documents three-valued results down to “never retry on unknown”</strong>, and then, at this one return site, reports <em>unknown</em> as <em>success</em>. ⇒ <strong>Writing the protocol down and having every return site obey it are separate pieces of work.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="A comparison of three tools. The first tool I already use leaves my browser alone but needs its own separate login. The second uses my real login but shares the tabs I was reading. BrowserSkill does both, at the cost of planting a third-party extension in a signed-in profile. The verdict is on hold, with three conditions written down that would reopen it.">
+  <text class="lbl" x="8" y="22">Where they overlap, and the one cell they do not — that cell is the whole offer</text>
+  <rect class="vn vn-a" x="8" y="40" width="310" height="170" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="163" y="68" text-anchor="middle">already in use — first</text>
+  <text class="cap" x="163" y="100" text-anchor="middle">leaves my browser alone ○</text>
+  <text class="cap" x="163" y="128" text-anchor="middle">uses my own sign-in ✕</text>
+  <text class="cap" x="163" y="156" text-anchor="middle">has a profile of its own</text>
+  <text class="cap cap-p" x="163" y="188" text-anchor="middle">running today</text>
+  <rect class="vn vn-a" x="346" y="40" width="310" height="170" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="501" y="68" text-anchor="middle">already in use — second</text>
+  <text class="cap" x="501" y="100" text-anchor="middle">leaves my browser alone ✕</text>
+  <text class="cap" x="501" y="128" text-anchor="middle">uses my own sign-in ○</text>
+  <text class="cap" x="501" y="156" text-anchor="middle">shares the tabs I read</text>
+  <text class="cap cap-p" x="501" y="188" text-anchor="middle">running today</text>
+  <rect class="vn vn-b" x="684" y="40" width="310" height="170" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="839" y="68" text-anchor="middle">BrowserSkill</text>
+  <text class="cap" x="839" y="100" text-anchor="middle">leaves my browser alone ○</text>
+  <text class="cap cap-i" x="839" y="128" text-anchor="middle">uses my own sign-in ○</text>
+  <text class="cap" x="839" y="156" text-anchor="middle">← this one cell is new</text>
+  <text class="cap cap-p" x="839" y="188" text-anchor="middle">price: a foreign extension</text>
+  <text class="cap cap-i" x="8" y="250">Verdict — adoption on hold. One new cell, against an asymmetric cost to undo</text>
+  <text class="cap" x="8" y="278">Reopens on: a site today's tools cannot open · a job needing my Chrome login · the gate issue closing</text>
+</svg>
+<figcaption>The column that decided it was not the benefit, it was the cost to undo. The extension can be deleted; the sessions it saw cannot.</figcaption>
+</figure>
+<h2 id="measured-against-my-own-setup--one-new-cell">Measured against my own setup — one new cell</h2>
+<p>Two browser automations are already in place, and together they cover nearly all of this. One is <strong>a separate application, so it leaves my browser alone, but it carries its own profile and therefore its own logins.</strong> The other <strong>runs in my real Chrome and shares the tabs I was reading.</strong></p>
+<p><strong>The cell BrowserSkill holds alone is “both at once.”</strong> Its price is <strong>planting a third-party extension holding all-sites and debugger permissions into the profile where every work login lives</strong> — with finding 1 above serving as that profile’s front door.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Verdict</th>
+<th>Benefit</th>
+<th>Cost to adopt</th>
+<th>Cost to undo</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The tool itself</td>
+<td><strong>on hold</strong></td>
+<td>one new cell</td>
+<td>three components · Windows issues cluster</td>
+<td>⛔ <strong>asymmetric</strong> — delete the extension, the exposed sessions stay exposed</td>
+<td>high (source and issues measured)</td>
+</tr>
+<tr>
+<td><strong>Three-valued results</strong></td>
+<td><strong>adopt</strong></td>
+<td>large — same misread three times already</td>
+<td>one return type plus call-site branches</td>
+<td>cheap</td>
+<td>high</td>
+</tr>
+<tr>
+<td><strong>Borrow/return protocol</strong></td>
+<td><strong>adopt</strong></td>
+<td>medium — my own rules have no “return”</td>
+<td>one section of prose</td>
+<td>cheap</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>Neutering old flags</td>
+<td>on hold</td>
+<td>low</td>
+<td>—</td>
+<td>cheap</td>
+<td><strong>low (unverified)</strong> — I never counted whether such flags exist</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>An adoption verdict deserves to be attacked too.</strong> For three-valued results the fair objection is <em>isn’t this already handled?</em> My rules do carry “dispatched ≠ succeeded” — <strong>as a warning note</strong>. Whether the runner’s <strong>return value</strong> is three-valued I never opened and checked (<strong>unverified</strong>). ⇒ So the first task under “adopt” is not implementation, it is <strong>establishing the current state.</strong> A warning works when a human reads it; a value works whether anyone reads it or not.</p>
+<h2 id="the-principle-that-survives">The principle that survives</h2>
+<p><strong>Draw the boundary around “what is lent out until when,” not around “who may do what.”</strong></p>
+<p>Permission split into <em>can</em> and <em>cannot</em> sweeps everything that needed <strong>“this one, then returned”</strong> into the <em>can</em> pile. A browser is a particularly bad resource for that split — grant it all and the user’s screen vanishes, grant nothing and the sign-in state, the entire point, is unusable. One at a time, time-boxed, returned was the only remaining answer, and this repository carries it far enough to make session stop <strong>mandatory</strong> while calling idle cleanup a safety net only.</p>
+<p>On my side the exposure is <strong>doors opened once and never closed</strong>: the approval step exists, the return point is unwritten.</p>
+<h2 id="what-i-did-not-do-1">What I did not do</h2>
+<ul>
+<li><strong>I never installed and ran it.</strong> All judgements come from source reading and issue measurement; success rate and speed were never measured. Whether particular sites open through it is <strong>unverified</strong> — the reason for the hold is that installing is itself the risk, so the verification path is closed by the conclusion.</li>
+<li><strong>I did not run <code>evals/browser</code>.</strong> It was the one path to a measured success rate.</li>
+<li><strong>I only read the remote mode.</strong> Pairing and device credentials were not verified in code, and the security judgement here <strong>applies to local mode only</strong>.</li>
+<li><strong>I ran no side-by-side comparison.</strong> Two other candidates solving the same problem were never lined up next to it. All three are available to me, so <strong>that comparison is where the next value sits.</strong></li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/harness/browserskill/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          node.textContent = tmpl.replace('{n}', Number(n).toLocaleString());
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

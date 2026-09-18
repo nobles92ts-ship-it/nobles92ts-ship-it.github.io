@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nobles92ts-ship-it.github.io/en/</loc>
-    <lastmod>2026-09-17T23:01:27.315Z</lastmod>
+    <lastmod>2026-09-18T10:26:25+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"/>
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/ko/</loc>
-    <lastmod>2026-09-17T23:01:27.315Z</lastmod>
+    <lastmod>2026-09-18T10:26:25+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/"/>
@@ -1133,6 +1133,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/aside/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/aside/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/aside/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"/>
+  </url>
+  <url>
+    <loc>https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"/>
   </url>
   <url>
     <loc>https://nobles92ts-ship-it.github.io/en/teardowns/harness/buzz-groupchat/</loc>

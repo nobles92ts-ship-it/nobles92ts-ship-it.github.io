@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 113편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 114편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -91,6 +91,7 @@
 - [에이전트 하네스 · DSH better-sidebar](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/dsh-better-sidebar/index.md): 간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.
 - [에이전트 하네스 · cumora](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/cumora/index.md): 8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.
 - [에이전트 하네스 · eli5 — 실행 코드가 0줄인 플러그인](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/eli5/index.md): 「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.
+- [에이전트 하네스 · BrowserSkill — 내 브라우저를 «빌려주는» 방법](https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/index.md): 텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다.
 - [컨텍스트와 기억](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
 - [컨텍스트와 기억 · 벡터DB 없는 RAG](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/rag-without-vectors/index.md): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
 - [컨텍스트와 기억 · Headroom](https://nobles92ts-ship-it.github.io/ko/teardowns/memory/headroom/index.md): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.

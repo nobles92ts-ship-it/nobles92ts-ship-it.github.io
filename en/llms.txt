@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 113 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 114 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -91,6 +91,7 @@ Before reading the list —
 - [Agent harnesses · DSH better-sidebar](https://nobles92ts-ship-it.github.io/en/teardowns/harness/dsh-better-sidebar/index.md): The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else's ungated repository had never once been committed in my own.
 - [Agent harnesses · cumora](https://nobles92ts-ship-it.github.io/en/teardowns/harness/cumora/index.md): The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.
 - [Agent harnesses · eli5 — a plugin with zero lines of code](https://nobles92ts-ship-it.github.io/en/teardowns/harness/eli5/index.md): One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.
+- [Agent harnesses · BrowserSkill — lending an agent my browser](https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/index.md): Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.
 - [Context and memory](https://nobles92ts-ship-it.github.io/en/teardowns/memory/index.md): What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
 - [Context and memory · RAG without a vector DB](https://nobles92ts-ship-it.github.io/en/teardowns/memory/rag-without-vectors/index.md): Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.
 - [Context and memory · Headroom](https://nobles92ts-ship-it.github.io/en/teardowns/memory/headroom/index.md): It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn't exist.

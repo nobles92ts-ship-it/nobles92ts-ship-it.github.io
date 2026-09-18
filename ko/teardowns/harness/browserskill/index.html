@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BrowserSkill — 내 브라우저를 «빌려주는» 방법 — 에이전트 하네스</title><meta name="description" content="텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="BrowserSkill — 내 브라우저를 «빌려주는» 방법 — 에이전트 하네스"><meta property="og:description" content="텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="BrowserSkill — 내 브라우저를 «빌려주는» 방법 — 에이전트 하네스"><meta name="twitter:description" content="텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/"><link rel="stylesheet" href="/_astro/Shell.H5N3hKR7.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/harness/browserskill/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/" aria-current="page"><span class="t"><span>에이전트 하네스</span><span class="kpi">21편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">5편 · 기법 4.5</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">96 중 1</span></span><span class="s">스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.</span></a><a href="/ko/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">285 중 1</span></span><span class="s">제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.</span></a><a href="/ko/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">1등 수확이 재발견</span></span><span class="s">코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.</span></a><a href="/ko/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">7종 중 순증 1.5</span></span><span class="s">도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.</span></a><a href="/ko/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">규율 5 중 1</span></span><span class="s">문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.</span></a><a href="/ko/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">4줄 중 1줄</span></span><span class="s">별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.</span></a><a href="/ko/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">수확 7종 → 0</span></span><span class="s">41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.</span></a><a href="/ko/teardowns/harness/session-messaging/"><span class="t"><span>세션 간 메시징</span><span class="kpi">소켓 0 · 이미 라이브</span></span><span class="s">영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.</span></a><a href="/ko/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz 그룹챗</span><span class="kpi">데모 2 중 1</span></span><span class="s">채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.</span></a><a href="/ko/teardowns/harness/four-plugins/"><span class="t"><span>플러그인 4종 추천</span><span class="kpi">4종 중 이미 기각 2</span></span><span class="s">44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.</span></a><a href="/ko/teardowns/harness/meta-prompting/"><span class="t"><span>메타 프롬프팅</span><span class="kpi">3단계 · 검증 0</span></span><span class="s">프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.</span></a><a href="/ko/teardowns/harness/fable-field-guide/"><span class="t"><span>Fable 현장 가이드</span><span class="kpi">기법 6 · 새것 3</span></span><span class="s">모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.</span></a><a href="/ko/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">수확 3 → 1</span></span><span class="s">프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.</span></a><a href="/ko/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">기각 · 재개조건 5</span></span><span class="s">제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.</span></a><a href="/ko/teardowns/harness/payg-image-routing/"><span class="t"><span>스킬 하나로 광고 이미지 · 종량제 라우팅</span><span class="kpi">수확 1 · 반증 4</span></span><span class="s">스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.</span></a><a href="/ko/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">수확 5 → 0</span></span><span class="s">181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.</span></a><a href="/ko/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">기법 7 → 0</span></span><span class="s">코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.</span></a><a href="/ko/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">규칙 15 → 0</span></span><span class="s">규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.</span></a><a href="/ko/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">수확 4 → 1</span></span><span class="s">간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.</span></a><a href="/ko/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">수확 2 → 0</span></span><span class="s">8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.</span></a><a href="/ko/teardowns/harness/eli5/"><span class="t"><span>eli5 — 실행 코드가 0줄인 플러그인</span><span class="kpi">865바이트 · 실행 1회</span></span><span class="s">「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.</span></a><a href="/ko/teardowns/harness/browserskill/" aria-current="page"><span class="t"><span>BrowserSkill — 내 브라우저를 «빌려주는» 방법</span><span class="kpi">보류 · 수확 2</span></span><span class="s">텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>BrowserSkill — 내 브라우저를 «빌려주는» 방법</h1><p class="sum">텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다.</p><div class="meta"><span>보류 · 수확 2</span><a class="src" href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">github.com/Tencent/BrowserSkill ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#로그인이-필요한-일은-ai가-손을-못-대던-자리였습니다">로그인이 필요한 일은 AI가 손을 못 대던 자리였습니다</a><a href="#그래서-새-브라우저를-만드는-대신-새-창을-만들었습니다">그래서 새 브라우저를 만드는 대신 «새 창»을 만들었습니다</a><a href="#제-탭을-만지려면-빌려야-하고-끝나면-돌려놓습니다">제 탭을 만지려면 «빌려야» 하고, 끝나면 돌려놓습니다</a><a href="#그런데-빌려야-만진다는-쓰기에만-해당합니다">그런데 「빌려야 만진다」는 «쓰기»에만 해당합니다</a><a href="#문을-지키는-코드가-얼굴이-아니라-옷차림만-봅니다">문을 지키는 코드가 얼굴이 아니라 «옷차림»만 봅니다</a><a href="#저는-안-깔기로-했습니다--이미-되고-있어서">저는 안 깔기로 했습니다 — 이미 되고 있어서</a><a href="#그래서-다시-열-조건을-적어-뒀습니다">그래서 다시 열 조건을 적어 뒀습니다</a><a href="#안-깔면서도-가져온-것이-둘-있습니다">안 깔면서도 가져온 것이 둘 있습니다</a><a href="#그리고-남는-원리-하나">그리고 남는 원리 하나</a><a href="#못-한-것">못 한 것</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#무엇을-하는-물건인가">무엇을 하는 물건인가</a><a href="#대표-설계-결정--성립-조건까지-같이-적는다">대표 설계 결정 — 성립 조건까지 같이 적는다</a><a href="#깨본-결과--소스와-이슈에서-확정된-것-넷">깨본 결과 — 소스와 이슈에서 확정된 것 넷</a><a href="#내-환경에-대봤다--새로-얻는-칸은-하나였다">내 환경에 대봤다 — 새로 얻는 칸은 하나였다</a><a href="#남는-원리">남는 원리</a><a href="#못-한-것-1">못 한 것</a></nav><div class="prose"><p><strong>BrowserSkill 은 텐센트가 2026년 6월에 공개한 도구이고, AI 비서가 «내 컴퓨터의 브라우저»를 대신 조작하게 해 줍니다.</strong> 중요한 건 «브라우저»가 아니라 <strong>«내»</strong> 쪽입니다 — 새 브라우저를 띄우는 게 아니라, 제가 이미 로그인해 둔 그 크롬을 그대로 씁니다.</p>
+<p>그런데 그러면 바로 곤란해집니다. AI가 제 브라우저를 쓰는 동안 <strong>저는 뭘 하죠.</strong> 보던 탭이 갑자기 딴 데로 넘어가면 그건 도우미가 아니라 방해입니다. 이 도구가 실제로 푼 문제는 「웹을 조작한다」가 아니라 <strong>「같은 브라우저를 둘이 나눠 쓴다」</strong> 쪽입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="BrowserSkill의 구조. 위쪽은 AI 비서에서 시작해 셸 명령, 중계 프로그램, 브라우저 확장을 거쳐 브라우저에 닿는 다섯 칸의 사슬이다. 아래쪽은 그 결과로 브라우저가 두 갈래로 갈린다는 것을 보여준다. 왼쪽은 에이전트 전용 창이고 AI는 여기서만 논다. 오른쪽은 내가 보던 창이고 AI는 빌리기 전까지 손대지 못한다.">
+  <text class="lbl" x="8" y="22">AI는 브라우저와 직접 말하지 않는다 — 가운데 셋을 거친다</text>
+  <rect class="vn vn-a" x="8" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="88" y="72" text-anchor="middle">AI 비서</text>
+  <text class="cap" x="88" y="100" text-anchor="middle">셸을 부를 수 있으면 됨</text>
+  <text class="cap cap-i" x="187" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="206" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="286" y="72" text-anchor="middle">bsk 명령 한 줄</text>
+  <text class="cap" x="286" y="100" text-anchor="middle">평범한 터미널 명령</text>
+  <text class="cap cap-i" x="385" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="404" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="484" y="72" text-anchor="middle">중계 프로그램</text>
+  <text class="cap" x="484" y="100" text-anchor="middle">내 컴퓨터 안에서만</text>
+  <text class="cap cap-i" x="583" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-a" x="602" y="40" width="160" height="88" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="682" y="72" text-anchor="middle">브라우저 확장</text>
+  <text class="cap" x="682" y="100" text-anchor="middle">실제로 클릭하는 쪽</text>
+  <text class="cap cap-i" x="781" y="90" text-anchor="middle">→</text>
+  <rect class="vn vn-b" x="800" y="40" width="160" height="88" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="880" y="72" text-anchor="middle">내 크롬</text>
+  <text class="cap cap-p" x="880" y="100" text-anchor="middle">로그인된 그대로</text>
+  <text class="lbl" x="8" y="172">그리고 그 크롬 안이 둘로 갈린다 — 이 칸막이가 이 물건의 알맹이다</text>
+  <rect class="vn vn-b" x="8" y="186" width="470" height="94" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="243" y="214" text-anchor="middle">에이전트 전용 창</text>
+  <text class="cap" x="243" y="242" text-anchor="middle">AI는 여기서만 논다. 새로 열리고,</text>
+  <text class="cap" x="243" y="268" text-anchor="middle">일이 끝나면 닫힌다</text>
+  <rect class="vn vn-a" x="500" y="186" width="460" height="94" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="730" y="214" text-anchor="middle">내가 보던 창</text>
+  <text class="cap" x="730" y="242" text-anchor="middle">기본은 손도 못 댄다.</text>
+  <text class="cap cap-p" x="730" y="268" text-anchor="middle">한 탭씩 «빌려야» 만질 수 있다</text>
+</svg>
+<figcaption>사슬이 긴 이유는 안전 때문이 아니라 호환 때문이다 — 가운데를 셸 명령으로 끊어 놨더니 AI 비서 종류를 안 가리게 됐다.</figcaption>
+</figure>
+<h2 id="로그인이-필요한-일은-ai가-손을-못-대던-자리였습니다">로그인이 필요한 일은 AI가 손을 못 대던 자리였습니다</h2>
+<p>AI에게 웹을 시키는 방법은 예전부터 있었습니다. 다만 대부분 <strong>아무도 로그인하지 않은 깨끗한 브라우저</strong>를 새로 띄웁니다. 그러면 공개된 페이지는 읽는데, 제 메일함이나 제 주문 내역처럼 <strong>로그인해야 보이는 것</strong>은 못 봅니다.</p>
+<p>방법이 둘 있었습니다. 하나는 <strong>테스트용 계정을 따로 만들어 주는 것</strong> — 그런데 제가 보려는 건 제 계정의 내용이니 소용이 없습니다. 다른 하나는 <strong>아이디와 비밀번호를 AI에게 주는 것</strong> — 이건 하면 안 되는 쪽입니다.</p>
+<p>BrowserSkill 의 답은 셋째입니다. <strong>이미 로그인된 브라우저를 «그대로» 쓴다.</strong> 비밀번호를 건네지 않아도 되는 이유는, 애초에 로그인을 다시 할 필요가 없기 때문입니다.</p>
+<h2 id="그래서-새-브라우저를-만드는-대신-새-창을-만들었습니다">그래서 새 브라우저를 만드는 대신 «새 창»을 만들었습니다</h2>
+<p>여기가 이 물건에서 제일 잘한 자리입니다. AI에게 브라우저를 통째로 넘기지 않고, <strong>창을 하나 새로 띄워서 거기에 가둡니다.</strong> 로그인 정보는 브라우저 계정에 붙어 있으니 새 창에서도 그대로 살아 있고, 제가 보던 창은 손이 안 닿습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>보통은</th>
+<th>여기는</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI가 쓰는 브라우저</td>
+<td>아무도 로그인 안 한 새 것</td>
+<td><strong>내 것, 로그인된 그대로</strong></td>
+</tr>
+<tr>
+<td>내가 보던 화면</td>
+<td>같이 쓰다 보니 뺏긴다</td>
+<td><strong>다른 창이라 안 뺏긴다</strong></td>
+</tr>
+<tr>
+<td>일이 끝나면</td>
+<td>그냥 남는다</td>
+<td>그 창이 닫힌다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>교훈은 「가두면 나눠 쓸 수 있다」입니다.</strong> 같은 자원을 둘이 쓰려면 서로 안 보이게 칸을 치는 게 먼저지, 순서를 정하는 건 그다음입니다.</p>
+<h2 id="제-탭을-만지려면-빌려야-하고-끝나면-돌려놓습니다">제 탭을 만지려면 «빌려야» 하고, 끝나면 돌려놓습니다</h2>
+<p>그래도 「내가 지금 보고 있는 이 페이지, 이거 좀 해 줘」가 필요할 때가 있습니다. 그때는 AI가 <strong>그 탭을 지목해서 빌립니다.</strong> 화면에 확인창이 뜨고, 제가 승낙해야 넘어갑니다.</p>
+<p>빌려간 탭은 <strong>에이전트 전용 창으로 실제로 옮겨집니다.</strong> 그리고 일이 끝나면 돌아옵니다 — 이때 <strong>원래 어느 창의 몇 번째 자리에 있었는지</strong>를 미리 적어 뒀다가 그 자리로 되돌려 놓습니다.</p>
+<p>이 마지막 한 줄이 제가 제일 오래 본 곳입니다. 빌리는 것까지는 다들 생각하는데, <strong>돌려놓을 자리를 적어 두는 것</strong>은 잘 안 합니다. 안 적어 두면 반납이 「대충 아무 데나」가 되고, 그러면 결국 사람이 다시 찾습니다.</p>
+<h2 id="그런데-빌려야-만진다는-쓰기에만-해당합니다">그런데 「빌려야 만진다」는 «쓰기»에만 해당합니다</h2>
+<p>여기서 값을 치렀습니다. 소개 문구는 <strong>「그 탭을 명시적으로 빌려야 한다」</strong> 고 못을 박습니다. 저는 그 문장을 「내 탭은 허락 전엔 아무것도 못 한다」로 읽었습니다.</p>
+<p>소스를 열어 보니 아니었습니다. 도구가 <strong>성질별로 셋</strong>으로 갈려 있고, <strong>«가만히 읽기만 하는» 것들은 검사를 통째로 건너뜁니다.</strong> 그래서 페이지 구조를 떠 오는 것, 그 페이지의 오류 기록이나 통신 기록을 가져오는 것은 <strong>빌리지 않고도 됩니다.</strong></p>
+<div class="ex">
+<p class="bad"><b>제가 읽은 것</b> — 내 탭은 허락 없이는 아무것도 못 한다</p>
+<p class="good"><b>실제</b> — 허락이 필요한 건 «바꾸는 일»이고, «읽는 일»은 그냥 된다</p>
+</div>
+<p><strong>이건 버그가 아니라 문서에 안 적힌 설계입니다.</strong> 개발자용 문서에는 한 줄이 있고 코드 주석도 의도를 밝힙니다. 깨진 건 <strong>첫 화면의 홍보 문장</strong>이었습니다.</p>
+<p><strong>교훈: 한 문장으로 요약된 안전 규칙은, 그 문장이 «무엇에» 적용되는지를 같이 읽어야 합니다.</strong> 「빌려야 만진다」는 참인데, 「만진다」의 범위가 제 생각보다 좁았습니다.</p>
+<h2 id="문을-지키는-코드가-얼굴이-아니라-옷차림만-봅니다">문을 지키는 코드가 얼굴이 아니라 «옷차림»만 봅니다</h2>
+<p>구조 문서에는 <strong>「확장 허용 목록으로 연결을 검사한다」</strong> 고 적혀 있습니다. 「허용 목록」이라는 말은 당연히 «우리 확장만 통과»로 읽힙니다.</p>
+<p>실제 코드는 이렇게 검사합니다 — <strong>«이름이 32글자이고, 전부 a부터 p 사이 글자인가».</strong> 그게 전부입니다. 브라우저 확장은 이름이 다 그렇게 생겼습니다. 즉 <strong>확장처럼 생긴 것이면 무엇이든 통과합니다.</strong></p>
+<p>놀란 건 그다음이었습니다. <strong>바로 그 코드 위에 개발자가 스스로 적어 둔 주석이 있었습니다</strong> — 요지는 «설정에서 받은 이름으로 좁혀야 하는데 지금은 안 하고 있다, 같은 컴퓨터에 깔린 다른 확장은 이 문을 그냥 지나간다»입니다. 하루 전에 바깥에서도 같은 지적이 올라와 있었고, 아직 열려 있습니다.</p>
+<p><strong>교훈: 「허용 목록」이라는 «말»과 실제 검사 «식»은 다른 물건입니다.</strong> 그리고 이 경우엔 <strong>코드 주석이 홍보 문구보다 정직했습니다</strong> — 문서를 더 읽을 게 아니라 코드를 열었어야 빨랐습니다.</p>
+<h2 id="저는-안-깔기로-했습니다--이미-되고-있어서">저는 안 깔기로 했습니다 — 이미 되고 있어서</h2>
+<p>좋은 물건인데 제 자리에는 안 들어갑니다. 이유는 성능이 아니라 <strong>자리 겹침</strong>입니다.</p>
+<p>제가 쓰는 브라우저 자동화가 이미 둘 있고, 둘을 합치면 BrowserSkill 이 주는 것을 <strong>거의 다</strong> 덮습니다. 하나는 제 브라우저를 안 뺏고, 다른 하나는 제 로그인 상태를 씁니다. <strong>BrowserSkill 만 가진 칸은 「그 둘을 동시에」 한 칸뿐</strong>이었습니다.</p>
+<p>그 한 칸의 가격표가 문제였습니다. 이 도구를 쓰려면 <strong>제 회사 일이 전부 로그인돼 있는 그 크롬에, 남이 만든 확장을 «모든 사이트 접근» 권한으로 심어야</strong> 합니다. 그리고 앞 절에서 본 문지기가 그 집의 현관입니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>얻는 것</th>
+<th>치르는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지금</td>
+<td>칸 하나가 빈다</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>깔면</td>
+<td>그 칸이 찬다</td>
+<td>로그인된 브라우저에 남의 확장 · 되돌려도 <strong>이미 지나간 것은 못 되돌린다</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>교훈: 「되돌리기 비용」을 칸으로 만들어 두면 이런 판단이 빨라집니다.</strong> 확장은 지우면 그만이지만, <strong>그 사이 지나간 로그인 정보는 지울 수가 없습니다.</strong> 되돌릴 수 있는 것과 없는 것을 갈라 적는 순간 답이 나왔습니다.</p>
+<h2 id="그래서-다시-열-조건을-적어-뒀습니다">그래서 다시 열 조건을 적어 뒀습니다</h2>
+<p>조건 없는 보류는 반년 뒤에 같은 조사를 처음부터 다시 하게 만듭니다. 그래서 셋을 적었습니다. <strong>지금 쓰는 것들이 못 여는 사이트가 나올 때</strong> · <strong>제 크롬의 로그인이 꼭 필요한 일이 생길 때</strong> · <strong>저 문지기 문제가 닫힐 때.</strong> 셋 중 하나라도 켜지면 다시 봅니다.</p>
+<h2 id="안-깔면서도-가져온-것이-둘-있습니다">안 깔면서도 가져온 것이 둘 있습니다</h2>
+<p>도구를 기각해도 <strong>설계는 가져올 수 있습니다.</strong> 오히려 여기가 이 편의 수확입니다.</p>
+<p><strong>첫째, 결과를 «됐다 / 안 됐다» 둘이 아니라 «모르겠다»를 넣은 셋으로 돌려주는 것.</strong> 이 도구는 브라우저 조작의 결과를 <strong>«아무 일도 안 일어남 / 확실히 됨 / 모름»</strong> 셋으로 돌려주고, <strong>«모름»일 때 다시 시도하는 것을 규칙으로 금지</strong>합니다. 파일을 올리는 일이라면, 「모르겠다」에서 한 번 더 누르면 두 번 올라갑니다.</p>
+<p>저는 이 병을 이미 세 번 겪었습니다. <strong>「보냈다」를 「됐다」로 읽는 것</strong> 말입니다. 매번 경고문을 적어 뒀는데, 정작 <strong>돌려주는 값 자체는 계속 두 가지</strong>였습니다. 경고문은 사람이 읽어야 작동하고, 값은 안 읽어도 작동합니다.</p>
+<p><strong>둘째, 「기본은 못 만진다 → 하나씩 빌린다 → 끝나면 돌려준다」.</strong> 저도 위험한 자동화에는 승인 절차를 걸어 뒀는데, 다시 보니 <strong>«돌려준다»가 없었습니다.</strong> 한 번 연 문이 계속 열려 있는 항목들이 있습니다.</p>
+<h2 id="그리고-남는-원리-하나">그리고 남는 원리 하나</h2>
+<p>「할 수 있다 / 없다」 둘로 나눈 권한은, 실제로는 <strong>「지금 이것만, 끝나면 반납」</strong>이 필요했던 자리를 전부 «할 수 있다» 쪽으로 밀어 넣습니다.</p>
+<p>브라우저는 그게 특히 나쁜 물건입니다. 전부 주면 제가 보던 창이 사라지고, 아무것도 안 주면 로그인 상태라는 알맹이를 못 씁니다. <strong>그래서 «하나씩·시한부·반납»만 남는 답이었습니다.</strong></p>
+<h2 id="못-한-것">못 한 것</h2>
+<ul>
+<li><strong>깔아서 돌려 보지 않았습니다.</strong> 이 편의 판정은 전부 <strong>소스와 이슈를 읽은 것</strong>이고, 잘 되는지 안 되는지는 한 번도 안 쟀습니다. 안 깐 이유가 「깔기 자체가 위험」이라, 확인할 길이 스스로 막혀 있습니다.</li>
+<li><strong>저쪽이 넣어 둔 평가 세트를 안 돌렸습니다.</strong> 성공률을 실측할 유일한 길이었는데 안 썼습니다.</li>
+<li><strong>원격으로 쓰는 모드는 읽기만 했습니다.</strong> 이 편의 보안 이야기는 <strong>내 컴퓨터 안에서 쓸 때</strong>에 한합니다.</li>
+<li><strong>경쟁 도구를 나란히 놓고 대조하지 않았습니다.</strong> 같은 일을 하는 다른 자동화 도구 둘을 후보에 넣어 비교했다면 판정이 더 단단했을 텐데, 이번엔 안 했습니다.</li>
+</ul>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>이 저장소에서 가져올 것은 도구가 아니라 경계 설계다.</strong> BrowserSkill 은 텐센트가 2026-06-22 에 공개한 MIT 프로젝트로, 에이전트 하네스(Claude Code·Cursor·Codex 등)와 사용자의 로그인된 Chromium 을 잇는 <strong>로컬 다리</strong>다. 파는 것은 「이미 로그인된 브라우저를 쓰되 사용자의 작업은 안 끊는다」이고, 그걸 위해 <strong>Agent Window 격리 · 탭 빌림/반납 · 사람 호출</strong> 셋을 만들었다. 설계는 좋다. 그런데 소스를 읽으면 <strong>로컬 데몬의 확장 인증이 신원이 아니라 «모양»만 본다</strong>는 사실이 나오고, 그 사실을 <strong>코드 주석이 스스로 인정</strong>한다. 판정은 도구 도입 <strong>보류</strong>, 기법 수확 <strong>2종 채택</strong>이다.</p>
+<h2 id="무엇을-하는-물건인가">무엇을 하는 물건인가</h2>
+<p><strong>MCP 서버가 아니라 셸 CLI 다.</strong> 이게 이 프로젝트의 첫 설계 결정이고, 하네스 종속을 없앤 이유다. 「셸을 부를 수 있는 에이전트면 무엇이든」이 성립 조건이며, 하네스에는 사용법을 가르치는 <code>SKILL.md</code> 한 장(15.4KB)을 깐다.</p>
+<p>구성은 넷이고, 에이전트는 브라우저와 직접 말하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th>무엇</th>
+<th>통신</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bsk</code> CLI</td>
+<td>동사-명사 하위명령 (<code>bsk session start</code>, <code>bsk click</code>)</td>
+<td>셸에서 호출</td>
+</tr>
+<tr>
+<td><code>bsk daemon</code></td>
+<td>세션 라우팅 · <strong>세션당 직렬 큐</strong> · 유휴 종료</td>
+<td>CLI ↔ 데몬은 로컬 IPC(UDS / 명명 파이프)</td>
+</tr>
+<tr>
+<td>확장 (MV3)</td>
+<td>도구 21종 디스패처 · 세션 관리 · ref 저장소</td>
+<td>데몬 ↔ 확장은 <code>127.0.0.1:52800</code> WebSocket</td>
+</tr>
+<tr>
+<td>브라우저</td>
+<td>Agent Window · 빌린 탭</td>
+<td>확장 → 크롬은 CDP</td>
+</tr>
+</tbody>
+</table>
+<p>규모는 <strong>Rust 47,773 줄 + TypeScript/TSX 98,924 줄</strong>(2026-09-18 실측, 테스트 포함). 별 <strong>4,439</strong>, 기여자 <strong>16명</strong>인데 상위 6명이 커밋의 거의 전부라 <strong>사내 팀이 만들어 공개한 것</strong>에 가깝다. 열린 이슈 31 · 닫힌 이슈 61. 릴리스는 0.2.0(09-02) → 0.2.1(09-09) → 0.3.0(09-16) 으로 <strong>2주 간격</strong>이다 — 활발하다는 뜻이면서 <strong>API 가 아직 안 굳었다</strong>는 뜻이다.</p>
+<p>⚠ <strong>이 저장소는 성능 수치를 하나도 안 내건다.</strong> 벤치마크 자랑도, 「N% 성공」도 없다. 대신 <code>evals/browser</code> 에 결정론적 로컬 페이지와 에이전트 중립 평가 세트를 넣어 뒀다. 정직한 쪽이지만, 뒤집으면 <strong>얼마나 잘 되는지 저쪽도 숫자로는 모른다</strong>는 뜻이다.</p>
+<h2 id="대표-설계-결정--성립-조건까지-같이-적는다">대표 설계 결정 — 성립 조건까지 같이 적는다</h2>
+<p>조건 없이 옮긴 기법은 다른 환경에서 안 먹는다. 그래서 「어떤 제약이 이 설계를 강요했나」를 같이 본다.</p>
+<table>
+<thead>
+<tr>
+<th>결정</th>
+<th>구현</th>
+<th>성립 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent Window 격리</strong></td>
+<td>쓰기 도구는 대상 탭의 창 번호가 세션의 Agent Window 와 다르면 <code>permission_denied</code></td>
+<td>브라우저가 <strong>창 단위로</strong> 세션을 가를 수 있을 것. 탭 중심 UI 에서는 이 경계가 사람 눈에 안 보인다 — 실제로 그 요청이 이슈로 올라와 있다</td>
+</tr>
+<tr>
+<td><strong>빌림 / 반납</strong></td>
+<td>빌리면 탭이 Agent Window 로 <strong>물리적으로 이동</strong>하고, 원래 창 번호와 자리 번호를 기록해 뒀다가 반납 때 복원</td>
+<td><strong>돌려놓을 자리를 미리 적을 것.</strong> 안 적으면 반납이 사람 일이 된다</td>
+</tr>
+<tr>
+<td><strong>권한의 정본이 CLI 가 아니라 브라우저 설정</strong></td>
+<td>0.3.0 에서 무인 실행용 플래그 셋을 <strong>지우지 않고 «무력화»</strong> 했다 — 받기는 받되 확장 스위치를 못 이긴다</td>
+<td><strong>사람이 그 화면 앞에 있을 것.</strong> 무인 실행에서는 성립하지 않아, 그쪽은 「확장에서 스위치를 끄라」로 밀어냈다</td>
+</tr>
+<tr>
+<td><strong>사람 호출</strong></td>
+<td>캡차·로그인·OTP·결제에서 사람에게 넘기고 이어서 진행. 결과는 다섯 값</td>
+<td><strong>「거절」과 「기능 꺼짐」이 다른 값일 것.</strong> 문서가 «꺼짐 = 사람이 확인한 적 없음 = 권한이 는 것도 아님»을 못 박는다</td>
+</tr>
+<tr>
+<td><strong>결과 3값</strong></td>
+<td>브라우저 조작은 <code>none</code> / <code>committed</code> / <code>unknown</code> 을 돌려주고, 타임아웃·전송 끊김에도 <code>unknown</code> 이 <strong>보존</strong>되며 맹목적 재시도를 금지</td>
+<td><strong>재시도 비용이 비대칭일 것.</strong> 멱등한 조회에는 과설계</td>
+</tr>
+<tr>
+<td><strong>참조표를 페이지마다 폐기</strong></td>
+<td>관측할 때마다 요소 참조(<code>@e1</code> 식)를 새로 만들고, 옛 참조 재사용을 규약으로 금지</td>
+<td><strong>관측과 조작 사이에 페이지가 변할 수 있을 것.</strong> 정적 페이지면 필요 없다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="깨본-결과--소스와-이슈에서-확정된-것-넷">깨본 결과 — 소스와 이슈에서 확정된 것 넷</h2>
+<h3 id="-확장-허용-목록은-신원이-아니라-모양만-본다">① 확장 허용 목록은 신원이 아니라 모양만 본다</h3>
+<p>문지기 함수는 <code>chrome-extension://</code> 뒤가 <strong>32글자이고 전부 a–p 범위인지</strong>만 본다. MV3 확장 ID 는 전부 그 모양이므로 <strong>확장처럼 생긴 origin 은 무엇이든 통과</strong>한다. 그리고 <strong>바로 위 주석이 그 공백을 스스로 적어 뒀다</strong> — 요지는 «설정·페어링에서 받은 ID 로 좁혀야 하는데 지금은 안 한다, 같은 머신의 사이드로드 확장이 이 문을 그냥 지나간다»이다. 2026-09-17 에 외부에서도 동일 지적이 이슈로 올라왔고 아직 열려 있다.</p>
+<p>기본 포트는 loopback 에 묶여 있어 <strong>원격 공격은 아니다.</strong> 하지만 같은 PC 에 확장이 하나 더 깔리면 그 확장이 브라우저를 조작할 수 있다는 뜻이고, 그 브라우저에는 사용자의 모든 로그인이 들어 있다.</p>
+<h3 id="-빌림은-쓰기에만-걸린다">② 빌림은 쓰기에만 걸린다</h3>
+<p>도구가 효과별로 셋으로 분류돼 있고(수동 읽기 / 일시적 입력 / 브라우저 변경), 정책은 <strong>«수동 읽기이고 로컬이면 검사 없이 통과»</strong> 한 줄이다. 그래서 정적 접근성 트리를 뜨는 도구, 콘솔·네트워크 기록을 가져오는 도구는 <strong>빌리지 않고 사용자 탭에 닿는다</strong>(두 파일 전수 확인 — 창 검사 호출 0건).</p>
+<p>⚠ 공정하게 적자면 이건 <strong>문서에 안 적힌 설계</strong>지 버그가 아니다. 개발자 문서에 「수동 읽기는 사용자 탭을 볼 수 있다」가 한 줄 있다. 깨지는 것은 <strong>첫 화면의 홍보 문장</strong>이다. 그리고 관측 도구는 <code>passive_read</code> 가 <strong>아니라</strong> 「일시적 입력」으로 분류돼 Agent Window 안으로 강제된다 — hover 프로브가 실제 페이지를 건드리기 때문이다. 이 갈래는 제대로 나눠 놨다.</p>
+<h3 id="-윈도우가-가장-약한-자리다">③ 윈도우가 가장 약한 자리다</h3>
+<p>열린 이슈 31건을 훑으면 윈도우 관련이 눈에 띄게 뭉쳐 있다 — 자동 기동한 데몬이 부모 프로세스와 함께 죽는 것, 확장 미연결 시 진단 명령이 무한 대기하는 것, 서명 없는 실행 파일이 OS 보안 기능에 차단되는 것, 세션 정지가 멈춘 명령을 못 죽이는 것. 0.2.1 의 수정 여섯 줄 중 <strong>넷이 윈도우</strong>다. 고치고 있다는 뜻이면서 <strong>어디가 아픈지</strong>가 그대로 드러난다.</p>
+<h3 id="-배경-창에서-클릭이-조용히-성공으로-보고된다">④ 배경 창에서 클릭이 조용히 성공으로 보고된다</h3>
+<p>Agent Window 를 뒤에 두는 옵션으로 돌리면 클릭이 <strong>입력을 전달하지 않고도 성공을 보고</strong>한다는 이슈가 열려 있다(2026-09-14).</p>
+<p>⚠ 아이러니는 <strong>같은 저장소가 결과 3값을 «모름이면 재시도 금지»까지 문서화해 놓고</strong>, 정작 그 클릭 하나에서 「모름」을 「성공」으로 낸다는 것이다. ⇒ <strong>규약을 문서에 적는 것과, 모든 반환 지점이 그 규약을 지키는 것은 다른 일이다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="세 도구 비교. 왼쪽 도구는 내 브라우저를 안 뺏지만 로그인은 따로 해야 한다. 가운데 도구는 내 로그인을 그대로 쓰지만 내 브라우저를 같이 쓴다. 오른쪽 BrowserSkill은 둘 다 되지만 로그인된 브라우저에 남의 확장을 심어야 한다. 판정은 보류이고 재개 조건 세 개를 남겼다.">
+  <text class="lbl" x="8" y="22">겹치는 칸과 안 겹치는 칸 — 새로 얻는 것은 아래 가운뎃줄 하나뿐이다</text>
+  <rect class="vn vn-a" x="8" y="40" width="310" height="170" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="163" y="68" text-anchor="middle">지금 쓰는 것 ①</text>
+  <text class="cap" x="163" y="100" text-anchor="middle">내 브라우저를 안 뺏는다 ○</text>
+  <text class="cap" x="163" y="128" text-anchor="middle">내 로그인을 그대로 쓴다 ✕</text>
+  <text class="cap" x="163" y="156" text-anchor="middle">따로 로그인해 둔다</text>
+  <text class="cap cap-p" x="163" y="188" text-anchor="middle">이미 쓰는 중</text>
+  <rect class="vn vn-a" x="346" y="40" width="310" height="170" rx="2" fill-opacity=".05"/>
+  <text class="cap cap-i" x="501" y="68" text-anchor="middle">지금 쓰는 것 ②</text>
+  <text class="cap" x="501" y="100" text-anchor="middle">내 브라우저를 안 뺏는다 ✕</text>
+  <text class="cap" x="501" y="128" text-anchor="middle">내 로그인을 그대로 쓴다 ○</text>
+  <text class="cap" x="501" y="156" text-anchor="middle">보던 탭을 같이 쓴다</text>
+  <text class="cap cap-p" x="501" y="188" text-anchor="middle">이미 쓰는 중</text>
+  <rect class="vn vn-b" x="684" y="40" width="310" height="170" rx="2" fill-opacity=".1"/>
+  <text class="cap cap-i" x="839" y="68" text-anchor="middle">BrowserSkill</text>
+  <text class="cap" x="839" y="100" text-anchor="middle">내 브라우저를 안 뺏는다 ○</text>
+  <text class="cap cap-i" x="839" y="128" text-anchor="middle">내 로그인을 그대로 쓴다 ○</text>
+  <text class="cap" x="839" y="156" text-anchor="middle">← 여기 한 칸이 새것</text>
+  <text class="cap cap-p" x="839" y="188" text-anchor="middle">대가: 남의 확장 심기</text>
+  <text class="cap cap-i" x="8" y="250">판정 — 도구 도입 보류. 새 칸은 하나인데 되돌리기 비용이 비대칭이다</text>
+  <text class="cap" x="8" y="278">다시 열 조건 셋: 지금 것이 못 여는 사이트 · 내 크롬 로그인이 꼭 필요한 일 · 문지기 이슈가 닫힐 때</text>
+</svg>
+<figcaption>판정을 바꾼 칸은 「이득」이 아니라 「되돌리기 비용」이었다. 확장은 지울 수 있지만 그 사이 지나간 세션은 못 되돌린다.</figcaption>
+</figure>
+<h2 id="내-환경에-대봤다--새로-얻는-칸은-하나였다">내 환경에 대봤다 — 새로 얻는 칸은 하나였다</h2>
+<p>현재 브라우저 자동화 스택은 둘이고, 둘을 합치면 이 도구가 주는 것을 거의 덮는다. 하나는 <strong>별도 앱이라 내 브라우저를 안 뺏지만 자체 프로파일이라 로그인을 따로</strong> 해야 하고, 다른 하나는 <strong>내 실제 크롬을 쓰지만 내가 보던 탭을 같이 쓴다.</strong></p>
+<p><strong>BrowserSkill 만 가진 칸은 「그 둘을 동시에」 한 칸</strong>이다. 그리고 그 한 칸의 가격은 <strong>모든 사이트 접근 권한과 개발자 프로토콜 권한을 가진 남의 확장을, 업무 로그인이 전부 들어 있는 프로파일에 심는 것</strong>이다. 여기에 위 ①번 문지기가 겹친다.</p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>판정</th>
+<th>이득</th>
+<th>도입 비용</th>
+<th>되돌리기 비용</th>
+<th>신뢰도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>도구 자체</td>
+<td><strong>보류</strong></td>
+<td>새 칸 1</td>
+<td>셋 설치 · 윈도우 이슈 밀집</td>
+<td>⛔ <strong>비대칭</strong> — 확장은 지워도 노출된 세션은 못 되돌린다</td>
+<td>높음 (소스·이슈 실측)</td>
+</tr>
+<tr>
+<td><strong>결과 3값</strong></td>
+<td><strong>채택</strong></td>
+<td>큼 — 같은 오판을 이미 세 번</td>
+<td>반환 타입 한 칸 + 호출부 분기</td>
+<td>쌈</td>
+<td>높음</td>
+</tr>
+<tr>
+<td><strong>빌림·반납 규약</strong></td>
+<td><strong>채택</strong></td>
+<td>중 — 내 규약에 「반납」이 비어 있다</td>
+<td>문서 한 절</td>
+<td>쌈</td>
+<td>중</td>
+</tr>
+<tr>
+<td>옛 플래그 무력화</td>
+<td>보류</td>
+<td>낮음</td>
+<td>—</td>
+<td>쌈</td>
+<td><strong>낮음(미확인)</strong> — 그런 플래그가 있는지 안 셌다</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ <strong>채택 판정도 깨 봐야 한다.</strong> 「결과 3값」에 대해서는 <strong>이미 해결되고 있지 않나</strong>가 정당한 반문이다. 내 규칙 문서에는 «보냈다 ≠ 됐다»가 <strong>경고문으로</strong> 이미 적혀 있다. 그런데 <strong>러너가 돌려주는 값 자체가 3값인지는 안 열어 봤다(미확인).</strong> ⇒ 그래서 「채택」의 첫 작업은 구현이 아니라 <strong>현행 확인</strong>이다. 경고문은 사람이 읽어야 작동하고, 값은 안 읽어도 작동한다.</p>
+<h2 id="남는-원리">남는 원리</h2>
+<p><strong>경계는 「누가 무엇을 할 수 있나」가 아니라 「무엇이 언제까지 빌려져 있나」로 그어야 한다.</strong></p>
+<p>「할 수 있다/없다」 2값으로 나눈 권한은, 실제로는 <strong>「지금 이 하나만, 끝나면 반납」</strong>이 필요했던 자리를 전부 «할 수 있다» 쪽으로 밀어 넣는다. 브라우저는 그게 특히 나쁜 자원이다 — 전부 주면 사용자의 화면이 사라지고, 전무를 주면 로그인 상태라는 알맹이를 못 쓴다. 그래서 «하나씩 · 시한부 · 반납»만이 남는 답이었고, 이 저장소는 세션 정지를 <strong>의무</strong>로 두고 유휴 정리를 «안전망일 뿐»이라고 못 박는 데까지 갔다.</p>
+<p>내 쪽에 걸리는 자리는 <strong>한 번 연 문이 계속 열려 있는 항목들</strong>이다. 승인 절차는 있는데 <strong>반납 시점이 안 적혀 있다.</strong></p>
+<h2 id="못-한-것-1">못 한 것</h2>
+<ul>
+<li><strong>설치해 돌려 보지 않았다.</strong> 판정은 전부 소스 읽기와 이슈 실측이고, 성공률·속도는 한 번도 안 쟀다. 「특정 사이트가 이 도구로 열리나」도 <strong>미확인</strong>이다 — 보류 사유가 「설치 자체가 위험」이라 확인 경로가 스스로 막혀 있다.</li>
+<li><strong><code>evals/browser</code> 를 안 돌렸다.</strong> 실측 성공률을 얻을 유일한 길이었다.</li>
+<li><strong>원격 모드는 읽기만 했다.</strong> 페어링·기기 자격증명 쪽은 코드로 확인하지 않았고, 이 편의 보안 판정은 <strong>로컬 모드에 한한다.</strong></li>
+<li><strong>대안 대조를 안 돌렸다.</strong> 같은 문제를 푸는 다른 자동화 후보 둘을 나란히 놓지 않았다. 셋 다 쓸 수 있는 상태라 <strong>나중에 값이 날 자리</strong>다.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          node.textContent = tmpl.replace('{n}', Number(n).toLocaleString());
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
