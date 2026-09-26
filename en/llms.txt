@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 114 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 115 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -51,8 +51,9 @@ Before reading the list —
 - [An adb-based game QA server · Driving and judging](https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/index.md): Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.
 - [An adb-based game QA server · The unattended loop](https://nobles92ts-ship-it.github.io/en/built/android-qa/loop/index.md): Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.
 - [An adb-based game QA server · What came out](https://nobles92ts-ship-it.github.io/en/built/android-qa/findings/index.md): The first thing that wasn't an automation defect. And it isn't something to brag about.
-- [MOON Studio](https://nobles92ts-ship-it.github.io/en/built/moon-studio/index.md): A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.
-- [MOON Studio · Wuxia game (working title)](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/index.md): An action RPG won by reading the enemy's pattern rather than out-reflexing it. The only slot in the studio still moving.
+- [MOON Studio](https://nobles92ts-ship-it.github.io/en/built/moon-studio/index.md): A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Pixling.
+- [MOON Studio · Pixling](https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md): A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
+- [MOON Studio · Wuxia game (working title)](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/index.md): An action RPG won by reading the enemy's pattern rather than out-reflexing it. The studio's main slot.
 - [MOON Studio · Wuxia game (working title) · Design](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/design/index.md): Turn "win by reading the pattern" into a rule and telegraph duration becomes the only dial you have.
 - [MOON Studio · Wuxia game (working title) · Spec](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/spec/index.md): The rules from the design page as actual artifact — four lineages, the matchup cycle, three verdict constants, real telegraph durations.
 - [MOON Studio · Wuxia game (working title) · World](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/world/index.md): When the setting is decoration, the systems are left as bare numbers. Here factions become collectibles and identity becomes a stat.

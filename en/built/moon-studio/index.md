@@ -1,8 +1,8 @@
 # MOON Studio
 
-> A one-person + AI game studio. Every game gets a slot; exactly one slot currently has anything in it.
+> A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Pixling.
 
-- Headline number: 5 games
+- Headline number: 6 games
 - Status: wip
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/
 - Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md
@@ -25,6 +25,7 @@ So **every game gets a slot** from the start, and **inside each slot the work sp
 | Slot | What | State |
 |---|---|---|
 | **Wuxia game** (working title) | A pattern-reading action RPG | **Main · in progress** |
+| **Pixling** | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
 | Future game 1 | **Does not exist yet** | Empty |
 | Future game 2 | **Does not exist yet** | Empty |
 
@@ -42,7 +43,7 @@ With three slots standing there, **that assumption breaks immediately.** You sta
 
 ## Started and stopped — these get no slot
 
-There are things worked on besides the three above. **They deliberately get no slot.**
+There are things worked on besides the slots above. **They deliberately get no slot.**
 
 Because **a slot makes them look "in progress."** In fact they are **things that stopped because there was no reason to carry on.**
 
@@ -73,13 +74,14 @@ This game is mine, so **all of it can be written.** What broke, what I judged wr
 
 Built solo, with most of the code written by AI. That's the studio.
 
-A studio is not one game. So **every game gets its own slot, and each slot is divided into design, spec, art and QA.** One slot currently has anything in it.
+A studio is not one game. So **every game gets its own slot, and each slot is divided into design, spec, art and QA.** Two slots currently have anything in them.
 
 The parts don't come in the same number for every game. The wuxia game has one more — **Client** — and that's correct: **a client part exists only where there is code.** Put one under a game that doesn't exist and it isn't empty, it's a lie.
 
 | Slot | What it is | State |
 |---|---|---|
 | **[Wuxia game](/en/built/moon-studio/wuxia/index.md)** (working title) | Pattern-form action RPG. Unity 6 · URP · toon shading | **Focus · in progress** |
+| **[Pixling](/en/built/moon-studio/pixling/index.md)** | Pixel creatures that live on your desktop. Python · Windows | **Downloadable** |
 | [Future game 1](/en/built/moon-studio/future-1/index.md) | Doesn't exist yet | Empty slot |
 | [Future game 2](/en/built/moon-studio/future-2/index.md) | Doesn't exist yet | Empty slot |
 
@@ -95,7 +97,7 @@ The empty slots carry design, spec, art and QA too. Each one records, in a line,
 
 ## Started and stopped
 
-Other things got built besides those three. They don't get slots. **They stopped because there was no reason to keep going** — a slot would make them look active.
+Other things got built besides those four. They don't get slots. **They stopped because there was no reason to keep going** — a slot would make them look active.
 
 | Project | How far | Why it stopped |
 |---|---|---|

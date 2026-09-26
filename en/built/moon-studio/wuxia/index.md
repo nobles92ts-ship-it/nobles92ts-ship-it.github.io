@@ -1,6 +1,6 @@
 # Wuxia game (working title)
 
-> An action RPG won by reading the enemy's pattern rather than out-reflexing it. The only slot in the studio still moving.
+> An action RPG won by reading the enemy's pattern rather than out-reflexing it. The studio's main slot.
 
 - Headline number: 44 forms
 - Status: wip
@@ -10,7 +10,7 @@
 
 ---
 
-**An action game won by *reading the enemy's pattern* rather than out-reflexing it. The only slot in the studio still moving.**
+**An action game won by *reading the enemy's pattern* rather than out-reflexing it. The studio's main slot.**
 
 ## The one thing at the centre
 

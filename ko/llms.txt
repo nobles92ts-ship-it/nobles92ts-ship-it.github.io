@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 114편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 115편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -51,8 +51,9 @@
 - [adb 기반 게임 QA 서버 · 조작과 판정](https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/index.md): 조작은 눈으로 하고 판정은 로그로 합니다. 판정을 픽셀에서 옮긴 게 최대 개선이었습니다.
 - [adb 기반 게임 QA 서버 · 무인 루프](https://nobles92ts-ship-it.github.io/ko/built/android-qa/loop/index.md): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
 - [adb 기반 게임 QA 서버 · 나온 것](https://nobles92ts-ship-it.github.io/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
-- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임 하나입니다.
-- [문스튜디오 · (가칭) 무협 게임](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/index.md): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오에서 유일하게 계속 굴러가는 칸입니다.
+- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 Pixling 둘입니다.
+- [문스튜디오 · Pixling](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
+- [문스튜디오 · (가칭) 무협 게임](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/index.md): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오의 주력 칸입니다.
 - [문스튜디오 · (가칭) 무협 게임 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
 - [문스튜디오 · (가칭) 무협 게임 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.
 - [문스튜디오 · (가칭) 무협 게임 · 세계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/world/index.md): 세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.
