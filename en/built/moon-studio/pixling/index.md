@@ -10,10 +10,10 @@
 ---
 
 <section class="getbox" aria-label="Download Pixling">
-<div class="gb-img"><img src="/games/pixling/scene.webp" width="720" height="320" alt="Pixling on the desktop: a Digimon team taking on a Pokémon gym"></div>
+<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Pixling key art"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>about 38 MB · free</span></div></div>
-<div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="navigator.clipboard.writeText(location.origin+location.pathname).then(()=>this.textContent=this.dataset.done)">Copy link</button></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>about 38 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
+<div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">Copy link</button></div>
 <ol class="gb-steps"><li><i>1</i>Unzip the download</li><li><i>2</i>Double-click <b>Pixling.exe</b></li><li><i>3</i>If a blue box appears: <b>More info → Run anyway</b></li></ol>
 </div>
 </section>

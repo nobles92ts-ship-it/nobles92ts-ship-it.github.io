@@ -10,10 +10,10 @@
 ---
 
 <section class="getbox" aria-label="Pixling 받기">
-<div class="gb-img"><img src="/games/pixling/scene.webp" width="720" height="320" alt="바탕화면 위에서 디지몬 팀과 포켓몬 체육관이 맞붙은 Pixling 화면"></div>
+<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — Pixling 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>약 38MB · 무료</span></div></div>
-<div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="navigator.clipboard.writeText(location.origin+location.pathname).then(()=>this.textContent=this.dataset.done)">주소 복사</button></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>약 38MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>Pixling.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
 </section>
