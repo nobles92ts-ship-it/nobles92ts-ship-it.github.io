@@ -1,6 +1,6 @@
 # MOON Studio
 
-> A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Pixling.
+> A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Kkaeal (깨알).
 
 - Headline number: 6 games
 - Status: wip
@@ -25,7 +25,7 @@ So **every game gets a slot** from the start, and **inside each slot the work sp
 | Slot | What | State |
 |---|---|---|
 | **Wuxia game** (working title) | A pattern-reading action RPG | **Main · in progress** |
-| **Pixling** | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
+| **Kkaeal** (formerly Pixling) | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
 | Future game 1 | **Does not exist yet** | Empty |
 | Future game 2 | **Does not exist yet** | Empty |
 
@@ -81,7 +81,7 @@ The parts don't come in the same number for every game. The wuxia game has one m
 | Slot | What it is | State |
 |---|---|---|
 | **[Wuxia game](/en/built/moon-studio/wuxia/index.md)** (working title) | Pattern-form action RPG. Unity 6 · URP · toon shading | **Focus · in progress** |
-| **[Pixling](/en/built/moon-studio/pixling/index.md)** | Pixel creatures that live on your desktop. Python · Windows | **Downloadable** |
+| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Pixel creatures that live on your desktop. Python · Windows | **Downloadable** |
 | [Future game 1](/en/built/moon-studio/future-1/index.md) | Doesn't exist yet | Empty slot |
 | [Future game 2](/en/built/moon-studio/future-2/index.md) | Doesn't exist yet | Empty slot |
 

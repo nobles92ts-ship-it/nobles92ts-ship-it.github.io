@@ -52,8 +52,8 @@
 - [adb 기반 게임 QA 서버 · 무인 루프](https://nobles92ts-ship-it.github.io/ko/built/android-qa/loop/index.md): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
 - [adb 기반 게임 QA 서버 · 나온 것](https://nobles92ts-ship-it.github.io/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
 - [adb 기반 게임 QA 서버 · 사진 판독기](https://nobles92ts-ship-it.github.io/ko/built/android-qa/judge/index.md): 기록으로 결과를 못 정하는 검사는 사진으로 판정합니다. 그 판정을 규칙이 다시 거르고, 다른 회사의 모델이 한 번 더 봅니다.
-- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 Pixling 둘입니다.
-- [문스튜디오 · Pixling](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
+- [문스튜디오](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다.
+- [문스튜디오 · 깨알](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
 - [문스튜디오 · (가칭) 무협 게임](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/index.md): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오의 주력 칸입니다.
 - [문스튜디오 · (가칭) 무협 게임 · 설계](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
 - [문스튜디오 · (가칭) 무협 게임 · 기획](https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.

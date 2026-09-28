@@ -1,4 +1,4 @@
-# Pixling
+# Kkaeal
 
 > A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
 
@@ -9,8 +9,8 @@
 
 ---
 
-<section class="getbox" aria-label="Download Pixling">
-<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Pixling key art"></div>
+<section class="getbox" aria-label="Download Kkaeal">
+<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"></div>
 <div class="gb-b">
 <div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>about 38 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
 <div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">Copy link</button></div>
@@ -18,19 +18,21 @@
 </div>
 </section>
 
-**Pixling is a Windows game where pixel creatures live in the corner of your desktop, and you catch them, raise them and send them into gyms.** While you work, they wander around, fight and grow on their own.
+**Kkaeal (깨알), formerly Pixling, is a Windows game where pixel creatures live in the corner of your desktop, and you catch them, raise them and send them into gyms.** While you work, they wander around, fight and grow on their own.
+
+The name is a Korean pun. 깨알 is a sesame seed, something tiny; read as 깨 + 알 it also means "crack the egg", which is how every creature here is born.
 
 ## It doesn't take over your screen
 
-Most games open a window and you play inside it. Pixling **has no game window.** The creatures walk around on your desktop, near the taskbar.
+Most games open a window and you play inside it. Kkaeal **has no game window.** The creatures walk around on your desktop, near the taskbar.
 
-| | A typical game | Pixling |
+| | A typical game | Kkaeal |
 |---|---|---|
 | Where | Inside its window | **On your desktop** |
 | When | Only while you play | **Left running all day** — different creatures show up at different times of day |
 | When you need it gone | Minimise the window | **One press of the `\` key** hides everything; press again to bring it back |
 
-You can change the hide key in the settings. Pixling **doesn't take that key away from other programs** — typing `\` elsewhere still types it, and the game hides along with it.
+You can change the hide key in the settings. Kkaeal **doesn't take that key away from other programs** — typing `\` elsewhere still types it, and the game hides along with it.
 
 ## Catch, raise, send — that's the whole game
 
@@ -57,14 +59,14 @@ Your partner grows **as much as you use the computer.** Each key press is worth 
 
 Which raises the obvious question: **is it reading my keystrokes?**
 
-No. The only thing Pixling counts is **how many times** something was pressed.
+No. The only thing Kkaeal counts is **how many times** something was pressed.
 
 | Counted | Never counted |
 |---|---|
 | **How many** keys were pressed | **Which** key it was |
 | **How many** mouse clicks | What you typed · which window · where the cursor was |
 
-That was settled by the method, not by a promise. Pixling doesn't **intercept** keystrokes on their way to other programs. It just asks, many times a second, **"is anything held down right now?"** With that method, **rebuilding what you typed is impossible in principle.** The save file holds two numbers and nothing else.
+That was settled by the method, not by a promise. Kkaeal doesn't **intercept** keystrokes on their way to other programs. It just asks, many times a second, **"is anything held down right now?"** With that method, **rebuilding what you typed is impossible in principle.** The save file holds two numbers and nothing else.
 
 Creatures also only show up **while you're at the keyboard.** The next one comes after enough time has passed *and* enough input has piled up since the last. Step away and nothing queues up to pour out when you return.
 
@@ -82,7 +84,7 @@ A signature costs money every year, and these days a signed file still gets the 
 
 ## Your save lives elsewhere, so new versions keep it
 
-The save isn't next to the game file; it's in `%APPDATA%\Pixling`. When a new version comes out, **download the new zip and overwrite the old files.** Your creatures stay.
+The save isn't next to the game file; it's in `%APPDATA%\Pixling` (the folder keeps the old name on purpose — renaming it would lose your creatures). When a new version comes out, **download the new zip and overwrite the old files.** Your creatures stay.
 
 ## What it can't do yet
 
@@ -101,7 +103,7 @@ This is a non-commercial fan game. The Digimon sprites belong to Bandai; the Pok
 
 ## Three sessions built it, and the line between them is whose sentence it is
 
-Pixling is built by three AI sessions. The **planning session** writes the design and the spec, and decides what comes next. The **development session** owns code, tests, building the executable and the verification tools. The **art session** only makes pictures. Orders arrive two ways: as a stage table in the spec, pass conditions included, landing in a commit — or as a message between sessions.
+Kkaeal is built by three AI sessions. The **planning session** writes the design and the spec, and decides what comes next. The **development session** owns code, tests, building the executable and the verification tools. The **art session** only makes pictures. Orders arrive two ways: as a stage table in the spec, pass conditions included, landing in a commit — or as a message between sessions.
 
 At first the boundary looked like a **list of prohibitions**: development doesn't edit the spec, and so on. But on the day the line actually broke, nothing prohibited had happened. The development session handed planning **"the line you should add to the spec" as a ready-made quote.** It never touched the spec — but it **decided the sentence**, which is the same line crossed.
 

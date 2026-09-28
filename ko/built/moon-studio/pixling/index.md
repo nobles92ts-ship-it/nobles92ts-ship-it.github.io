@@ -1,4 +1,4 @@
-# Pixling
+# 깨알
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
 
@@ -9,8 +9,8 @@
 
 ---
 
-<section class="getbox" aria-label="Pixling 받기">
-<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — Pixling 대표 그림"></div>
+<section class="getbox" aria-label="깨알 받기">
+<div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
 <div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>약 38MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
@@ -18,13 +18,15 @@
 </div>
 </section>
 
-**Pixling은 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에 보내는 Windows 게임입니다.** 일하는 동안 생물들이 알아서 돌아다니고, 싸우고, 자랍니다.
+**깨알(옛 이름 Pixling)은 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에 보내는 Windows 게임입니다.** 일하는 동안 생물들이 알아서 돌아다니고, 싸우고, 자랍니다.
+
+이름은 두 말에서 왔습니다. 작고 촘촘하다는 「깨알 같다」, 그리고 이 게임의 생물이 모두 태어나는 방법인 「알을 깨다」.
 
 ## 이 게임은 화면을 차지하지 않습니다
 
 보통 게임은 창을 열고 그 안에서 합니다. 이 게임은 **창이 따로 없습니다.** 생물이 바탕화면 위, 작업 표시줄 근처를 돌아다닙니다.
 
-| | 보통 게임 | Pixling |
+| | 보통 게임 | 깨알 |
 |---|---|---|
 | 어디서 | 게임 창 안 | **바탕화면 위** |
 | 언제 | 할 때만 켬 | **일하는 내내 켜 둠** — 시간대마다 잘 나오는 생물이 다름 |
@@ -82,7 +84,7 @@
 
 ## 세이브는 따로 살아서 새 판을 받아도 남습니다
 
-세이브는 게임 파일 옆이 아니라 `%APPDATA%\Pixling` 에 저장됩니다. 새 판이 나오면 **새 zip 을 받아 덮어쓰기만** 하면 됩니다. 키우던 생물은 그대로 있습니다.
+세이브는 게임 파일 옆이 아니라 `%APPDATA%\Pixling` 에 저장됩니다(폴더 이름은 옛 이름 그대로 둡니다 — 바꾸면 키우던 생물을 못 찾습니다). 새 판이 나오면 **새 zip 을 받아 덮어쓰기만** 하면 됩니다. 키우던 생물은 그대로 있습니다.
 
 ## 아직 못 하는 것
 
@@ -101,7 +103,7 @@
 
 ## 세 세션이 나눠 만들었고, 경계는 «누구의 문장인가»로 갈린다
 
-Pixling 은 AI 세션 셋이 나눠 만든다. **기획 세션**은 설계와 기획서만 쓰고 다음 할 일을 정한다. **개발 세션**은 코드·테스트·실행 파일 굽기·검증 도구만 맡는다. **아트 세션**은 그림만 만든다. 오더는 두 길로 흐른다 — 합격 조건까지 적힌 기획서 단계표가 커밋으로 오거나, 세션끼리 메시지로 온다.
+깨알은 AI 세션 셋이 나눠 만든다. **기획 세션**은 설계와 기획서만 쓰고 다음 할 일을 정한다. **개발 세션**은 코드·테스트·실행 파일 굽기·검증 도구만 맡는다. **아트 세션**은 그림만 만든다. 오더는 두 길로 흐른다 — 합격 조건까지 적힌 기획서 단계표가 커밋으로 오거나, 세션끼리 메시지로 온다.
 
 처음에는 경계를 **금지 목록**으로 생각했다. 개발은 기획서를 고치지 않는다, 같은 식이다. 그런데 실제로 선이 무너진 날에는 금지된 일을 한 게 아니었다. 개발 세션이 기획에게 **「기획서에 넣으실 한 줄」을 인용문으로 써서** 넘겼다. 기획서를 직접 고치지는 않았지만, **쓸 문장을 정해 준 것**이라 같은 선을 넘은 것이다.
 
