@@ -79,6 +79,14 @@ The part that stung.
 
 The two errors point opposite ways — **one overvalued my own work, one undervalued theirs.** And both only surfaced **on reopening the source.**
 
+## The one thing I took went in the same day (checked 2026-09)
+
+The hole — a pass from a rough coordinate tap is recorded as the same pass as any other — was closed the day this piece was written (2026-08-13), by adding **a tap ledger** to the automation.
+
+Every tap now records **what it was aimed by**: something actually found on screen, a verified coordinate, an unverified coordinate, or a ratio hard-coded in the source. Cases that passed on weak evidence are shown separately as **candidates for demotion**. Nothing is demoted automatically — where to draw the line waits for measurements.
+
+For a recent run (2026-09-28), 0 of its 7 taps rested on weak evidence.
+
 ## The detailed record starts here
 
 **Exactly one technique transferred.** Pulling eleven design decisions from eighteen months of writing by the sole QA engineer at a sleep-tech company and holding them against mine, **ten were places I had already reached.** The one remaining is this page's harvest — but **the real return of this investigation wasn't that one thing. It was that under the same constraints, someone else independently reached the same decisions.** And getting to that verdict, **my own conclusion was overturned twice.**
@@ -138,6 +146,8 @@ The one that came across:
 I have the coordinate fallback. I don't have **the counter.** So a tap that hit its target precisely and **a tap that missed the element and got approximated by coordinates are recorded as the same PASS.**
 
 **There are two kinds of PASS and the report records one.** The fallback path is exactly where the next build breaks quietly, and **without a count you won't see it growing.**
+
+**(As of 2026-09) It went in.** The same day (2026-08-13) the runner got `tapstat`. Every **tap decision** records its evidence as `bright` (measured on screen) · `map:auto` · `map:manual` · `map:unverified` (an unverified coordinate) · `xy` (a ratio baked into the code), written to `_tapstat.txt` in the run folder and to each case's tap-evidence field. A PASS that leaned on weak evidence (`map:unverified`, `xy`) is listed **only as a demotion candidate** — the demotion rule waits for the first measured distribution, because a threshold picked without evidence knocks out healthy cases. Repeated taps count once, since the question is not "how many times" but "aimed by what".
 
 ## And I corrected myself twice
 

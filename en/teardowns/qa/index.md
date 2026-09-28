@@ -1,8 +1,8 @@
 # QA automation
 
-> This is my day job. It also yields the least — because I'm usually already standing in the same place.
+> This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, one actually went in (checked 2026-09).
 
-- Headline number: 5 written · 4.5 techniques
+- Headline number: 5 written · 1 of 4.5 applied
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/
 - Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
@@ -19,7 +19,7 @@ There are five pieces here, each one someone else's automation, opened up.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
-Across five pieces, the techniques that actually moved into my work number **4.5**. Fewer than any other shelf.
+Across five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Fewer still actually went in — see the 2026-09 check below.)
 
 My first thought was *I must be reading them badly.* That wasn't it. **Hold the same problem long enough and everyone arrives at similar answers.**
 
@@ -55,11 +55,29 @@ The first four were other people's talks and articles. The fifth was **the first
 
 I went to test whether their detector caught what it claimed. **Run against my data, it flagged a pile of things that were fine.** Not because the tool is bad — because it was **the wrong tool for the place I meant to put it.** Without measuring, it would have come straight in.
 
+## Of the 4.5 techniques I wrote down as adopted, one reached the code — a 2026-09 check
+
+About a month on, I opened my code to see whether what each piece said it would take had actually gone in.
+
+| Piece | What it said I'd take | As of 2026-09 |
+|---|---|---|
+| [Asleep's QA automation](/en/teardowns/qa/asleep-qa/index.md) | Count passes that came from a rough coordinate tap separately | **In** — a tap ledger that records the evidence behind every tap |
+| [An autoplay test tool](/en/teardowns/qa/autoplay-test-tool/index.md) | Catch "pushing but not moving" as being stuck · confirm only when two clocks ring together | **Not in** |
+| [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | One sentence-rhythm term · a check that stops on an unknown kind of file | **Neither is in** |
+| [Toss Nebula](/en/teardowns/qa/toss-nebula/index.md) | Fix the "gateway that exists twice" it surfaced instead of a technique | **Half** — the real run path now has a lock; the gateway still exists twice |
+| [A talk on QA infrastructure](/en/teardowns/qa/qa-infrastructure/index.md) | Use the gacha case as an example in writing | **In** — ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) |
+
+**Writing "adopt" and putting it in turned out to be separate jobs.** Marking a row "adopted" in a verdict table feels like the work is done at that moment, and the code knows nothing about it. So this shelf's number is now written as **"1 of 4.5 applied"** rather than "4.5 techniques".
+
+One mistake ran the other way. In the autoplay piece I said my stuck detection had only one layer; opening the code, **a second layer was already there** — that piece now says so.
+
+And outside this shelf, something built by someone else entered my QA pipeline for the first time: the evaluation model **Jev**, attached as the photo judge's "second eye" (2026-09-24). It came in through a four-day trial rather than a teardown, and in the range measured it has not yet caught a real error → [The photo judge](/en/built/android-qa/judge/index.md).
+
 ## The detailed record starts here
 
 Where other people's test automation gets taken apart: device farms, unattended regression on real hardware, game autoplay tools, agent-driven test platforms.
 
-**It's my day job and it yields the least.** Across five pieces, 4.5 techniques transferred. Not because the teardowns were bad — because enough years under the same constraints tend to land you in the same place already.
+**It's my day job and it yields the least.** Across five pieces, 4.5 techniques transferred (as of 2026-09: 4.5 written into verdict tables · 1 in the code — see the 2026-09 check above). Not because the teardowns were bad — because enough years under the same constraints tend to land you in the same place already.
 
 ## Which changes what this bucket is worth
 
@@ -89,11 +107,13 @@ At two I read it as one thing — *"I've already reached the same conclusion."* 
 
 **You cannot tell these two apart without opening the thing**, because both look like *"we already do that."* The moment I split the layers, **the cause of my false positives acquired a name** — *"a normal state where it stopped on purpose."*
 
+**(Correction, as of 2026-09)** "Never separated the layers" was wrong for the autoplay piece. Since the July code, my stuck detection has had **a second layer that confirms by trying to escape**, behind the candidate (under 60 cm of movement in 3 seconds). What was one layer shallower is not the number of layers but **the contradiction check that looks at input and movement together.**
+
 ## And this bucket holds one harvest that isn't a tool
 
 The infrastructure talk yielded zero techniques and left **one case: verifying gacha probability.** What used to be hundreds of pulls and **a statistical estimate** became **one query in five seconds** once read access existed — and **the character of the evidence changed from estimate to certainty.**
 
-It didn't get faster. **What counts as evidence** changed. It goes straight into [the writing about verdicts](/en/writing/verdicts/index.md), which makes it **the only harvest from this bucket that turns into prose.**
+It didn't get faster. **What counts as evidence** changed. It goes straight into [the writing about verdicts](/en/writing/verdicts/index.md), which makes it **the only harvest from this bucket that turns into prose.** (As of 2026-09 it went in: ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) uses this case as a jump of several rows "from a sample to a direct read of the source".)
 
 ## The fifth was this bucket's first repository, and I went to judge a detector and got caught by it
 

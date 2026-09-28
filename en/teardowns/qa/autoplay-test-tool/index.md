@@ -1,6 +1,6 @@
 # An autoplay test tool
 
-> A bot that walks the map measuring performance. It detects being stuck as a contradiction in the data and clears false positives with two timers — both better than mine.
+> A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — and the two things I marked adopted are still not in my code (checked 2026-09).
 
 - Headline number: 2 of 4 techniques
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/autoplay-test-tool/
@@ -90,6 +90,16 @@ Judging stuck-ness by time wasn't wrong. I simply **hadn't separated the layer t
 
 Named things can be fixed. Unnamed ones stay as *it flags odd things sometimes.*
 
+## The two I adopted aren't in yet, and one thing I said about my own side was wrong (checked 2026-09)
+
+About a month later I opened my code again.
+
+**What I got wrong.** Above I wrote that I hadn't separated the candidate layer from the layer that clears false ones — but my stuck detection **already had a second layer** (July code). Under 60 cm of movement in 3 seconds makes a candidate; the bot then tries to slip out sideways and backwards four times, and **if it gets more than 2 m away the case is cleared as "avoidable".** The idea of splitting the layers was already there. I had not reopened my own code while writing this piece.
+
+**What really is missing.** The **contradiction check** — "pushing to go, yet not moving" — still does not exist. The position record's format lists a "trying to move" field, but nothing fills it and nothing reads it. The two-clocks confirmation was not added either.
+
+→ The two things this piece marks "adopted" are **not in the code yet.** And describing my own work without reopening my own code is the second time on this shelf — the [Asleep piece](/en/teardowns/qa/asleep-qa/index.md) had to be corrected for the same thing.
+
 ## The detailed record starts here
 
 **Here was a better way to do something I already do.** A talk about building an **embedded unattended autoplay performance-test tool** for a console game. Measuring thirty graphics option combinations by hand on every build is impossible, so **a bot walks the map and measures performance itself.** I also turn bots loose on maps — and **their way of deciding a bot is stuck was more accurate than mine.** The difference is a few lines of code.
@@ -155,6 +165,8 @@ The other two are practical too. **Combat runs a full scan only when the cache i
 
 **Combat caching and mission matching don't fit my situation.** My bot doesn't fight, and there is nowhere I match mission names as strings.
 
+**(Correction, as of 2026-09)** "Only one layer" above was wrong. My map-walking bot's stuck detection (2026-07-22 code) already has two: `detect_stuck` raises a **candidate** when the horizontal span of the last 3.0-second window is under 60 cm; the bot then attempts four escapes sideways and backwards (0.8 s per direction, aiming 300 cm from the origin) — **getting more than 200 cm away means avoidable (not a defect)**, and only four failures record `Stuck`. Candidate and confirmation were already separate; confirmation just came from escape attempts instead of a second timer. The one thing missing is the **contradiction check** — the sample format's docstring names a `moving` field, but nothing fills it and nothing reads it.
+
 ## Verdict
 
 | What | Verdict |
@@ -165,6 +177,8 @@ The other two are practical too. **Combat runs a full scan only when the cache i
 | Combat K-caching · edit-distance matching | **not applicable.** I don't have those problems |
 | **The 1.5s and 1.2s thresholds** | ⚠ **not used as-is.** The talk gives no grounds — I re-measure in my environment |
 | Citing the 48.9% | ⛔ **don't.** That's the optimisation's effect, not the tool's |
+
+**(As of 2026-09)** The two "adopted" rows above are **not in the code yet.** What the timer AND gate was meant to do (separate candidates from confirmation) is already done by the escape attempts, so the empty slot is the contradiction check alone — carry whether the bot is "trying to move" in each sample and raise stuck candidates only in windows where it is. The verdict not to import 1.5 s and 1.2 s stands.
 
 **The lesson I paid for here: even when you are already solving the same problem, you can see the extra layer someone else has stacked.** I was judging stuck by time, and that isn't wrong. It is only that **I never split the layer that produces candidates from the layer that removes false positives.** The moment I split them, **the cause of my false positives acquired a name** — *"a normal state where it stopped on purpose."*
 

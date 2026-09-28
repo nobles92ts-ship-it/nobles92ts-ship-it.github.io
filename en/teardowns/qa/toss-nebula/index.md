@@ -75,6 +75,14 @@ In short: **I had built the safety properly, and the actual runs were not going 
 
 This kind of defect is **silent.** The guard exists, so nothing warns that it is missing; it isn't traversed, so it never fires. **It was invisible until someone else's principle was laid against it.**
 
+## Afterwards — the defect it found is half fixed (checked 2026-09)
+
+**The fixed half.** The path real runs take now has a **one-run-at-a-time lock** (2026-08-26). There is one device, and a second run is now refused before it touches it.
+
+**The other half.** The entrance still exists twice. The side real runs use still has nothing that queues commands one by one and nothing that sorts errors by kind. There is a reason they were not merged: in the meantime, the instrumentation that times each run was attached to **the side actually in use**, and merging the entrances would make it report **zero, without any error.** The instrumentation has to move first.
+
+That instrumentation also answered a question. **32.1% of one run's time was screen capture**, at about 3.3 seconds a shot (2026-08-12). So I set out to move capture onto the video stream wholesale, and stopped — several checks read **colour**, and that stream is greyscale. Instead I added a way to receive the same pixels compressed (2026-09-23), to be measured on the next regular run.
+
 ## The detailed record starts here
 
 **Zero techniques, zero adoptions.** The one thing I adopted in the first pass **was rejected in the second** — the measurement behind it was correct, and **that call appears zero times in my pipeline.** A game client paints the whole screen into a single native surface, so there is no accessibility tree to read, and **that fact was already written in my own project docs.** The investigation still wasn't wasted: using one of this system's principles as a ruler against my own code turned up **two gateways where there should have been one.**
@@ -158,3 +166,10 @@ Places that bypass the gateway and call the command directly: **14 occurrences a
 Sometimes that's the honest result of a benchmark. **Even when there's nothing to copy from someone else's system, holding its principles up as a ruler against yours shows you where yours has split.**
 
 The rejection carries a resume condition too — **when the target becomes an ordinary app, or the build starts exposing accessibility nodes.**
+
+## As of 2026-09 — the double gateway is half fixed, and the instrumentation it prompted gave an answer
+
+- **Run lock** (`runlock.py`, 2026-08-26) — shared by the three entry points (sheet runner, recorder, loop). A second run exits with code 2 **before touching the device**, and a dead run's lock is reclaimed by the next one. ⚠ Liveness is not checked with `os.kill(pid, 0)` — on Windows the check is the kill (it uses `OpenProcess`).
+- **The two gateways remain** — the official one (command-serialising lock, error codes) and the copy real runs use (bare `subprocess`) are still separate. The adb instrumentation hook sits **only on the copy runs use**, so doing the merge refactor first would turn the measurement into **zero with no error.** The hook moves first.
+- **Measurement (2026-08-12 run)** — screencap: 177 calls, 543.5 s cumulative = **32.1%** of 1,691.4 s wall clock, p50 3,309.8 ms. Above the prior estimate (10–30%). Recording the denominator (the whole run) first is what made it visible — the gap looks to be judgement-only captures that never became files and so never entered the estimate.
+- **Moving wholesale to Live (a greyscale stream) was rejected** (code checked 2026-09-23) — some callers read colour (enhancement-zone green/orange, the tracker's gold, a menu ratio), and evidence shots must be originals. Instead: raw RGBA compressed on the device and packed into PNG on the PC (same pixels), plus per-caller measurement. The next regular run compares its p50 against 3.3 s to set the default.

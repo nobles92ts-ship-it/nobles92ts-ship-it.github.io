@@ -89,6 +89,8 @@ I took the rhythm metric **with conditions attached.**
 - **No threshold for short pieces** until I measure a short-form corpus of my own
 - **Never used to judge whether AI wrote something.** Only to see whether my own prose has flattened
 
+**(Checked 2026-09)** This half has not been built either. There is still no rhythm checker anywhere on my side.
+
 ## The real harvest was a defect in my own code
 
 The actual output of this research was not someone's technique but **one violation of my own rule.**
@@ -104,6 +106,8 @@ The first line of my global rules reads **when it is ambiguous or it fails, the 
 It selected files to check by **known extension only.** Unknown extensions fall silently out of scope.
 
 Nothing leaks today. But **the moment one new kind of file appears in the output it passes unchecked, with no warning** — and **that appears on no screen at all.**
+
+**(Checked 2026-09) Not fixed yet.** The publish check still reads only eight known extensions and skips the rest. Nothing leaks so far — even when 226 Markdown copies for AI readers appeared in the output in September, Markdown happened to be on the list from the start, so they were scanned. **Luck caught it, not the mechanism.**
 
 ## A bonus — my collector fetched the clone, not the original
 
@@ -214,6 +218,8 @@ I imported the scanner from the repository HEAD as-is and ran it over my entire 
 
 ⚠ **And here I decided not to bring in someone else's implementation.** The repository decides with 28 magic-byte signatures plus NUL plus a control-character ratio, and at a scale of 259 files that table is maintenance debt. I get the same fail-closed behaviour in three lines — if an extension appears that is on none of the known lists, just stop. **Principle adopted, implementation rejected.**
 
+**(As of 2026-09) Those three lines are not in yet.** The publish script's marker scan still does `continue` on anything that fails `/\.(html|css|js|json|xml|txt|svg|md)$/i`. Today `dist` holds only html, md, webp, txt, json, png, xml, svg, js and css plus an empty `.nojekyll`, so no text sits outside the list. When 226 Markdown copies appeared on 2026-09-17 they were scanned only because `md` had been on the list since the August publish wiring — there is still nothing that stops a new kind. The single rhythm term is not implemented anywhere either.
+
 ## Incidentally — my collector nominated the clone, not the original
 
 `Leutenegger/watermarks-remover` had come up in my candidate list. What the feed actually carried was `guillaumemeyer/watermarks-remover ★16,619`. **They are different repositories.**
@@ -235,6 +241,8 @@ I imported the scanner from the repository HEAD as-is and ran it over my entire 
 | The file-metadata / image / document paths | ⛔ **Rejected.** If I ever need them I will call the off-the-shelf tools directly — they don't edit in place, so destroying an original is structurally impossible |
 | Takeaways | **1.5** — the rhythm CV term (long-form only) + restoring my own fail-closed compliance |
 | Bringing it into a work pipeline | ⛔ **Inappropriate.** Separate from the technical verdict |
+
+**(As of 2026-09)** Neither half of the 1.5 harvest is **in the code yet** — the rhythm term was never built, and the three fail-closed lines were never added (section above).
 
 **Four conditions that reopen this** — ① the semiannual rescan turns up its first marker, even one. ② a text-watermark detector validated in Korean appears; until then the rewriting layer has no means of verification, so no verdict on it is possible at all. ③ the PRs for the four data-loss and false-clean defects get merged and a release follows. ⚠ Even then, **a fixed tool with no target is still a rejection**, so I go back and measure ① first. ④ a workflow appears that distributes images or PDFs externally.
 

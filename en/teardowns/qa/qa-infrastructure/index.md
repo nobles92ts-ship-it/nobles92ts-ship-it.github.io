@@ -74,6 +74,8 @@ Recovering the 14 minutes **probably would not change the verdict.** So it stays
 
 One condition to reopen: **when I actually have to negotiate access or build these layers myself.** Then their ordering becomes a real reference.
 
+**(Checked 2026-09)** The gacha case I said I would use as an example did go into the writing — ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) uses it as the moment an estimate from pulled samples became a direct read of the source, jumping several rows up the evidence scale. The reopen condition has not come up.
+
 ## What this piece cost me — and it is on my side, not theirs
 
 **A source with a gap has to be read with the gap counted first.**
@@ -131,7 +133,7 @@ The question list alone is worth reading — *"how do you handle someone who won
 
 | What | Verdict |
 |---|---|
-| **Access decides the character of evidence** | **adopt — as an example.** It goes straight into the writing about verdicts |
+| **Access decides the character of evidence** | **adopt — as an example.** It goes straight into the writing about verdicts (in as of 2026-09 — ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md)) |
 | Collect evidence at report time | **already doing it.** Same premise |
 | "No infrastructure, no context for AI" | **agreed.** But my experience is the grounds, not this talk |
 | Citing its numbers | ⛔ **don't.** All slide phrasing, with no method behind it |
