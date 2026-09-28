@@ -1,6 +1,6 @@
 # An autoplay test tool
 
-> A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — and the two things I marked adopted are still not in my code (checked 2026-09).
+> A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — so the contradiction check went into my bot (2026-09-28); the two-clocks confirmation hasn't.
 
 - Headline number: 2 of 4 techniques
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/autoplay-test-tool/
@@ -100,6 +100,10 @@ About a month later I opened my code again.
 
 → The two things this piece marks "adopted" are **not in the code yet.** And describing my own work without reopening my own code is the second time on this shelf — the [Asleep piece](/en/teardowns/qa/asleep-qa/index.md) had to be corrected for the same thing.
 
+**(2026-09-28) The contradiction check is in.** Each time the bot records its position it also records "was I pushing to move just before this", and a stuck candidate is raised **only if it pushed for the whole 3 seconds and still covered less than 60 cm.** A single moment of not pushing (landing, waiting) means no candidate. Tests confirm that with the switch off, a waiting bot does get flagged as stuck.
+
+That said, the current bot pushes every moment it walks, so in a 60-cell simulation **the stuck candidates came to two either way, switch on or off.** The check earns its keep once the bot has behaviours that wait. The two-clocks confirmation is still absent — the escape attempts hold that job.
+
 ## The detailed record starts here
 
 **Here was a better way to do something I already do.** A talk about building an **embedded unattended autoplay performance-test tool** for a console game. Measuring thirty graphics option combinations by hand on every build is impossible, so **a bot walks the map and measures performance itself.** I also turn bots loose on maps — and **their way of deciding a bot is stuck was more accurate than mine.** The difference is a few lines of code.
@@ -165,7 +169,7 @@ The other two are practical too. **Combat runs a full scan only when the cache i
 
 **Combat caching and mission matching don't fit my situation.** My bot doesn't fight, and there is nowhere I match mission names as strings.
 
-**(Correction, as of 2026-09)** "Only one layer" above was wrong. My map-walking bot's stuck detection (2026-07-22 code) already has two: `detect_stuck` raises a **candidate** when the horizontal span of the last 3.0-second window is under 60 cm; the bot then attempts four escapes sideways and backwards (0.8 s per direction, aiming 300 cm from the origin) — **getting more than 200 cm away means avoidable (not a defect)**, and only four failures record `Stuck`. Candidate and confirmation were already separate; confirmation just came from escape attempts instead of a second timer. The one thing missing is the **contradiction check** — the sample format's docstring names a `moving` field, but nothing fills it and nothing reads it.
+**(Correction, as of 2026-09)** "Only one layer" above was wrong. My map-walking bot's stuck detection (2026-07-22 code) already has two: `detect_stuck` raises a **candidate** when the horizontal span of the last 3.0-second window is under 60 cm; the bot then attempts four escapes sideways and backwards (0.8 s per direction, aiming 300 cm from the origin) — **getting more than 200 cm away means avoidable (not a defect)**, and only four failures record `Stuck`. Candidate and confirmation were already separate; confirmation just came from escape attempts instead of a second timer. The one thing missing is the **contradiction check** — the sample format's docstring names a `moving` field, but nothing fills it and nothing reads it. (2026-09-28 — it is filled and read now; see after the verdict table.)
 
 ## Verdict
 
@@ -179,6 +183,8 @@ The other two are practical too. **Combat runs a full scan only when the cache i
 | Citing the 48.9% | ⛔ **don't.** That's the optimisation's effect, not the tool's |
 
 **(As of 2026-09)** The two "adopted" rows above are **not in the code yet.** What the timer AND gate was meant to do (separate candidates from confirmation) is already done by the escape attempts, so the empty slot is the contradiction check alone — carry whether the bot is "trying to move" in each sample and raise stuck candidates only in windows where it is. The verdict not to import 1.5 s and 1.2 s stands.
+
+**(2026-09-28) The contradiction check went in.** The bot's `_push()` keeps the move request's return value (True if it pushed, False if it was already there) as `pushing`, and that becomes the next sample's `moving`; it resets to False on a new target or on entering a teleport. `detect_stuck` raises a candidate only when **every** sample in the stuck window is `moving` (`STUCK_NEEDS_PUSH`; off restores the old behaviour). Older samples without the field count as pushing. Velocity is not used — input is measured from the bot's own command. Tests went from 121 to 133, and a control with the switch off (a bot that is not pushing gets flagged as stuck) shows the gate actually bites. ⚠ In the 60-cell simulation, stuck candidates are 2 with the switch on or off — the current bot pushes on every WALK tick. No run in the real game yet. The timer AND gate is still absent.
 
 **The lesson I paid for here: even when you are already solving the same problem, you can see the extra layer someone else has stacked.** I was judging stuck by time, and that isn't wrong. It is only that **I never split the layer that produces candidates from the layer that removes false positives.** The moment I split them, **the cause of my false positives acquired a name** — *"a normal state where it stopped on purpose."*
 
