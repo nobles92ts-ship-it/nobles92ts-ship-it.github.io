@@ -107,7 +107,7 @@ It selected files to check by **known extension only.** Unknown extensions fall 
 
 Nothing leaks today. But **the moment one new kind of file appears in the output it passes unchecked, with no warning** — and **that appears on no screen at all.**
 
-**(Checked 2026-09) Not fixed yet.** The publish check still reads only eight known extensions and skips the rest. Nothing leaks so far — even when 226 Markdown copies for AI readers appeared in the output in September, Markdown happened to be on the list from the start, so they were scanned. **Luck caught it, not the mechanism.**
+**(2026-09-28) Fixed.** Checking showed the publish check was still reading only eight known extensions and skipping the rest — when 226 Markdown copies for AI readers appeared in September, they were scanned only because Markdown happened to be on the list from the start. Now **a file that is on neither the read list nor the skip list (two image types, plus empty files) stops the publish.** I planted one file with an unknown extension and ran the publish to confirm it stops before anything goes out.
 
 ## A bonus — my collector fetched the clone, not the original
 
@@ -218,7 +218,7 @@ I imported the scanner from the repository HEAD as-is and ran it over my entire 
 
 ⚠ **And here I decided not to bring in someone else's implementation.** The repository decides with 28 magic-byte signatures plus NUL plus a control-character ratio, and at a scale of 259 files that table is maintenance debt. I get the same fail-closed behaviour in three lines — if an extension appears that is on none of the known lists, just stop. **Principle adopted, implementation rejected.**
 
-**(As of 2026-09) Those three lines are not in yet.** The publish script's marker scan still does `continue` on anything that fails `/\.(html|css|js|json|xml|txt|svg|md)$/i`. Today `dist` holds only html, md, webp, txt, json, png, xml, svg, js and css plus an empty `.nojekyll`, so no text sits outside the list. When 226 Markdown copies appeared on 2026-09-17 they were scanned only because `md` had been on the list since the August publish wiring — there is still nothing that stops a new kind. The single rhythm term is not implemented anywhere either.
+**(2026-09-28) It went in.** Until the check, the marker scan simply did `continue` on anything that failed `/\.(html|css|js|json|xml|txt|svg|md)$/i` — the 226 Markdown copies that appeared on 2026-09-17 were scanned only because `md` had been on the list since the August publish wiring. Now what to skip is a list too (`SKIP = /\.(webp|png)$/i` — every non-text kind in `dist` that day: feed covers, game images, share cards), and any kind on neither list with a non-zero size **stops before the push** (the empty `.nojekyll` has nothing to leak, so it passes). A wrong sample (one `.rss` file placed in `public/`) run through the real publish path exited 1 at the scan with no push; with the sample removed and a rebuild, the real `dist` is 517 text · 20 skipped · 0 unknown. The single rhythm term is still not implemented anywhere.
 
 ## Incidentally — my collector nominated the clone, not the original
 
@@ -242,7 +242,7 @@ I imported the scanner from the repository HEAD as-is and ran it over my entire 
 | Takeaways | **1.5** — the rhythm CV term (long-form only) + restoring my own fail-closed compliance |
 | Bringing it into a work pipeline | ⛔ **Inappropriate.** Separate from the technical verdict |
 
-**(As of 2026-09)** Neither half of the 1.5 harvest is **in the code yet** — the rhythm term was never built, and the three fail-closed lines were never added (section above).
+**(As of 2026-09-28)** Of the 1.5 harvest, **the fail-closed part is in** (section above); the rhythm term still isn't.
 
 **Four conditions that reopen this** — ① the semiannual rescan turns up its first marker, even one. ② a text-watermark detector validated in Korean appears; until then the rewriting layer has no means of verification, so no verdict on it is possible at all. ③ the PRs for the four data-loss and false-clean defects get merged and a release follows. ⚠ Even then, **a fixed tool with no target is still a rejection**, so I go back and measure ① first. ④ a workflow appears that distributes images or PDFs externally.
 
