@@ -1,8 +1,8 @@
 # QA automation
 
-> This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in three more on the spot (2026-09-28).
+> This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29).
 
-- Headline number: 5 written · 4 of 4.5 applied
+- Headline number: 5 written · 4.5 of 4.5 applied
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/
 - Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
@@ -19,7 +19,7 @@ There are five pieces here, each one someone else's automation, opened up.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
-Across five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Fewer still actually went in — see the 2026-09 check below.)
+Across five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Only one had actually gone in when I checked — see the 2026-09 check below.)
 
 My first thought was *I must be reading them badly.* That wasn't it. **Hold the same problem long enough and everyone arrives at similar answers.**
 
@@ -63,11 +63,11 @@ About a month on, I opened my code to see whether what each piece said it would 
 |---|---|---|
 | [Asleep's QA automation](/en/teardowns/qa/asleep-qa/index.md) | Count passes that came from a rough coordinate tap separately | **In** — a tap ledger that records the evidence behind every tap |
 | [An autoplay test tool](/en/teardowns/qa/autoplay-test-tool/index.md) | Catch "pushing but not moving" as being stuck · confirm only when two clocks ring together | **Not in** at the check → **both went in** (9/28) |
-| [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | One sentence-rhythm term · a check that stops on an unknown kind of file | **Neither was in** at the check → the stopping check **went in right away** (9/28); the rhythm term still isn't |
+| [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | One sentence-rhythm term · a check that stops on an unknown kind of file | **Neither was in** at the check → **both went in**: the stopping check (9/28) and the rhythm term (9/29, long-form only) |
 | [Toss Nebula](/en/teardowns/qa/toss-nebula/index.md) | Fix the "gateway that exists twice" it surfaced instead of a technique | **Half** — the real run path now has a lock; the gateway still exists twice |
 | [A talk on QA infrastructure](/en/teardowns/qa/qa-infrastructure/index.md) | Use the gacha case as an example in writing | **In** — ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) |
 
-**Writing "adopt" and putting it in turned out to be separate jobs.** Marking a row "adopted" in a verdict table feels like the work is done at that moment, and the code knows nothing about it. So this shelf's number is now written as **"4 of 4.5 applied"** rather than "4.5 techniques" — the one that was in at the check, plus the three put in on the spot (a publish check that stops on an unknown kind of file · the contradiction check for being stuck · the two-clocks confirmation). The remaining half is the sentence-rhythm term. The two stuck-detection pieces haven't filtered anything in simulation yet — the current bot pushes the whole time it walks, and nothing in the simulation inches forward — so what went in and what has had an effect are counted separately too.
+**Writing "adopt" and putting it in turned out to be separate jobs.** Marking a row "adopted" in a verdict table feels like the work is done at that moment, and the code knows nothing about it. So this shelf's number is now written as **"4.5 of 4.5 applied"** rather than "4.5 techniques" — the one that was in at the check, plus the 3.5 put in over the next two days (a publish check that stops on an unknown kind of file · the contradiction check for being stuck · the two-clocks confirmation · a long-form-only sentence-rhythm check). The effects differ. The rhythm check caught two easy-layer passages on its first run and they were fixed; the two stuck-detection pieces haven't filtered anything in simulation yet — the current bot pushes the whole time it walks, and nothing in the simulation inches forward — so what went in and what has had an effect are counted separately too.
 
 One mistake ran the other way. In the autoplay piece I said my stuck detection had only one layer; opening the code, **a second layer was already there** — that piece now says so.
 
@@ -77,7 +77,7 @@ And outside this shelf, something built by someone else entered my QA pipeline f
 
 Where other people's test automation gets taken apart: device farms, unattended regression on real hardware, game autoplay tools, agent-driven test platforms.
 
-**It's my day job and it yields the least.** Across five pieces, 4.5 techniques transferred (as of 2026-09-28: 4.5 written into verdict tables · 4 in the code — 1 at the check, 3 right after · see the 2026-09 check above). Not because the teardowns were bad — because enough years under the same constraints tend to land you in the same place already.
+**It's my day job and it yields the least.** Across five pieces, 4.5 techniques transferred (as of 2026-09-29: 4.5 written into verdict tables · 4.5 in the code — 1 at the check, 3.5 after · see the 2026-09 check above). Not because the teardowns were bad — because enough years under the same constraints tend to land you in the same place already.
 
 ## Which changes what this bucket is worth
 

@@ -1,6 +1,6 @@
 # watermarks-remover
 
-> I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand.
+> I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).
 
 - Headline number: 4 takeaways → 1.5
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/
@@ -89,7 +89,19 @@ I took the rhythm metric **with conditions attached.**
 - **No threshold for short pieces** until I measure a short-form corpus of my own
 - **Never used to judge whether AI wrote something.** Only to see whether my own prose has flattened
 
-**(Checked 2026-09)** This half has not been built either. There is still no rhythm checker anywhere on my side.
+**(Checked 2026-09)** This half had not been built either. There was no rhythm checker anywhere on my side.
+
+**(2026-09-29) Now it's in.** The row of checks that runs before the site publishes has one more: **sentence rhythm.** If a long piece's sentence lengths are too even, the publish stops. The three conditions above held.
+
+| Condition | How it was set |
+|---|---|
+| Long-form only | Only text with 20 or more sentences is measured |
+| Easy layer and detailed record | Measured separately even within one piece — written at different times, in different voices |
+| Where it stops | Unevenness below 0.35 (the August line, unchanged) |
+
+It caught two pieces on its very first run, both in the **easy layer** — Korean easy explanations, cut into short sentences to stay easy, that had settled into an even tap-tap-tap-tap. Only the flagged paragraphs were rewritten: the content stayed, and two or three running sentences were joined into one.
+
+The August calculator hadn't been kept, either. The rebuilt one, run over the August pieces again, once more puts only two short pages below the line — but the scores themselves come out different from the August numbers, because where you cut sentences moves the number.
 
 ## The real harvest was a defect in my own code
 
@@ -243,6 +255,14 @@ I imported the scanner from the repository HEAD as-is and ran it over my entire 
 | Bringing it into a work pipeline | ⛔ **Inappropriate.** Separate from the technical verdict |
 
 **(As of 2026-09-28)** Of the 1.5 harvest, **the fail-closed part is in** (section above); the rhythm term still isn't.
+
+**(2026-09-29) The rhythm term went in too — publish gate `check-rhythm.mjs`.** It counts space-separated words per sentence and takes the coefficient of variation (population standard deviation ÷ mean). Sentences are cut where a period, question mark or exclamation mark is followed by a space, and at line ends; only body text counts — front matter, figures, code, tables and heading lines are dropped. Dropping tables is a measured choice: count tables and headings as sentences and one table becomes a single very long "sentence", which makes the easy layers come out *more* uneven than the detailed record (median 0.872 vs 0.682); body text alone says the opposite (0.484 vs 0.537). The two layers are measured separately, and a layer with fewer than 20 sentences is skipped — 23 Korean and 24 English layers out of 464, nearly all index or placeholder pages; a floor of 15, 20 or 25 flags the same layers. The line stays at 0.35, applied to both languages.
+
+⚠ **The August calculator was not kept.** The rebuilt one, run on the same 98 pieces (the parent of the commit that added this piece), again puts two short pages (11 and 13 sentences) below the line — but its median is 0.524 against the August 0.668. The verdict reproduces; the numbers don't. Don't set old and new numbers side by side.
+
+On the first full run, the long layers below the line were two Korean easy layers — "Loki › Commands" at 0.334 and "Wuxia game (working title)" at 0.340. Only the "flattest spot" the gate prints alongside (7·8·8·7 words and 6·5·7·5 words) was rewritten, content unchanged, bringing them to 0.436 and 0.476. English: none. The most even passing layer is 0.354 (one English easy layer), so the margin is not large. `--selftest` passes 7/7: it bites on 25 even sentences and not on uneven ones, skips a 10-sentence text, ignores tables, headings and figures, doesn't cut decimals like 0.35, and splits layers on both the Korean and the English boundary heading. Run against the two pages as they were before the fix (HEAD), it stops with exit 1.
+
+⚠ **Easy layers get caught more often** — in 91 of 116 pieces the easy layer's rhythm is the more even one. This is where the habit of cutting sentences short to keep things easy collides with the gate. The fixes didn't wedge in long sentences; they joined two or three running sentences into one.
 
 **Four conditions that reopen this** — ① the semiannual rescan turns up its first marker, even one. ② a text-watermark detector validated in Korean appears; until then the rewriting layer has no means of verification, so no verdict on it is possible at all. ③ the PRs for the four data-loss and false-clean defects get merged and a release follows. ⚠ Even then, **a fixed tool with no target is still a rejection**, so I go back and measure ① first. ④ a workflow appears that distributes images or PDFs externally.
 
