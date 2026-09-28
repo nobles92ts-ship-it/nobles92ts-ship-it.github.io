@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 115 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 116 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -47,10 +47,11 @@ Before reading the list —
 - [claude-bus · Protocol](https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/index.md): Conflict copies never appear because every folder has exactly one writer.
 - [claude-bus · Timing](https://nobles92ts-ship-it.github.io/en/built/claude-bus/timing/index.md): I measured where the three minutes go, leg by leg. Actual work was 14% of it.
 - [claude-bus · Safety](https://nobles92ts-ship-it.github.io/en/built/claude-bus/safety/index.md): What stands between somebody else's instruction and my machine. It goes to a person, not a shell.
-- [An adb-based game QA server](https://nobles92ts-ship-it.github.io/en/built/android-qa/index.md): A game screen exposes no UI tree. So it's driven by sight, and judged by logs.
+- [An adb-based game QA server](https://nobles92ts-ship-it.github.io/en/built/android-qa/index.md): A game screen exposes no UI tree. So it's driven by sight, and judged by logs. What the log cannot decide, an AI judge reads from screenshots.
 - [An adb-based game QA server · Driving and judging](https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/index.md): Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.
 - [An adb-based game QA server · The unattended loop](https://nobles92ts-ship-it.github.io/en/built/android-qa/loop/index.md): Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.
 - [An adb-based game QA server · What came out](https://nobles92ts-ship-it.github.io/en/built/android-qa/findings/index.md): The first thing that wasn't an automation defect. And it isn't something to brag about.
+- [An adb-based game QA server · The photo judge](https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/index.md): When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look.
 - [MOON Studio](https://nobles92ts-ship-it.github.io/en/built/moon-studio/index.md): A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Pixling.
 - [MOON Studio · Pixling](https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md): A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
 - [MOON Studio · Wuxia game (working title)](https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/index.md): An action RPG won by reading the enemy's pattern rather than out-reflexing it. The studio's main slot.

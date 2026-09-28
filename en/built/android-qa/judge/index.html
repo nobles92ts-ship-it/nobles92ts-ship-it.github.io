@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The photo judge — An adb-based game QA server</title><meta name="description" content="When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="The photo judge — An adb-based game QA server"><meta property="og:description" content="When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The photo judge — An adb-based game QA server"><meta name="twitter:description" content="When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/built/android-qa/judge/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/"><link rel="stylesheet" href="/_astro/Shell.BxmtkPL6.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/built/android-qa/judge/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 My tools</div><div class="plist"><a href="/en/built/watch/"><span class="t"><span>/watch</span><span class="kpi">video → spec</span></span><span class="s">Hand it a video and you get back a buildable design spec, not a summary.</span></a><a href="/en/built/self-evolution/"><span class="t"><span>Self-evolution loop</span><span class="kpi">weekly</span></span><span class="s">A cron job that reads what I learned this week and rewrites its own memory. With a human gate.</span></a><a href="/en/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.</span></a><a href="/en/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.</span></a><a href="/en/built/qa-widget/"><span class="t"><span>QA widget</span><span class="kpi">always visible</span></span><span class="s">A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.</span></a><a href="/en/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">2 machines</span></span><span class="s">Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.</span></a><a href="/en/built/android-qa/" aria-current="page"><span class="t"><span>An adb-based game QA server</span><span class="kpi">300 cycles</span></span><span class="s">A game screen exposes no UI tree. So it&#39;s driven by sight, and judged by logs. What the log cannot decide, an AI judge reads from screenshots.</span></a><a href="/en/built/moon-studio/"><span class="t"><span>MOON Studio</span><span class="kpi">6 games</span></span><span class="s">A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Pixling.</span></a></div></nav><nav class="col col-s"><div class="col-head">Inside</div><div class="plist"><a href="/en/built/android-qa/driving/"><span class="t"><span>Driving and judging</span><span class="kpi">RPC &gt; screen</span></span><span class="s">Driving happens by sight; judging happens by log. Moving the verdict off the pixels was the biggest improvement.</span></a><a href="/en/built/android-qa/loop/"><span class="t"><span>The unattended loop</span><span class="kpi">9h57m</span></span><span class="s">Assume the product passes everything and every FAIL becomes an automation defect. A free oracle.</span></a><a href="/en/built/android-qa/findings/"><span class="t"><span>What came out</span><span class="kpi">147 / 300</span></span><span class="s">The first thing that wasn&#39;t an automation defect. And it isn&#39;t something to brag about.</span></a><a href="/en/built/android-qa/judge/" aria-current="page"><span class="t"><span>The photo judge</span><span class="kpi">0 false passes</span></span><span class="s">When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>My tools</span><span class="st">in progress</span></div><h1>The photo judge</h1><p class="sum">When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look.</p><div class="meta"><span>0 false passes</span><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#more-cases-than-you-would-expect-cannot-be-decided-from-the-log">More cases than you would expect cannot be decided from the log</a><a href="#i-dont-take-the-ais-word-for-it--rules-check-every-answer">I don’t take the AI’s word for it — rules check every answer</a><a href="#against-the-hand-made-verdicts-170-of-171-matched">Against the hand-made verdicts, 170 of 171 matched</a><a href="#a-second-eye--another-companys-model-re-checks-pass-and-not-applicable">A second eye — another company’s model re-checks “pass” and “not applicable”</a><a href="#the-judge-was-wrong-because-a-note-it-was-handed-was-wrong">The judge was wrong because a note it was handed was wrong</a><a href="#what-photos-cannot-fix--the-tap-that-never-happened">What photos cannot fix — the tap that never happened</a><a href="#a-side-note-from-the-judge-turned-out-to-be-a-bug">A side note from the judge turned out to be a bug</a><a href="#what-i-havent-done">What I haven’t done</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#five-stages-and-the-gates-are-code">Five stages, and the gates are code</a><a href="#it-came-out-of-three-automation-rules-set-on-2026-09-11">It came out of three automation rules set on 2026-09-11</a><a href="#numbers">Numbers</a><a href="#two-rules-were-set-by-a-person-2026-09-28">Two rules were set by a person (2026-09-28)</a><a href="#in-the-range-measured-the-second-eye-has-not-caught-a-real-error-yet">In the range measured, the second eye has not caught a real error yet</a><a href="#the-note-incident--the-judge-reads-precondition-notes-as-facts">The note incident — the judge reads precondition notes as facts</a><a href="#a-tap-that-never-happened-is-fixed-only-by-steps">A tap that never happened is fixed only by steps</a><a href="#the-bug-that-came-out-of-a-side-note">The bug that came out of a side note</a></nav><div class="prose"><p><strong>The photo judge is a program that reads the screenshots my automated checks leave behind and writes one of four verdicts for each test case — pass, fail, can’t judge, or not applicable.</strong> I built it for the cases the game’s own logs cannot decide, so that nobody has to page through the photos by hand.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 210" role="img" aria-label="Screenshots from cases the log could not decide pass through five stages in order. The screenshots go to the judge, an AI, together with the criterion and the taps that were made; the judge returns one of four verdicts plus the photo it cites. Rule gates check five things, such as whether the judge really opened that photo, and can lower the verdict. The second eye re-checks only passes and not-applicable verdicts with another model, and where it disagrees a person sees that case first in the report.">
+  <text class="lbl" x="10" y="24">Only cases the log could not decide end up here</text>
+  <rect class="bx-code" x="10" y="40" width="160" height="56" rx="2"/>
+  <text class="bx-t" x="90" y="73" text-anchor="middle">Screenshots</text>
+  <rect class="bx-llm" x="210" y="40" width="160" height="56" rx="2"/>
+  <text class="bx-t" x="290" y="73" text-anchor="middle">Judge (AI)</text>
+  <rect class="bx-code" x="410" y="40" width="160" height="56" rx="2"/>
+  <text class="bx-t" x="490" y="73" text-anchor="middle">Rule gates</text>
+  <rect class="bx-llm" x="610" y="40" width="160" height="56" rx="2"/>
+  <text class="bx-t" x="690" y="73" text-anchor="middle">Second eye</text>
+  <rect class="bx-code" x="810" y="40" width="160" height="56" rx="2"/>
+  <text class="bx-t" x="890" y="73" text-anchor="middle">Report</text>
+  <path d="M170 68 H210 M370 68 H410 M570 68 H610 M770 68 H810" stroke="#0C0D10" stroke-width="1.5"/>
+  <text class="cap" x="90" y="126" text-anchor="middle">with the criterion</text>
+  <text class="cap" x="90" y="147" text-anchor="middle">and the taps made</text>
+  <text class="cap" x="290" y="126" text-anchor="middle">one of four verdicts</text>
+  <text class="cap" x="290" y="147" text-anchor="middle">+ the photo it cites</text>
+  <text class="cap" x="490" y="126" text-anchor="middle">did it really open</text>
+  <text class="cap" x="490" y="147" text-anchor="middle">that photo? (5 rules)</text>
+  <text class="cap" x="690" y="126" text-anchor="middle">pass and N/A only,</text>
+  <text class="cap" x="690" y="147" text-anchor="middle">by another model</text>
+  <text class="cap" x="890" y="126" text-anchor="middle">people see</text>
+  <text class="cap" x="890" y="147" text-anchor="middle">mismatches first</text>
+  <text class="gt" x="10" y="190">Rules can lower a verdict but never raise it. The second eye only flags; it never changes a verdict.</text>
+</svg>
+<figcaption>How the photo judge runs. An AI judges, code-level rules re-check the evidence behind each verdict, and only the verdicts nobody would look at again get a second look from another model.</figcaption>
+</figure>
+<h2 id="more-cases-than-you-would-expect-cannot-be-decided-from-the-log">More cases than you would expect cannot be decided from the log</h2>
+<p>This QA server decides results from <strong>what the game writes to its log</strong> (<a href="/en/built/android-qa/driving/">Driving and judging</a>). Whether a login worked is right there in the traffic with the server.</p>
+<p>But the test list also carries items like these:</p>
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th>Can the log decide it?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can you log in?</td>
+<td>Yes — the exchange with the server is logged</td>
+</tr>
+<tr>
+<td>Is there a name on the left, a character in the middle and a list on the right?</td>
+<td>No — what is <em>visible</em> is in no log</td>
+</tr>
+</tbody>
+</table>
+<p>Cases like the second one used to end with a photo and a person paging through it. The first day the judge ran, 171 such cases came with 193 photos to look at.</p>
+<h2 id="i-dont-take-the-ais-word-for-it--rules-check-every-answer">I don’t take the AI’s word for it — rules check every answer</h2>
+<p>An AI is good at producing a plausible answer. So each verdict has to say <strong>which photo showed what</strong>, and rules written as code then check that answer.</p>
+<table>
+<thead>
+<tr>
+<th>What the rule asks</th>
+<th>If it fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Does the cited photo exist?</td>
+<td>The verdict is lowered</td>
+</tr>
+<tr>
+<td>Did the judge <strong>actually open</strong> that photo?</td>
+<td>The verdict is lowered</td>
+</tr>
+<tr>
+<td>The case asks for the result of a tap — did it pass without one?</td>
+<td>The verdict is lowered</td>
+</tr>
+</tbody>
+</table>
+<p>“Did it actually open it” is checked against the AI’s own session record of which files it read — <strong>a stated reason, checked against a record of what it did.</strong> The rules can lower a verdict; they can never raise one.</p>
+<p>There is one more guard. If a button’s coordinates were <strong>corrected after the run</strong>, the verdict gets a warning: the photo can look right while the run actually pressed a different button. Without that warning, one false pass would have gone out.</p>
+<h2 id="against-the-hand-made-verdicts-170-of-171-matched">Against the hand-made verdicts, 170 of 171 matched</h2>
+<p>On the first day (2026-09-11) I ran the judge over 171 cases that had already been judged by hand. <strong>170 matched, and it passed nothing that should not have passed.</strong> The one miss was the judge being more cautious than the hand verdict. It also caught <strong>two mistakes in the hand verdicts</strong> — a criterion read after it had been cut off mid-sentence, and a value left over in an input box taken as “typed”.</p>
+<p>On 2026-09-23 I moved to a newer model and <strong>stopped loading every judging session with baggage</strong> it never used, such as tool lists and settings. The same 171 cases went from <strong>$40.51 to $16.00, and from about 15 minutes to 8</strong>, still with zero false passes. The judge now <strong>follows the newest Opus on its own</strong>.</p>
+<h2 id="a-second-eye--another-companys-model-re-checks-pass-and-not-applicable">A second eye — another company’s model re-checks “pass” and “not applicable”</h2>
+<p>Pass and not-applicable are the verdicts <strong>nobody looks at again</strong>; fails and can’t-judges get opened anyway. So only those two get a second look.</p>
+<p>The second eye is <strong>Jev</strong>, an evaluation model from TypeSafe. It picks one option from a given set and reports how confident it is as a number. Jev cannot see images, so another AI first writes down what is in that case’s own photos <strong>without being told the criterion</strong>, and Jev reads that description together with the criterion.</p>
+<p>When the two disagree, the case lands in a “second eye” table at the top of the report and <strong>a person looks there first.</strong> The verdict itself is never changed.</p>
+<h2 id="the-judge-was-wrong-because-a-note-it-was-handed-was-wrong">The judge was wrong because a note it was handed was wrong</h2>
+<p>After the rules were settled (below) and the answer key corrected, one <strong>wrong “not applicable”</strong> was left.</p>
+<p>The cause was not the judge but <strong>a note handed to it.</strong> For one screen the note said “the model in the middle only shows when you own one.” The design spec says the selected item’s model is shown, and later builds showed it whether you owned it or not. The judge <strong>took the note as fact</strong> and called an empty middle “precondition not met” instead of “fail”.</p>
+<p>With the note deleted, the same photos came back <strong>fail</strong>. Notes to the judge now carry <strong>requirements only</strong> — what has to be owned or prepared — and never claims about how a screen behaves, because the judge reads those as facts.</p>
+<h2 id="what-photos-cannot-fix--the-tap-that-never-happened">What photos cannot fix — the tap that never happened</h2>
+<p>When I counted why so many cases came back “can’t judge” (2026-09-10), <strong>97 of 126 were “right screen, no result of the tap.”</strong> The automation reached the screen and <strong>never pressed the thing the case was about.</strong></p>
+<p>No judge and no rerun fixes that. <strong>Adding the step</strong> is the only fix.</p>
+<p>“Can you type into the ID box?” was always “can’t judge”: the automation tapped the box and typed nothing, and the text sitting in the box was <strong>left over from the previous run.</strong> On 2026-09-28 I added two steps — take one photo before typing, then type this run’s ID. With the text visibly changing between the two photos the judge passed it, and the second eye agreed.</p>
+<h2 id="a-side-note-from-the-judge-turned-out-to-be-a-bug">A side note from the judge turned out to be a bug</h2>
+<p>The judge also writes down oddities unrelated to the criterion as <strong>side notes</strong>. One of them was a real bug.</p>
+<p>On one screen the name slots showed an <strong>internal key</strong> such as <code>Not Found '…'</code> instead of a name. Checking the data, the name keys that screen points to were missing from the translation table. The same thing showed on two phone builds and on the PC version in the editor, and it was filed on 2026-09-28.</p>
+<h2 id="what-i-havent-done">What I haven’t done</h2>
+<ul>
+<li><strong>The answer key was also made by an AI going through the photos one by one.</strong> So 170 of 171 measures how well the judge <em>reproduces hand judging</em>, not how accurate it is.</li>
+<li><strong>The second eye has not caught a real error yet.</strong> In the range I measured (31 passes on the phone, 17 on PC) it caught none, and most alarms meant “the judge borrowed a neighbouring case’s photo — check it is the same screen.” Whether to keep it gets decided after one full run.</li>
+<li><strong>A single photo cannot see time.</strong> “Is it still there after you reconnect?” or “does the motion play?” needs a before and an after. Cases where the automation takes only one photo still end as can’t-judge.</li>
+<li>Sending “not applicable” to the second eye too (2026-09-28) <strong>has not run in a full test run yet</strong> — only in partial runs.</li>
+</ul>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><code>shot_judge</code> runs on its own when the runner — the program that plays the sheet’s test list on the phone — finishes. Its input is the runner’s verdicts, repro steps and photos; its output is a report (<code>report.md</code>) and an AI verdict per case. Pushing to the sheet is a separate single command that lays the AI verdict over the runner’s; run them in the other order and the judging is overwritten.</p>
+<h2 id="five-stages-and-the-gates-are-code">Five stages, and the gates are code</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Index</td>
+<td>A cheap model reads a montage per 8 photos (thumbnail plus cropped title, coordinates and build stamp) into a screen / coordinates / build table. Cached in the run folder</td>
+</tr>
+<tr>
+<td>2 Targets</td>
+<td>What the runner could not decide from the log (EVIDENCE, FAIL, BLOCKED, SKIP) and has a photo. A PASS decided from the log is never touched</td>
+</tr>
+<tr>
+<td>3 Judging</td>
+<td>Consecutive cases on the same screen share one session. The criterion column in the sheet is the source of truth; the repro steps are generated from the runner’s steps</td>
+</tr>
+<tr>
+<td>4 Gates</td>
+<td>G1 missing · G2 format · G3 cited photo exists · G4 the cited photo was really read (file reads in the session record) · G5 an action criterion passed without a result. All of them only lower</td>
+</tr>
+<tr>
+<td>5 Cross-check and report</td>
+<td>Judge PASS and N/A go to the second eye; the report gets one headline line, and disagreements go in a table</td>
+</tr>
+</tbody>
+</table>
+<p>A visibility criterion passes if the thing is visible; an action criterion passes only if the <em>result of the tap</em> is visible. “Partly confirmed” is not a PASS — it is BLOCKED with N/M attached. The LLM only judges; the gates decide what stands.</p>
+<h2 id="it-came-out-of-three-automation-rules-set-on-2026-09-11">It came out of three automation rules set on 2026-09-11</h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Repro steps and a criterion</td>
+<td>A case runs only when it is clear what gets pressed and what to look at. Repro steps are generated from the steps, and a case whose sheet asks for an action while its steps only reach the screen is flagged as “action missing” before the run</td>
+</tr>
+<tr>
+<td>2 Same screen, no second shot</td>
+<td>111 of 248 cases repeated a screen — they now share one photo (about 9 minutes and 45% of the photos saved per run)</td>
+</tr>
+<tr>
+<td>3 Judge from the image</td>
+<td>The photo judge — this page</td>
+</tr>
+</tbody>
+</table>
+<h2 id="numbers">Numbers</h2>
+<ul>
+<li><strong>First version, 2026-09-11</strong> — 7 runs, 171 cases, 193 photos. Against hand judging <strong>170/171 (99.4%), 0 false passes</strong>. 33 sessions, about 15 minutes wall-clock at 3 in parallel.
+A mis-aim warning (it restores “the coordinates at run time” from coordinate-profile backups and flags taps moved more than 59px after the run) blocked one false pass on a shared toast case. So <strong>coordinate fixes always leave a backup</strong> — the backup is what the warning is made of.</li>
+<li><strong>A/B on 2026-09-23 (same 171)</strong> — Opus 5 with the session baggage, $40.51, about 15 minutes → <strong>Opus 5.5, medium effort, baggage removed: $16.00, 8.0 minutes</strong>, 0 false passes.
+The 17 cases that disagreed with the old answer key came from precondition notes added to cases <strong>after</strong> the key was made (“precondition not met means N/A”). That meant the key was stale, so the rules were settled before blaming the model.</li>
+<li><strong>2026-09-28</strong> — with the rules settled and the key corrected (13 cases to N/A, 1 to BLOCKED) it scores <strong>168/171 with 0 false passes</strong>. The three left: two whose answer sits in photos outside the judged runs (a supplementary run, photos taken by hand) and the note incident below.</li>
+<li>The judge model is set as the <code>opus</code> alias, and only the judging sessions resolve that alias to the CLI’s newest Opus. Runs made on different versions are told apart by the stamp on every result (model, effort, code revision).</li>
+</ul>
+<h2 id="two-rules-were-set-by-a-person-2026-09-28">Two rules were set by a person (2026-09-28)</h2>
+<ul>
+<li>1 <strong>A neighbouring case’s photo of the same screen in the same state may be used</strong> — when the case’s own photo came too early (a cutscene, loading) or was covered.</li>
+<li>2 <strong>A case whose precondition the automation could not create (currency, ownership, number of characters) is N/A, not BLOCKED.</strong></li>
+<li>For motion, two stills (right after the tap, one second later) with different poses count as a PASS. No video is needed.</li>
+</ul>
+<h2 id="in-the-range-measured-the-second-eye-has-not-caught-a-real-error-yet">In the range measured, the second eye has not caught a real error yet</h2>
+<ul>
+<li>Flow: judge PASS or N/A → sonnet writes down <strong>that case’s own photos only</strong>, without the criterion → Jev (<code>jev-1.13.0</code>, TypeSafe API) reads it with the criterion and the precondition (only the requirement part of the note) and returns PASS, FAIL, BLOCKED or NA with a confidence.</li>
+<li>Alarms: a PASS where Jev says anything else · an N/A where Jev says PASS or FAIL, or <strong>where the judge reached N/A from someone else’s photo.</strong> The last one is computed from the citations regardless of Jev’s answer — Jev sees only the case’s own photos and cannot tell.</li>
+<li>After rule 1 was settled, the measured range (31 PASS on the phone, 17 on PC) held 0 real catches. 10 of the 15 alarms were “evidence outside the case’s own photos” — the alarm stays as a prompt to check that a borrowed photo really shows the same screen in the same state.</li>
+<li>On the N/A side: of 22 N/A verdicts in the 2026-09-23 run, 8 leaned on someone else’s photos and 1 was actually wrong (the note incident below).</li>
+<li>Speed: Jev takes about 0.24 seconds per case. The bottleneck is turning photos into text (14.4 minutes for 171 phone cases).</li>
+<li>⚠ Once, when the photo descriptions were requested in a batch, <strong>one case’s slot received the neighbouring case’s description.</strong> A “Jev caught it” measured from that was an illusion. The description step checks that a photo was opened, not that the text landed in the right slot.</li>
+</ul>
+<h2 id="the-note-incident--the-judge-reads-precondition-notes-as-facts">The note incident — the judge reads precondition notes as facts</h2>
+<ul>
+<li>A “setup” note is the precondition written in the overlay (the file that adds steps to the runner) when the sheet leaves it blank. The judge receives it as the precondition.</li>
+<li>The setup note written on 2026-09-11 for one screen — “the model in the middle only shows when you own one” — contradicted the design spec (show the selected item’s model) and two later builds. It had been written after a server data reset, while the photos being judged were from <strong>the day before</strong> it (an equipped marker, yet an empty middle: a FAIL).</li>
+<li>The judge trusted the note and returned a false N/A. With the text removed, the same input (7 runs) came back FAIL. Setup notes now hold requirements only (materials, ownership).</li>
+<li>The “N/A from someone else’s photo” alarm in the cross-check was added because of this case.</li>
+</ul>
+<h2 id="a-tap-that-never-happened-is-fixed-only-by-steps">A tap that never happened is fixed only by steps</h2>
+<ul>
+<li>On 2026-09-10, 97 of 126 BLOCKED verdicts were “right screen, no result of the tap.” Neither the judge nor a rerun fixes that — rule 1’s “action missing” check came from here.</li>
+<li>The ID-input case: its steps went from “tap the box” to “tap the box → one photo before typing → type this run’s ID”. It does not press “Done” — submitting the login belongs to the next case, which clears the box and types again. The two photos show different text, so PASS, and the second eye agreed (2026-09-28).</li>
+</ul>
+<h2 id="the-bug-that-came-out-of-a-side-note">The bug that came out of a side note</h2>
+<ul>
+<li>The judging instructions say to record oddities unrelated to the criterion as side notes, and to leave out the build stamp and rendering warnings that show on every build — otherwise the same note piles up every run.</li>
+<li>The screen whose name slots showed <code>Not Found '&lt;key&gt;'</code>: 6 name keys referenced by the data table were missing from the translation table, which held 24 keys from a different number range. The same text on two phone builds and the PC editor → filed on 2026-09-28.</li>
+<li>A case of the same kind (name keys on another screen) had shown up on 2026-09-10 too; in the current data it is fixed (all 40 keys have translations).</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/built/android-qa/judge/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

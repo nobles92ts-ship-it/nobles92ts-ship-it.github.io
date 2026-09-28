@@ -1,6 +1,6 @@
 # An adb-based game QA server
 
-> A game screen exposes no UI tree. So it's driven by sight, and judged by logs.
+> A game screen exposes no UI tree. So it's driven by sight, and judged by logs. What the log cannot decide, an AI judge reads from screenshots.
 
 - Headline number: 300 cycles
 - Status: wip
@@ -37,22 +37,26 @@ One line runs through the whole project.
 |---|---|
 | **Pressing** | **Look at a picture of the screen** and work out where to press |
 | **Judging whether it worked** | **Read what the game wrote down** |
+| **What the log cannot decide** | **An AI judges the screenshot**, and rules re-check its evidence (from 2026-09) |
 
 Splitting those two is the core. And **moving the verdict off the pixels and onto the log** was this project's single biggest improvement. Why, in the piece below.
 
+Some things never reach the log, though — "what is visible on screen" is one of them. Since 2026-09 those cases are judged by the **photo judge** instead of a person.
+
 ## Scale
 
-Written in Python, 22 capabilities, 104 checks around it. It runs with a real phone attached over USB.
+Written in Python, 22 capabilities, with 353 checks around it now (104 at first). It runs with a real phone attached over USB or Wi-Fi, and the current test list has 248 cases.
 
 It has run **300 cycles** overnight, unattended.
 
-## Written up in three parts
+## Written up in four parts
 
 | | What the problem is |
 |---|---|
 | **Driving and judging** | How do you press a screen with no handles, and what decides the result |
 | **The unattended loop** | What has to be true for a run nobody is watching |
 | **What came out** | The overnight result — and **the first thing that wasn't my automation's fault** |
+| **The photo judge** | What it takes to trust an AI's verdict on a screen the log cannot decide |
 
 ## And the same cases against a PC build
 
@@ -62,7 +66,7 @@ The same game **controls completely differently.** And **what needs confirming i
 
 ## The detailed record starts here
 
-A custom MCP server that verifies Android game builds unattended. Python, 22 tools, 104 unit tests, driving a real handset over USB.
+A custom MCP server that verifies Android game builds unattended. Python, 22 tools, 104 unit tests (353 as of 2026-09), driving a real handset over USB (as of 2026-09 wireless adb is the default, and a scheduled task reconnects it every minute if it drops).
 
 I built it because off-the-shelf Android automation couldn't be used. There's one reason for that.
 
@@ -74,13 +78,14 @@ A normal app exposes an accessibility tree. Ask for "the login button" by name a
 
 Everything an off-the-shelf tool assumes is absent, so driving and judging both had to be rebuilt.
 
-## Written up in three parts
+## Written up in four parts
 
 | | The problem |
 |---|---|
 | [Driving and judging](/en/built/android-qa/driving/index.md) | How to tap a screen with no handles, and what decides the result |
 | [The unattended loop](/en/built/android-qa/loop/index.md) | What a run nobody is watching actually requires |
 | [What came out](/en/built/android-qa/findings/index.md) | An overnight run, and the first thing that wasn't an automation defect |
+| [The photo judge](/en/built/android-qa/judge/index.md) | What decides a screen the log cannot, and what re-checks that verdict (added 2026-09) |
 
 ## The same cases against a PC build
 

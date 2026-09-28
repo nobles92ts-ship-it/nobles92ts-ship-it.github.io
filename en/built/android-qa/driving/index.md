@@ -69,6 +69,8 @@ That contains far more than the screen ever shows — **what was requested, what
 
 The screen was not discarded. **It moved to the bottom of the list.**
 
+Since 2026-09 that bottom rung has been handled by an **AI judge** instead of a person, wrapped in rules so that a wrong pass does not slip out — written up in [The photo judge](/en/built/android-qa/judge/index.md).
+
 ## Where it still bites
 
 Written down honestly. Four things remain.
@@ -122,6 +124,8 @@ It's the only way to know where a button is. But driving and judging have differ
 - **Judging becomes the result when it's wrong.** A case wrongly marked PASS is never revisited.
 
 So **vision sits where being wrong is survivable, and logs sit where it isn't.** Using one tool for both purposes while demanding different reliability from each doesn't hold up.
+
+**(As of 2026-09)** Cases the log can never decide — what is visible on screen — are now judged by the photo judge. That is not vision coming back into judging. The asymmetry above — a wrong PASS is never revisited — became the design constraint: every verdict must cite its photo, code gates check that citation, and PASS gets a second look from another model. → [The photo judge](/en/built/android-qa/judge/index.md)
 
 ## Where it still bites
 
