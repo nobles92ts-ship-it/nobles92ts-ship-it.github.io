@@ -1,6 +1,6 @@
 # An autoplay test tool
 
-> A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — so the contradiction check went into my bot (2026-09-28); the two-clocks confirmation hasn't.
+> A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).
 
 - Headline number: 2 of 4 techniques
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/autoplay-test-tool/
@@ -90,19 +90,32 @@ Judging stuck-ness by time wasn't wrong. I simply **hadn't separated the layer t
 
 Named things can be fixed. Unnamed ones stay as *it flags odd things sometimes.*
 
-## The two I adopted aren't in yet, and one thing I said about my own side was wrong (checked 2026-09)
+## The two I adopted were missing at the check and went in that day — and one thing I said about my side was wrong (checked 2026-09)
 
 About a month later I opened my code again.
 
 **What I got wrong.** Above I wrote that I hadn't separated the candidate layer from the layer that clears false ones — but my stuck detection **already had a second layer** (July code). Under 60 cm of movement in 3 seconds makes a candidate; the bot then tries to slip out sideways and backwards four times, and **if it gets more than 2 m away the case is cleared as "avoidable".** The idea of splitting the layers was already there. I had not reopened my own code while writing this piece.
 
-**What really is missing.** The **contradiction check** — "pushing to go, yet not moving" — still does not exist. The position record's format lists a "trying to move" field, but nothing fills it and nothing reads it. The two-clocks confirmation was not added either.
+**What really is missing.** The **contradiction check** — "pushing to go, yet not moving" — still did not exist. The position record's format listed a "trying to move" field, but nothing filled it and nothing read it. The two-clocks confirmation wasn't there either.
 
-→ The two things this piece marks "adopted" are **not in the code yet.** And describing my own work without reopening my own code is the second time on this shelf — the [Asleep piece](/en/teardowns/qa/asleep-qa/index.md) had to be corrected for the same thing.
+→ The two things this piece marks "adopted" were **not in the code at the check.** And describing my own work without reopening my own code is the second time on this shelf — the [Asleep piece](/en/teardowns/qa/asleep-qa/index.md) had to be corrected for the same thing.
 
 **(2026-09-28) The contradiction check is in.** Each time the bot records its position it also records "was I pushing to move just before this", and a stuck candidate is raised **only if it pushed for the whole 3 seconds and still covered less than 60 cm.** A single moment of not pushing (landing, waiting) means no candidate. Tests confirm that with the switch off, a waiting bot does get flagged as stuck.
 
-That said, the current bot pushes every moment it walks, so in a 60-cell simulation **the stuck candidates came to two either way, switch on or off.** The check earns its keep once the bot has behaviours that wait. The two-clocks confirmation is still absent — the escape attempts hold that job.
+That said, the current bot pushes every moment it walks, so in a 60-cell simulation **the stuck candidates came to two either way, switch on or off.** The check earns its keep once the bot has behaviours that wait.
+
+**(2026-09-28) The two-clocks confirmation is in as well.** Calling something stuck now takes two clocks ringing together.
+
+| Clock | What makes it ring |
+|---|---|
+| First (already there) | Pushed for 3 full seconds and still covered less than 60 cm |
+| Second (new) | Distance to the destination hasn't shrunk by even 10 cm in 3 seconds |
+
+So a bot that is barely moving but **still inching toward where it is going** is not stuck. A car in mud with its wheels turning, gaining a hand's width at a time, isn't trapped yet.
+
+Putting it in taught me one thing. I had assumed the escape attempts already covered this slot — but **a bot that inches along slips past them.** Told to slip out sideways, it inches sideways too, never gets 2 m away, and ends up recorded as stuck (a test confirms it). Now a spot like that is recorded as "can't get there" once 20 seconds pass without arriving, instead of as stuck.
+
+3 seconds and 10 cm are values I chose — for the same reason I didn't take the talk's 1.5 s and 1.2 s, they need re-measuring in the real game. In the 60-cell simulation the stuck candidates again came to two either way (nothing in the simulation inches). It hasn't been run in the real game yet.
 
 ## The detailed record starts here
 
@@ -184,7 +197,15 @@ The other two are practical too. **Combat runs a full scan only when the cache i
 
 **(As of 2026-09)** The two "adopted" rows above are **not in the code yet.** What the timer AND gate was meant to do (separate candidates from confirmation) is already done by the escape attempts, so the empty slot is the contradiction check alone — carry whether the bot is "trying to move" in each sample and raise stuck candidates only in windows where it is. The verdict not to import 1.5 s and 1.2 s stands.
 
-**(2026-09-28) The contradiction check went in.** The bot's `_push()` keeps the move request's return value (True if it pushed, False if it was already there) as `pushing`, and that becomes the next sample's `moving`; it resets to False on a new target or on entering a teleport. `detect_stuck` raises a candidate only when **every** sample in the stuck window is `moving` (`STUCK_NEEDS_PUSH`; off restores the old behaviour). Older samples without the field count as pushing. Velocity is not used — input is measured from the bot's own command. Tests went from 121 to 133, and a control with the switch off (a bot that is not pushing gets flagged as stuck) shows the gate actually bites. ⚠ In the 60-cell simulation, stuck candidates are 2 with the switch on or off — the current bot pushes on every WALK tick. No run in the real game yet. The timer AND gate is still absent.
+**(2026-09-28) The contradiction check went in.** The bot's `_push()` keeps the move request's return value (True if it pushed, False if it was already there) as `pushing`, and that becomes the next sample's `moving`; it resets to False on a new target or on entering a teleport. `detect_stuck` raises a candidate only when **every** sample in the stuck window is `moving` (`STUCK_NEEDS_PUSH`; off restores the old behaviour). Older samples without the field count as pushing. Velocity is not used — input is measured from the bot's own command. Tests went from 121 to 133, and a control with the switch off (a bot that is not pushing gets flagged as stuck) shows the gate actually bites. ⚠ In the 60-cell simulation, stuck candidates are 2 with the switch on or off — the current bot pushes on every WALK tick. No run in the real game yet. The timer AND gate wasn't there at this point — it went in later the same day (below).
+
+**(2026-09-28) The timer AND gate went in too.** The second clock is `detect.no_progress_time(samples, target)` — the time since the distance to the destination last hit a **new low** at least `STUCK_NOPROG_EPS` (10 cm) below the previous one. It resets only on a new low of that size, so rocking back and forth in front of a wall doesn't count as getting closer. Comparing the window's start with its minimum would have turned a single 20 cm wobble into "progress" (a test confirms wobbling samples are still caught as a candidate). Given a destination, `detect_stuck` checks this clock against `STUCK_NOPROG_TIME` (3 s) after the first clock — the stuck window plus the contradiction (`STUCK_NEEDS_NOPROG`; off restores the old behaviour). Calls that pass no destination behave as before.
+
+⚠ **10 cm and 3 s are chosen values** — the same verdict that kept 1.5 s and 1.2 s out means they need measuring. There is a ceiling on the 10 cm, though: **set it to 60 cm or more and the AND gate filters nothing.** In a window where the first clock rang, the bot moved less than 60 cm, so it cannot have got more than that much closer to the destination, and the second clock almost always rings along with it.
+
+**The (as of 2026-09) judgement above was only half right.** It said the escape attempts already separate candidates from confirmation. A test engine that inches toward the destination at 7.5 cm/s shows that with the gate off it becomes a stuck candidate → four failed escapes → `Stuck` (about 6 seconds into the walk). An inching bot inches sideways too and never gets 2 m away. With the gate on it stays in WALK and is left as `Unreachable` when the 20-second destination budget runs out. **What escape attempts clear (a block you can step around) and what the AND gate clears (slow but still advancing) turned out to be different things.**
+
+Tests went from 133 to 144. In the 60-cell simulation: 2 stuck candidates with the gate on or off, and the same kinds of findings — nothing in the simulation inches. Two things changed. Candidates fire 0.117 s (7 ticks) later, and the `Stuck` record's coordinate moved 55 cm to where the bot actually stopped — with the gate off, the window's first sample was taken just before the stop (inside the 1,500 cm radius the findings ledger treats as the same issue). No run in the real game yet.
 
 **The lesson I paid for here: even when you are already solving the same problem, you can see the extra layer someone else has stacked.** I was judging stuck by time, and that isn't wrong. It is only that **I never split the layer that produces candidates from the layer that removes false positives.** The moment I split them, **the cause of my false positives acquired a name** — *"a normal state where it stopped on purpose."*
 
