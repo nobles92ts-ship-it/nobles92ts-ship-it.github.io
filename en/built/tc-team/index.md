@@ -56,31 +56,35 @@ Why: **at first the AI drove everything, and as it went it drifted out of the ru
 | Stage | What it does | Owner |
 |---|---|---|
 | **0** | Gather the source, lock out concurrent runs, **self-check the input** | Code |
-| **1** | Read the spec and build **the design skeleton** | AI |
+| **1** | Read the spec and build **the design skeleton** — the seat that gets the strongest AI | AI |
 | **2** | **Inspect** whether the design can be expanded | Code |
-| **3** | Build the skeleton → **split the sentence-writing across several** → merge | Code + AI |
+| **3** | Build the skeleton → **split the sentence-writing four ways** → merge | Code + AI |
 | **4** | **Review adversarially**, judge, record coverage | AI |
-| **5** | Apply fixes + **four inspections** | Code |
+| **5** | Apply fixes + **four inspections** — if a rule is uncovered, an AI gets one try at filling it | Code + AI |
 | **6** | **Write to the real sheet** | Code |
-| **7** | Finalise, dashboard, notify | Code |
+| **7** | Finalise, **a trust score on every row**, dashboard | Code |
+
+Stage 0 is prepared separately; **stages 1 to 7 then run to the end from a single command.** One "starting on this" notice goes to an internal channel when it begins.
 
 ## What defines its character — "it stops when it cannot pass"
 
 This tool **does not "do its best and continue."**
 
-There are checkpoints, and **failing one means stopping or going back.**
+There are checkpoints, and **failing one means stopping and calling a person.** Whatever it can fix by itself, it tries a few times first.
 
 | Checkpoint | If it catches |
 |---|---|
 | Input check | Re-gather once; failing again, **do not start at all** |
-| Design inspection | **Return to stage 1** and fix |
+| Design inspection | **Stop** — a person fixes the design, and the run picks up from there |
 | Merge comparison | **Only the mismatched chunk** re-runs |
-| Applying a fix | **Rejection is correct behaviour** — if the target does not match expectation, it is not edited |
-| Wording inspection | Blocks **vague phrasing** |
-| Duplicate inspection | Identical cases must be merged |
-| Coverage inspection | **If a rule is uncovered**, add rows and repeat |
+| Wording inspection | Tries up to three times to fix **vague phrasing** itself; stops if it isn't shrinking |
+| Applying a fix | **Rejection is correct behaviour** — if the target does not match expectation, it is not edited and the run stops |
+| Duplicate inspection | Stops if two cases are word-for-word identical |
+| Coverage inspection | **If a rule is uncovered**, an AI gets one try at filling it; still uncovered, it stops |
 
-The fourth row matters. **Opening something to fix it and finding the content is not as expected means not fixing it and stopping.** Someone may have edited it in between. **Rejection is not a fault, it is correct operation.**
+The "applying a fix" row matters. **Opening something to fix it and finding the content is not as expected means not fixing it and stopping.** Someone may have edited it in between. **Rejection is not a fault, it is correct operation.**
+
+That character has a price. Counting back through the logs in September 2026: **of 38 end-to-end runs, 13 (34%) stopped at least once and needed a person to carry on.** Better than quietly shipping a wrong table — but it is not yet a tool that simply does everything for you.
 
 ## Review is adversarial, not collaborative
 
@@ -89,6 +93,22 @@ Finished cases are read **by several viewpoints at once** — one for structure,
 And **they cannot see each other's results.**
 
 That is deliberate. **Seeing each other makes opinions converge, and converged opinions miss the same things together.** Three looking separately catch three different things.
+
+What the three find goes to **a single judging AI**, which argues each point and throws out the misfires. The survivors are never fixed by the AI directly — they are written down as **a fix plan that code can apply**, and stage 5's code does the actual editing.
+
+## Five things that changed in September — the tool keeps getting fixed in use
+
+On 24 September 2026 the whole tool got a check-up. It turned up 50 candidate defects, and for each one a different AI was asked to argue it away. Here is what changed as a result.
+
+| What | In plain terms |
+|---|---|
+| **The strongest AI does the design** (24 Sep) | Stage 1 design takes 64% of a run's time, so that is where quality differs most. Design alone goes to Claude Opus 5.5. In a side-by-side test it did better on two features out of three |
+| **Ask the internal wiki first** | Anything the spec left unanswered — marked "needs confirmation" — gets looked up in the company wiki and data tables first. If an answer turns up, that question comes off the list sent to the planners |
+| **Rules inside tables, one row at a time** (25 Sep) | **Tables** in a spec were not fully making it into the rule ledger. A fifth of the table rows were outside it, and the check still passed with "nothing missing." What isn't in the ledger can't be missed, as far as the check can tell |
+| **Resuming keeps the fixes** (25 Sep) | Stop a run midway and resume it, and the stage-4 review's fixes were **silently thrown away.** On the surface the run finished normally |
+| **The working AIs are isolated** (25 Sep) | Every AI called up for a stage was carrying my personal settings, plugins and memory with it. Through that gap the design AI once wrote files straight into my Drive and deleted them (110 copies it had made itself; nothing that already existed was lost). Now each one carries **only the tools its stage needs** |
+
+The last row started as a cost saving. Measured on the same spec with isolation on and off, the money came to **a little over 7%** (only two pairs, so not settled). The real gain was elsewhere: the number of times something **unrelated to the job** — a summary of some other task, say — got slipped into the first instruction an AI received was **0 out of 23 with isolation on, and 23 out of 23 with it off.**
 
 ## Two lessons that cost something — "do not join by number"
 
@@ -114,6 +134,13 @@ I think that is right — **an invented case becomes "where did this come from" 
 
 But **in an organisation with thin specifications the volume comes out lower than expected.** That is the material's fault rather than the tool's, and **to the person using it the disappointment is identical.**
 
+**It is slow.** One feature end to end takes **1 hour 36 minutes** at the median, and 64% of that is design. Split the runs at 27 August and the median design pass went from **41 to 67 minutes**. Design moved to a stronger AI that day, but whether that is why it slowed down has not been measured separately.
+
+**Some things are not fixed yet.** Two that the September check-up found and that are waiting their turn:
+
+- **Re-run it from the same folder and it treats last time's tab as its own, wipes it and writes afresh.** If someone recorded test results in that tab in between, those can go with it. It happens because "is this our tab?" is decided by a marker file on my machine, not by the sheet.
+- **It leaves a file saying "every inspection passed," but no code ever checks it.** Resume from a later stage and stage 5's inspections can be skipped. The documentation said "no marker means the stage runs again"; the code was not keeping that promise.
+
 ## Things that were rejected
 
 The version history is largely **a list of things that looked like progress and were not.** **More was removed than added.**
@@ -124,7 +151,7 @@ The version history is largely **a list of things that looked like progress and 
 
 ## The detailed record starts here
 
-Point it at a spec document and it fills a live spreadsheet tab with a test-case set. Start to finish, one invocation, unattended.
+Point it at a spec document and it fills a live spreadsheet tab with a test-case set. After a preparation step that fetches the source (S0), one invocation runs it to the end, unattended.
 
 The interesting part isn't "an LLM writes test cases." Anyone can do that badly. The interesting part is **the split**.
 
@@ -152,9 +179,11 @@ The fix wasn't better prompting. It was **confiscation.**
 | [**S2**](/en/built/tc-team/s2/index.md) | design isolation gate + source slicing | code |
 | [**S3**](/en/built/tc-team/s3/index.md) | build skeleton → fan out for prose → merge | code + LLM |
 | [**S4**](/en/built/tc-team/s4/index.md) | adversarial review, verdicts, coverage ledger | LLM |
-| [**S5**](/en/built/tc-team/s5/index.md) | apply fixes + four gates | code |
+| [**S5**](/en/built/tc-team/s5/index.md) | apply fixes + four gates | code (LLM only for stitching uncovered rules) |
 | [**S6**](/en/built/tc-team/s6/index.md) | write to the live sheet | code |
-| [**S7**](/en/built/tc-team/s7/index.md) | finalise, dashboard, notify | code |
+| [**S7**](/en/built/tc-team/s7/index.md) | finalise, confidence, dashboard | code |
+
+(As of September 2026) the kickoff notice goes out once when S1 starts, not at S7, and the run lock is released by the chain itself on exit.
 
 S1 through S7 are written up individually. Each stage cost something to learn, and a table row doesn't hold it.
 
@@ -167,16 +196,20 @@ This is what defines the tool's character. **It does not "carry on doing its bes
 | Gate | Stage | On failure |
 |---|---|---|
 | input self-check | S0 | one refetch → still bad, **refuse to start** |
-| design gate | S2 | design defect → loop back to S1 |
+| design gate | S2 | design defect → **halt**; a person fixes the design and resumes |
 | merge verification | S3 | re-run only the mismatched chunk |
-| apply before-mismatch | S5 | **rejection is correct behaviour** — regenerate the fix plan |
-| content gate | S5 | block vague phrasing and unsupported deferrals |
-| duplicate gate | S5 | force a merge when identical cases remain |
-| traceability | S5 | uncovered rule → stitch in a row, reapply |
+| content gate | S3 · S5 | vague phrasing, unsupported deferrals — up to three automatic correction rounds at S3, halt if they stop shrinking · halt straight away at S5 |
+| apply before-mismatch | S5 | **rejection is correct behaviour** — the apply fails and the run halts (no automatic regeneration of the plan) |
+| duplicate gate | S5 | halt when cases with an identical reproduction step (column F) remain |
+| traceability | S5 | uncovered rule → one LLM stitching round → still uncovered, halt |
+
+(As of September 2026, unattended chain.) Early on, a design defect looped back to S1; that round trip now survives only in the fallback procedure where a person drives the stages by hand.
 
 The before-mismatch gate matters most. Before applying a fix it asks **"is the place I'm about to edit still what I read?"** and refuses if not. A mismatch means a human touched the sheet or an earlier stage shifted — and pushing through would overwrite the wrong row.
 
-There is exactly one place the run halts: an integrity violation. Everything else completes unattended.
+Halts that call for a person are collapsed into one kind — an integrity violation, exit 14 — and automatic retries run before it. The other exits are expired auth (10), retry limit (13), quota (15) and anything else (1). Everything else completes unattended.
+
+How often it actually halts was measured by going back through the logs in the 24 September 2026 audit: **13 of 38 full-chain runs (34%) stopped at least once and were resumed.** The same audit put the median full run at 96 minutes, 64% of it in S1.
 
 ## Review is adversarial, not collaborative
 
@@ -188,13 +221,15 @@ The same stage builds the coverage ledger: each rule extracted from the spec is 
 
 ## The sheet is touched exactly once
 
-S6 contacts the live spreadsheet **one time**, and decides by ownership marker.
+S6 writes the test-case body to the live spreadsheet **one time** (S7 then adds confidence notes and a panel to the same tab), and decides by ownership marker.
 
 - Our tab → wipe and rewrite in full (idempotent)
-- Somebody else's tab → don't touch it; create a `_v2` alongside
+- Somebody else's tab → don't touch it; create a `_v2`–`_v9` alongside
 - Every other tab → off limits, unconditionally
 
-Run it five times and the result is identical, and it never overwrites another person's work. For automation that runs next to humans, those two properties come before everything else.
+Run it five times and the result is identical, and it never overwrites a tab somebody else made. For automation that runs next to humans, those two properties come before everything else.
+
+⚠ (24 September 2026 audit, not yet fixed) The ownership marker lives in a **local file**, not in the sheet, so a re-run from the same folder always rules the tab "ours." Anything a person wrote into that tab in between can be wiped with it.
 
 ## Two lessons that cost something
 

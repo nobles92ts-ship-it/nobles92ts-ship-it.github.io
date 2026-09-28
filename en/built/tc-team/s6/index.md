@@ -1,17 +1,19 @@
 # S6 · Writing the sheet
 
-> The live sheet gets touched exactly once and read back afterwards. The questions left behind have standards too.
+> The finished case body goes into the live sheet once and is read back afterwards. The "is this tab ours?" check still has one unfixed hole.
 
-- Headline number: touched once
+- Headline number: body written once
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s6/
 - Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
 
 ---
 
-**This is the first and last time the real spreadsheet gets touched. And after writing, it reads it back.**
+**This stage copies the finished test cases into a real spreadsheet tab. The case body is written here exactly once, and then read back and compared.**
 
-## Why exactly once
+A test case is one line of a checklist: "do this, and that should happen." The earlier stages build the whole checklist; this one copies it into a single tab of a **Google Sheet** — an online table that many people look at together.
+
+## The case body is written exactly once
 
 The five stages before this **all run on files on my own machine.** The real sheet is never touched.
 
@@ -23,21 +25,40 @@ Three reasons.
 | **Half-finished states should not be visible** | Someone seeing work in progress **mistakes an incomplete thing for the result** |
 | **Mistakes stay in one place** | One place that writes means one place an accident can happen |
 
-## An ownership marker buys idempotence
+"Once" covers **the case body** only. The very next stage comes back into the same tab and **adds** a few things on top. It never rewrites the body text.
 
-When a tab is created, **a marker saying we made it** goes in alongside.
+| Who | What it puts in this tab |
+|---|---|
+| **This stage (S6)** | The case body — categories, reproduction steps, platform, remarks |
+| **The next stage (S7)** | A colour and a note (the score) on each case number, an info block on the right, a column of questions for the planners |
+
+Since September 2026 each case row has **eleven columns**. A **link column** was added then — a home for bug numbers and reference-image addresses, which this stage leaves empty. The column that says "normal / negative / edge" is **hidden**, because it isn't something a person needs to read; the value stays, and later stages compute with it.
+
+## Whether a tab is "ours" is decided by a note on my machine
+
+When a tab is created, **a note saying "we made this tab"** is left behind. That note is not in the sheet. It is **a small file in the working folder on my machine.**
 
 So a re-run **splits three ways.**
 
 | Situation | What happens |
 |---|---|
 | The tab is absent | Create it |
-| Present **with our marker** | **Overwrite** — it is ours |
-| Present **without our marker** | **Do not touch** — someone else made it |
+| Present, **and our note is in the working folder** | **Wipe and rewrite** — it is ours |
+| Present, **with no note of ours** | **Leave it alone** — make a new tab with `_v2`, `_v3` … `_v9` on the end |
 
 The third row matters. **Overwriting a tab someone made by hand destroys their work.** And **that cannot be undone.**
 
-With no marker, **the default is "unknown, so leave it alone."**
+With no note, **the default is "unknown, so leave it alone."**
+
+## A hole not yet fixed: "ours" switches on too easily
+
+The second row has a hole in it. Whether a tab is ours is not decided by **looking inside the tab** — only by **whether the note file exists in the working folder.** So a re-run from the same folder **always** calls the tab ours, deletes it, and writes it again.
+
+The trouble is that in the meantime **a person may have typed test results into that tab.** Deleting the tab deletes those too.
+
+A September 2026 audit found **six** of these rewrites. Whether any real results were lost in them **has not been checked yet.** The fix — compare run numbers properly, or refuse to write when the result columns already hold values — is written up in the audit report but is not in the code yet.
+
+> The promise "never overwrite other people's work" currently holds only for **tabs somebody else made.** **What a person wrote inside one of our tabs** is not protected yet.
 
 ## Write, then read it back
 
@@ -49,52 +70,23 @@ One more thing gets checked: **errors the sheet produced while evaluating what i
 
 Those are not problems with what was sent. **The sheet takes the values and computes**, so **it was fine leaving and broken on arrival.** Only a read-back sees it.
 
-## And the sheet holds more than cases
-
-Two things get **their own columns.**
-
-| What | Why separate |
-|---|---|
-| **Questions for the person who wrote the spec** | Places where no case can be written without an answer |
-| **Test data to request** | Places that cannot be run without the props |
-
-Mixing these into the cases makes **who has to do what invisible.** In their own columns, **the spec author reads their column and the data owner reads theirs.**
-
-## And the questions have quality standards too
-
-The best part of this stage.
-
-Let questions be free-form and you get this:
-
-**A bad question:** *Please confirm the upgrade behaviour.*
-
-The reader **does not know what to answer.** And even when an answer comes, **you still cannot write the case.**
-
-**A good question:** *On failure at +10, does it drop to +9 or stay? Neither is stated in section 3.2 of the spec.*
-
-The difference:
-
-| | The bad one | The good one |
-|---|---|---|
-| Options | None | **Answerable by picking one of two** |
-| Where the problem is | Unknown | **Points at the location in the spec** |
-| When the answer arrives | **You have to ask again** | **You can write the case immediately** |
-
-So the question text carries rules too. **Questions that are easy to answer get answered sooner.** And cases only fill once the answers arrive.
+The column of questions for the planners, and the standards those questions must meet, belong to the next stage, so they now live on [S7 · Finalize](/en/built/tc-team/s7/index.md).
 
 ## The detailed record starts here
 
-This is the first and last time the live spreadsheet is touched. Every earlier stage runs on local files.
+This is where the TC body is written to the live spreadsheet, and it is the only time the body is written (as of September 2026, S7 comes back afterwards to add confidence colours and notes, the right-hand panel and the planning-question column, but leaves the body alone). Every earlier stage runs on local files.
 
 ## Idempotence is bought with an ownership marker
 
-Creating a tab leaves a marker saying we made it. So a re-run branches three ways.
+Creating a tab leaves a marker saying we made it. The marker is not in the sheet — it is `owner_marker.json` in the local working folder (as of September 2026). So a re-run branches three ways.
 
 - No tab → create one
 - **Ours → clear and rewrite** — run it any number of times, same result
-- Somebody else's tab → don't touch it; create a new one with a suffix
+- Somebody else's tab → don't touch it; create a new one with a suffix (`_v2`–`_v9`)
 
 And **under no circumstances is any tab other than the target touched.** A live sheet is a document holding other people's work alongside mine. One wrong deletion there has no undo.
+
+**The second branch has a defect, though (unfixed as of September 2026).** The run id is read out of the marker and then compared against that same marker, so as long as the file exists the comparison can only come out true. A re-run in the same folder therefore always treats the tab as owned, deletes it, and recreates it. Any manual QA results someone entered in between go with it. The 24 September 2026 audit counted six such rewrites; whether anything was actually lost was not established. The remedy — a real run-id comparison, or refusing when the result columns already carry progress values — exists only in the audit document, not yet in code.
 
 ## Write, then read it back
 
@@ -104,24 +96,4 @@ It doesn't finish on write. It re-dumps and confirms a zero diff, then separatel
 
 Reading it back costs one call. Skipping that one call means handing over a broken tab believing it is finished.
 
-## The questions left behind have standards too
-
-The sheet doesn't only carry cases. **Things to ask the spec author** and **test data to request** get their own columns. And those sentences have rules.
-
-**Write them as questions.** "Value undecided" gets read by nobody. It has to be a sentence the recipient can answer as written.
-
-**When asking for a number, supply a candidate.**
-
-<div class="ex">
-<div class="x"><b>BAD</b><p>Maximum inventory slot count undecided</p></div>
-<div class="o"><b>GOOD</b><p>How many inventory slots is the maximum? Is it 500?</p></div>
-</div>
-
-An open question doesn't get answered. Attach a value — even a guess — and it becomes **answerable with a yes or no**, and that is when answers start arriving. Candidates come from the data tables, a similar system, or an existing case, and **a guess is written so it reads as a guess.**
-
-Two prohibitions go with it.
-
-- **Our own work defects never go in this column.** Turning "I didn't analyse this properly" into a question for the spec author is the worst version of it.
-- **Never ask something already answered.** Ask about what's written in the spec and, from then on, nobody looks at this column.
-
-The second one matters most. The value of a question list is not its length but its **hit rate.** One "that's in the document" and the credibility of the whole list is gone.
+The planning-question column and the rules for its sentences are written by S7 (FINAL-5), not S6, so that section moved to [S7 · Finalize](/en/built/tc-team/s7/index.md) (as of September 2026).

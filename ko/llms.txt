@@ -30,9 +30,9 @@
 - [tc-team · S1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/index.md): 기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.
 - [tc-team · S2 · 격리 게이트](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/index.md): 전개하기 전에 "이 설계가 전개 가능한가"를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.
 - [tc-team · S3 · 문장화](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/index.md): 구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.
-- [tc-team · S4 · 적대 리뷰](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/index.md): 1차와 2차가 서로의 영역을 보지 않습니다. 그리고 같은 지적이 몇 번째인지를 셉니다.
+- [tc-team · S4 · 적대 리뷰](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/index.md): 구조·품질·원문 대조, 세 시선이 서로의 영역을 안 보고 동시에 읽습니다. 판정자 하나가 그 지적을 걸러 수정 계획을 씁니다.
 - [tc-team · S5 · 적용](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s5/index.md): 수정 계획을 적용하고 게이트 넷을 통과시킵니다. 거부가 정상 동작인 단계입니다.
-- [tc-team · S6 · 시트 기록](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/index.md): 라이브 시트를 딱 한 번 만지고, 쓴 뒤에 다시 읽어 대조합니다. 남기는 질문에도 기준이 있습니다.
+- [tc-team · S6 · 시트 기록](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/index.md): 다 만든 케이스 본문을 라이브 시트에 한 번 쓰고, 다시 읽어 대조합니다. 「우리 탭」 판정에는 아직 못 고친 구멍이 하나 있습니다.
 - [tc-team · S7 · 완료처리](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s7/index.md): 절차는 규칙 문서가 소유하고 실행기는 그걸 읽어 돌립니다. 여기서는 실패해도 멈추지 않습니다.
 - [Loki](https://nobles92ts-ship-it.github.io/ko/built/loki/index.md): 내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.
 - [Loki · 구조](https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/index.md): 플랫폼도 두뇌도 갈아 끼우는데 코어는 하나입니다. 그 사이에 사람이 지키는 선이 있습니다.
