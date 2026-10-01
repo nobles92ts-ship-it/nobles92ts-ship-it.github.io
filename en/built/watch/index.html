@@ -275,7 +275,7 @@
 </tr>
 <tr>
 <td>longer</td>
-<td>up to the cap — 80 by default, and 100 is the ceiling even if you raise it</td>
+<td>100 — that’s the ceiling. <code>--max-frames</code> can lower it but never raise it</td>
 </tr>
 </tbody>
 </table>
@@ -325,7 +325,7 @@
 <ul>
 <li><strong>The frame interval is fixed.</strong> A screen that holds still for a long time costs the same number of frames, and a split-second action can fall between two of them. Switching to ffmpeg’s scene-change detection would fix that; it hasn’t been done. ⚠ <strong>This page itself said for a while that frames were pulled “at a rate matched to how fast the content moves”.</strong> Opening the code (<code>frames.py</code>) showed a fixed interval set by length, and the page was corrected on 2026-10-01.</li>
 <li><strong>Only English captions are requested.</strong> If you mostly watch Korean videos, change <code>--sub-langs</code> first.</li>
-<li><strong>The instructions and the code disagree on a number.</strong> The instructions say a video over ten minutes gets 100 frames; the entry script’s default cap is 80. One of them has to change.</li>
+<li><strong>The instructions and the code disagreed on a number — fixed on 2026-10-01.</strong> The instructions said a video over ten minutes gets 100 frames, but the entry script’s default cap was 80, so 80 is what actually came out (reproduced with an eleven-minute test video). The mismatch was inherited from the original repo, which later dropped its fixed default of 80 as well, so the fix goes the same way: the code now defaults to 100. Only two cases change, from 80 to 100 frames — a whole video over ten minutes, and a named range longer than one minute. A whole video of ten minutes or less is unaffected.</li>
 </ul>
 </div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/built/watch/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
 const none = "nothing found";

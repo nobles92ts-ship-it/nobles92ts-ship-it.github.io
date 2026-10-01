@@ -162,7 +162,7 @@ Measure the length first (`ffprobe`). Then decide how many frames to take, and g
 | up to 1 minute | 40 |
 | up to 3 minutes | 60 |
 | up to 10 minutes | 80 |
-| longer | up to the cap — 80 by default, and 100 is the ceiling even if you raise it |
+| longer | 100 — that's the ceiling. `--max-frames` can lower it but never raise it |
 
 In every case the rate never goes above two frames per second. Extraction is one command: `ffmpeg -i video -vf fps=<rate>,scale=512:-2 -frames:v <cap> -q:v 4 frame_%04d.jpg`. Frames are 512 pixels wide by default; go to 1024 only when small on-screen text has to be read. Pass a start and end time (`--start`, `--end`) and a denser table applies inside that range. Where the cost comes from has its own page: [Frame budget](/en/built/watch/budget/index.md).
 
@@ -200,4 +200,4 @@ The skill that pulls out game-design specs has five fields to fill for every tec
 
 - **The frame interval is fixed.** A screen that holds still for a long time costs the same number of frames, and a split-second action can fall between two of them. Switching to ffmpeg's scene-change detection would fix that; it hasn't been done. ⚠ **This page itself said for a while that frames were pulled "at a rate matched to how fast the content moves".** Opening the code (`frames.py`) showed a fixed interval set by length, and the page was corrected on 2026-10-01.
 - **Only English captions are requested.** If you mostly watch Korean videos, change `--sub-langs` first.
-- **The instructions and the code disagree on a number.** The instructions say a video over ten minutes gets 100 frames; the entry script's default cap is 80. One of them has to change.
+- **The instructions and the code disagreed on a number — fixed on 2026-10-01.** The instructions said a video over ten minutes gets 100 frames, but the entry script's default cap was 80, so 80 is what actually came out (reproduced with an eleven-minute test video). The mismatch was inherited from the original repo, which later dropped its fixed default of 80 as well, so the fix goes the same way: the code now defaults to 100. Only two cases change, from 80 to 100 frames — a whole video over ten minutes, and a named range longer than one minute. A whole video of ten minutes or less is unaffected.
