@@ -49,7 +49,7 @@ A screenshot here is a single still taken from the video — a frame. The AI ope
 Give it an address and it:
 
 1. Fetches the video
-2. Pulls frames — **how many is set by the video's length, where they go is set by how much the picture changes.** Every hard cut gets one, busy stretches get more, still stretches fewer, and never more than 100 however long it runs
+2. Pulls frames — **how many is set by the video's length; where they go is set by how far the picture has moved on since the last frame taken.** Every hard cut gets one, a screen that changes slowly — text typed a letter at a time — gets one once enough has built up, still stretches get few, and never more than 100 however long it runs
 3. Gets **a transcript** from the captions — and if there are none, **transcribes the audio**
 4. **Lines frames and transcript up by time** and hands them over — the AI opens the frames one by one and answers
 
@@ -166,33 +166,43 @@ Measure the length first (`ffprobe`). Then decide how many frames to take. Witho
 
 In every case the rate never goes above two frames per second. Frames are 512 pixels wide by default; go to 1024 only when small on-screen text has to be read. Pass a start and end time (`--start`, `--end`) and a denser table applies inside that range. Where the cost comes from has its own page: [Frame budget](/en/built/watch/budget/index.md).
 
-## Building it ③ — where the frames go is decided by how much the picture changes
+## Building it ③ — where the frames go is decided by how far the picture has moved on since the last frame taken
 
 The first version divided the count by the length and pulled frames **at an even interval**. That spent as many frames on a frozen slide as on a fight, and a split-second action could fall between two of them. Now the video is read twice.
 
-1. **Measure change.** Take one sample every 0.5 seconds, shrink it to 160 pixels wide, and measure how different it is from the sample before, using ffmpeg's scene score (0 to 1): `fps=2:round=up,scale=160:-2,select='gte(scene\,0)',metadata=print`.
-2. **Divide the budget.** A score of 0.3 or more is a hard cut — the whole scene changed — and is always kept, but only up to a third of the budget. The rest is spread in proportion to "this sample's score + the average score". Adding the average is what keeps a still stretch from getting zero frames.
-3. **Extract.** Read the video again with the same filter and write only the chosen sample numbers as 512-pixel JPEGs: `select='eq(n\,12)+eq(n\,57)+…'`. Frames taken at a cut are marked `scene cut` in the list.
+1. **Summarise.** Take one sample every 0.5 seconds, cut the picture into a 32 × 18 grid, and keep only each block's average brightness — 576 numbers per sample. ffmpeg does the shrinking; Python only handles the numbers: `fps=2:round=up,…,scale=32:18:flags=area,format=gray`. The same read also returns ffmpeg's scene score, which is used for one thing only: finding hard cuts.
+2. **Pick.** Walk forward, and take a sample once at least K blocks clearly differ **from the last frame taken**. "Clearly" means at least 3 brightness levels, and at least three times how much that block normally wobbles over two seconds — so a webcam corner that never keeps still only counts when something big happens there. K is set automatically to the smallest value whose picks fit three quarters of the budget. Hard cuts (scene score 0.3+) are always taken, and frames are kept at least a quarter of the average spacing apart.
+3. **Fill the gaps.** The quarter of the budget held back goes into the middle of the longest gaps, one at a time, so still stretches never get zero frames.
+4. **Extract.** Read the video again with the same filter and write only the chosen sample numbers as 512-pixel JPEGs: `select='eq(n\,12)+eq(n\,57)+…'`. Frames taken at a cut are marked `scene cut` in the list.
 
-⚠ **Why not compare each frame with the very next one — because then game footage registers nothing.** The original repo compares neighbouring frames and keeps only the cuts. Measured that way, four videos looked like this.
+⚠ **ffmpeg's scene score can't measure how much changed — steady change scores zero.** It's the smaller of "this change" and "this change minus the previous change", so only sudden jumps like cuts come out large. On a test clip with known content (70 seconds of still screen, typing, a slow pan and fast motion stitched together):
 
-| Video | Cuts found comparing neighbouring frames (score 0.2+) |
-|---|---|
-| 16-minute screen-recorded talk | 2 |
-| 9-minute edited video | 92 |
-| 24-second game short | 1 |
-| 60-second raw gameplay recording | **0** |
-
-In the middle of an action scene, gameplay still scores close to zero across 1/30 of a second. A cuts-only picker would have fallen back to the fixed interval on three of the four. So samples 0.5 seconds apart are compared, and the budget follows how much changed, not just where it cut. On the same four videos:
-
-| Video | Frames landing in the top-10% change samples (fixed → now) | Hard cuts kept (fixed → now) |
+| Stretch | Scene score | Actual pixel difference (over 0.5 s) |
 |---|---|---|
-| Screen-recorded talk | 7% → 40% | no cuts |
-| Edited video | 12% → 56% | 10 → 45 of 115 |
-| Game short | 4% → 21% | no cuts |
-| Raw gameplay | 10% → 20% | no cuts |
+| Still | 0.000 | 0.002 |
+| Typing | **0.000** | 0.023 |
+| Slow pan | 0.012 | 25.5 |
+| Fast motion | **0.004** | 16.8 |
 
-It costs two things. The widest gap between frames can grow to 2.2 times the fixed interval — that's the still stretches being skimped on purpose. And reading the video twice roughly doubles the time (16-minute 720p video: 7.6s → 15.5s). If the scene score can't be measured, it falls back to a fixed interval and the report says so; passing `--fps` asks for a fixed interval on purpose.
+This page's first version (the same day) spread frames in proportion to that score, and so treated typing exactly like a frozen screen (0.80 frames a second against 0.73). Now the score only finds cuts.
+
+⚠ **Measuring the whole frame doesn't work either.** A few typed characters disappear into a whole-frame average — at four times the resolution the typing signal stayed at 0.023 while only the noise grew. And real lectures are almost never still: the webcam face in the bottom-right corner moves the whole time someone talks. So the picture is cut into blocks, and each block's normal wobble is measured on its own.
+
+⚠ **Compare with the last frame taken, not with the previous sample.** Change that creeps in is tiny against the sample half a second ago but builds up against the last frame taken. In a test where one block brightened by a single level every 0.5 seconds — below the 3-level bar every time — frames were still taken as the change built up.
+
+The values were chosen on five videos and checked on three held back. The measure is the average, over every moment, of how different the picture is from the last frame taken — what you'd have missed; lower means the video was followed more closely. It was taken two ways: changed blocks, and pixel difference.
+
+| Video | Missed blocks (first version → now) | Missed pixels (first version → now) |
+|---|---|---|
+| 16-min webcam screen-recorded lecture | 17.1 → 14.7 | 2.89 → 2.66 |
+| 9-min edited video (cuts 45 → 53) | 76.9 → 64.6 | 56.0 → 35.0 |
+| 24-s game short | 7.2 → 4.2 | 2.83 → 1.92 |
+| 60-s raw gameplay | 22.1 → 19.9 | 8.38 → 7.91 |
+| 32-min conference talk (held back) | 15.6 → 10.5 | 5.43 → 3.47 |
+| 7-min AI tutorial (held back) | 18.7 → 17.8 | 4.05 → 3.47 |
+| 19-min bilingual talk (held back) | 33.3 → 32.7 | 7.75 → 7.01 |
+
+Both measures improved on all seven real videos. On a typing-only test clip, the most visible characters typed between two frames went from 5 to 2. It costs two things: the widest gap can reach 2.5 times the average spacing (first version: 2.2), and reading the video twice takes roughly twice as long as a fixed interval. If the analysis fails, it falls back to a fixed interval and the report says so; passing `--fps` asks for a fixed interval on purpose.
 
 ## Building it ④ — look for free captions first; spend money only when there are none
 
@@ -216,10 +226,11 @@ YouTube Summary raised its quality with type-specific question sheets: ask a coo
 
 The skill that pulls out game-design specs has five fields to fill for every technique: its name, what it is, the timestamp it rests on, how to implement it, and a confidence level. The confidence level is one of three — seen in the video / estimated from typical values because no number appeared / reference brought in from outside the video. Those fields guard a single rule: **nothing goes in as if the video showed it when it didn't.**
 
-## Traps when building it — six, and one of them is wrong without an error
+## Traps when building it — seven, and two of them are wrong without an error
 
 | Symptom | Cause and fix |
 |---|---|
+| ⚠ **A screen that changes slowly or steadily is treated as still** (no error) | ffmpeg's scene score was being used as "amount of change". It drops to zero when the change is steady (the table in Building it ③ — typing scored 0.000). Use it for cuts only, and measure change by comparing block brightnesses with the last frame taken |
 | ⚠ **The picture is later than the timestamp on it** (no error) | by default ffmpeg's `fps` filter keeps the **last** frame of each slot. On a 9.4-minute video every frame showed the picture exactly 3.5 seconds (half a slot) after its label. With `fps=…:round=up` the frame is the one at the labelled time — checked by pulling that moment separately and comparing (PSNR): identical |
 | ⚠ **Reading the metadata first and downloading from it sometimes gets a 403** | YouTube media URLs reused through `--load-info-json` were refused in 2 of 3 tries. The second download goes back to the URL — a few seconds more, and it worked every time |
 | Calling `python3` does nothing | on Windows `python3` is a Store shortcut. Call `python` |
@@ -227,11 +238,12 @@ The skill that pulls out game-design specs has five fields to fill for every tec
 | yt-dlp warns about a JS runtime | deno isn't installed. It's only a warning; things still work |
 | The video downloaded but yt-dlp returned a failure code | one blocked caption variant (429) can make it exit non-zero. Judge by **whether the video file exists**, not by the exit code |
 
-## Fixed, and not done — the thresholds were fitted on four videos only
+## Fixed, and not done — when big motion and slow change share a video, the motion wins
 
-- **The frame interval was fixed — switched to scene-change based on 2026-10-01** (Building it ③). This page itself said for a while that frames were pulled "at a rate matched to how fast the content moves". Opening the code (`frames.py`) showed a fixed interval, and on the same day the sentence was corrected, the code was made to actually work that way. Along the way, **the fixed interval's timestamps turned out to be half a slot late**, and that was fixed too (first row of the traps table). Until then, every timestamp /watch put in an answer was half a slot ahead of the actual picture — a little over three seconds on a ten-minute video.
-- **The thresholds (cut at 0.3 · cuts up to a third · add the average) were fitted on four videos.** Other kinds — animation, shorts with very rapid cutting — need measuring again.
-- **Near-duplicate frames aren't filtered out.** The original repo compares tiny thumbnails and drops frames that are almost the same; here, spreading frames by change does that job instead. It's a deliberate choice to keep at least some coverage of still stretches.
-- **Slowly changing pictures may not register as "busy".** A slow camera pan, or text appearing one letter at a time, changes little in half a second. That hasn't been measured yet.
+- **The frame interval was fixed — switched on 2026-10-01 to "how far the picture has moved on since the last frame"** (Building it ③). This page itself said for a while that frames were pulled "at a rate matched to how fast the content moves". Opening the code (`frames.py`) showed a fixed interval, and on the same day the sentence was corrected, the code was made to actually work that way. Along the way, **the fixed interval's timestamps turned out to be half a slot late**, and that was fixed too (traps table). Until then, every timestamp /watch put in an answer was half a slot ahead of the actual picture — a little over three seconds on a ten-minute video.
+- **Slowly changing screens were treated as still — fixed again the same day.** This page first guessed the cause was "too little change in half a second". Measured, the real cause was the scene score's formula, and it was missing steady fast motion too. The guess and the cause were different things.
+- **When big motion shares the video, slow change loses out.** Put fifteen seconds of a textured screen sliding past in the same video as some typing, and the sliding part registers as "big change" every half second and takes the budget first. In that test clip the most characters typed between two frames actually went from 4 to 6. Telling "the same content sliding past" from "new content appearing" needs motion compensation — working out how far the picture shifted — and that hasn't been done. A one-second floor between frames was also tried, but it made a game short whose action changes within a second 1.35 times worse, so it was dropped.
+- **The thresholds (3 brightness levels · 3× normal wobble · a quarter kept for gaps · a quarter of the average spacing between frames) were chosen on five videos and checked on three.** The gap share was picked from a fifth, a quarter and 30%, and for that choice the held-back videos' gap figures were looked at too (30% made one held-back video worse than the first version, so it was dropped). Other kinds of video, such as animation, need measuring again.
+- **Near-duplicate frames aren't filtered out separately.** Frames are only taken when the picture has moved on from the last one, so most never appear in the first place; a frame added to fill a gap can still look almost the same as its neighbour. It's a deliberate choice to keep at least some coverage of still stretches.
 - **Only English captions were being requested — fixed on 2026-10-01.** A Korean video came back with English dub or translation captions (reproduced: a Korean video opening with "Okay, in the last video…"). Now the video's language is read first and only that one track is fetched. After the fix, the same video produced a Korean transcript (`ko-orig`), and an English video still got its human-written `en-US` captions. Fetching a single track also means fewer caption requests getting blocked (429).
 - **The instructions and the code disagreed on a number — fixed on 2026-10-01.** The instructions said a video over ten minutes gets 100 frames, but the entry script's default cap was 80, so 80 is what actually came out (reproduced with an eleven-minute test video). The mismatch was inherited from the original repo, which later dropped its fixed default of 80 as well, so the fix goes the same way: the code now defaults to 100. Only two cases change, from 80 to 100 frames — a whole video over ten minutes, and a named range longer than one minute. A whole video of ten minutes or less is unaffected.
