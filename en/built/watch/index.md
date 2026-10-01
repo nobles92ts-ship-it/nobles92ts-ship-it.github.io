@@ -42,14 +42,14 @@ It also names two limits of its own. **It doesn't look at the screen**, so chart
 | Where it runs | that site's servers | **my own machine** — the video file never leaves it |
 | What comes back | a summary | answers to your question, and **a spec** |
 
-A screenshot here is a single still taken from the video at a fixed interval — a frame. The AI opens each one and looks at it.
+A screenshot here is a single still taken from the video — a frame. The AI opens each one and looks at it.
 
 ## How it runs
 
 Give it an address and it:
 
 1. Fetches the video
-2. Pulls frames **at an even interval set by the video's length** — dense for a short clip, sparse for a long one, and never more than 100 however long it runs
+2. Pulls frames — **how many is set by the video's length, where they go is set by how much the picture changes.** Every hard cut gets one, busy stretches get more, still stretches fewer, and never more than 100 however long it runs
 3. Gets **a transcript** from the captions — and if there are none, **transcribes the audio**
 4. **Lines frames and transcript up by time** and hands them over — the AI opens the frames one by one and answers
 
@@ -102,7 +102,7 @@ The step-by-step order, the numbers and the traps are in the "Building it" secti
 
 ## The detailed record starts here
 
-Give it a URL and it fetches the video, samples frames at an interval set by the video's length, pulls the transcript from captions — or transcribes it directly when there are none — and hands the whole thing over as one readable object.
+Give it a URL and it fetches the video, spreads a length-based number of frames over the places where the picture changes, pulls the transcript from captions — or transcribes it directly when there are none — and hands the whole thing over as one readable object.
 
 ## The first version was useless
 
@@ -154,7 +154,7 @@ The preflight runs every time, but **when everything is in place it prints nothi
 
 ## Building it ② — decide the number of frames from the length first
 
-Measure the length first (`ffprobe`). Then decide how many frames to take, and get the interval by dividing that count by the length. Pick the interval first instead and a long video produces frames without end.
+Measure the length first (`ffprobe`). Then decide how many frames to take. Without a fixed count up front, a long video produces frames — and cost — without end.
 
 | Video length (whole-video scan) | Frames taken |
 |---|---|
@@ -164,9 +164,37 @@ Measure the length first (`ffprobe`). Then decide how many frames to take, and g
 | up to 10 minutes | 80 |
 | longer | 100 — that's the ceiling. `--max-frames` can lower it but never raise it |
 
-In every case the rate never goes above two frames per second. Extraction is one command: `ffmpeg -i video -vf fps=<rate>,scale=512:-2 -frames:v <cap> -q:v 4 frame_%04d.jpg`. Frames are 512 pixels wide by default; go to 1024 only when small on-screen text has to be read. Pass a start and end time (`--start`, `--end`) and a denser table applies inside that range. Where the cost comes from has its own page: [Frame budget](/en/built/watch/budget/index.md).
+In every case the rate never goes above two frames per second. Frames are 512 pixels wide by default; go to 1024 only when small on-screen text has to be read. Pass a start and end time (`--start`, `--end`) and a denser table applies inside that range. Where the cost comes from has its own page: [Frame budget](/en/built/watch/budget/index.md).
 
-## Building it ③ — look for free captions first; spend money only when there are none
+## Building it ③ — where the frames go is decided by how much the picture changes
+
+The first version divided the count by the length and pulled frames **at an even interval**. That spent as many frames on a frozen slide as on a fight, and a split-second action could fall between two of them. Now the video is read twice.
+
+1. **Measure change.** Take one sample every 0.5 seconds, shrink it to 160 pixels wide, and measure how different it is from the sample before, using ffmpeg's scene score (0 to 1): `fps=2:round=up,scale=160:-2,select='gte(scene\,0)',metadata=print`.
+2. **Divide the budget.** A score of 0.3 or more is a hard cut — the whole scene changed — and is always kept, but only up to a third of the budget. The rest is spread in proportion to "this sample's score + the average score". Adding the average is what keeps a still stretch from getting zero frames.
+3. **Extract.** Read the video again with the same filter and write only the chosen sample numbers as 512-pixel JPEGs: `select='eq(n\,12)+eq(n\,57)+…'`. Frames taken at a cut are marked `scene cut` in the list.
+
+⚠ **Why not compare each frame with the very next one — because then game footage registers nothing.** The original repo compares neighbouring frames and keeps only the cuts. Measured that way, four videos looked like this.
+
+| Video | Cuts found comparing neighbouring frames (score 0.2+) |
+|---|---|
+| 16-minute screen-recorded talk | 2 |
+| 9-minute edited video | 92 |
+| 24-second game short | 1 |
+| 60-second raw gameplay recording | **0** |
+
+In the middle of an action scene, gameplay still scores close to zero across 1/30 of a second. A cuts-only picker would have fallen back to the fixed interval on three of the four. So samples 0.5 seconds apart are compared, and the budget follows how much changed, not just where it cut. On the same four videos:
+
+| Video | Frames landing in the top-10% change samples (fixed → now) | Hard cuts kept (fixed → now) |
+|---|---|---|
+| Screen-recorded talk | 7% → 40% | no cuts |
+| Edited video | 12% → 56% | 10 → 45 of 115 |
+| Game short | 4% → 21% | no cuts |
+| Raw gameplay | 10% → 20% | no cuts |
+
+It costs two things. The widest gap between frames can grow to 2.2 times the fixed interval — that's the still stretches being skimped on purpose. And reading the video twice roughly doubles the time (16-minute 720p video: 7.6s → 15.5s). If the scene score can't be measured, it falls back to a fixed interval and the report says so; passing `--fps` asks for a fixed interval on purpose.
+
+## Building it ④ — look for free captions first; spend money only when there are none
 
 - **Fetch captions in two passes.** First read the metadata without downloading the video (`--skip-download --write-info-json`) to learn **what language the video is spoken in** (`language`) and which caption tracks exist. Pick one track in that language — human-written captions first, then the auto-captions transcribed from the original speech (the ones ending in `-orig`, like `ko-orig`), then any other track in that language. Then download the video and **that one track only** (`--sub-langs "-all,^ko\-orig$"` or similar). Everything is converted to VTT (a text file alternating timestamps and lines).
 - ⚠ **There can be more than one `-orig`.** When YouTube adds automatic dubbing, every dub language gets its own `-orig` track — one Korean video had `en-US-orig`, `id-orig` and `ko-orig`. Pick "any `-orig`" and alphabetical order hands you the transcript of the English dub. So the language is read from the video's `language` field, not from track names.
@@ -174,7 +202,7 @@ In every case the rate never goes above two frames per second. Extraction is one
 - **No captions, or a local file?** Strip the audio (`ffmpeg -vn -ac 1 -ar 16000 -b:a 64k` — mono, 16kHz, about 0.5MB a minute) and send it to Groq's `whisper-large-v3` (the default — cheaper and faster) or OpenAI's `whisper-1`. A single upload can be at most 25MB.
 - **If both fail**, carry on with frames alone, and write the fact that there is no transcript into the header of the result.
 
-## Building it ④ — the script returns a list of frame paths; the AI does the looking
+## Building it ⑤ — the script returns a list of frame paths; the AI does the looking
 
 The entry script prints a header (title, length, whether the transcript came from `captions` or `whisper`), the transcript, and the list of frame paths, each with a `t=MM:SS` timestamp. Up to this point nobody has looked at a single picture.
 
@@ -182,23 +210,28 @@ So the instructions say: **open every frame in the list, in one message.** The A
 
 What to do on failure is also the instructions' job. For a video behind a login or a region lock, **don't retry; say so plainly.** The reasoning is on the [Boundary and failure](/en/built/watch/boundary/index.md) page.
 
-## Building it ⑤ — what turns a summary into a spec is the question sheet, not the code
+## Building it ⑥ — what turns a summary into a spec is the question sheet, not the code
 
 YouTube Summary raised its quality with type-specific question sheets: ask a cooking video for ingredients and steps, ask a review for pros, cons and a verdict. The same principle holds for /watch. What comes back is decided not by the scripts but by **what you ask.**
 
 The skill that pulls out game-design specs has five fields to fill for every technique: its name, what it is, the timestamp it rests on, how to implement it, and a confidence level. The confidence level is one of three — seen in the video / estimated from typical values because no number appeared / reference brought in from outside the video. Those fields guard a single rule: **nothing goes in as if the video showed it when it didn't.**
 
-## Traps when building it — four on Windows
+## Traps when building it — six, and one of them is wrong without an error
 
 | Symptom | Cause and fix |
 |---|---|
+| ⚠ **The picture is later than the timestamp on it** (no error) | by default ffmpeg's `fps` filter keeps the **last** frame of each slot. On a 9.4-minute video every frame showed the picture exactly 3.5 seconds (half a slot) after its label. With `fps=…:round=up` the frame is the one at the labelled time — checked by pulling that moment separately and comparing (PSNR): identical |
+| ⚠ **Reading the metadata first and downloading from it sometimes gets a 403** | YouTube media URLs reused through `--load-info-json` were refused in 2 of 3 tries. The second download goes back to the URL — a few seconds more, and it worked every time |
 | Calling `python3` does nothing | on Windows `python3` is a Store shortcut. Call `python` |
 | A freshly installed ffmpeg or yt-dlp can't be found | right after a `winget` install the same window still has the old PATH. Reopen the terminal, or prepend the install path |
 | yt-dlp warns about a JS runtime | deno isn't installed. It's only a warning; things still work |
 | The video downloaded but yt-dlp returned a failure code | one blocked caption variant (429) can make it exit non-zero. Judge by **whether the video file exists**, not by the exit code |
 
-## Not done — it doesn't pick frames by watching for scene changes
+## Fixed, and not done — the thresholds were fitted on four videos only
 
-- **The frame interval is fixed.** A screen that holds still for a long time costs the same number of frames, and a split-second action can fall between two of them. Switching to ffmpeg's scene-change detection would fix that; it hasn't been done. ⚠ **This page itself said for a while that frames were pulled "at a rate matched to how fast the content moves".** Opening the code (`frames.py`) showed a fixed interval set by length, and the page was corrected on 2026-10-01.
+- **The frame interval was fixed — switched to scene-change based on 2026-10-01** (Building it ③). This page itself said for a while that frames were pulled "at a rate matched to how fast the content moves". Opening the code (`frames.py`) showed a fixed interval, and on the same day the sentence was corrected, the code was made to actually work that way. Along the way, **the fixed interval's timestamps turned out to be half a slot late**, and that was fixed too (first row of the traps table). Until then, every timestamp /watch put in an answer was half a slot ahead of the actual picture — a little over three seconds on a ten-minute video.
+- **The thresholds (cut at 0.3 · cuts up to a third · add the average) were fitted on four videos.** Other kinds — animation, shorts with very rapid cutting — need measuring again.
+- **Near-duplicate frames aren't filtered out.** The original repo compares tiny thumbnails and drops frames that are almost the same; here, spreading frames by change does that job instead. It's a deliberate choice to keep at least some coverage of still stretches.
+- **Slowly changing pictures may not register as "busy".** A slow camera pan, or text appearing one letter at a time, changes little in half a second. That hasn't been measured yet.
 - **Only English captions were being requested — fixed on 2026-10-01.** A Korean video came back with English dub or translation captions (reproduced: a Korean video opening with "Okay, in the last video…"). Now the video's language is read first and only that one track is fetched. After the fix, the same video produced a Korean transcript (`ko-orig`), and an English video still got its human-written `en-US` captions. Fetching a single track also means fewer caption requests getting blocked (429).
 - **The instructions and the code disagreed on a number — fixed on 2026-10-01.** The instructions said a video over ten minutes gets 100 frames, but the entry script's default cap was 80, so 80 is what actually came out (reproduced with an eleven-minute test video). The mismatch was inherited from the original repo, which later dropped its fixed default of 80 as well, so the fix goes the same way: the code now defaults to 100. Only two cases change, from 80 to 100 frames — a whole video over ten minutes, and a named range longer than one minute. A whole video of ten minutes or less is unaffected.
