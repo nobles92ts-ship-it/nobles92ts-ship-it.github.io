@@ -282,7 +282,8 @@
 <p>어느 경우든 1초에 2장을 넘지 않는다. 뽑는 명령은 한 줄이다 — <code>ffmpeg -i 영상 -vf fps=&lt;간격&gt;,scale=512:-2 -frames:v &lt;상한&gt; -q:v 4 frame_%04d.jpg</code>. 폭 512픽셀이 기본이고, 화면 속 작은 글자를 읽어야 할 때만 1024로 올린다. 시작·끝 시각(<code>--start</code> · <code>--end</code>)을 주면 그 구간 안에서 더 촘촘한 표를 쓴다. 비용이 어디서 나오는지는 <a href="/ko/built/watch/budget/">프레임 예산</a> 편에 따로 적었다.</p>
 <h2 id="만들기---대본은-공짜-자막부터-찾고-없을-때만-돈을-쓴다">만들기 ③ — 대본은 공짜 자막부터 찾고, 없을 때만 돈을 쓴다</h2>
 <ul>
-<li><strong>자막 받기.</strong> yt-dlp 에 <code>--write-subs --write-auto-subs</code> 를 준다. 사람이 단 자막이 먼저고, 없으면 자동 생성 자막이다. 형식은 VTT(시각과 글이 번갈아 적힌 텍스트 파일)로 통일한다. 요청하는 언어는 <code>en,en-US,en-GB,en-orig</code> — 영어 계열뿐이다.</li>
+<li><strong>자막 받기는 두 번에 나눈다.</strong> 먼저 영상은 받지 않고 정보만 읽어(<code>--skip-download --write-info-json</code>) 그 영상이 <strong>무슨 언어로 말하는지</strong>(<code>language</code>)와 어떤 자막 트랙이 있는지 본다. 그 언어로 된 트랙을 하나 고른다 — 사람이 단 자막이 먼저, 없으면 원래 음성을 받아 적은 자동 자막(<code>ko-orig</code> 처럼 <code>-orig</code> 가 붙은 것), 그다음 그 언어의 다른 트랙. 그리고 영상과 <strong>그 트랙 하나만</strong> 받는다(<code>--sub-langs "-all,^ko\-orig$"</code> 꼴). 형식은 VTT(시각과 글이 번갈아 적힌 텍스트 파일)로 통일한다.</li>
+<li>⚠ <strong><code>-orig</code> 가 여럿일 수 있다.</strong> 유튜브가 자동 더빙을 붙인 영상은 더빙 언어마다 <code>-orig</code> 트랙이 따로 생긴다. 실제로 한국어 영상 하나에 <code>en-US-orig</code>·<code>id-orig</code>·<code>ko-orig</code> 셋이 있었다. 「<code>-orig</code> 아무거나」로 고르면 알파벳 순으로 영어 더빙 받아쓰기가 걸린다. 그래서 언어는 트랙 이름이 아니라 영상 정보의 <code>language</code> 에서 읽는다.</li>
 <li><strong>겹친 줄 합치기.</strong> 자동 자막은 한 문장이 여러 줄에 걸쳐 굴러가듯 반복된다. 바로 앞 줄과 같은 줄은 합치고 시각 범위만 늘린다.</li>
 <li><strong>자막이 없거나 내 컴퓨터의 파일이면</strong> 소리만 떼어 낸다(<code>ffmpeg -vn -ac 1 -ar 16000 -b:a 64k</code> — 한 채널·16kHz, 1분에 약 0.5MB). 그걸 Groq 의 <code>whisper-large-v3</code>(기본 — 싸고 빠르다) 또는 OpenAI 의 <code>whisper-1</code> 로 보낸다. 한 번에 올릴 수 있는 크기는 25MB다.</li>
 <li><strong>둘 다 안 되면</strong> 사진만으로 가고, 대본이 없다는 사실을 결과 머리말에 적는다.</li>
@@ -324,7 +325,7 @@
 <h2 id="못-한-것--장면을-보고-뽑지는-않는다">못 한 것 — 장면을 보고 뽑지는 않는다</h2>
 <ul>
 <li><strong>사진 간격이 고정이다.</strong> 같은 화면이 오래 멈춰 있어도 똑같이 뽑고, 순간적인 동작은 두 장 사이로 빠질 수 있다. ffmpeg 의 장면 변화 감지로 바꿀 수 있지만 아직 안 했다. ⚠ <strong>이 페이지도 한동안 「내용이 움직이는 속도에 맞춰 뽑는다」고 틀리게 적고 있었다.</strong> 코드(<code>frames.py</code>)를 열어 보니 길이로 정한 고정 간격이었고, 2026-10-01 에 고쳤다.</li>
-<li><strong>자막은 영어 계열만 요청한다.</strong> 한국어 영상을 주로 본다면 <code>--sub-langs</code> 부터 바꿔야 한다.</li>
+<li><strong>자막을 영어 계열만 요청하고 있었다 — 2026-10-01 에 고쳤다.</strong> 한국어 영상을 넣으면 영어 더빙·번역 자막이 왔다(재현: 한국어 영상에서 「Okay, in the last video…」). 지금은 영상의 언어를 먼저 읽고 그 언어 트랙 하나만 받는다. 고친 뒤 같은 영상에서 한국어 대본(<code>ko-orig</code>)이, 영어 영상에서는 전처럼 사람이 단 <code>en-US</code> 자막이 나오는 것을 확인했다. 받는 자막이 한 개로 줄어 자막 요청이 막히는(429) 일도 덜하다.</li>
 <li><strong>설명서와 코드의 숫자가 어긋나 있었다 — 2026-10-01 에 고쳤다.</strong> 설명서는 10분 넘는 영상에 100장이라 적었는데, 입구 스크립트의 기본 상한이 80장이라 실제로는 80장만 나왔다(11분 시험 영상으로 재현). 이 어긋남은 원본 레포에서 물려받은 것이었고, 원본도 나중에 기본 80을 걷어냈다. 그래서 같은 쪽 — 코드를 100으로 — 맞췄다. 바뀐 건 10분 넘는 영상 전체 보기와 1분 넘는 구간 지정, 둘뿐이다(80 → 100장). 10분 이하 영상을 통째로 볼 때는 그대로다.</li>
 </ul>
 </div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
