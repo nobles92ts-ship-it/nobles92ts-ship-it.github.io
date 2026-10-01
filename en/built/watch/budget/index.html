@@ -72,12 +72,12 @@
 <td><strong>One frame every 36 seconds</strong> — you see almost nothing</td>
 </tr>
 <tr>
-<td><strong>2:15 to 2:45 at 3 per second</strong></td>
-<td><strong>90 frames in those 30 seconds</strong> — nearly every movement is caught</td>
+<td><strong>Just 2:15 to 2:45</strong></td>
+<td><strong>60 frames in those 30 seconds</strong> (2 per second — the ceiling) — nearly every movement is caught</td>
 </tr>
 </tbody>
 </table>
-<p>The same 100 frames, and <strong>where they are spent changes everything.</strong></p>
+<p>Fewer frames, not more — and <strong>where they are spent changes everything.</strong></p>
 <p>And usually <strong>what I want is not the whole thing but one moment</strong> — <em>how did they do that effect.</em></p>
 <h2 id="the-same-video-is-never-watched-twice">The same video is never watched twice</h2>
 <p>A follow-up question <strong>within the same conversation does not re-run it.</strong></p>
@@ -127,8 +127,8 @@
 <p>It isn’t enough. <strong>Too much never gets said out loud.</strong> Screen layout, which button sits where, which way a graph bends, what actually moves in the demo — the presenter says “as you can see here” and moves on. What survives in the transcript is the word “here.”</p>
 <p>And for someone watching in order to build, <strong>the “here” is usually the part that matters.</strong> So the frames get bought, expensive as they are.</p>
 <h2 id="which-is-why-long-videos-get-cut-1">Which is why long videos get cut</h2>
-<p>Sampling a long video sparsely is almost always worse than <strong>sampling the part you need densely.</strong> Name a range and the whole budget goes inside it — 2:15 to 2:45 at 3 fps puts 90 frames into those thirty seconds.</p>
-<p>Same 90 frames, sixtyfold difference in coverage. Spread across thirty minutes it’s one frame every twenty seconds; concentrated into thirty seconds it’s three per second.</p>
+<p>Sampling a long video sparsely is almost always worse than <strong>sampling the part you need densely.</strong> Name a range and the whole budget goes inside it — ask for 2:15 to 2:45 and 60 frames land in those thirty seconds. Two per second is a ceiling hard-coded in the script (ask for more with <code>--fps</code> and it gets cut back to 2), so sixty is the most a thirty-second range can get.</p>
+<p>Same 60 frames, sixtyfold difference in coverage. Spread across thirty minutes it’s one frame every thirty seconds; concentrated into thirty seconds it’s two per second.</p>
 <p>So a long video gets a question first: <strong>which part.</strong> The most wasteful tokens are the ones burnt before deciding that. And past ten minutes a warning prints, which the answer is required to repeat — because <strong>having sampled sparsely is itself part of the result.</strong></p>
 <h2 id="the-same-video-is-never-watched-twice-1">The same video is never watched twice</h2>
 <p>A follow-up question in the same session <strong>does not re-run anything.</strong> The frames and transcript are already in context; extracting them again is paying the same cost twice.</p>

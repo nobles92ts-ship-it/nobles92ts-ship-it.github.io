@@ -63,9 +63,9 @@ Name a stretch and **the whole budget goes there.**
 | Approach | Result |
 |---|---|
 | 60 minutes across 100 frames | **One frame every 36 seconds** — you see almost nothing |
-| **2:15 to 2:45 at 3 per second** | **90 frames in those 30 seconds** — nearly every movement is caught |
+| **Just 2:15 to 2:45** | **60 frames in those 30 seconds** (2 per second — the ceiling) — nearly every movement is caught |
 
-The same 100 frames, and **where they are spent changes everything.**
+Fewer frames, not more — and **where they are spent changes everything.**
 
 And usually **what I want is not the whole thing but one moment** — *how did they do that effect.*
 
@@ -105,9 +105,9 @@ And for someone watching in order to build, **the "here" is usually the part tha
 
 ## Which is why long videos get cut
 
-Sampling a long video sparsely is almost always worse than **sampling the part you need densely.** Name a range and the whole budget goes inside it — 2:15 to 2:45 at 3 fps puts 90 frames into those thirty seconds.
+Sampling a long video sparsely is almost always worse than **sampling the part you need densely.** Name a range and the whole budget goes inside it — ask for 2:15 to 2:45 and 60 frames land in those thirty seconds. Two per second is a ceiling hard-coded in the script (ask for more with `--fps` and it gets cut back to 2), so sixty is the most a thirty-second range can get.
 
-Same 90 frames, sixtyfold difference in coverage. Spread across thirty minutes it's one frame every twenty seconds; concentrated into thirty seconds it's three per second.
+Same 60 frames, sixtyfold difference in coverage. Spread across thirty minutes it's one frame every thirty seconds; concentrated into thirty seconds it's two per second.
 
 So a long video gets a question first: **which part.** The most wasteful tokens are the ones burnt before deciding that. And past ten minutes a warning prints, which the answer is required to repeat — because **having sampled sparsely is itself part of the result.**
 

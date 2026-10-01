@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI 폴더링 — 쓴 글</title><meta name="description" content="AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="AI 폴더링 — 쓴 글"><meta property="og:description" content="AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AI 폴더링 — 쓴 글"><meta name="twitter:description" content="AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><link rel="stylesheet" href="/_astro/Shell.BxmtkPL6.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="writing"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/writing/ai-foldering/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 쓴 글</div><div class="plist"><a href="/ko/writing/verdicts/"><span class="t"><span>판정</span><span class="kpi">글 5</span></span><span class="s">PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.</span></a><a href="/ko/writing/measurement/"><span class="t"><span>측정</span><span class="kpi">글 1</span></span><span class="s">어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.</span></a><a href="/ko/writing/agents/"><span class="t"><span>부리기</span><span class="kpi">글 2</span></span><span class="s">AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.</span></a><a href="/ko/writing/choosing/"><span class="t"><span>고르기</span><span class="kpi">글 2</span></span><span class="s">남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.</span></a><a href="/ko/writing/ai-foldering/" aria-current="page"><span class="t"><span>AI 폴더링</span><span class="kpi">질문 4 · 출처 7</span></span><span class="s">AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>쓴 글</span><span class="st">공개</span></div><h1>AI 폴더링</h1><p class="sum">AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다.</p><div class="meta"><span>질문 4 · 출처 7</span><a class="src" href="https://fortelabs.com/blog/para/" target="_blank" rel="noopener">이론 PARA — fortelabs.com/blog/para ↗</a><a class="src" href="https://johnnydecimal.com/" target="_blank" rel="noopener">이론 Johnny.Decimal — johnnydecimal.com ↗</a><a class="src" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html" target="_blank" rel="noopener">표준 FHS 3.0 — refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html ↗</a><a class="src" href="https://cookiecutter-data-science.drivendata.org/" target="_blank" rel="noopener">레포 cookiecutter-data-science — cookiecutter-data-science.drivendata.org ↗</a><a class="src" href="https://github.com/simonw/til" target="_blank" rel="noopener">레포 simonw/til — github.com/simonw/til ↗</a><a class="src" href="https://www.youtube.com/watch?v=MM-MPS57qKA" target="_blank" rel="noopener">영상 Jeff Su — youtube.com/watch?v=MM-MPS57qKA ↗</a><a class="src" href="https://dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh" target="_blank" rel="noopener">아티클 project-layout 비판 — dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#ai와-같이-쓰는-폴더는-주소가-생명입니다">AI와 같이 쓰는 폴더는 «주소»가 생명입니다</a><a href="#자리는-질문-넷으로-정합니다">자리는 질문 넷으로 정합니다</a><a href="#이름-하나가-규칙을-대신합니다">이름 하나가 규칙을 대신합니다</a><a href="#폴더는-옮기지-않고-목록에서-옮깁니다">폴더는 옮기지 않고, 목록에서 옮깁니다</a><a href="#ai-설정-폴더는-늘-읽는-것과-필요할-때-여는-것으로-나눕니다">AI 설정 폴더는 «늘 읽는 것»과 «필요할 때 여는 것»으로 나눕니다</a><a href="#남의-이론에서-가져온-것과-버린-것">남의 이론에서 가져온 것과 버린 것</a><a href="#아직-못-한-것">아직 못 한 것</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#첫-처방이-틀린-이유--사람용-정리법을-기계-작업장에-댔다">첫 처방이 틀린 이유 — 사람용 정리법을 기계 작업장에 댔다</a><a href="#규칙-1--저장-위치는-무엇이-만들었나로-정한다">규칙 1 — 저장 위치는 «무엇이 만들었나»로 정한다</a><a href="#규칙-2--동기화-제외는-이름-하나로-한다">규칙 2 — 동기화 제외는 이름 하나로 한다</a><a href="#규칙-3--이름에-번호를-넣지-않는다">규칙 3 — 이름에 번호를 넣지 않는다</a><a href="#규칙-4--옮기지-말고-지우기-전에-격리한다">규칙 4 — 옮기지 말고, 지우기 전에 격리한다</a><a href="#규칙-5--ai-설정-폴더는-정본-하나-목록은-라우팅표">규칙 5 — AI 설정 폴더는 «정본 하나, 목록은 라우팅표»</a><a href="#규칙-6--저장소는-합치지-않고-위에-허브를-얹는다">규칙 6 — 저장소는 합치지 않고, 위에 허브를 얹는다</a><a href="#기각한-것--값을-치르고-버린-다섯">기각한 것 — 값을 치르고 버린 다섯</a><a href="#설계만-하고-못-만든-것">설계만 하고 못 만든 것</a></nav><div class="prose"><p><strong>AI 폴더링은 제가 AI와 함께 일하는 컴퓨터의 폴더와 파일을 정리하는 규칙입니다. 핵심은 하나입니다 — 폴더 모양을 먼저 그리지 않고, 새 파일이 생길 때마다 «이건 어디로 가야 하나»를 묻는 질문 넷으로 자리를 정합니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 232" role="img" aria-label="새 파일이 생기면 네 가지를 왼쪽부터 차례로 묻는다. 비밀값이면 secrets 폴더, 사진이나 영상이면 작업 폴더 밖, 그다음은 그 파일을 만든 도구의 폴더 밑, 그리고 클라우드에 올릴 필요가 없으면 그 자리의 _no_sync 폴더. 상태가 바뀌어도 폴더는 옮기지 않고 목록 파일에서 표시만 바꾼다.">
+  <text class="lbl" x="8" y="22">새 파일이 생기면 — 왼쪽부터 차례로 묻는다</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="126" y="62" text-anchor="middle">① 비밀값인가</text>
+  <text class="cap" x="126" y="86" text-anchor="middle">→ secrets 폴더</text>
+  <text class="cap" x="126" y="108" text-anchor="middle">공개 저장소와 따로</text>
+  <rect class="vn vn-a" x="256" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="374" y="62" text-anchor="middle">② 사진·영상인가</text>
+  <text class="cap" x="374" y="86" text-anchor="middle">→ 작업 폴더 밖</text>
+  <text class="cap" x="374" y="108" text-anchor="middle">큰 파일은 백업비가 된다</text>
+  <rect class="vn vn-a" x="504" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="622" y="62" text-anchor="middle">③ 어느 도구가 만들었나</text>
+  <text class="cap" x="622" y="86" text-anchor="middle">→ 그 도구 폴더 밑</text>
+  <text class="cap" x="622" y="108" text-anchor="middle">결과는 도구 옆에</text>
+  <rect class="vn vn-b" x="752" y="36" width="240" height="106" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="872" y="62" text-anchor="middle">④ 올릴 필요가 있나</text>
+  <text class="cap" x="872" y="86" text-anchor="middle">→ 없으면 _no_sync</text>
+  <text class="cap" x="872" y="108" text-anchor="middle">이름 하나로 백업 제외</text>
+  <text class="lbl" x="8" y="172">그리고 옮기지 않는다 — 상태가 바뀌면 목록에서 표시만 바꾼다</text>
+  <text class="cap" x="8" y="196">폴더를 옮기면 그 주소를 쓰던 스크립트와 스킬이 그 자리에서 멈춘다</text>
+  <text class="cap" x="8" y="218">끝난 것은 목록의 «졸업» 칸으로 내려간다 — 파일은 제자리에 그대로</text>
+</svg>
+<figcaption>폴더 모양을 그리는 대신 «새 파일이 어디로 가나»를 정하는 질문을 정했다. 모양은 그 질문의 결과로 따라온다.</figcaption>
+</figure>
+<h2 id="ai와-같이-쓰는-폴더는-주소가-생명입니다">AI와 같이 쓰는 폴더는 «주소»가 생명입니다</h2>
+<p>흔히 아는 폴더 정리법은 사람이 나중에 다시 찾아 읽을 문서를 위해 만들어졌습니다. 사람은 파일이 다른 서랍으로 옮겨져도 몇 번 둘러보면 찾아냅니다.</p>
+<p>AI와 같이 일하면 사정이 달라집니다. 제 작업 폴더의 상당수는 <strong>사람이 아니라 프로그램이 읽고 씁니다.</strong> AI에게 일하는 법을 적어 준 설명서(스킬), 정해진 시각에 저절로 도는 스크립트, 그 실행 결과, 잠깐 쓰고 버리는 임시 파일 같은 것들입니다.</p>
+<p>프로그램은 파일을 <strong>경로</strong>로 찾습니다. 경로는 파일의 주소입니다. <code>C:\work\개인사이트\docs\a.md</code> 처럼 폴더 이름을 차례로 이어 붙인 것이죠. 주소가 바뀌면 프로그램은 둘러보지 못하고, 그 자리에서 멈춥니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>사람만 쓰는 폴더</th>
+<th>AI와 같이 쓰는 폴더</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>누가 찾나</td>
+<td>사람이 눈으로 훑는다</td>
+<td>프로그램이 주소로 곧장 간다</td>
+</tr>
+<tr>
+<td>폴더를 옮기면</td>
+<td>잠깐 헤맨다</td>
+<td><strong>그 주소를 쓰던 일이 멈춘다</strong></td>
+</tr>
+<tr>
+<td>그래서 정리란</td>
+<td>보기 좋게 다시 나누기</td>
+<td><strong>처음부터 맞는 자리에 두기</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="자리는-질문-넷으로-정합니다">자리는 질문 넷으로 정합니다</h2>
+<p>새 파일이 생기면 위에서부터 차례로 묻습니다. 앞 질문에서 자리가 정해지면 거기서 멈춥니다.</p>
+<ol>
+<li><strong>비밀값인가?</strong> 비밀값은 서비스에 들어가는 열쇠(API 키나 토큰)입니다. 이건 <code>secrets</code> 폴더로 갑니다. 두 PC가 같이 쓰지만, 깃허브 같은 공개 저장소에 올라가는 폴더와는 떨어뜨려 둡니다.</li>
+<li><strong>사진이나 영상처럼 큰 파일인가?</strong> 그러면 작업 폴더 밖(내 문서)에 둡니다. 작업 폴더는 통째로 클라우드에 백업되는데, 큰 파일은 그대로 돈이 됩니다.</li>
+<li><strong>어느 도구가 만들었나?</strong> 그 도구의 폴더 바로 밑에 둡니다. 도구는 여기, 결과는 저 멀리 두면 나중에 둘을 이어 줄 사람이 없습니다.</li>
+<li><strong>클라우드에 올릴 필요가 있나?</strong> 없으면 그 자리에 <code>_no_sync</code> 라는 하위 폴더를 만들어 넣습니다. 이 이름 하나로 백업에서 빠집니다.</li>
+</ol>
+<h2 id="이름-하나가-규칙을-대신합니다">이름 하나가 규칙을 대신합니다</h2>
+<p>넷째 질문이 이 체계에서 제일 오래 살아남았습니다. 묻는 것이 하나뿐이고, 답이 «예» 아니면 «아니오»라서입니다.</p>
+<p>처음엔 크기로 정하려 했습니다. 그런데 실제로 재 보니 남겨야 할 가장 큰 폴더가 849MB였고, 지워도 되는 폴더 중에 404MB짜리가 있었습니다. <strong>크기를 기준으로 삼았다면 정반대로 판정했을 겁니다.</strong></p>
+<p>이 규칙은 사람이 기억할 필요도 없습니다. 백업 설정에 «<code>_no_sync</code> 는 빼라»는 줄이 하나 있고, 그 줄은 폴더가 얼마나 깊이 있든 이름만 맞으면 잡아냅니다. 앞으로 만들 도구까지 미리 덮는 셈입니다.</p>
+<blockquote>
+<p>이 규칙이 생긴 이유: 백업 도구의 기본값이 «전부 올리기»라서, 아무도 올리기로 정한 적 없는 결과물 11GB가 클라우드에 쌓여 있었습니다(2026-07-27 정리).</p>
+</blockquote>
+<h2 id="폴더는-옮기지-않고-목록에서-옮깁니다">폴더는 옮기지 않고, 목록에서 옮깁니다</h2>
+<p>유명한 정리법 PARA는 끝난 프로젝트를 «보관» 폴더로 옮기라고 합니다. 저는 옮기지 않습니다. 옮기는 순간 주소가 깨지기 때문입니다.</p>
+<p>대신 <strong>목록 파일</strong>에서 상태만 바꿉니다. 목록 파일(인덱스)은 무엇이 어디 있고 지금 어떤 상태인지 적어 둔 차례표입니다. AI의 기억 목록이 이렇게 돕니다. 45일 동안 안 쓴 항목은 목록 맨 아래 «졸업» 칸으로 내려가지만 파일 자체는 제자리에 있고, 다시 읽는 순간 원래 칸으로 돌아옵니다.</p>
+<p>목록에도 정원이 있습니다. AI는 이 목록을 대화 첫머리에 읽는데, 정해진 크기를 넘으면 <strong>뒷부분을 조용히 못 읽습니다.</strong> 그래서 줄마다 글자 수 한도를 두고 검사 스크립트가 매번 잽니다.</p>
+<h2 id="ai-설정-폴더는-늘-읽는-것과-필요할-때-여는-것으로-나눕니다">AI 설정 폴더는 «늘 읽는 것»과 «필요할 때 여는 것»으로 나눕니다</h2>
+<p>제가 쓰는 AI(Claude Code)는 대화를 시작할 때마다 설정 폴더의 규칙을 읽습니다. 늘 읽는 규칙이 길어질수록 매번 그만큼 비용이 들고, 정작 중요한 규칙이 묻힙니다. 그래서 두 층으로 나눴습니다.</p>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th>무엇</th>
+<th>지금</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>늘 읽는 규칙</td>
+<td>어떤 일을 하든 지켜야 하는 것</td>
+<td>5개</td>
+</tr>
+<tr>
+<td>필요할 때 여는 안내서</td>
+<td>코드를 쓸 때나 커밋할 때처럼 상황이 정해진 것</td>
+<td>13개</td>
+</tr>
+</tbody>
+</table>
+<p>어떤 상황에 어떤 안내서를 여는지는 표 한 장에 적어 둡니다. 분야별 교훈은 그 분야 스킬 폴더 안에 둡니다. <strong>같은 규칙을 두 곳에 두면 언젠가 둘이 달라지기 때문입니다.</strong> 정본(원본)은 하나만 둡니다.</p>
+<h2 id="남의-이론에서-가져온-것과-버린-것">남의 이론에서 가져온 것과 버린 것</h2>
+<p>이 규칙들은 남의 정리법을 읽고 제 환경에 대 보면서 나왔습니다. 맨 위 출처 링크가 그 원본입니다.</p>
+<table>
+<thead>
+<tr>
+<th>출처</th>
+<th>가져온 것</th>
+<th>버린 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PARA</strong> (Tiago Forte) — 주제가 아니라 «지금 얼마나 살아 있나»로 나눈다</td>
+<td>끝난 것을 따로 표시한다는 생각</td>
+<td>폴더째 옮기기</td>
+</tr>
+<tr>
+<td><strong>Johnny.Decimal</strong> — 한 층에 열 개까지, 폴더마다 번호</td>
+<td>한 층이 너무 많으면 못 훑는다</td>
+<td>번호(주소에 박힌다)</td>
+</tr>
+<tr>
+<td><strong>리눅스 폴더 표준(FHS)</strong> — 종류마다 자리가 다르다</td>
+<td>«지워도 되는 것»의 자리를 따로 둔다</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>cookiecutter-data-science</strong> — 원본은 고정, 가공본은 언제든 다시 만든다</td>
+<td>«다시 만들 수 있나»라는 질문</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>simonw/til</strong> — 폴더는 얕게, 목록은 기계가 만든다</td>
+<td>목록이 정본이다</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Jeff Su 영상</strong> — 사람을 위한 9분짜리 파일 정리법</td>
+<td>임시 거처 · 목록 정원 · 깊이 상한</td>
+<td>사람의 의지로 지키기</td>
+</tr>
+<tr>
+<td><strong>project-layout 비판</strong> — 남의 구조를 통째로 베끼면 빈 폴더만 남는다</td>
+<td>통째 복사 금지</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Jeff Su 영상과 제 설계를 하나씩 대 본 기록은 <a href="/ko/teardowns/memory/file-management/">파일 관리 체계</a> 편에 따로 있습니다.</p>
+<h2 id="아직-못-한-것">아직 못 한 것</h2>
+<p><strong>폴더 쪽은 아직 사람 눈에 맡겨져 있습니다.</strong> 기억 목록은 검사 스크립트가 크기와 줄 길이를 매번 재지만, 폴더 배치를 검사하는 스크립트는 설계만 하고 만들지 않았습니다. 「규칙은 사람 의지에 맡기지 않는다」고 써 놓고, 정작 여기서는 못 지키고 있는 셈입니다.</p>
+<p>작업 폴더 전체의 차례표와, 어디에도 안 속하는 파일이 잠깐 머물 «임시 거처»도 아직 설계 문서에만 있습니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>2026-08-03에 작업 폴더 최상위가 72개였습니다.</strong> 사람이 한눈에 훑을 수 있는 수를 넘었고, 같은 개념이 한글과 영문 두 이름으로 따로 있었고, 「임시」라고 이름 붙인 폴더가 몇 달째 남아 있었습니다. 그날 정리법 자료 스무 개(영상 열·저장소 열)를 모아 처방을 냈는데, 스스로 반박하는 검토에서 <strong>절반이 틀렸다</strong>는 판정을 받았습니다. 아래는 그 검토를 통과해 지금 실제로 쓰는 규칙이고, 설계만 하고 못 만든 것은 맨 끝에 따로 적었습니다.</p>
+<h2 id="첫-처방이-틀린-이유--사람용-정리법을-기계-작업장에-댔다">첫 처방이 틀린 이유 — 사람용 정리법을 기계 작업장에 댔다</h2>
+<p>유명한 정리법(PARA·Johnny.Decimal·제텔카스텐)은 전부 <strong>사람이 다시 찾아 읽을 노트</strong>를 위한 개인 지식 관리 방법입니다. 그런데 제 작업 폴더의 70%는 기계가 소유한 디렉터리였습니다. 코드 저장소, 파이프라인, 캐시, 실행 산출물입니다.</p>
+<table>
+<thead>
+<tr>
+<th>계열</th>
+<th>푸는 문제</th>
+<th>기계 작업장에</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개인 지식 관리 (PARA·Johnny.Decimal)</td>
+<td>사람이 다시 찾아 읽을 문서의 분류</td>
+<td><strong>안 맞음</strong> — 상태가 바뀌면 폴더를 옮기는 게 전제</td>
+</tr>
+<tr>
+<td>운영체제·코드 (FHS·모노레포)</td>
+<td>도구가 경로로 찾는 것의 배치</td>
+<td><strong>맞음</strong> — 경로가 안 바뀌는 게 전제</td>
+</tr>
+<tr>
+<td>데이터 (원본·가공본 분리, 날짜별 폴더)</td>
+<td>시점마다 쌓이는 산출물</td>
+<td><strong>맞음</strong> — 분류가 아니라 시간으로 쪼갠다</td>
+</tr>
+</tbody>
+</table>
+<p>유명한 방법이 죄다 첫째 계열인 건 그 시장이 크기 때문이지, 그게 정답이라서가 아니었습니다. 리눅스의 <code>/usr</code> <code>/etc</code> <code>/var</code> 는 수십 년 동안 수많은 기계에서 살아남았는데, 아무도 그걸 «정리 방법론»이라 부르지 않습니다. 유행이 아니라 기반 시설이라서입니다.</p>
+<h2 id="규칙-1--저장-위치는-무엇이-만들었나로-정한다">규칙 1 — 저장 위치는 «무엇이 만들었나»로 정한다</h2>
+<table>
+<thead>
+<tr>
+<th>규칙</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-1 결과는 만든 도구 옆</strong></td>
+<td>실행·분석 결과는 그것을 만든 도구나 프로젝트 폴더 밑에 둔다. 맞는 주제 폴더가 없을 때만 <code>C:\work\&lt;주제&gt;\</code> 를 새로 판다</td>
+</tr>
+<tr>
+<td><strong>1-2 채팅에만 남기지 않는다</strong></td>
+<td>리포트·대조표·측정값·증거 사진은 파일로 저장한다. 채팅에는 요약과 경로만</td>
+</tr>
+<tr>
+<td><strong>1-3 이름에 내용과 날짜</strong></td>
+<td><code>&lt;주제&gt;_&lt;내용&gt;_&lt;날짜&gt;.md</code> 꼴. 날짜는 <code>YYYYMMDD</code></td>
+</tr>
+<tr>
+<td><strong>1-4 비밀값은 <code>secrets</code></strong></td>
+<td>클라우드 백업에는 올라가되(두 PC가 써야 하므로) 공개 저장소에는 절대 들어가지 않는 자리</td>
+</tr>
+<tr>
+<td><strong>1-5 큰 파일은 작업 폴더 밖</strong></td>
+<td>녹화·영상은 내 문서 쪽. 작업 폴더에는 보고서 HTML이나 JSON 같은 작은 것만</td>
+</tr>
+</tbody>
+</table>
+<h2 id="규칙-2--동기화-제외는-이름-하나로-한다">규칙 2 — 동기화 제외는 이름 하나로 한다</h2>
+<ul>
+<li><strong>2-1 판정 질문은 하나다.</strong> 「이걸 클라우드에 올릴 필요가 있나」. 「다시 만들 수 있나」는 흔한 근거일 뿐 정의가 아닙니다. 테스트 증거 사진은 다시 못 찍지만 클라우드에 올릴 것도 아니라서 여기로 옵니다.</li>
+<li><strong>2-2 목적지까지 내려간 뒤에 만든다.</strong> 최상위 <code>_no_sync</code> 한 곳에 몰지 않고, 그 결과를 만든 도구 폴더로 내려가서 거기에 <code>_no_sync</code> 를 팝니다. 최상위 <code>_no_sync</code> 는 소속 폴더가 아예 없는 일회성 조사만 받습니다. 한곳에 몰면 «동기화 제외»라는 성질 하나만 같은 잡동사니 서랍이 됩니다.</li>
+<li><strong>2-3 제외 패턴은 깊이와 무관해야 한다.</strong> 백업 설정의 줄은 <code>--exclude=_no_sync/**</code> 이고, 앞에 <code>/</code> 가 없어야 깊숙이 들어간 <code>_no_sync</code> 까지 빠집니다. 누가 앞에 <code>/</code> 를 붙여 최상위만 가리키게 바꾸면 <strong>중첩된 것이 전부 조용히 올라갑니다.</strong></li>
+<li><strong>2-4 크기로 판정하지 않는다.</strong> 위의 849MB·404MB 사례가 근거입니다.</li>
+<li><strong>2-5 동기화가 둘이고, 규칙은 서로 독립이다.</strong> 클라우드 백업(S3)은 <code>_no_sync</code> 를 빼고, PC 사이 동기화(Syncthing)는 일부러 넣습니다. 그래서 <code>_no_sync</code> 는 <strong>바깥 백업은 없지만 사본은 두 대</strong>에 있습니다. 거꾸로 말하면 한쪽 PC에서 그 폴더를 지우면 <strong>다른 PC의 사본도 같이 지워집니다.</strong></li>
+<li><strong>2-6 PC마다 다른 자격증명 파일은 PC 사이 동기화에서 뺀다.</strong> <code>.env</code> 가 건너가면 두 PC가 서로의 설정을 덮어씁니다.</li>
+</ul>
+<h2 id="규칙-3--이름에-번호를-넣지-않는다">규칙 3 — 이름에 번호를 넣지 않는다</h2>
+<ul>
+<li><strong>3-1 경로로 찾는 곳에서는 폴더 이름에 번호를 붙이지 않는다.</strong> 이유는 둘입니다. 번호가 주소에 들어가면 분류를 바꿀 때마다 주소가 깨집니다. 그리고 99를 넘기면 정렬이 깨집니다. 글자 순으로 비교하면 <code>100_</code> 이 <code>10_</code> 앞에 끼어드는데(셋째 글자 <code>0</code> 이 <code>_</code> 보다 앞이라서), 윈도 탐색기는 숫자 크기 순으로 보여 줍니다. <strong>눈에 보이는 순서와 프로그램이 보는 순서가 달라지는 겁니다.</strong> 구글 드라이브처럼 파일을 ID로 찾는 저장소라면 번호를 써도 괜찮습니다.</li>
+<li><strong>3-2 예약어는 철자를 바꾸지 않는다.</strong> <code>_no_sync</code> · <code>secrets</code> · <code>_archive</code> 는 프로그램이 이름으로 붙잡는 단어입니다. <code>no_sync</code> 나 <code>noSync</code> 처럼 비슷하게 쓰면 백업 규칙이 못 알아봅니다. <strong>오타 하나가 곧 유출입니다.</strong></li>
+</ul>
+<h2 id="규칙-4--옮기지-말고-지우기-전에-격리한다">규칙 4 — 옮기지 말고, 지우기 전에 격리한다</h2>
+<ul>
+<li><strong>4-1 경로는 옮기지 않는 게 기본이다.</strong> 끝나거나 보관할 때도 폴더를 옮기지 않고 목록에 표시합니다.</li>
+<li><strong>4-2 딱 한 번 크게 옮겼다.</strong> 2026-08-03에 최상위 72개를 28개 그룹으로 묶었습니다. 62건을 옮겼고 잃어버린 건 없었습니다. 실행 중인 파이프라인에 경로가 박혀 있는 폴더는 동결해서 손대지 않았습니다. 지금도 최상위 폴더는 28개입니다(2026-10-01 실측).</li>
+<li><strong>4-3 지우기 전에 격리한다.</strong> 그날 정리한 978개는 바로 지우지 않고 <code>_no_sync\_deleted_20260803\</code> 로 옮겨 두었고, 지금도 거기 있습니다.</li>
+<li><strong>4-4 끝난 것은 <code>_archive</code> 로.</strong> 되살릴 수는 있지만 다시 손대지는 않는 것들의 자리입니다.</li>
+</ul>
+<h2 id="규칙-5--ai-설정-폴더는-정본-하나-목록은-라우팅표">규칙 5 — AI 설정 폴더는 «정본 하나, 목록은 라우팅표»</h2>
+<ul>
+<li><strong>5-1 프로그램이 정한 이름은 건드리지 않는다.</strong> <code>skills</code> · <code>agents</code> · <code>rules</code> 는 Claude Code가 정한 고정 경로입니다. 바꾸면 스킬이 불리지 않습니다. 이 폴더는 이미 «종류별» 구조가 강제돼 있으니, 제 규칙은 그 안쪽에만 씁니다.</li>
+<li><strong>5-2 규칙은 두 층이다.</strong> 늘 읽는 규칙(<code>rules/common</code>, 5개)과 상황이 올 때 여는 안내서(<code>guides</code>, 13개). 어떤 상황에 무엇을 여는지는 <code>CLAUDE.md</code> 의 표 한 장에 있고, 같은 내용을 두 층에 다 적지 않습니다.</li>
+<li><strong>5-3 기억 목록(<code>MEMORY.md</code>)은 일지가 아니라 라우팅표다.</strong> 「어느 파일을 언제 열지」를 적는 곳입니다. 한 줄을 넣을지는 세 질문으로 정합니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>「예」이면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>내 행동을 바꾸는가 (금지·조건·규칙)</td>
+<td>내용째 목록에 넣는다 — 한 줄 250자까지</td>
+</tr>
+<tr>
+<td>나중에 찾을 일이 있는가</td>
+<td>「언제 여나」 한 줄과 파일 링크만 — 150자까지</td>
+</tr>
+<tr>
+<td>둘 다 아닌가</td>
+<td><strong>만들지 않는다</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>5-4 분야 교훈은 분야 정본으로 보낸다.</strong> TC 규칙은 tc-team 스킬의 서랍으로, 게임 제작 교훈은 게임팀 문서로 갑니다. 기억 폴더에 복사하지 않고 <strong>옮기기만</strong> 합니다. 정본이 둘이 되면 반드시 갈라집니다.</li>
+<li><strong>5-5 자가 셋 있다.</strong> 검사 스크립트가 목록 전체 크기(24,576바이트), 금지 줄 길이(250자), 포인터 줄 길이(150자)를 잽니다. 전체가 한도를 넘으면 꼬리가 잘려 <strong>에러 하나 없이</strong> 라우팅이 깨지기 때문입니다.</li>
+<li><strong>5-6 졸업과 부활.</strong> 45일 동안 안 쓴 줄은 졸업 후보가 되고, 주간 점검에서 사람 승인을 받아야 내려갑니다. 졸업한 파일을 다시 읽으면 무조건 원래 칸으로 돌아옵니다. PARA의 «보관»을 폴더 이동 없이 구현한 셈입니다.</li>
+</ul>
+<h2 id="규칙-6--저장소는-합치지-않고-위에-허브를-얹는다">규칙 6 — 저장소는 합치지 않고, 위에 허브를 얹는다</h2>
+<p>목적이 다른 저장소 셋(게임 위키 · AI 운영 규칙과 스킬 · 작업 산출물)을 <strong>옮기지 않고</strong>, 그 위에 <code>_BRAIN</code> 이라는 얇은 허브를 한 겹 얹었습니다. 허브의 부품은 넷입니다. 어디에 무엇이 있는지 적은 지도, 세 곳을 한 번에 찾는 검색, 새 지식을 넣는 순서(제안 → 인박스 → 검토), 그리고 색인에서 뺄 폴더를 적은 명단입니다.</p>
+<p>기억은 네 갈래로 나눴습니다. <strong>D</strong>(도메인 — 게임 위키 같은 사실), <strong>P</strong>(절차 — 일하는 법과 스킬), <strong>E</strong>(겪은 일 — 실행 기록), <strong>R</strong>(참고 자료)입니다. 갈래마다 쓰기 규칙이 다르고, 예를 들어 D는 허브가 직접 고치지 않습니다.</p>
+<h2 id="기각한-것--값을-치르고-버린-다섯">기각한 것 — 값을 치르고 버린 다섯</h2>
+<table>
+<thead>
+<tr>
+<th>기각</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>「최상위는 일곱 개까지」</strong></td>
+<td>근거로 깔았던 「7±2」는 작업기억 용량 이야기지 폴더 탐색 이야기가 아니었다. 탐색 비용은 개수보다 <strong>깊이</strong>에 더 민감하다</td>
+</tr>
+<tr>
+<td><strong>번호 붙인 그룹 구조</strong>(<code>00_meta</code> · <code>10_brain</code> …)</td>
+<td>성질이 다른 넷을 한 체계로 덮었다. 거기에 「이 폴더 실물은 옮기지 말 것」이라 적는 순간 <strong>지도에는 있는데 땅에는 없는</strong> 구조가 됐다</td>
+</tr>
+<tr>
+<td><strong>「석 달 뒤에도 여기 있을까」</strong></td>
+<td>판정하는 쪽이 사람이고 기준이 주관적이다. 살아남은 규칙(<code>_no_sync</code>)은 질문 하나에 답이 둘이었다</td>
+</tr>
+<tr>
+<td><strong>「태그는 쓰지 않는다」</strong></td>
+<td>주 분류를 태그로 바꾸면 안 되는 건 맞다. 그래도 파일명을 고칠 수 없는 공유 문서에는 태그밖에 길이 없어서, 금지는 지나쳤다고 고쳤다</td>
+</tr>
+<tr>
+<td><strong>사람 의지로 지키기</strong></td>
+<td>「하나 골라서 고수하라」는 시간이 지나면 무너진다. 검사되지 않는 규칙은 없는 것과 같다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 기록에서 값을 치른 교훈은 이겁니다 — 정리법을 고르기 전에 «누가 이 폴더를 읽는가»부터 물어야 했습니다.</strong> 사람이 읽는 폴더와 프로그램이 읽는 폴더는 같은 「폴더」라는 이름 아래 있을 뿐, 풀어야 할 문제가 다릅니다.</p>
+<h2 id="설계만-하고-못-만든-것">설계만 하고 못 만든 것</h2>
+<p>2026-08-03 설계(v4)에는 아래가 더 있었습니다. 오늘(2026-10-01) 기준으로 <strong>전부 미착수</strong>입니다.</p>
+<table>
+<thead>
+<tr>
+<th>설계</th>
+<th>무엇</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작업 폴더별 서랍 넷</td>
+<td>문서 · 코드 · 결과 · 동기화 제외. 필요한 서랍만 판다</td>
+</tr>
+<tr>
+<td><code>INDEX.md</code></td>
+<td>작업 폴더 전체의 차례표. 「지금 하는 일」 칸은 다섯 개까지</td>
+</tr>
+<tr>
+<td><code>inbox</code></td>
+<td>어디에도 안 속하는 것의 임시 거처. 30일이 지나면 보고한다</td>
+</tr>
+<tr>
+<td><code>check_layout.js</code></td>
+<td>최상위에 새로 생긴 폴더, <code>-temp</code> · <code>_v2</code> 같은 이름, 예약어 오타를 위반으로 보고한다</td>
+</tr>
+<tr>
+<td>규칙 파일 한 장</td>
+<td>지금 규칙은 안내서 · 기억 파일 · 이 글로 흩어져 있다</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ «임시 거처»와 «목록 정원»은 Jeff Su 영상에서 <strong>채택</strong>까지 해 놓고 아직 안 만들었습니다. 채택과 가동은 다른 말입니다. 그리고 이 표가 지금 이 사이트에 있는 이유이기도 합니다 — 적어 두지 않으면 «채택했다»가 «돌고 있다»로 바뀌어 기억되기 때문입니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

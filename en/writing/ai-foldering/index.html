@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI foldering — Things I wrote</title><meta name="description" content="In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="AI foldering — Things I wrote"><meta property="og:description" content="In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AI foldering — Things I wrote"><meta name="twitter:description" content="In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/"><link rel="stylesheet" href="/_astro/Shell.BxmtkPL6.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="writing"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/writing/ai-foldering/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 Things I wrote</div><div class="plist"><a href="/en/writing/verdicts/"><span class="t"><span>Verdicts</span><span class="kpi">5 posts</span></span><span class="s">The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.</span></a><a href="/en/writing/measurement/"><span class="t"><span>Measurement</span><span class="kpi">1 post</span></span><span class="s">Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.</span></a><a href="/en/writing/agents/"><span class="t"><span>Running agents</span><span class="kpi">2 posts</span></span><span class="s">The other side — loops, guards, and the things I decided not to automate.</span></a><a href="/en/writing/choosing/"><span class="t"><span>Choosing</span><span class="kpi">2 posts</span></span><span class="s">Deciding whether to bring someone else&#39;s work in. What counts as grounds for rejection, and when a rejection gets reopened.</span></a><a href="/en/writing/ai-foldering/" aria-current="page"><span class="t"><span>AI foldering</span><span class="kpi">4 questions · 7 sources</span></span><span class="s">In folders I share with AI, programs find files by their address. So I don&#39;t design a folder shape — I ask four questions about where each new file should go.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Things I wrote</span><span class="st">public</span></div><h1>AI foldering</h1><p class="sum">In folders I share with AI, programs find files by their address. So I don&#39;t design a folder shape — I ask four questions about where each new file should go.</p><div class="meta"><span>4 questions · 7 sources</span><a class="src" href="https://fortelabs.com/blog/para/" target="_blank" rel="noopener">Theory PARA — fortelabs.com/blog/para ↗</a><a class="src" href="https://johnnydecimal.com/" target="_blank" rel="noopener">Theory Johnny.Decimal — johnnydecimal.com ↗</a><a class="src" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html" target="_blank" rel="noopener">Standard FHS 3.0 — refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html ↗</a><a class="src" href="https://cookiecutter-data-science.drivendata.org/" target="_blank" rel="noopener">Repo cookiecutter-data-science — cookiecutter-data-science.drivendata.org ↗</a><a class="src" href="https://github.com/simonw/til" target="_blank" rel="noopener">Repo simonw/til — github.com/simonw/til ↗</a><a class="src" href="https://www.youtube.com/watch?v=MM-MPS57qKA" target="_blank" rel="noopener">Video Jeff Su — youtube.com/watch?v=MM-MPS57qKA ↗</a><a class="src" href="https://dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh" target="_blank" rel="noopener">Article project-layout critique — dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#in-a-folder-you-share-with-ai-the-address-is-everything">In a folder you share with AI, the address is everything</a><a href="#four-questions-decide-where-a-file-lives">Four questions decide where a file lives</a><a href="#one-name-does-the-work-of-a-rule">One name does the work of a rule</a><a href="#nothing-moves-on-disk-things-move-in-the-index">Nothing moves on disk; things move in the index</a><a href="#the-ais-settings-folder-splits-into-always-read-and-open-when-needed">The AI’s settings folder splits into “always read” and “open when needed”</a><a href="#what-i-took-from-other-peoples-theories-and-what-i-left">What I took from other people’s theories, and what I left</a><a href="#what-isnt-done-yet">What isn’t done yet</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#why-the-first-prescription-failed--a-method-for-people-applied-to-a-workshop-for-machines">Why the first prescription failed — a method for people, applied to a workshop for machines</a><a href="#rule-1--where-something-is-saved-depends-on-what-made-it">Rule 1 — where something is saved depends on what made it</a><a href="#rule-2--sync-exclusion-is-done-by-a-name">Rule 2 — sync exclusion is done by a name</a><a href="#rule-3--no-numbers-in-names">Rule 3 — no numbers in names</a><a href="#rule-4--dont-move-it-quarantine-before-deleting">Rule 4 — don’t move it; quarantine before deleting</a><a href="#rule-5--the-ais-settings-folder-one-canonical-copy-and-an-index-that-routes">Rule 5 — the AI’s settings folder: one canonical copy, and an index that routes</a><a href="#rule-6--dont-merge-stores-put-a-hub-on-top">Rule 6 — don’t merge stores; put a hub on top</a><a href="#what-i-rejected--five-things-i-paid-for-and-dropped">What I rejected — five things I paid for and dropped</a><a href="#designed-never-built">Designed, never built</a></nav><div class="prose"><p><strong>AI foldering is the set of rules I use to organise the folders and files on the machine where I work alongside AI. It comes down to one idea: I don’t draw the folder tree first. Every time a new file appears, I ask four questions about where it belongs, and the answers decide its place.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 232" role="img" aria-label="When a new file appears, four questions are asked from left to right. A secret goes to the secrets folder, a photo or video goes outside the work folder, everything else goes under the folder of the tool that made it, and if it doesn't need to reach the cloud it goes into a _no_sync folder right there. When something's status changes, the folder is not moved; only its entry in an index file changes.">
+  <text class="lbl" x="8" y="22">a new file appears — ask these in order, left to right</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="126" y="62" text-anchor="middle">① is it a secret?</text>
+  <text class="cap" x="126" y="86" text-anchor="middle">→ secrets folder</text>
+  <text class="cap" x="126" y="108" text-anchor="middle">kept apart from repos</text>
+  <rect class="vn vn-a" x="256" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="374" y="62" text-anchor="middle">② photo or video?</text>
+  <text class="cap" x="374" y="86" text-anchor="middle">→ outside work folder</text>
+  <text class="cap" x="374" y="108" text-anchor="middle">big files cost backup</text>
+  <rect class="vn vn-a" x="504" y="36" width="236" height="106" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="622" y="62" text-anchor="middle">③ which tool made it?</text>
+  <text class="cap" x="622" y="86" text-anchor="middle">→ under that tool</text>
+  <text class="cap" x="622" y="108" text-anchor="middle">output beside its tool</text>
+  <rect class="vn vn-b" x="752" y="36" width="240" height="106" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="872" y="62" text-anchor="middle">④ must it go up?</text>
+  <text class="cap" x="872" y="86" text-anchor="middle">→ if not, _no_sync</text>
+  <text class="cap" x="872" y="108" text-anchor="middle">one name, no backup</text>
+  <text class="lbl" x="8" y="172">and nothing moves — when status changes, only the index entry changes</text>
+  <text class="cap" x="8" y="196">move a folder and every script or skill that used its address stops dead</text>
+  <text class="cap" x="8" y="218">finished things drop to a “graduated” section of the list — the file stays put</text>
+</svg>
+<figcaption>Instead of drawing a folder shape, I fixed the questions that decide where a new file goes. The shape follows from the answers.</figcaption>
+</figure>
+<h2 id="in-a-folder-you-share-with-ai-the-address-is-everything">In a folder you share with AI, the address is everything</h2>
+<p>Most folder-organising methods were built for documents a person will come back and read. If a file ends up in a different drawer, a person looks around for a minute and finds it.</p>
+<p>Working with AI changes that. A large share of my work folder is <strong>read and written by programs, not by me</strong>: the instruction files that teach the AI a job (skills), scripts that run on a timer, the results those scripts leave behind, scratch files that live for an hour.</p>
+<p>Programs find a file by its <strong>path</strong> — its address, the chain of folder names like <code>C:\work\site\docs\a.md</code>. When the address changes, a program doesn’t look around. It stops.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A folder only people use</th>
+<th>A folder you share with AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who finds things</td>
+<td>a person, scanning by eye</td>
+<td>a program, going straight to the address</td>
+</tr>
+<tr>
+<td>If you move a folder</td>
+<td>someone is briefly lost</td>
+<td><strong>whatever used that address stops working</strong></td>
+</tr>
+<tr>
+<td>So “tidying” means</td>
+<td>re-sorting so it looks neat</td>
+<td><strong>putting it in the right place the first time</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="four-questions-decide-where-a-file-lives">Four questions decide where a file lives</h2>
+<p>When a new file appears, I ask from the top down. The first question that gives an answer settles it.</p>
+<ol>
+<li><strong>Is it a secret?</strong> A secret is a key into some service — an API key or a token. It goes to the <code>secrets</code> folder. Both of my PCs use it, but it sits apart from any folder that gets pushed to a public repository on GitHub.</li>
+<li><strong>Is it a big file, like a photo or a video?</strong> Then it lives outside the work folder, in my documents. The work folder is backed up to the cloud wholesale, and big files turn straight into a bill.</li>
+<li><strong>Which tool made it?</strong> It goes directly under that tool’s folder. Put the tool in one place and its output somewhere far away, and nobody will ever connect the two again.</li>
+<li><strong>Does it need to reach the cloud?</strong> If not, I make a subfolder called <code>_no_sync</code> right there and drop it in. That one name is enough to keep it out of the backup.</li>
+</ol>
+<h2 id="one-name-does-the-work-of-a-rule">One name does the work of a rule</h2>
+<p>The fourth question has outlived every other rule I’ve tried. It asks exactly one thing, and the only answers are yes and no.</p>
+<p>My first instinct was to decide by size. When I actually measured, the largest folder worth keeping was 849MB, and one of the folders safe to delete was 404MB. <strong>A size threshold would have made exactly the wrong call.</strong></p>
+<p>Nobody has to remember this rule, either. The backup configuration has a single line telling it to skip anything named <code>_no_sync</code>, and that line catches the folder at whatever depth it sits. It already covers tools I haven’t written yet.</p>
+<blockquote>
+<p>Why the rule exists: the backup tool’s default was “upload everything”, so 11GB of output that nobody had ever decided to keep had piled up in the cloud (cleaned up on 2026-07-27).</p>
+</blockquote>
+<h2 id="nothing-moves-on-disk-things-move-in-the-index">Nothing moves on disk; things move in the index</h2>
+<p>PARA, a popular method, says to move a finished project into an archive folder. I don’t. Moving it breaks the address.</p>
+<p>Instead I change its status in an <strong>index file</strong> — a table of contents that says what is where and what state it’s in. The AI’s memory index works this way. An entry unused for 45 days drops into a “graduated” section at the bottom of the list, but the file itself never moves, and the moment anything reads it again, it goes straight back up.</p>
+<p>The index has a fixed capacity too. The AI reads it at the start of every conversation, and past a certain size it <strong>silently fails to read the tail.</strong> So each line has a character limit, and a check script measures it every time.</p>
+<h2 id="the-ais-settings-folder-splits-into-always-read-and-open-when-needed">The AI’s settings folder splits into “always read” and “open when needed”</h2>
+<p>The AI I use (Claude Code) reads the rules in its settings folder at the start of every conversation. The longer the always-read rules get, the more each conversation costs — and the more the rules that matter get buried. So there are two layers.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What goes there</th>
+<th>Today</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rules it always reads</td>
+<td>things that hold whatever the task is</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Guides it opens when the situation calls for it</td>
+<td>things tied to a moment — writing code, making a commit</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p>One table says which situation opens which guide. Lessons from a particular field live inside that field’s skill folder. <strong>Keep the same rule in two places and the two copies will eventually disagree</strong> — there is one canonical copy, and only one.</p>
+<h2 id="what-i-took-from-other-peoples-theories-and-what-i-left">What I took from other people’s theories, and what I left</h2>
+<p>These rules came from reading other people’s methods and holding them up against my own setup. The source links at the top of the page are the originals.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>What I took</th>
+<th>What I left</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PARA</strong> (Tiago Forte) — sort by how alive something is, not by topic</td>
+<td>marking finished things separately</td>
+<td>moving whole folders around</td>
+</tr>
+<tr>
+<td><strong>Johnny.Decimal</strong> — at most ten per level, a number on every folder</td>
+<td>too many on one level and you can’t scan it</td>
+<td>the numbers (they get baked into paths)</td>
+</tr>
+<tr>
+<td><strong>Linux Filesystem Hierarchy Standard (FHS)</strong> — each kind of thing has its own place</td>
+<td>a separate place for “safe to delete”</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>cookiecutter-data-science</strong> — raw data is fixed, processed data can be rebuilt any time</td>
+<td>the question “can this be regenerated?”</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>simonw/til</strong> — keep folders shallow, let a machine build the index</td>
+<td>the index is canonical</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Jeff Su’s video</strong> — a nine-minute file system for people</td>
+<td>a holding area · a cap on the index · a depth limit</td>
+<td>relying on willpower to keep it up</td>
+</tr>
+<tr>
+<td><strong>project-layout critique</strong> — copy someone’s whole structure and you get empty folders</td>
+<td>never copy a structure wholesale</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>The side-by-side comparison of Jeff Su’s video with my design is its own page: <a href="/en/teardowns/memory/file-management/">File management system</a>.</p>
+<h2 id="what-isnt-done-yet">What isn’t done yet</h2>
+<p><strong>The folder side still runs on human eyesight.</strong> The memory index has a check script that measures its size and line lengths every time; a script that checks folder layout was designed and never written. I wrote “rules don’t run on willpower” and then didn’t hold myself to it here.</p>
+<p>A table of contents for the whole work folder, and a “holding area” where an unclassifiable file can wait, also exist only in a design document.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>On 2026-08-03 my work folder had 72 entries at the top level.</strong> That was past what anyone can scan at a glance; the same idea existed under a Korean name and an English name; folders literally named “temp” had been sitting there for months. That day I gathered twenty references (ten videos, ten repos) and wrote a prescription. An adversarial review of my own answer ruled <strong>half of it wrong.</strong> What follows is what survived that review and is in use today. Things that were designed but never built are listed separately at the end.</p>
+<h2 id="why-the-first-prescription-failed--a-method-for-people-applied-to-a-workshop-for-machines">Why the first prescription failed — a method for people, applied to a workshop for machines</h2>
+<p>The famous methods (PARA, Johnny.Decimal, Zettelkasten) are all personal knowledge management: ways to organise <strong>notes a person will read again.</strong> But about 70% of my work folder was owned by machines — code repositories, pipelines, caches, run output.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>The problem it solves</th>
+<th>Fit for a machine workshop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personal knowledge management (PARA, Johnny.Decimal)</td>
+<td>classifying documents people will reread</td>
+<td><strong>poor</strong> — assumes you move folders when status changes</td>
+</tr>
+<tr>
+<td>OS and code (FHS, monorepos)</td>
+<td>laying out things tools find by path</td>
+<td><strong>good</strong> — assumes paths never change</td>
+</tr>
+<tr>
+<td>Data (raw vs processed, date-partitioned folders)</td>
+<td>output that piles up over time</td>
+<td><strong>good</strong> — splits by time, not by category</td>
+</tr>
+</tbody>
+</table>
+<p>The famous methods all come from the first family because that market is big, not because they’re the general answer. Linux’s <code>/usr</code>, <code>/etc</code> and <code>/var</code> have survived for decades on an enormous number of machines, and nobody calls them a “methodology”. They’re infrastructure, not a trend.</p>
+<h2 id="rule-1--where-something-is-saved-depends-on-what-made-it">Rule 1 — where something is saved depends on what made it</h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>What it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-1 Output sits beside its tool</strong></td>
+<td>results of a run or an analysis go under the tool or project folder that produced them. Only when no fitting folder exists do I create <code>C:\work\&lt;topic&gt;\</code></td>
+</tr>
+<tr>
+<td><strong>1-2 Never leave it in the chat</strong></td>
+<td>reports, comparison tables, measurements and evidence screenshots are saved as files. The chat gets a summary and the path</td>
+</tr>
+<tr>
+<td><strong>1-3 Content and date in the name</strong></td>
+<td>the shape is <code>&lt;topic&gt;_&lt;content&gt;_&lt;date&gt;.md</code>, with the date as <code>YYYYMMDD</code></td>
+</tr>
+<tr>
+<td><strong>1-4 Secrets go in <code>secrets</code></strong></td>
+<td>a place that is backed up to the cloud (both PCs need it) but never enters a public repository</td>
+</tr>
+<tr>
+<td><strong>1-5 Big files live outside the work folder</strong></td>
+<td>recordings and videos go to my documents. The work folder keeps small things like HTML reports and JSON</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rule-2--sync-exclusion-is-done-by-a-name">Rule 2 — sync exclusion is done by a name</h2>
+<ul>
+<li><strong>2-1 There is one deciding question:</strong> “does this need to go to the cloud?” “Can it be regenerated?” is a common reason, not the definition. Test evidence screenshots can’t be retaken, but they don’t need to be in the cloud either, so they come here.</li>
+<li><strong>2-2 Walk down to the destination first, then create it.</strong> I don’t pile everything into one <code>_no_sync</code> at the top. I go down into the folder of the tool that made the output and create <code>_no_sync</code> there. The top-level <code>_no_sync</code> only takes one-off investigations that have no home folder at all. A single central one turns into a junk drawer whose contents share exactly one trait: “not synced”.</li>
+<li><strong>2-3 The exclusion pattern has to ignore depth.</strong> The line in the backup config is <code>--exclude=_no_sync/**</code>, and it needs no leading <code>/</code> to catch a <code>_no_sync</code> buried deep. If someone adds the <code>/</code> so it only matches at the root, <strong>every nested one quietly starts uploading.</strong></li>
+<li><strong>2-4 Size is not the test.</strong> The 849MB and 404MB folders above are why.</li>
+<li><strong>2-5 There are two syncs, and their rules are independent.</strong> The cloud backup (S3) skips <code>_no_sync</code>; the sync between my two PCs (Syncthing) deliberately includes it. So <code>_no_sync</code> has <strong>no off-site backup, but it does exist on two machines.</strong> The flip side: delete that folder on one PC and <strong>the other PC’s copy goes too.</strong></li>
+<li><strong>2-6 Per-PC credential files stay out of the PC-to-PC sync.</strong> If an <code>.env</code> crosses over, each PC overwrites the other’s settings.</li>
+</ul>
+<h2 id="rule-3--no-numbers-in-names">Rule 3 — no numbers in names</h2>
+<ul>
+<li><strong>3-1 Where things are found by path, folder names get no number prefix.</strong> Two reasons. A number in the address means every reclassification breaks the address. And past 99, sorting breaks: compared character by character, <code>100_</code> slips in front of <code>10_</code> (the third character <code>0</code> sorts before <code>_</code>), while Windows Explorer sorts by numeric value. <strong>What you see and what a program sees end up in different orders.</strong> In a store that finds files by ID, like Google Drive, numbers are fine.</li>
+<li><strong>3-2 Reserved names keep their exact spelling.</strong> <code>_no_sync</code>, <code>secrets</code> and <code>_archive</code> are words a program grabs by name. Write <code>no_sync</code> or <code>noSync</code> and the backup rule no longer recognises it. <strong>One typo is a leak.</strong></li>
+</ul>
+<h2 id="rule-4--dont-move-it-quarantine-before-deleting">Rule 4 — don’t move it; quarantine before deleting</h2>
+<ul>
+<li><strong>4-1 Paths stay where they are by default.</strong> When something finishes or gets archived, the folder doesn’t move — the index records it.</li>
+<li><strong>4-2 I did one big move, exactly once.</strong> On 2026-08-03 the 72 top-level entries were grouped into 28. Sixty-two items moved, none were lost. Anything with its path hard-coded into a running pipeline was frozen and left alone. The top level still has 28 folders today (measured 2026-10-01).</li>
+<li><strong>4-3 Quarantine before deleting.</strong> The 978 items cleared out that day weren’t deleted on the spot; they went to <code>_no_sync\_deleted_20260803\</code>, and they’re still there.</li>
+<li><strong>4-4 Finished work goes to <code>_archive</code>.</strong> A place for things that could be revived but won’t be touched again.</li>
+</ul>
+<h2 id="rule-5--the-ais-settings-folder-one-canonical-copy-and-an-index-that-routes">Rule 5 — the AI’s settings folder: one canonical copy, and an index that routes</h2>
+<ul>
+<li><strong>5-1 Don’t touch names the program owns.</strong> <code>skills</code>, <code>agents</code> and <code>rules</code> are fixed paths defined by Claude Code. Rename them and skills stop loading. That folder already has a by-type structure enforced on it, so my rules only apply inside it.</li>
+<li><strong>5-2 Rules come in two layers.</strong> Always-read rules (<code>rules/common</code>, five of them) and guides opened when a situation calls for them (<code>guides</code>, thirteen). One table in <code>CLAUDE.md</code> maps situations to guides, and nothing is written into both layers.</li>
+<li><strong>5-3 The memory index (<code>MEMORY.md</code>) is a routing table, not a diary.</strong> It records which file to open when. Three questions decide whether a line goes in.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>If yes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Does it change what I do (a ban, a condition, a rule)?</td>
+<td>the content itself goes in the index — up to 250 characters a line</td>
+</tr>
+<tr>
+<td>Will I need to find it later?</td>
+<td>one line saying when to open it, plus the link — up to 150 characters</td>
+</tr>
+<tr>
+<td>Neither?</td>
+<td><strong>don’t create it</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>5-4 A field’s lessons go to that field’s canonical home.</strong> Test-case rules go into the tc-team skill’s rule drawer; game-making lessons go into the game team’s documents. They are <strong>moved, never copied</strong>, into the memory folder. Two canonical copies always drift apart.</li>
+<li><strong>5-5 There are three rulers.</strong> A check script measures the whole index (24,576 bytes), guard-line length (250 characters) and pointer-line length (150 characters). Go over the total and the tail gets cut off, breaking routing <strong>without a single error.</strong></li>
+<li><strong>5-6 Graduation and revival.</strong> A line unused for 45 days becomes a graduation candidate, and it only drops after a person approves it in the weekly review. If a graduated file is read again, it goes back up, no conditions. It’s PARA’s “archive” without moving a single folder.</li>
+</ul>
+<h2 id="rule-6--dont-merge-stores-put-a-hub-on-top">Rule 6 — don’t merge stores; put a hub on top</h2>
+<p>Three stores with different jobs (a game wiki, the AI’s operating rules and skills, and work output) were <strong>not moved.</strong> A thin hub called <code>_BRAIN</code> sits on top of them. It has four parts: a map of what lives where, a search that covers all three at once, an intake order for new knowledge (proposal → inbox → review), and a list of folders to leave out of the index.</p>
+<p>Memory is split four ways: <strong>D</strong> (domain — facts like the game wiki), <strong>P</strong> (procedure — how work gets done, skills), <strong>E</strong> (episodes — run records) and <strong>R</strong> (reference material). Each has its own write rules; D, for instance, is never edited directly by the hub.</p>
+<h2 id="what-i-rejected--five-things-i-paid-for-and-dropped">What I rejected — five things I paid for and dropped</h2>
+<table>
+<thead>
+<tr>
+<th>Rejected</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>“At most seven at the top level”</strong></td>
+<td>the “7±2” I leaned on is about working-memory capacity, not about browsing folders. Browsing cost is more sensitive to <strong>depth</strong> than to count</td>
+</tr>
+<tr>
+<td><strong>A numbered group layout</strong> (<code>00_meta</code>, <code>10_brain</code> …)</td>
+<td>it covered four different kinds of thing with one scheme. And the moment I wrote “don’t actually move this folder” into it, it became <strong>a map showing ground that wasn’t there</strong></td>
+</tr>
+<tr>
+<td><strong>“Will this still be here in three months?”</strong></td>
+<td>the judge is a person and the standard is a feeling. The rule that survived (<code>_no_sync</code>) had one question and two answers</td>
+</tr>
+<tr>
+<td><strong>“Never use tags”</strong></td>
+<td>tags must not replace the main classification — that part holds. But for shared documents you can’t rename, tags are the only option, so the ban went too far and I corrected it</td>
+</tr>
+<tr>
+<td><strong>Keeping it up by willpower</strong></td>
+<td>“pick one and stick with it” erodes over time. A rule nobody checks might as well not exist</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The lesson this record paid for: before choosing a method, I should have asked who reads this folder.</strong> A folder people read and a folder programs read share the word “folder” and nothing else — they’re different problems.</p>
+<h2 id="designed-never-built">Designed, never built</h2>
+<p>The 2026-08-03 design (v4) had more in it. As of today (2026-10-01), <strong>none of the following has been started.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Design</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Four drawers per work folder</td>
+<td>docs · code · results · no-sync, created only when needed</td>
+</tr>
+<tr>
+<td><code>INDEX.md</code></td>
+<td>a table of contents for the whole work folder, with “current work” capped at five</td>
+</tr>
+<tr>
+<td><code>inbox</code></td>
+<td>a holding area for things that fit nowhere, reported once they’re 30 days old</td>
+</tr>
+<tr>
+<td><code>check_layout.js</code></td>
+<td>flags new top-level folders, names like <code>-temp</code> or <code>_v2</code>, and misspelled reserved names</td>
+</tr>
+<tr>
+<td>One rules file</td>
+<td>today the rules are scattered across a guide, memory files and this page</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ The “holding area” and “index cap” were <strong>adopted</strong> from Jeff Su’s video and still haven’t been built. Adopted and running are different words. That’s also why this table is on the site at all — if it isn’t written down, “we adopted it” turns into “it’s running” in memory.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/writing/ai-foldering/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

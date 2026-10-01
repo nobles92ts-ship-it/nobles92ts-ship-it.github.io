@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 116 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 117 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -136,6 +136,7 @@ Before reading the list —
 - [Choosing](https://nobles92ts-ship-it.github.io/en/writing/choosing/index.md): Deciding whether to bring someone else's work in. What counts as grounds for rejection, and when a rejection gets reopened.
 - [Choosing · Forty rejections, and the reason was rarely the tool](https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/index.md): I took apart forty tools other people built and installed exactly one. What pays is not the 1-in-40 ratio — it is the reasons for the other thirty-nine.
 - [Choosing · You don't have it if it has never run](https://nobles92ts-ship-it.github.io/en/writing/choosing/already-have-it/index.md): Being installed is only the first of three layers. Three investigations pointed at the same two tools, and all three times those tools had never run.
+- [AI foldering](https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/index.md): In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go.
 
 ## Who I am
 
