@@ -2,7 +2,7 @@
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
 
-- 수치: Windows · 무료
+- 수치: v0.1.1 베타 · Windows · 무료
 - 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/
 - 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="깨알 받기">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>약 52MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.1 베타 · 약 52MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>Pixling.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
