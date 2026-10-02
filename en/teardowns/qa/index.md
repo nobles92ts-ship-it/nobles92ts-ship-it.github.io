@@ -1,8 +1,8 @@
 # QA automation
 
-> This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29).
+> This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29). The sixth, clumsy, I took apart twice and have yet to run once (2026-10-02).
 
-- Headline number: 5 written · 4.5 of 4.5 applied
+- Headline number: 6 written · 4.5 of 7 applied
 - Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/
 - Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
@@ -15,11 +15,11 @@ First, what "QA automation" is.
 
 When you build a game or an app, someone has to **press everything and check it works.** Press a button, see if the right screen comes up, confirm the value landed. A person doing that by hand is QA. **Getting a machine to do the pressing** is QA automation.
 
-There are five pieces here, each one someone else's automation, opened up.
+There are six pieces here, each one someone else's automation, opened up.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
-Across five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Only one had actually gone in when I checked — see the 2026-09 check below.)
+Across the first five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Only one had actually gone in when I checked — see the 2026-09 check below.)
 
 My first thought was *I must be reading them badly.* That wasn't it. **Hold the same problem long enough and everyone arrives at similar answers.**
 
@@ -73,6 +73,12 @@ One mistake ran the other way. In the autoplay piece I said my stuck detection h
 
 And outside this shelf, something built by someone else entered my QA pipeline for the first time: the evaluation model **Jev**, attached as the photo judge's "second eye" (2026-09-24). It came in through a four-day trial rather than a teardown, and in the range measured it has not yet caught a real error → [The photo judge](/en/built/android-qa/judge/index.md).
 
+## The sixth piece took the same subject apart twice and never ran it
+
+[clumsy](/en/teardowns/qa/clumsy/index.md) is a tool that makes a PC's internet connection worse on purpose. I opened it for disconnect testing, and only after finishing did I find **a report from August that had already reached the same conclusion.** Both times I wrote "use it". Neither time did I run it.
+
+The check above taught me that writing something down and putting it in are separate jobs; this time I went through that twice inside a single subject. So the shelf's number becomes **"4.5 of 7 applied"** — clumsy adds 2.5 to what was written down, and nothing to what went in.
+
 ## The detailed record starts here
 
 Where other people's test automation gets taken apart: device farms, unattended regression on real hardware, game autoplay tools, agent-driven test platforms.
@@ -88,6 +94,7 @@ Where other people's test automation gets taken apart: device farms, unattended 
 | [An autoplay test tool](/en/teardowns/qa/autoplay-test-tool/index.md) | **2** of 4 | Catch being stuck as **a contradiction in the data**, and clear false positives with **an AND over two timers** |
 | [A talk on QA infrastructure](/en/teardowns/qa/qa-infrastructure/index.md) | **0** | Not a tool but a case where **the character of the evidence** is decided by access |
 | [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | **1.5** of 4 | Measure a detector's false-positive rate **on your own corpus** before adopting it — and on the corpus it will actually run against |
+| [clumsy](/en/teardowns/qa/clumsy/index.md) | **2.5** of 6 (0 applied) | Analysing the same subject twice left the verdict exactly where it was — **only a measurement moves a verdict** |
 
 An investigation that yields nothing isn't wasted. Asleep **turned a set of conclusions with a sample size of one into two** — on-prem, fail-closed on live, unattended regression, element-based targeting. Nebula handed over zero techniques and instead surfaced that **the official gateway's defences aren't wired into the path a real run takes.**
 

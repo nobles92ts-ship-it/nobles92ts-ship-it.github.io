@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>clumsy — QA automation</title><meta name="description" content="A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02)."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="clumsy — QA automation"><meta property="og:description" content="A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02)."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="clumsy — QA automation"><meta name="twitter:description" content="A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02)."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.en.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><link rel="stylesheet" href="/_astro/Shell.BxmtkPL6.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/clumsy/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">6 written · 4.5 of 7 applied</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29). The sixth, clumsy, I took apart twice and have yet to run once (2026-10-02).</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">5 written · 0 code</span></span><span class="s">Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. Catching &quot;stuck&quot; as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).</span></a><a href="/en/teardowns/qa/clumsy/" aria-current="page"><span class="t"><span>clumsy</span><span class="kpi">2.5 kept · 0 runs</span></span><span class="s">A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>clumsy</h1><p class="sum">A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).</p><div class="meta"><span>2.5 kept · 0 runs</span><a class="src" href="https://github.com/jagt/clumsy" target="_blank" rel="noopener">github.com/jagt/clumsy ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#first--what-does-making-the-internet-worse-mean">First — what does “making the internet worse” mean?</a><a href="#why-bother--a-forced-quit-never-walks-the-reconnect-path">Why bother — a forced quit never walks the reconnect path</a><a href="#reading-the-source-turned-up-four-things-the-docs-dont-say">Reading the source turned up four things the docs don’t say</a><a href="#against-my-setup--it-fits-the-pc-game-and-never-reaches-the-phone">Against my setup — it fits the PC game and never reaches the phone</a><a href="#and-then-it-turned-out-to-be-my-second-look">And then it turned out to be my second look</a><a href="#what-comes-next--in-order-this-time">What comes next — in order, this time</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-it-is--a-2709-line-packet-console">What it is — a 2,709-line packet console</a><a href="#how-it-works--two-threads-and-a-40-ms-clock">How it works — two threads and a 40 ms clock</a><a href="#design-decisions--and-the-conditions-they-rest-on">Design decisions — and the conditions they rest on</a><a href="#what-breaking-it-showed--five-places-where-docs-and-code-part">What breaking it showed — five places where docs and code part</a><a href="#against-my-setup--62-empty-slots-and-alternatives-that-overlap">Against my setup — 62 empty slots, and alternatives that overlap</a><a href="#takeaways-and-verdict">Takeaways and verdict</a><a href="#what-i-didnt-do">What I didn’t do</a></nav><div class="prose"><p><strong>clumsy is a free program that deliberately makes a Windows PC’s internet connection worse. I opened it to check whether the PC game I test holds up when the connection drops or lags. The verdict is “use it” — but the real story is elsewhere: I had already analysed the same repo in August, and neither time did I actually run it.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 322" role="img" aria-label="Parcels the game trades with its server pass the WinDivert hook in the Windows network path. The hook picks up parcels that match the filter and hands them to the clumsy console, which delays, drops, cuts or speed-caps them and sends them on. Parcels that don't match pass untouched. You switch it on from the window or with one command line. It only catches what this PC itself sends and receives; other devices are out of reach.">
+  <text class="lbl" x="8" y="20">One parcel's route — the hook picks it up, the console mistreats it, then sets it back down</text>
+  <rect class="vn vn-a" x="8" y="34" width="200" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="108" y="68" text-anchor="middle">The game (this PC)</text>
+  <text class="cap" x="108" y="94" text-anchor="middle">sends and receives</text>
+  <path d="M208 76 H262" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="262" y="34" width="210" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="367" y="68" text-anchor="middle">WinDivert hook</text>
+  <text class="cap" x="367" y="94" text-anchor="middle">Windows network path</text>
+  <path d="M472 76 H526" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="526" y="34" width="262" height="84" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="657" y="68" text-anchor="middle">clumsy console</text>
+  <text class="cap" x="657" y="94" text-anchor="middle">delay · drop · cut · cap speed</text>
+  <path d="M788 76 H842" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="842" y="34" width="150" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="917" y="68" text-anchor="middle">Game server</text>
+  <text class="cap" x="917" y="94" text-anchor="middle">over the internet</text>
+  <path d="M108 118 V150 H917 V118" stroke="#A6A39A" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
+  <text class="cap" x="512" y="178" text-anchor="middle">Parcels that don't match the filter (chat, remote desktop) pass the hook untouched</text>
+  <text class="lbl" x="8" y="210">Two ways to switch it on — tick it in the window, or one command line</text>
+  <rect class="vn vn-a" x="8" y="222" width="488" height="46" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="252" y="250" text-anchor="middle">Window: Start → tick a module → set a value → Stop</text>
+  <rect class="vn vn-a" x="504" y="222" width="488" height="46" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="748" y="250" text-anchor="middle">CLI: --filter … --drop on --timeout 30</text>
+  <line class="rule" x1="8" y1="284" x2="992" y2="284"/>
+  <text class="cap cap-i" x="8" y="308">⇒ It only catches parcels this PC itself sends and receives — other devices are out of reach</text>
+</svg>
+<figcaption>A Windows driver does the catching; clumsy is the console sitting on top of it. That is why nothing outside this PC is within reach.</figcaption>
+</figure>
+<h2 id="first--what-does-making-the-internet-worse-mean">First — what does “making the internet worse” mean?</h2>
+<p>Data doesn’t cross the internet in one piece. It gets <strong>cut into dozens of small parcels</strong>, and each parcel is called a packet. A game trades dozens of them with its server every second.</p>
+<p>clumsy stands at the PC’s front door and catches those parcels. Then it mistreats them the way you tell it to.</p>
+<table>
+<thead>
+<tr>
+<th>You ask it to</th>
+<th>Picture it as</th>
+<th>In a game you see</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Delay</strong></td>
+<td>parcels held at the door for a moment</td>
+<td>high ping — you press, it reacts late</td>
+</tr>
+<tr>
+<td><strong>Drop a few</strong></td>
+<td>a few parcels thrown in the bin</td>
+<td>your character snaps from place to place</td>
+</tr>
+<tr>
+<td><strong>Drop everything</strong></td>
+<td>the door shut</td>
+<td>the server connection is gone</td>
+</tr>
+<tr>
+<td><strong>Cap the speed</strong></td>
+<td>only so much allowed through at once</td>
+<td>long loading</td>
+</tr>
+</tbody>
+</table>
+<p>There are eight of these in all, counting shuffling the order, duplicating, corrupting and forcibly closing a connection. The game keeps running the whole time; you only change numbers in a window.</p>
+<h2 id="why-bother--a-forced-quit-never-walks-the-reconnect-path">Why bother — a forced quit never walks the reconnect path</h2>
+<p>A lot of game QA is checking whether the data is still right after you drop out and come back. The usual way is to kill the game and start it again.</p>
+<p>But a forced quit kills the game itself, and that is not what players live through. <strong>Their game stays up while the line goes dead.</strong> The game then takes a path of its own — notice the drop, try to reconnect, show the reconnect prompt — and a forced quit never sets foot on it.</p>
+<p>Pulling the network cable works too. Your chat and your remote session die with it, though. clumsy can block <strong>only the parcels headed for the game server</strong>, and that is the whole reason to use it.</p>
+<h2 id="reading-the-source-turned-up-four-things-the-docs-dont-say">Reading the source turned up four things the docs don’t say</h2>
+<p>clumsy is 2,709 lines of C, small enough to read end to end. Four things came out that the docs either leave out or get wrong.</p>
+<ol>
+<li><strong>Delay moves in 40 ms steps.</strong> An inner clock ticks every 40 ms, so asking for 100 ms gets you anywhere between 100 and 140. That is fine for telling “a bit laggy” from “very laggy”. It is useless for measuring milliseconds.</li>
+<li><strong>A round trip pays twice.</strong> The same delay lands on parcels going out and coming back, so to raise ping by 300 you type 150.</li>
+<li><strong>From the command line it needs an admin window.</strong> In an ordinary one it simply closes, without a single error message.</li>
+<li><strong>Press Stop before you close it.</strong> Close the window, or let the timer run out, and the parcels it was holding get thrown away instead of sent.</li>
+</ol>
+<h2 id="against-my-setup--it-fits-the-pc-game-and-never-reaches-the-phone">Against my setup — it fits the PC game and never reaches the phone</h2>
+<p>clumsy only catches what <strong>that PC itself sends and receives.</strong> So it works as-is for the PC client and not at all for testing on a real phone, whose parcels never pass through the PC.</p>
+<p>There was already a slot waiting for it. Skimming thirty test-design documents produced by my TC pipeline, I found “network blocking tool” written 24 times and “inject delay” 38 times where the reproduction method goes. Not once was an actual tool named. My <a href="/en/built/tc-team/">TC pipeline</a> drops any case it has no way to reproduce, so clumsy is the name that fills that gap.</p>
+<h2 id="and-then-it-turned-out-to-be-my-second-look">And then it turned out to be my second look</h2>
+<p>I only found out when I went to file the report. <strong>I had analysed the same repo on 18 August</strong>, with the same verdict — yes for the PC, no for phones.</p>
+<p>The first search missed it for a dull reason. The old report is an HTML file, and I had left HTML out of the search.</p>
+<p>What stung more came after that. In six weeks I never ran it once, and the August report’s note — “the one-minute check comes first” — was still sitting there, untouched.</p>
+<p>→ What I learned: <strong>a second analysis didn’t move the verdict at all. The only thing that could have was a five-minute measurement.</strong> Before reopening a subject, I should have checked whether I’d done the “next step” I wrote down last time.</p>
+<h2 id="what-comes-next--in-order-this-time">What comes next — in order, this time</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Switch on the game engine’s own network simulation from the console</td>
+<td>1 min · nothing to install</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Download clumsy on the work PC and check it with ping</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Reproduce one real test case with clumsy</td>
+<td>about 30 min</td>
+</tr>
+</tbody>
+</table>
+<p>If step 1 works, lag testing on the game side is covered and clumsy becomes the tool for full disconnects only. If antivirus blocks it at step 2, that is where it stops. I won’t loosen security settings to run it.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>The verdict is a conditional adopt on the PC side, and the event in this piece is that the same verdict already existed from August.</strong> clumsy is a C program that puts one GUI window on top of WinDivert, a Windows kernel driver. It catches packets that match a filter, then delays, drops, duplicates, reorders, corrupts, resets or throttles them before re-injecting them. It dates from 2013, has 6,251 stars, and master hasn’t moved since January 2022. I opened it as a way to reproduce dropped- and lagging-connection edge cases on a PC game client without touching the app.</p>
+<h2 id="what-it-is--a-2709-line-packet-console">What it is — a 2,709-line packet console</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Measured (2026-10-02)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size</td>
+<td>14 C files, <strong>2,709 lines</strong> · 6,251 stars · 620 forks</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>last master commit 2022-01-12 · latest release 0.3 (2023-10-21)</td>
+</tr>
+<tr>
+<td>Builds</td>
+<td>0.3 ships as <strong>three variants, a, b and c</strong>, each with a differently signed WinDivert driver. win64 downloads: a 400,186 · b 12,811 · c 18,856</td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td>bundles WinDivert 2.2.0 (upstream is at 2.2.2) · IUP for the GUI</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>MIT. GitHub shows NOASSERTION, apparently because of a prose line at the top of the LICENSE file</td>
+</tr>
+<tr>
+<td>Open issues + PRs</td>
+<td>131</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-it-works--two-threads-and-a-40-ms-clock">How it works — two threads and a 40 ms clock</h2>
+<p>Two threads share the work. One receives packets with <code>WinDivertRecv</code>, appends each to a list, runs all eight modules over it and sends whatever survives. The other repeats that step <strong>every 40 ms</strong> (<code>CLOCK_WAITMS 40</code>). A held packet is released only when the next packet arrives or that clock ticks.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Does</th>
+<th>Seen in the source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lag</td>
+<td>fixed delay, 0–15,000 ms</td>
+<td><strong>one value</strong> for both directions (#172). At 2,000 held packets it flushes 800 at once</td>
+</tr>
+<tr>
+<td>Drop</td>
+<td>per-packet random discard</td>
+<td>probability stored as an integer from 0 to 10000 (0.01% steps); independent trials, so no bursty loss</td>
+</tr>
+<tr>
+<td>Throttle</td>
+<td>holds a time window, then releases it all at once</td>
+<td>with “Drop Throttled” the whole batch is discarded — the only way it imitates bursty loss</td>
+</tr>
+<tr>
+<td>Duplicate · OOD</td>
+<td>2–50 copies · pushes a packet up to 10 steps back</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Tamper</td>
+<td>flips payload bits</td>
+<td>checksum recompute is on by default, so corrupted data reaches the app</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>sets the TCP RST flag</td>
+<td>only when a TCP header exists — no effect on UDP</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>KB/s cap</td>
+<td><strong>drops the excess</strong> rather than queueing it; inbound and outbound <strong>share one meter</strong> (<code>rateStats</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-decisions--and-the-conditions-they-rest-on">Design decisions — and the conditions they rest on</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Holds only if</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercept at the OS with a kernel driver</td>
+<td>you have admin rights, the driver signature passes and security software doesn’t block it. The layer is <code>WINDIVERT_LAYER_NETWORK</code>, so it <strong>only sees this PC’s own traffic</strong></td>
+</tr>
+<tr>
+<td>Choose targets with a filter language</td>
+<td>you know the server’s IP and port. That layer carries no process information, so <strong>you cannot filter by program name</strong></td>
+</tr>
+<tr>
+<td>Run one clock at 40 ms</td>
+<td>sparse traffic arrives 0–40 ms later per direction than asked. Harmless for 100 ms-scale tests of feel</td>
+</tr>
+<tr>
+<td>CLI pushes <code>--key value</code> into a global store that each module reads</td>
+<td>without admin, the silent branch of <code>tryElevate</code> <strong>exits with no message</strong>, and the runas relaunch doesn’t pass the arguments on</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-breaking-it-showed--five-places-where-docs-and-code-part">What breaking it showed — five places where docs and code part</h2>
+<ol>
+<li><strong>Delay accuracy.</strong> Issue #87 (open) reports an 80 ms gap between consecutive requests at a delay of zero — 40 ms each way — and spikes to 50 ms at a setting of 1 ms. That lines up exactly with the 40 ms clock, so I record these numbers as settings and never quote them as measured round-trip time.</li>
+<li><strong>Shutdown path.</strong> When <code>--timeout</code> expires or the window is closed, control goes <code>IUP_CLOSE</code> → <code>cleanup()</code>, and <code>divertStop()</code> is never called. The filter vanishes with the process, but the packets Lag was holding vanish too instead of being sent. Only the Stop button closes the modules and flushes them.</li>
+<li><strong>Silent CLI exit.</strong> Issue #141, “closes instantly when given options”, looks like that silent branch at work (an inference — I didn’t run it to confirm).</li>
+<li><strong>Doc drift.</strong> The wiki gives the delay range as 0–3,000; the code accepts up to 15,000. <code>--timeout</code> and <code>--duplicate-count</code> aren’t in the wiki at all (#189).</li>
+<li><strong>Environment.</strong> Antivirus flags the 0.3 zip as <code>Trojan:Script/Ulthar.A!ml</code> (#187, November 2025, open) · driver signature errors (#84) · slowness that lingers after closing, fixed by a reboot (#31) · one blue-screen report (#107) · no remote control or hotkey (#1, open since 2013).</li>
+</ol>
+<figure class="fig">
+<svg viewBox="0 0 1000 304" role="img" aria-label="The verdict split into three boxes. Use it: cutting off one server completely, delay in steps of 100 ms or more, and auto-recovery with timeout, on the PC game with test accounts only. Parked: force-closing TCP connections, and random loss or speed caps, to be revisited once there is a pass mark. Can't use it: traffic on a real phone and millisecond-level measurement. The verdict matches August; analysed twice, run zero times.">
+  <text class="lbl" x="8" y="20">How far to trust it — split into three boxes</text>
+  <rect class="vn vn-b" x="8" y="34" width="320" height="180" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="64" text-anchor="middle">Use it</text>
+  <text class="cap" x="168" y="96" text-anchor="middle">Cut off one server completely</text>
+  <text class="cap" x="168" y="122" text-anchor="middle">Delay in steps of 100 ms+</text>
+  <text class="cap" x="168" y="148" text-anchor="middle">Auto-recover with --timeout</text>
+  <text class="cap" x="168" y="186" text-anchor="middle">(PC game · test accounts only)</text>
+  <rect class="vn vn-a" x="340" y="34" width="320" height="180" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="64" text-anchor="middle">Parked</text>
+  <text class="cap" x="500" y="96" text-anchor="middle">Force-closing TCP connections</text>
+  <text class="cap" x="500" y="122" text-anchor="middle">Random loss · speed caps</text>
+  <text class="cap" x="500" y="186" text-anchor="middle">→ back once there's a pass mark</text>
+  <rect class="vn vn-a" x="672" y="34" width="320" height="180" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="64" text-anchor="middle">Can't use it</text>
+  <text class="cap" x="832" y="96" text-anchor="middle">Traffic on a real phone</text>
+  <text class="cap" x="832" y="122" text-anchor="middle">Millisecond-level measurement</text>
+  <text class="cap" x="832" y="186" text-anchor="middle">→ a different tool</text>
+  <line class="rule" x1="8" y1="236" x2="992" y2="236"/>
+  <text class="cap cap-i" x="8" y="262">⇒ The verdict matches August word for word — analysed twice, run zero times</text>
+  <text class="cap" x="8" y="288">The next step that could move it: a 1-minute engine check → a 5-minute run on the work PC</text>
+</svg>
+<figcaption>Two teardowns of the same subject left every item in the same box. Only a measurement can move one.</figcaption>
+</figure>
+<h2 id="against-my-setup--62-empty-slots-and-alternatives-that-overlap">Against my setup — 62 empty slots, and alternatives that overlap</h2>
+<p>I test two things: a PC client and real Android phones. clumsy only reaches the first.</p>
+<p>The PC side had empty slots. Across thirty test-design documents from my TC pipeline, the reproduction-method column said “network blocking tool” 24 times, “inject delay” 38 times and “airplane mode” 5 times, never naming a tool (grep, 2026-10-02). The pipeline writes concurrency and race cases <strong>only when there is a means to reproduce them</strong>, and parks the rest under “needs a reproduction method”. One working tool brings those parked cases back.</p>
+<p>Three alternatives overlap with it.</p>
+<table>
+<thead>
+<tr>
+<th>Alternative</th>
+<th>Relation to clumsy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Force-quit the process, then reconnect</td>
+<td><strong>Complements it rather than replacing it.</strong> The client dies, so it never runs “detect drop → reconnect → reconnect prompt”</td>
+</tr>
+<tr>
+<td>The engine’s own network emulation (e.g. Unreal Engine’s <code>NetEmulation.PktLag</code>)</td>
+<td><strong>Overlaps on game-channel delay and loss.</strong> It needs no driver or admin and is more precise, but it covers only the game channel, isn’t in shipping builds, and makes a clean full disconnect awkward</td>
+</tr>
+<tr>
+<td>Pulling the cable</td>
+<td>takes chat and remote sessions down too, and is impossible on a PC you only reach remotely</td>
+</tr>
+</tbody>
+</table>
+<p>In August I found the engine’s packet-simulation names in the debug symbols of an internal build and wrote that the feature had very likely been compiled in. Nobody has since spent the one minute it takes to type the command into the console.</p>
+<h2 id="takeaways-and-verdict">Takeaways and verdict</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server-IP filter + Drop 100% = cut off that server only</td>
+<td>✅ <strong>Adopt</strong> — the reproduction method for PC disconnect cases</td>
+</tr>
+<tr>
+<td>Lag of 100 ms or more</td>
+<td>✅ <strong>Conditional (0.5)</strong> — if the engine’s own emulation works, that comes first. Record values as settings only</td>
+</tr>
+<tr>
+<td><code>--timeout N</code></td>
+<td>✅ <strong>Adopt</strong> — repeatable N-second drops, and a safety line so I can’t strand myself on a remote PC</td>
+</tr>
+<tr>
+<td>Reset (TCP RST)</td>
+<td>⏸ <strong>Parked</strong> — I don’t yet know which connections are TCP</td>
+</tr>
+<tr>
+<td>Random loss · bandwidth</td>
+<td>⏸ <strong>Parked</strong> — the loss pattern differs from a real line, and there’s no pass mark</td>
+</tr>
+<tr>
+<td>Real Android phones</td>
+<td>⛔ <strong>Rejected</strong> — their traffic never passes through the PC. The hotspot fork (<code>abaza121/clumsy-hotspot</code>) catches phones but loses the PC itself</td>
+</tr>
+</tbody>
+</table>
+<p>Undoing it costs essentially nothing, since one press of Stop ends it, so even at medium confidence the right move is to try. I’m fixing the stop signal in advance as well: if all three variants are blocked by signing or antivirus, that is the end of it — no exclusions, and no switching off signature checks.</p>
+<h2 id="what-i-didnt-do">What I didn’t do</h2>
+<ul>
+<li><strong>Zero real runs.</strong> It needs a kernel driver, so once again I didn’t run it. Every number above was read from the source and the issues.</li>
+<li><strong>Zero checks of the engine’s built-in emulation</strong> — a one-minute job, outstanding since August.</li>
+<li><strong>No check of the work security policy.</strong> Whether antivirus blocks it only shows once it’s downloaded.</li>
+<li><strong>Still nothing for the phone side.</strong></li>
+</ul>
+<p><strong>The lesson that cost something here is about order.</strong> I analysed the same subject twice and the verdict didn’t change by a word; what changed was a longer list of recipes and four more pitfalls dug out of the source. The one thing that could have moved the verdict was a five-minute measurement, and both times it stayed “next time”. And the second analysis only began because <strong>I had left HTML out of the search</strong> — the price of calling something absent after looking in one place.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/qa/clumsy/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

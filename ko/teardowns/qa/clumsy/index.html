@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>clumsy — QA 자동화</title><meta name="description" content="윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02)."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="clumsy — QA 자동화"><meta property="og:description" content="윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02)."><meta property="og:url" content="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/"><meta property="og:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="clumsy — QA 자동화"><meta name="twitter:description" content="윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02)."><meta name="twitter:image" content="https://nobles92ts-ship-it.github.io/og.ko.png"><link rel="canonical" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/"><link rel="alternate" type="text/markdown" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/index.md"><link rel="describedby" href="https://nobles92ts-ship-it.github.io/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/"><link rel="alternate" hreflang="en" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><link rel="alternate" hreflang="x-default" href="https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/"><link rel="stylesheet" href="/_astro/Shell.BxmtkPL6.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/qa/clumsy/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">21편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/" aria-current="page"><span class="t"><span>QA 자동화</span><span class="kpi">6편 · 적용 4.5 / 7</span></span><span class="s">제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서. 그리고 가져오겠다고 적은 4.5건 중 점검 때 들어가 있던 건 1건뿐이라, 나머지 3.5건을 이틀에 걸쳐 다 넣었습니다(2026-09-28~29). 여섯 번째 clumsy는 같은 걸 두 번 뜯고 아직 한 번도 안 돌렸습니다(2026-10-02).</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">5편 · 코드 0</span></span><span class="s">엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/qa/toss-nebula/"><span class="t"><span>토스 네뷸라 디바이스 팜</span><span class="kpi">수확 0종</span></span><span class="s">가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.</span></a><a href="/ko/teardowns/qa/asleep-qa/"><span class="t"><span>에이슬립 QA 자동화</span><span class="kpi">11종 중 1</span></span><span class="s">11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.</span></a><a href="/ko/teardowns/qa/autoplay-test-tool/"><span class="t"><span>오토플레이 테스트 툴</span><span class="kpi">기법 4 중 2</span></span><span class="s">봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡는 방식이 제 것보다 나았습니다 — 그래서 모순 감지와 두 시계 확정을 둘 다 제 봇에 넣었습니다(2026-09-28).</span></a><a href="/ko/teardowns/qa/qa-infrastructure/"><span class="t"><span>QA 인프라 발표</span><span class="kpi">자막 0 · 슬라이드만</span></span><span class="s">자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.</span></a><a href="/ko/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">수확 4 → 1.5</span></span><span class="s">AI 티를 지우는 도구를 검사 게이트 점검용으로 열었습니다. 그런데 AI를 잡으라고 만든 지표가, 사람이 쓴 제 글을 먼저 잡았습니다. 그래서 긴 글 전용으로 좁혀서만 넣었습니다(2026-09-29).</span></a><a href="/ko/teardowns/qa/clumsy/" aria-current="page"><span class="t"><span>clumsy</span><span class="kpi">수확 2.5 · 실행 0회</span></span><span class="s">윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02).</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>clumsy</h1><p class="sum">윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02).</p><div class="meta"><span>수확 2.5 · 실행 0회</span><a class="src" href="https://github.com/jagt/clumsy" target="_blank" rel="noopener">github.com/jagt/clumsy ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#먼저--인터넷을-나쁘게-만든다는-게-무슨-뜻인가요">먼저 — 「인터넷을 나쁘게 만든다」는 게 무슨 뜻인가요</a><a href="#왜-이게-필요한가요--강제-종료로는-안-지나가는-길이-있습니다">왜 이게 필요한가요 — 강제 종료로는 안 지나가는 길이 있습니다</a><a href="#소스를-열어-보니-설명서에-없는-것이-넷-있었습니다">소스를 열어 보니, 설명서에 없는 것이 넷 있었습니다</a><a href="#제-환경에-대-보니--pc-게임에는-맞고-휴대폰에는-안-닿습니다">제 환경에 대 보니 — PC 게임에는 맞고, 휴대폰에는 안 닿습니다</a><a href="#그런데-이건-두-번째-분석이었습니다">그런데 이건 두 번째 분석이었습니다</a><a href="#다음에-할-일--이번엔-순서까지-적어-둡니다">다음에 할 일 — 이번엔 순서까지 적어 둡니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#무엇을-하는-물건인가--2709줄짜리-패킷-조작판">무엇을 하는 물건인가 — 2,709줄짜리 패킷 조작판</a><a href="#어떻게-동작하나--실-두-개와-40ms-시계">어떻게 동작하나 — 실 두 개와 40ms 시계</a><a href="#대표-설계-결정--그리고-그게-성립하는-조건">대표 설계 결정 — 그리고 그게 성립하는 조건</a><a href="#깨본-결과--문서와-소스가-갈리는-다섯-곳">깨본 결과 — 문서와 소스가 갈리는 다섯 곳</a><a href="#내-환경에-대봤다--빈칸-62곳-그리고-한-겹-겹치는-대안">내 환경에 대봤다 — 빈칸 62곳, 그리고 한 겹 겹치는 대안</a><a href="#수확과-판정">수확과 판정</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>clumsy는 윈도우 PC의 인터넷을 일부러 나쁘게 만드는 무료 프로그램입니다. 제가 QA하는 PC 게임이 끊기거나 느려질 때 제대로 버티는지 보려고 열었습니다. 판정은 「쓴다」인데, 이 편의 진짜 이야기는 따로 있습니다 — 같은 레포를 8월에 이미 한 번 분석했고, 두 번 다 한 번도 돌려 보지 않았습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 322" role="img" aria-label="게임이 서버와 주고받는 소포는 윈도우 네트워크 길목의 WinDivert 갈고리를 지난다. 갈고리가 필터에 맞는 소포를 집어 clumsy 조작판에 넘기면, 조작판이 늦추기·버리기·끊기·속도 제한을 한 뒤 다시 내보낸다. 필터에 안 맞는 소포는 그냥 지나간다. 켜는 법은 창에서 체크하거나 명령줄 한 줄이다. 이 PC가 직접 주고받는 소포만 잡고 다른 기기의 소포에는 손이 닿지 않는다.">
+  <text class="lbl" x="8" y="20">소포 하나가 지나가는 길 — 갈고리가 집어 들고, 조작판이 괴롭힌 뒤 다시 내려놓는다</text>
+  <rect class="vn vn-a" x="8" y="34" width="200" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="108" y="68" text-anchor="middle">게임 (이 PC)</text>
+  <text class="cap" x="108" y="94" text-anchor="middle">보내고 받는 쪽</text>
+  <path d="M208 76 H262" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="262" y="34" width="210" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="367" y="68" text-anchor="middle">WinDivert 갈고리</text>
+  <text class="cap" x="367" y="94" text-anchor="middle">윈도우 네트워크 길목</text>
+  <path d="M472 76 H526" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-b" x="526" y="34" width="262" height="84" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="657" y="68" text-anchor="middle">clumsy 조작판</text>
+  <text class="cap" x="657" y="94" text-anchor="middle">늦추기 · 버리기 · 끊기 · 속도 제한</text>
+  <path d="M788 76 H842" stroke="#A6A39A" stroke-width="1.5"/>
+  <rect class="vn vn-a" x="842" y="34" width="150" height="84" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="917" y="68" text-anchor="middle">게임 서버</text>
+  <text class="cap" x="917" y="94" text-anchor="middle">인터넷 너머</text>
+  <path d="M108 118 V150 H917 V118" stroke="#A6A39A" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
+  <text class="cap" x="512" y="178" text-anchor="middle">필터에 안 맞는 소포(메신저·원격 접속)는 갈고리를 그냥 지나간다</text>
+  <text class="lbl" x="8" y="210">켜는 법 두 가지 — 창에서 체크하거나, 명령줄 한 줄로</text>
+  <rect class="vn vn-a" x="8" y="222" width="488" height="46" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="252" y="250" text-anchor="middle">창: Start → 모듈 체크 → 값 입력 → Stop</text>
+  <rect class="vn vn-a" x="504" y="222" width="488" height="46" rx="2" fill-opacity=".05"/>
+  <text class="cap" x="748" y="250" text-anchor="middle">명령줄: --filter … --drop on --timeout 30</text>
+  <line class="rule" x1="8" y1="284" x2="992" y2="284"/>
+  <text class="cap cap-i" x="8" y="308">⇒ 이 PC가 직접 주고받는 소포만 잡는다 — 다른 기기의 소포에는 손이 닿지 않는다</text>
+</svg>
+<figcaption>소포를 집는 것은 윈도우 드라이버이고, clumsy는 그 위에 얹은 조작판이다. 그래서 이 PC 밖의 기기에는 손이 닿지 않는다.</figcaption>
+</figure>
+<h2 id="먼저--인터넷을-나쁘게-만든다는-게-무슨-뜻인가요">먼저 — 「인터넷을 나쁘게 만든다」는 게 무슨 뜻인가요</h2>
+<p>인터넷으로 오가는 데이터는 한 덩어리로 가지 않습니다. <strong>작은 소포 수십 개로 잘려서</strong> 오가고, 이 소포 하나를 「패킷」이라고 부릅니다. 게임은 1초에도 수십 개씩 서버와 패킷을 주고받습니다.</p>
+<p>clumsy는 PC의 인터넷 출입문에 서서 이 소포들을 붙잡습니다. 그리고 시킨 대로 괴롭힙니다.</p>
+<table>
+<thead>
+<tr>
+<th>시키는 것</th>
+<th>비유하면</th>
+<th>게임에서는</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>늦추기</strong></td>
+<td>소포를 문 앞에 잠깐 세워 둠</td>
+<td>핑이 높아짐 — 누르고 한참 뒤에 반응</td>
+</tr>
+<tr>
+<td><strong>몇 개 버리기</strong></td>
+<td>소포 몇 개를 쓰레기통에</td>
+<td>캐릭터가 순간이동하듯 튐</td>
+</tr>
+<tr>
+<td><strong>전부 버리기</strong></td>
+<td>출입문을 아예 닫음</td>
+<td>서버와 연결이 끊김</td>
+</tr>
+<tr>
+<td><strong>속도 제한</strong></td>
+<td>한 번에 지나가는 양을 묶음</td>
+<td>로딩이 길어짐</td>
+</tr>
+</tbody>
+</table>
+<p>이 밖에 순서 섞기·복사하기·내용 망가뜨리기·연결 강제로 끊기까지 모두 여덟 가지가 있습니다. 게임은 켜 둔 채로 창에서 숫자만 바꾸면 됩니다.</p>
+<h2 id="왜-이게-필요한가요--강제-종료로는-안-지나가는-길이-있습니다">왜 이게 필요한가요 — 강제 종료로는 안 지나가는 길이 있습니다</h2>
+<p>게임 QA에는 「접속이 끊겼다가 다시 들어오면 데이터가 맞나」를 보는 일이 많습니다. 보통은 게임을 강제로 꺼 버리고 다시 켜서 확인합니다.</p>
+<p>그런데 강제 종료는 게임 자체가 죽습니다. 실제 사용자가 겪는 끊김은 다릅니다 — <strong>게임은 살아 있는데 선만 끊깁니다.</strong> 이때 게임은 「연결이 끊겼네 → 다시 붙어 보자 → 재연결 창을 띄우자」라는 별도의 길을 타는데, 강제 종료로는 이 길을 한 번도 지나가지 않습니다.</p>
+<p>랜선을 뽑으면 되긴 합니다. 하지만 메신저도 원격 접속도 같이 끊깁니다. clumsy는 <strong>게임 서버로 가는 소포만 골라서</strong> 막을 수 있고, 그게 이 도구를 쓰는 이유입니다.</p>
+<h2 id="소스를-열어-보니-설명서에-없는-것이-넷-있었습니다">소스를 열어 보니, 설명서에 없는 것이 넷 있었습니다</h2>
+<p>clumsy는 C로 2,709줄입니다. 작아서 전부 읽었습니다. 설명서와 다르거나 설명서에 아예 없는 것이 넷 나왔습니다.</p>
+<ol>
+<li><strong>지연은 40ms 단위로 흔들립니다.</strong> 안쪽 시계가 40ms마다 한 번 돌기 때문이고, 그래서 100ms를 넣으면 실제로는 100~140ms 사이가 됩니다. 「조금 느림」과 「많이 느림」을 가르는 데는 충분합니다. 몇 ms를 재는 데는 못 씁니다.</li>
+<li><strong>왕복에는 두 번 걸립니다.</strong> 나가는 소포와 들어오는 소포에 같은 값이 붙어서, 핑을 300 늘리고 싶으면 150을 넣어야 합니다.</li>
+<li><strong>명령줄로 켤 땐 관리자 창에서 켜야 합니다.</strong> 일반 창에서 켜면 오류 메시지 하나 없이 그냥 꺼집니다.</li>
+<li><strong>Stop을 누르고 나서 닫아야 합니다.</strong> 창을 바로 닫거나 정해 둔 시간이 다 돼서 꺼지면, 붙잡고 있던 소포를 내보내지 않고 버린 채 끝납니다.</li>
+</ol>
+<h2 id="제-환경에-대-보니--pc-게임에는-맞고-휴대폰에는-안-닿습니다">제 환경에 대 보니 — PC 게임에는 맞고, 휴대폰에는 안 닿습니다</h2>
+<p>clumsy는 <strong>그 PC가 직접 주고받는 소포만</strong> 잡습니다. 그래서 PC 게임 테스트에는 그대로 쓸 수 있고, 휴대폰 실기기 테스트에는 못 씁니다. 휴대폰의 소포는 PC를 지나가지 않으니까요.</p>
+<p>쓸 자리도 이미 있었습니다. 제 TC 생성 파이프라인이 만든 테스트 설계 문서 30편을 훑어보니, 재현 방법 칸에 「네트워크 차단 도구」가 24번, 「지연 주입」이 38번 적혀 있었습니다. 어떤 도구인지는 한 번도 적혀 있지 않았습니다. 그리고 제 <a href="/ko/built/tc-team/">TC 파이프라인</a> 규칙은 재현 방법이 없는 케이스를 아예 빼 버립니다. clumsy가 그 빈칸에 들어갈 이름입니다.</p>
+<h2 id="그런데-이건-두-번째-분석이었습니다">그런데 이건 두 번째 분석이었습니다</h2>
+<p>리포트를 다 쓰고 목록에 올리려다 알았습니다. <strong>8월 18일에 같은 레포를 이미 분석해 뒀습니다.</strong> 판정도 같았습니다 — PC에는 쓴다, 휴대폰은 안 된다.</p>
+<p>처음 검색에서 못 찾은 이유는 단순합니다. 옛 리포트는 HTML 파일인데, 검색 대상에서 HTML을 뺐습니다.</p>
+<p>더 아픈 건 그다음입니다. 6주 동안 한 번도 돌려 보지 않았고, 8월 리포트가 「제일 먼저 할 1분짜리 확인」이라고 적어 둔 것도 손대지 않은 채 그대로 남아 있었습니다.</p>
+<p>→ 배운 것: <strong>분석을 한 번 더 해도 판정은 움직이지 않았습니다. 판정을 움직일 수 있는 건 5분짜리 실측뿐이었습니다.</strong> 같은 대상을 다시 열기 전에, 지난번에 「다음에 할 일」로 적어 둔 것부터 했는지 봐야 했습니다.</p>
+<h2 id="다음에-할-일--이번엔-순서까지-적어-둡니다">다음에 할 일 — 이번엔 순서까지 적어 둡니다</h2>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>할 일</th>
+<th>걸리는 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>게임 엔진에 들어 있는 네트워크 흉내 기능을 콘솔에서 켜 보기</td>
+<td>1분 · 설치 없음</td>
+</tr>
+<tr>
+<td>2</td>
+<td>회사 PC에서 clumsy를 받아 핑으로 확인하기</td>
+<td>5분</td>
+</tr>
+<tr>
+<td>3</td>
+<td>실제 테스트 케이스 하나를 clumsy로 재현해 보기</td>
+<td>30분쯤</td>
+</tr>
+</tbody>
+</table>
+<p>1번이 먹히면 게임 쪽 지연 테스트는 그걸로 충분하고 clumsy는 「완전히 끊기」 전용이 됩니다. 2번에서 백신이 막으면 거기서 멈춥니다. 보안 설정을 풀면서까지 쓰지는 않습니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>판정은 PC 쪽 채택(조건부)이고, 같은 판정이 8월에 이미 나와 있었다는 것이 이 편의 사건입니다.</strong> clumsy는 윈도우 커널 드라이버 WinDivert 위에 GUI 한 장을 얹은 C 프로그램입니다. 필터에 맞는 패킷을 붙잡아 늦추고·버리고·복제하고·섞고·변조하고·RST를 꽂고·대역폭을 깎은 뒤 다시 주입합니다. 2013년에 나와 별 6,251개를 모았고, 2022년 1월 이후 master 커밋이 없습니다. 저는 PC 게임 클라이언트의 「끊김·지연」 예외 케이스를 앱 수정 없이 재현할 수단으로 열었습니다.</p>
+<h2 id="무엇을-하는-물건인가--2709줄짜리-패킷-조작판">무엇을 하는 물건인가 — 2,709줄짜리 패킷 조작판</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실측 (2026-10-02)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규모</td>
+<td>C 소스 14파일 <strong>2,709줄</strong> · 별 6,251 · 포크 620</td>
+</tr>
+<tr>
+<td>활동</td>
+<td>master 마지막 커밋 2022-01-12 · 최신 릴리스 0.3(2023-10-21)</td>
+</tr>
+<tr>
+<td>배포</td>
+<td>같은 0.3을 <strong>a·b·c 세 벌</strong>로 낸다 — WinDivert 드라이버 서명이 서로 다르다. win64 누적 다운로드 a 400,186 · b 12,811 · c 18,856</td>
+</tr>
+<tr>
+<td>의존</td>
+<td>WinDivert 2.2.0 동봉(상류 최신은 2.2.2) · GUI는 IUP</td>
+</tr>
+<tr>
+<td>라이선스</td>
+<td>MIT. GitHub 표기는 NOASSERTION인데, LICENSE 첫 줄에 붙은 설명문 탓으로 보인다</td>
+</tr>
+<tr>
+<td>열린 이슈+PR</td>
+<td>131</td>
+</tr>
+</tbody>
+</table>
+<h2 id="어떻게-동작하나--실-두-개와-40ms-시계">어떻게 동작하나 — 실 두 개와 40ms 시계</h2>
+<p>동작은 실(thread) 두 개가 나눠 맡습니다. 하나는 <code>WinDivertRecv</code> 로 패킷을 받을 때마다 목록에 넣고, 모듈 여덟을 차례로 통과시킨 뒤 남은 것을 내보냅니다. 다른 하나는 <strong>40ms마다</strong>(<code>CLOCK_WAITMS 40</code>) 같은 일을 한 번 더 합니다. 붙잡아 둔 패킷은 다음 패킷이 오거나 이 시계가 돌 때만 풀립니다.</p>
+<table>
+<thead>
+<tr>
+<th>모듈</th>
+<th>하는 일</th>
+<th>소스에서 본 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lag</td>
+<td>고정 지연 0–15,000ms</td>
+<td>들어오기·나가기에 <strong>같은 값 하나</strong>(#172). 2,000개가 쌓이면 800개를 즉시 내보냄</td>
+</tr>
+<tr>
+<td>Drop</td>
+<td>패킷마다 확률로 폐기</td>
+<td>확률을 0~10000 정수로 저장(0.01% 단위). 독립 시행이라 몰아서 잃는 모양은 안 나옴</td>
+</tr>
+<tr>
+<td>Throttle</td>
+<td>시간 창 동안 모았다가 한꺼번에 내보냄</td>
+<td>「Drop Throttled」를 켜면 묶음째 폐기 — 몰아서 잃는 손실은 이걸로만 흉내 낸다</td>
+</tr>
+<tr>
+<td>Duplicate · OOD</td>
+<td>2–50개 복제 · 최대 10 차례 뒤로 미루기</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Tamper</td>
+<td>페이로드 비트 변조</td>
+<td>체크섬 재계산이 기본 ON이라, 변조된 데이터가 앱까지 도착한다</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>TCP RST 플래그 세팅</td>
+<td>TCP 헤더가 있을 때만 — UDP에는 효과 없음</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>KB/s 상한</td>
+<td>줄을 세우지 않고 <strong>초과분을 폐기</strong>. 들어오기·나가기가 계량기 <code>rateStats</code> <strong>하나를 공유</strong>한다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="대표-설계-결정--그리고-그게-성립하는-조건">대표 설계 결정 — 그리고 그게 성립하는 조건</h2>
+<table>
+<thead>
+<tr>
+<th>결정</th>
+<th>성립 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>커널 드라이버로 OS 길목에서 가로챈다</td>
+<td>관리자 권한 · 드라이버 서명 통과 · 보안 제품이 막지 않을 것. 레이어가 <code>WINDIVERT_LAYER_NETWORK</code> 라 <strong>이 PC 자신의 트래픽만</strong> 잡는다</td>
+</tr>
+<tr>
+<td>필터 문법으로 대상을 고른다</td>
+<td>서버 IP·포트를 알아야 한다. 이 레이어에는 프로세스 정보가 없어서 <strong>프로그램 이름으로는 못 거른다</strong></td>
+</tr>
+<tr>
+<td>시계 하나를 40ms로 돌린다</td>
+<td>트래픽이 뜸하면 설정값보다 방향마다 0~40ms 늦다. 100ms 단위 체감 테스트에는 무해하다</td>
+</tr>
+<tr>
+<td>명령줄은 <code>--키 값</code> 을 전역 저장소에 넣고 모듈이 꺼내 쓴다</td>
+<td>관리자가 아니면 <code>tryElevate</code> 의 silent 분기가 <strong>메시지 없이 종료</strong>한다. 승격 재실행(runas)은 인자를 넘기지 않는다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="깨본-결과--문서와-소스가-갈리는-다섯-곳">깨본 결과 — 문서와 소스가 갈리는 다섯 곳</h2>
+<ol>
+<li><strong>지연 정확도.</strong> #87(열림)은 지연을 0으로 둬도 연속 요청 간격이 80ms, 곧 방향마다 40ms 벌어지고, 1ms 설정에서는 50ms까지 튄다고 보고합니다. 소스의 40ms 시계와 정확히 맞물립니다. 그래서 이 값은 「설정값」으로만 적고 실측 왕복 시간으로 인용하지 않습니다.</li>
+<li><strong>종료 경로.</strong> <code>--timeout</code> 이 끝나거나 창을 닫으면 <code>IUP_CLOSE</code> → <code>cleanup()</code> 으로 가는데, 여기서 <code>divertStop()</code> 을 부르지 않습니다. 필터는 프로세스가 끝나며 풀리지만 Lag가 붙잡고 있던 패킷은 내보내지 않고 사라집니다. 모듈을 닫고 남은 패킷을 다 보내는 길은 Stop 버튼 하나뿐입니다.</li>
+<li><strong>명령줄 무음 종료.</strong> #141 「옵션을 주면 즉시 꺼짐」의 원인은 위 silent 분기로 보입니다(추정 — 실행으로 확인하지 않았습니다).</li>
+<li><strong>문서 어긋남.</strong> 위키는 지연 범위를 0–3,000으로 적었지만 코드는 15,000까지 받습니다. <code>--timeout</code>·<code>--duplicate-count</code> 는 위키에 아예 없습니다(#189).</li>
+<li><strong>환경.</strong> 백신이 0.3 zip을 <code>Trojan:Script/Ulthar.A!ml</code> 로 탐지(#187, 2025-11, 열림) · 드라이버 서명 오류(#84) · 닫은 뒤에도 느려짐이 남음(#31, 재부팅으로 해결) · 블루스크린 보고 1건(#107) · 원격 제어와 단축키 없음(#1, 2013년부터 열림).</li>
+</ol>
+<figure class="fig">
+<svg viewBox="0 0 1000 304" role="img" aria-label="판정을 세 칸으로 나눈 그림. 쓴다 칸에는 특정 서버만 완전히 끊기, 100ms 이상 단위의 지연, timeout으로 자동 복구가 있고 PC 게임과 테스트 계정으로만 쓴다. 미뤄 둔다 칸에는 TCP 연결 강제로 끊기와 확률로 버리기·속도 제한이 있고 판정 기준이 생기면 다시 본다. 못 쓴다 칸에는 휴대폰 실기기 트래픽과 몇 ms 단위의 정밀 측정이 있다. 판정은 8월 분석과 같고, 두 번 분석했지만 돌린 것은 0번이다.">
+  <text class="lbl" x="8" y="20">어디까지 믿고 쓰나 — 세 칸으로 갈랐다</text>
+  <rect class="vn vn-b" x="8" y="34" width="320" height="180" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="168" y="64" text-anchor="middle">쓴다</text>
+  <text class="cap" x="168" y="96" text-anchor="middle">특정 서버만 완전히 끊기</text>
+  <text class="cap" x="168" y="122" text-anchor="middle">100ms 이상 단위의 지연</text>
+  <text class="cap" x="168" y="148" text-anchor="middle">--timeout 으로 자동 복구</text>
+  <text class="cap" x="168" y="186" text-anchor="middle">(PC 게임 · 테스트 계정으로만)</text>
+  <rect class="vn vn-a" x="340" y="34" width="320" height="180" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="500" y="64" text-anchor="middle">미뤄 둔다</text>
+  <text class="cap" x="500" y="96" text-anchor="middle">TCP 연결 강제로 끊기</text>
+  <text class="cap" x="500" y="122" text-anchor="middle">확률로 버리기 · 속도 제한</text>
+  <text class="cap" x="500" y="186" text-anchor="middle">→ 판정 기준이 생기면 다시</text>
+  <rect class="vn vn-a" x="672" y="34" width="320" height="180" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="64" text-anchor="middle">못 쓴다</text>
+  <text class="cap" x="832" y="96" text-anchor="middle">휴대폰 실기기 트래픽</text>
+  <text class="cap" x="832" y="122" text-anchor="middle">몇 ms 단위의 정밀 측정</text>
+  <text class="cap" x="832" y="186" text-anchor="middle">→ 다른 도구로</text>
+  <line class="rule" x1="8" y1="236" x2="992" y2="236"/>
+  <text class="cap cap-i" x="8" y="262">⇒ 판정은 8월 분석과 한 글자도 다르지 않다 — 두 번 분석했고, 돌린 것은 0번이다</text>
+  <text class="cap" x="8" y="288">판정을 움직일 다음 한 걸음 = 엔진 내장 기능 1분 확인 → 회사 PC에서 5분 실측</text>
+</svg>
+<figcaption>같은 대상을 두 번 뜯었는데 칸 배치는 그대로였다. 칸을 옮길 수 있는 것은 실측뿐이다.</figcaption>
+</figure>
+<h2 id="내-환경에-대봤다--빈칸-62곳-그리고-한-겹-겹치는-대안">내 환경에 대봤다 — 빈칸 62곳, 그리고 한 겹 겹치는 대안</h2>
+<p>제가 QA하는 것은 PC 클라이언트와 안드로이드 실기기 두 갈래입니다. clumsy가 닿는 건 PC 쪽뿐입니다.</p>
+<p>PC 쪽에는 빈칸이 있었습니다. 제 TC 파이프라인이 낸 테스트 설계 문서 30편에서, 재현 수단 자리에 「네트워크 차단 도구」 24회 · 「지연 주입」 38회 · 「비행기 모드」 5회가 도구 이름 없이 적혀 있었습니다(2026-10-02 grep). 파이프라인 규칙은 동시성·경합 케이스를 <strong>재현 수단이 확보된 경우에만</strong> 쓰고, 나머지는 「재현 수단 필요 항목」으로 빼 둡니다. 수단 하나가 생기면 빠지던 케이스가 돌아옵니다.</p>
+<p>겹치는 대안은 셋입니다.</p>
+<table>
+<thead>
+<tr>
+<th>대안</th>
+<th>clumsy와의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로세스 강제 종료 → 재접속</td>
+<td><strong>대체가 아니라 보완.</strong> 클라이언트가 죽으니 「끊김 감지 → 재연결 → 재연결 팝업」 경로를 아예 안 탄다</td>
+</tr>
+<tr>
+<td>엔진 내장 네트워크 흉내 (예: 언리얼 엔진의 <code>NetEmulation.PktLag</code>)</td>
+<td><strong>게임 채널의 지연·손실은 겹친다.</strong> 드라이버도 관리자 권한도 필요 없고 더 정밀하다. 다만 게임 채널에만 걸리고, 출하용 빌드에는 없고, 깔끔한 완전 단절은 어렵다</td>
+</tr>
+<tr>
+<td>랜선 뽑기</td>
+<td>메신저·원격 접속까지 같이 끊기고, 원격으로만 쓰는 PC에서는 할 수 없다</td>
+</tr>
+</tbody>
+</table>
+<p>8월 분석은 사내 빌드의 디버그 심볼에서 엔진 쪽 패킷 시뮬레이션 이름들을 찾아, 이 기능이 켜진 채 컴파일됐을 정황이 강하다고 적었습니다. 그 뒤로 콘솔에 직접 쳐 보는 1분짜리 확인은 아무도 하지 않았습니다.</p>
+<h2 id="수확과-판정">수확과 판정</h2>
+<table>
+<thead>
+<tr>
+<th>기법</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서버 IP 필터 + Drop 100% = 그 서버만 완전 단절</td>
+<td>✅ <strong>채택</strong> — PC 끊김 예외 케이스의 재현 수단</td>
+</tr>
+<tr>
+<td>Lag 100ms 이상</td>
+<td>✅ <strong>조건부(0.5)</strong> — 엔진 내장이 먹히면 그쪽이 우선. 값은 「설정값」으로만 적는다</td>
+</tr>
+<tr>
+<td><code>--timeout N</code></td>
+<td>✅ <strong>채택</strong> — N초 끊김을 반복 재현하고, 원격 PC에서 스스로를 고립시키지 않게 막는 안전줄</td>
+</tr>
+<tr>
+<td>Reset (TCP RST)</td>
+<td>⏸ <strong>보류</strong> — 어떤 연결이 TCP인지 아직 모른다</td>
+</tr>
+<tr>
+<td>확률 손실 · 대역폭</td>
+<td>⏸ <strong>보류</strong> — 손실 모양이 실제 회선과 다르고 합격선이 없다</td>
+</tr>
+<tr>
+<td>안드로이드 실기기</td>
+<td>⛔ <strong>기각</strong> — PC를 지나가지 않는다. 핫스팟용 포크(<code>abaza121/clumsy-hotspot</code>)는 폰을 잡는 대신 PC 자신을 못 잡는다</td>
+</tr>
+</tbody>
+</table>
+<p>되돌리기 비용은 사실상 0입니다. Stop 한 번이면 끝나니, 신뢰도가 중간이어도 해 보는 쪽이 맞습니다. 멈출 신호도 미리 정해 둡니다 — a·b·c 세 벌이 다 서명이나 백신에 막히면 거기서 끝내고, 예외 등록이나 서명 검사 끄기는 하지 않습니다.</p>
+<h2 id="못-한-것">못 한 것</h2>
+<ul>
+<li><strong>실행 실측 0회.</strong> 커널 드라이버를 올려야 해서 이번에도 돌리지 않았습니다. 위 숫자는 전부 소스와 이슈에서 읽은 것입니다.</li>
+<li><strong>엔진 내장 기능 확인 0회.</strong> 1분이면 되는데 8월부터 남아 있습니다.</li>
+<li><strong>회사 보안 정책 확인 안 함.</strong> 백신이 막는지는 받아 봐야 압니다.</li>
+<li><strong>휴대폰 쪽 수단은 이번에도 비어 있습니다.</strong></li>
+</ul>
+<p><strong>이 편에서 값을 치른 교훈은 순서입니다.</strong> 같은 대상을 두 번 분석했는데 판정은 한 글자도 안 바뀌었고, 바뀐 건 쓰는 법이 늘고 소스에서 함정 넷을 더 찾은 것뿐이었습니다. 판정을 움직일 수 있었던 건 처음부터 5분짜리 실측 하나였는데, 그건 두 번 다 「다음에」로 남았습니다. 그리고 두 번째 분석이 시작된 것 자체가 <strong>검색 범위에서 HTML을 뺀 탓</strong>이었습니다 — 「없다」를 한 자리만 보고 말한 값입니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>nobles92ts-ship-it.github.io</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
