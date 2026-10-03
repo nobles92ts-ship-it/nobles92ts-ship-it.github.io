@@ -2,7 +2,7 @@
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
 
-- 수치: v0.1.1 베타 · Windows · 무료
+- 수치: v0.1.3 베타 · Windows · 무료
 - 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/
 - 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="깨알 받기">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.1 베타 · 약 52MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.3 베타 · 약 51MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>Pixling.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
@@ -86,12 +86,13 @@
 
 세이브는 게임 파일 옆이 아니라 `%APPDATA%\Pixling` 에 저장됩니다(폴더 이름은 옛 이름 그대로 둡니다 — 바꾸면 키우던 생물을 못 찾습니다). 새 판이 나오면 **새 zip 을 받아 덮어쓰기만** 하면 됩니다. 키우던 생물은 그대로 있습니다.
 
+v0.1.3 부터는 **새 판이 나오면 게임이 켤 때 알려 줍니다.** 켤 때 한 번 GitHub(받기 저장소)에 새 판이 있는지 묻고 — 보내는 것은 판 번호뿐입니다 — «받기»를 눌러 동의할 때만 받습니다. v0.1.1 에는 이 기능이 없어서, 이번 한 번은 이 페이지에서 받아 덮어써 주세요.
+
 ## 아직 못 하는 것
 
 | 못 하는 것 | 까닭 |
 |---|---|
 | Mac · 휴대폰에서 하기 | Windows 창 기능으로 돌아갑니다 |
-| 자동 업데이트 | 게임이 인터넷에 붙지 않습니다. 새 판은 이 페이지에서 다시 받습니다 |
 | 파란 창 없애기 | 코드 서명이 없습니다 |
 | 백신 반응 확인 | 「지금 눌려 있나」를 묻는 방식을 백신이 어떻게 보는지는 **아직 재 보지 않았습니다** |
 

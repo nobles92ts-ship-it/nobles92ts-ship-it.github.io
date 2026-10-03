@@ -2,7 +2,7 @@
 
 > A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
 
-- Headline number: v0.1.1 beta · Windows · free
+- Headline number: v0.1.3 beta · Windows · free
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/
 - Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="Download Kkaeal">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.1 beta · about 52 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.3 beta · about 51 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
 <div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">Copy link</button></div>
 <ol class="gb-steps"><li><i>1</i>Unzip the download</li><li><i>2</i>Double-click <b>Pixling.exe</b></li><li><i>3</i>If a blue box appears: <b>More info → Run anyway</b></li></ol>
 </div>
@@ -86,12 +86,13 @@ A signature costs money every year, and these days a signed file still gets the 
 
 The save isn't next to the game file; it's in `%APPDATA%\Pixling` (the folder keeps the old name on purpose — renaming it would lose your creatures). When a new version comes out, **download the new zip and overwrite the old files.** Your creatures stay.
 
+From v0.1.3 on, **the game tells you when a new version is out.** Once at start it asks GitHub (the download repository) whether a newer version exists — it sends only its version number — and downloads only if you agree. v0.1.1 doesn't have this, so download this version from this page once.
+
 ## What it can't do yet
 
 | Can't | Why |
 |---|---|
 | Run on Mac or phones | It relies on Windows window features |
-| Update itself | The game never goes online. New versions come from this page |
 | Skip the blue box | No code signature |
 | Vouch for antivirus behaviour | How antivirus tools view the "is a key held down?" polling **hasn't been measured yet** |
 
