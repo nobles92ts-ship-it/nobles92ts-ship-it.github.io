@@ -1,6 +1,6 @@
 # tc-team
 
-> Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.
+> Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate. It can also hand them to an AI as a document bundle.
 
 - Headline number: S0–S7
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/
@@ -27,6 +27,8 @@ That written line is a test case. Roughly:
 Dozens of these get written per feature. **By hand it is slow, and things get missed as you go.**
 
 This tool **fills that table from a specification.**
+
+Since October 2026 it can also hand the same cases to **an AI, as documents it reads and then tests from.** The section *The AI edition* below covers it.
 
 ## The point is not "the AI writes them"
 
@@ -123,6 +125,45 @@ I first tried **recomputing the numbers.** **Wrong.** With several insertions th
 Now it **joins by content, not number** — a combination of category, verification stage and reproduction steps.
 
 > **Position changes; content does not.**
+
+## The AI edition — same engine, one more exit
+
+In October 2026 I added **tc-team-ai**. It takes the test cases the same engine produces and, instead of a spreadsheet for people, hands them over as **a bundle of documents an AI reads and then checks the game with.** A spec is all it needs.
+
+| | For people | For an AI |
+|---|---|---|
+| Input | Spec + a Google Sheet | **The spec alone** |
+| Stages | 0 to 7 | 0 to 5 — stages 6 and 7, which write the sheet, are skipped |
+| Output | A table in the sheet | A bundle — run rules, cases, the original spec, an empty results table |
+
+The reason for a separate edition is simple. **People and AIs read the same line differently.** A tester who reads *press upgrade with no upgrade stones* knows how to empty out the stones and where on the screen to look. An AI fills those gaps with guesses, and wanders off.
+
+So each line gets four fields attached.
+
+| Field | For the example above |
+|---|---|
+| **Precondition** — what must already be true | A character holding no upgrade stones |
+| **Action** — what to do | Press upgrade |
+| **Expectation** — what should appear | *Insufficient materials* shows and nothing is upgraded |
+| **Observation** — what to judge by | The message, and whether the upgrade level stayed put |
+
+An AI does the splitting, which makes the frightening part **meaning that shifts on the way.** Zero gets copied down as one, or *does not open* flips to *opens*, and the AI checks the wrong thing and writes PASS. Code stands guard here too: it checks that the original's numbers, English names and quoted text survive into the four fields and that a negative has not flipped, and a case that fails twice ships as the original line alone.
+
+**The original line is always the truth; the four fields are a reading aid.** The run rules at the front of the bundle say the same.
+
+The rules the AI must follow travel in the same place. No PASS and no FAIL without evidence — a screenshot path, a log line, a database value. And **behaviour the spec never decided must not be logged as a bug.** Those cases leave already flagged *verdict on hold*; the AI writes BLOCKED (spec) instead of FAIL and notes what it actually saw.
+
+On 8 October I ran one internal spec all the way through. It produced 106 cases, every one of them split and passed the check, and 15 were on hold. It took 1 hour 38 minutes, 81 of them in design; the splitting took a little over six.
+
+**This is where "do not join by number" bit a second time.** The bundle tells each case which rule of the spec it came from. That lives in the stage-4 ledger, whose numbers come from before stage 5 renumbers everything — so the join goes by sentence instead.
+
+Except **the same sentence can sit in two places**: the smoke checklist at the front and the main body, an overlap the design allows on purpose. 29 of 65 past runs had pairs like that. Now the side the ledger was pointing at (smoke or body) is tried first, and if that still leaves more than one candidate, **the link is left off and counted.** A blank is better than a wrong source.
+
+**What it cannot do yet.**
+
+- **No AI has taken one of these bundles and actually tested a game with it.** The results table is empty. Only the producing side has been verified.
+- **How to set up a state is not in the bundle.** Cheats, test accounts, where the logs live — that differs from game to game, so the project has to supply it. Without it, the case stays BLOCKED (environment).
+- **Some shifts get past the check.** A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording. Korean also has a short way of writing *not*; drop that one and it passes. The *nothing is upgraded* above is phrased exactly that way in the Korean original. That is why the original stays the truth.
 
 ## An honest limit
 
@@ -230,6 +271,39 @@ S6 writes the test-case body to the live spreadsheet **one time** (S7 then adds 
 Run it five times and the result is identical, and it never overwrites a tab somebody else made. For automation that runs next to humans, those two properties come before everything else.
 
 ⚠ (24 September 2026 audit, not yet fixed) The ownership marker lives in a **local file**, not in the sheet, so a re-run from the same folder always rules the tab "ours." Anything a person wrote into that tab in between can be wiped with it.
+
+## The AI edition never touches a sheet
+
+`tc-team-ai` shipped in v4.3.6 on 9 October 2026 ([release notes](https://github.com/nobles92ts-ship-it/AI_GAME_QA_TestCase/releases/tag/v4.3.6)). There is still one engine. Called as `run_pipeline_full.sh --no-sheet`, the chain ends at the S5 final set and never runs S6 or S7; S1 runs with `--local`, which skips the kickoff notice. That calling it without the flag leaves the stage order as it was is pinned by a test with a `--sheet-id` control run. The edition is chosen at install time with `--mode human|ai|both`, and the default, `human`, installs exactly what it used to.
+
+Three steps follow S5.
+
+| Step | Owner | Job |
+|---|---|---|
+| rewrite | LLM | 25-row chunks, four in parallel, two attempts per chunk; one reproduction step becomes precondition / action / expectation / observation |
+| preservation gate | code | numbers (dropped or added), English identifiers, quoted and symbol strings, negation, share of content words kept; fail twice → ship the original only |
+| export | code | recompute confidence without a sheet using the same core, and write the bundle |
+
+Each split is stored with the sentence it was made from. Rebuild the final set so that a sentence changes, and the export throws that split away. Shipping the bare original beats pinning a stale aid to the wrong case.
+
+The bundle is four files: `INDEX.md` (run rules, run order, open questions for the planners, excluded rules), `cases/NN_<screen>.md` (one block per case — the original, the four fields, the verdict flag, up to three source rules, confidence; the smoke set comes first), `spec.md` (the spec, section by section) and `results.md`, the table an AI fills in, which a re-export never wipes.
+
+There are four verdicts — PASS, FAIL, BLOCKED, N/A — and a PASS or FAIL with an empty evidence cell breaks the rules. Behaviour the spec leaves open is `BLOCKED(기획)` ("spec"), and FAIL is forbidden there. The test environment — cheats, accounts, logs — stays outside the bundle: the project supplies it in a document such as `QA_ENV.md`, and without one the case is `BLOCKED(환경)` ("environment"). tc-team knows *what* to check. *How to reach that state* differs per game.
+
+One real run (8 October 2026, one internal spec): 106 cases, 15 screen groups, 15 on hold, 106 split, 0 shipped as the original only. Of 98 minutes on the wall clock, S1 took 81 and the rewrite 386 seconds. The eight cases bounced on the first attempt all had an empty action field; the second attempt filled them.
+
+**Rules are joined by sentence — and a sentence can exist twice.** The S4 coverage ledger is numbered before S5 inserts, deletes and renumbers rows, so the final row is found through the ledger row's sentence (S4's edit if it made one, otherwise the original). The catch is that the duplicate gate looks at the QA body and the smoke set separately, so one sentence surviving in both is allowed by design. 29 of 65 internal runs had such pairs, 91 in all. By sentence alone, those links do not resolve to one row.
+
+Now the row in the ledger row's own scope (smoke or QA) is preferred, and whatever is still ambiguous is left out and counted as `rule_links_unmapped`. Against the 5,568 links in the 22 runs that kept an S4 ledger, sentence-only resolves 5,511 and scope-first resolves 5,547; where both resolve a link, they never pick different rows. The other 21 point at sentences the final set no longer has.
+
+**"Could not read anything" and "rejected everything" leave the same bundle.** If the executor never runs, every case ships as the original and the bundle looks like a clean finish. So a run that read zero outputs stops with exit 12 and says which case it was — no output file (executor, model name, network) or a file that is not JSON (format). Reproduced in review with a fake executor that wraps its JSON in a code fence, the first message sent you to check the network while the file sat there intact.
+
+Not done yet:
+
+- **Zero results from an AI actually running QA from a bundle.** `results.md` is empty; only the producing side is verified.
+- **The gate has three blind spots.** A positive flipped into a negative and a condition added without a number are indistinguishable from ordinary rewording — the gate's own header says so. And (found 9 October 2026, not yet fixed) negation is only recognised when the sentence ends in Korean's long negative form (`~않는지` / `~없는지`), so a dropped short form (`안 ~는지`) passes. In 13,366 internal final rows that short form appears 33 times (a regex estimate).
+- **The 0.6 content-word threshold was never measured.** In the one real run no case failed on content, so there is no distribution to judge it against yet.
+- **The Drive upload is blocked by instruction, not by code.** The design agent is only told to skip it, so the completion report checks separately that its link list is empty.
 
 ## Two lessons that cost something
 

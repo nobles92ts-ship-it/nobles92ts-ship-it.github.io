@@ -26,7 +26,7 @@
 - [자가진화 루프 · 죽은 채널](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/dead-channel/index.md): 정교한 쪽이 조용히 죽어 있었고, 그걸 진단한 제 문서도 두 군데가 틀렸습니다.
 - [자가진화 루프 · 네 개의 주기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/tempo/index.md): 학습을 한 덩어리로 보고 자동화를 통으로 걸려던 것이 과설계의 진짜 원인이었습니다.
 - [자가진화 루프 · 감지기](https://nobles92ts-ship-it.github.io/ko/built/self-evolution/detector/index.md): 죽음을 감지하려고 만든 것이 먼저 오탐을 냈습니다. 그리고 첫 완주는 아무것도 안 바꿨습니다.
-- [tc-team](https://nobles92ts-ship-it.github.io/ko/built/tc-team/index.md): 기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다.
+- [tc-team](https://nobles92ts-ship-it.github.io/ko/built/tc-team/index.md): 기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다. AI가 실행할 문서 묶음으로도 낸다.
 - [tc-team · S1 · 설계](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/index.md): 기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.
 - [tc-team · S2 · 격리 게이트](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/index.md): 전개하기 전에 "이 설계가 전개 가능한가"를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.
 - [tc-team · S3 · 문장화](https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/index.md): 구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.

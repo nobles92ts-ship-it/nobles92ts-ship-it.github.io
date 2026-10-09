@@ -26,7 +26,7 @@ Before reading the list —
 - [Self-evolution loop · The dead channel](https://nobles92ts-ship-it.github.io/en/built/self-evolution/dead-channel/index.md): The sophisticated one had been dead for months — and the document diagnosing it was wrong in two places.
 - [Self-evolution loop · Four tempos](https://nobles92ts-ship-it.github.io/en/built/self-evolution/tempo/index.md): Treating learning as one block and automating the whole block was the real cause of the over-design.
 - [Self-evolution loop · The detector](https://nobles92ts-ship-it.github.io/en/built/self-evolution/detector/index.md): The thing built to detect death false-positived first. And the first full run changed nothing.
-- [tc-team](https://nobles92ts-ship-it.github.io/en/built/tc-team/index.md): Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate.
+- [tc-team](https://nobles92ts-ship-it.github.io/en/built/tc-team/index.md): Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate. It can also hand them to an AI as a document bundle.
 - [tc-team · S1 · Design](https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/index.md): Pulling a design skeleton out of the spec. Deciding the taxonomy is the same act as deciding the automation setup.
 - [tc-team · S2 · Isolation gate](https://nobles92ts-ship-it.github.io/en/built/tc-team/s2/index.md): Code re-reads the design to decide whether it can be expanded at all, and plants the anchors for traceability.
 - [tc-team · S3 · Writing](https://nobles92ts-ship-it.github.io/en/built/tc-team/s3/index.md): Code builds the structure; the LLM writes only sentences. Those sentences carry several prohibitions.
