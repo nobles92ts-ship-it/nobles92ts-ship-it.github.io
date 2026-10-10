@@ -2,7 +2,7 @@
 
 > A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
 
-- Headline number: v0.1.3 beta · Windows · free
+- Headline number: v0.1.4 beta · Windows · free
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/
 - Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md
 - Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="Download Kkaeal">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.3 beta · about 51 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">Download — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.4 beta · about 63 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
 <div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">Copy link</button></div>
 <ol class="gb-steps"><li><i>1</i>Unzip the download</li><li><i>2</i>Double-click <b>Pixling.exe</b></li><li><i>3</i>If a blue box appears: <b>More info → Run anyway</b></li></ol>
 </div>
@@ -67,6 +67,8 @@ No. The only thing Kkaeal counts is **how many times** something was pressed.
 | **How many** mouse clicks | What you typed · which window · where the cursor was |
 
 That was settled by the method, not by a promise. Kkaeal doesn't **intercept** keystrokes on their way to other programs. It just asks, many times a second, **"is anything held down right now?"** With that method, **rebuilding what you typed is impossible in principle.** The save file holds two numbers and nothing else.
+
+Some PCs run security software that blocks even that question. On those, from v0.1.4 on, Kkaeal looks only at **when the last input happened** and counts each change as one key press. It still can't tell which key it was.
 
 Creatures also only show up **while you're at the keyboard.** The next one comes after enough time has passed *and* enough input has piled up since the last. Step away and nothing queues up to pour out when you return.
 

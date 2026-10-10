@@ -2,7 +2,7 @@
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고 키우는 Windows 게임. 무료로 받을 수 있습니다.
 
-- 수치: v0.1.3 베타 · Windows · 무료
+- 수치: v0.1.4 베타 · Windows · 무료
 - 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/
 - 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="깨알 받기">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.3 베타 · 약 51MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Pixling.zip">받기 — Windows</a><div class="gb-meta"><b>Pixling.zip</b><span>v0.1.4 베타 · 약 63MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>Pixling.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
@@ -67,6 +67,8 @@
 | 마우스를 누른 **횟수** | 무슨 글자를 쳤는지 · 어느 창이었는지 · 커서가 어디였는지 |
 
 방식부터 그렇게 골랐습니다. 키 입력을 **중간에서 가로채는** 방식을 쓰지 않고, 아주 짧은 간격으로 **「지금 눌려 있나」만 묻는** 방식을 씁니다. 이렇게 하면 **글자를 되살리는 게 원리상 불가능**합니다. 세이브 파일에도 숫자 두 개만 남습니다.
+
+보안 프로그램이 이 물음까지 막는 PC 도 있습니다. 그런 PC 에서는 v0.1.4 부터 **「마지막으로 무언가를 누른 시각」** 만 보고, 그 시각이 바뀔 때마다 키 한 번으로 셉니다. 이때도 어떤 키였는지는 알 수 없습니다.
 
 그리고 생물은 **내가 키보드 앞에 있을 때만** 나타납니다. 조금 전에 만난 뒤로 시간이 충분히 지나고 조작도 충분히 쌓여야 다음 생물이 옵니다. 자리를 비운 사이에 쌓였다가 한꺼번에 쏟아지지도 않습니다.
 
