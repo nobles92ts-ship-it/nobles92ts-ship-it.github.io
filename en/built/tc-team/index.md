@@ -163,7 +163,7 @@ Except **the same sentence can sit in two places**: the smoke checklist at the f
 
 - **No AI has taken one of these bundles and actually tested a game with it.** The results table is empty. Only the producing side has been verified.
 - **How to set up a state is not in the bundle.** Cheats, test accounts, where the logs live — that differs from game to game, so the project has to supply it. Without it, the case stays BLOCKED (environment).
-- **Some shifts get past the check.** A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording. Korean also has a short way of writing *not*; drop that one and it passes. The *nothing is upgraded* above is phrased exactly that way in the Korean original. That is why the original stays the truth.
+- **Some shifts get past the check.** A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording. That is why the original stays the truth. Korean also has a short way of writing *not*, and at first a dropped one passed too — the *nothing is upgraded* above is phrased exactly that way in the Korean original. That was fixed on 12 October, and it is caught now.
 
 ## An honest limit
 
@@ -301,7 +301,8 @@ Now the row in the ledger row's own scope (smoke or QA) is preferred, and whatev
 Not done yet:
 
 - **Zero results from an AI actually running QA from a bundle.** `results.md` is empty; only the producing side is verified.
-- **The gate has three blind spots.** A positive flipped into a negative and a condition added without a number are indistinguishable from ordinary rewording — the gate's own header says so. And (found 9 October 2026, not yet fixed) negation is only recognised when the sentence ends in Korean's long negative form (`~않는지` / `~없는지`), so a dropped short form (`안 ~는지`) passes. In 13,366 internal final rows that short form appears 33 times (a regex estimate).
+- **The gate has two blind spots left.** A positive flipped into a negative and a condition added without a number are indistinguishable from ordinary rewording — the gate's own header says so. It also counts any negative word anywhere in the expectation as the negative surviving, and it cannot read the short form written without a space (`안되는지`).
+- **The third, the short negative, was fixed in v4.3.7 (12 October 2026).** Negation was only recognised when the sentence ends in Korean's long negative form (`~않는지` / `~없는지`), so a dropped short form (`안 ~는지`) passed. The fix turned up a second hole with the same root. To decide whether the expectation kept its negative, the gate looked for the fragment `안 `, so the last syllable of `동안` (*for*, as in *for 30 days*) counted as a negative that survived. 43 of the 2,738 negative sentences in the internal final rows had that shape, and they are covered now too. The 33 rows this page reported before were wrong: that regex was counting positives such as `동안 재생되는지` (*plays for …*), and the short form itself appears 0 times in 13,366 rows.
 - **The 0.6 content-word threshold was never measured.** In the one real run no case failed on content, so there is no distribution to judge it against yet.
 - **The Drive upload is blocked by instruction, not by code.** The design agent is only told to skip it, so the completion report checks separately that its link list is empty.
 
