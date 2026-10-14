@@ -1,6 +1,6 @@
 # Kkaeal
 
-> A Windows game where pixel creatures live in the corner of your desktop and you catch and raise them. Free to download.
+> A free Windows desktop game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
 
 - Headline number: v0.1.6 beta · Windows · free
 - Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/
