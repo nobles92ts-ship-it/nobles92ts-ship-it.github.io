@@ -55,10 +55,10 @@ Numbers in the table are as of v0.1.6.
 ## It's quicker to see it move
 
 <div class="shorts">
-<a href="https://www.instagram.com/munbanggu100w/reel/DdYvoduuVKo/" target="_blank" rel="noopener"><img src="/games/pixling/catch.webp" width="320" height="569" alt="" loading="lazy"><span>Two ways to catch</span></a>
-<a href="https://www.instagram.com/munbanggu100w/reel/DdpALGzN714/" target="_blank" rel="noopener"><img src="/games/pixling/evolve.webp" width="320" height="569" alt="" loading="lazy"><span>Digivolving</span></a>
-<a href="https://www.instagram.com/munbanggu100w/reel/DdarLgaxzCH/" target="_blank" rel="noopener"><img src="/games/pixling/gym.webp" width="320" height="569" alt="" loading="lazy"><span>Gym battle</span></a>
-<a href="https://www.instagram.com/munbanggu100w/reel/DdlFvarhd9L/" target="_blank" rel="noopener"><img src="/games/pixling/hide.webp" width="320" height="569" alt="" loading="lazy"><span>The hide key</span></a>
+<a href="https://www.instagram.com/munbanggu100w/reel/DeTHl7sO_cI/" target="_blank" rel="noopener"><img src="/games/pixling/cute.webp" width="320" height="569" alt="" loading="lazy"><span>Partner being cute</span></a>
+<a href="https://www.instagram.com/munbanggu100w/reel/DeEMfVxB2DU/" target="_blank" rel="noopener"><img src="/games/pixling/office.webp" width="320" height="569" alt="" loading="lazy"><span>A Gyarados at work</span></a>
+<a href="https://www.instagram.com/munbanggu100w/reel/DeIqUwLBTDd/" target="_blank" rel="noopener"><img src="/games/pixling/tower.webp" width="320" height="569" alt="" loading="lazy"><span>Tower floor 100</span></a>
+<a href="https://www.instagram.com/munbanggu100w/reel/DeEyZ4RhnpD/" target="_blank" rel="noopener"><img src="/games/pixling/digivice.webp" width="320" height="569" alt="" loading="lazy"><span>Digivice and DNA Digivolve</span></a>
 </div>
 
 Each one opens a short clip on Instagram. The captions in the clips are in Korean.
