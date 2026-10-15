@@ -25,7 +25,7 @@ So **every game gets a slot** from the start, and **inside each slot the work sp
 | Slot | What | State |
 |---|---|---|
 | **Wuxia game** (working title) | A pattern-reading action RPG | **Main · in progress** |
-| **Kkaeal** (formerly Pixling) | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
+| **Kkaeal** | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
 | Future game 1 | **Does not exist yet** | Empty |
 | Future game 2 | **Does not exist yet** | Empty |
 

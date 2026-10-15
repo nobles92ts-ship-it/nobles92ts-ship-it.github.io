@@ -18,7 +18,7 @@
 </div>
 </section>
 
-**Kkaeal (깨알), formerly Pixling, is a Windows game where pixel creatures live in the corner of your desktop, and you catch them, raise them and send them into gyms.** While you work, they wander around, fight and grow on their own.
+**Kkaeal (깨알) is a Windows game where pixel creatures live in the corner of your desktop, and you catch them, raise them and send them into gyms.** While you work, they wander around, fight and grow on their own.
 
 The name is a Korean pun. 깨알 is a sesame seed, something tiny; read as 깨 + 알 it also means "crack the egg", which is how every creature here is born.
 
@@ -34,13 +34,23 @@ Most games open a window and you play inside it. Kkaeal **has no game window.** 
 
 You can change the hide key in the settings. Kkaeal **doesn't take that key away from other programs** — typing `\` elsewhere still types it, and the game hides along with it.
 
-## Catch, raise, send — that's the whole game
+## Catch, raise, send is the core — and the gaps in your workday filled up around it
+
+The first builds had only those three. Each version since has added something to do around them.
 
 | What you do | How |
 |---|---|
 | **Catch** | Grab the wild ones walking by. Pokémon get a Poké Ball **thrown** at them; Digimon get a Digivice **shone** on them |
 | **Raise** | Your partner grows and digivolves: Rookie → Champion → Ultimate → Mega |
-| **Send** | Build a team and send it into gyms and the tower |
+| **Send** | Build a team and send it into gyms and the tower. There are 32 gyms on the Pokémon side and 32 on the Digimon side; clear one side of Season 1 and a tougher **Season 2** opens. Your first badge from each gym pays gym number × 50 gold |
+| **Fill the Dex** | 627 Pokémon and 294 Digimon, **921** in all. A first catch flips in as a card, and caught species show a **tier** from 1 to 10 |
+| **Life Yard** | Seat up to 10 creatures you aren't using and they **work by type** for gold: Water types fish, Electric types charge batteries. They only earn while you're active at the PC, and the Digivice reports the take every hour |
+| **Shop gacha** | Spend that gold on pulls (300 a pull) to fill the Dex |
+| **Daily gift** | Once a day, five minutes after you start, a creature walks in wearing a ribbon. Click it to keep it |
+| **Mini-games** | **Gomoku** against your partner, with four skill levels plus «Random», where a card deck decides who moves · **Picture match** in three stages · a silhouette quiz |
+| **Link Battle** | Turn your team into one line of code and fight a friend's team. No rewards, and both sides need the same version |
+
+Numbers in the table are as of v0.1.6.
 
 ## It's quicker to see it move
 
@@ -88,7 +98,9 @@ A signature costs money every year, and these days a signed file still gets the 
 
 The save isn't next to the game file; it's in `%APPDATA%\Pixling` (the folder keeps the old name on purpose — renaming it would lose your creatures). When a new version comes out, **download the new zip and overwrite the old files.** Your creatures stay.
 
-From v0.1.3 on, **the game tells you when a new version is out.** Once at start it asks GitHub (the download repository) whether a newer version exists — it sends only its version number — and downloads only if you agree. From v0.1.6 you can also ask any time with «⬆ Update» in the menu. v0.1.1 doesn't have this, so download this version from this page once.
+Usually the game does even that for you. **It tells you when a new version is out.** Once at start it asks GitHub (the download repository) whether a newer version exists — it sends only its version number — and downloads only if you agree. If you don't want to wait, press **«⬆ Update»** in the menu and it checks right away (from v0.1.6).
+
+The notice has been in the game since v0.1.3. If you're on something older, it won't come, so download from this page once and overwrite.
 
 ## What it can't do yet
 
