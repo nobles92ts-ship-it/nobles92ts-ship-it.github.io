@@ -3,10 +3,10 @@
 > 기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다. AI가 실행할 문서 묶음으로도 낸다.
 
 - 수치: S0–S7
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/
+- 반대 언어: https://aitryed.com/en/built/tc-team/index.md
 - 저장소: https://github.com/nobles92ts-ship-it/AI_GAME_QA_TestCase
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

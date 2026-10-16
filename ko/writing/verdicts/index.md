@@ -3,9 +3,9 @@
 > PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.
 
 - 수치: 글 5
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/verdicts/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/verdicts/
+- 반대 언어: https://aitryed.com/en/writing/verdicts/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

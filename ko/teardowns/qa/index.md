@@ -3,9 +3,9 @@
 > 제 본업입니다. 그런데 수확이 제일 적습니다 — 이미 같은 자리에 가 있어서. 그리고 가져오겠다고 적은 4.5건 중 점검 때 들어가 있던 건 1건뿐이라, 나머지 3.5건을 이틀에 걸쳐 다 넣었습니다(2026-09-28~29). 여섯 번째 clumsy는 같은 걸 두 번 뜯고 아직 한 번도 안 돌렸습니다(2026-10-02).
 
 - 수치: 6편 · 적용 4.5 / 7
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

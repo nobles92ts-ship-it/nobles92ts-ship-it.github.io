@@ -3,9 +3,9 @@
 > 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
 - 수치: v0.1.6 베타 · Windows · 무료
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
+- 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

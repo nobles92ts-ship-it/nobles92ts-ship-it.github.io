@@ -4,10 +4,10 @@
 
 - Headline number: 2 conditions
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/future-2/spec/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-2/spec/index.md
-- ⚠ Canonical lives elsewhere: https://nobles92ts-ship-it.github.io/en/built/moon-studio/future-1/spec/
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/future-2/spec/
+- Other language: https://aitryed.com/ko/built/moon-studio/future-2/spec/index.md
+- ⚠ Canonical lives elsewhere: https://aitryed.com/en/built/moon-studio/future-1/spec/
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

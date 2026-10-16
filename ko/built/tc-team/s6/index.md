@@ -3,9 +3,9 @@
 > 다 만든 케이스 본문을 라이브 시트에 한 번 쓰고, 다시 읽어 대조합니다. 「우리 탭」 판정에는 아직 못 고친 구멍이 하나 있습니다.
 
 - 수치: 본문 1회 기록
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/s6/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/s6/
+- 반대 언어: https://aitryed.com/en/built/tc-team/s6/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

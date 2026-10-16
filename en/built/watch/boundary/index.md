@@ -4,9 +4,9 @@
 
 - Headline number: nothing leaves
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/watch/boundary/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/watch/boundary/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/watch/boundary/
+- Other language: https://aitryed.com/ko/built/watch/boundary/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

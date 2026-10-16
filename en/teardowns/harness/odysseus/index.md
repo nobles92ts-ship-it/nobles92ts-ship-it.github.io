@@ -3,10 +3,10 @@
 > I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.
 
 - Headline number: 1 of 5 disciplines
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/odysseus/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/odysseus/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/odysseus/
+- Other language: https://aitryed.com/ko/teardowns/harness/odysseus/index.md
 - Repository: https://github.com/odysseus-dev/odysseus
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -4,9 +4,9 @@
 
 - Headline number: RPC > screen
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/android-qa/driving/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/android-qa/driving/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/android-qa/driving/
+- Other language: https://aitryed.com/ko/built/android-qa/driving/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

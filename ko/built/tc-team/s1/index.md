@@ -3,9 +3,9 @@
 > 기획서에서 설계 골격을 뽑는 단계. 분류를 정하는 일이 곧 자동화 셋업을 정하는 일입니다.
 
 - 수치: LLM
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s1/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/s1/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/s1/
+- 반대 언어: https://aitryed.com/en/built/tc-team/s1/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

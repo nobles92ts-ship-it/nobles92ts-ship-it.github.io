@@ -3,10 +3,10 @@
 > 제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.
 
 - 수치: 일치 5 · 내가 놓친 3
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/file-management/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/file-management/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/file-management/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/file-management/index.md
 - 출처(원본 영상): https://youtu.be/MM-MPS57qKA
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

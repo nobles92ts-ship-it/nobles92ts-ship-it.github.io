@@ -3,10 +3,10 @@
 > I tried to justify installing it with measurements and failed. The record says so, in place.
 
 - Headline number: 1.5 net of 7
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/clawd-on-desk/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/clawd-on-desk/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/clawd-on-desk/
+- Other language: https://aitryed.com/ko/teardowns/harness/clawd-on-desk/index.md
 - Repository: https://github.com/rullerzhou-afk/clawd-on-desk
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

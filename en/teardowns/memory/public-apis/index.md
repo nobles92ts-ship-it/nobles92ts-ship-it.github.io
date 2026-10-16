@@ -3,10 +3,10 @@
 > The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.
 
 - Headline number: 1,756 entries · gate dead 400 days
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/public-apis/
+- Other language: https://aitryed.com/ko/teardowns/memory/public-apis/index.md
 - Repository: https://github.com/public-apis/public-apis
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

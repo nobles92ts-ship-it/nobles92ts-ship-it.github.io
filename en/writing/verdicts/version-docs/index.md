@@ -4,9 +4,9 @@
 
 - Headline number: when
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/verdicts/version-docs/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/version-docs/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/verdicts/version-docs/
+- Other language: https://aitryed.com/ko/writing/verdicts/version-docs/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

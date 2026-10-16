@@ -3,10 +3,10 @@
 > Don't write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.
 
 - Headline number: 3 steps · 0 gates
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/meta-prompting/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/meta-prompting/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/meta-prompting/
+- Other language: https://aitryed.com/ko/teardowns/harness/meta-prompting/index.md
 - Source (Source video): https://www.youtube.com/watch?v=J3BbFNYHvZM
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

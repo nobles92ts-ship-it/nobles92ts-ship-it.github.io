@@ -3,10 +3,10 @@
 > A small panel pinned to the corner of the screen. KPIs and progress, with the report one click away.
 
 - Headline number: always visible
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/qa-widget/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/index.md
+- Rendered page: https://aitryed.com/en/built/qa-widget/
+- Other language: https://aitryed.com/ko/built/qa-widget/index.md
 - Repository: https://github.com/nobles92ts-ship-it/qa-dashboard-widget
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

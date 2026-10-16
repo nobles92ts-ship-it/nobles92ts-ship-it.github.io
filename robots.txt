@@ -21,9 +21,9 @@ Disallow: /search-index-en.json
 #   ⚠ GitHub Pages 는 헤더를 못 붙인다. `X-Robots-Tag: noindex` 도 md 안의 canonical 도 불가라,
 #     쓸 수 있는 건 이 파일뿐이고 선택은 「전부 열기 / 전부 막기」로 갈린다.
 #
-#   되돌리는 신호: 구글에 `site:nobles92ts-ship-it.github.io index.md` 가 실제로 걸릴 때.
+#   되돌리는 신호: 구글에 `site:aitryed.com index.md` 가 실제로 걸릴 때.
 #   ⛔ 그때도 **검색엔진만 막는 우회는 조심할 것** — robots.txt 는 그룹을 합치지 않는다.
 #     `User-agent: Googlebot` 그룹을 새로 만들면 Googlebot 은 위 `User-agent: *` 를 **통째로 무시**해서,
 #     위 검색 색인 두 줄을 **그 그룹에 다시 적지 않으면 Googlebot 한테만 조용히 열린다.**
 
-Sitemap: https://nobles92ts-ship-it.github.io/sitemap.xml
+Sitemap: https://aitryed.com/sitemap.xml

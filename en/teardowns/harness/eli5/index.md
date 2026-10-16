@@ -3,10 +3,10 @@
 > One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.
 
 - Headline number: 865 bytes · 1 run
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/eli5/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/eli5/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/eli5/
+- Other language: https://aitryed.com/ko/teardowns/harness/eli5/index.md
 - Repository: https://github.com/anthropics/claude-plugins-community
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

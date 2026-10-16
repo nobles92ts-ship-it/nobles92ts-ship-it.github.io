@@ -3,9 +3,9 @@
 > The only thing this site collects from you is how many times a page has been opened. It also fetches fonts from elsewhere, and the host keeps access logs.
 
 - Headline number: one number, nothing else
-- Rendered page: https://nobles92ts-ship-it.github.io/en/about/privacy/
-- Other language: https://nobles92ts-ship-it.github.io/ko/about/privacy/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/about/privacy/
+- Other language: https://aitryed.com/ko/about/privacy/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

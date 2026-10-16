@@ -3,10 +3,10 @@
 > A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.
 
 - Headline number: 0 code · 0 numbers
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/worldclaw/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/worldclaw/index.md
+- Rendered page: https://aitryed.com/en/teardowns/games/worldclaw/
+- Other language: https://aitryed.com/ko/teardowns/games/worldclaw/index.md
 - Repository: https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

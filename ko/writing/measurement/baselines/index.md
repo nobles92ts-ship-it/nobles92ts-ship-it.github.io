@@ -3,9 +3,9 @@
 > 측정이 틀리는 방식은 대개 수치가 아니다. 네 번 틀렸는데 네 번 다 계산은 정확했고, 틀린 건 무엇에 대고 쟀느냐였다.
 
 - 수치: 기준선 4건
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/measurement/baselines/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/measurement/baselines/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/measurement/baselines/
+- 반대 언어: https://aitryed.com/en/writing/measurement/baselines/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

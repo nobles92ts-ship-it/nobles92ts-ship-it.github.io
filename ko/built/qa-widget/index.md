@@ -3,10 +3,10 @@
 > 화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.
 
 - 수치: 상시 표시
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/qa-widget/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/built/qa-widget/
+- 반대 언어: https://aitryed.com/en/built/qa-widget/index.md
 - 저장소: https://github.com/nobles92ts-ship-it/qa-dashboard-widget
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

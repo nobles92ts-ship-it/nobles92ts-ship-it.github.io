@@ -3,9 +3,9 @@
 > 구조·품질·원문 대조, 세 시선이 서로의 영역을 안 보고 동시에 읽습니다. 판정자 하나가 그 지적을 걸러 수정 계획을 씁니다.
 
 - 수치: 3렌즈
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/s4/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/s4/
+- 반대 언어: https://aitryed.com/en/built/tc-team/s4/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

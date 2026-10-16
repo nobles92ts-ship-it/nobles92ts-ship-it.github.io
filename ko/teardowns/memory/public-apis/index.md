@@ -3,10 +3,10 @@
 > 별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.
 
 - 수치: 1,756건 · 게이트 400일
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/public-apis/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/public-apis/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/public-apis/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/public-apis/index.md
 - 저장소: https://github.com/public-apis/public-apis
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

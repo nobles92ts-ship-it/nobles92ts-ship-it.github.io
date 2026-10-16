@@ -3,10 +3,10 @@
 > I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.
 
 - Headline number: 5 harvests → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/deepseek-harness/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/deepseek-harness/
+- Other language: https://aitryed.com/ko/teardowns/harness/deepseek-harness/index.md
 - Repository: https://github.com/deepseek-ai/deepseek-harness
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

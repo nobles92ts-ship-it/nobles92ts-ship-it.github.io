@@ -4,12 +4,12 @@
 
 - 수치: 영상 → 스펙
 - 상태: wip
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/watch/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/watch/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/built/watch/
+- 반대 언어: https://aitryed.com/en/built/watch/index.md
 - 출처(출발점 YouTube Summary): https://youtubesummary.com/
 - 출처(출발점의 동작 설명): https://youtubesummary.com/blog/youtube-summary-key-points-accuracy
 - 출처(코드 원본): https://github.com/bradautomates/claude-video
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.
 
 - Headline number: 2 corrections to my own summary
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/openmmo/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/openmmo/index.md
+- Rendered page: https://aitryed.com/en/teardowns/games/openmmo/
+- Other language: https://aitryed.com/ko/teardowns/games/openmmo/index.md
 - Repository: https://github.com/Julian-adv/OpenMMO
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > I measured where the three minutes go, leg by leg. Actual work was 14% of it.
 
 - Headline number: 14%
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/claude-bus/timing/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/timing/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/claude-bus/timing/
+- Other language: https://aitryed.com/ko/built/claude-bus/timing/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

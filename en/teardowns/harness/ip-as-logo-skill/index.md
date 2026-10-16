@@ -3,10 +3,10 @@
 > A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.
 
 - Headline number: 7 techniques → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ip-as-logo-skill/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/ip-as-logo-skill/
+- Other language: https://aitryed.com/ko/teardowns/harness/ip-as-logo-skill/index.md
 - Repository: https://github.com/s1dashu/ip-as-logo-skill
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

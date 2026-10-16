@@ -3,10 +3,10 @@
 > 자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.
 
 - 수치: 자막 0 · 슬라이드만
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/qa-infrastructure/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/qa-infrastructure/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/qa-infrastructure/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/qa-infrastructure/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=10ZbeMZ0nOU
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

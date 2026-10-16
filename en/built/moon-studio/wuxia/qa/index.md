@@ -4,9 +4,9 @@
 
 - Headline number: wiring gate
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/qa/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/qa/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/wuxia/qa/
+- Other language: https://aitryed.com/ko/built/moon-studio/wuxia/qa/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

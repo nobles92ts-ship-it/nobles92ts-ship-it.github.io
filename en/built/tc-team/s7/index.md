@@ -3,9 +3,9 @@
 > The rule document owns the procedure and the runner reads it at execution time. This stage does not stop on failure.
 
 - Headline number: try/continue
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s7/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s7/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s7/
+- Other language: https://aitryed.com/ko/built/tc-team/s7/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

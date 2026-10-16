@@ -3,10 +3,10 @@
 > 영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.
 
 - 수치: 소켓 0 · 이미 라이브
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/session-messaging/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/session-messaging/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/session-messaging/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/session-messaging/index.md
 - 출처(원본 영상): https://www.instagram.com/reels/DbxtPGODv9k/
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

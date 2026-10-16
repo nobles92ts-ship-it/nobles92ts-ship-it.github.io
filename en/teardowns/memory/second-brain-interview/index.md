@@ -3,10 +3,10 @@
 > Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.
 
 - Headline number: 200 workflows → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-interview/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-interview/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/second-brain-interview/
+- Other language: https://aitryed.com/ko/teardowns/memory/second-brain-interview/index.md
 - Source (Source video): https://www.youtube.com/watch?v=ejlk74hWogc
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

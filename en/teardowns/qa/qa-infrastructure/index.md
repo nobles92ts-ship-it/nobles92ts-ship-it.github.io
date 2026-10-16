@@ -3,10 +3,10 @@
 > There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn't about tools, it was about the definition of evidence.
 
 - Headline number: 0 captions · slides only
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/qa-infrastructure/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/qa-infrastructure/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/qa-infrastructure/
+- Other language: https://aitryed.com/ko/teardowns/qa/qa-infrastructure/index.md
 - Source (Source video): https://www.youtube.com/watch?v=10ZbeMZ0nOU
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

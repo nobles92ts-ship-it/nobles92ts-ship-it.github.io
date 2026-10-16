@@ -3,9 +3,9 @@
 > The finished case body goes into the live sheet once and is read back afterwards. The "is this tab ours?" check still has one unfixed hole.
 
 - Headline number: body written once
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s6/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s6/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s6/
+- Other language: https://aitryed.com/ko/built/tc-team/s6/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn't is what this video is worth.
 
 - Headline number: 1 of 2 demos
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/buzz-groupchat/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/buzz-groupchat/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/buzz-groupchat/
+- Other language: https://aitryed.com/ko/teardowns/harness/buzz-groupchat/index.md
 - Source (Source video): https://www.youtube.com/watch?v=py3PdGg0-jw
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

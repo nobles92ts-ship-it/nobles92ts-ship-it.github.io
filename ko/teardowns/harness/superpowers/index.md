@@ -3,10 +3,10 @@
 > 프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.
 
 - 수치: 수확 3 → 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/superpowers/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/superpowers/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/superpowers/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/superpowers/index.md
 - 저장소: https://github.com/obra/superpowers
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

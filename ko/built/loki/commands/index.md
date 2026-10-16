@@ -3,9 +3,9 @@
 > 채팅창 하나로 무엇까지 시킬 수 있나. 그리고 그중 둘이 체감을 바꿨습니다.
 
 - 수치: 11종
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/loki/commands/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/loki/commands/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/loki/commands/
+- 반대 언어: https://aitryed.com/en/built/loki/commands/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

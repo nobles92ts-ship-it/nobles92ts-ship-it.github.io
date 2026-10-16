@@ -3,9 +3,9 @@
 > 린터가 끊겼다고 보고한 메모리 53개는 전부 살아 있었다. 그 보고를 믿고 되살렸다면 인덱스가 한도의 124%가 됐다.
 
 - 수치: 오보 53건
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/false-alarm/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/verdicts/false-alarm/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/verdicts/false-alarm/
+- 반대 언어: https://aitryed.com/en/writing/verdicts/false-alarm/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

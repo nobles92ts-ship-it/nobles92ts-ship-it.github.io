@@ -3,9 +3,9 @@
 > How much you can ask for through a chat box — and the two that changed how it feels.
 
 - Headline number: 11 of them
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/loki/commands/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/loki/commands/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/loki/commands/
+- Other language: https://aitryed.com/ko/built/loki/commands/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

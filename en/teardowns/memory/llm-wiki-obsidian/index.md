@@ -3,10 +3,10 @@
 > I went looking for structure and came back with two hygiene rules. My layers were already finer than the video's, and the thing I wanted most I put on hold.
 
 - Headline number: 4 overlap · 2 new
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/llm-wiki-obsidian/
+- Other language: https://aitryed.com/ko/teardowns/memory/llm-wiki-obsidian/index.md
 - Source (Source video): https://www.youtube.com/watch?v=ttrnbB_9LZI
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > 3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.
 
 - 수치: 4겹침 · 순증 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/llm-wiki-obsidian/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/llm-wiki-obsidian/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/llm-wiki-obsidian/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/llm-wiki-obsidian/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=ttrnbB_9LZI
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

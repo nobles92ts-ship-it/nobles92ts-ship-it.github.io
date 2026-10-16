@@ -3,9 +3,9 @@
 > I'm not a developer. The AI writes the code. I've spent twelve years finding where it breaks.
 
 - Headline number: 12 years QA
-- Rendered page: https://nobles92ts-ship-it.github.io/en/about/me/
-- Other language: https://nobles92ts-ship-it.github.io/ko/about/me/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/about/me/
+- Other language: https://aitryed.com/ko/about/me/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

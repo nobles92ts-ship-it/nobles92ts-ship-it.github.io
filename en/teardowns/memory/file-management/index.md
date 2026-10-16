@@ -3,10 +3,10 @@
 > Five conclusions matched a design I'd built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.
 
 - Headline number: 5 agree · 3 I missed
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/file-management/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/file-management/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/file-management/
+- Other language: https://aitryed.com/ko/teardowns/memory/file-management/index.md
 - Source (Source video): https://youtu.be/MM-MPS57qKA
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

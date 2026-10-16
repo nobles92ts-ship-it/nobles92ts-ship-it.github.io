@@ -3,9 +3,9 @@
 > 일주일 치를 정직하게 그으니 릴리스 5건이 전부였습니다. 그런데 그 안에 기능 추가가 아니라 이사가 들어 있었습니다.
 
 - 수치: breaking 188
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/games/unity-releases/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/games/unity-releases/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/games/unity-releases/
+- 반대 언어: https://aitryed.com/en/teardowns/games/unity-releases/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

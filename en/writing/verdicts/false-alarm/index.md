@@ -3,9 +3,9 @@
 > The linter reported 53 memories cut loose from the index. All 53 were fine. Restoring them would have pushed the index to 124% of its limit.
 
 - Headline number: 53 false positives
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/verdicts/false-alarm/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/false-alarm/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/verdicts/false-alarm/
+- Other language: https://aitryed.com/ko/writing/verdicts/false-alarm/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

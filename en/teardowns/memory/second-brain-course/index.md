@@ -3,9 +3,9 @@
 > Seven of the eight curriculum slots were already covered. Then I ran the deck's own skill scorecard over my 99 skills and two real defects fell out.
 
 - Headline number: 0 takeaways · 2 defects
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-course/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-course/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/memory/second-brain-course/
+- Other language: https://aitryed.com/ko/teardowns/memory/second-brain-course/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

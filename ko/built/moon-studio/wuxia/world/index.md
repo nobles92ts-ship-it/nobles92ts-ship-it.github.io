@@ -4,9 +4,9 @@
 
 - 수치: 7대 분류
 - 상태: wip
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/world/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/world/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/wuxia/world/
+- 반대 언어: https://aitryed.com/en/built/moon-studio/wuxia/world/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

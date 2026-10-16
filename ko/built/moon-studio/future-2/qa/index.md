@@ -4,10 +4,10 @@
 
 - 수치: 조건 2
 - 상태: wip
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-2/qa/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/moon-studio/future-2/qa/index.md
-- ⚠ 정본은 여기가 아니다: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/qa/
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/future-2/qa/
+- 반대 언어: https://aitryed.com/en/built/moon-studio/future-2/qa/index.md
+- ⚠ 정본은 여기가 아니다: https://aitryed.com/ko/built/moon-studio/future-1/qa/
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

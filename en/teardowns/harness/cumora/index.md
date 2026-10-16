@@ -3,10 +3,10 @@
 > The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.
 
 - Headline number: 2 takeaways → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/cumora/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/cumora/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/cumora/
+- Other language: https://aitryed.com/ko/teardowns/harness/cumora/index.md
 - Repository: https://github.com/yetone/cumora
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

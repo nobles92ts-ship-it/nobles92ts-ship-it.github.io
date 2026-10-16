@@ -3,9 +3,9 @@
 > The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.
 
 - Headline number: 5 posts
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/verdicts/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/verdicts/
+- Other language: https://aitryed.com/ko/writing/verdicts/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else's ungated repository had never once been committed in my own.
 
 - Headline number: 4 takeaways → 1
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/dsh-better-sidebar/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/dsh-better-sidebar/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/dsh-better-sidebar/
+- Other language: https://aitryed.com/ko/teardowns/harness/dsh-better-sidebar/index.md
 - Repository: https://github.com/omdsh-dev/DSH-better-sidebar
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

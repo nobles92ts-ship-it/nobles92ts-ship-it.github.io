@@ -3,9 +3,9 @@
 > 위젯은 조회를 하지 않습니다. 파일 하나를 읽어서 그립니다.
 
 - 수치: 파일 1개
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/architecture/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/qa-widget/architecture/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/qa-widget/architecture/
+- 반대 언어: https://aitryed.com/en/built/qa-widget/architecture/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

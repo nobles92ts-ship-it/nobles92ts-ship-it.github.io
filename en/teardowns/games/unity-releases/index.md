@@ -3,9 +3,9 @@
 > Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.
 
 - Headline number: 188 breaking
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/unity-releases/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/unity-releases/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/games/unity-releases/
+- Other language: https://aitryed.com/ko/teardowns/games/unity-releases/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

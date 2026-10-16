@@ -3,10 +3,10 @@
 > What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn't have, though, turned out to be worth a measured 9.9 minutes a run.
 
 - Headline number: 1 net gain of 8
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/graph-engineering/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/graph-engineering/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/graph-engineering/
+- Other language: https://aitryed.com/ko/teardowns/memory/graph-engineering/index.md
 - Source (Source video): https://www.youtube.com/watch?v=SBLDc4R1d_E
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

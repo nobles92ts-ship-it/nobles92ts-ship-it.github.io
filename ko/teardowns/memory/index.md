@@ -3,9 +3,9 @@
 > 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
 
 - 수치: 11편 · 코드 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.
 
 - 수치: 결론 2회 뒤집힘
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/headroom/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/headroom/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/headroom/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/headroom/index.md
 - 저장소: https://github.com/headroomlabs-ai/headroom
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

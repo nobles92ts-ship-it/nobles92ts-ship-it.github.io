@@ -3,10 +3,10 @@
 > The mechanism the video dug up doesn't exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.
 
 - Headline number: 0 sockets · already live
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/session-messaging/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/session-messaging/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/session-messaging/
+- Other language: https://aitryed.com/ko/teardowns/harness/session-messaging/index.md
 - Source (Source video): https://www.instagram.com/reels/DbxtPGODv9k/
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

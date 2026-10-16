@@ -3,9 +3,9 @@
 > A free Windows desktop game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
 
 - Headline number: v0.1.6 beta · Windows · free
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/pixling/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/pixling/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/pixling/
+- Other language: https://aitryed.com/ko/built/moon-studio/pixling/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

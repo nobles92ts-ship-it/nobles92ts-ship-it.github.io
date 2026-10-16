@@ -3,9 +3,9 @@
 > Measurement usually goes wrong somewhere other than the arithmetic. I was wrong four times, the arithmetic was right every time, and what was wrong was what I measured against.
 
 - Headline number: 4 baselines
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/measurement/baselines/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/measurement/baselines/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/measurement/baselines/
+- Other language: https://aitryed.com/ko/writing/measurement/baselines/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

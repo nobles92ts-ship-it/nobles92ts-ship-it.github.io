@@ -3,9 +3,9 @@
 > Running one unattended, the frightening thing isn't a wrong answer. A wrong answer is visible when you read it. The frightening thing is exit code 0.
 
 - Headline number: 88.3 minutes lost
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/agents/silent-success/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/agents/silent-success/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/agents/silent-success/
+- Other language: https://aitryed.com/ko/writing/agents/silent-success/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

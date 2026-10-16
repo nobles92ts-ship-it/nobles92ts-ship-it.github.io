@@ -3,9 +3,9 @@
 > 숫자만 보여주면 안 됩니다. 어떻게 나온 숫자인지와, 그 자리에서 할 수 있는 일이 같이 있어야 합니다.
 
 - 수치: 항상 위
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/screen/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/qa-widget/screen/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/qa-widget/screen/
+- 반대 언어: https://aitryed.com/en/built/qa-widget/screen/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

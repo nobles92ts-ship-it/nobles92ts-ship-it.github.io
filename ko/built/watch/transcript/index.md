@@ -4,9 +4,9 @@
 
 - 수치: 두 경로
 - 상태: wip
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/watch/transcript/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/watch/transcript/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/watch/transcript/
+- 반대 언어: https://aitryed.com/en/built/watch/transcript/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

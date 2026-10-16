@@ -3,10 +3,10 @@
 > I didn't adopt the framework. But the real output of this teardown wasn't a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.
 
 - Headline number: 3 takeaways → 1
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/superpowers/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/superpowers/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/superpowers/
+- Other language: https://aitryed.com/ko/teardowns/harness/superpowers/index.md
 - Repository: https://github.com/obra/superpowers
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > Numbers alone aren't enough. How the number was arrived at, and what you can do about it, have to be right there.
 
 - Headline number: always on top
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/qa-widget/screen/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/screen/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/qa-widget/screen/
+- Other language: https://aitryed.com/ko/built/qa-widget/screen/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

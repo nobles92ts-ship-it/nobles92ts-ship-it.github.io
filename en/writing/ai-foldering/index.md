@@ -3,8 +3,8 @@
 > In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go.
 
 - Headline number: 4 questions · 7 sources
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/index.md
+- Rendered page: https://aitryed.com/en/writing/ai-foldering/
+- Other language: https://aitryed.com/ko/writing/ai-foldering/index.md
 - Source (Theory PARA): https://fortelabs.com/blog/para/
 - Source (Theory Johnny.Decimal): https://johnnydecimal.com/
 - Source (Standard FHS 3.0): https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
@@ -12,7 +12,7 @@
 - Source (Repo simonw/til): https://github.com/simonw/til
 - Source (Video Jeff Su): https://www.youtube.com/watch?v=MM-MPS57qKA
 - Source (Article project-layout critique): https://dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

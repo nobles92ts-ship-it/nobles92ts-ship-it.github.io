@@ -3,9 +3,9 @@
 > 내 PC에 셸 권한을 가진 에이전트를 남에게 열어 주는 법. 그리고 멈추는 것도 기능입니다.
 
 - 수치: 3티어
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/loki/permissions/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/loki/permissions/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/loki/permissions/
+- 반대 언어: https://aitryed.com/en/built/loki/permissions/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

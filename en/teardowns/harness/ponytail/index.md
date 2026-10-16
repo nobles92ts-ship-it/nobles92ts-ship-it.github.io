@@ -3,10 +3,10 @@
 > Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.
 
 - Headline number: 1 line of 4
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ponytail/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ponytail/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/ponytail/
+- Other language: https://aitryed.com/ko/teardowns/harness/ponytail/index.md
 - Repository: https://github.com/DietrichGebert/ponytail
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

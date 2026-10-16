@@ -3,10 +3,10 @@
 > There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.
 
 - Headline number: 1 adopted · step 4 idle
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-4steps/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-4steps/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/second-brain-4steps/
+- Other language: https://aitryed.com/ko/teardowns/memory/second-brain-4steps/index.md
 - Source (Source video): https://youtu.be/EUlgnQq4czk
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.
 
 - Headline number: 6 techniques · 3 new
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/fable-field-guide/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/fable-field-guide/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/fable-field-guide/
+- Other language: https://aitryed.com/ko/teardowns/harness/fable-field-guide/index.md
 - Source (Source video): https://www.youtube.com/watch?v=SNb2CFrUcs8
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

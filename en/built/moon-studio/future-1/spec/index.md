@@ -4,9 +4,9 @@
 
 - Headline number: 2 conditions
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/future-1/spec/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/future-1/spec/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/future-1/spec/
+- Other language: https://aitryed.com/ko/built/moon-studio/future-1/spec/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

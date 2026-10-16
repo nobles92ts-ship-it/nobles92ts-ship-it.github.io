@@ -3,10 +3,10 @@
 > A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).
 
 - Headline number: 2.5 kept · 0 runs
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/clumsy/
+- Other language: https://aitryed.com/ko/teardowns/qa/clumsy/index.md
 - Repository: https://github.com/jagt/clumsy
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

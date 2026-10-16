@@ -3,10 +3,10 @@
 > 별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.
 
 - 수치: 4줄 중 1줄
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ponytail/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ponytail/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/ponytail/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/ponytail/index.md
 - 저장소: https://github.com/DietrichGebert/ponytail
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

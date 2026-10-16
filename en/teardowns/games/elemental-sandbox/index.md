@@ -3,10 +3,10 @@
 > The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.
 
 - Headline number: 1 rule → 43 places
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/elemental-sandbox/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/elemental-sandbox/index.md
+- Rendered page: https://aitryed.com/en/teardowns/games/elemental-sandbox/
+- Other language: https://aitryed.com/ko/teardowns/games/elemental-sandbox/index.md
 - Repository: https://github.com/achrefelouafi/LinearAbiltyCastingThreeJS
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

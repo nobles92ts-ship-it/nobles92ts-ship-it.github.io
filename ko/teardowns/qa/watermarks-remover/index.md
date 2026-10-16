@@ -3,10 +3,10 @@
 > AI 티를 지우는 도구를 검사 게이트 점검용으로 열었습니다. 그런데 AI를 잡으라고 만든 지표가, 사람이 쓴 제 글을 먼저 잡았습니다. 그래서 긴 글 전용으로 좁혀서만 넣었습니다(2026-09-29).
 
 - 수치: 수확 4 → 1.5
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/watermarks-remover/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/watermarks-remover/index.md
 - 저장소: https://github.com/guillaumemeyer/watermarks-remover
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

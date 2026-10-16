@@ -3,9 +3,9 @@
 > The other side — loops, guards, and the things I decided not to automate.
 
 - Headline number: 2 posts
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/agents/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/agents/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/agents/
+- Other language: https://aitryed.com/ko/writing/agents/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

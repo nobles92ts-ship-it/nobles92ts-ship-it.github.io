@@ -3,10 +3,10 @@
 > 채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.
 
 - 수치: 데모 2 중 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/buzz-groupchat/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/buzz-groupchat/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/buzz-groupchat/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/buzz-groupchat/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=py3PdGg0-jw
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

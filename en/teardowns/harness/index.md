@@ -3,9 +3,9 @@
 > What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.
 
 - Headline number: 21 written · 1 adopted
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/harness/
+- Other language: https://aitryed.com/ko/teardowns/harness/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

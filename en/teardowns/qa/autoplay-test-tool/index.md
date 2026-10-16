@@ -3,10 +3,10 @@
 > A bot that walks the map measuring performance. Catching "stuck" as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).
 
 - Headline number: 2 of 4 techniques
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/autoplay-test-tool/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/autoplay-test-tool/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/autoplay-test-tool/
+- Other language: https://aitryed.com/ko/teardowns/qa/autoplay-test-tool/index.md
 - Source (Source video): https://www.youtube.com/watch?v=EDarROsi23w
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

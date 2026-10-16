@@ -3,10 +3,10 @@
 > 프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.
 
 - 수치: 코드 0 · 수치 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/games/worldclaw/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/games/worldclaw/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/games/worldclaw/
+- 반대 언어: https://aitryed.com/en/teardowns/games/worldclaw/index.md
 - 저장소: https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

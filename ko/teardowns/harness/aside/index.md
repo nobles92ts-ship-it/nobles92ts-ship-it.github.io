@@ -3,11 +3,11 @@
 > 제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.
 
 - 수치: 기각 · 재개조건 5
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/aside/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/aside/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/aside/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/aside/index.md
 - 출처(공식): https://aside.com/
 - 출처(권한 문서): https://docs.aside.com/help/security
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

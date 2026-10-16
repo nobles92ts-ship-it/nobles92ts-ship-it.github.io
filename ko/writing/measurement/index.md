@@ -3,9 +3,9 @@
 > 어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.
 
 - 수치: 글 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/measurement/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/measurement/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/measurement/
+- 반대 언어: https://aitryed.com/en/writing/measurement/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

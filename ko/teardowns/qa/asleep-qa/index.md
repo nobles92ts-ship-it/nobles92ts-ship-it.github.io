@@ -3,11 +3,11 @@
 > 11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.
 
 - 수치: 11종 중 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/asleep-qa/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/asleep-qa/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/asleep-qa/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/asleep-qa/index.md
 - 출처(원문 8편 중 대표): https://brunch.co.kr/@jiwonleeqa/394
 - 출처(멀티 디바이스 동시 제어): https://brunch.co.kr/@jiwonleeqa/398
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

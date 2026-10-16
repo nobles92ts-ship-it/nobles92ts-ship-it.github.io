@@ -3,9 +3,9 @@
 > 같은 질문에 "아마 맞다"로 답하느냐 "맞다"로 답하느냐는, 내가 얼마나 열심히 했느냐로 갈리지 않았다.
 
 - 수치: 증거 6등급
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/evidence-grades/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/verdicts/evidence-grades/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/verdicts/evidence-grades/
+- 반대 언어: https://aitryed.com/en/writing/verdicts/evidence-grades/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

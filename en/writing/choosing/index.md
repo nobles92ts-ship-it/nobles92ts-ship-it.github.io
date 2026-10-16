@@ -3,9 +3,9 @@
 > Deciding whether to bring someone else's work in. What counts as grounds for rejection, and when a rejection gets reopened.
 
 - Headline number: 2 posts
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/choosing/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/choosing/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/choosing/
+- Other language: https://aitryed.com/ko/writing/choosing/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

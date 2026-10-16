@@ -3,10 +3,10 @@
 > It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn't exist.
 
 - Headline number: verdict reversed twice
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/headroom/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/headroom/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/headroom/
+- Other language: https://aitryed.com/ko/teardowns/memory/headroom/index.md
 - Repository: https://github.com/headroomlabs-ai/headroom
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

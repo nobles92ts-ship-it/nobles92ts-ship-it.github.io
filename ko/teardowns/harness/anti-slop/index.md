@@ -3,10 +3,10 @@
 > 규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.
 
 - 수치: 규칙 15 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/anti-slop/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/anti-slop/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/anti-slop/index.md
 - 저장소: https://github.com/dmmulroy/anti-slop
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

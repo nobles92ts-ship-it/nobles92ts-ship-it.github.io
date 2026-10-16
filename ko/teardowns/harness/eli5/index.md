@@ -3,10 +3,10 @@
 > 「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.
 
 - 수치: 865바이트 · 실행 1회
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/eli5/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/eli5/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/eli5/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/eli5/index.md
 - 저장소: https://github.com/anthropics/claude-plugins-community
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > 스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.
 
 - 수치: 96 중 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/mattpocock-skills/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/mattpocock-skills/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/mattpocock-skills/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/mattpocock-skills/index.md
 - 저장소: https://github.com/mattpocock/skills
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

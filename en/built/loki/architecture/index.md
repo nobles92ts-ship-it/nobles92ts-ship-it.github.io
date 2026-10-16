@@ -3,9 +3,9 @@
 > The platform swaps and the brain swaps, but the core is one thing — with a human-held line in between.
 
 - Headline number: 1 adapter
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/loki/architecture/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/loki/architecture/
+- Other language: https://aitryed.com/ko/built/loki/architecture/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

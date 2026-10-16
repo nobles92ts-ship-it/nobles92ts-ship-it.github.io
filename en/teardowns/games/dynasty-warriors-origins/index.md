@@ -3,9 +3,9 @@
 > I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.
 
 - Headline number: 3 left of 12
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/dynasty-warriors-origins/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/dynasty-warriors-origins/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/games/dynasty-warriors-origins/
+- Other language: https://aitryed.com/ko/teardowns/games/dynasty-warriors-origins/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

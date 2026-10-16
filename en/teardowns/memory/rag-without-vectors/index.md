@@ -3,10 +3,10 @@
 > Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.
 
 - Headline number: structure 6/6 · numbers 1/5
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/rag-without-vectors/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/rag-without-vectors/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/rag-without-vectors/
+- Other language: https://aitryed.com/ko/teardowns/memory/rag-without-vectors/index.md
 - Source (source): https://www.threads.com/@gptaku_ai/post/DbpB3WZE6p6
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > 집 네트워크가 끊기기 시작했고, 며칠 전에 깐 Tailscale 을 지우려 했다. 설치 시각과 증상 시작 시각을 각각 재니 이상 지표가 설치보다 18~127일 앞서 있었다.
 
 - 수치: 무죄 · 18~127일
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/new-install-suspect/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/verdicts/new-install-suspect/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/verdicts/new-install-suspect/
+- 반대 언어: https://aitryed.com/en/writing/verdicts/new-install-suspect/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

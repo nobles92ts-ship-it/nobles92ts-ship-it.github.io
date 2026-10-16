@@ -3,10 +3,10 @@
 > 코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.
 
 - 수치: 1등 수확이 재발견
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/prime-agent/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/prime-agent/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/prime-agent/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/prime-agent/index.md
 - 저장소: https://github.com/PrimeIntellect-ai/prime-agent
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

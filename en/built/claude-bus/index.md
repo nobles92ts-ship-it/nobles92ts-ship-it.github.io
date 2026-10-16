@@ -3,10 +3,10 @@
 > Leave a job on the office PC; a fresh session on the home PC picks it up. One shared folder, no server.
 
 - Headline number: 2 machines
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/claude-bus/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/index.md
+- Rendered page: https://aitryed.com/en/built/claude-bus/
+- Other language: https://aitryed.com/ko/built/claude-bus/index.md
 - Repository: https://github.com/nobles92ts-ship-it/claude-bus
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

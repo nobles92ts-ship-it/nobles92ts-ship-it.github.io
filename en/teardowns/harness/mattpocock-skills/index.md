@@ -3,10 +3,10 @@
 > I didn't take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.
 
 - Headline number: 1 of 96
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/mattpocock-skills/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/mattpocock-skills/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/mattpocock-skills/
+- Other language: https://aitryed.com/ko/teardowns/harness/mattpocock-skills/index.md
 - Repository: https://github.com/mattpocock/skills
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

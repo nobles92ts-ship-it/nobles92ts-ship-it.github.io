@@ -3,10 +3,10 @@
 > 회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.
 
 - 수치: PC 2대
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/claude-bus/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/built/claude-bus/
+- 반대 언어: https://aitryed.com/en/built/claude-bus/index.md
 - 저장소: https://github.com/nobles92ts-ship-it/claude-bus
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

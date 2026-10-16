@@ -3,9 +3,9 @@
 > 커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.
 
 - 수치: 수확 0 · 내 결함 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-course/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-course/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/second-brain-course/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/second-brain-course/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

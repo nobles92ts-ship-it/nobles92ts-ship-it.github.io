@@ -4,9 +4,9 @@
 
 - Headline number: 0 false passes
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/android-qa/judge/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/android-qa/judge/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/android-qa/judge/
+- Other language: https://aitryed.com/ko/built/android-qa/judge/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

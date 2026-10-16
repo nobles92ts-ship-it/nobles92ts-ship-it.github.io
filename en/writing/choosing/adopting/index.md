@@ -3,9 +3,9 @@
 > I took apart forty tools other people built and installed exactly one. What pays is not the 1-in-40 ratio — it is the reasons for the other thirty-nine.
 
 - Headline number: 40 pieces · 1 tool installed
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/choosing/adopting/
+- Other language: https://aitryed.com/ko/writing/choosing/adopting/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

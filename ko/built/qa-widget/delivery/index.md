@@ -3,9 +3,9 @@
 > 남의 기계에 도구를 올리는 일이 도구를 만드는 일보다 어려웠습니다.
 
 - 수치: OK/NG
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/qa-widget/delivery/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/qa-widget/delivery/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/qa-widget/delivery/
+- 반대 언어: https://aitryed.com/en/built/qa-widget/delivery/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

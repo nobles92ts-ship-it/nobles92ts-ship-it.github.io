@@ -4,9 +4,9 @@
 
 - Headline number: 100 max
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/watch/budget/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/watch/budget/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/watch/budget/
+- Other language: https://aitryed.com/ko/built/watch/budget/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

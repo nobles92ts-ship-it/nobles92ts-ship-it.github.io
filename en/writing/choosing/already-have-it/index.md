@@ -3,9 +3,9 @@
 > Being installed is only the first of three layers. Three investigations pointed at the same two tools, and all three times those tools had never run.
 
 - Headline number: named 3 times · run 0 times
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/choosing/already-have-it/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/choosing/already-have-it/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/choosing/already-have-it/
+- Other language: https://aitryed.com/ko/writing/choosing/already-have-it/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

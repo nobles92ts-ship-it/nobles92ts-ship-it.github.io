@@ -3,9 +3,9 @@
 > Opening an agent with shell access on your own PC to other people. And stopping is a feature.
 
 - Headline number: 3 tiers
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/loki/permissions/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/loki/permissions/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/loki/permissions/
+- Other language: https://aitryed.com/ko/built/loki/permissions/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

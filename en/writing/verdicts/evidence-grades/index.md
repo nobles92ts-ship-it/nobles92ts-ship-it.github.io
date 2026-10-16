@@ -3,9 +3,9 @@
 > Answering the same question with "probably right" or with "right" didn't come down to how hard I worked at it.
 
 - Headline number: 6 grades of evidence
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/verdicts/evidence-grades/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/evidence-grades/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/verdicts/evidence-grades/
+- Other language: https://aitryed.com/ko/writing/verdicts/evidence-grades/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

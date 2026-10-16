@@ -3,11 +3,11 @@
 > Ten of the eleven decisions I had already arrived at. The value wasn't transfer — it was independent confirmation.
 
 - Headline number: 1 of 11
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/asleep-qa/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/asleep-qa/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/asleep-qa/
+- Other language: https://aitryed.com/ko/teardowns/qa/asleep-qa/index.md
 - Source (source, 1 of 8): https://brunch.co.kr/@jiwonleeqa/394
 - Source (on simultaneous control): https://brunch.co.kr/@jiwonleeqa/398
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

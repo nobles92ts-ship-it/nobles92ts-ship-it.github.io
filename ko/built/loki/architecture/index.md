@@ -3,9 +3,9 @@
 > 플랫폼도 두뇌도 갈아 끼우는데 코어는 하나입니다. 그 사이에 사람이 지키는 선이 있습니다.
 
 - 수치: 어댑터 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/loki/architecture/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/loki/architecture/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/loki/architecture/
+- 반대 언어: https://aitryed.com/en/built/loki/architecture/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

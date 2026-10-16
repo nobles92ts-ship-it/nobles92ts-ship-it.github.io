@@ -3,10 +3,10 @@
 > 181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.
 
 - 수치: 수확 5 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/deepseek-harness/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/deepseek-harness/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/deepseek-harness/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/deepseek-harness/index.md
 - 저장소: https://github.com/deepseek-ai/deepseek-harness
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

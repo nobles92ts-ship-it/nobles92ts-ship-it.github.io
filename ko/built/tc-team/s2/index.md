@@ -3,9 +3,9 @@
 > 전개하기 전에 "이 설계가 전개 가능한가"를 코드가 다시 봅니다. 그리고 추적의 앵커를 심습니다.
 
 - 수치: 결정론
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/s2/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/s2/
+- 반대 언어: https://aitryed.com/en/built/tc-team/s2/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

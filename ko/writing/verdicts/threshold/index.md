@@ -4,9 +4,9 @@
 
 - 수치: FAIL 1건
 - 상태: wip
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/threshold/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/verdicts/threshold/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/verdicts/threshold/
+- 반대 언어: https://aitryed.com/en/writing/verdicts/threshold/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

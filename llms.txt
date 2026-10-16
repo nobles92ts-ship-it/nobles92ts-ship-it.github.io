@@ -11,16 +11,16 @@ Three things about these pages that the pages themselves do not announce:
 
 ## Indexes
 
-- [English index](https://nobles92ts-ship-it.github.io/en/llms.txt): Every hand-written page in English, grouped by section, one line of summary each.
-- [Korean index](https://nobles92ts-ship-it.github.io/ko/llms.txt): 같은 목록의 한국어판 — 이쪽이 원문이다.
+- [English index](https://aitryed.com/en/llms.txt): Every hand-written page in English, grouped by section, one line of summary each.
+- [Korean index](https://aitryed.com/ko/llms.txt): 같은 목록의 한국어판 — 이쪽이 원문이다.
 
 ## Start here
 
-- [Who I am](https://nobles92ts-ship-it.github.io/en/about/me/index.md): What the author does, what he does not do, and what is deliberately missing from this site.
-- [My tools](https://nobles92ts-ship-it.github.io/en/built/): Things built to run unattended and still be trusted in the morning.
-- [What I took apart](https://nobles92ts-ship-it.github.io/en/teardowns/): Repos and services opened up — and what was kept from each.
+- [Who I am](https://aitryed.com/en/about/me/index.md): What the author does, what he does not do, and what is deliberately missing from this site.
+- [My tools](https://aitryed.com/en/built/): Things built to run unattended and still be trusted in the morning.
+- [What I took apart](https://aitryed.com/en/teardowns/): Repos and services opened up — and what was kept from each.
 
 ## Optional
 
-- [sitemap.xml](https://nobles92ts-ship-it.github.io/sitemap.xml): Every URL on the site in both languages, with lastmod.
-- [Privacy](https://nobles92ts-ship-it.github.io/en/about/privacy/index.md): Nothing is collected here; the page says which third parties still see a visitor.
+- [sitemap.xml](https://aitryed.com/sitemap.xml): Every URL on the site in both languages, with lastmod.
+- [Privacy](https://aitryed.com/en/about/privacy/index.md): Nothing is collected here; the page says which third parties still see a visitor.

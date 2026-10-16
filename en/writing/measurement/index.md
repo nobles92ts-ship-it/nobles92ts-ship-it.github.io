@@ -3,9 +3,9 @@
 > Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.
 
 - Headline number: 1 post
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/measurement/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/measurement/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/measurement/
+- Other language: https://aitryed.com/ko/writing/measurement/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

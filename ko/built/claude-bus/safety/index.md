@@ -3,9 +3,9 @@
 > 남의 지시가 내 기계에서 실행되기 직전에 무엇이 막는가. 셸이 아니라 사람에게 보냅니다.
 
 - 수치: 셸 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/safety/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/claude-bus/safety/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/claude-bus/safety/
+- 반대 언어: https://aitryed.com/en/built/claude-bus/safety/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

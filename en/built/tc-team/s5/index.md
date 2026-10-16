@@ -3,9 +3,9 @@
 > Applies the fix plan and clears four gates. This is the stage where rejection is correct behaviour.
 
 - Headline number: 4 gates
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s5/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s5/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s5/
+- Other language: https://aitryed.com/ko/built/tc-team/s5/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > What stands between somebody else's instruction and my machine. It goes to a person, not a shell.
 
 - Headline number: no shell
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/claude-bus/safety/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/safety/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/claude-bus/safety/
+- Other language: https://aitryed.com/ko/built/claude-bus/safety/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

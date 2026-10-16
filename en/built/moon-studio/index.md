@@ -4,9 +4,9 @@
 
 - Headline number: 6 games
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/
+- Other language: https://aitryed.com/ko/built/moon-studio/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

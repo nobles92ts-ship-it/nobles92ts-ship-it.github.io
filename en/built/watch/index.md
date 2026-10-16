@@ -4,12 +4,12 @@
 
 - Headline number: video → spec
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/watch/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/watch/index.md
+- Rendered page: https://aitryed.com/en/built/watch/
+- Other language: https://aitryed.com/ko/built/watch/index.md
 - Source (Starting point YouTube Summary): https://youtubesummary.com/
 - Source (How the starting point works): https://youtubesummary.com/blog/youtube-summary-key-points-accuracy
 - Source (Original code): https://github.com/bradautomates/claude-video
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

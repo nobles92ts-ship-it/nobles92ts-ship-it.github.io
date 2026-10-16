@@ -4,9 +4,9 @@
 
 - Headline number: 300 cycles
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/android-qa/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/android-qa/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/android-qa/
+- Other language: https://aitryed.com/ko/built/android-qa/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

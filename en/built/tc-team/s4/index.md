@@ -3,9 +3,9 @@
 > Three lenses — structure, quality, source — read at once and stay out of each other's territory. One judge filters their findings into a fix plan.
 
 - Headline number: 3 lenses
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s4/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s4/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s4/
+- Other language: https://aitryed.com/ko/built/tc-team/s4/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

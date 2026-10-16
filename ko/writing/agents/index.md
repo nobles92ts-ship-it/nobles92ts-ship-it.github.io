@@ -3,9 +3,9 @@
 > AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.
 
 - 수치: 글 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/agents/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/agents/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/agents/
+- 반대 언어: https://aitryed.com/en/writing/agents/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

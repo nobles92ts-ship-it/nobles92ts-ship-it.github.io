@@ -3,10 +3,10 @@
 > 41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.
 
 - 수치: 수확 7종 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/omniroute/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/omniroute/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/omniroute/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/omniroute/index.md
 - 저장소: https://github.com/diegosouzapw/OmniRoute
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

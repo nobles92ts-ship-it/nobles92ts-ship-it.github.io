@@ -3,10 +3,10 @@
 > I read the code and came away with four techniques. The best of them was something I'd written down myself five days earlier.
 
 - Headline number: top find was a rediscovery
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/prime-agent/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/prime-agent/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/prime-agent/
+- Other language: https://aitryed.com/ko/teardowns/harness/prime-agent/index.md
 - Repository: https://github.com/PrimeIntellect-ai/prime-agent
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

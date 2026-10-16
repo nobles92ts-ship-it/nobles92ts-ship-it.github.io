@@ -3,8 +3,8 @@
 > AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다.
 
 - 수치: 질문 4 · 출처 7
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/ai-foldering/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/ai-foldering/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/writing/ai-foldering/
+- 반대 언어: https://aitryed.com/en/writing/ai-foldering/index.md
 - 출처(이론 PARA): https://fortelabs.com/blog/para/
 - 출처(이론 Johnny.Decimal): https://johnnydecimal.com/
 - 출처(표준 FHS 3.0): https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
@@ -12,7 +12,7 @@
 - 출처(레포 simonw/til): https://github.com/simonw/til
 - 출처(영상 Jeff Su): https://www.youtube.com/watch?v=MM-MPS57qKA
 - 출처(아티클 project-layout 비판): https://dev.to/gabrielanhaia/golang-standardsproject-layout-is-not-a-standard-russ-cox-said-so-4kjh
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

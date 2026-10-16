@@ -3,10 +3,10 @@
 > The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.
 
 - Headline number: 1 takeaway · 4 refutations
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/payg-image-routing/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/payg-image-routing/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/payg-image-routing/
+- Other language: https://aitryed.com/ko/teardowns/harness/payg-image-routing/index.md
 - Source (Video): https://www.youtube.com/watch?v=4ujqu2VGBpU
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

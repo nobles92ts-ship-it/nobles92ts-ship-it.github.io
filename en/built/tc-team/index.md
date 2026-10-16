@@ -3,10 +3,10 @@
 > Feed it a spec, get test cases. The LLM only writes sentences; deterministic code owns every structure and gate. It can also hand them to an AI as a document bundle.
 
 - Headline number: S0–S7
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/index.md
+- Rendered page: https://aitryed.com/en/built/tc-team/
+- Other language: https://aitryed.com/ko/built/tc-team/index.md
 - Repository: https://github.com/nobles92ts-ship-it/AI_GAME_QA_TestCase
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

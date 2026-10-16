@@ -3,10 +3,10 @@
 > 도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.
 
 - 수치: 7종 중 순증 1.5
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/clawd-on-desk/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/clawd-on-desk/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/clawd-on-desk/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/clawd-on-desk/index.md
 - 저장소: https://github.com/rullerzhou-afk/clawd-on-desk
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

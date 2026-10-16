@@ -3,10 +3,10 @@
 > Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.
 
 - Headline number: 0 techniques taken
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/toss-nebula/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/toss-nebula/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/toss-nebula/
+- Other language: https://aitryed.com/ko/teardowns/qa/toss-nebula/index.md
 - Source (source): https://toss.tech/article/device-farm-nebula
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

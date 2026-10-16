@@ -3,10 +3,10 @@
 > I took apart the upstream of my own configuration. What was worth taking wasn't a feature but a measurement — and that measuring tool wouldn't run here.
 
 - Headline number: 1 of 285
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ecc/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ecc/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/ecc/
+- Other language: https://aitryed.com/ko/teardowns/harness/ecc/index.md
 - Repository: https://github.com/affaan-m/ECC
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

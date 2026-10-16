@@ -3,10 +3,10 @@
 > Chat with your own PC. A local Slack agent running on your Claude Code subscription — no API key.
 
 - Headline number: Slack
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/loki/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/loki/index.md
+- Rendered page: https://aitryed.com/en/built/loki/
+- Other language: https://aitryed.com/ko/built/loki/index.md
 - Repository: https://github.com/nobles92ts-ship-it/loki-agent
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

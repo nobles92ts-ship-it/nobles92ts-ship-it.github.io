@@ -3,10 +3,10 @@
 > 스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.
 
 - 수치: 수확 1 · 반증 4
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/payg-image-routing/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/payg-image-routing/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/payg-image-routing/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/payg-image-routing/index.md
 - 출처(영상): https://www.youtube.com/watch?v=4ujqu2VGBpU
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

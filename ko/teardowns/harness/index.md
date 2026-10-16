@@ -3,9 +3,9 @@
 > 에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.
 
 - 수치: 21편 · 도구 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

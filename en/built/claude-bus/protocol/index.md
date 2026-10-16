@@ -3,9 +3,9 @@
 > Conflict copies never appear because every folder has exactly one writer.
 
 - Headline number: 1 writer
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/claude-bus/protocol/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/claude-bus/protocol/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/claude-bus/protocol/
+- Other language: https://aitryed.com/ko/built/claude-bus/protocol/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

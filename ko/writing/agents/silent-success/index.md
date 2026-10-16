@@ -3,9 +3,9 @@
 > 무인으로 굴릴 때 무서운 건 틀린 답이 아니다. 틀린 답은 읽으면 보인다. 무서운 건 종료 코드 0이다.
 
 - 수치: 손실 88.3분
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/agents/silent-success/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/agents/silent-success/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/agents/silent-success/
+- 반대 언어: https://aitryed.com/en/writing/agents/silent-success/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

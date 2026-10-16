@@ -3,10 +3,10 @@
 > 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
 
 - 수치: 구조 6/6 · 숫자 1/5
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/rag-without-vectors/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/rag-without-vectors/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/rag-without-vectors/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/rag-without-vectors/index.md
 - 출처(원문): https://www.threads.com/@gptaku_ai/post/DbpB3WZE6p6
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

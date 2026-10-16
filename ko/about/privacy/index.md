@@ -3,9 +3,9 @@
 > 이 사이트가 방문자에게서 모으는 것은 「몇 번 열렸나」 하나뿐입니다. 다만 글꼴을 외부에서 받아오고, 호스팅 업체가 접속 기록을 남깁니다.
 
 - 수치: 모으는 건 숫자 하나
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/about/privacy/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/about/privacy/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/about/privacy/
+- 반대 언어: https://aitryed.com/en/about/privacy/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

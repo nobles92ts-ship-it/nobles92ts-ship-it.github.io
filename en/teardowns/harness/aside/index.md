@@ -3,11 +3,11 @@
 > It won't install on my machines. That should have been a one-line rejection, except the "no plans" part of my own judgement fell apart on three lines of changelog.
 
 - Headline number: rejected · 5 triggers
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/aside/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/aside/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/aside/
+- Other language: https://aitryed.com/ko/teardowns/harness/aside/index.md
 - Source (Official site): https://aside.com/
 - Source (Permissions doc): https://docs.aside.com/help/security
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > 남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.
 
 - 수치: 글 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/choosing/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/choosing/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/choosing/
+- 반대 언어: https://aitryed.com/en/writing/choosing/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

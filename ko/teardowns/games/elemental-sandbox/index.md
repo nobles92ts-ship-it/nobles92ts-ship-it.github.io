@@ -3,10 +3,10 @@
 > 이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.
 
 - 수치: 규칙 1 → 43곳
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/games/elemental-sandbox/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/games/elemental-sandbox/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/games/elemental-sandbox/
+- 반대 언어: https://aitryed.com/en/teardowns/games/elemental-sandbox/index.md
 - 저장소: https://github.com/achrefelouafi/LinearAbiltyCastingThreeJS
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

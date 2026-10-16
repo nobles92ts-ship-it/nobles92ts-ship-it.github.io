@@ -4,9 +4,9 @@
 
 - Headline number: one page
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/moon-studio/wuxia/spec/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/moon-studio/wuxia/spec/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/moon-studio/wuxia/spec/
+- Other language: https://aitryed.com/ko/built/moon-studio/wuxia/spec/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

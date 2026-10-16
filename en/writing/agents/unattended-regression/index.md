@@ -3,9 +3,9 @@
 > A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but knowing how to cut things off.
 
 - Headline number: one night, 300 cycles held
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/agents/unattended-regression/
+- Other language: https://aitryed.com/ko/writing/agents/unattended-regression/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

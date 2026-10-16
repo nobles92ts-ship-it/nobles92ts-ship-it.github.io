@@ -3,10 +3,10 @@
 > I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.
 
 - Headline number: 15 rules → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/anti-slop/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/anti-slop/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/anti-slop/
+- Other language: https://aitryed.com/ko/teardowns/harness/anti-slop/index.md
 - Repository: https://github.com/dmmulroy/anti-slop
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

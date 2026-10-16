@@ -4,9 +4,9 @@
 
 - Headline number: 1 false positive
 - Status: wip
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/self-evolution/detector/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/self-evolution/detector/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/self-evolution/detector/
+- Other language: https://aitryed.com/ko/built/self-evolution/detector/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

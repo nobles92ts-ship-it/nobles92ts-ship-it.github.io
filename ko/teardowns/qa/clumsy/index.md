@@ -3,10 +3,10 @@
 > 윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02).
 
 - 수치: 수확 2.5 · 실행 0회
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/clumsy/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/clumsy/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/clumsy/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/clumsy/index.md
 - 저장소: https://github.com/jagt/clumsy
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

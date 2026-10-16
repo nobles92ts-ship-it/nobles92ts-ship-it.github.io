@@ -3,9 +3,9 @@
 > 제 게임에 뭘 더 넣을지 보려고 뜯었는데, 안 만들어도 되는 것 하나를 먼저 찾았습니다.
 
 - 수치: 골격 12 중 남은 3
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/games/dynasty-warriors-origins/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/games/dynasty-warriors-origins/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/games/dynasty-warriors-origins/
+- 반대 언어: https://aitryed.com/en/teardowns/games/dynasty-warriors-origins/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,9 +3,9 @@
 > 구조는 코드가 만들고 문장만 LLM이 씁니다. 그 문장에는 금지 규칙이 여럿 붙어 있습니다.
 
 - 수치: 25행 청크
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/tc-team/s3/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/tc-team/s3/
+- 반대 언어: https://aitryed.com/en/built/tc-team/s3/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

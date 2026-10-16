@@ -3,9 +3,9 @@
 > Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.
 
 - Headline number: 5 written · 0 code
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/games/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/games/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/games/
+- Other language: https://aitryed.com/ko/teardowns/games/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

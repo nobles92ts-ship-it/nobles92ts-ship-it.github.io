@@ -3,10 +3,10 @@
 > 44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.
 
 - 수치: 4종 중 이미 기각 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/four-plugins/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/four-plugins/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/four-plugins/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/four-plugins/index.md
 - 출처(원본 영상): https://www.instagram.com/reel/DbBVXkoPA1l/
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

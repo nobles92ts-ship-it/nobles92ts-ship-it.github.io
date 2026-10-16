@@ -3,10 +3,10 @@
 > 내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.
 
 - 수치: Slack
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/loki/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/loki/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/built/loki/
+- 반대 언어: https://aitryed.com/en/built/loki/index.md
 - 저장소: https://github.com/nobles92ts-ship-it/loki-agent
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

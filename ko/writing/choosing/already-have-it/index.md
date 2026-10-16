@@ -3,9 +3,9 @@
 > 설치돼 있다는 것은 세 층 중 첫 층일 뿐이다. 세 번의 조사가 같은 두 도구를 지목했고, 세 번 다 그 도구는 안 돌아 있었다.
 
 - 수치: 세 번 지목 · 세 번 미실행
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/choosing/already-have-it/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/choosing/already-have-it/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/choosing/already-have-it/
+- 반대 언어: https://aitryed.com/en/writing/choosing/already-have-it/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

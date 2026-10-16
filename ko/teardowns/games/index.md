@@ -3,9 +3,9 @@
 > 엔진도 차원도 라이선스도 달라서 코드가 한 줄도 안 넘어옵니다. 넘어오는 건 문장으로 줄어드는 규칙뿐입니다.
 
 - 수치: 5편 · 코드 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/games/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/games/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/games/
+- 반대 언어: https://aitryed.com/en/teardowns/games/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

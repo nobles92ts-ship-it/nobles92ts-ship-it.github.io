@@ -3,9 +3,9 @@
 > 비개발자입니다. 코드는 AI가 씁니다. 저는 그게 어디서 부러지는지 찾는 일을 12년 했습니다.
 
 - 수치: QA 12년
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/about/me/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/about/me/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/about/me/
+- 반대 언어: https://aitryed.com/en/about/me/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

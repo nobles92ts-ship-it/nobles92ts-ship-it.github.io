@@ -3,9 +3,9 @@
 > Almost every bug this project produced returned success and did nothing.
 
 - Headline number: 0 errors
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/loki/silent-failures/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/loki/silent-failures/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/loki/silent-failures/
+- Other language: https://aitryed.com/ko/built/loki/silent-failures/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

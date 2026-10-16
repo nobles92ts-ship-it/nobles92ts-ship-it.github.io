@@ -3,9 +3,9 @@
 > The home network started dropping and I was ready to uninstall Tailscale, which I had put on days earlier. Timing the install and the symptoms separately put the fault markers 18 to 127 days ahead of it.
 
 - Headline number: cleared · 18–127 days
-- Rendered page: https://nobles92ts-ship-it.github.io/en/writing/verdicts/new-install-suspect/
-- Other language: https://nobles92ts-ship-it.github.io/ko/writing/verdicts/new-install-suspect/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/writing/verdicts/new-install-suspect/
+- Other language: https://aitryed.com/ko/writing/verdicts/new-install-suspect/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

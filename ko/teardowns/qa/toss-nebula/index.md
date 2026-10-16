@@ -3,10 +3,10 @@
 > 가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.
 
 - 수치: 수확 0종
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/toss-nebula/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/toss-nebula/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/toss-nebula/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/toss-nebula/index.md
 - 출처(원문): https://toss.tech/article/device-farm-nebula
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

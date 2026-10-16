@@ -3,9 +3,9 @@
 > 남의 도구 마흔 건을 뜯어 실제로 들인 것은 하나다. 그런데 값이 나가는 건 1/40 이라는 비율이 아니라 기각 사유 쪽이었다.
 
 - 수치: 40편 · 들인 도구 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/choosing/adopting/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/choosing/adopting/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/choosing/adopting/
+- 반대 언어: https://aitryed.com/en/writing/choosing/adopting/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

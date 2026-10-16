@@ -3,10 +3,10 @@
 > Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.
 
 - Headline number: on hold · 2 harvested
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/browserskill/
+- Other language: https://aitryed.com/ko/teardowns/harness/browserskill/index.md
 - Repository: https://github.com/Tencent/BrowserSkill
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

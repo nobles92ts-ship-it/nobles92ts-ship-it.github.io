@@ -3,10 +3,10 @@
 > 프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.
 
 - 수치: 3단계 · 검증 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/meta-prompting/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/meta-prompting/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/meta-prompting/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/meta-prompting/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=J3BbFNYHvZM
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

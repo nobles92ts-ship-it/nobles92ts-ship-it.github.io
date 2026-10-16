@@ -3,9 +3,9 @@
 > 실기기를 밤새 물려 300 사이클을 무인으로 완주했다. 완주를 만든 것은 빠른 코드가 아니라 끊는 법이었다.
 
 - 수치: 밤 하나 300사이클 유지
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/writing/agents/unattended-regression/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/writing/agents/unattended-regression/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/writing/agents/unattended-regression/
+- 반대 언어: https://aitryed.com/en/writing/agents/unattended-regression/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

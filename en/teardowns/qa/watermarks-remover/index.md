@@ -3,10 +3,10 @@
 > I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).
 
 - Headline number: 4 takeaways → 1.5
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/watermarks-remover/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/watermarks-remover/index.md
+- Rendered page: https://aitryed.com/en/teardowns/qa/watermarks-remover/
+- Other language: https://aitryed.com/ko/teardowns/qa/watermarks-remover/index.md
 - Repository: https://github.com/guillaumemeyer/watermarks-remover
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

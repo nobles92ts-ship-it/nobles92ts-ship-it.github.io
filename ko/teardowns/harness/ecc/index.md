@@ -3,10 +3,10 @@
 > 제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.
 
 - 수치: 285 중 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ecc/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ecc/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/ecc/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/ecc/index.md
 - 저장소: https://github.com/affaan-m/ECC
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

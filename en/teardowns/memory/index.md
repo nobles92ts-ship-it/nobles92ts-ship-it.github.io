@@ -3,9 +3,9 @@
 > What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
 
 - Headline number: 11 written · 0 code
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/memory/
+- Other language: https://aitryed.com/ko/teardowns/memory/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

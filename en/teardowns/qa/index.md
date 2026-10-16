@@ -3,9 +3,9 @@
 > This is my day job. It also yields the least — because I'm usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29). The sixth, clumsy, I took apart twice and have yet to run once (2026-10-02).
 
 - Headline number: 6 written · 4.5 of 7 applied
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/qa/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/teardowns/qa/
+- Other language: https://aitryed.com/ko/teardowns/qa/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

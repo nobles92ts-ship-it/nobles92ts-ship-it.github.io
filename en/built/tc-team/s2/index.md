@@ -3,9 +3,9 @@
 > Code re-reads the design to decide whether it can be expanded at all, and plants the anchors for traceability.
 
 - Headline number: deterministic
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s2/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s2/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s2/
+- Other language: https://aitryed.com/ko/built/tc-team/s2/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

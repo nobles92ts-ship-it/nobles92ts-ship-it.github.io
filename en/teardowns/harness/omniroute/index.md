@@ -3,10 +3,10 @@
 > I didn't skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.
 
 - Headline number: 7 techniques → 0
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/omniroute/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/omniroute/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/omniroute/
+- Other language: https://aitryed.com/ko/teardowns/harness/omniroute/index.md
 - Repository: https://github.com/diegosouzapw/OmniRoute
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

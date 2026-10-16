@@ -3,10 +3,10 @@
 > 텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다.
 
 - 수치: 보류 · 수확 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/browserskill/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/browserskill/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/browserskill/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/browserskill/index.md
 - 저장소: https://github.com/Tencent/BrowserSkill
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

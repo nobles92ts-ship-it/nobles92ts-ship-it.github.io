@@ -3,9 +3,9 @@
 > 이 프로젝트에서 잡은 버그가 거의 전부 성공을 리턴하면서 아무것도 안 했습니다.
 
 - 수치: 0 에러
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/built/loki/silent-failures/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/built/loki/silent-failures/index.md
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 사람이 보는 화면: https://aitryed.com/ko/built/loki/silent-failures/
+- 반대 언어: https://aitryed.com/en/built/loki/silent-failures/index.md
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > 이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.
 
 - 수치: 채택 1 · 4단계 미가동
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-4steps/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-4steps/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/second-brain-4steps/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/second-brain-4steps/index.md
 - 출처(영상): https://youtu.be/EUlgnQq4czk
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

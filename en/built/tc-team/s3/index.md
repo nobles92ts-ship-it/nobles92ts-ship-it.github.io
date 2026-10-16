@@ -3,9 +3,9 @@
 > Code builds the structure; the LLM writes only sentences. Those sentences carry several prohibitions.
 
 - Headline number: 25-row chunks
-- Rendered page: https://nobles92ts-ship-it.github.io/en/built/tc-team/s3/
-- Other language: https://nobles92ts-ship-it.github.io/ko/built/tc-team/s3/index.md
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Rendered page: https://aitryed.com/en/built/tc-team/s3/
+- Other language: https://aitryed.com/ko/built/tc-team/s3/index.md
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

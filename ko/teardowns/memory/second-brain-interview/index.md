@@ -3,10 +3,10 @@
 > 자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.
 
 - 수치: 워크플로 200 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/second-brain-interview/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/second-brain-interview/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/second-brain-interview/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/second-brain-interview/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=ejlk74hWogc
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

@@ -3,10 +3,10 @@
 > 영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.
 
 - 수치: 8종 중 순증 1
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/graph-engineering/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/memory/graph-engineering/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/graph-engineering/
+- 반대 언어: https://aitryed.com/en/teardowns/memory/graph-engineering/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=SBLDc4R1d_E
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

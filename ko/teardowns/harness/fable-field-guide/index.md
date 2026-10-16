@@ -3,10 +3,10 @@
 > 모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.
 
 - 수치: 기법 6 · 새것 3
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/fable-field-guide/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/fable-field-guide/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/fable-field-guide/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/fable-field-guide/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=SNb2CFrUcs8
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

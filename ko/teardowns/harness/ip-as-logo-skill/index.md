@@ -3,10 +3,10 @@
 > 코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.
 
 - 수치: 기법 7 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/ip-as-logo-skill/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/ip-as-logo-skill/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/ip-as-logo-skill/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/ip-as-logo-skill/index.md
 - 저장소: https://github.com/s1dashu/ip-as-logo-skill
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

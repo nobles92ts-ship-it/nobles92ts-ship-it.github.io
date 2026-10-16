@@ -3,10 +3,10 @@
 > A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker's own benchmark table.
 
 - Headline number: 2 of 4 already rejected
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/harness/four-plugins/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/four-plugins/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/four-plugins/
+- Other language: https://aitryed.com/ko/teardowns/harness/four-plugins/index.md
 - Source (Source video): https://www.instagram.com/reel/DbBVXkoPA1l/
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

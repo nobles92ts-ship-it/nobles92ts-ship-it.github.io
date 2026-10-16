@@ -3,10 +3,10 @@
 > 봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡는 방식이 제 것보다 나았습니다 — 그래서 모순 감지와 두 시계 확정을 둘 다 제 봇에 넣었습니다(2026-09-28).
 
 - 수치: 기법 4 중 2
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/qa/autoplay-test-tool/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/qa/autoplay-test-tool/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/qa/autoplay-test-tool/
+- 반대 언어: https://aitryed.com/en/teardowns/qa/autoplay-test-tool/index.md
 - 출처(원본 영상): https://www.youtube.com/watch?v=EDarROsi23w
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 

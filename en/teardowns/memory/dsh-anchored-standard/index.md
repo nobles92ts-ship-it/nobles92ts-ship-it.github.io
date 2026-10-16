@@ -3,10 +3,10 @@
 > Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn't run it in 24 days.
 
 - Headline number: 4 takeaways → 0 · 24 days unrun
-- Rendered page: https://nobles92ts-ship-it.github.io/en/teardowns/memory/dsh-anchored-standard/
-- Other language: https://nobles92ts-ship-it.github.io/ko/teardowns/memory/dsh-anchored-standard/index.md
+- Rendered page: https://aitryed.com/en/teardowns/memory/dsh-anchored-standard/
+- Other language: https://aitryed.com/ko/teardowns/memory/dsh-anchored-standard/index.md
 - Repository: https://github.com/xiaobright/dsh-anchored-standard
-- Site guide for agents: https://nobles92ts-ship-it.github.io/en/llms.txt
+- Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 

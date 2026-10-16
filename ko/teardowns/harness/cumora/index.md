@@ -3,10 +3,10 @@
 > 8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.
 
 - 수치: 수확 2 → 0
-- 사람이 보는 화면: https://nobles92ts-ship-it.github.io/ko/teardowns/harness/cumora/
-- 반대 언어: https://nobles92ts-ship-it.github.io/en/teardowns/harness/cumora/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/cumora/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/cumora/index.md
 - 저장소: https://github.com/yetone/cumora
-- 이 사이트 안내(AI용): https://nobles92ts-ship-it.github.io/ko/llms.txt
+- 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 
 ---
 
