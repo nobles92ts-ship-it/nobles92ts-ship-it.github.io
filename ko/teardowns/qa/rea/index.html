@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>REA — QA 자동화</title><meta name="description" content="AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="REA — QA 자동화"><meta property="og:description" content="AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다."><meta property="og:url" content="https://aitryed.com/ko/teardowns/qa/rea/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="REA — QA 자동화"><meta name="twitter:description" content="AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/teardowns/qa/rea/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/teardowns/qa/rea/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/rea/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/rea/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/rea/"><link rel="stylesheet" href="/_astro/Shell.byeBIh1M.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/qa/rea/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">21편 · 도구 1</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물한 건을 뜯었고 실제로 들인 도구는 하나입니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/" aria-current="page"><span class="t"><span>QA 자동화</span><span class="kpi">7편 · 기존 적용 4.5 / 7</span></span><span class="s">자동화와 원인 조사 도구 일곱 편입니다. 기존 기법 적용 4.5 / 7과 REA에서 실행한 정적 시험 두 종류를 구분해 기록합니다.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">6편 · 코드 0</span></span><span class="s">게임과 제작 도구 여섯 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/qa/toss-nebula/"><span class="t"><span>토스 네뷸라 디바이스 팜</span><span class="kpi">수확 0종</span></span><span class="s">가져올 기법이 0종이었습니다. 대신 남의 원칙 하나가 제 코드의 갈라진 곳을 찾아줬습니다.</span></a><a href="/ko/teardowns/qa/asleep-qa/"><span class="t"><span>에이슬립 QA 자동화</span><span class="kpi">11종 중 1</span></span><span class="s">11종 중 10종은 제가 이미 같은 결론에 가 있었습니다. 값어치는 기법이 아니라 독립 검증이었습니다.</span></a><a href="/ko/teardowns/qa/autoplay-test-tool/"><span class="t"><span>오토플레이 테스트 툴</span><span class="kpi">기법 4 중 2</span></span><span class="s">봇이 맵을 돌며 성능을 재는 툴. 끼임을 「데이터의 모순」으로 잡는 방식이 제 것보다 나았습니다 — 그래서 모순 감지와 두 시계 확정을 둘 다 제 봇에 넣었습니다(2026-09-28).</span></a><a href="/ko/teardowns/qa/qa-infrastructure/"><span class="t"><span>QA 인프라 발표</span><span class="kpi">자막 0 · 슬라이드만</span></span><span class="s">자막이 없어 슬라이드로만 재구성했습니다. 그 결손을 안고도 남는 게 하나 있었고, 그건 도구가 아니라 증거의 정의였습니다.</span></a><a href="/ko/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">수확 4 → 1.5</span></span><span class="s">AI 티를 지우는 도구를 검사 게이트 점검용으로 열었습니다. 그런데 AI를 잡으라고 만든 지표가, 사람이 쓴 제 글을 먼저 잡았습니다. 그래서 긴 글 전용으로 좁혀서만 넣었습니다(2026-09-29).</span></a><a href="/ko/teardowns/qa/clumsy/"><span class="t"><span>clumsy</span><span class="kpi">수확 2.5 · 실행 0회</span></span><span class="s">윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02).</span></a><a href="/ko/teardowns/qa/rea/" aria-current="page"><span class="t"><span>REA</span><span class="kpi">정적 시험 2종</span></span><span class="s">AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>REA</h1><p class="sum">AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다.</p><div class="meta"><span>정적 시험 2종</span><a class="src" href="https://github.com/morluto/rea" target="_blank" rel="noopener">github.com/morluto/rea ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#완성된-프로그램에서-작동-원리를-찾아갑니다">완성된 프로그램에서 작동 원리를 찾아갑니다</a><a href="#대상이-바뀌면-필요한-분석기도-바뀝니다">대상이 바뀌면 필요한 분석기도 바뀝니다</a><a href="#답에-붙은-출처표가-분석-결과만큼-중요합니다">답에 붙은 출처표가 분석 결과만큼 중요합니다</a><a href="#작은-표본에서도-모르는-부분이-남았습니다">작은 표본에서도 모르는 부분이 남았습니다</a><a href="#실행-파일에서는-함수-이름-다음으로-참조를-따라갔습니다">실행 파일에서는 함수 이름 다음으로 참조를 따라갔습니다</a><a href="#제-qa에서는-원인을-좁히는-조사-단계에-쓸-수-있습니다">제 QA에서는 원인을 좁히는 조사 단계에 쓸 수 있습니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#cli와-mcp는-공통-조사-코드를-부릅니다">CLI와 MCP는 공통 조사 코드를 부릅니다</a><a href="#evidence의-무결성과-결론의-진실성은-별개입니다">Evidence의 무결성과 결론의 진실성은 별개입니다</a><a href="#네이티브-시험은-파일을-바꾸지-않고-끝냈습니다">네이티브 시험은 파일을 바꾸지 않고 끝냈습니다</a><a href="#javascript-시험에서-complete와-unknown이-동시에-나왔습니다">JavaScript 시험에서 complete와 unknown이 동시에 나왔습니다</a><a href="#설치-지침과-현재-사용-가능한-도구를-구분해야-합니다">설치 지침과 현재 사용 가능한 도구를 구분해야 합니다</a><a href="#이번-수확은-근거를-유지하는-조사-방식입니다">이번 수확은 근거를 유지하는 조사 방식입니다</a></nav><div class="prose"><p><strong>REA(Reverse Engineer Anything)는 AI가 프로그램의 작동 원리를 조사하도록 돕는 역공학 도구입니다.</strong> 역공학은 완성된 물건을 살펴보고 안쪽 구조를 알아내는 일입니다. 앱의 설치 파일, 실행 파일, JavaScript 묶음, 웹 화면 등을 대상으로 삼고, 분석 결과에 근거와 한계를 붙여 AI에게 돌려줍니다.</p>
+<p>이번에는 저장소의 구현을 읽고 두 가지 정적 시험을 했습니다. 하나는 Windows의 실제 <code>whoami.exe</code>, 다른 하나는 직접 만든 작은 JavaScript 표본입니다. <strong>파일을 분석했으며, 대상 프로그램을 실행하거나 통신을 관찰하지는 않았습니다.</strong> 이 구분이 REA를 읽는 출발점입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 292" role="img" aria-label="에이전트나 터미널이 REA의 공통 조사 흐름을 호출한다. REA는 대상에 맞는 분석기와 파일 판독기를 사용하고, 근거와 한계를 붙여 결과를 반환한다.">
+  <text class="lbl" x="16" y="24">질문에서 근거가 붙은 답까지</text>
+  <rect class="vn vn-a" x="16" y="48" width="288" height="110" rx="2"/>
+  <text class="cap cap-i" x="160" y="80" text-anchor="middle">AI 에이전트 · 터미널</text>
+  <text class="cap" x="160" y="108" text-anchor="middle">대상과 조사 질문 선택</text>
+  <text class="cap" x="160" y="136" text-anchor="middle">MCP 또는 CLI로 요청</text>
+  <rect class="vn vn-b" x="356" y="48" width="288" height="110" rx="2"/>
+  <text class="cap cap-i" x="500" y="80" text-anchor="middle">REA 공통 조사 흐름</text>
+  <text class="cap" x="500" y="108" text-anchor="middle">파일 식별 · 관계 추적</text>
+  <text class="cap" x="500" y="136" text-anchor="middle">관찰과 추론 구분</text>
+  <rect class="vn vn-a" x="696" y="48" width="288" height="110" rx="2"/>
+  <text class="cap cap-i" x="840" y="80" text-anchor="middle">대상별 분석기</text>
+  <text class="cap" x="840" y="108" text-anchor="middle">Ghidra · 파일 판독기 등</text>
+  <text class="cap" x="840" y="136" text-anchor="middle">지원 환경에 맞춰 선택</text>
+  <line class="rule" x1="312" y1="104" x2="348" y2="104"/>
+  <line class="rule" x1="652" y1="104" x2="688" y2="104"/>
+  <line class="rule" x1="16" y1="190" x2="984" y2="190"/>
+  <text class="cap cap-i" x="16" y="222">돌아오는 것: 분석 결과 + 대상 식별 + 출처 + 한계</text>
+  <text class="cap" x="16" y="254">결과를 얻은 방법까지 읽어야 무엇을 안다고 말할지 정할 수 있다</text>
+</svg>
+<figcaption>REA는 여러 분석 도구를 조사 절차로 묶는다. 실제 분석기의 지원 범위와 결과의 증거 성격은 각각 확인해야 한다.</figcaption>
+</figure>
+<h2 id="완성된-프로그램에서-작동-원리를-찾아갑니다">완성된 프로그램에서 작동 원리를 찾아갑니다</h2>
+<p>예를 들어 어떤 앱의 검색 기능이 어떻게 연결되는지 알고 싶다고 하겠습니다. 화면만 보면 검색 결과가 나온다는 사실만 압니다. 파일을 조사하면 어떤 코드가 입력을 받고, 어느 모듈을 부르며, 어떤 주소가 적혀 있는지까지 따라갈 수 있습니다.</p>
+<p>하지만 거기에도 선이 있습니다. <strong>코드에 주소가 적혀 있다는 사실과 그 주소로 실제 요청이 나갔다는 사실은 다릅니다.</strong> 앞의 질문은 파일 분석으로 좁힐 수 있고, 뒤의 질문에는 실행 중에 얻은 관찰이 필요합니다. REA는 그런 조사 경로를 여러 종류의 대상에 제공합니다.</p>
+<h2 id="대상이-바뀌면-필요한-분석기도-바뀝니다">대상이 바뀌면 필요한 분석기도 바뀝니다</h2>
+<p>REA라는 이름 하나로 연결하지만, 안쪽에는 서로 다른 전문 도구가 있습니다. 실행 파일을 읽는 도구와 JavaScript 문장을 읽는 도구의 준비물부터 다릅니다.</p>
+<table>
+<thead>
+<tr>
+<th>조사 대상</th>
+<th>문서가 안내하는 결과와 준비물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>네이티브 실행 파일</td>
+<td>어셈블리·의사 코드·참조 관계, Ghidra 등 필요</td>
+</tr>
+<tr>
+<td>JavaScript·Electron 앱</td>
+<td>모듈·가져오기·정적 관계, 네이티브 분석기 없이 가능</td>
+</tr>
+<tr>
+<td>웹 화면과 실행 상태</td>
+<td>페이지·스크립트·네트워크 관찰, 브라우저 연결 필요</td>
+</tr>
+<tr>
+<td>.NET 파일</td>
+<td>메타데이터와 중간 명령어를 정적으로 조사</td>
+</tr>
+<tr>
+<td>Android APK</td>
+<td>선언·클래스·메서드 조사, JADX와 JDK 등 필요</td>
+</tr>
+</tbody>
+</table>
+<p>이 표는 저장소가 설명하는 경로입니다. 이번에 직접 시험한 것은 첫째와 둘째뿐입니다. <strong>도구 목록이 길다는 이유로 모든 운영체제에서 모든 기능이 된다고 읽으면 안 됩니다.</strong></p>
+<h2 id="답에-붙은-출처표가-분석-결과만큼-중요합니다">답에 붙은 출처표가 분석 결과만큼 중요합니다</h2>
+<p>REA는 결과에 <code>Evidence</code>라는 기록을 붙입니다. 어느 파일을 봤고, 누가 분석했으며, 어떤 방법으로 얻은 답이고, 무엇을 아직 모르는지 담는 봉투라고 생각하면 됩니다.</p>
+<p>좋은 점은 다음 질문을 구체적으로 만들 수 있다는 것입니다. 「그럴 것 같다」로 끝내는 대신 <strong>어느 파일의 어느 위치가 근거인지, 추론에 어떤 빈칸이 남았는지</strong>를 물을 수 있습니다. 다만 봉투가 있다고 답이 자동으로 참이 되지는 않습니다. 내용은 사람이 다시 읽어야 합니다.</p>
+<h2 id="작은-표본에서도-모르는-부분이-남았습니다">작은 표본에서도 모르는 부분이 남았습니다</h2>
+<p>JavaScript 시험에는 파일을 세 개만 넣었습니다. 한 함수에는 고정된 주소가 적혀 있고, 다른 함수는 주소를 외부 입력으로 받습니다. REA는 고정 주소를 코드 위치와 함께 찾아냈습니다. 입력으로 정해지는 요청은 일부가 불명확하다고 남겼습니다.</p>
+<p>더 흥미로운 것은 완료 표시였습니다. <strong>파일과 관계를 담는 그래프는 <code>complete</code>였는데, 더 깊은 의미 분석의 전체 상태는 <code>unknown</code>이었습니다.</strong> 두 표시가 서로 다른 것을 세고 있었기 때문입니다. 읽기를 끝냈다는 말로 프로그램을 전부 이해했다는 결론을 내릴 수는 없습니다.</p>
+<h2 id="실행-파일에서는-함수-이름-다음으로-참조를-따라갔습니다">실행 파일에서는 함수 이름 다음으로 참조를 따라갔습니다</h2>
+<p>Windows의 <code>whoami.exe</code>는 현재 사용자 정보를 표시하는 작은 프로그램입니다. REA에서 파일을 열고 계정 관련 API를 찾은 뒤, 그 API를 참조하는 함수와 의사 코드를 조회했습니다.</p>
+<p>의사 코드는 기계어를 사람이 읽기 좋은 모양으로 바꾼 것입니다. <strong>개발자가 처음 쓴 소스가 그대로 복구된 것은 아닙니다.</strong> 읽은 함수에는 타입 추정 경고도 있었습니다. 그래서 이번 기록은 「이런 호출과 코드 형태가 보였다」까지이고, Windows 내부 서비스나 실제 계정 조회 과정을 실행 관찰한 기록은 아닙니다.</p>
+<h2 id="제-qa에서는-원인을-좁히는-조사-단계에-쓸-수-있습니다">제 QA에서는 원인을 좁히는 조사 단계에 쓸 수 있습니다</h2>
+<p>테스트에서 이상한 결과를 발견하면, 그다음에는 왜 그런지 알아봐야 합니다. 파일에 남은 코드와 설정, 실행 중의 관찰을 함께 놓는 도구는 그 단계에 도움이 될 수 있습니다.</p>
+<p>현재 수확은 <strong>근거를 남기면서 원인 후보를 좁히는 작업 방식</strong>입니다. 이번 시험으로 게임 테스트가 늘거나 판정기가 개선되지는 않았습니다. 실제 업무에 붙일 때는 문제 하나를 고르고, 필요한 증거를 얻는지부터 확인할 생각입니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p>소스 분석은 2026-10-19의 <a href="https://github.com/morluto/rea/tree/e4c3d72396bf925a45724ce8b18b238b0d23d787">커밋 e4c3d72396bf925a45724ce8b18b238b0d23d787</a>을 기준으로 했습니다. 그 저장소의 패키지 버전은 <code>6.7.0</code>입니다. <strong>실제 시험에 쓴 연결 서버</strong>는 <code>rea-agents 6.5.0</code>이었고, 자신이 등록한 MCP 도구를 207개로 보고했습니다. 두 버전을 같은 대상으로 취급하지 않았습니다.</p>
+<h2 id="cli와-mcp는-공통-조사-코드를-부릅니다">CLI와 MCP는 공통 조사 코드를 부릅니다</h2>
+<p>이 도구에는 터미널용 CLI와 에이전트용 MCP 입구가 있습니다. 기능 추적 경로를 읽어 보니 양쪽이 같은 application 서비스를 부르고, 그 아래의 domain 코드가 관계를 계산한 뒤 Evidence를 만들었습니다. 인터페이스가 둘이라고 분석엔진이 둘인 구조는 아닙니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/src/application/javascript/JavaScriptApplicationWorkflowService.ts#L37">공통 서비스</a></p>
+<p>그래서 제가 가져갈 설계는 <strong>결과의 해석 규칙을 한곳에 두는 것</strong>입니다. 같은 파일을 CLI에서 읽을 때와 에이전트에서 읽을 때 근거의 의미가 달라지면, 나중에 두 결과를 비교할 기준이 사라집니다. 전체 구현의 모든 경로가 동등한지 시험한 것은 아니며, 여기서는 읽은 기능 추적 경로를 근거로 삼았습니다.</p>
+<h2 id="evidence의-무결성과-결론의-진실성은-별개입니다">Evidence의 무결성과 결론의 진실성은 별개입니다</h2>
+<p>Evidence 스키마는 대상 digest, 분석기, 작업, 입력, 원시·정규화 결과, <code>confidence</code>, <code>authority</code>, <code>limitations</code> 등을 검사합니다. 생성·파싱 코드는 내용에 따른 식별자도 계산하고 확인합니다. 그러나 <strong>틀린 추론을 담은 기록도 내부적으로는 일관될 수 있습니다.</strong></p>
+<p>구현에서 <code>confidence</code>의 기본값은 <code>observed</code>이고 한계 배열은 비어 있어도 됩니다. 따라서 필드가 있다는 사실만으로 보고서를 신뢰하면 안 됩니다. 실제 기능 추적 생산자는 <code>inferred</code>와 <code>analyst-inference</code>를 지정하고 원본 Evidence 링크를 넣습니다. 봉투의 형식과 생산자가 넣은 의미를 함께 읽어야 합니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/src/domain/evidence.ts#L127">Evidence 계약</a>, <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts#L13">파생 결과 생산자</a></p>
+<h2 id="네이티브-시험은-파일을-바꾸지-않고-끝냈습니다">네이티브 시험은 파일을 바꾸지 않고 끝냈습니다</h2>
+<p>시험 환경은 Windows x64, 연결된 REA <code>6.5.0</code>, Ghidra <code>12.1.4</code>입니다. 대상은 로컬 <code>whoami.exe</code>의 x86-64 PE 파일이며 크기는 98,304바이트였습니다. 파일을 실행하지 않고 열기 → 개요 → API 검색 → 호출자 조회 → 의사 코드 조회 → 닫기 순서로 진행했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>관찰</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개요의 프로시저·문자열 목록</td>
+<td>341개·308개 — 이 분석기의 인식 결과</td>
+</tr>
+<tr>
+<td>계정 관련 API 검색</td>
+<td><code>OpenProcessToken</code>, <code>GetTokenInformation</code>, <code>LookupAccountSidW</code>, <code>GetUserNameExW</code></td>
+</tr>
+<tr>
+<td>참조 조회</td>
+<td>토큰·SID 관련 API를 참조하는 주소 반환</td>
+</tr>
+<tr>
+<td>의사 코드</td>
+<td><code>0x140003bc0</code>, <code>0x140005e1c</code> 두 함수 조회</td>
+</tr>
+<tr>
+<td>대상 보존</td>
+<td>전후 SHA-256 일치, 세션 닫기 완료</td>
+</tr>
+</tbody>
+</table>
+<p>파일 SHA-256은 <code>23240ef9f8b0a9a324110b1c2331de31dc1b0e08f5359cb707e51a939af56cd3</code>입니다. 개요 Evidence는 <code>ev_e2a77bec26ce4055d8c40d4469bfff07516e243d2ddc236abd15218219a1444c</code>였습니다. 프로시저 수에는 분석기가 목록화한 항목이 들어가므로, 완전한 원본 함수 개수로 바꿔 말하지 않습니다.</p>
+<p>의사 코드의 <code>observed</code> 표시는 <strong>분석기에서 해당 코드를 얻었다는 관찰</strong>입니다. 그 함수가 실행됐다는 뜻이 아닙니다. 이 시험으로 DLL 내부 구현이나 레지스트리·네트워크 접근을 확인했다고 할 수도 없습니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/docs/windows-ghidra-p0.md#L9">Windows Ghidra 지원 경계</a></p>
+<h2 id="javascript-시험에서-complete와-unknown이-동시에-나왔습니다">JavaScript 시험에서 complete와 unknown이 동시에 나왔습니다</h2>
+<p>직접 만든 표본은 <code>package.json</code>, <code>main.js</code>, <code>store.js</code>입니다. JavaScript 두 파일에는 고정 주소의 <code>fetch</code>, 입력 주소의 <code>fetch</code>, 파일 저장 함수 호출을 넣었습니다. 분석은 텍스트 586바이트를 읽었고 파싱 실패는 0개였습니다.</p>
+<p>REA는 고정된 <code>https://example.invalid/health</code>를 <code>main.js</code> 11행의 정적 endpoint로 반환했습니다. 입력으로 받는 <code>fetch(endpoint)</code>는 <code>main.js</code> 4행의 요청 해석이 부분적이라는 unknown을 남겼습니다. 이 주소로 요청하지 않았으며 저장 함수도 실행하지 않았습니다.</p>
+<table>
+<thead>
+<tr>
+<th>서로 다른 판정 대상</th>
+<th>반환 상태</th>
+<th>제가 읽은 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application graph</td>
+<td><code>complete</code>, 누락 0</td>
+<td>해당 그래프가 보고한 범위의 완료</td>
+</tr>
+<tr>
+<td>semantic graph</td>
+<td><code>unknown</code>, unknown 기록 22개</td>
+<td>세부 의미·호출·값 관계에는 빈칸 존재</td>
+</tr>
+<tr>
+<td>실제 실행·통신</td>
+<td>미시험</td>
+<td>코드가 보였다는 사실로 대신할 수 없음</td>
+</tr>
+</tbody>
+</table>
+<p>unknown 22개는 오류 22개가 아닙니다. 입력값, 동적 호출, 외부 함수 등 정적 분석으로 해석하지 못한 관계의 기록입니다. 일부 동작은 작은 표본에서도 정적으로 확정할 수 없었습니다. 시험 Evidence는 <code>ev_5db40f819569c3d83934d078a0d0ce1e8b6251c62cc8e4113addc5bd8f59bfc5</code>이고, 최상위 <code>confidence</code>는 <code>derived</code>였습니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/docs/javascript-application-graph.md#L129">그래프의 증거 규칙</a></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 268" role="img" aria-label="같은 JavaScript 시험에서 application graph는 complete, semantic graph는 unknown, 실제 실행은 미시험이었다. 완료 표시는 판정하는 층과 함께 읽어야 한다.">
+  <text class="lbl" x="16" y="24">한 표본, 서로 다른 세 가지 질문</text>
+  <rect class="vn vn-a" x="16" y="48" width="288" height="112" rx="2"/>
+  <text class="cap cap-i" x="160" y="80" text-anchor="middle">파일과 관계 그래프</text>
+  <text class="cap cap-p" x="160" y="110" text-anchor="middle">complete</text>
+  <text class="cap" x="160" y="140" text-anchor="middle">보고한 그래프 범위</text>
+  <rect class="vn vn-b" x="356" y="48" width="288" height="112" rx="2"/>
+  <text class="cap cap-i" x="500" y="80" text-anchor="middle">세부 의미 분석</text>
+  <text class="cap cap-p" x="500" y="110" text-anchor="middle">unknown</text>
+  <text class="cap" x="500" y="140" text-anchor="middle">불명확한 관계 22개 기록</text>
+  <rect class="vn vn-a" x="696" y="48" width="288" height="112" rx="2"/>
+  <text class="cap cap-i" x="840" y="80" text-anchor="middle">실제 실행과 통신</text>
+  <text class="cap cap-i" x="840" y="110" text-anchor="middle">미시험</text>
+  <text class="cap" x="840" y="140" text-anchor="middle">별도의 관찰이 필요</text>
+  <line class="rule" x1="16" y1="194" x2="984" y2="194"/>
+  <text class="cap cap-i" x="16" y="228">완료라는 말 앞에 무엇을 완료했는지 붙인다</text>
+</svg>
+<figcaption>읽기 완료, 의미 해석, 실제 동작은 서로 다른 질문이다. 첫 칸의 완료를 나머지 두 칸으로 넘기지 않는다.</figcaption>
+</figure>
+<h2 id="설치-지침과-현재-사용-가능한-도구를-구분해야-합니다">설치 지침과 현재 사용 가능한 도구를 구분해야 합니다</h2>
+<p>공식 시작 명령은 <code>npx rea-agents setup</code>입니다. 설정안을 검토한 뒤 MCP와 대응 스킬을 등록하고 에이전트를 다시 연결하는 절차입니다. 스킬 파일만 설치해 둔 상태는 서버가 연결된 상태와 다릅니다. 네이티브 분석에는 별도의 엔진 준비도 필요합니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/docs/installation.md">설치 안내</a></p>
+<p>이번 조사에서는 기존 연결을 사용했고 설정을 바꾸거나 도구를 업그레이드하지 않았습니다. 연결 서버의 실제 스키마를 기준으로 호출했습니다. 저장소의 최신 지침이 설치된 구버전에 없는 기능을 설명할 수 있다는 경고도 그대로 적용됩니다. <a href="https://github.com/morluto/rea/blob/e4c3d72396bf925a45724ce8b18b238b0d23d787/.agents/skills/reverse-engineer-anything/SKILL.md#L18">스킬의 버전 경계</a></p>
+<h2 id="이번-수확은-근거를-유지하는-조사-방식입니다">이번 수확은 근거를 유지하는 조사 방식입니다</h2>
+<p>소스가 충분한 일반 저장소는 보통의 파일 검색과 코드 읽기로 조사하면 됩니다. REA가 필요한 자리는 배포된 파일의 내부, 코드와 실행 관찰의 연결처럼 <strong>지금 가진 자료만으로 답하기 어려운 질문</strong>입니다.</p>
+<p>현재 판정은 원인 조사와 정적 탐색에 쓸 수 있는 도구입니다. 두 표본에서 그 경로가 작동하는 것은 확인했습니다. 반면 브라우저·Electron 실행 관찰, APK·펌웨어 분석, 다른 네이티브 엔진, 저장소 전체 테스트, 실제 게임 QA 연결은 시험하지 않았습니다. 조사 시간 단축이나 정확도 향상도 비교 측정하지 않았습니다.</p>
+<p><strong>가져갈 규칙은 답마다 대상·방법·모르는 범위를 같이 남기는 것입니다.</strong> 이번에 끝낸 것은 그 규칙을 소스와 두 시험에서 확인한 분석이지, 모든 기능의 검증이나 QA 파이프라인 통합은 아닙니다.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
