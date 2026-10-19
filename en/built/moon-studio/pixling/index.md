@@ -122,7 +122,7 @@ This describes the operating records checked on 2026-10-19. A main director mana
 
 Art01 handles characters, motion, and arena artwork; Art02 handles skills, effects, and presentation. Some tasks split a Claude draft from Codex production work. Delivering artwork to staging, integrating it, and checking the integrated result are separate steps. The full process is described in [MOON Studio v3](/en/built/moon-studio/index.md).
 
-The proposed [collaboration extension](/en/built/moon-studio/index.md) would retain dedicated development and QA context while the director owns handoffs, progress, and closure. Owners submit evidence and verifiers judge it. This does not claim that the extension has been rolled out.
+The [studio coordination update](/en/built/moon-studio/index.md) keeps the director, owners assigned to cards, fresh verifiers, and persistent art sessions while strengthening handoffs, duplicate prevention, and resource reservations. Extra development or QA coordinators require a demonstrated bottleneck. Rules and the local guard are installed; Kkaeal's actual adoption remains unconfirmed.
 
 | Version | State confirmed on 2026-10-19 |
 |---|---|

@@ -1,8 +1,8 @@
 # MOON Studio
 
-> A one-person AI-assisted studio, its current v3 process, and a collaboration proposal for larger games. The director owns the workflow, owners deliver evidence, and verifiers judge results.
+> A one-person AI-assisted studio combining a director, feature owners, fresh verifiers, and persistent art sessions. Records the installed handoff guard, its isolated checks, and the pending game rollout.
 
-- Headline number: v3 · collaboration plan
+- Headline number: v3 · coordination guard
 - Status: wip
 - Rendered page: https://aitryed.com/en/built/moon-studio/
 - Other language: https://aitryed.com/ko/built/moon-studio/index.md
@@ -12,11 +12,13 @@
 
 **MOON Studio is where I set the direction and build games with AI.** The current production process is v3. One owner carries a feature through implementation, and a different agent checks the result.
 
-**The next proposal gives development, QA, and art persistent sessions on larger games.** The director retains responsibility for the overall workflow. The proposed changes below are a published design, not a claim that the production rollout is complete.
+**The improvement focuses on making delegated work traceable and preventing overlap.** Art retains its independent sessions, development uses owners assigned to cards, and a fresh verifier judges the result. Persistent development or QA coordinators are added one role at a time only after a real bottleneck is identified.
 
-> **[도판]** This extends v3 with persistent specialists. Ownership of the overall state stays with the director; rollout has not yet been validated.
+On 2026-10-19 I installed shared operating rules and a local guard. Its 30 isolated tests passed. Adoption by the running game and actual delivery between sessions remain unconfirmed.
+
+> **[도판]** The v3 role structure stays in place. Handoffs, version references, and resource reservations are strengthened; persistent development and QA coordinators are conditional.
 >
-> Proposed structure for larger games: one director owns scope, handoffs, the current board, and closure. Persistent development, QA, and art sessions retain their specialties. Owners submit evidence, a verifier judges it, and the director closes the work. This is a design proposal.
+> The baseline hybrid structure has one director per game, owners assigned to cards, fresh verifiers of the integrated build, and persistent Art01 and Art02 sessions. The director owns assignments, the current board, integration, and closure. Additional development or QA coordinators require a demonstrated bottleneck. Installing rules and the guard does not establish game adoption.
 
 ## I describe the change and the director scopes the work
 
@@ -44,13 +46,13 @@ Once work spans sessions, someone has to track who received it and whether it re
 
 ## Separate sessions need traceable handoffs
 
-Receipt tracking and missing-response notifications should be handled by tooling, leaving exceptions to the director. Repeating a notification must not execute the job twice. File ownership and access to the same screen also need coordination.
+The new local guard records reservations, acknowledgment, and result receipts, and checks registered resource conflicts. Existing subagents, art handoffs, and the bridge still carry the work. When acknowledgment is missing, the director checks the existing execution before notifying the same request again. An automatic monitoring and notification service has not been built.
 
-> **[도판]** An owner saying “finished” submits work for verification. The director closes it only after the required checks.
+> **[도판]** The guard's submit records evidence; finish releases resources after execution ends. A separate verifier checks the integrated build before the director closes the board.
 >
-> Proposed work states: dispatched, acknowledged, working, submitted, verifying, and closed. A missing acknowledgment triggers investigation and notification, a duplicate must not repeat execution, and failed verification returns the work for repair. Closing work does not publish a release.
+> The workflow is reserve and dispatch, acknowledge, work, submit, independently verify, and close the board. Duplicate reservations return the existing execution. After submission, finish releases resources only after actual execution has stopped; it does not establish a product pass. Failed checks return for repair and publication requires separate approval.
 
-These are the proposed responsibilities and handoff rules. Automated receipts and notifications have not yet been implemented and validated as part of this rollout.
+The guard applies to participants sharing the same local state on one PC. Unregistered executions and other PCs remain outside it. Existing game runners and screen locks are still required.
 
 ## Public releases and development builds have different states
 
@@ -67,39 +69,51 @@ MukGeom and ManInJeok share design material, but the former focuses on reading a
 
 ## The detailed record starts here
 
-## The proposal gives larger games persistent specialists
+## Add a persistent coordinator only for a demonstrated bottleneck
 
-The current v3 feature owners and independent checks remain. The extension would add dedicated sessions where development and QA span multiple batches. Alongside Art01 and Art02, the proposed pilot is **director, dedicated development, dedicated QA, and art**.
+The first published extension proposed persistent development and QA coordinators together. An adversarial review found that feature owners, fresh verifiers, and independent art sessions already formed a hybrid system. Adding more coordinators could duplicate the director's explanations and progress tracking, so the baseline roles stay in place.
 
-Development would retain implementation context and coordinate feature owners. QA would retain baseline versions, reproductions, verification history, and outstanding checks. Judgment by an agent separate from the maker remains necessary. A persistent specialist does not have to perform every task personally, and its previous conclusions cannot replace checking a new build.
+If dependency management or reconstructing QA history becomes a real bottleneck, pilot that role alone. First identify which repeated work the director will stop doing. A coordinator preserves state and evidence; it does not replace a fresh judgment of the integrated build.
 
-A small wording fix should not activate every session. Resuming an existing worker may be enough. The decision depends on continuing independent work and context worth retaining.
+Art01 and Art02 retain independent sessions for long production work. A short investigation or lookup of an existing result does not require a persistent session.
 
 ## Responsibilities need explicit state ownership
 
-The director would own assignments, receipt and progress tracking, missing-response follow-up, cross-task conflicts, and board closure. **The current board has one writer.** Development, QA, and art should not maintain competing versions of overall progress.
+The director owns assignments, receipt and progress tracking, missing-response follow-up, cross-task conflicts, and board closure. **The current board has one writer.** Read its latest handover declaration, current cards, and baseline first. Historical director declarations do not confer current authority.
 
 Owners acknowledge receipt and scope, then work or explain what blocks them. Their results identify the build changed and the checks performed. A verifier compares that result with the approved conditions. The director records closure after reading the judgment and any outstanding requirements.
 
-Development can delegate within its assigned scope, while the director resolves conflicts across specialties and shared resources. Decisions about taste, applying balance changes, and publishing releases stay with me.
+The updated template calls for folding old board history into linked records at a safe batch boundary. This update did not reorganize the running game's board. Decisions about taste, applying balance changes, and publishing releases stay with me.
 
 ## Prevent duplicate execution as well as lost requests
 
-Each request needs a stable identity and revision. Successful transport, acknowledgment by the worker, submission, and a passing check represent different states. Missing acknowledgment prompts the director to check whether work is already running before notifying the same request again.
+Each card pins its identity, revision, attempt, actor, director epoch, and source, asset, and acceptance-condition digests. Reserve write scopes and a unique result path before writing. Start one worker only when a reservation authorizes a new execution. An existing reservation calls for inspection or resumption.
 
-**Another notification is not another execution.** A worker that already received a request returns its current state. Receiving the same result twice must not increase the completed-work count. After an interruption, cards and result records supply the recovery state rather than conversational memory alone.
+**Another notification is not another execution.** An unknown execution state must not be bypassed with a new attempt or a different state directory. A cancellation request does not release resources; actual termination must be confirmed. Finished-attempt receipts remain available to distinguish delayed results and reused output paths.
 
-The source, assets, and approved acceptance conditions must identify the same target build. A pass on another version cannot close the current work. Failed verification returns for repair; an unexecuted check remains unexecuted.
+Digest comparison checks the contract envelope. The actual source, assets, original acceptance conditions, truth of the report, and independence of the verifier need separate checks. The guard does not enforce OS permissions or intercept direct file writes.
+
+## Resource limits span sessions
+
+Feature owners are capped at four across all sessions of one project. Unity code work has one slot across registered projects on the same PC. Screen checks, long CPU tests, performance measurements, and batch renders also reserve resources in the shared local state.
+
+Screen checks exclude CPU tests, performance measurements, and renders. Performance measurements exclude other heavy work. The one-slot caps for CPU tests and rendering are conservative choices, not measured optima. Nested workers and higher effort settings are subject to the same policy.
+
+## Installation checks do not establish game adoption
+
+The update changed 12 existing files and added five across shared rules, role definitions, templates, the guard, and the Codex entry point. In fake projects with isolated state, **30 guard tests passed**, with **89.07% combined statement and branch coverage**. Calling guidance was also checked through 17 CLI calls and 33 assertions in isolation.
+
+These figures do not measure actual session transport or game quality. A handoff asks the running game's current director to reread the rules and introduce new cards at a safe batch boundary. Receipt and adoption remain unconfirmed. Ten transport acceptance scenarios, including delivery, omission, duplicates, and resumption, remain unexecuted. This change did not rerun game regression tests.
 
 ## Evaluate the split through cost and escaped defects
 
 Separate sessions can retain specialist context and keep long execution logs out of the director's conversation. Total tokens need separate accounting: repeated project reading, communication, and review add cost. More sessions alone do not establish a saving.
 
-A pilot over roughly two batches would compare verification time, rework, and defects found afterward alongside missed receipts, duplicate executions, repeated explanations, and total usage. This is an evaluation plan. This website update did not implement the orchestration or rerun the game's regression suite.
+The next two batches should record completion time with human and resource waits separated, rework, escaped defects, missed receipts, duplicate executions, and repeated explanations. Compare available usage across the director, workers, coordination, and retries. Missing usage leaves token savings undetermined. This remains a measurement plan.
 
 ## v3 assigns responsibility by feature
 
-The production process changed on 2026-10-08. Planning, development, and QA had previously exchanged documents and messages across separate sessions. The current v3 structure has **one director per game, one owner per card, and a verifier separate from the maker**. The dedicated development and QA sessions are a proposed extension.
+The production process changed on 2026-10-08. Planning, development, and QA had previously exchanged documents and messages across separate sessions. The current v3 structure has **one director per game, one owner per card, and a verifier separate from the maker**. The October 19 update strengthens handoffs, duplicate prevention, and resource management around that structure.
 
 | Concern | Earlier process | v3 |
 |---|---|---|
@@ -137,6 +151,6 @@ Design, specification, world, implementation, art, and QA under a game's address
 
 ## A changed process is not yet a measured speedup
 
-v3 aims to reduce handoff costs and messages that I have to relay. This update checks the operating rules, current board, and public release. It does not provide a new controlled measurement of the speed difference.
+v3 aims to reduce handoff costs and messages that I have to relay. This update records installed rules and the guard's isolated checks. Their effect on live game production, total tokens, and finished quality has not been measured.
 
 The studio is also a test bench where I can break my own work in public. Keeping implementation, verification, and unfinished work distinct is what makes those experiments useful to the next project.
