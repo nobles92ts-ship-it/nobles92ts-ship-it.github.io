@@ -52,7 +52,7 @@
 - [adb 기반 게임 QA 서버 · 무인 루프](https://aitryed.com/ko/built/android-qa/loop/index.md): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
 - [adb 기반 게임 QA 서버 · 나온 것](https://aitryed.com/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
 - [adb 기반 게임 QA 서버 · 사진 판독기](https://aitryed.com/ko/built/android-qa/judge/index.md): 기록으로 결과를 못 정하는 검사는 사진으로 판정합니다. 그 판정을 규칙이 다시 거르고, 다른 회사의 모델이 한 번 더 봅니다.
-- [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다.
+- [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 현재 v3와 큰 게임을 위한 협업 개선안을 기록합니다. 디렉터는 전체 흐름, 오너는 작업과 증거, 검증관은 판정을 맡습니다.
 - [문스튜디오 · 깨알](https://aitryed.com/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 - [문스튜디오 · 무협 Unity 원형](https://aitryed.com/ko/built/moon-studio/wuxia/index.md): 44초식·26신물의 Unity 원형에서 남긴 설계·구현·검증 기록입니다. 이 기획은 묵검과 만인적의 바탕으로도 이어졌습니다.
 - [문스튜디오 · 무협 Unity 원형 · 설계](https://aitryed.com/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
