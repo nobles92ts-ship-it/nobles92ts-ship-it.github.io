@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Harness2 — Agent harnesses</title><meta name="description" content="A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Harness2 — Agent harnesses"><meta property="og:description" content="A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops."><meta property="og:url" content="https://aitryed.com/en/teardowns/harness/harness2/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Harness2 — Agent harnesses"><meta name="twitter:description" content="A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/harness/harness2/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/harness/harness2/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/harness2/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/harness2/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/harness2/"><link rel="stylesheet" href="/_astro/Shell.byeBIh1M.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/harness2/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">7 pieces · prior 4.5 / 7</span></span><span class="s">Seven investigations into automation and cause-analysis tools. The earlier adoption ledger stays separate from the two static probes performed with REA.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a><a href="/en/teardowns/harness/eli5/"><span class="t"><span>eli5 — a plugin with zero lines of code</span><span class="kpi">865 bytes · 1 run</span></span><span class="s">One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.</span></a><a href="/en/teardowns/harness/browserskill/"><span class="t"><span>BrowserSkill — lending an agent my browser</span><span class="kpi">on hold · 2 harvested</span></span><span class="s">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</span></a><a href="/en/teardowns/harness/harness2/" aria-current="page"><span class="t"><span>Harness2</span><span class="kpi">Records how it improves</span></span><span class="s">A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>Harness2</h1><p class="sum">A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.</p><div class="meta"><span>Records how it improves</span><a class="src" href="https://github.com/google-research/harness2" target="_blank" rel="noopener">github.com/google-research/harness2 ↗</a><a class="src" href="https://arxiv.org/abs/2610.14224" target="_blank" rel="noopener">arxiv.org/abs/2610.14224 — arxiv.org/abs/2610.14224 ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#it-gives-the-model-a-different-working-manual">It gives the model a different working manual</a><a href="#improving-this-task-and-remembering-the-experience-are-separate-loops">Improving this task and remembering the experience are separate loops</a><a href="#self-improvement-does-not-promise-that-every-revision-is-better">Self-improvement does not promise that every revision is better</a><a href="#completing-the-workflow-remains-the-first-test-here">Completing the workflow remains the first test here</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#eight-editable-roles-become-files-that-can-be-tested-in-execution">Eight editable roles become files that can be tested in execution</a><a href="#k-describes-an-execution-plan-rather-than-an-api-call-count">k describes an execution plan rather than an API-call count</a><a href="#final-selection-does-not-enforce-improvement-over-the-base">Final selection does not enforce improvement over the base</a><a href="#the-three-headline-gains-use-different-models-and-units">The three headline gains use different models and units</a><a href="#thirty-two-local-python-executions-produced-no-completed-improvement-task">Thirty-two local Python executions produced no completed improvement task</a><a href="#withholding-a-rubric-does-not-prevent-fetching-it-elsewhere">Withholding a rubric does not prevent fetching it elsewhere</a><a href="#the-useful-design-keeps-edits-together-with-their-reasons">The useful design keeps edits together with their reasons</a></nav><div class="prose"><p><strong>Harness2 is a research framework for improving how an AI model works without retraining the model.</strong> Its harness is the surrounding bundle of instructions, tools, memory, and working procedures. The premise is that the same model can produce different results when that surrounding machinery changes.</p>
+<p>It tries several ways of doing a task, revises the working manual, and <strong>records what it learned about revising that manual</strong> for later tasks. The paper reports performance gains. My own unmodified Windows demo runs did not complete. Those are different kinds of evidence, so this record keeps the paper’s claims, source observations, and local results separate.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 328" role="img" aria-label="Harness2 has two levels. For the current task, it runs a base harness, proposes and probes candidates, composes changes, and selects a final. A successful selection and evidence-supported reflection can enter the library for selective reuse in later improvement. Model weights remain fixed.">
+  <text class="lbl" x="16" y="24">Improve the way the current task is executed</text>
+  <rect class="vn vn-a" x="16" y="48" width="210" height="104" rx="2"/>
+  <text class="cap cap-i" x="121" y="80" text-anchor="middle">Run the base harness</text>
+  <text class="cap" x="121" y="112" text-anchor="middle">Collect execution traces</text>
+  <rect class="vn vn-b" x="266" y="48" width="210" height="104" rx="2"/>
+  <text class="cap cap-i" x="371" y="80" text-anchor="middle">Propose candidates</text>
+  <text class="cap" x="371" y="112" text-anchor="middle">General and domain-specific</text>
+  <rect class="vn vn-a" x="516" y="48" width="210" height="104" rx="2"/>
+  <text class="cap cap-i" x="621" y="80" text-anchor="middle">Probe and compose</text>
+  <text class="cap" x="621" y="112" text-anchor="middle">Run compositions too</text>
+  <rect class="vn vn-b" x="766" y="48" width="218" height="104" rx="2"/>
+  <text class="cap cap-i" x="875" y="80" text-anchor="middle">Select a final</text>
+  <text class="cap" x="875" y="112" text-anchor="middle">Judge separately afterward</text>
+  <line class="rule" x1="234" y1="98" x2="258" y2="98"/>
+  <line class="rule" x1="484" y1="98" x2="508" y2="98"/>
+  <line class="rule" x1="734" y1="98" x2="758" y2="98"/>
+  <line class="rule" x1="16" y1="184" x2="984" y2="184"/>
+  <text class="cap cap-i" x="16" y="220">Accumulate experience about improvement</text>
+  <text class="cap" x="16" y="252">Successful selection + supported reflection → stored harness and lessons → selective reuse</text>
+  <text class="cap" x="16" y="296">The next task starts from the base harness · Model weights stay fixed</text>
+</svg>
+<figcaption>The upper level changes how to solve the current task. The lower level retains experience from making those changes. Comparing executions and grading against ground truth are separate operations.</figcaption>
+</figure>
+<h2 id="it-gives-the-model-a-different-working-manual">It gives the model a different working manual</h2>
+<p>Suppose an AI produces a document but misses required sections. Instead of training a new model, you could add an instruction to check the outline before writing, or provide a script that checks the output. These are the sorts of execution conditions Harness2 edits.</p>
+<p>The editable surface goes beyond a prompt sentence. It includes when tools should be used, how work should be delegated, and which skills and scripts should be available. <strong>Fixed weights leave plenty of room to change the machinery around the model.</strong></p>
+<h2 id="improving-this-task-and-remembering-the-experience-are-separate-loops">Improving this task and remembering the experience are separate loops</h2>
+<p>The first loop works on the current task. It inspects a base execution, proposes alternatives, runs them on that task, and uses the resulting artifacts and traces to compose supported changes. Keeping the original harness is also an option.</p>
+<p>The second loop stores the experience: what changed, when it was useful, and which evidence supported it. A later task starts from the base harness and consults earlier experience during improvement. <strong>The previous winner does not automatically overwrite every future task’s setup.</strong></p>
+<h2 id="self-improvement-does-not-promise-that-every-revision-is-better">Self-improvement does not promise that every revision is better</h2>
+<p>The improvement process is not given ground-truth answers or grading rubrics. It works from observable signals such as whether a requested file was delivered or whether more requirements were covered. Those judgments can be wrong.</p>
+<p>The paper’s performance figures come from separate evaluation afterward. In the default configuration, a single valid final can even pass through without a selector-model comparison. <strong>Producing a candidate and demonstrating a gain over the original are different achievements.</strong></p>
+<h2 id="completing-the-workflow-remains-the-first-test-here">Completing the workflow remains the first test here</h2>
+<p>I ran the credential-free demo in two modes on Windows. The small Python programs actually executed, but both tasks in each mode ended in failure. There was no final adopted result.</p>
+<p>The documented platform is Linux. This does not refute the research results, and it does not establish a successful local run. My adoption decision is <strong>deferred</strong>, pending an unmodified Linux run and independent evaluation.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>The source snapshot is <a href="https://github.com/google-research/harness2/tree/1cfe254e8d25b15f37048c3730134686abe60335">commit 1cfe254</a>, inspected on 2026-10-19. The package version is <code>0.1.0</code>; the paper is <a href="https://arxiv.org/html/2610.14224v1">arXiv v1</a>. This is research in a Google Research repository. Its README explicitly says it is not an officially supported Google product.</p>
+<h2 id="eight-editable-roles-become-files-that-can-be-tested-in-execution">Eight editable roles become files that can be tested in execution</h2>
+<p>OpenCode exposes eight roles, grouped below. The Codex surface combines always-on text in <code>AGENTS.md</code> and uses corresponding mechanisms such as hooks in place of plugins. The conceptual roles do not imply identical file layouts. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/prompts.py#L98-L124">Editable surface</a></p>
+<table>
+<thead>
+<tr>
+<th>Editable roles</th>
+<th>What they change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System prompt and guardrails</td>
+<td>Default behavior and constraints</td>
+</tr>
+<tr>
+<td>Long-term memory and tool guidance</td>
+<td>Retained information and tool-use instructions</td>
+</tr>
+<tr>
+<td>Subagents and skills</td>
+<td>Delegation and procedures loaded when needed</td>
+</tr>
+<tr>
+<td>Scripts and plugins</td>
+<td>Executable helpers and tool-loop machinery</td>
+</tr>
+</tbody>
+</table>
+<p>The invariant candidate targets general agent problems; the domain-specific candidate addresses procedures and constraints of the current work. The composer need not merge both. It can take only supported edits or retain the existing harness. <a href="https://arxiv.org/html/2610.14224v1#S2.SS2.SSS1">Paper §2.2.1</a></p>
+<h2 id="k-describes-an-execution-plan-rather-than-an-api-call-count">k describes an execution plan rather than an API-call count</h2>
+<p>For a fresh single-mode run, the normal plan contains <code>4k</code> rollout slots and <code>3k</code> improvement stages per task. At <code>k=2</code>, that means two base executions, four candidate executions, and two composition executions: <strong>eight slots</strong>. Parallel mode proposes candidates from the same base evidence; sequential mode continues improvement from the preceding composition.</p>
+<p>Selection, reflection, grading, and retries require separate accounting. When both modes share one <code>run_task</code>, the two base executions are reused, giving 14 unique slots at <code>k=2</code>. That differs from starting two fresh runs, as I did locally. <strong>I did not convert rollout counts into model-request counts or a cost multiplier.</strong> <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/schedule.py#L619-L648">Scheduler</a>, <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/recursion.py#L343-L565">Recursion implementation</a></p>
+<h2 id="final-selection-does-not-enforce-improvement-over-the-base">Final selection does not enforce improvement over the base</h2>
+<p>The default <code>finals</code> pool contains compositions only. It does not include the base rollout as a separate final contender. At <code>k=1</code>, one surviving valid final is selected without a selector-model session. <strong>That selection alone cannot establish superiority to the base execution.</strong> This is compatible with the composer retaining the original harness. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/selection.py#L93-L111">Selection pool</a>, <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/selection.py#L360-L398">Single-candidate path</a></p>
+<p>A selection-error fallback is not normal success either: that path does not turn <code>ok</code> into <code>True</code>. Adding an adopted tree and experience to the library requires successful selection and a reflection with a nonempty <code>cue</code>, <code>lesson</code>, and <code>evidence</code>. An output file’s existence is insufficient evidence of successful learning. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/schedule.py#L529-L563">Storage conditions</a></p>
+<h2 id="the-three-headline-gains-use-different-models-and-units">The three headline gains use different models and units</h2>
+<p>These are the <strong>authors’ maximum reported increases at k=1</strong>, each relative to the corresponding model’s base harness. I did not reproduce them. <a href="https://arxiv.org/html/2610.14224v1#S3.T1">Table 1</a>, <a href="https://arxiv.org/html/2610.14224v1#S3.T2">Table 2</a></p>
+<table>
+<thead>
+<tr>
+<th>Benchmark and model / executor</th>
+<th>Base → Harness2</th>
+<th>Increase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WorkBuddy mean · GLM-5 / OpenCode</td>
+<td>64.2 → 75.7</td>
+<td>+11.5 score points</td>
+</tr>
+<tr>
+<td>JobBench · Gemini 3.5 Flash / OpenCode</td>
+<td>31.5 → 36.0</td>
+<td>+4.5 score points</td>
+</tr>
+<tr>
+<td>LAB Partial · GLM-5 / OpenCode</td>
+<td>59.6% → 71.4%</td>
+<td>+11.8 percentage points</td>
+</tr>
+</tbody>
+</table>
+<p>LAB Partial measures criteria passed, not whole tasks fully completed. Improvement receives no ground-truth feedback; separate verifiers and judges produce the reported scores. The paper also documents mistaken selections and regressions. Its final executor <code>#Steps</code> cannot stand in for total cost, which must include candidate executions and editing. <a href="https://arxiv.org/html/2610.14224v1#A2">Evaluation setup</a>, <a href="https://arxiv.org/html/2610.14224v1#A5.SS6">Failure cases</a>, <a href="https://arxiv.org/html/2610.14224v1#S4.F6">Total-token comparison</a></p>
+<h2 id="thirty-two-local-python-executions-produced-no-completed-improvement-task">Thirty-two local Python executions produced no completed improvement task</h2>
+<p>On Windows with Python 3.13.12, I ran unmodified parallel <code>k=2</code> and sequential <code>k=2</code> demos in separate fresh output roots, without installing dependencies. <strong>Both exited with code 1; each recorded zero completed and two failed tasks.</strong> Each mode counted 16 local Python executions and 24 scripted-editor calls. No remote model was called.</p>
+<p>The final exception was a missing POSIX-only <code>fcntl</code> module. Before that, a read-only check of the original <code>read_tree</code> also confirmed four rejected README stubs caused by Windows path separators. Execution answers remained at the pre-edit totals, 105.25 and 35.50. There was no final <code>summary.json</code> or selected winner. This was not a demonstrated improvement followed merely by a storage failure. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/tree.py#L127-L148">Path handling</a>, <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/schedule.py#L289-L329">Locking</a></p>
+<p>I also attempted the original workflow file’s five test methods; the suite failed. Its four failures and three errors include subtests, so they do not mean seven independent tests. There was no running Linux Docker daemon available for an additional Linux check. <strong>These are incomplete Windows runs, not a failure verdict for supported Linux.</strong> The demo itself uses a predetermined local editor and does not measure a general model’s ability to discover improvements. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/tests/test_workflow.py">Original tests</a>, <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/demo.py#L86-L163">Demo implementation</a></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 288" role="img" aria-label="Three separate evidence categories. The paper reports benchmark gains. My Windows tests completed zero tasks in each of two modes, with 16 local Python executions per mode and no final selection. Supported Linux, real model runs, and benchmark performance remain unverified here.">
+  <text class="lbl" x="16" y="24">Keep paper claims, local observations, and untested scope separate</text>
+  <rect class="vn vn-a" x="16" y="48" width="296" height="130" rx="2"/>
+  <text class="cap cap-i" x="36" y="82">Authors' results</text>
+  <text class="cap" x="36" y="114">Different models and benchmarks</text>
+  <text class="cap" x="36" y="146">+11.5 / +4.5 points / +11.8 pp</text>
+  <rect class="vn vn-b" x="352" y="48" width="296" height="130" rx="2"/>
+  <text class="cap cap-i" x="372" y="82">My Windows runs</text>
+  <text class="cap" x="372" y="114">Zero completed tasks per mode</text>
+  <text class="cap" x="372" y="146">16 Python runs each · No final</text>
+  <rect class="vn vn-a" x="688" y="48" width="296" height="130" rx="2"/>
+  <text class="cap cap-i" x="708" y="82">Still to verify</text>
+  <text class="cap" x="708" y="114">Supported Linux and real models</text>
+  <text class="cap" x="708" y="146">Quality, total cost, regressions</text>
+  <line class="rule" x1="16" y1="210" x2="984" y2="210"/>
+  <text class="cap cap-i" x="16" y="250">Adoption deferred · Retaining edits together with their evidence is a useful design to study</text>
+</svg>
+<figcaption>The 32 Python executions add up two separate fresh runs. They are neither remote model calls nor 32 successful improvements.</figcaption>
+</figure>
+<h2 id="withholding-a-rubric-does-not-prevent-fetching-it-elsewhere">Withholding a rubric does not prevent fetching it elsewhere</h2>
+<p>The official guide records <strong>a release-validation Codex JobBench rollout downloading public <code>RUBRICS.json</code> without being instructed to do so</strong>. The public release does not restrict network access. Its Codex launcher also bypasses the sandbox, so file validation must not be read as execution isolation. <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/docs/EXPERIMENTS.md#web-access">Web-access record</a>, <a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/third_party/lab_runner/adapt_runs_cx/run_codex_lab.py#L292-L310">Codex arguments</a></p>
+<p>I found no evidence that this was the same run used for the paper’s tables. It does not establish that the paper’s aggregate results were contaminated. It does establish a reproduction concern: dataset revisions and splits need to be accompanied by network restrictions and records. Excluding answers from the supplied context and preventing access through other routes require separate checks.</p>
+<h2 id="the-useful-design-keeps-edits-together-with-their-reasons">The useful design keeps edits together with their reasons</h2>
+<p>Saving only harness files loses the reason they changed. Harness2 retains an adopted tree alongside applicability cues, lessons, and execution evidence. That is the design worth studying here.</p>
+<p>For my QA work, the next step would be to complete the original Linux workflow, then compare the base and candidates on a small task set with ground truth kept separate. Total cost and regressions belong in that comparison. <strong>I did not integrate this into QA or demonstrate better judgments in this investigation.</strong> Those effects remain to be tested.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/harness/harness2/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

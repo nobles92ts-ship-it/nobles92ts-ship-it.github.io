@@ -1,15 +1,17 @@
 # Agent harnesses
 
-> What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.
+> What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.
 
-- Headline number: 21 written · 1 adopted
+- Headline number: 23 pieces · individual verdicts
 - Rendered page: https://aitryed.com/en/teardowns/harness/
 - Other language: https://aitryed.com/ko/teardowns/harness/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**This shelf holds the *floor* you run an AI agent on. Twenty-one taken apart, and exactly one tool actually came in.**
+**This shelf examines the machinery around an AI agent. It now holds 23 analyses, with adoption decisions recorded in the individual pieces.**
+
+[Harness2](/en/teardowns/harness/harness2/index.md) was added on 2026-10-19. [BrowserSkill](/en/teardowns/harness/browserskill/index.md) is also linked here after being missing from this index. The old “21 pieces, 1 adopted” tally below belongs to its original period; it is not a new count of currently installed tools.
 
 ## First — what a harness is
 
@@ -26,13 +28,13 @@ That bundle is the harness. **If the AI is the horse, the harness is the reins a
 
 ## This is the largest shelf here
 
-**Half of everything I have taken apart sits here.** I did not design the categories first and fill them; **I filled them and then counted.**
+The ledger contains **23 harness analyses as of 2026-10-19**. I did not design the categories first and fill them; **I filled them and then found that this was the largest shelf.**
 
 **This number is where my time went.**
 
-## Twenty-one pieces, one tool
+## At twenty-one pieces, one tool had come in
 
-The result first.
+This is the tally from when the shelf held twenty-one pieces. It describes that period, rather than today's installed inventory.
 
 | | Count |
 |---|---|
@@ -43,7 +45,7 @@ And even that one **was not installed for efficiency.** I installed it because I
 
 Memory reworks your choices into rational ones. **Writing the reason down where it happened is the only defence.**
 
-## So why did twenty not come in — and the reasons were not the same
+## The twenty that stayed out had different reasons
 
 I assumed it was *nothing good out there.* It was not. The rejection reasons sorted into kinds.
 
@@ -89,7 +91,7 @@ The most interesting finding here.
 
 → What I took: **you rarely need to hunt for critical articles to find a refutation.** Read the vendor's own material to the end and it is usually in there. **Marketing is on the front page and the limits are on the back**, and people read the front page.
 
-## The last five I did not choose
+## I did not choose the five that brought the count to twenty
 
 Up to fifteen I picked by hand. **The five that took it to twenty came from a feed a machine gathers daily.**
 
@@ -99,7 +101,7 @@ That route was being used for the first time. Which means **I was switching on s
 
 ## And the twenty-first was my own warehouse
 
-The last piece is unusual. **I took apart something I had installed myself 21 days earlier and never used.**
+The twenty-first piece was unusual. **I took apart something I had installed myself 21 days earlier and never used.**
 
 The first twenty were all someone else's, and the verdicts were *not taking it* or *already have it.* **Only in the twenty-first was the target mine.**
 
@@ -107,9 +109,9 @@ The first twenty were all someone else's, and the verdicts were *not taking it* 
 
 Things that provide the **floor** an agent runs on: rule sets, skill directories, self-improving harnesses, hook dispatchers, model gateways. Someone else's operating system, opened up and held against my own.
 
-This is the biggest bucket — **twenty-one of the forty-two. Exactly half.** The categories weren't drawn first and filled in; they were counted after the fact. That number is where my time actually went.
+At the time of the twenty-one-piece tally, this bucket held **twenty-one of forty-two subjects: exactly half**. The observations below preserve that period. The current count is 23; the old adoption ratio has not been relabeled as a current one.
 
-## Across twenty-one pieces, one tool came in
+## The historical twenty-one-piece tally had one adoption
 
 | Subject | The tool | What stayed |
 |---|---|---|
@@ -139,6 +141,15 @@ This is the biggest bucket — **twenty-one of the forty-two. Exactly half.** Th
 
 That probably isn't a coincidence. A harness is the kind of thing you have to swap wholesale for something you're already running, so the payoff has to beat one technique by a wide margin — and that threshold turns out to be very high.
 
+## Two later pieces distinguish running from adopting
+
+| Additional analysis | Boundary to inspect |
+|---|---|
+| [BrowserSkill](/en/teardowns/harness/browserskill/index.md) | The browser-sharing design and the enforced permission boundary need separate examination |
+| [Harness2](/en/teardowns/harness/harness2/index.md) | Selecting an improved candidate does not prove a gain over the base. The unmodified Windows demo did not complete, so adoption is deferred |
+
+Running, adopting, and proposing another experiment remain separate outcomes as the shelf grows. Harness2 studies edits supported by execution traces, but my local runs did not reach a final selection. Its paper's gains therefore cannot be reported as gains in my environment.
+
 ## Which changes how this bucket is read
 
 The other buckets get read as "what can I take." This one is closer to **"look at what I'm already running, through someone else's eyes."**
@@ -151,7 +162,7 @@ Two more landed in the same place. In Odysseus, **of five disciplines the docs d
 
 [eli5](/en/teardowns/harness/eli5/index.md) is the first piece in this bucket where the subject was **something I had already installed myself**. The first twenty are records of opening other people's work, and the verdict was either "not coming in" or "I already had this." The twenty-first was something I installed with my own hands 21 days ago **and never once used**.
 
-So the numbers in that piece measure my usage, not the subject's performance — 944 session logs carried its name while the recorded run count was 1. **The "1 adopted" figure for this bucket is unchanged.** eli5 did not come in through a teardown; it was already in. What changed is not adoption but **the path by which it gets called**. Put those two in the same column and the adoption rate quietly inflates.
+So the numbers in that piece measure my usage, not the subject's performance — 944 session logs carried its name while the recorded run count was 1. **That analysis did not change the period's "1 adopted" tally.** eli5 did not come in through a teardown; it was already in. What changed is not adoption but **the path by which it gets called**. Put those two in the same column and the adoption rate quietly inflates.
 
 ## The second line — "I already had this"
 

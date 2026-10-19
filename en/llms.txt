@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 120 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 121 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -71,7 +71,7 @@ Before reading the list —
 ## What I took apart
 
 - [What I took apart](https://aitryed.com/en/teardowns/): Repos and services I took apart — and what I kept.
-- [Agent harnesses](https://aitryed.com/en/teardowns/harness/index.md): What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.
+- [Agent harnesses](https://aitryed.com/en/teardowns/harness/index.md): What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.
 - [Agent harnesses · mattpocock/skills](https://aitryed.com/en/teardowns/harness/mattpocock-skills/index.md): I didn't take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.
 - [Agent harnesses · ECC](https://aitryed.com/en/teardowns/harness/ecc/index.md): I took apart the upstream of my own configuration. What was worth taking wasn't a feature but a measurement — and that measuring tool wouldn't run here.
 - [Agent harnesses · Prime Agent](https://aitryed.com/en/teardowns/harness/prime-agent/index.md): I read the code and came away with four techniques. The best of them was something I'd written down myself five days earlier.
@@ -94,6 +94,7 @@ Before reading the list —
 - [Agent harnesses · cumora](https://aitryed.com/en/teardowns/harness/cumora/index.md): The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.
 - [Agent harnesses · eli5 — a plugin with zero lines of code](https://aitryed.com/en/teardowns/harness/eli5/index.md): One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.
 - [Agent harnesses · BrowserSkill — lending an agent my browser](https://aitryed.com/en/teardowns/harness/browserskill/index.md): Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.
+- [Agent harnesses · Harness2](https://aitryed.com/en/teardowns/harness/harness2/index.md): A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.
 - [Context and memory](https://aitryed.com/en/teardowns/memory/index.md): What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
 - [Context and memory · RAG without a vector DB](https://aitryed.com/en/teardowns/memory/rag-without-vectors/index.md): Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.
 - [Context and memory · Headroom](https://aitryed.com/en/teardowns/memory/headroom/index.md): It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn't exist.
