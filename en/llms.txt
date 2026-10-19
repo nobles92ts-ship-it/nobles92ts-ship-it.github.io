@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 118 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 119 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -113,12 +113,13 @@ Before reading the list —
 - [QA automation · A talk on QA infrastructure](https://aitryed.com/en/teardowns/qa/qa-infrastructure/index.md): There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn't about tools, it was about the definition of evidence.
 - [QA automation · watermarks-remover](https://aitryed.com/en/teardowns/qa/watermarks-remover/index.md): I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).
 - [QA automation · clumsy](https://aitryed.com/en/teardowns/qa/clumsy/index.md): A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).
-- [Making games](https://aitryed.com/en/teardowns/games/index.md): Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.
+- [Making games](https://aitryed.com/en/teardowns/games/index.md): Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.
 - [Making games · Elemental Sandbox](https://aitryed.com/en/teardowns/games/elemental-sandbox/index.md): The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.
 - [Making games · OpenMMO](https://aitryed.com/en/teardowns/games/openmmo/index.md): An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.
 - [Making games · Hunyuan3D-WorldClaw](https://aitryed.com/en/teardowns/games/worldclaw/index.md): A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.
 - [Making games · Dynasty Warriors Origins](https://aitryed.com/en/teardowns/games/dynasty-warriors-origins/index.md): I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.
 - [Making games · Recent Unity releases](https://aitryed.com/en/teardowns/games/unity-releases/index.md): Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.
+- [Making games · Unreal Engine Skills](https://aitryed.com/en/teardowns/games/unreal-engine-skills/index.md): Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project.
 
 ## Things I wrote
 

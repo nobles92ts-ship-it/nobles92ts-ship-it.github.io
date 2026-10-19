@@ -1,15 +1,15 @@
 # Making games
 
-> Different engine, different dimensions, different licence — not one line of code crosses. What crosses is a rule that shrinks to one sentence.
+> Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.
 
-- Headline number: 5 written · 0 code
+- Headline number: 6 pieces · 0 code
 - Rendered page: https://aitryed.com/en/teardowns/games/
 - Other language: https://aitryed.com/ko/teardowns/games/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**This shelf holds what I found when I opened up other people's games, game-making tools, and game research. Five pieces so far.**
+**This shelf holds what I found when I opened up other people's games, game-making tools, and game research. Six pieces so far.**
 
 One thing up front. "Taking something apart" usually implies **copying the good bits over**. Here that almost never works.
 
@@ -19,7 +19,7 @@ Think of car parts. However good someone else's car is, **if the engine spec is 
 
 Games are the same. The tool I build in and the tool they built in are different. They are in three dimensions and I am in two. Some carry a **"not for commercial use"** condition. And some have **nothing to download at all** — pictures and a description, no program.
 
-So across five pieces, the amount of code that crossed into my own work is **zero lines**.
+Across the first five pieces, the amount of code that crossed into my own work was **zero lines**. The sixth, Unreal Engine Skills, has not been installed either. I exercised its project-detection script in temporary folders.
 
 ## What does cross is a sentence
 
@@ -40,6 +40,10 @@ I believed a certain game rewarded a certain move with **a slow-motion effect**.
 Checking the actual sources: the reward was **a different kind of reward entirely**, and the slow-motion **appeared in no source at all.**
 
 One item disappeared from the list. **Not building something is also an outcome** — it just never shows up in a tally of things built.
+
+## The sixth piece examines the connection to a game-making tool
+
+[Unreal Engine Skills](/en/teardowns/games/unreal-engine-skills/index.md) guides Claude through working inside Unreal Editor. This time the question is where the instructions meet executable engine tools. I ran the startup script; I did not verify an editor connection. The account distinguishes reading, execution, and the integration work still left open.
 
 ## The detailed record starts here
 
@@ -65,7 +69,7 @@ The same repository declared MIT in LICENSE and, in the README, said something e
 
 **Treat it as a textbook, not a dependency.** Game repos are short-lived, which makes that distinction matter more here than anywhere else.
 
-## At five pieces, there were four reasons the code doesn't cross
+## The first five pieces exposed four barriers to moving code
 
 At one piece I read it as *"different engine."* At five, **the place it gets blocked was different every time.**
 
@@ -86,3 +90,7 @@ The Dynasty Warriors piece did that. I believed the reward for a perfect dodge w
 **Count the value of benchmarking only as "N things to take" and this line goes missing.** Something you no longer have to build is a result too, and it's the kind that never lands on a list — so **it disappears unless you count it deliberately.**
 
 The making side lives in [MOON Studio](/en/built/moon-studio/index.md). This is **the record of taking other people's games apart**; that is what came of it.
+
+## Inspecting the connection layer does not complete an integration
+
+The sixth piece, [Unreal Engine Skills](/en/teardowns/games/unreal-engine-skills/index.md), contains instructions rather than the engine's tool implementation. I found three skills and exercised the hook: four conditions completed and two timed out. **Editor connectivity and game QA remain unverified.** Alongside compatibility and licensing, this shelf now records the boundary between receiving a tool and proving it can perform a live request.

@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Unreal Engine Skills — Making games</title><meta name="description" content="Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Unreal Engine Skills — Making games"><meta property="og:description" content="Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project."><meta property="og:url" content="https://aitryed.com/en/teardowns/games/unreal-engine-skills/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unreal Engine Skills — Making games"><meta name="twitter:description" content="Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/games/unreal-engine-skills/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/games/unreal-engine-skills/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/games/unreal-engine-skills/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/games/unreal-engine-skills/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/games/unreal-engine-skills/"><link rel="stylesheet" href="/_astro/Shell.byeBIh1M.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/games/unreal-engine-skills/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">21 written · 1 adopted</span></span><span class="s">What to run an agent on top of. Twenty-one taken apart, and exactly one tool actually came in.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">6 written · 4.5 of 7 applied</span></span><span class="s">This is my day job. It also yields the least — because I&#39;m usually already standing in the same place. And of the 4.5 techniques I wrote down as adopted, only one was in when I checked, so I put in the other 3.5 over the next two days (2026-09-28–29). The sixth, clumsy, I took apart twice and have yet to run once (2026-10-02).</span></a><a href="/en/teardowns/games/" aria-current="page"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/games/elemental-sandbox/"><span class="t"><span>Elemental Sandbox</span><span class="kpi">1 rule → 43 places</span></span><span class="s">The effects are the least valuable part. One rule came across — record dimensionless, resolve dimensions every frame.</span></a><a href="/en/teardowns/games/openmmo/"><span class="t"><span>OpenMMO</span><span class="kpi">2 corrections to my own summary</span></span><span class="s">An MMORPG one developer took all the way to live service. Opening the code showed my README-based summary was wrong in two places.</span></a><a href="/en/teardowns/games/worldclaw/"><span class="t"><span>Hunyuan3D-WorldClaw</span><span class="kpi">0 code · 0 numbers</span></span><span class="s">A paper about building an editable 3D open world from one line of prompt. The repository has no code and the paper has no numbers.</span></a><a href="/en/teardowns/games/dynasty-warriors-origins/"><span class="t"><span>Dynasty Warriors Origins</span><span class="kpi">3 left of 12</span></span><span class="s">I went in to see what else to build into my game, and the first thing I found was something I no longer had to build.</span></a><a href="/en/teardowns/games/unity-releases/"><span class="t"><span>Recent Unity releases</span><span class="kpi">188 breaking</span></span><span class="s">Draw the week honestly and it was five release builds, nothing else. Inside them, though, was not a feature addition but a move.</span></a><a href="/en/teardowns/games/unreal-engine-skills/" aria-current="page"><span class="t"><span>Unreal Engine Skills</span><span class="kpi">Editor untested</span></span><span class="s">Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>Unreal Engine Skills</h1><p class="sum">Three skills explain how Claude reaches Unreal Editor tools. I inspected the repository, exercised its startup hook, and reproduced a Windows timeout outside an Unreal project.</p><div class="meta"><span>Editor untested</span><a class="src" href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin" target="_blank" rel="noopener">github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#the-assistant-chooses-work-inside-the-game-making-application">The assistant chooses work inside the game-making application</a><a href="#check-the-engine-before-treating-installation-as-completion">Check the engine before treating installation as completion</a><a href="#a-visible-connection-still-needs-a-live-query">A visible connection still needs a live query</a><a href="#i-exercised-the-startup-script-with-temporary-project-markers">I exercised the startup script with temporary project markers</a><a href="#the-first-useful-adoption-step-is-small-enough-to-inspect">The first useful adoption step is small enough to inspect</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#the-twelve-tracked-files-reveal-an-implementation-boundary">The twelve tracked files reveal an implementation boundary</a><a href="#tool-discovery-makes-the-current-interface-the-source-of-truth">Tool discovery makes the current interface the source of truth</a><a href="#transport-and-tool-providers-require-separate-setup">Transport and tool providers require separate setup</a><a href="#four-original-hook-conditions-completed-and-two-timed-out">Four original-hook conditions completed and two timed out</a><a href="#a-qa-integration-still-needs-a-result-it-can-read-back">A QA integration still needs a result it can read back</a><a href="#compatibility-and-practical-benefit-remain-open">Compatibility and practical benefit remain open</a></nav><div class="prose"><p><strong>Unreal Engine Skills for Claude Code is a plugin that teaches an AI assistant how to work inside Unreal Editor, the application used to build game worlds, assets, and interfaces.</strong> It guides Claude through finding and calling editor tools. The engine must supply the machinery that performs those actions.</p>
+<p>For this review I read the repository and ran its project-detection script against temporary folders. <strong>I did not connect an editor or execute game tests.</strong> The useful finding is where the instructions end and a working integration still has to begin.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 282" role="img" aria-label="Claude reads the plugin's instructions and calls Unreal Editor tools through MCP. Instructions in this repository and executable tools in the engine are separate layers.">
+  <text class="lbl" x="16" y="24">From instructions to an action inside the editor</text>
+  <rect class="vn vn-a" x="16" y="48" width="288" height="108" rx="2"/>
+  <text class="cap cap-i" x="160" y="80" text-anchor="middle">Claude Code</text>
+  <text class="cap" x="160" y="108" text-anchor="middle">Reads skills and chooses steps</text>
+  <text class="cap" x="160" y="134" text-anchor="middle">Supplied by this repository</text>
+  <rect class="vn vn-b" x="356" y="48" width="288" height="108" rx="2"/>
+  <text class="cap cap-i" x="500" y="80" text-anchor="middle">MCP connection</text>
+  <text class="cap" x="500" y="108" text-anchor="middle">Find tools and inspect inputs</text>
+  <text class="cap" x="500" y="134" text-anchor="middle">Dispatch the selected call</text>
+  <rect class="vn vn-a" x="696" y="48" width="288" height="108" rx="2"/>
+  <text class="cap cap-i" x="840" y="80" text-anchor="middle">Unreal Editor</text>
+  <text class="cap" x="840" y="108" text-anchor="middle">Engine plugins and toolsets</text>
+  <text class="cap" x="840" y="134" text-anchor="middle">Performs the actual action</text>
+  <line class="rule" x1="312" y1="102" x2="348" y2="102"/>
+  <line class="rule" x1="652" y1="102" x2="688" y2="102"/>
+  <line class="rule" x1="16" y1="190" x2="984" y2="190"/>
+  <text class="cap cap-i" x="16" y="220">Installing instructions leaves the engine connection to verify</text>
+  <text class="cap" x="16" y="250">A successful read request is the first useful confirmation</text>
+</svg>
+<figcaption>Instructions, transport, and executable tools must meet. Downloading this repository alone does not fill the editor side of the diagram.</figcaption>
+</figure>
+<h2 id="the-assistant-chooses-work-inside-the-game-making-application">The assistant chooses work inside the game-making application</h2>
+<p>Ask for the objects in the current level, and the intended flow is to find a suitable query tool, inspect its inputs, and request the information from the editor. Asset edits follow the same route. MCP is the protocol carrying those requests and their results.</p>
+<p>The advertised surface covers many editing domains. Its breadth should not be confused with how much implementation this particular repository contains. The connected engine and its enabled plugins decide which tools are available.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Guidance supplied here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inspect a level or its assets</td>
+<td>Discover relevant editor queries</td>
+</tr>
+<tr>
+<td>Edit a Blueprint or material</td>
+<td>Check the schema before dispatch</td>
+</tr>
+<tr>
+<td>Expose another capability</td>
+<td>Read the tool-authoring skill</td>
+</tr>
+<tr>
+<td>Follow a project’s working conventions</td>
+<td>Discover its registered Agent Skills</td>
+</tr>
+</tbody>
+</table>
+<h2 id="check-the-engine-before-treating-installation-as-completion">Check the engine before treating installation as completion</h2>
+<p>The checked-out revision contains three skills: using the editor, authoring tools, and authoring project instructions. A Bash startup hook detects Unreal project markers above the working directory.</p>
+<p><strong>The engine plugins and their binaries are not shipped in this repository.</strong> Whether a particular engine installation has them remains a separate question. I cannot infer a minimum supported engine release or compatibility with every launcher build from the files I read.</p>
+<h2 id="a-visible-connection-still-needs-a-live-query">A visible connection still needs a live query</h2>
+<p>An optional proxy can preserve the client-facing session when Unreal stops. A displayed tool catalog may therefore be cached. Seeing the menu is not enough to establish that the kitchen is open.</p>
+<p>Before requesting an edit, ask the editor to return a small piece of information and check the response. This is a useful integration habit even outside game tools: connection state and successful work are different observations.</p>
+<h2 id="i-exercised-the-startup-script-with-temporary-project-markers">I exercised the startup script with temporary project markers</h2>
+<p>I arranged six folder conditions without opening Unreal. Four project-bearing conditions returned the expected context. Two folders without project markers exceeded a six-second limit.</p>
+<p>Tracing the script led to its file expansion at the filesystem root. A controlled variation completed after changing that root spelling. <strong>These are observations from one Windows Git Bash environment.</strong> They do not establish a failure of Unreal Editor, or behavior on every supported operating system.</p>
+<h2 id="the-first-useful-adoption-step-is-small-enough-to-inspect">The first useful adoption step is small enough to inspect</h2>
+<p>My proposed pilot starts with an isolated, version-controlled project: establish the connection, perform a query, change one asset, and read the resulting state back. Batch editing comes later.</p>
+<p>QA needs an additional distinction. An interface that launches automation tests does not by itself establish coverage of player input, backend processing, or final game outcomes. Each test still needs its own completion condition and evidence.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>The review is pinned to commit <code>a6aa73ada02a9fb1f5415bec491f9942c519b297</code>, retrieved on 2026-10-19. The manifest reports version <code>3.1.1</code>. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/tree/a6aa73ada02a9fb1f5415bec491f9942c519b297">Repository at the reviewed revision</a></p>
+<h2 id="the-twelve-tracked-files-reveal-an-implementation-boundary">The twelve tracked files reveal an implementation boundary</h2>
+<p><code>git ls-files</code> returned 12 paths, including three <code>SKILL.md</code> files and no <code>.uplugin</code> descriptor. Those are repository counts, not a measurement of the engine’s tool catalog.</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Observed responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>skills/unreal-mcp/SKILL.md</code></td>
+<td>Discover and invoke live editor tools</td>
+</tr>
+<tr>
+<td><code>skills/create-toolset/SKILL.md</code></td>
+<td>Design, implement, and test tool interfaces</td>
+</tr>
+<tr>
+<td><code>skills/unreal-skill/SKILL.md</code></td>
+<td>Author Agent Skills registered inside Unreal</td>
+</tr>
+<tr>
+<td><code>hooks/unreal-context.sh</code></td>
+<td>Recognize project markers and emit session context</td>
+</tr>
+</tbody>
+</table>
+<p>The README’s Contents section lists only the first skill. The checked-out tree contains the other two as well. Comparing the inventory with the introduction prevented an incomplete description of the package. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/tree/a6aa73ada02a9fb1f5415bec491f9942c519b297">Pinned file tree</a></p>
+<h2 id="tool-discovery-makes-the-current-interface-the-source-of-truth">Tool discovery makes the current interface the source of truth</h2>
+<p>Default search mode begins with <code>list_toolsets</code>, <code>describe_toolset</code>, and <code>call_tool</code>. A known toolset can go directly to schema inspection. Project Agent Skills have their own discovery path. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/skills/unreal-mcp/SKILL.md">Runtime instructions</a></p>
+<p>The lesson I would carry over is to inspect the callable interface immediately before using it. I did not benchmark the stated context or cache benefits, and the advertised catalog size should not be read as a locally verified count.</p>
+<h2 id="transport-and-tool-providers-require-separate-setup">Transport and tool providers require separate setup</h2>
+<p>The setup guide pairs the engine’s <code>ModelContextProtocol</code> transport with <code>AllToolsets</code>, or selected individual toolsets. Client configuration is generated from the editor. No static <code>.mcp.json</code> is included here. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/skills/unreal-mcp/references/setup.md">Setup guide</a></p>
+<p>The guide also names Codex as a configuration target. That does not establish that Claude Code’s installation command and hook mechanism install unchanged in another client. Generating transport settings is one part of an integration; loading client-specific instructions is another.</p>
+<h2 id="four-original-hook-conditions-completed-and-two-timed-out">Four original-hook conditions completed and two timed out</h2>
+<p>I ran the unmodified hook under Git Bash <code>5.2.37</code>, checking exit status and the emitted JSON context. The project files were empty markers in temporary directories.</p>
+<table>
+<thead>
+<tr>
+<th>Fixture</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project root, <code>.uproject</code> filename containing a space</td>
+<td>Correct project name; exit 0</td>
+</tr>
+<tr>
+<td>Nested <code>Source</code> directory</td>
+<td>Ancestor project found; exit 0</td>
+</tr>
+<tr>
+<td><code>Content</code> directory under a project with <code>.mcp.json</code></td>
+<td>Configuration-presence note; exit 0</td>
+</tr>
+<tr>
+<td>Deep engine module below <code>GenerateProjectFiles.bat</code></td>
+<td>Engine-tree context; exit 0</td>
+</tr>
+<tr>
+<td>Ordinary folder without Unreal markers</td>
+<td>Exceeded 6,000ms</td>
+</tr>
+<tr>
+<td>Bare <code>Engine</code> folder without root markers</td>
+<td>Exceeded 6,000ms</td>
+</tr>
+</tbody>
+</table>
+<p>A minimal comparison finished the <code>/*.uproject</code> expansion in 49ms. The <code>//*.uproject</code> form exceeded 3,500ms. Replacing the root-glob expression only in an in-memory copy made the two previously timed-out fixtures exit silently in 370ms and 400ms.</p>
+<p>This isolates a reproducible relationship between root spelling and the delay on this machine. It does not prove the underlying network behavior or a Windows-wide defect. I neither modified upstream nor opened an issue. The registered hook has a five-second timeout, so starting outside an Unreal project deserves attention in this environment. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/hooks/unreal-context.sh">Hook source</a>, <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/hooks/hooks.json">hook registration</a></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 246" role="img" aria-label="Original hook: four completed fixtures and two timeouts. In-memory root-normalized control: two completed fixtures. Live editor and game tests were not run.">
+  <text class="lbl" x="16" y="24">What this review actually exercised</text>
+  <rect class="vn vn-a" x="16" y="48" width="468" height="68" rx="2"/>
+  <text class="cap cap-i" x="36" y="76">Original startup hook</text>
+  <text class="cap" x="36" y="102">4 completed fixtures · 2 timeouts</text>
+  <rect class="vn vn-b" x="516" y="48" width="468" height="68" rx="2"/>
+  <text class="cap cap-i" x="536" y="76">In-memory control</text>
+  <text class="cap" x="536" y="102">2 completed after root adjustment</text>
+  <line class="rule" x1="16" y1="148" x2="984" y2="148"/>
+  <text class="cap cap-i" x="16" y="178">Editor connection, asset edits, and game tests: not run</text>
+  <text class="cap" x="16" y="212">A hook fixture cannot stand in for a working game integration</text>
+</svg>
+<figcaption>The script was executed. The editor and the game were not. The controlled variation is diagnostic evidence, not a released fix.</figcaption>
+</figure>
+<h2 id="a-qa-integration-still-needs-a-result-it-can-read-back">A QA integration still needs a result it can read back</h2>
+<p>The authoring guides separate callable tools from reusable project knowledge. They ask tool authors to avoid duplication, use concrete types, handle errors, and provide tests. <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/skills/create-toolset/SKILL.md">Tool-authoring guide</a>, <a href="https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin/blob/a6aa73ada02a9fb1f5415bec491f9942c519b297/skills/unreal-skill/SKILL.md">Agent Skill guide</a></p>
+<p>My proposed QA sequence is to read the initial state, request a small action, inspect its completion result, and query the changed state. A server-authoritative feature would need evidence from that side as well. This sequence is a design proposal; no new QA capability was delivered in this review.</p>
+<h2 id="compatibility-and-practical-benefit-remain-open">Compatibility and practical benefit remain open</h2>
+<p>I did not exercise editor startup, a live MCP round trip, Blueprint compilation, asset persistence, or proxy recovery. Supported engine builds and cross-client behavior remain unverified. Mutation trials should begin with a recoverable project state, particularly for execution paths that allow Python inside the editor.</p>
+<p><strong>My current verdict is a candidate for a connection-and-query pilot.</strong> The concrete return from the review is a sequence of checks, plus one narrowly reproduced hook problem. It is not a completed installation or a measured improvement in game testing.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/games/unreal-engine-skills/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
