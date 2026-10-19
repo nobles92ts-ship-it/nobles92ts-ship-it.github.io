@@ -1,6 +1,6 @@
-# Wuxia game (working title)
+# Wuxia Unity prototype
 
-> An action RPG won by reading the enemy's pattern rather than out-reflexing it. The studio's main slot.
+> Design, implementation, and verification records from the Unity prototype with 44 forms and 26 artifacts. Its design also informed MukGeom and ManInJeok.
 
 - Headline number: 44 forms
 - Status: wip
@@ -10,7 +10,9 @@
 
 ---
 
-**An action game won by *reading the enemy's pattern* rather than out-reflexing it. The studio's main slot.**
+**These are the records of a wuxia Unity prototype built around reading an opponent's patterns.** They preserve the design of 44 forms and 26 artifacts, implementation problems, and verification methods.
+
+The design later informed the 2D MukGeom and crowd-combat ManInJeok prototypes. The Unity measurements and combat rules below belong to the original prototype; they are not current measurements of those two games. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process.
 
 ## The one thing at the centre
 
@@ -75,6 +77,8 @@ The rules above are all verified **only as far as "does the design hold together
 And **the "60% on a wrong pick"** is not a measured number either. It came from **"it has to differ from a clean hit."** Measured, it will change.
 
 ## The detailed record starts here
+
+This article and its six subject pages preserve **the Unity prototype's records**. They are neither the current production organization nor current performance measurements for MukGeom or ManInJeok. The original remains a design reference and rollback path.
 
 Unity 6 · URP · toon shading. **Forty-four forms and twenty-six artifacts.** You win by **reading the enemy's pattern**, not by reacting faster.
 

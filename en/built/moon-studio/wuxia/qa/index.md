@@ -10,6 +10,8 @@
 
 ---
 
+> This page records the earlier wuxia Unity prototype. Its measurements and verification results belong to that version. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process and project states.
+
 **What a passing test is *not* looking at. When zero means two different things, the test passes a broken build.**
 
 ## One — "the check passed" is not "it works"

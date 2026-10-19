@@ -52,15 +52,15 @@
 - [adb 기반 게임 QA 서버 · 무인 루프](https://aitryed.com/ko/built/android-qa/loop/index.md): 제품이 다 통과한다는 전제를 깔면 모든 FAIL이 자동화 결함이 됩니다. 공짜 오라클입니다.
 - [adb 기반 게임 QA 서버 · 나온 것](https://aitryed.com/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
 - [adb 기반 게임 QA 서버 · 사진 판독기](https://aitryed.com/ko/built/android-qa/judge/index.md): 기록으로 결과를 못 정하는 검사는 사진으로 판정합니다. 그 판정을 규칙이 다시 거르고, 다른 회사의 모델이 한 번 더 봅니다.
-- [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다.
+- [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다.
 - [문스튜디오 · 깨알](https://aitryed.com/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
-- [문스튜디오 · (가칭) 무협 게임](https://aitryed.com/ko/built/moon-studio/wuxia/index.md): 반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오의 주력 칸입니다.
-- [문스튜디오 · (가칭) 무협 게임 · 설계](https://aitryed.com/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
-- [문스튜디오 · (가칭) 무협 게임 · 기획](https://aitryed.com/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.
-- [문스튜디오 · (가칭) 무협 게임 · 세계](https://aitryed.com/ko/built/moon-studio/wuxia/world/index.md): 세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.
-- [문스튜디오 · (가칭) 무협 게임 · 구현](https://aitryed.com/ko/built/moon-studio/wuxia/client/index.md): 시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.
-- [문스튜디오 · (가칭) 무협 게임 · 아트](https://aitryed.com/ko/built/moon-studio/wuxia/art/index.md): 데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.
-- [문스튜디오 · (가칭) 무협 게임 · 검증](https://aitryed.com/ko/built/moon-studio/wuxia/qa/index.md): 통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.
+- [문스튜디오 · 무협 Unity 원형](https://aitryed.com/ko/built/moon-studio/wuxia/index.md): 44초식·26신물의 Unity 원형에서 남긴 설계·구현·검증 기록입니다. 이 기획은 묵검과 만인적의 바탕으로도 이어졌습니다.
+- [문스튜디오 · 무협 Unity 원형 · 설계](https://aitryed.com/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
+- [문스튜디오 · 무협 Unity 원형 · 기획](https://aitryed.com/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.
+- [문스튜디오 · 무협 Unity 원형 · 세계](https://aitryed.com/ko/built/moon-studio/wuxia/world/index.md): 세계관이 장식이면 시스템은 숫자만 남습니다. 여기서는 세력이 수집물이 되고 신분이 스탯이 됩니다.
+- [문스튜디오 · 무협 Unity 원형 · 구현](https://aitryed.com/ko/built/moon-studio/wuxia/client/index.md): 시간과 판정을 다루다 샌 자리들. 전부 에러를 안 내고 조용히 틀렸습니다.
+- [문스튜디오 · 무협 Unity 원형 · 아트](https://aitryed.com/ko/built/moon-studio/wuxia/art/index.md): 데이터는 완비인데 시각 자산이 0이었습니다. 그리고 가독성을 고치려고 건 게이트가 가독성을 더 나쁘게 만들었습니다.
+- [문스튜디오 · 무협 Unity 원형 · 검증](https://aitryed.com/ko/built/moon-studio/wuxia/qa/index.md): 통과한 테스트가 무엇을 안 보고 있는지. 0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킵니다.
 - [문스튜디오 · 미래 게임 1](https://aitryed.com/ko/built/moon-studio/future-1/index.md): 아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.
 - [문스튜디오 · 미래 게임 1 · 설계](https://aitryed.com/ko/built/moon-studio/future-1/design/index.md): 이기는 방식을 두 문장으로 못 쓰면 아직 설계가 아닙니다. 넘어오는 규칙 하나와, 게임마다 다시 정해야 하는 것.
 - [문스튜디오 · 미래 게임 1 · 기획](https://aitryed.com/ko/built/moon-studio/future-1/spec/index.md): 규칙은 한 화면에 들어와야 하고, 안 정한 것은 적혀 있어야 합니다. 스펙에서 제일 중요한 절은 「아직 안 정한 것」입니다.

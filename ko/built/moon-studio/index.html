@@ -1,170 +1,113 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>문스튜디오 — 만든 도구</title><meta name="description" content="1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="문스튜디오 — 만든 도구"><meta property="og:description" content="1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다."><meta property="og:url" content="https://aitryed.com/ko/built/moon-studio/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="문스튜디오 — 만든 도구"><meta name="twitter:description" content="1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/built/moon-studio/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/built/moon-studio/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/built/moon-studio/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/built/moon-studio/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/built/moon-studio/"><link rel="stylesheet" href="/_astro/Shell.byeBIh1M.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/moon-studio/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다. AI가 실행할 문서 묶음으로도 낸다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다. 로그가 못 정하는 화면은 AI 판독기가 봅니다.</span></a><a href="/ko/built/moon-studio/" aria-current="page"><span class="t"><span>문스튜디오</span><span class="kpi">게임 6종</span></span><span class="s">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">게임</div><div class="plist"><a href="/ko/built/moon-studio/pixling/"><span class="t"><span>깨알</span><span class="kpi">v0.1.6 베타 · Windows · 무료</span></span><span class="s">바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.</span></a><a href="/ko/built/moon-studio/wuxia/"><span class="t"><span>(가칭) 무협 게임</span><span class="kpi">44초식</span></span><span class="s">반사신경이 아니라 적의 패턴을 읽어 이기는 액션 RPG. 스튜디오의 주력 칸입니다.</span></a><a href="/ko/built/moon-studio/future-1/"><span class="t"><span>미래 게임 1</span><span class="kpi">빈 칸</span></span><span class="s">아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.</span></a><a href="/ko/built/moon-studio/future-2/"><span class="t"><span>미래 게임 2</span><span class="kpi">빈 칸</span></span><span class="s">두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">진행 중</span></div><h1>문스튜디오</h1><p class="sum">1인 + AI 게임 스튜디오. 게임마다 칸이 하나씩 서고, 지금 내용이 찬 칸은 (가칭) 무협 게임과 깨알 둘입니다.</p><div class="meta"><span>게임 6종</span><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#스튜디오는-게임-하나가-아닙니다">스튜디오는 게임 하나가 아닙니다</a><a href="#빈-칸을-미리-세워-두는-이유">빈 칸을 «미리» 세워 두는 이유</a><a href="#시작했다-멈춘-것들--여기는-칸을-안-줍니다">시작했다 멈춘 것들 — 여기는 칸을 안 줍니다</a><a href="#왜-이걸-공개하나">왜 이걸 공개하나</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#빈-칸을-미리-세워-두는-이유-1">빈 칸을 미리 세워 두는 이유</a><a href="#시작했다-멈춘-것들">시작했다 멈춘 것들</a><a href="#왜-이게-여기-있나">왜 이게 여기 있나</a></nav><div class="prose"><p><strong>혼자 만들고, 코드는 대부분 AI가 씁니다. 그렇게 굴러가는 게임 스튜디오입니다.</strong></p>
-<h2 id="스튜디오는-게임-하나가-아닙니다">스튜디오는 게임 하나가 아닙니다</h2>
-<p>여기서 제일 중요한 결정입니다.</p>
-<p>혼자 게임을 만들면 보통 <strong>그 게임 하나에 맞춰</strong> 폴더와 규칙을 짭니다. 당연해 보입니다. <strong>지금 만드는 게 그것뿐</strong>이니까요.</p>
-<p>그런데 그러면 <strong>두 번째 게임이 오는 날 전부 다시 짜야</strong> 합니다.</p>
-<p>그래서 처음부터 <strong>게임마다 칸을 하나씩</strong> 세웠습니다. 그리고 칸 안을 <strong>설계·기획·아트·검증</strong>으로 나눴습니다.</p>
-<table>
-<thead>
-<tr>
-<th>칸</th>
-<th>무엇</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>무협 게임</strong> (가칭)</td>
-<td>패턴 초식 액션 RPG</td>
-<td><strong>주력 · 진행 중</strong></td>
-</tr>
-<tr>
-<td><strong>깨알</strong></td>
-<td>바탕화면에 사는 픽셀 생물 수집·육성</td>
-<td><strong>받기 가능</strong></td>
-</tr>
-<tr>
-<td>미래 게임 1</td>
-<td><strong>아직 없음</strong></td>
-<td>빈 칸</td>
-</tr>
-<tr>
-<td>미래 게임 2</td>
-<td><strong>아직 없음</strong></td>
-<td>빈 칸</td>
-</tr>
-</tbody>
-</table>
-<h2 id="빈-칸을-미리-세워-두는-이유">빈 칸을 «미리» 세워 두는 이유</h2>
-<p>「아직 없는 게임의 칸을 왜 만드나」 싶으실 겁니다.</p>
-<p>빈 칸이 <strong>가정을 눈에 보이게</strong> 만들기 때문입니다.</p>
-<p>칸이 하나만 있으면, <strong>「게임은 하나」라는 가정이 코드 여기저기에 스며듭니다.</strong> 그리고 그건 <strong>안 보입니다</strong> — 하나뿐이니 문제가 안 생기니까요.</p>
-<p>칸을 셋 세워 두면 <strong>그 가정이 바로 깨집니다.</strong> 「이 설정이 게임마다 다를 수 있나?」를 <strong>지금</strong> 묻게 됩니다.</p>
-<blockquote>
-<p><strong>빈 칸은 낭비가 아니라, 가정을 눈에 보이게 둔 것입니다.</strong></p>
-</blockquote>
-<h2 id="시작했다-멈춘-것들--여기는-칸을-안-줍니다">시작했다 멈춘 것들 — 여기는 칸을 안 줍니다</h2>
-<p>위의 칸들 말고도 손댄 게 있습니다. <strong>이쪽은 칸을 안 줬습니다.</strong></p>
-<p>이유는 <strong>칸을 주면 「진행 중」처럼 보이기</strong> 때문입니다. 실제로는 <strong>끝까지 갈 이유가 없어서 멈춘 것들</strong>입니다.</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>문스튜디오 — 만든 도구</title><meta name="description" content="혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="문스튜디오 — 만든 도구"><meta property="og:description" content="혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다."><meta property="og:url" content="https://aitryed.com/ko/built/moon-studio/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="문스튜디오 — 만든 도구"><meta name="twitter:description" content="혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/built/moon-studio/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/built/moon-studio/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/built/moon-studio/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/built/moon-studio/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/built/moon-studio/"><link rel="stylesheet" href="/_astro/Shell.byeBIh1M.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="built" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built" aria-current="page"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/built/moon-studio/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">01 만든 도구</div><div class="plist"><a href="/ko/built/watch/"><span class="t"><span>/watch</span><span class="kpi">영상 → 스펙</span></span><span class="s">영상을 던지면 요약이 아니라 만들 수 있는 설계 스펙이 돌아옵니다.</span></a><a href="/ko/built/self-evolution/"><span class="t"><span>자가진화 루프</span><span class="kpi">주 1회</span></span><span class="s">이번 주 배운 걸 읽고 스스로 메모리를 고쳐 쓰는 크론. 사람 승인 게이트가 붙어 있습니다.</span></a><a href="/ko/built/tc-team/"><span class="t"><span>tc-team</span><span class="kpi">S0–S7</span></span><span class="s">기획서를 넣으면 테스트케이스가 나온다. LLM은 문장만 쓰고, 구조와 게이트는 전부 결정론 코드가 소유한다. AI가 실행할 문서 묶음으로도 낸다.</span></a><a href="/ko/built/loki/"><span class="t"><span>Loki</span><span class="kpi">Slack</span></span><span class="s">내 PC와 대화하기. Claude Code 구독으로 도는 로컬 Slack 에이전트 — API 키 불필요.</span></a><a href="/ko/built/qa-widget/"><span class="t"><span>QA 위젯</span><span class="kpi">상시 표시</span></span><span class="s">화면 구석에 항상 떠 있는 작은 패널. KPI·진행률, 리포트는 한 번 클릭.</span></a><a href="/ko/built/claude-bus/"><span class="t"><span>claude-bus</span><span class="kpi">PC 2대</span></span><span class="s">회사 PC에서 던진 일을 집 PC의 새 세션이 받아서 합니다. 서버 없이 폴더 하나로.</span></a><a href="/ko/built/android-qa/"><span class="t"><span>adb 기반 게임 QA 서버</span><span class="kpi">300 사이클</span></span><span class="s">게임 화면은 UI 트리가 없습니다. 그래서 눈으로 조작하고, 판정은 로그로 합니다. 로그가 못 정하는 화면은 AI 판독기가 봅니다.</span></a><a href="/ko/built/moon-studio/" aria-current="page"><span class="t"><span>문스튜디오</span><span class="kpi">v3 · 기능 오너</span></span><span class="s">혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">게임</div><div class="plist"><a href="/ko/built/moon-studio/pixling/"><span class="t"><span>깨알</span><span class="kpi">v0.1.6 베타 · Windows · 무료</span></span><span class="s">바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.</span></a><a href="/ko/built/moon-studio/wuxia/"><span class="t"><span>무협 Unity 원형</span><span class="kpi">44초식</span></span><span class="s">44초식·26신물의 Unity 원형에서 남긴 설계·구현·검증 기록입니다. 이 기획은 묵검과 만인적의 바탕으로도 이어졌습니다.</span></a><a href="/ko/built/moon-studio/future-1/"><span class="t"><span>미래 게임 1</span><span class="kpi">빈 칸</span></span><span class="s">아직 없는 게임의 자리. 무협 게임에서 값을 치르고 배운 것 중 다음으로 넘어갈 수 있는 게 무엇인지만 적어 뒀습니다.</span></a><a href="/ko/built/moon-studio/future-2/"><span class="t"><span>미래 게임 2</span><span class="kpi">빈 칸</span></span><span class="s">두 번째 빈 칸. 미래 게임 1과 부문 내용이 같습니다 — 칸이 둘인 건 여럿임을 보이기 위해서입니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>만든 도구</span><span class="st">진행 중</span></div><h1>문스튜디오</h1><p class="sum">혼자 방향을 정하고 AI와 게임을 만듭니다. v3는 게임마다 디렉터 하나, 기능마다 오너 하나를 두고 별도 검증관이 통합한 판을 확인합니다.</p><div class="meta"><span>v3 · 기능 오너</span><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#저는-원하는-것을-말하고-디렉터가-일을-나눕니다">저는 원하는 것을 말하고 디렉터가 일을 나눕니다</a><a href="#만드는-눈과-판정하는-눈을-나눕니다">만드는 눈과 판정하는 눈을 나눕니다</a><a href="#공개된-게임과-개발-중인-판을-구분합니다">공개된 게임과 개발 중인 판을 구분합니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#v3는-직군-사이-전달보다-기능의-책임을-묶는다">v3는 직군 사이 전달보다 기능의 책임을 묶는다</a><a href="#창-없는-시험은-만들면서-하고-화면-시험은-합친-뒤-한다">창 없는 시험은 만들면서 하고 화면 시험은 합친 뒤 한다</a><a href="#아트는-오래-붙들되-게임에-넣는-책임은-한곳에-둔다">아트는 오래 붙들되 게임에 넣는 책임은 한곳에 둔다</a><a href="#만드는-버전과-받는-버전은-다르다">만드는 버전과 받는 버전은 다르다</a><a href="#문서의-칸은-역할-조직도가-아니다">문서의 칸은 역할 조직도가 아니다</a><a href="#구조를-바꾼-것과-빨라졌음을-증명한-것은-다르다">구조를 바꾼 것과 빨라졌음을 증명한 것은 다르다</a></nav><div class="prose"><p><strong>문스튜디오는 제가 방향을 정하고 AI와 함께 게임을 만드는 1인 스튜디오입니다.</strong> 지금의 만드는 법은 v3입니다. 기능 하나를 여러 직군에 넘기는 대신, 오너 한 명이 끝까지 만들고 다른 에이전트가 결과를 검증합니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 246" role="img" aria-label="문스튜디오 v3. 디렉터가 요청을 카드로 나누고, 기능 오너가 구현하고, 디렉터가 통합한 판을 별도 검증관이 판정한다. 취향·밸런스 적용·공개 배포는 사람이 결정한다.">
+  <text class="lbl" x="16" y="24">기능 하나는 오너 하나가 끝까지</text>
+  <rect class="vn vn-a" x="16" y="48" width="210" height="92" rx="2"/>
+  <text class="cap cap-i" x="121" y="80" text-anchor="middle">디렉터</text>
+  <text class="cap" x="121" y="112" text-anchor="middle">요청 → 범위·합격 조건</text>
+  <rect class="vn vn-b" x="266" y="48" width="210" height="92" rx="2"/>
+  <text class="cap cap-i" x="371" y="80" text-anchor="middle">기능 오너</text>
+  <text class="cap" x="371" y="112" text-anchor="middle">구현 · 창 없는 시험</text>
+  <rect class="vn vn-a" x="516" y="48" width="210" height="92" rx="2"/>
+  <text class="cap cap-i" x="621" y="80" text-anchor="middle">디렉터</text>
+  <text class="cap" x="621" y="112" text-anchor="middle">가지 통합 · 잴 판 고정</text>
+  <rect class="vn vn-b" x="766" y="48" width="218" height="92" rx="2"/>
+  <text class="cap cap-i" x="875" y="80" text-anchor="middle">별도 검증관</text>
+  <text class="cap" x="875" y="112" text-anchor="middle">화면 확인 · 깨뜨리기</text>
+  <line class="rule" x1="234" y1="94" x2="258" y2="94"/>
+  <line class="rule" x1="484" y1="94" x2="508" y2="94"/>
+  <line class="rule" x1="734" y1="94" x2="758" y2="94"/>
+  <text class="cap cap-i" x="16" y="182">사람이 정한다 — 취향 · 밸런스 적용 · 공개 배포</text>
+  <text class="cap" x="16" y="218">구현 완료 · 검증 완료 · 공개 배포는 서로 다른 상태로 기록한다.</text>
+</svg>
+<figcaption>디렉터는 게임의 흐름을 맡는다. 기능을 만드는 일과 통합한 결과를 판정하는 일은 다른 에이전트가 맡는다.</figcaption>
+</figure>
+<h2 id="저는-원하는-것을-말하고-디렉터가-일을-나눕니다">저는 원하는 것을 말하고 디렉터가 일을 나눕니다</h2>
+<p>예를 들어 「전투가 더 잘 보이게」라는 요청을 주면, 디렉터가 코드를 읽고 화면에서 확인할 변화로 나눕니다. 카드마다 고칠 범위와 합격 조건을 적습니다. 오너는 그 카드의 설계 세부, 코드, 데이터와 시험을 함께 맡습니다.</p>
+<p><strong>디렉터는 게임당 메인 세션 하나입니다.</strong> Claude나 Codex가 이 자리를 맡아도 보드와 카드로 이어받습니다. 제가 여러 세션 사이에서 말을 복사해 나를 필요가 없게 만드는 것이 목표입니다.</p>
+<h2 id="만드는-눈과-판정하는-눈을-나눕니다">만드는 눈과 판정하는 눈을 나눕니다</h2>
+<p>오너가 시험을 통과했다고 끝내지 않습니다. 디렉터가 작업을 합친 뒤, 별도 검증관이 그 판을 켜 보고 깨뜨려 봅니다. 못 돌린 것은 이유와 함께 남깁니다.</p>
+<p>그림도 같은 원칙입니다. 깨알에는 캐릭터·동작을 맡는 아트01과 기술·이펙트·연출을 맡는 아트02가 있고, 결과를 게임에 넣는 일은 디렉터가 맡습니다. <strong>그림 파일이 있다는 것과 게임에서 잘 보인다는 것은 다른 확인입니다.</strong></p>
+<h2 id="공개된-게임과-개발-중인-판을-구분합니다">공개된 게임과 개발 중인 판을 구분합니다</h2>
+<p>2026-10-19에 공개 릴리스와 로컬 제작 기록을 대조했습니다.</p>
 <table>
 <thead>
 <tr>
 <th>프로젝트</th>
-<th>어디까지</th>
-<th>왜 멈췄나</th>
+<th>무엇을 만드는가</th>
+<th>확인한 상태</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>무협 강호 (가칭)</td>
-<td>뼈대 완료</td>
-<td>플레이테스트 전에 <strong>주력이 갈렸음</strong></td>
-</tr>
-<tr>
-<td>타워 디펜스</td>
-<td>웨이브 설계·밸런스 검증 완주</td>
-<td><strong>만들어 보는 게 목적이었고 달성됨</strong></td>
-</tr>
-<tr>
-<td>물 흐름 퍼즐</td>
-<td>100단계 + 전부 풀 수 있는지 검증</td>
-<td>위와 같음</td>
-</tr>
-<tr>
-<td>입문 강좌 따라 만들기</td>
-<td>진행 중</td>
-<td><strong>학습용이라 끝이 따로 없음</strong></td>
-</tr>
-</tbody>
-</table>
-<p>두 번째와 세 번째를 보시면 — <strong>「목적을 달성해서 멈춘 것」</strong>입니다. 실패가 아닙니다.</p>
-<p><strong>멈춘 이유를 적어 두는 게 중요합니다.</strong> 안 적으면 나중에 <strong>전부 「실패한 것들」로 기억</strong>됩니다. 실제로는 성격이 다 다른데요.</p>
-<h2 id="왜-이걸-공개하나">왜 이걸 공개하나</h2>
-<p>완성돼서가 아닙니다.</p>
-<blockquote>
-<p><strong>공개적으로 부술 수 있는 유일한 빌드라서입니다.</strong></p>
-</blockquote>
-<p>제 본업 쪽 결과물은 회사 것이라 <strong>자세히 못 씁니다.</strong> 무엇이 어떻게 깨졌는지, 제가 어디서 틀렸는지를 적을 수가 없습니다.</p>
-<p>이 게임은 제 것이라 <strong>전부 적을 수 있습니다.</strong> 깨진 것도, 틀린 판단도, 지운 기능도.</p>
-<p><strong>뜯어볼 수 있는 물건이 있어야 뜯어본 이야기를 쓸 수 있습니다.</strong></p>
-<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
-<p>혼자 만들고, 코드는 대부분 AI가 쓴다. 그렇게 굴러가는 게임 스튜디오다.</p>
-<p>스튜디오는 게임 하나가 아니다. 그래서 <strong>게임마다 칸을 하나씩 세우고, 칸 안을 설계·기획·아트·검증으로 나눈다.</strong> 지금 내용이 들어찬 칸은 둘이다.</p>
-<p>부문이 게임마다 같은 개수는 아니다. 무협 게임에만 <strong>구현</strong>이 하나 더 있는데, 그게 맞다 — <strong>코드가 있는 칸에만 구현이 생긴다.</strong> 없는 게임에 구현 칸을 만들어 두면 비어 있는 게 아니라 거짓말이 된다.</p>
-<table>
-<thead>
-<tr>
-<th>칸</th>
-<th>무엇</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><a href="/ko/built/moon-studio/wuxia/">(가칭) 무협 게임</a></strong></td>
-<td>패턴 초식 액션 RPG. Unity 6 · URP · 툰 셰이딩</td>
-<td><strong>주력 · 진행 중</strong></td>
-</tr>
 <tr>
 <td><strong><a href="/ko/built/moon-studio/pixling/">깨알</a></strong></td>
-<td>바탕화면에 사는 픽셀 생물 수집·육성. Python · Windows</td>
-<td><strong>받기 가능</strong></td>
+<td>바탕화면 픽셀 생물 수집·육성</td>
+<td>공개 배포 v0.1.6 · v0.1.7 로컬 빌드와 v0.2.0 시험판은 별도</td>
 </tr>
 <tr>
-<td><a href="/ko/built/moon-studio/future-1/">미래 게임 1</a></td>
-<td>아직 없다</td>
-<td>빈 칸</td>
+<td><strong>묵검</strong></td>
+<td>격자에 획을 그어 상대 초식을 파훼하는 2D 게임</td>
+<td>로컬 프로토타입·설계 기록</td>
 </tr>
 <tr>
-<td><a href="/ko/built/moon-studio/future-2/">미래 게임 2</a></td>
-<td>아직 없다</td>
-<td>빈 칸</td>
+<td><strong>만인적</strong></td>
+<td>같은 무협 기획으로 다수와 싸우는 게임</td>
+<td>로컬 프로토타입·설계 기록</td>
+</tr>
+<tr>
+<td><strong><a href="/ko/built/moon-studio/wuxia/">무협 Unity 원형</a></strong></td>
+<td>44초식·26신물의 원래 설계와 구현</td>
+<td>정본·과거 실험 기록 보존</td>
 </tr>
 </tbody>
 </table>
-<h2 id="빈-칸을-미리-세워-두는-이유-1">빈 칸을 미리 세워 두는 이유</h2>
-<p>스튜디오를 게임 하나에 맞춰 쓰면, <strong>두 번째 게임이 오는 날 전부 다시 짜야 한다.</strong></p>
-<p>이 사이트가 실제로 그랬다. 처음엔 문스튜디오 밑에 설계·기획·구현·아트·검증이 바로 붙어 있었다. 읽기엔 멀쩡했는데, 그 구조는 <strong>게임이 하나라는 가정</strong>을 문서가 아니라 폴더 배치에 박아 넣은 것이었다. 게임이 둘이 되는 순간 주소가 전부 바뀌고, 바깥에서 걸어 둔 링크가 같이 죽는다.</p>
-<p>그래서 게임이 하나뿐인 지금 계층을 먼저 만들었다. <strong>비어 있는 칸은 낭비가 아니라, 가정을 눈에 보이게 만들어 둔 것이다.</strong> 칸이 비어 있으면 누구나 “여긴 아직 없구나”를 안다. 칸이 아예 없으면 “이 스튜디오는 게임이 하나다”로 읽힌다 — 그게 틀린 쪽이었다.</p>
-<p>빈 칸 안에도 설계·기획·아트·검증이 그대로 서 있다. 무협 게임에서 값을 치르고 배운 것 중 <strong>다음 게임으로 넘어갈 수 있는 게 무엇인지</strong>를 칸마다 한 줄로 적어 뒀다.</p>
-<h2 id="시작했다-멈춘-것들">시작했다 멈춘 것들</h2>
-<p>위의 네 칸 말고도 손댄 게 있다. 이쪽은 칸을 안 준다. <strong>끝까지 갈 이유가 없어서 멈춘 것들</strong>이라, 칸을 주면 진행 중인 것처럼 보인다.</p>
+<p>묵검과 만인적은 기획을 공유하지만, 하나는 상대의 초식을 읽고 다른 하나는 다수 사이에서 초식을 꺼냅니다. 같은 기획이 같은 게임을 뜻하지는 않습니다. 이 페이지에서 새 실행 파일을 배포한 것은 아닙니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<h2 id="v3는-직군-사이-전달보다-기능의-책임을-묶는다">v3는 직군 사이 전달보다 기능의 책임을 묶는다</h2>
+<p>2026-10-08에 제작 구조를 바꿨다. 예전에는 기획·개발·QA가 다른 세션에서 문서와 메시지를 넘겼다. 현재 기본 단위는 <strong>게임당 디렉터 하나, 카드당 기능 오너 하나, 만든 쪽과 다른 검증관</strong>이다.</p>
 <table>
 <thead>
 <tr>
-<th>프로젝트</th>
-<th>어디까지</th>
-<th>왜 멈췄나</th>
+<th>구분</th>
+<th>이전 방식</th>
+<th>v3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>(가칭) 무협 강호</td>
-<td>뼈대 완료</td>
-<td>플레이테스트 전에 주력이 갈렸다</td>
+<td>작업을 나누는 기준</td>
+<td>직군과 세션</td>
+<td>화면에서 확인할 기능 하나</td>
 </tr>
 <tr>
-<td>타워 디펜스</td>
-<td>웨이브 설계·밸런스 검증 완주</td>
-<td>만들어 보는 게 목적이었고 달성됐다</td>
+<td>진행을 찾는 곳</td>
+<td>세션별 메시지·전달 문서</td>
+<td>현재 보드와 카드·결과·검증 기록</td>
 </tr>
 <tr>
-<td>물 흐름 퍼즐</td>
-<td>100레벨 + 솔버로 전부 풀이 가능 검증</td>
-<td>같음</td>
-</tr>
-<tr>
-<td>입문 강좌 이식</td>
-<td>진행 중</td>
-<td>학습용이라 끝이 따로 없다</td>
+<td>기능의 담당 범위</td>
+<td>기획·코드·그림을 직군 사이에 전달</td>
+<td>오너가 카드 안의 설계 세부·코드·데이터·창 없는 시험을 맡음</td>
 </tr>
 </tbody>
 </table>
-<p>계속 미완인 채로 두는 게 정직하다고 본다. 완성된 척 올려두는 것보다는.</p>
-<h2 id="왜-이게-여기-있나">왜 이게 여기 있나</h2>
-<p>완성돼서가 아니다. <strong>공개적으로 부술 수 있는 유일한 빌드</strong>라서다.</p>
-<p>내가 테스트하는 나머지는 전부 남의 것이다. 발견도 진짜고 숫자도 진짜인데, 건물 밖으로 못 나간다. 이건 내 것이라서, 기법을 <strong>설명하는 대신 보여줄 수 있는 자리</strong>가 된다.</p>
-<p>그래서 이 스튜디오는 취미인 동시에 <strong>실험대</strong>다. 검증 방법을 여기서 먼저 깨뜨려 보고, 살아남은 것만 본업 쪽 파이프라인으로 가져간다. “0이 두 가지를 뜻하면 그 테스트는 고장을 통과시킨다” 같은 것들이 그렇게 넘어갔다.</p>
+<p>디렉터는 카드가 같은 파일·함수를 건드리는지 먼저 본다. 겹치면 합치거나 순서를 정한다. 독립된 작업은 나눌 수 있지만 Unity 코드 작업과 화면을 쓰는 시험은 자원을 공유하므로 동시에 밀어 넣지 않는다.</p>
+<h2 id="창-없는-시험은-만들면서-하고-화면-시험은-합친-뒤-한다">창 없는 시험은 만들면서 하고 화면 시험은 합친 뒤 한다</h2>
+<p>오너는 구현 중에 창 없는 시험을 작성하고 돌린다. 화면 검증은 묶음 끝에 검증관이 통합한 판에서 맡는다. 첫 검증·마일스톤·실행 파일을 구운 뒤에는 넓게 보고, 고친 뒤 재검증은 바뀐 곳과 앞서 실패한 조건을 중심으로 좁힌다.</p>
+<p><strong>제품 결함, 검사 도구의 문제, 알려진 문제, 미실행을 같은 실패 수로 합치지 않는다.</strong> 검증관은 재현과 판정을 남기고 코드를 직접 고치지 않는다. 수정은 해당 오너에게 돌아간다.</p>
+<p>실행 파일을 만든 뒤에도 그 파일을 다시 확인한다. 저장소의 코드가 맞는 것만으로 받은 파일의 동작을 보증할 수 없기 때문이다.</p>
+<h2 id="아트는-오래-붙들되-게임에-넣는-책임은-한곳에-둔다">아트는 오래 붙들되 게임에 넣는 책임은 한곳에 둔다</h2>
+<p>깨알의 아트01은 캐릭터 애니메이션·동작과 경기장 그림을, 아트02는 기술·이펙트·연출 그림을 맡는다. 처음 하는 종류는 작은 시범을 보고 방향을 정한 뒤 넓힌다. 결과는 임시 납품 위치까지 만들고, 디렉터가 검증할 판에 넣는다.</p>
+<p>2026-10-16 이후에는 일감에 따라 Claude가 초안을 잡고 Codex가 본작업과 마무리를 맡는 분담도 쓴다. 가벼운 일은 한쪽이 끝낼 수 있다. <strong>도구 이름보다 납품물과 검수 책임이 먼저다.</strong> 취향과 완성도에 대한 마지막 결정은 제가 한다.</p>
+<h2 id="만드는-버전과-받는-버전은-다르다">만드는 버전과 받는 버전은 다르다</h2>
+<p>깨알의 공개 받기 저장소는 v0.1.6을 최신 배포판으로 가리킨다. 로컬 보드에는 v0.1.7 빌드와 v0.2.0 시험판의 제작·검증이 별도로 남아 있다. 새 기능의 코드나 시험판이 있다는 이유로 받기 버튼의 번호를 올리지 않았다.</p>
+<p>밸런스 적용과 공개 배포도 별도 결정이다. 제작 절차의 마지막에는 사람의 배포 승인이 있으며, 로컬 빌드 완료를 자동 공개로 처리하지 않는다.</p>
+<h2 id="문서의-칸은-역할-조직도가-아니다">문서의 칸은 역할 조직도가 아니다</h2>
+<p>게임별 주소 밑의 설계·기획·세계·구현·아트·검증은 <strong>읽는 사람을 위한 기록 분류</strong>다. 그 칸마다 별도의 상시 세션이 있다는 뜻은 아니다. 무협 Unity 원형의 글은 그 당시의 수치와 교훈으로 보존한다.</p>
+<p><a href="/ko/built/moon-studio/future-1/">미래 게임 1</a>과 <a href="/ko/built/moon-studio/future-2/">미래 게임 2</a>는 다음 작업을 생각하는 빈 문서 자리다. 실제 게임 수나 진행 중인 프로젝트로 세지 않는다. 타워 디펜스·물 흐름 퍼즐·입문 강좌도 출시 중인 게임과 섞지 않고 실험·학습 기록으로 둔다.</p>
+<h2 id="구조를-바꾼-것과-빨라졌음을-증명한-것은-다르다">구조를 바꾼 것과 빨라졌음을 증명한 것은 다르다</h2>
+<p>v3의 목표는 전달 비용과 사람의 중계를 줄이는 것이다. 이번 갱신에서는 운영 문서, 현재 보드와 공개 릴리스를 확인했다. 이전 구조보다 얼마나 빨라졌는지 같은 조건으로 다시 측정하지는 않았다.</p>
+<p>문스튜디오는 제가 만든 것을 공개적으로 깨뜨려 볼 수 있는 실험대이기도 하다. 구현한 것, 검증한 것, 아직 못 한 것을 나눠 적어야 그 실험이 다음 작업에 쓸 수 있는 기록으로 남는다.</p>
 </div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "ko";
 const none = "없음";
 

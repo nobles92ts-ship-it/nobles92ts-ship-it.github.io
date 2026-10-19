@@ -116,15 +116,29 @@ This is a non-commercial fan game. The Digimon sprites belong to Bandai; the Pok
 
 ## The detailed record starts here
 
-## Three sessions built it, and the line between them is whose sentence it is
+## Production now uses a v3 director, owners, and verifier
 
-Kkaeal is built by three AI sessions. The **planning session** writes the design and the spec, and decides what comes next. The **development session** owns code, tests, building the executable and the verification tools. The **art session** only makes pictures. Orders arrive two ways: as a stage table in the spec, pass conditions included, landing in a commit — or as a message between sessions.
+This describes the operating records checked on 2026-10-19. A main director manages the board and cards for the game. Each feature owner handles the scoped design details, code, data, and headless tests. A different agent verifies the integrated build. Claude or Codex can take over the director role.
+
+Art01 handles characters, motion, and arena artwork; Art02 handles skills, effects, and presentation. Some tasks split a Claude draft from Codex production work. Delivering artwork to staging, integrating it, and checking the integrated result are separate steps. The full process is described in [MOON Studio v3](/en/built/moon-studio/index.md).
+
+| Version | State confirmed on 2026-10-19 |
+|---|---|
+| v0.1.6 | Latest public download; the feature table and download instructions on this page describe this release |
+| v0.1.7 | Recorded local build, without changing the public download version |
+| v0.2.0 | Test build under development and verification; this does not mean all work is complete or publicly released |
+
+This is a comparison of the operating board with the [public release](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.1.6). I did not rerun the game's regression suite while updating this page.
+
+## What the three-session v2 process taught about boundaries
+
+Before the 2026-10-08 transition, three AI sessions divided the work. **Planning** owned design and specifications; **development** owned code, tests, packaging, and verification tools; **art** made the pictures. Orders arrived through specifications with acceptance conditions or messages between sessions. The following lessons belong to that earlier process.
 
 At first the boundary looked like a **list of prohibitions**: development doesn't edit the spec, and so on. But on the day the line actually broke, nothing prohibited had happened. The development session handed planning **"the line you should add to the spec" as a ready-made quote.** It never touched the spec — but it **decided the sentence**, which is the same line crossed.
 
 So the line was redrawn. **Measuring and handing over is development's job; deciding with that number is planning's.** "Doing this gives that value" is fine. "So let's write this in the document" is not.
 
-The messaging itself leaked too. **Three of four messages** between sessions went by unread. So the design stopped trusting the sender: **the receiving side now checks for itself every turn.**
+The messaging itself leaked too. **Three of four messages examined at the time** went by unread. The earlier repair made **the receiving side check every turn**. v3 instead aims to reduce those cross-discipline handoffs.
 
 ## All-green checks still don't tell you whether it runs on screen
 

@@ -1,8 +1,8 @@
 # MOON Studio
 
-> A one-person + AI game studio. Every game gets a slot; two slots currently have anything in them — the wuxia game and Kkaeal (깨알).
+> A one-person game studio built with AI. In v3, one director coordinates each game, each feature has an owner, and an independent verifier checks the integrated build.
 
-- Headline number: 6 games
+- Headline number: v3 · feature owners
 - Status: wip
 - Rendered page: https://aitryed.com/en/built/moon-studio/
 - Other language: https://aitryed.com/ko/built/moon-studio/index.md
@@ -10,108 +10,79 @@
 
 ---
 
-**I build alone and the AI writes most of the code. That is what this game studio is.**
+**MOON Studio is where I set the direction and build games with AI.** The current production process is v3. One owner carries a feature through implementation, and a different agent checks the result.
 
-## A studio is not one game
+> **[도판]** The director coordinates the game. Making a feature and judging the integrated result belong to different agents.
+>
+> MOON Studio v3: the director turns requests into scoped cards, owners implement them, the director integrates their branches, and an independent verifier judges the integrated build. The creator decides taste, balance application, and release.
 
-The most important decision here.
+## I describe the change and the director scopes the work
 
-Building alone, you normally arrange the folders and the rules **around the one game.** It looks obvious. **It is the only thing being built.**
+A request such as “make the battle easier to follow” needs observable changes. The director reads the code and turns it into cards with boundaries and acceptance conditions. An owner handles the design details, code, data, and tests within that card.
 
-And then **the day a second game arrives, all of it has to be rebuilt.**
+**Each game has one main director session.** Claude or Codex can hold that role, with the board and cards providing continuity. Reducing the messages I have to relay between sessions is one of the goals.
 
-So **every game gets a slot** from the start, and **inside each slot the work splits four ways** — design, spec, art, verification.
+## Building and judging belong to different agents
 
-| Slot | What | State |
+An owner's passing tests do not finish the process. After the director integrates the branches, an independent verifier launches that build and tries to break it. Checks that could not run keep their reasons.
+
+Art follows the same distinction. For Kkaeal, Art01 handles characters and motion; Art02 handles skills, effects, and presentation. The director integrates their deliveries. **Having an image file and seeing it work in the game require separate checks.**
+
+## Public releases and development builds have different states
+
+I checked the public release and local production records on 2026-10-19.
+
+| Project | What it explores | Confirmed state |
 |---|---|---|
-| **Wuxia game** (working title) | A pattern-reading action RPG | **Main · in progress** |
-| **Kkaeal** | Pixel creatures that live on your desktop — catch and raise them | **Downloadable** |
-| Future game 1 | **Does not exist yet** | Empty |
-| Future game 2 | **Does not exist yet** | Empty |
+| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Desktop creature collecting and raising | Public release v0.1.6; local v0.1.7 build and v0.2.0 test build tracked separately |
+| **MukGeom** | Drawing grid patterns to counter an opponent's martial forms | Local prototype and design records |
+| **ManInJeok** | Fighting crowds using the same wuxia design family | Local prototype and design records |
+| **[Wuxia Unity prototype](/en/built/moon-studio/wuxia/index.md)** | The original design and implementation of 44 forms and 26 artifacts | Retained reference and earlier experiments |
 
-## Why the empty slots are built first
-
-*Why make a slot for a game that does not exist.*
-
-Because **an empty slot makes an assumption visible.**
-
-With one slot, **the assumption "there is one game" seeps into the code everywhere.** And **it is invisible** — with only one, nothing goes wrong.
-
-With three slots standing there, **that assumption breaks immediately.** You start asking **"could this setting differ per game?"** — **now.**
-
-> **An empty slot is not waste. It is an assumption made visible.**
-
-## Started and stopped — these get no slot
-
-There are things worked on besides the slots above. **They deliberately get no slot.**
-
-Because **a slot makes them look "in progress."** In fact they are **things that stopped because there was no reason to carry on.**
-
-| Project | How far | Why it stopped |
-|---|---|---|
-| Wuxia world (working title) | Skeleton complete | **The main project changed** before playtesting |
-| Tower defence | Wave design and balance verified | **Building it was the point, and that was achieved** |
-| Water-flow puzzle | 100 levels, all verified solvable | Same as above |
-| Following a beginner course | In progress | **It is for learning, so it has no end** |
-
-Look at rows two and three — **they stopped because the purpose was met.** Those are not failures.
-
-**Writing down why each stopped matters.** Without it, they all get remembered later as **"the failed ones."** They are nothing alike.
-
-## Why this is public
-
-Not because it is finished.
-
-> **Because it is the only build I can break in public.**
-
-My day-job output belongs to a company, so **I cannot write about it in detail.** What broke and how, where I was wrong — none of it can be written.
-
-This game is mine, so **all of it can be written.** What broke, what I judged wrongly, what I deleted.
-
-**You need something you can take apart in public before you can write about taking things apart.**
+MukGeom and ManInJeok share design material, but the former focuses on reading an opponent and the latter on using forms among a crowd. Shared material can produce different games. This website update does not release new game binaries.
 
 ## The detailed record starts here
 
-Built solo, with most of the code written by AI. That's the studio.
+## v3 assigns responsibility by feature
 
-A studio is not one game. So **every game gets its own slot, and each slot is divided into design, spec, art and QA.** Two slots currently have anything in them.
+The production process changed on 2026-10-08. Planning, development, and QA had previously exchanged documents and messages across separate sessions. The default structure now has **one director per game, one owner per card, and a verifier separate from the maker**.
 
-The parts don't come in the same number for every game. The wuxia game has one more — **Client** — and that's correct: **a client part exists only where there is code.** Put one under a game that doesn't exist and it isn't empty, it's a lie.
-
-| Slot | What it is | State |
+| Concern | Earlier process | v3 |
 |---|---|---|
-| **[Wuxia game](/en/built/moon-studio/wuxia/index.md)** (working title) | Pattern-form action RPG. Unity 6 · URP · toon shading | **Focus · in progress** |
-| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Pixel creatures that live on your desktop. Python · Windows | **Downloadable** |
-| [Future game 1](/en/built/moon-studio/future-1/index.md) | Doesn't exist yet | Empty slot |
-| [Future game 2](/en/built/moon-studio/future-2/index.md) | Doesn't exist yet | Empty slot |
+| Unit of responsibility | Discipline and session | One observable feature |
+| Current progress | Messages and handoff documents | A current board plus cards, results, and verification records |
+| Feature responsibility | Design, code, and images passed between disciplines | An owner handles the card's design details, code, data, and headless tests |
 
-## Why the empty slots are built first
+The director resolves overlapping file and function ownership before work starts. Independent tasks can run together, while Unity code work and tests that use the screen have shared resources that constrain concurrency.
 
-Shape a studio around one game and **the day a second one arrives, all of it gets rebuilt.**
+## Headless tests run during implementation and screen checks follow integration
 
-This site did exactly that. Design, spec, client, art and QA hung directly off MOON Studio. It read fine — but that layout had baked **the assumption of a single game** into the folder structure rather than into a sentence. The moment there are two games, every address changes and every link anyone made from outside dies with it.
+Owners write and run headless tests while implementing. A verifier checks the integrated batch on screen. Initial verification, milestones, and checks after packaging cover the wider build; a repair can be rechecked against the changed area and the preceding failures.
 
-So the level got built while there is still only one game. **An empty slot isn't waste; it's an assumption made visible.** An empty slot tells anyone "nothing here yet." No slot at all reads as "this studio has one game" — and that was the false one.
+**Product defects, test-tool problems, known issues, and unexecuted checks retain different states.** The verifier records reproduction steps and judgments without editing the code. Repairs return to the responsible owner.
 
-The empty slots carry design, spec, art and QA too. Each one records, in a line, **which of the lessons paid for in the wuxia game can actually travel** to the next one.
+The packaged executable is checked again. Correct source code alone does not establish that the file someone receives behaves correctly.
 
-## Started and stopped
+## Art retains continuity and integration retains an owner
 
-Other things got built besides those four. They don't get slots. **They stopped because there was no reason to keep going** — a slot would make them look active.
+For Kkaeal, Art01 handles character animation, movement, and arena artwork. Art02 handles skills, effects, and presentation artwork. Unfamiliar work starts with a small pilot before expanding. Art delivers to staging, and the director installs it into the build being checked.
 
-| Project | How far | Why it stopped |
-|---|---|---|
-| Wuxia *jianghu* (working title) | Skeleton done | The focus shifted before playtesting |
-| Tower defence | Wave design and balance verification, full run | Building one was the point, and that was achieved |
-| Water-flow puzzle | 100 levels, every one verified solvable by solver | Same |
-| Course port | In progress | It's for learning, so there's no finish line |
+Since 2026-10-16, some work has also used Claude for the draft and Codex for the main production and finishing pass. Lighter work can stay with one tool. **The delivery and review responsibilities matter more than the tool names.** I make the final decisions about taste and finish.
 
-Leaving them visibly unfinished seems more honest than presenting them as though they were finished.
+## The version being built can differ from the version being downloaded
 
-## Why this is here
+Kkaeal's public download repository points to v0.1.6. Its local board separately records a v0.1.7 build and development and verification of a v0.2.0 test build. The download version has not been raised merely because newer code or a test build exists.
 
-Not because it is finished. Because it is **the one build I can break in public.**
+Applying balance changes and publishing a release are separate decisions too. The production process retains a human release gate; completing a local build does not automatically publish it.
 
-Everything else I test belongs to somebody else. The findings are real, the numbers are real, and none of it can leave the building. This one is mine, which makes it the place where a technique gets to be shown rather than described.
+## The document tree is a reading structure
 
-So the studio is a hobby and **a test bench** at the same time. Verification methods get broken here first, and only the survivors go into the pipelines at work. Things like "when zero means two different things, the test passes a broken build" crossed over that way.
+Design, specification, world, implementation, art, and QA under a game's address organize the **records for a reader**. They do not imply a permanent session for every discipline. The Unity prototype pages preserve the measurements and lessons from that version.
+
+[Future game 1](/en/built/moon-studio/future-1/index.md) and [Future game 2](/en/built/moon-studio/future-2/index.md) are reserved document slots, excluded from counts of real or active games. Tower defence, the water-flow puzzle, and course work also remain experiment and learning records rather than current releases.
+
+## A changed process is not yet a measured speedup
+
+v3 aims to reduce handoff costs and messages that I have to relay. This update checks the operating rules, current board, and public release. It does not provide a new controlled measurement of the speed difference.
+
+The studio is also a test bench where I can break my own work in public. Keeping implementation, verification, and unfinished work distinct is what makes those experiments useful to the next project.

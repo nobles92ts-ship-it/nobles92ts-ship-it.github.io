@@ -10,6 +10,8 @@
 
 ---
 
+> This page records the earlier wuxia Unity prototype. Its measurements and verification results belong to that version. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process and project states.
+
 **When the setting is decoration, the systems are left as bare numbers. Here factions become collectibles and identity becomes a stat.**
 
 ## The problem — a setting that floats free

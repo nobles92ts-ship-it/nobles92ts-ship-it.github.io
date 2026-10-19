@@ -10,6 +10,8 @@
 
 ---
 
+> This page records the earlier wuxia Unity prototype. Its measurements and verification results belong to that version. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process and project states.
+
 **Turning "win by reading the pattern" into an actual rule. Turned, it left exactly one dial.**
 
 ## First — "there has to be something to read"

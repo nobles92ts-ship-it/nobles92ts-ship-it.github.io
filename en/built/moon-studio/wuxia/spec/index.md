@@ -10,6 +10,8 @@
 
 ---
 
+> This page records the earlier wuxia Unity prototype. Its measurements and verification results belong to that version. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process and project states.
+
 **The rules from the design page as an actual artifact. Except that opening the project to fill this page showed the spec was *two months* behind the game.**
 
 ## First — the document and the data had drifted apart

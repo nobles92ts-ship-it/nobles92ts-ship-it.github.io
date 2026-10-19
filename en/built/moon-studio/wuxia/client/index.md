@@ -10,6 +10,8 @@
 
 ---
 
+> This page records the earlier wuxia Unity prototype. Its measurements and verification results belong to that version. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process and project states.
+
 **The places where handling time and hit resolution leaked. Every one of them was wrong *quietly*, without throwing.**
 
 ## What they have in common
