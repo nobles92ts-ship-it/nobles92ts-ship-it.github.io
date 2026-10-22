@@ -2,7 +2,7 @@
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
-- 수치: v0.1.6 베타 · Windows · 무료
+- 수치: v0.2.0 베타 · Windows · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
 - 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="깨알 받기">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.1.6 베타 · 약 63MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.2.0 베타 · 약 67MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>깨알</b> 폴더의 <b>깨알.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
@@ -122,15 +122,15 @@
 
 아트01은 캐릭터·동작과 경기장 그림을, 아트02는 기술·이펙트·연출을 맡는다. 일감에 따라 Claude 초안과 Codex 본작업을 나누기도 한다. 그림은 임시 납품 위치로 받고, 게임에 넣는 일과 넣은 판의 확인은 따로 한다. 전체 제작 흐름은 [문스튜디오 v3](/ko/built/moon-studio/index.md)에 정리했다.
 
-[스튜디오 운영 보강](/ko/built/moon-studio/index.md)은 디렉터·카드별 오너·새 검증관·지속 아트 세션을 유지하며 인수·중복·자원 예약을 강화했다. 개발·QA 상시 조율자는 병목 확인 뒤 시범한다. 규칙과 로컬 가드는 설치했지만 깨알의 실제 전환·인수는 아직 확인하지 않았다.
+[스튜디오 운영 보강](/ko/built/moon-studio/index.md)은 디렉터·카드별 오너·새 검증관·지속 아트 세션을 유지하며 인수·중복·자원 예약을 강화했다. 개발·QA 상시 조율자는 병목 확인 뒤 시범한다. 2026-10-22에 깨알 디렉터 자리를 이 가드의 인수 절차로 넘겨받았고, 그 판으로 v0.2.0을 냈다.
 
-| 판 | 2026-10-19에 확인한 상태 |
+| 판 | 2026-10-23에 확인한 상태 |
 |---|---|
-| v0.1.6 | 공개 받기 저장소의 최신 배포판. 이 페이지의 기능 표와 받기 안내 기준 |
-| v0.1.7 | 로컬 빌드 기록. 공개 배포판으로 바꾸지 않음 |
-| v0.2.0 | 시험판 제작·검증 중. 모든 작업 완료나 공개를 뜻하지 않음 |
+| v0.2.0 | 공개 받기 저장소의 최신 배포판(2026-10-23). 받기 안내 기준 |
+| v0.1.7 | 공개하지 않고 v0.2.0에 합침 |
+| v0.1.6 | 이전 공개판. 이 페이지의 기능 표 기준 |
 
-확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.1.6)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
+확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.0)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
 
 ## v2 당시 세 세션의 경계에서 배운 것
 
