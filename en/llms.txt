@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 121 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 122 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -95,6 +95,7 @@ Before reading the list —
 - [Agent harnesses · eli5 — a plugin with zero lines of code](https://aitryed.com/en/teardowns/harness/eli5/index.md): One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.
 - [Agent harnesses · BrowserSkill — lending an agent my browser](https://aitryed.com/en/teardowns/harness/browserskill/index.md): Tencent's tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.
 - [Agent harnesses · Harness2](https://aitryed.com/en/teardowns/harness/harness2/index.md): A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.
+- [Agent harnesses · attention-span — the note that told Claude to bold line one, and what the number counted](https://aitryed.com/en/teardowns/harness/attention-span/index.md): Three style notes that make Claude's answers shorter and clearer up front. Recounting the README's numbers from the raw data, the 43% length cut held up, but "the answer is in line one, 3% to 75%" turned out to count whether line one starts in bold.
 - [Context and memory](https://aitryed.com/en/teardowns/memory/index.md): What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
 - [Context and memory · RAG without a vector DB](https://aitryed.com/en/teardowns/memory/rag-without-vectors/index.md): Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.
 - [Context and memory · Headroom](https://aitryed.com/en/teardowns/memory/headroom/index.md): It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn't exist.
