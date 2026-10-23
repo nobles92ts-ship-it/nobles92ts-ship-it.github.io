@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aitryed.com/en/</loc>
-    <lastmod>2026-10-23T02:32:59+09:00</lastmod>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/"/>
   </url>
   <url>
     <loc>https://aitryed.com/ko/</loc>
-    <lastmod>2026-10-23T02:32:59+09:00</lastmod>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/"/>
@@ -1024,14 +1024,14 @@
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/</loc>
-    <lastmod>2026-10-22T10:49:10+09:00</lastmod>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/"/>
   </url>
   <url>
     <loc>https://aitryed.com/ko/teardowns/</loc>
-    <lastmod>2026-10-22T10:49:10+09:00</lastmod>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/"/>
@@ -1483,6 +1483,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/superpowers/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/superpowers/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/superpowers/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/en/teardowns/harness/task-observer/</loc>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/task-observer/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/task-observer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/task-observer/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/teardowns/harness/task-observer/</loc>
+    <lastmod>2026-10-23T13:52:24+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/task-observer/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/task-observer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/task-observer/"/>
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/memory/</loc>
