@@ -56,11 +56,11 @@ The guard applies to participants sharing the same local state on one PC. Unregi
 
 ## Public releases and development builds have different states
 
-I checked the public release and local production records on 2026-10-23.
+I checked the public release and local production records on 2026-10-24.
 
 | Project | What it explores | Confirmed state |
 |---|---|---|
-| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Desktop creature collecting and raising | Public release v0.2.0 (2026-10-23); v0.1.7 was folded into it without its own release |
+| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Desktop creature collecting and raising | Public release v0.2.1 (2026-10-24), after v0.2.0 (2026-10-23); v0.1.7 was folded into v0.2.0 without its own release |
 | **MukGeom** | Drawing grid patterns to counter an opponent's martial forms | Local prototype and design records |
 | **ManInJeok** | Fighting crowds using the same wuxia design family | Local prototype and design records |
 | **[Wuxia Unity prototype](/en/built/moon-studio/wuxia/index.md)** | The original design and implementation of 44 forms and 26 artifacts | Retained reference and earlier experiments |
@@ -139,7 +139,7 @@ Since 2026-10-16, some work has also used Claude for the draft and Codex for the
 
 ## The version being built can differ from the version being downloaded
 
-Since 2026-10-23 Kkaeal's public download repository points to v0.2.0. Until then it pointed to v0.1.6, while the local board separately recorded a v0.1.7 build and the development and verification of a v0.2.0 test build. The download version has not been raised merely because newer code or a test build exists.
+Since 2026-10-24 Kkaeal's public download repository points to v0.2.1. On 2026-10-23 it pointed to v0.2.0, and before that to v0.1.6, while the local board separately recorded a v0.1.7 build and the development and verification of a v0.2.0 test build. The download version has not been raised merely because newer code or a test build exists.
 
 Applying balance changes and publishing a release are separate decisions too. The production process retains a human release gate; completing a local build does not automatically publish it.
 
