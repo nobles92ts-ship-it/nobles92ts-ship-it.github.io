@@ -2,7 +2,7 @@
 
 > 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
-- 수치: v0.2.1 베타 · Windows · 무료
+- 수치: v0.2.2 베타 · Windows · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
 - 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="깨알 받기">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.2.1 베타 · 약 67MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.2.2 베타 · 약 67MB · 무료</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></div></div>
 <div class="gb-mo"><p>휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.</p><button type="button" class="gb-copy" data-done="복사했어요" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">주소 복사</button></div>
 <ol class="gb-steps"><li><i>1</i>받은 zip 을 풉니다</li><li><i>2</i><b>깨알</b> 폴더의 <b>깨알.exe</b> 를 두 번 누릅니다</li><li><i>3</i>파란 창이 뜨면 <b>추가 정보 → 실행</b></li></ol>
 </div>
@@ -48,7 +48,7 @@
 | **상점 뽑기** | 모은 골드로 뽑기를 돌려(1회 300G) 도감을 채웁니다 |
 | **매일 선물** | 하루 한 번, 첫 활동 5분 뒤 리본을 단 몬스터가 걸어옵니다. 눌러야 데려옵니다 |
 | **미니게임** | 파트너와 두는 **오목**(하 · 중 · 상 · 극상, 그리고 카드가 차례를 정하는 «랜덤») · **그림 맞추기** 1 · 2 · 3단계 · 실루엣 맞추기 |
-| **통신 대전** | 내 팀을 코드 한 줄로 바꿔 친구 팀과 겨룹니다. 보상은 없고, 같은 판끼리 씁니다 |
+| **통신 대전** | 내 팀을 코드 한 줄로 바꿔 친구와 10 대 10, 한 마리씩 1:1 로 겨룹니다. 보상은 없고, 같은 판끼리 씁니다 |
 
 표의 숫자는 v0.1.6 기준입니다.
 
@@ -98,7 +98,7 @@
 
 세이브는 게임 파일 옆이 아니라 `%APPDATA%\Pixling` 에 저장됩니다(폴더 이름은 옛 이름 그대로 둡니다 — 바꾸면 키우던 생물을 못 찾습니다). 새 판이 나오면 **새 zip 을 받아 덮어쓰기만** 하면 됩니다. 키우던 생물은 그대로 있습니다.
 
-덮어쓰는 일도 대개는 게임이 해 줍니다. **새 판이 나오면 켤 때 알려 줍니다.** 켤 때 한 번 GitHub(받기 저장소)에 새 판이 있는지 묻고 — 보내는 것은 판 번호뿐입니다 — «받기»를 눌러 동의할 때만 받습니다. 기다리기 싫으면 메뉴 **«⬆ 업데이트»** 를 누르세요. 언제든 바로 묻습니다(v0.1.6 부터).
+덮어쓰는 일도 대개는 게임이 해 줍니다. **새 판이 나오면 켤 때 알려 줍니다.** 켤 때 한 번 GitHub(받기 저장소)에 새 판이 있는지 묻고 — 보내는 것은 판 번호뿐입니다 — «받기»를 눌러 동의할 때만 받습니다. 기다리기 싫으면 메뉴 **«⬆ 업데이트»** 를 누르세요. 언제든 바로 묻습니다(v0.1.6 부터). 켜 둔 동안에는 업데이트할 때까지 디지바이스 말풍선으로 30분마다 다시 알려 줍니다(v0.2.2 부터 · 묻는 것은 켤 때 한 번 그대로).
 
 이 알림은 v0.1.3 부터 들어 있습니다. 그보다 옛 판을 쓰고 계시면 알림이 오지 않으니, 한 번만 이 페이지에서 받아 덮어써 주세요.
 
@@ -122,16 +122,17 @@
 
 아트01은 캐릭터·동작과 경기장 그림을, 아트02는 기술·이펙트·연출을 맡는다. 일감에 따라 Claude 초안과 Codex 본작업을 나누기도 한다. 그림은 임시 납품 위치로 받고, 게임에 넣는 일과 넣은 판의 확인은 따로 한다. 전체 제작 흐름은 [문스튜디오 v3](/ko/built/moon-studio/index.md)에 정리했다.
 
-[스튜디오 운영 보강](/ko/built/moon-studio/index.md)은 디렉터·카드별 오너·새 검증관·지속 아트 세션을 유지하며 인수·중복·자원 예약을 강화했다. 개발·QA 상시 조율자는 병목 확인 뒤 시범한다. 2026-10-22에 깨알 디렉터 자리를 이 가드의 인수 절차로 넘겨받았고, 그 판으로 v0.2.0(2026-10-23)과 v0.2.1(2026-10-24)을 냈다.
+[스튜디오 운영 보강](/ko/built/moon-studio/index.md)은 디렉터·카드별 오너·새 검증관·지속 아트 세션을 유지하며 인수·중복·자원 예약을 강화했다. 개발·QA 상시 조율자는 병목 확인 뒤 시범한다. 2026-10-22에 깨알 디렉터 자리를 이 가드의 인수 절차로 넘겨받았고, 그 판으로 v0.2.0(2026-10-23) · v0.2.1(2026-10-24) · v0.2.2(2026-10-26)를 냈다.
 
-| 판 | 2026-10-24에 확인한 상태 |
+| 판 | 2026-10-26에 확인한 상태 |
 |---|---|
-| v0.2.1 | 공개 받기 저장소의 최신 배포판(2026-10-24). 받기 안내 기준 |
+| v0.2.2 | 공개 받기 저장소의 최신 배포판(2026-10-26). 받기 안내 기준 |
+| v0.2.1 | 이전 공개판(2026-10-24) |
 | v0.2.0 | 이전 공개판(2026-10-23) |
 | v0.1.7 | 공개하지 않고 v0.2.0에 합침 |
 | v0.1.6 | 이전 공개판. 이 페이지의 기능 표 기준 |
 
-확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.1)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
+확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.2)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
 
 ## v2 당시 세 세션의 경계에서 배운 것
 
