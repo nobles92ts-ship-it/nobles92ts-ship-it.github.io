@@ -165,6 +165,21 @@ Except **the same sentence can sit in two places**: the smoke checklist at the f
 - **How to set up a state is not in the bundle.** Cheats, test accounts, where the logs live — that differs from game to game, so the project has to supply it. Without it, the case stays BLOCKED (environment).
 - **Some shifts get past the check.** A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording. That is why the original stays the truth. Korean also has a short way of writing *not*, and at first a dropped one passed too — the *nothing is upgraded* above is phrased exactly that way in the Korean original. That was fixed on 12 October, and it is caught now.
 
+## 26 October, v4.3.8 — more to look at once a run is over
+
+On 26 October 2026 I put v4.3.8 on the public repo ([release notes](https://github.com/nobles92ts-ship-it/AI_GAME_QA_TestCase/releases/tag/v4.3.8)). Six things changed.
+
+| What | In plain words |
+|---|---|
+| **A report card when it finishes** | Once the cases are final, a separate report (`quality_report`) is built. One page shows which sentence of the spec became which case, what was left out, and which questions are still open. The sheet's existing columns are left alone |
+| **A plan-for-running slot in the design** | For each of ten checks the design now says whether it applies to the feature and how risky it is. Examples: how many wrong logins before lockout, reconnecting, how long data is kept, screen sizes. An older design without the slot is reported as *unknown*, never as *passed* |
+| **A check that the numbers in the design match** | Code compares the settings a design states against the baseline. It only reads and never edits. Whether the meaning is right is still the reviewers' job |
+| **A cheat memo** | Starting a test sometimes needs an in-game command (a cheat). The AI only picks *which cheat and which item name*. Code finds the real item number in the table, builds one command line, and attaches it as a **note** on the first row of the sub-category. Cell values are not changed, and a name missing from the table drops that cheat |
+| **It stops at a limit** | If usage limits or a busy model make a call fail, the run stops and tells you instead of hitting the same wall again |
+| **Where the "needs spec clarification" list sits** | On newly made tabs that list moves to columns R and S: R is the number, S is the item. Existing tabs were not moved |
+
+All six were checked only as far as a full test run on a fresh install. This page has no measurement of what they change on an internal spec.
+
 ## An honest limit
 
 **A thin specification produces thin output.**
@@ -305,6 +320,17 @@ Not done yet:
 - **The third, the short negative, was fixed in v4.3.7 (12 October 2026).** Negation was only recognised when the sentence ends in Korean's long negative form (`~않는지` / `~없는지`), so a dropped short form (`안 ~는지`) passed. The fix turned up a second hole with the same root. To decide whether the expectation kept its negative, the gate looked for the fragment `안 `, so the last syllable of `동안` (*for*, as in *for 30 days*) counted as a negative that survived. 43 of the 2,738 negative sentences in the internal final rows had that shape, and they are covered now too. The 33 rows this page reported before were wrong: that regex was counting positives such as `동안 재생되는지` (*plays for …*), and the short form itself appears 0 times in 13,366 rows.
 - **The 0.6 content-word threshold was never measured.** In the one real run no case failed on content, so there is no distribution to judge it against yet.
 - **The Drive upload is blocked by instruction, not by code.** The design agent is only told to skip it, so the completion report checks separately that its link list is empty.
+- **The v4.3.8 additions passed only the producing side's tests.** The full suite ran on a fresh install. How often the cheat memo picks the right item from a real game table, and whether the quality report is actually read, has never been measured. The cap of three items per name (`MAX_SAME_NAME`) is a chosen value, not a measured one.
+
+## What v4.3.8 added (26 October 2026)
+
+- **Quality report.** `lib/quality_report.js` derives `quality_report.md/html/json` from the confirmed rows, deterministically, and FINAL-3 ships the MD. It carries the feature tree, source-to-case coverage with the denominators kept apart, excluded and uncovered items, review notes and questions, and the execution plan. It is also produced on `--no-sheet` and on S6/S7 resumes, and it never changes an existing result column.
+- **Execution-plan metadata.** `lib/execution_metadata.js` stores the decisions for ten checks inside the design file (`auth_failures` · `rejoin` · `reconnect` · `retention` · `url_state` · `token` · `concurrency` · `address_change` · `viewport` · `calendar`). Analysis §3.12 and design-review criterion C-17 are its pair; a legacy design stays *unknown*.
+- **Design evidence audit.** `lib/design_evidence_audit.js` compares declared settings against the declared baseline, read-only, and writes the HIGH count to the chain log. Judging meaning, source and approval stays with C-06 / C-16.
+- **Cheat memo (FINAL-5).** The model (sonnet) emits only registered cheat ids and item-name search terms. `lib/cheat_memo.js` resolves each name to an id in the item table, shapes the arguments and assembles one line. If a name matches up to three items, each gets its own line; more than that and the name is treated as too broad and dropped. The line goes in only as a **cell note** on the top row of the sub-category, never as a value, because the sub-category text is the key the gates group by. A failure leaves the run successful, and `TCTEAM_CHEAT_MEMO=0` turns it off.
+- **Resource-failure stop.** Quota and model-capacity failures are classed as retry code 11 so the same call is not repeated, and the S1 chain stops with exit code 15 (`[STOP:resource]`).
+- **Panel position.** For new tabs `apply_labeling.js` writes a section header row from R2, then R (number, restarting at 1 per section) and S (item). The old M/N block from row 12 is no longer written and existing tabs were not migrated. `sheet_layout_contract.test.js` keeps it one column clear of the project-info panel.
+- **Codex runner and brain index.** The first turn waits until the tool list has arrived, and the gate, the indexer and the search child all read the same runtime home.
 
 ## Two lessons that cost something
 
