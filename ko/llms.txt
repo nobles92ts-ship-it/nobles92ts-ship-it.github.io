@@ -97,10 +97,10 @@
 - [에이전트 하네스 · Harness2](https://aitryed.com/ko/teardowns/harness/harness2/index.md): 모델은 그대로 두고 지시문·도구·작업 절차를 고치는 연구입니다. 두 층의 개선 구조와 논문 수치를 읽고, Windows 원본 데모가 어디서 멈추는지 확인했습니다.
 - [에이전트 하네스 · attention-span — 첫 줄을 굵게 시킨 쪽지, 그리고 그 숫자의 정체](https://aitryed.com/ko/teardowns/harness/attention-span/index.md): Claude 의 답을 짧고 앞머리가 선명하게 만드는 말투 쪽지 세 장입니다. README 의 숫자를 원자료로 다시 세어 보니 분량 43% 는 맞았고, 「첫 줄에 답이 있다 3%→75%」는 첫 줄이 굵은 글씨로 시작했는지를 센 숫자였습니다.
 - [에이전트 하네스 · task-observer — 스킬을 스스로 고치지 않는 스킬 개선기](https://aitryed.com/ko/teardowns/harness/task-observer/index.md): 일하다 고친 것을 적어 두고, 일주일에 한 번 사람에게 스킬 개정안을 내미는 스킬입니다. 영상은 「토큰 아끼는 도구」 둘 중 하나로 소개했는데, 이 레포는 토큰을 아끼는 도구가 아니라 세션마다 45.6KB 를 읽는 도구입니다.
-- [컨텍스트와 기억](https://aitryed.com/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
+- [에이전트 하네스 · 당근 SEED](https://aitryed.com/ko/teardowns/harness/karrot-seed/index.md): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
+- [컨텍스트와 기억](https://aitryed.com/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
 - [컨텍스트와 기억 · 벡터DB 없는 RAG](https://aitryed.com/ko/teardowns/memory/rag-without-vectors/index.md): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
 - [컨텍스트와 기억 · Headroom](https://aitryed.com/ko/teardowns/memory/headroom/index.md): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.
-- [컨텍스트와 기억 · 당근 SEED](https://aitryed.com/ko/teardowns/memory/karrot-seed/index.md): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
 - [컨텍스트와 기억 · 세컨드 브레인 강의](https://aitryed.com/ko/teardowns/memory/second-brain-course/index.md): 커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.
 - [컨텍스트와 기억 · 그래프 엔지니어링](https://aitryed.com/ko/teardowns/memory/graph-engineering/index.md): 영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.
 - [컨텍스트와 기억 · 옵시디언 LLM 위키](https://aitryed.com/ko/teardowns/memory/llm-wiki-obsidian/index.md): 3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.

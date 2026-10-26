@@ -154,7 +154,7 @@
 |---|---|
 | **마운트 지점 부재** — 설치해도 호출할 곳이 없다 | [ip-as-logo](/ko/teardowns/harness/ip-as-logo-skill/index.md) · [DSH better-sidebar](/ko/teardowns/harness/dsh-better-sidebar/index.md) · [dsh-anchored-standard](/ko/teardowns/memory/dsh-anchored-standard/index.md) · [ASIDE](/ko/teardowns/harness/aside/index.md) |
 | **표적 부재** — 고칠 대상이 내 쪽에 없다 | [watermarks-remover](/ko/teardowns/qa/watermarks-remover/index.md) · [Headroom](/ko/teardowns/memory/headroom/index.md) · [토스 네뷸라](/ko/teardowns/qa/toss-nebula/index.md) · [그래프 엔지니어링](/ko/teardowns/memory/graph-engineering/index.md) |
-| **이미 갖고 있음** — 순증이 0이다 | [obra/superpowers](/ko/teardowns/harness/superpowers/index.md) · [ECC](/ko/teardowns/harness/ecc/index.md) · [세컨드 브레인 강의](/ko/teardowns/memory/second-brain-course/index.md) · [당근 SEED](/ko/teardowns/memory/karrot-seed/index.md) |
+| **이미 갖고 있음** — 순증이 0이다 | [obra/superpowers](/ko/teardowns/harness/superpowers/index.md) · [ECC](/ko/teardowns/harness/ecc/index.md) · [세컨드 브레인 강의](/ko/teardowns/memory/second-brain-course/index.md) · [당근 SEED](/ko/teardowns/harness/karrot-seed/index.md) |
 | **대상 자신의 수치가 안 맞음** | [OmniRoute](/ko/teardowns/harness/omniroute/index.md) · [ponytail](/ko/teardowns/harness/ponytail/index.md) · [Odysseus](/ko/teardowns/harness/odysseus/index.md) · [플러그인 4종 추천](/ko/teardowns/harness/four-plugins/index.md) |
 
 이 표는 마흔 편의 분할이 아니다. **네 줄은 서로 배타적이지 않고 한 편이 두 줄에 동시에 들어간다** — dsh-anchored-standard 는 마운트 지점이 없는 동시에 2단계 카탈로그를 이미 갖고 있었다. 그래서 축마다 숫자를 먼저 쓰지 않고 편 이름을 나열했다. 나열의 길이가 그 축의 크기다.
@@ -232,7 +232,7 @@ npm 플러그인 하나는 별 2,575개에 커밋 250건짜리였는데, 판정�
 >
 > 열 편의 1차 수확과 확정 수확을 나란히 그린 막대. 왼쪽 연한 막대가 1차 후보이고 그 위에 겹친 진한 막대가 확정 수확이다. 열 편 중 여섯 편은 확정 수확이 0이라 진한 막대가 아예 없다. 합계는 58에서 5.5로 줄어 감축률 90.5퍼센트다.
 
-깬 것은 남의 비판이 아니라 내 실측이다. [어떤 디자인 시스템 레포에서 기법 일곱을 수확이라 적어 놓고](/ko/teardowns/memory/karrot-seed/index.md) 각각에 「내가 이미 겪은 사고」까지 붙여 뒀는데, **나흘 뒤 내 환경을 실측하고 다섯을 지웠다.** 이미 갖고 있거나 인과가 헛다리였다. 특히 한 건이 나빴다 — 과거에 겪은 사고와 그 레포의 기법을 그럴듯하게 짝지어 놨는데 **그 사고의 원인은 그 기법이 막는 것이 아니었다.** 이 오류는 대상 쪽 자료를 아무리 정독해도 안 잡힌다. 내 설정 파일을 열어야만 잡힌다. 「내 쪽 원인이 무엇이었나」는 대상의 문서 어디에도 없기 때문이다. 살아남은 둘은 둘 다 훅 하나짜리였고, 그마저 차단하지 않고 경고만 하는 모드로 먼저 돌렸다.
+깬 것은 남의 비판이 아니라 내 실측이다. [어떤 디자인 시스템 레포에서 기법 일곱을 수확이라 적어 놓고](/ko/teardowns/harness/karrot-seed/index.md) 각각에 「내가 이미 겪은 사고」까지 붙여 뒀는데, **나흘 뒤 내 환경을 실측하고 다섯을 지웠다.** 이미 갖고 있거나 인과가 헛다리였다. 특히 한 건이 나빴다 — 과거에 겪은 사고와 그 레포의 기법을 그럴듯하게 짝지어 놨는데 **그 사고의 원인은 그 기법이 막는 것이 아니었다.** 이 오류는 대상 쪽 자료를 아무리 정독해도 안 잡힌다. 내 설정 파일을 열어야만 잡힌다. 「내 쪽 원인이 무엇이었나」는 대상의 문서 어디에도 없기 때문이다. 살아남은 둘은 둘 다 훅 하나짜리였고, 그마저 차단하지 않고 경고만 하는 모드로 먼저 돌렸다.
 
 정정은 수확 쪽에만 붙은 게 아니다 — [어떤 린터 플러그인 편에서는 오탐을 2건이라 셌는데 실제로는 3건](/ko/teardowns/harness/anti-slop/index.md)이었다. 한 파일을 빠뜨려 놓고 「전수」라고 적었다. 같은 편에서 동기화 게이트가 「사본이 낡는 걸 못 잡는다」고 적어 뒀는데, 실측하니 낡은 사본이 **0건**이었다. 조립 단계가 매번 전량 재복사를 해서 그 실패 모드가 이미 없어져 있었다. 그대로 켰으면 첫 실행에 허위경보 열 건이 떴을 것이다. 이런 정정을 최종본에서 지우지 않고 남기는 이유는 [증거 등급 편](/ko/writing/verdicts/evidence-grades/index.md)에 적힌 것과 같다. 그쪽에서는 남의 레포를 README만 읽고 요약했다가 두 군데가 서로 반대 방향으로 틀렸고, **README 는 거짓말을 안 했다** — 6등급 증거를 1등급으로 읽은 것이 나였다.
 

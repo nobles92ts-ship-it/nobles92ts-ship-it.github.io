@@ -3,8 +3,8 @@
 > The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.
 
 - Headline number: 7 → 2
-- Rendered page: https://aitryed.com/en/teardowns/memory/karrot-seed/
-- Other language: https://aitryed.com/ko/teardowns/memory/karrot-seed/index.md
+- Rendered page: https://aitryed.com/en/teardowns/harness/karrot-seed/
+- Other language: https://aitryed.com/ko/teardowns/harness/karrot-seed/index.md
 - Repository: https://github.com/daangn/seed-design
 - Site guide for agents: https://aitryed.com/en/llms.txt
 

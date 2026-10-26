@@ -1,15 +1,15 @@
 # Context and memory
 
-> What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
+> What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.
 
-- Headline number: 11 written · 0 code
+- Headline number: 10 written · 0 code
 - Rendered page: https://aitryed.com/en/teardowns/memory/
 - Other language: https://aitryed.com/ko/teardowns/memory/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**Eleven pieces about what to show an AI and what to keep out of its sight. Across all eleven, not one line of code crossed over.**
+**Ten pieces about what to show an AI and what to keep out of its sight. Across all ten, not one line of code crossed over.**
 
 ## First — why decide what to keep out
 
@@ -17,7 +17,7 @@ When you give an AI a job, **telling it everything you know feels like it should
 
 There is a ceiling on how much an AI can read at once. Call that ceiling a desk. Pile every document onto the desk and **you can no longer find the one page you need.** A wide desk is not the goal; **a desk holding only what's needed right now** is.
 
-So the real question is not *how do I make it remember more* but **what goes on the desk and what stays in the drawer.** All eleven pieces are about that.
+So the real question is not *how do I make it remember more* but **what goes on the desk and what stays in the drawer.** All ten pieces are about that.
 
 ## Not one line of code crossed, and everything that did was a rule
 
@@ -34,7 +34,7 @@ Someone else's organising tool is shaped to **someone else's data.** Mine is sha
 
 ## And this shelf found more holes in my own work than any other
 
-Least taken, most gained. **Seven of the eleven found a defect while I was holding someone else's ruler against my own thing.**
+Least taken, most gained. **Six of the ten found a defect while I was holding someone else's ruler against my own thing.**
 
 That is the real value here. Not learning the good thing — **measuring your own thing by someone else's standard makes the invisible visible.**
 
@@ -91,16 +91,13 @@ Precisely because there was nothing to learn, **I filled the comparison table to
 
 ## The detailed record starts here
 
-Things about what gets sent up to the model and what stays outside it: context compression, retrieval without vectors, second brains — and **arranging a repository so that both people and agents can read it.**
+Things about what gets sent up to the model and what stays outside it: context compression, retrieval without vectors, second brains. The test for this bucket isn't what the subject is; it's whether it's about **deciding what a machine gets to read.**
 
-That last one looks out of place at first. Karrot SEED is a design system, and what actually came out of it wasn't a component but **the way its documents were laid out.** The test for this bucket isn't what the subject is; it's whether it's about **deciding what a machine gets to read.**
-
-## Eleven, and not one line of code crossed over
+## Ten, and not one line of code crossed over
 
 | Subject | What came across | Shape |
 |---|---|---|
 | [Headroom](/en/teardowns/memory/headroom/index.md) | Attach a confidence interval and a label to anything unmeasured | one convention |
-| [Karrot SEED](/en/teardowns/memory/karrot-seed/index.md) | Auto-run the build when the source changes · a verification reminder at session end | two hooks |
 | [RAG without a vector DB](/en/teardowns/memory/rag-without-vectors/index.md) | Cutting the problem along a scale axis and drawing the boundary | one structure |
 | [A second-brain workshop](/en/teardowns/memory/second-brain-course/index.md) | Score a new skill **within the same turn** it was written | one timing rule |
 | [Graph engineering](/en/teardowns/memory/graph-engineering/index.md) | Three review lenses in parallel — 9.9 minutes a run | one wiring change |
@@ -115,17 +112,16 @@ That last one looks out of place at first. Karrot SEED is a design system, and w
 
 ## And this bucket found the most holes in my own work
 
-Seven pieces used somebody else's principle as a ruler and produced a number.
+Six pieces used somebody else's principle as a ruler and produced a number.
 
 - Of **1,021 markdown files in my vault, 47 (4.6%) have front matter** — so when retrieval fails there, the cause is likely empty metadata, not a missing tool
 - Cache reuse 92.5–96.3%, uncached input 1.8–2.0 tokens per call — **the compression tool had nothing left to compress**
-- Of seven techniques I'd written down as harvested, five died **the moment I opened my own `settings.json`** — already there, or a false lead
 - A full scan of 99 skills found **one with no description at all**, so it never fires from natural speech, plus sixteen over 500 lines
 - Across 52 run logs, **the feature a video called "the heart" met its trigger condition once**
 - Running the autonomous-accumulation track for real: **zero items, zero files, zero observer hooks** — it was only installed
 - Opening the API catalogue I built a month ago: **liveness was measured on 300 of its 1,791 rows (17%)**
 
-The third stung most. It was the kind of error no amount of careful reading of the repo would ever catch.
+The one that stung most was the kind of error no amount of careful reading of the repo would ever catch — but that piece is about hooks and skills, so it moved to [agent harnesses](/en/teardowns/harness/karrot-seed/index.md).
 
 ## The second axis — what crossed was "when" and "where"
 

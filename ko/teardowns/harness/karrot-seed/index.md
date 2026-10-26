@@ -3,8 +3,8 @@
 > 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
 
 - 수치: 7종 → 2종
-- 사람이 보는 화면: https://aitryed.com/ko/teardowns/memory/karrot-seed/
-- 반대 언어: https://aitryed.com/en/teardowns/memory/karrot-seed/index.md
+- 사람이 보는 화면: https://aitryed.com/ko/teardowns/harness/karrot-seed/
+- 반대 언어: https://aitryed.com/en/teardowns/harness/karrot-seed/index.md
 - 저장소: https://github.com/daangn/seed-design
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
 

@@ -1359,6 +1359,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/ip-as-logo-skill/"/>
   </url>
   <url>
+    <loc>https://aitryed.com/en/teardowns/harness/karrot-seed/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/karrot-seed/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/karrot-seed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/karrot-seed/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/teardowns/harness/karrot-seed/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/karrot-seed/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/karrot-seed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/karrot-seed/"/>
+  </url>
+  <url>
     <loc>https://aitryed.com/en/teardowns/harness/mattpocock-skills/</loc>
     <lastmod>2026-09-17T15:31:24+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/mattpocock-skills/"/>
@@ -1567,20 +1579,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/memory/headroom/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/memory/headroom/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/memory/headroom/"/>
-  </url>
-  <url>
-    <loc>https://aitryed.com/en/teardowns/memory/karrot-seed/</loc>
-    <lastmod>2026-09-17T15:31:24+09:00</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/memory/karrot-seed/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/memory/karrot-seed/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/memory/karrot-seed/"/>
-  </url>
-  <url>
-    <loc>https://aitryed.com/ko/teardowns/memory/karrot-seed/</loc>
-    <lastmod>2026-09-17T15:31:24+09:00</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/memory/karrot-seed/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/memory/karrot-seed/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/memory/karrot-seed/"/>
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/memory/llm-wiki-obsidian/</loc>
