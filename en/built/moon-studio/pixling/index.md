@@ -2,7 +2,7 @@
 
 > A free Windows desktop game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
 
-- Headline number: v0.2.4 beta · Windows · free
+- Headline number: v0.2.5 beta · Windows · free
 - Rendered page: https://aitryed.com/en/built/moon-studio/pixling/
 - Other language: https://aitryed.com/ko/built/moon-studio/pixling/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -12,7 +12,7 @@
 <section class="getbox" aria-label="Download Kkaeal">
 <div class="gb-img"><img src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"></div>
 <div class="gb-b">
-<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.2.4 beta · about 67 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
+<div class="gb-row"><a class="gb-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download — Windows</a><div class="gb-meta"><b>Kkaeal.zip</b><span>v0.2.5 beta · about 67 MB · free</span><a class="gb-alt" href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></div></div>
 <div class="gb-mo"><p>It won't run on a phone. <b>Open this page on a PC</b> to download.</p><button type="button" class="gb-copy" data-done="Copied" onclick="const u=location.origin+location.pathname;navigator.clipboard.writeText(u).then(()=>this.textContent=this.dataset.done,()=>this.textContent=u)">Copy link</button></div>
 <ol class="gb-steps"><li><i>1</i>Unzip the download</li><li><i>2</i>Double-click <b>깨알.exe</b> in the <b>깨알</b> folder</li><li><i>3</i>If a blue box appears: <b>More info → Run anyway</b></li></ol>
 </div>
@@ -48,7 +48,7 @@ The first builds had only those three. Each version since has added something to
 | **Shop gacha** | Spend that gold on pulls (300 a pull) to fill the Dex |
 | **Daily gift** | Once a day, five minutes after you start, a creature walks in wearing a ribbon. Click it to keep it |
 | **Mini-games** | **Gomoku** against your partner, with four skill levels plus «Random», where a card deck decides who moves · **Picture match** in three stages · a silhouette quiz |
-| **Link Battle** | Turn your team into one line of code and fight a friend 10 vs 10, one-on-one. No rewards, and both sides need the same version |
+| **Link Battle** | Turn your team into one line of code and fight a friend 10 vs 10, one-on-one. No rewards, and both sides need the same version. Turn it on and your team joins the **online ranking**, where you can challenge other players' teams up to 20 times a day; the server re-checks results every night before they count (from v0.2.5, off by default) |
 
 Numbers in the table are as of v0.1.6.
 
@@ -122,11 +122,12 @@ This describes the operating records checked on 2026-10-19. A main director mana
 
 Art01 handles characters, motion, and arena artwork; Art02 handles skills, effects, and presentation. Some tasks split a Claude draft from Codex production work. Delivering artwork to staging, integrating it, and checking the integrated result are separate steps. The full process is described in [MOON Studio v3](/en/built/moon-studio/index.md).
 
-The [studio coordination update](/en/built/moon-studio/index.md) keeps the director, owners assigned to cards, fresh verifiers, and persistent art sessions while strengthening handoffs, duplicate prevention, and resource reservations. Extra development or QA coordinators require a demonstrated bottleneck. On 2026-10-22 the Kkaeal director seat changed hands through this guard's handover, and that director shipped v0.2.0 (2026-10-23), v0.2.1 (2026-10-24), v0.2.2 (2026-10-26), v0.2.3 (2026-10-26) and v0.2.4 (2026-10-27).
+The [studio coordination update](/en/built/moon-studio/index.md) keeps the director, owners assigned to cards, fresh verifiers, and persistent art sessions while strengthening handoffs, duplicate prevention, and resource reservations. Extra development or QA coordinators require a demonstrated bottleneck. On 2026-10-22 the Kkaeal director seat changed hands through this guard's handover, and that director shipped v0.2.0 (2026-10-23), v0.2.1 (2026-10-24), v0.2.2 (2026-10-26), v0.2.3 (2026-10-26), v0.2.4 (2026-10-27) and v0.2.5 (2026-10-28).
 
-| Version | State confirmed on 2026-10-27 |
+| Version | State confirmed on 2026-10-28 |
 |---|---|
-| v0.2.4 | Latest public download (2026-10-27); the download instructions on this page describe this release |
+| v0.2.5 | Latest public download (2026-10-28); the download instructions on this page describe this release |
+| v0.2.4 | Previous public release (2026-10-27) |
 | v0.2.3 | Previous public release (2026-10-26) |
 | v0.2.2 | Previous public release (2026-10-26) |
 | v0.2.1 | Previous public release (2026-10-24) |
@@ -134,7 +135,7 @@ The [studio coordination update](/en/built/moon-studio/index.md) keeps the direc
 | v0.1.7 | Never released on its own; folded into v0.2.0 |
 | v0.1.6 | Previous public release; the feature table on this page describes it |
 
-This is a comparison of the operating board with the [public release](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.4). I did not rerun the game's regression suite while updating this page.
+This is a comparison of the operating board with the [public release](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.5). I did not rerun the game's regression suite while updating this page.
 
 ## What the three-session v2 process taught about boundaries
 
