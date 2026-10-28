@@ -60,7 +60,7 @@ I checked the public release and local production records on 2026-10-26.
 
 | Project | What it explores | Confirmed state |
 |---|---|---|
-| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Desktop creature collecting and raising | Public release v0.2.5 (2026-10-28), after v0.2.4 (2026-10-27), v0.2.3 (2026-10-26), v0.2.2 (2026-10-26), v0.2.1 (2026-10-24) and v0.2.0 (2026-10-23); v0.1.7 was folded into v0.2.0 without its own release |
+| **[Kkaeal](/en/built/moon-studio/pixling/index.md)** | Desktop creature collecting and raising | Public release v0.2.6 (2026-10-28), after v0.2.5 (2026-10-28), v0.2.4 (2026-10-27), v0.2.3 (2026-10-26), v0.2.2 (2026-10-26), v0.2.1 (2026-10-24) and v0.2.0 (2026-10-23); v0.1.7 was folded into v0.2.0 without its own release |
 | **MukGeom** | Drawing grid patterns to counter an opponent's martial forms | Local prototype and design records |
 | **ManInJeok** | Fighting crowds using the same wuxia design family | Local prototype and design records |
 | **[Wuxia Unity prototype](/en/built/moon-studio/wuxia/index.md)** | The original design and implementation of 44 forms and 26 artifacts | Retained reference and earlier experiments |
@@ -139,7 +139,7 @@ Since 2026-10-16, some work has also used Claude for the draft and Codex for the
 
 ## The version being built can differ from the version being downloaded
 
-Since 2026-10-28 Kkaeal's public download repository points to v0.2.5. On 2026-10-27 it pointed to v0.2.4, on 2026-10-26 it pointed to v0.2.3 and v0.2.2, on 2026-10-24 to v0.2.1, on 2026-10-23 to v0.2.0, and before that to v0.1.6, while the local board separately recorded a v0.1.7 build and the development and verification of a v0.2.0 test build. The download version has not been raised merely because newer code or a test build exists.
+Since 2026-10-28 Kkaeal's public download repository points to v0.2.6 (v0.2.5 earlier that day). On 2026-10-27 it pointed to v0.2.4, on 2026-10-26 it pointed to v0.2.3 and v0.2.2, on 2026-10-24 to v0.2.1, on 2026-10-23 to v0.2.0, and before that to v0.1.6, while the local board separately recorded a v0.1.7 build and the development and verification of a v0.2.0 test build. The download version has not been raised merely because newer code or a test build exists.
 
 Applying balance changes and publishing a release are separate decisions too. The production process retains a human release gate; completing a local build does not automatically publish it.
 
