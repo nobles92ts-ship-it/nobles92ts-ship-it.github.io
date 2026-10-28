@@ -36,6 +36,9 @@
 <img src="/games/pixling/story/en/ep5/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Episode 5, page 20 of 20">
 </div>
 
-[← Ep.4 · Team Rocket Appears](/en/built/moon-studio/pixling/story-4/index.md) · The next episode is coming soon.
+<div class="story-end">
+<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-4/"><small>← Previous</small>Ep.4 · Team Rocket Appears</a><a class="sn-next" href="/en/built/moon-studio/pixling/story-6/"><small>Next →</small>Ep.6 · The Rival</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
+</div>
 
 Art credits are at the bottom of [episode 1](/en/built/moon-studio/pixling/story-1/index.md).

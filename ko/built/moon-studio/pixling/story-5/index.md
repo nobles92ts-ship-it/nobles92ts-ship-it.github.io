@@ -36,6 +36,9 @@
 <img src="/games/pixling/story/ko/ep5/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="5화 20장 / 20">
 </div>
 
-[← 4화 · 로켓단이 나타났다](/ko/built/moon-studio/pixling/story-4/index.md) · 다음 화는 곧 올라옵니다.
+<div class="story-end">
+<nav class="sn" aria-label="앞뒤 화"><a class="sn-prev" href="/ko/built/moon-studio/pixling/story-4/"><small>← 이전 화</small>4화 · 로켓단이 나타났다</a><a class="sn-next" href="/ko/built/moon-studio/pixling/story-6/"><small>다음 화 →</small>6화 · 라이벌</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">깨알 받기 (PC · 무료)</a>
+</div>
 
 그림 출처는 [1화](/ko/built/moon-studio/pixling/story-1/index.md) 맨 아래에 있습니다.

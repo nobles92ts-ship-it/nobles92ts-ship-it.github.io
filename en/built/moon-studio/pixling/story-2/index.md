@@ -36,6 +36,9 @@
 <img src="/games/pixling/story/en/ep2/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Episode 2, page 20 of 20">
 </div>
 
-[← Ep.1 · Where Are We?](/en/built/moon-studio/pixling/story-1/index.md) · [Ep.3 · The Way Home →](/en/built/moon-studio/pixling/story-3/index.md)
+<div class="story-end">
+<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-1/"><small>← Previous</small>Ep.1 · Where Are We?</a><a class="sn-next" href="/en/built/moon-studio/pixling/story-3/"><small>Next →</small>Ep.3 · The Way Home</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
+</div>
 
 Art credits are at the bottom of [episode 1](/en/built/moon-studio/pixling/story-1/index.md).

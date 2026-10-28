@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 128 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 135 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -54,6 +54,13 @@ Before reading the list —
 - [An adb-based game QA server · The photo judge](https://aitryed.com/en/built/android-qa/judge/index.md): When the log cannot decide a case, a screenshot does. Code-level rules re-check every verdict, and a model from another company takes a second look.
 - [MOON Studio](https://aitryed.com/en/built/moon-studio/index.md): A one-person AI-assisted studio combining a director, feature owners, fresh verifiers, and persistent art sessions. Records the installed handoff guard, its isolated checks, and the pending game rollout.
 - [MOON Studio · Kkaeal](https://aitryed.com/en/built/moon-studio/pixling/index.md): A free Windows desktop game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
+- [MOON Studio · Kkaeal · Ep.12 · Garurumon](https://aitryed.com/en/built/moon-studio/pixling/story-12/index.md): Episode 12 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.11 · Bill's House](https://aitryed.com/en/built/moon-studio/pixling/story-11/index.md): Episode 11 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.10 · The Cerulean Gym](https://aitryed.com/en/built/moon-studio/pixling/story-10/index.md): Episode 10 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.9 · Mt. Moon](https://aitryed.com/en/built/moon-studio/pixling/story-9/index.md): Episode 9 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.8 · The Road to Mt. Moon](https://aitryed.com/en/built/moon-studio/pixling/story-8/index.md): Episode 8 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.7 · The Pewter City Gym](https://aitryed.com/en/built/moon-studio/pixling/story-7/index.md): Episode 7 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Ep.6 · The Rival](https://aitryed.com/en/built/moon-studio/pixling/story-6/index.md): Episode 6 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
 - [MOON Studio · Kkaeal · Ep.5 · Let's Go Together](https://aitryed.com/en/built/moon-studio/pixling/story-5/index.md): Episode 5 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
 - [MOON Studio · Kkaeal · Ep.4 · Team Rocket Appears](https://aitryed.com/en/built/moon-studio/pixling/story-4/index.md): Episode 4 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
 - [MOON Studio · Kkaeal · Ep.3 · The Way Home](https://aitryed.com/en/built/moon-studio/pixling/story-3/index.md): Episode 3 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.

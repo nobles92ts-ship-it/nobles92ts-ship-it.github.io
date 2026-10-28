@@ -38,7 +38,10 @@
 <img src="/games/pixling/story/ko/ep1/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="1화 20장 / 20">
 </div>
 
-[2화 · 디지몬 VS 포켓몬 →](/ko/built/moon-studio/pixling/story-2/index.md)
+<div class="story-end">
+<nav class="sn" aria-label="앞뒤 화"><span class="sn-prev sn-none"></span><a class="sn-next" href="/ko/built/moon-studio/pixling/story-2/"><small>다음 화 →</small>2화 · 디지몬 VS 포켓몬</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">깨알 받기 (PC · 무료)</a>
+</div>
 
 ## 출처
 

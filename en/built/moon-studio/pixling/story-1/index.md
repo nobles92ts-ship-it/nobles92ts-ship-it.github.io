@@ -38,7 +38,10 @@ Tai and Agumon's group live in the Digimon world until a crack in the sky drops 
 <img src="/games/pixling/story/en/ep1/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Episode 1, page 20 of 20">
 </div>
 
-[Ep.2 · Digimon VS Pokémon →](/en/built/moon-studio/pixling/story-2/index.md)
+<div class="story-end">
+<nav class="sn" aria-label="Episodes"><span class="sn-prev sn-none"></span><a class="sn-next" href="/en/built/moon-studio/pixling/story-2/"><small>Next →</small>Ep.2 · Digimon VS Pokémon</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
+</div>
 
 ## Credits
 

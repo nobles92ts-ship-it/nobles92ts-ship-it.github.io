@@ -36,6 +36,9 @@
 <img src="/games/pixling/story/en/ep4/20.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Episode 4, page 20 of 20">
 </div>
 
-[← Ep.3 · The Way Home](/en/built/moon-studio/pixling/story-3/index.md) · [Ep.5 · Let's Go Together →](/en/built/moon-studio/pixling/story-5/index.md)
+<div class="story-end">
+<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-3/"><small>← Previous</small>Ep.3 · The Way Home</a><a class="sn-next" href="/en/built/moon-studio/pixling/story-5/"><small>Next →</small>Ep.5 · Let's Go Together</a></nav>
+<a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
+</div>
 
 Art credits are at the bottom of [episode 1](/en/built/moon-studio/pixling/story-1/index.md).
