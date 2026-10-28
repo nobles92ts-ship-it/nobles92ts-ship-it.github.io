@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-12/"><small>← Previous</small>Ep.12 · Garurumon</a><span class="sn-next sn-none">Next episode coming soon</span></nav>
+<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-12/"><small>← Previous</small>Ep.12 · Garurumon</a><a class="sn-next" href="/en/built/moon-studio/pixling/story-14/"><small>Next →</small>Ep.14 · The S.S. Anne</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
 </div>
 
