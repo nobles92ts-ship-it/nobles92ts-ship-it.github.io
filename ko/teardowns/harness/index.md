@@ -149,6 +149,7 @@ AI에게 일을 시킬 때도 비슷한 게 필요합니다. AI 자체는 그냥
 |---|---|
 | [BrowserSkill](/ko/teardowns/harness/browserskill/index.md) | 브라우저를 공유하는 설계와 실제 권한 경계는 별도로 확인한다 |
 | [Harness2](/ko/teardowns/harness/harness2/index.md) | 개선 후보의 선택은 원본보다 향상됐다는 증명이 아니다. Windows 원본 데모는 미완주라 도입을 보류했다 |
+| [pstack](/ko/teardowns/harness/pstack/index.md) | 통째로는 안 들였다. 「켜서 확인하는 법」을 쓰는 스킬 하나만 후보이고, 아직 돌리지 않았다 |
 
 새 글이 늘어도 실행한 것, 채택한 것, 다음 실험으로 남긴 것은 따로 셉니다. Harness2는 실행 흔적을 비교해 하네스를 고치는 연구지만, 이 환경에서는 최종 선택까지 완료하지 못했습니다. 논문의 개선 수치를 제 환경의 효과로 옮겨 적지 않은 이유입니다.
 

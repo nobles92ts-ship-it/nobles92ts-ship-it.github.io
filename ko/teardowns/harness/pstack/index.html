@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pstack — 에이전트 하네스</title><meta name="description" content="한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="pstack — 에이전트 하네스"><meta property="og:description" content="한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다."><meta property="og:url" content="https://aitryed.com/ko/teardowns/harness/pstack/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="pstack — 에이전트 하네스"><meta name="twitter:description" content="한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/teardowns/harness/pstack/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/teardowns/harness/pstack/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/pstack/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/pstack/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/pstack/"><link rel="stylesheet" href="/_astro/Shell.X3WZQL5G.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/harness/pstack/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/" aria-current="page"><span class="t"><span>에이전트 하네스</span><span class="kpi">23편 · 개별 판정</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물세 편의 분석과 각자의 도입 판정을 모았습니다. 과거 21편 당시의 채택 집계도 그 시점의 기록으로 남겼습니다.</span></a><a href="/ko/teardowns/memory/"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">10편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">7편 · 기존 적용 4.5 / 7</span></span><span class="s">자동화와 원인 조사 도구 일곱 편입니다. 기존 기법 적용 4.5 / 7과 REA에서 실행한 정적 시험 두 종류를 구분해 기록합니다.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">6편 · 코드 0</span></span><span class="s">게임과 제작 도구 여섯 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">96 중 1</span></span><span class="s">스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.</span></a><a href="/ko/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">285 중 1</span></span><span class="s">제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.</span></a><a href="/ko/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">1등 수확이 재발견</span></span><span class="s">코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.</span></a><a href="/ko/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">7종 중 순증 1.5</span></span><span class="s">도입을 실측으로 정당화하려다 실패했습니다. 실패했다는 사실을 그 자리에 적어 뒀습니다.</span></a><a href="/ko/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">규율 5 중 1</span></span><span class="s">문서에 적힌 규율 다섯 개가 코드로 강제되는지 하나씩 찾아봤습니다. 강제되는 건 하나였습니다.</span></a><a href="/ko/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">4줄 중 1줄</span></span><span class="s">별 9만 개짜리 룰셋에서 네 줄을 후보로 골랐는데, 근거가 버틴 건 한 줄이었습니다. 그리고 더 값나가는 건 제 룰셋 쪽에서 나왔습니다.</span></a><a href="/ko/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">수확 7종 → 0</span></span><span class="s">41,856★ 게이트웨이를 안 쓴 이유는 성능이 아니다. 이 도구의 1티어가 내 구독 계정을 위장해 태워 보내는 구조라서다.</span></a><a href="/ko/teardowns/harness/session-messaging/"><span class="t"><span>세션 간 메시징</span><span class="kpi">소켓 0 · 이미 라이브</span></span><span class="s">영상이 파낸 기전은 제 OS에 존재하지 않았습니다. 그런데 원하던 기능은 이미 켜져 있었고, 실전 실패 모드는 보안이 아니라 오배송이었습니다.</span></a><a href="/ko/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz 그룹챗</span><span class="kpi">데모 2 중 1</span></span><span class="s">채널 멤버가 사람과 로컬 CLI인 슬랙. 데모 둘 중 하나만 먹혔고, 안 먹힌 쪽을 화자 본인이 자백한 게 이 영상의 값어치입니다.</span></a><a href="/ko/teardowns/harness/four-plugins/"><span class="t"><span>플러그인 4종 추천</span><span class="kpi">4종 중 이미 기각 2</span></span><span class="s">44초짜리 추천 영상. 넷 중 둘은 제가 이미 따로 뜯어서 기각했고, 반례는 제작자 자신의 벤치마크 표 안에 있었습니다.</span></a><a href="/ko/teardowns/harness/meta-prompting/"><span class="t"><span>메타 프롬프팅</span><span class="kpi">3단계 · 검증 0</span></span><span class="s">프롬프트를 잘 쓰지 말고 재료를 다 넘긴 뒤 AI가 깎게 하라는 방법. 3단계 어디에도 결과를 재는 자리가 없습니다.</span></a><a href="/ko/teardowns/harness/fable-field-guide/"><span class="t"><span>Fable 현장 가이드</span><span class="kpi">기법 6 · 새것 3</span></span><span class="s">모델 만든 쪽 사람이 그 모델 쓰는 법을 말합니다. 그래서 기법 여섯은 믿을 만하고, 마지막 주장은 제일 못 믿을 부분입니다.</span></a><a href="/ko/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">수확 3 → 1</span></span><span class="s">프레임워크는 안 들였습니다. 그런데 이 분석의 진짜 산출은 수확이 아니라, 대상이 가르쳐준 방법으로 제 판정 둘을 스스로 부순 것이었습니다.</span></a><a href="/ko/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">기각 · 재개조건 5</span></span><span class="s">제 PC에 설치가 안 됩니다. 한 줄로 끝날 기각인데, 「계획 없음」이라 적었던 제 판단이 체인지로그 세 줄에 무너졌습니다.</span></a><a href="/ko/teardowns/harness/payg-image-routing/"><span class="t"><span>스킬 하나로 광고 이미지 · 종량제 라우팅</span><span class="kpi">수확 1 · 반증 4</span></span><span class="s">스킬 설계는 잘 만든 실물입니다. 그런데 제목이 내건 결론이 영상 자신이 띄운 표에서 무너집니다.</span></a><a href="/ko/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">수확 5 → 0</span></span><span class="s">181,214★ 레포에서 기법 다섯을 수확하려다, 이미 깔아 놓고 한 번도 안 켠 스킬 두 개에 전부 부딪혀 죽었습니다.</span></a><a href="/ko/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">기법 7 → 0</span></span><span class="s">코드가 한 줄도 없는 스킬입니다. 핵심 발명이라 본 두 기둥 중 하나는 에이전트가 읽지 않는 파일에만 있었고, 나머지 하나는 45시간에 네 번 바뀐 값이었습니다.</span></a><a href="/ko/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">규칙 15 → 0</span></span><span class="s">규칙 15종을 제 코드 전부에 돌려 27건을 잡았고 한 건도 안 고치기로 했습니다. 대신 붙일 자리를 찾다가 제 유출 방어 게이트가 조용히 꺼질 수 있게 생긴 걸 봤습니다.</span></a><a href="/ko/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">수확 4 → 1</span></span><span class="s">간판 수치 「~325KB 코어」가 실측으로 깨졌습니다. 그런데 게이트 없는 남의 저장소를 심판하던 제 게이트가, 정작 제 저장소에서는 한 번도 커밋된 적이 없었습니다.</span></a><a href="/ko/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">수확 2 → 0</span></span><span class="s">8건 중 유일한 보류입니다. 적대검증이 「내 배포도 새고 있다」를 찾아냈는데, 그 진단과 처방이 둘 다 틀렸습니다.</span></a><a href="/ko/teardowns/harness/eli5/"><span class="t"><span>eli5 — 실행 코드가 0줄인 플러그인</span><span class="kpi">865바이트 · 실행 1회</span></span><span class="s">「다섯 살한테 설명하듯 쉽게 풀어 달라」 — 그 한마디를 도구로 만든 플러그인입니다. 열어 보니 파일 셋에 865바이트, 실행 코드는 0줄이었습니다. 그리고 21일 동안 제가 실제로 부른 것은 1회였습니다.</span></a><a href="/ko/teardowns/harness/browserskill/"><span class="t"><span>BrowserSkill — 내 브라우저를 «빌려주는» 방법</span><span class="kpi">보류 · 수확 2</span></span><span class="s">텐센트가 공개한 도구입니다. AI가 제 컴퓨터의 브라우저를, 제가 이미 로그인해 둔 그대로 쓰게 해 줍니다. 설계는 좋았는데 소스를 읽다가 문 지키는 코드가 스스로 적어 둔 자백을 만났습니다.</span></a><a href="/ko/teardowns/harness/harness2/"><span class="t"><span>Harness2</span><span class="kpi">개선 방법도 기록</span></span><span class="s">모델은 그대로 두고 지시문·도구·작업 절차를 고치는 연구입니다. 두 층의 개선 구조와 논문 수치를 읽고, Windows 원본 데모가 어디서 멈추는지 확인했습니다.</span></a><a href="/ko/teardowns/harness/attention-span/"><span class="t"><span>attention-span — 첫 줄을 굵게 시킨 쪽지, 그리고 그 숫자의 정체</span><span class="kpi">분량 −43% · 첫줄 3→75%</span></span><span class="s">Claude 의 답을 짧고 앞머리가 선명하게 만드는 말투 쪽지 세 장입니다. README 의 숫자를 원자료로 다시 세어 보니 분량 43% 는 맞았고, 「첫 줄에 답이 있다 3%→75%」는 첫 줄이 굵은 글씨로 시작했는지를 센 숫자였습니다.</span></a><a href="/ko/teardowns/harness/task-observer/"><span class="t"><span>task-observer — 스킬을 스스로 고치지 않는 스킬 개선기</span><span class="kpi">기여자 103 · 코어 45.6KB</span></span><span class="s">일하다 고친 것을 적어 두고, 일주일에 한 번 사람에게 스킬 개정안을 내미는 스킬입니다. 영상은 「토큰 아끼는 도구」 둘 중 하나로 소개했는데, 이 레포는 토큰을 아끼는 도구가 아니라 세션마다 45.6KB 를 읽는 도구입니다.</span></a><a href="/ko/teardowns/harness/karrot-seed/"><span class="t"><span>당근 SEED</span><span class="kpi">7종 → 2종</span></span><span class="s">디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.</span></a><a href="/ko/teardowns/harness/pstack/" aria-current="page"><span class="t"><span>pstack</span><span class="kpi">스킬 61 · 후보 1</span></span><span class="s">한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>pstack</h1><p class="sum">한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다.</p><div class="meta"><span>스킬 61 · 후보 1</span><a class="src" href="https://www.youtube.com/watch?v=u2oDdU6z4Bw" target="_blank" rel="noopener">원본 영상 (김플립) — youtube.com/watch?v=u2oDdU6z4Bw ↗</a><a class="src" href="https://github.com/cursor/plugins/tree/main/pstack" target="_blank" rel="noopener">pstack 저장소 — github.com/cursor/plugins/tree/main/pstack ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#스킬-묶음이-뭔가요">「스킬 묶음」이 뭔가요</a><a href="#비유하면--꼼꼼한-선배의-업무-수첩입니다">비유하면 — 꼼꼼한 선배의 업무 수첩입니다</a><a href="#제일-중요한-스킬은-직접-켜서-확인하는-법을-만드는-스킬입니다">제일 중요한 스킬은 「직접 켜서 확인하는 법」을 만드는 스킬입니다</a><a href="#그런데-통째로는-들이지-않았습니다">그런데 통째로는 들이지 않았습니다</a><a href="#같은-잔소리는-더-강한-층으로-옮깁니다">같은 잔소리는 「더 강한 층」으로 옮깁니다</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#무엇을-뜯었나">무엇을 뜯었나</a><a href="#라우터-한-장이-순서를-강제한다">라우터 한 장이 순서를 강제한다</a><a href="#투두앱-시연에서-원칙이-작동한-자리">투두앱 시연에서 원칙이 작동한 자리</a><a href="#검증-스킬-원문은-영상보다-엄격했다">검증 스킬 원문은 영상보다 엄격했다</a><a href="#잔소리는-강한-층에-넣는다">잔소리는 강한 층에 넣는다</a><a href="#정직한-한계는-만든-쪽-기록에-있었다">정직한 한계는 만든 쪽 기록에 있었다</a><a href="#판정--통째로는-안-들이고-하나만-후보">판정 — 통째로는 안 들이고 하나만 후보</a><a href="#못-한-것">못 한 것</a><a href="#남는-문장">남는 문장</a></nav><div class="prose"><p><strong>pstack은 개발자 Lauren Tan(핸들 poteto)이 «자기가 일하는 습관»을 AI가 따라 하도록 글로 옮긴 스킬 묶음입니다. 프로그램이 아니라 설명서 파일 묶음이고, 핵심은 하나입니다 — AI가 «고쳤을 겁니다» 대신 «고쳤다는 증거가 여기 있습니다»라고 말하게 만드는 것.</strong> 저는 통째로는 들이지 않았고, 그 안의 스킬 하나만 후보로 남겼습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 176" role="img" aria-label="요청이 들어오면 라우터 poteto-mode가 작업 종류를 보고 플레이북 23개 중 하나를 고르고, 플레이북은 원칙과 작업 스킬을 불러 순서대로 일하며, 모든 플레이북 끝에 진짜 된다는 증거가 있는지 묻는 단계가 붙는다.">
+  <text class="lbl" x="8" y="22">요청 하나가 지나가는 길</text>
+  <rect class="vn vn-a" x="8" y="36" width="220" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="118" y="58" text-anchor="middle">요청</text>
+  <text class="cap" x="118" y="80" text-anchor="middle">«버그 고쳐 줘»</text>
+  <rect class="bx-llm" x="262" y="36" width="220" height="56" rx="2"/>
+  <text class="bx-t" x="372" y="58" text-anchor="middle">poteto-mode</text>
+  <text class="bx-s" x="372" y="80" text-anchor="middle">작업 종류를 고르는 반장</text>
+  <rect class="vn vn-a" x="516" y="36" width="220" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="626" y="58" text-anchor="middle">플레이북 23개</text>
+  <text class="cap" x="626" y="80" text-anchor="middle">작업별 순서 카드</text>
+  <rect class="bx-llm" x="770" y="36" width="222" height="56" rx="2"/>
+  <text class="bx-t" x="881" y="58" text-anchor="middle">증거 있나?</text>
+  <text class="bx-s" x="881" y="80" text-anchor="middle">모든 카드의 마지막 칸</text>
+  <path d="M228 64 H262 M482 64 H516 M736 64 H770" stroke="#8f9198" stroke-width="1.2"/>
+  <line class="rule" x1="8" y1="112" x2="992" y2="112"/>
+  <text class="cap cap-i" x="8" y="136">카드가 순서를 정하므로 <tspan class="cap-p">사람은 원하는 것만 말하면 된다</tspan></text>
+  <text class="cap" x="8" y="160">반장을 안 부르면 스킬 대부분은 스스로 켜지지 않는다 — 바닥에 놓인 연장통이다</text>
+</svg>
+<figcaption>구조는 영상 설명과 저장소 실물(2026-10-29, 플레이북 23 · 서브에이전트 정의 2 · SKILL.md 61)을 대조해 그렸다.</figcaption>
+</figure>
+<h2 id="스킬-묶음이-뭔가요">「스킬 묶음」이 뭔가요</h2>
+<p>AI 코딩 도구(Claude Code·Cursor 같은 것)는 <strong>「이럴 땐 이렇게 일해라」를 적은 글 파일</strong>을 읽고 그대로 움직입니다. 그 글 한 장을 「스킬」이라고 부릅니다.</p>
+<p>스킬 여러 장을 한 사람이 한 방향으로 묶어 이름을 붙이면 「○○스택」이 됩니다. pstack은 영어로 약 3만 단어, 책 한 권 분량의 설명서 묶음입니다. 모델을 바꾸지도, 별도 프로그램을 깔지도 않습니다.</p>
+<h2 id="비유하면--꼼꼼한-선배의-업무-수첩입니다">비유하면 — 꼼꼼한 선배의 업무 수첩입니다</h2>
+<p>회사에 아주 꼼꼼한 선배가 있다고 해 봅시다. 버그가 나면 절대 바로 안 고칩니다. 먼저 똑같이 재현해 보고, 고친 뒤엔 꼭 직접 눌러 확인하고, 코드는 최소한만 바꿉니다.</p>
+<p>이 선배의 습관을 전부 글로 적어 신입에게 주면, 신입은 선배만큼은 아니어도 선배 비슷하게 일합니다. <strong>pstack이 그 수첩이고, 신입이 AI입니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>비슷한 유행 묶음(gstack)</th>
+<th>pstack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>흉내 내는 대상</td>
+<td>회사 — CEO·QA 리드 같은 역할</td>
+<td>장인 한 명</td>
+</tr>
+<tr>
+<td>일을 나누는 기준</td>
+<td>누가 보느냐</td>
+<td>무슨 일이냐(버그·기능·리팩토링)</td>
+</tr>
+<tr>
+<td>끝에 묻는 것</td>
+<td>올바른 걸 만들고 있나</td>
+<td>만든 게 진짜 되나</td>
+</tr>
+</tbody>
+</table>
+<h2 id="제일-중요한-스킬은-직접-켜서-확인하는-법을-만드는-스킬입니다">제일 중요한 스킬은 「직접 켜서 확인하는 법」을 만드는 스킬입니다</h2>
+<p>이름은 <code>create-verification-skill</code>입니다. 만든 사람도 도구 상자에서 가장 중요한 스킬로 꼽습니다. 저장소에서 원문을 열어 확인했습니다.</p>
+<p>새 알바생에게 주는 메모를 떠올리면 됩니다. 불은 어디서 켜는지, 켜졌는지는 어떻게 아는지, 어디를 확인하는지, 확인한 건 사진으로 어디에 올리는지, 끝나면 어떻게 정리하는지. <strong>이 메모를 사람이 아니라 AI가 내 코드를 읽고 직접 씁니다.</strong> 그리고 넘기기 전에 그 메모대로 한 바퀴 직접 돌려 봅니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>이 메모가 없을 때</th>
+<th>있을 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI의 마지막 말</td>
+<td>«빌드 성공, 될 겁니다»</td>
+<td>«켜서 눌러 봤고, 스크린샷 여기 있습니다»</td>
+</tr>
+</tbody>
+</table>
+<h2 id="그런데-통째로는-들이지-않았습니다">그런데 통째로는 들이지 않았습니다</h2>
+<p>이유는 셋입니다. 첫째, 핵심 규칙 여럿이 제 환경에 <strong>이미 있었습니다</strong> — 「확인 못 한 건 추측이라고 밝혀라」, 「건너뛴 단계는 이유를 적어라」 같은 것들입니다. 둘째, pstack은 <strong>일을 자기 방식대로 나눕니다.</strong> 저는 이미 정해 둔 작업 흐름이 있어서 둘이 부딪힙니다. 셋째, 늘 PR을 여는 흐름이라 혼자 하는 개인 작업과는 맞지 않습니다.</p>
+<p>그래서 남긴 건 위의 검증 스킬 하나입니다. <strong>아직 돌려 보지는 않았습니다</strong> — 지금은 후보입니다.</p>
+<h2 id="같은-잔소리는-더-강한-층으로-옮깁니다">같은 잔소리는 「더 강한 층」으로 옮깁니다</h2>
+<p>영상에서 가장 오래 남은 대목입니다. AI에게 같은 말을 반복하고 있다면, <strong>그 말을 어디에 넣느냐에 따라 효과가 다릅니다.</strong></p>
+<p>규칙 파일에 「주석 달지 마」라고 쓰면 가끔 무시합니다. 검사 도구(린트)로 막으면 거의 못 어깁니다. 아예 코드 구조에서 막으면 어길 길이 없습니다. 만든 사람의 팀은 마지막 방법을 썼습니다 — AI는 코드베이스에 <strong>보이는 걸 따라 하기</strong> 때문에, 따라 하면 안 되는 건 아예 안 보이게 치웠습니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>pstack은 Cursor 공식 플러그인 저장소에 있는 SKILL.md 묶음이다.</strong> 라우터 <code>poteto-mode</code> 하나가 요청을 보고 플레이북 23개 중 하나를 고르고, 플레이북이 원칙 스킬과 작업 스킬을 불러 순서대로 일한다. 입구는 김플립의 해설 영상(24분, 2026-10-23)이었고, 숫자와 스킬 원문은 저장소에서 따로 확인했다. <strong>판정은 통째 도입 안 함, <code>create-verification-skill</code> 하나만 후보.</strong></p>
+<h2 id="무엇을-뜯었나">무엇을 뜯었나</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>만든 사람</td>
+<td>Lauren Tan(@poteto) — Meta·Netflix·Cursor 경력</td>
+<td>영상</td>
+</tr>
+<tr>
+<td>형태</td>
+<td>마크다운 스킬 묶음, 영어 약 3만 단어</td>
+<td>영상</td>
+</tr>
+<tr>
+<td>플레이북</td>
+<td><strong>23</strong></td>
+<td>저장소 실측</td>
+</tr>
+<tr>
+<td>서브에이전트 정의</td>
+<td><strong>2</strong></td>
+<td>저장소 실측</td>
+</tr>
+<tr>
+<td>SKILL.md 파일</td>
+<td><strong>61</strong></td>
+<td>저장소 실측</td>
+</tr>
+<tr>
+<td>기준 판</td>
+<td>0.15.28 (2026-10-18)</td>
+<td>영상 설명란</td>
+</tr>
+<tr>
+<td>주당 1만 회 사용 · 월 2천 PR</td>
+<td>만든 사람 본인 주장 — 시점마다 1천~2천5백으로 달라진다</td>
+<td>영상</td>
+</tr>
+</tbody>
+</table>
+<p>원래는 Grok 계열 회사의 플러그인이라 기본 설정이 코드 작성은 Grok, 판단·글쓰기·어려운 작업은 Claude Opus 5.5에 맡긴다. 2026-10-16에 Claude Code 설치 경로가 추가됐다. Claude Code에는 Grok이 없어서 그 역할을 현재 세션 모델이 대신한다. <strong>그래서 «다른 회사 모델끼리 서로의 코드를 까 보는» 스킬이 Claude Code에서는 같은 모델끼리의 검토가 될 수 있다</strong> — 영상이 짚은 점이고, 교차 검증의 정보량이 거기서 사라진다.</p>
+<h2 id="라우터-한-장이-순서를-강제한다">라우터 한 장이 순서를 강제한다</h2>
+<p><code>poteto-mode</code>의 실체는 긴 MD 한 장이다(플레이북 포함 약 1.7만 단어). 세 덩어리다.</p>
+<table>
+<thead>
+<tr>
+<th>덩어리</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>라우터</td>
+<td>요청을 보고 플레이북을 고른다. 사용자는 순서를 말하지 않는다</td>
+</tr>
+<tr>
+<td>작업 규칙</td>
+<td>이럴 땐 이 스킬, 이럴 땐 이 원칙. 되돌릴 수 있는 일은 묻지 않고 진행</td>
+</tr>
+<tr>
+<td>답변 규칙</td>
+<td>모든 주장에 «측정함 · 추론함 · 추측»을 붙인다. «동의가 기본값이 아니다»</td>
+</tr>
+</tbody>
+</table>
+<p>스킬 대부분에는 <code>disable-model-invocation: true</code>가 걸려 있다. 「리팩터링」이라는 단어만 보고 엉뚱한 작업에 원칙을 끌어오지 못하게 막은 것이다. 그 대가로 <strong>라우터를 안 부르면 아무 일도 안 일어난다.</strong> 설치했다는 사실과 켰다는 사실 사이에 거리가 있다는 점은 <a href="/ko/teardowns/harness/eli5/">eli5</a> 편과 같은 모양이다.</p>
+<p>실사용자들이 가장 효과가 컸다고 꼽는 장치는 따로 있다. <strong>플레이북 단계를 할 일 목록에 글자 그대로 복사하고, 건너뛰는 단계도 지우지 않고 이유를 적게 한다.</strong> AI는 검증처럼 귀찮은 단계를 조용히 빼먹는데, 빼먹으려면 이유를 써야 하니 슬쩍 넘어가지 못한다.</p>
+<h2 id="투두앱-시연에서-원칙이-작동한-자리">투두앱 시연에서 원칙이 작동한 자리</h2>
+<p>영상은 투두앱 하나로 일곱 단계를 돌렸다. pstack에는 앱을 처음부터 만드는 플레이북이 없다 — 0→1이 아니라 1→n 도구다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>작동한 원칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시안</td>
+<td>품질 원칙이 여기서만 뒤집힌다. 목적이 코드가 아니라 결정이라 버리는 HTML로 빨리 비교한다</td>
+</tr>
+<tr>
+<td>기능</td>
+<td>「완료」 옆에 「기한 지남」 참거짓을 붙이지 않는다. 상태는 열림·완료, 기한 초과는 날짜로 계산(model-the-domain)</td>
+</tr>
+<tr>
+<td>버그</td>
+<td>재현 전엔 고치지 않는다. <strong>«혹시 몰라 넣는 이중 안전장치는 가설이지 수정이 아니다»</strong></td>
+</tr>
+<tr>
+<td>리팩토링</td>
+<td>더하기 전에 뺀다. 읽기 쉬워지지 않았으면 리팩토링이 아니라 이사다</td>
+</tr>
+<tr>
+<td>밤샘 작업</td>
+<td>모든 결정을 표 한 줄씩 남긴다. 되돌릴 수 없는 일(강제 푸시·배포·삭제)만 멈춘다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="검증-스킬-원문은-영상보다-엄격했다">검증 스킬 원문은 영상보다 엄격했다</h2>
+<p><code>create-verification-skill</code> 원문을 열어 보니 영상 설명보다 기준이 하나 더 있었다. 순서는 네 단계다 — 저장소를 인터뷰한다(사람에게는 코드로 알 수 없는 것만 묻는다), 실행·점검·조작·증거·정리 다섯 칸짜리 스킬을 쓴다, 기능 지도를 3~5장 만든다, 넘기기 전에 직접 한 바퀴 돈다.</p>
+<p>영상에 없던 기준은 증거와 정리 칸에 있었다.</p>
+<table>
+<thead>
+<tr>
+<th>원문 기준</th>
+<th>무엇을 막나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>내부 setter나 테스트 전용 경로가 아니라 <strong>실제 사용자 경로</strong>로 조작한다</td>
+<td>지름길로 통과시키는 것</td>
+</tr>
+<tr>
+<td>마지막 화면만이 아니라 <strong>행동과 그 결과 상태</strong>를 함께 남긴다</td>
+<td>그럴듯한 최종 스크린샷 한 장</td>
+</tr>
+<tr>
+<td>dry-run은 이름을 믿지 말고 <strong>실제로 무엇을 건너뛰는지 관찰</strong>한다</td>
+<td>「모의 실행」이 사실은 네트워크를 건드리는 것</td>
+</tr>
+<tr>
+<td>정리 후에도 <strong>증거가 남아 있는지</strong> 확인한다 — 정리가 증거를 먹으면 실패</td>
+<td>증거를 지운 채 «확인했다»</td>
+</tr>
+<tr>
+<td>이름으로 프로세스를 죽이지 않는다. <strong>내가 띄운 것만</strong> 죽인다</td>
+<td>사용자의 다른 창까지 닫는 것</td>
+</tr>
+<tr>
+<td>조건이 안 맞으면 시나리오를 약하게 고치지 말고 <strong>실패로 보고</strong>한다</td>
+<td>통과시키려고 시험을 깎는 것</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 두 줄은 제 환경에 이미 같은 이름의 사고 기록이 있다. 같은 결론에 다른 길로 도착한 셈이다.</p>
+<h2 id="잔소리는-강한-층에-넣는다">잔소리는 강한 층에 넣는다</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 262" role="img" aria-label="AI에게 반복하는 잔소리를 넣는 자리 다섯 층. 위가 가장 강하다. 1층 코드 구조, 2층 린트와 CI, 3층 규칙 파일과 리뷰봇, 4층 스킬, 5층 스타일 가이드. 막대가 아래로 갈수록 짧아져 강도가 약해짐을 보인다.">
+  <text class="lbl" x="8" y="20">위로 갈수록 AI가 어기기 어렵다</text>
+  <rect class="bx-llm" x="8" y="32" width="984" height="36" rx="2"/>
+  <text class="bx-t" x="24" y="56">1층 · 코드 구조 — 나쁜 패턴을 쓸 길 자체가 없다</text>
+  <rect class="bx-llm" x="8" y="76" width="820" height="36" rx="2"/>
+  <text class="bx-t" x="24" y="100">2층 · 린트 · 컴파일러 · CI — 거의 못 어긴다</text>
+  <rect class="vn vn-a" x="8" y="120" width="656" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="144">3층 · 규칙 파일 · 리뷰봇 — 가끔 무시된다</text>
+  <rect class="vn vn-a" x="8" y="164" width="492" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="188">4층 · 스킬</text>
+  <rect class="vn vn-a" x="8" y="208" width="328" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="232">5층 · 스타일 가이드</text>
+</svg>
+<figcaption>영상의 「잔소리 다섯 층」. 보통 「주석 달지 마」는 3층에 쓰고, 만든 사람의 팀은 1층에서 막았다.</figcaption>
+</figure>
+<p>만든 사람의 팀은 내부 프레임워크에서 주석 자체를 금지했다. 「임시 방편, 나중에 고칠 것」 같은 주석을 본 AI가 «여기선 대충해도 되는구나» 하고 따라 하더라는 이유다. 같은 이유로 대충 짠 옛 코드도 지우고, 같은 일을 하는 방법은 하나만 남겼다. pstack의 <code>cut</code> 스킬이 이 일을 한다 — 반복 지적한 실수를 찾아 가능한 가장 강한 층에서 고친다.</p>
+<p>같은 논리로 <strong>자동화는 맨 마지막</strong>이다. 버그 리포트가 오면 AI가 알아서 고치게 하는 배선은 멋져 보이지만, 저장소가 성숙하기 전에 붙이면 엉성한 PR만 자동으로 불어난다. 영상의 표현으로는 «소프트웨어 공장이 아니라 미슐랭 주방» — 하나를 믿을 수 있기 전에 백 개를 돌리면 쓰레기도 백 배로 나온다.</p>
+<h2 id="정직한-한계는-만든-쪽-기록에-있었다">정직한 한계는 만든 쪽 기록에 있었다</h2>
+<table>
+<thead>
+<tr>
+<th>한계</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모델이 좋아질수록 차이가 준다</td>
+<td>2026-09-23 커밋 제목이 «Opus 5.5에 필요 없는 지식 19개 추가 삭제». 가치가 «일하는 법 가르치기»에서 «순서 강제 + 증거 요구»로 옮겨 가는 중</td>
+</tr>
+<tr>
+<td>느리다</td>
+<td>한 사례에서 30분 작업이 1시간이 됐다. 대신 AI의 거짓 보고를 잡았다</td>
+</tr>
+<tr>
+<td>대부분 강제가 아니라 문장이다</td>
+<td>«검증 없이 머지 금지»도 코드로 막힌 게 아니다 — 위 다섯 층으로 치면 4층이다</td>
+</tr>
+</tbody>
+</table>
+<p>세 번째 줄이 이 편에서 제일 재미있는 자리다. <strong>pstack은 «잔소리는 강한 층으로»를 가르치면서, 자기 자신은 대부분 4층에 산다.</strong> 이 칸에서 여러 번 본 «깨는 도구를 대상이 들고 있다»의 또 한 사례다.</p>
+<h2 id="판정--통째로는-안-들이고-하나만-후보">판정 — 통째로는 안 들이고 하나만 후보</h2>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>판정</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>poteto-mode 통째</td>
+<td>안 들임</td>
+<td>답변 규칙(측정·추론·추측)과 「건너뛴 단계 이유 기록」은 이미 있다. 라우터가 기존 작업 흐름과 부딪힌다. 늘 PR을 여는 흐름이 개인 작업과 안 맞는다</td>
+</tr>
+<tr>
+<td><code>create-verification-skill</code></td>
+<td><strong>후보</strong></td>
+<td>「코드가 들어갔다」와 「화면에서 돈다」를 가르는 칸이 제 환경에서 실제로 비었던 적이 있다. 원문의 증거 기준이 그 빈칸을 정확히 겨눈다</td>
+</tr>
+<tr>
+<td>잔소리 다섯 층</td>
+<td>점검표로만</td>
+<td>규칙 파일(3층)에만 있고 자주 어겨지는 항목을 훅·게이트(2층)로 내릴 수 있는지 보는 데 쓴다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="못-한-것">못 한 것</h2>
+<ul>
+<li><strong>pstack을 설치하지 않았다.</strong> 위 판정은 영상과 저장소 원문을 읽고 낸 것이고, 실행해서 낸 것이 아니다.</li>
+<li><strong>검증 스킬도 아직 한 번도 돌리지 않았다.</strong> 원문의 기준대로라면 지금 이 판정은 «초안»이다 — 돌려 보기 전엔 후보 이상이 아니다.</li>
+<li>주당 사용 수·월 PR 수·«30분→1시간» 사례는 전부 남이 잰 숫자다. 재현하지 않았다.</li>
+<li>영상 자막은 자동 자막이라 고유명사가 자주 틀렸다. 이름과 숫자는 영상 설명란과 저장소로 바로잡았다.</li>
+</ul>
+<h2 id="남는-문장">남는 문장</h2>
+<blockquote>
+<p><strong>«한 번도 실행 안 된 스킬은 초안이지 결과물이 아니다.»</strong> — 검증 스킬 원문의 기준이고, 이 편의 판정에도 그대로 걸린다.</p>
+</blockquote>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

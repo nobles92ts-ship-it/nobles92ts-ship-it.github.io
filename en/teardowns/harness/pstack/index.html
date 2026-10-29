@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pstack — Agent harnesses</title><meta name="description" content="One developer's working habits, written down as a manual for AI. I didn't adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="pstack — Agent harnesses"><meta property="og:description" content="One developer's working habits, written down as a manual for AI. I didn't adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;."><meta property="og:url" content="https://aitryed.com/en/teardowns/harness/pstack/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="pstack — Agent harnesses"><meta name="twitter:description" content="One developer's working habits, written down as a manual for AI. I didn't adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/harness/pstack/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/harness/pstack/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/pstack/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/pstack/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/pstack/"><link rel="stylesheet" href="/_astro/Shell.X3WZQL5G.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/pstack/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">7 pieces · prior 4.5 / 7</span></span><span class="s">Seven investigations into automation and cause-analysis tools. The earlier adoption ledger stays separate from the two static probes performed with REA.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a><a href="/en/teardowns/harness/eli5/"><span class="t"><span>eli5 — a plugin with zero lines of code</span><span class="kpi">865 bytes · 1 run</span></span><span class="s">One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.</span></a><a href="/en/teardowns/harness/browserskill/"><span class="t"><span>BrowserSkill — lending an agent my browser</span><span class="kpi">on hold · 2 harvested</span></span><span class="s">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</span></a><a href="/en/teardowns/harness/harness2/"><span class="t"><span>Harness2</span><span class="kpi">Records how it improves</span></span><span class="s">A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.</span></a><a href="/en/teardowns/harness/attention-span/"><span class="t"><span>attention-span — the note that told Claude to bold line one, and what the number counted</span><span class="kpi">43% shorter · line one 3→75%</span></span><span class="s">Three style notes that make Claude&#39;s answers shorter and clearer up front. Recounting the README&#39;s numbers from the raw data, the 43% length cut held up, but &quot;the answer is in line one, 3% to 75%&quot; turned out to count whether line one starts in bold.</span></a><a href="/en/teardowns/harness/task-observer/"><span class="t"><span>task-observer — the skill that improves your skills but never edits them</span><span class="kpi">103 credited · 45.6KB core</span></span><span class="s">A skill that jots down what you correct while you work and, once a week, hands you proposed edits to your skills. The video sold it as a token saver. The repo is not one, and it reads 45.6KB at the start of every session.</span></a><a href="/en/teardowns/harness/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/harness/pstack/" aria-current="page"><span class="t"><span>pstack</span><span class="kpi">61 skills · 1 candidate</span></span><span class="s">One developer&#39;s working habits, written down as a manual for AI. I didn&#39;t adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>pstack</h1><p class="sum">One developer&#39;s working habits, written down as a manual for AI. I didn&#39;t adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;.</p><div class="meta"><span>61 skills · 1 candidate</span><a class="src" href="https://www.youtube.com/watch?v=u2oDdU6z4Bw" target="_blank" rel="noopener">Source video (Kim Flip, Korean) — youtube.com/watch?v=u2oDdU6z4Bw ↗</a><a class="src" href="https://github.com/cursor/plugins/tree/main/pstack" target="_blank" rel="noopener">pstack repository — github.com/cursor/plugins/tree/main/pstack ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-a-skill-bundle-is">What a “skill bundle” is</a><a href="#think-of-it-as-a-meticulous-seniors-notebook">Think of it as a meticulous senior’s notebook</a><a href="#the-most-important-skill-writes-the-launch-it-and-check-it-manual">The most important skill writes the “launch it and check it” manual</a><a href="#i-still-didnt-take-the-whole-bundle">I still didn’t take the whole bundle</a><a href="#move-repeated-nagging-to-a-stronger-layer">Move repeated nagging to a stronger layer</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-i-took-apart">What I took apart</a><a href="#a-single-router-file-enforces-the-order">A single router file enforces the order</a><a href="#where-the-principles-kicked-in-during-the-to-do-app-demo">Where the principles kicked in during the to-do app demo</a><a href="#the-verification-skills-source-is-stricter-than-the-video">The verification skill’s source is stricter than the video</a><a href="#put-the-nagging-in-the-strongest-layer-you-can">Put the nagging in the strongest layer you can</a><a href="#the-honest-limits-are-in-the-authors-own-history">The honest limits are in the author’s own history</a><a href="#verdict--not-the-bundle-one-candidate">Verdict — not the bundle, one candidate</a><a href="#what-i-didnt-do">What I didn’t do</a><a href="#the-line-that-stays">The line that stays</a></nav><div class="prose"><p><strong>pstack is a bundle of skills in which developer Lauren Tan (handle: poteto) wrote down how she works, so that an AI can work the same way. It is not a program — it is a stack of instruction files, and its point is a single one: getting the AI to say “here is the evidence it’s fixed” instead of “it should be fixed now”.</strong> I didn’t install the bundle. I kept one skill from it as a candidate.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 176" role="img" aria-label="When a request comes in, the poteto-mode router looks at what kind of work it is and picks one of 23 playbooks; the playbook calls principle and task skills in order, and every playbook ends with a step asking whether there is evidence it actually works.">
+  <text class="lbl" x="8" y="22">The path one request takes</text>
+  <rect class="vn vn-a" x="8" y="36" width="220" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="118" y="58" text-anchor="middle">Request</text>
+  <text class="cap" x="118" y="80" text-anchor="middle">"fix this bug"</text>
+  <rect class="bx-llm" x="262" y="36" width="220" height="56" rx="2"/>
+  <text class="bx-t" x="372" y="58" text-anchor="middle">poteto-mode</text>
+  <text class="bx-s" x="372" y="80" text-anchor="middle">foreman: picks the job type</text>
+  <rect class="vn vn-a" x="516" y="36" width="220" height="56" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="626" y="58" text-anchor="middle">23 playbooks</text>
+  <text class="cap" x="626" y="80" text-anchor="middle">a step card per job</text>
+  <rect class="bx-llm" x="770" y="36" width="222" height="56" rx="2"/>
+  <text class="bx-t" x="881" y="58" text-anchor="middle">Any evidence?</text>
+  <text class="bx-s" x="881" y="80" text-anchor="middle">last box of every card</text>
+  <path d="M228 64 H262 M482 64 H516 M736 64 H770" stroke="#8f9198" stroke-width="1.2"/>
+  <line class="rule" x1="8" y1="112" x2="992" y2="112"/>
+  <text class="cap cap-i" x="8" y="136">The card sets the order, so <tspan class="cap-p">you only say what you want</tspan></text>
+  <text class="cap" x="8" y="160">Without the foreman most skills never switch on by themselves — a toolbox left on the floor</text>
+</svg>
+<figcaption>Drawn by checking the video's description against the repository itself (2026-10-29: 23 playbooks · 2 subagent definitions · 61 SKILL.md files).</figcaption>
+</figure>
+<h2 id="what-a-skill-bundle-is">What a “skill bundle” is</h2>
+<p>AI coding tools such as Claude Code and Cursor read <strong>text files that say “in this situation, work like this”</strong> and then act on them. One such file is called a skill.</p>
+<p>When one person ties a few dozen skills together around one way of working and gives it a name, you get a “something-stack”. pstack is about 30,000 English words of these files — roughly a book. It doesn’t swap the model and it doesn’t install a separate program.</p>
+<h2 id="think-of-it-as-a-meticulous-seniors-notebook">Think of it as a meticulous senior’s notebook</h2>
+<p>Picture the most careful engineer on your team. When a bug comes in she never fixes it straight away. She reproduces it first, clicks through it herself after the fix, and changes as little code as possible.</p>
+<p>Write all of those habits down and hand them to a new hire, and the new hire works — not as well as her, but a lot like her. <strong>pstack is that notebook. The new hire is the AI.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A similar trending bundle (gstack)</th>
+<th>pstack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Imitates</td>
+<td>A company — CEO, QA lead, and so on</td>
+<td>One craftsperson</td>
+</tr>
+<tr>
+<td>Splits work by</td>
+<td>Who is looking</td>
+<td>What the job is (bug, feature, refactor)</td>
+</tr>
+<tr>
+<td>Asks at the end</td>
+<td>Are we building the right thing?</td>
+<td>Does what we built actually work?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-most-important-skill-writes-the-launch-it-and-check-it-manual">The most important skill writes the “launch it and check it” manual</h2>
+<p>It’s called <code>create-verification-skill</code>, and its author calls it the most important skill in the toolbox. I opened its source in the repository to confirm what it does.</p>
+<p>Think of the note you’d leave a new part-timer: where the lights switch on, how you know the shop is open, what to check, where to post the photos, how to lock up. <strong>Here the AI writes that note itself, by reading your code.</strong> Before handing it over, it walks through the note once, end to end.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Without the note</th>
+<th>With it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The AI’s last line</td>
+<td>“Build succeeded, should work”</td>
+<td>“I launched it, clicked through, screenshot attached”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i-still-didnt-take-the-whole-bundle">I still didn’t take the whole bundle</h2>
+<p>Three reasons. First, several of its core rules <strong>were already in my setup</strong> — “label anything you didn’t check as a guess”, “write down why you skipped a step”. Second, pstack <strong>splits work its own way</strong>, and I already have a workflow that would collide with it. Third, it always opens a pull request, which doesn’t fit solo work pushed straight to main.</p>
+<p>So what I kept is the verification skill above — <strong>and I haven’t run it yet.</strong> It’s a candidate, nothing more.</p>
+<h2 id="move-repeated-nagging-to-a-stronger-layer">Move repeated nagging to a stronger layer</h2>
+<p>The part of the video that stayed with me longest: if you keep telling the AI the same thing, <strong>where you put that instruction decides how well it works.</strong></p>
+<p>Write “no comments” in a rules file and it sometimes gets ignored. Block it with a linter and it almost never slips. Make it impossible in the code structure and there is no way around it. The author’s team took the last route — the AI <strong>copies what it can see</strong> in the codebase, so anything it shouldn’t copy was removed from sight.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>pstack is a set of SKILL.md files in Cursor’s official plugin repository.</strong> One router, <code>poteto-mode</code>, reads the request and picks one of 23 playbooks; the playbook then calls principle skills and task skills in order. I came in through Kim Flip’s Korean walkthrough video (24 minutes, 2026-10-23) and checked the counts and the skill source against the repository separately. <strong>Verdict: not adopted as a bundle; <code>create-verification-skill</code> is the one candidate.</strong></p>
+<h2 id="what-i-took-apart">What I took apart</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author</td>
+<td>Lauren Tan (@poteto) — previously Meta, Netflix, Cursor</td>
+<td>Video</td>
+</tr>
+<tr>
+<td>Form</td>
+<td>Markdown skill bundle, ~30,000 English words</td>
+<td>Video</td>
+</tr>
+<tr>
+<td>Playbooks</td>
+<td><strong>23</strong></td>
+<td>Counted in the repo</td>
+</tr>
+<tr>
+<td>Subagent definitions</td>
+<td><strong>2</strong></td>
+<td>Counted in the repo</td>
+</tr>
+<tr>
+<td>SKILL.md files</td>
+<td><strong>61</strong></td>
+<td>Counted in the repo</td>
+</tr>
+<tr>
+<td>Reference version</td>
+<td>0.15.28 (2026-10-18)</td>
+<td>Video description</td>
+</tr>
+<tr>
+<td>10k uses a week · 2k PRs a month</td>
+<td>The author’s own claim — it varies from 1k to 2.5k depending on when she said it</td>
+<td>Video</td>
+</tr>
+</tbody>
+</table>
+<p>The plugin’s defaults hand code-writing to Grok and judgement, writing and the hard tasks to Claude Opus 5.5. An install path for Claude Code was added on 2026-10-16. Claude Code has no Grok, so the current session model fills that role — <strong>which means the skills where “models from different vendors review each other’s code” can collapse into one model reviewing itself.</strong> The video flags this, and it is exactly where the information in a cross-check disappears.</p>
+<h2 id="a-single-router-file-enforces-the-order">A single router file enforces the order</h2>
+<p><code>poteto-mode</code> is one long markdown file (about 17,000 words with the playbooks). It has three parts.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Router</td>
+<td>Reads the request and chooses a playbook. The user never spells out the steps</td>
+</tr>
+<tr>
+<td>Working rules</td>
+<td>Which skill when, which principle when. Proceed without asking on anything reversible</td>
+</tr>
+<tr>
+<td>Answer rules</td>
+<td>Tag every claim as measured, inferred or guessed. “Agreement is not the default”</td>
+</tr>
+</tbody>
+</table>
+<p>Most of the skills carry <code>disable-model-invocation: true</code>, so the model can’t pull a refactoring principle into an unrelated job just because the word “refactor” appeared. The price is that <strong>nothing happens unless you call the router.</strong> The gap between “installed” and “switched on” is the same shape I found in the <a href="/en/teardowns/harness/eli5/">eli5</a> piece.</p>
+<p>The device users credit most is a different one. <strong>The playbook’s steps are copied verbatim into the to-do list, and a skipped step stays in the list with a reason next to it.</strong> Models quietly drop tedious steps like verification; when dropping one means writing down why, they can’t slide past it.</p>
+<h2 id="where-the-principles-kicked-in-during-the-to-do-app-demo">Where the principles kicked in during the to-do app demo</h2>
+<p>The video ran a single to-do app through seven stages. There is no playbook for building an app from scratch — this is a one-to-n tool, not a zero-to-one tool.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Principle at work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mock-ups</td>
+<td>The only place the quality rules flip. The goal is a decision, not code, so compare throwaway HTML fast</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td>Don’t add an “overdue” boolean next to “done”. State is open or done; overdue is computed from the date (model-the-domain)</td>
+</tr>
+<tr>
+<td>Bug</td>
+<td>No fix before a reproduction. <strong>“A belt-and-braces guard added just in case is a hypothesis, not a fix”</strong></td>
+</tr>
+<tr>
+<td>Refactor</td>
+<td>Subtract before you add. If it isn’t easier to read, it was a move, not a refactor</td>
+</tr>
+<tr>
+<td>Overnight run</td>
+<td>One table row per decision. Stop only for irreversible things — force-push, deploy, deletion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-verification-skills-source-is-stricter-than-the-video">The verification skill’s source is stricter than the video</h2>
+<p>Reading <code>create-verification-skill</code> itself turned up a bar the video didn’t mention. The flow has four steps: interview the repository (ask the human only what the code can’t tell you), write a skill with five sections — launch, doctor, drive, evidence, cleanup — seed a feature map of three to five pages, then run the whole thing once before handing it over.</p>
+<p>The extra bar sits in the evidence and cleanup sections.</p>
+<table>
+<thead>
+<tr>
+<th>Rule in the source</th>
+<th>What it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drive the <strong>real user path</strong>, not internal setters or test-only endpoints</td>
+<td>Passing via a shortcut</td>
+</tr>
+<tr>
+<td>Capture <strong>the action and the resulting state</strong>, not just the last screen</td>
+<td>One convincing final screenshot</td>
+</tr>
+<tr>
+<td>Don’t trust a dry-run’s name — <strong>observe what it actually skips</strong></td>
+<td>A “dry run” that still touches the network</td>
+</tr>
+<tr>
+<td>After cleanup, <strong>confirm the evidence still exists</strong> — cleanup that eats the proof fails</td>
+<td>Saying “verified” with the proof deleted</td>
+</tr>
+<tr>
+<td>Never kill by process name; <strong>kill only what you started</strong></td>
+<td>Closing the user’s other windows</td>
+</tr>
+<tr>
+<td>If a precondition is missing, <strong>report a failure</strong> instead of weakening the journey</td>
+<td>Trimming the test until it passes</td>
+</tr>
+</tbody>
+</table>
+<p>My setup already has incident notes under nearly the same names as the last two rows. Same conclusion, reached by a different road.</p>
+<h2 id="put-the-nagging-in-the-strongest-layer-you-can">Put the nagging in the strongest layer you can</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 262" role="img" aria-label="Five layers where a repeated instruction to an AI can live, strongest at the top: layer 1 code structure, layer 2 linters and CI, layer 3 rules files and review bots, layer 4 skills, layer 5 style guides. The bars get shorter going down to show weakening force.">
+  <text class="lbl" x="8" y="20">The higher it sits, the harder it is for the AI to break</text>
+  <rect class="bx-llm" x="8" y="32" width="984" height="36" rx="2"/>
+  <text class="bx-t" x="24" y="56">Layer 1 · Code structure — the bad pattern has no way in</text>
+  <rect class="bx-llm" x="8" y="76" width="820" height="36" rx="2"/>
+  <text class="bx-t" x="24" y="100">Layer 2 · Linter · compiler · CI — rarely broken</text>
+  <rect class="vn vn-a" x="8" y="120" width="656" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="144">Layer 3 · Rules file · review bot — sometimes ignored</text>
+  <rect class="vn vn-a" x="8" y="164" width="492" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="188">Layer 4 · Skills</text>
+  <rect class="vn vn-a" x="8" y="208" width="328" height="36" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="232">Layer 5 · Style guide</text>
+</svg>
+<figcaption>The video's "five layers of nagging". "No comments" usually lives in layer 3; the author's team blocked it in layer 1.</figcaption>
+</figure>
+<p>The author’s team banned comments outright in their internal framework. Their reason: when the AI saw comments like “temporary hack, fix later”, it concluded that sloppy was fine here and followed suit. For the same reason they deleted old half-done code and kept exactly one way of doing each thing. pstack’s <code>cut</code> skill does this job — it finds the mistakes you keep pointing out and fixes them in the strongest layer available.</p>
+<p>By the same logic, <strong>automation comes last.</strong> Wiring bug reports straight into an AI that fixes them looks great, but bolt it on before the repository is mature and you just mass-produce sloppy pull requests. The video’s line for it: a Michelin kitchen, not a software factory — run a hundred agents before you can trust one and you get a hundred times the garbage.</p>
+<h2 id="the-honest-limits-are-in-the-authors-own-history">The honest limits are in the author’s own history</h2>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The gap shrinks as models improve</td>
+<td>A 2026-09-23 commit is titled “remove 19 more pieces of knowledge Opus 5.5 doesn’t need”. The value is moving from teaching how to work to enforcing order and demanding evidence</td>
+</tr>
+<tr>
+<td>It’s slower</td>
+<td>In one case a 30-minute task took an hour — and caught the AI misreporting</td>
+</tr>
+<tr>
+<td>Most of it is prose, not enforcement</td>
+<td>Even “no merge without verification” is a sentence, not code — layer 4 on the ladder above</td>
+</tr>
+</tbody>
+</table>
+<p>The third row is the most interesting thing in this piece. <strong>pstack teaches “move your nagging to a stronger layer” while living mostly in layer 4 itself.</strong> It is one more case of something this section keeps finding: the tool that breaks the claim is carried by the subject itself.</p>
+<h2 id="verdict--not-the-bundle-one-candidate">Verdict — not the bundle, one candidate</h2>
+<table>
+<thead>
+<tr>
+<th>Subject</th>
+<th>Verdict</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>poteto-mode as a whole</td>
+<td>Not adopted</td>
+<td>The answer tags and “write down skipped steps” already exist here; the router collides with my existing workflow; always-a-PR doesn’t fit solo work</td>
+</tr>
+<tr>
+<td><code>create-verification-skill</code></td>
+<td><strong>Candidate</strong></td>
+<td>The gap between “the code went in” and “it runs on screen” has actually been empty in my setup before, and the source’s evidence rules aim right at it</td>
+</tr>
+<tr>
+<td>The five layers</td>
+<td>Checklist only</td>
+<td>For finding rules that sit only in a rules file (layer 3), keep getting broken, and could move down into a hook or gate (layer 2)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-i-didnt-do">What I didn’t do</h2>
+<ul>
+<li><strong>I didn’t install pstack.</strong> The verdict comes from reading the video and the repository, not from running anything.</li>
+<li><strong>I haven’t run the verification skill even once.</strong> By its own standard this verdict is still a draft — until it runs, it’s a candidate and no more.</li>
+<li>Usage per week, PRs per month and the “30 minutes to an hour” case are all someone else’s numbers. I didn’t reproduce them.</li>
+<li>The video’s captions were auto-generated and mangled most proper nouns. Names and numbers were corrected from the video description and the repository.</li>
+</ul>
+<h2 id="the-line-that-stays">The line that stays</h2>
+<blockquote>
+<p><strong>“A skill that has never been run is a draft, not a deliverable.”</strong> — the bar set in the verification skill’s own source, and it applies to this piece’s verdict too.</p>
+</blockquote>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/harness/pstack/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

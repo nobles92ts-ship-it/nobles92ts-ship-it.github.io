@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 148편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 149편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -122,6 +122,7 @@
 - [에이전트 하네스 · attention-span — 첫 줄을 굵게 시킨 쪽지, 그리고 그 숫자의 정체](https://aitryed.com/ko/teardowns/harness/attention-span/index.md): Claude 의 답을 짧고 앞머리가 선명하게 만드는 말투 쪽지 세 장입니다. README 의 숫자를 원자료로 다시 세어 보니 분량 43% 는 맞았고, 「첫 줄에 답이 있다 3%→75%」는 첫 줄이 굵은 글씨로 시작했는지를 센 숫자였습니다.
 - [에이전트 하네스 · task-observer — 스킬을 스스로 고치지 않는 스킬 개선기](https://aitryed.com/ko/teardowns/harness/task-observer/index.md): 일하다 고친 것을 적어 두고, 일주일에 한 번 사람에게 스킬 개정안을 내미는 스킬입니다. 영상은 「토큰 아끼는 도구」 둘 중 하나로 소개했는데, 이 레포는 토큰을 아끼는 도구가 아니라 세션마다 45.6KB 를 읽는 도구입니다.
 - [에이전트 하네스 · 당근 SEED](https://aitryed.com/ko/teardowns/harness/karrot-seed/index.md): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
+- [에이전트 하네스 · pstack](https://aitryed.com/ko/teardowns/harness/pstack/index.md): 한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다.
 - [컨텍스트와 기억](https://aitryed.com/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
 - [컨텍스트와 기억 · 벡터DB 없는 RAG](https://aitryed.com/ko/teardowns/memory/rag-without-vectors/index.md): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
 - [컨텍스트와 기억 · Headroom](https://aitryed.com/ko/teardowns/memory/headroom/index.md): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.

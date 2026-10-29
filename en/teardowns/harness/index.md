@@ -147,6 +147,7 @@ That probably isn't a coincidence. A harness is the kind of thing you have to sw
 |---|---|
 | [BrowserSkill](/en/teardowns/harness/browserskill/index.md) | The browser-sharing design and the enforced permission boundary need separate examination |
 | [Harness2](/en/teardowns/harness/harness2/index.md) | Selecting an improved candidate does not prove a gain over the base. The unmodified Windows demo did not complete, so adoption is deferred |
+| [pstack](/en/teardowns/harness/pstack/index.md) | Not adopted as a bundle. One skill — the one that writes "launch it and check it" — is a candidate, not yet run |
 
 Running, adopting, and proposing another experiment remain separate outcomes as the shelf grows. Harness2 studies edits supported by execution traces, but my local runs did not reach a final selection. Its paper's gains therefore cannot be reported as gains in my environment.
 
