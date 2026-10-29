@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Claude formal verification — copying finished proofs — QA automation</title><meta name="description" content="Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other's finished work, and measured it before and after in my game studio's art team."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Claude formal verification — copying finished proofs — QA automation"><meta property="og:description" content="Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other's finished work, and measured it before and after in my game studio's art team."><meta property="og:url" content="https://aitryed.com/en/teardowns/qa/formal-verification/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude formal verification — copying finished proofs — QA automation"><meta name="twitter:description" content="Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other's finished work, and measured it before and after in my game studio's art team."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/qa/formal-verification/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/qa/formal-verification/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/formal-verification/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/formal-verification/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/formal-verification/"><link rel="stylesheet" href="/_astro/Shell.X3WZQL5G.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/formal-verification/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">8 pieces · prior 4.5 / 7</span></span><span class="s">Eight investigations into automation, cause-analysis tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. Catching &quot;stuck&quot; as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).</span></a><a href="/en/teardowns/qa/clumsy/"><span class="t"><span>clumsy</span><span class="kpi">2.5 kept · 0 runs</span></span><span class="s">A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).</span></a><a href="/en/teardowns/qa/rea/"><span class="t"><span>REA</span><span class="kpi">2 static probes</span></span><span class="s">REA helps agents investigate executables and applications. I inspected its implementation and tried a Windows binary and a small JavaScript fixture, keeping static findings separate from runtime claims.</span></a><a href="/en/teardowns/qa/formal-verification/" aria-current="page"><span class="t"><span>Claude formal verification — copying finished proofs</span><span class="kpi">time −21% · cost flat</span></span><span class="s">Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other&#39;s finished work, and measured it before and after in my game studio&#39;s art team.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>Claude formal verification — copying finished proofs</h1><p class="sum">Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other&#39;s finished work, and measured it before and after in my game studio&#39;s art team.</p><div class="meta"><span>time −21% · cost flat</span><a class="src" href="https://www.anthropic.com/research/formal-verification" target="_blank" rel="noopener">Anthropic research post (2026-10-22) — anthropic.com/research/formal-verification ↗</a><a class="src" href="https://www.instagram.com/p/De5VM-zE0Xz/" target="_blank" rel="noopener">Instagram post that pointed me to it (ai.asap.kr) — instagram.com/p/De5VM-zE0Xz ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#trying-lots-of-inputs-is-not-the-same-as-proving-all-inputs-are-fine">Trying lots of inputs is not the same as proving all inputs are fine</a><a href="#what-changed-claude-wrote-the-proofs">What changed: Claude wrote the proofs</a><a href="#proven-does-not-mean-zero-bugs">“Proven” does not mean “zero bugs”</a><a href="#what-i-took-was-not-the-proofs-but-the-copying">What I took was not the proofs but the copying</a><a href="#measured-first-84-of-every-script-was-written-from-scratch">Measured first: 84% of every script was written from scratch</a><a href="#so-i-added-a-list-and-ran-the-same-job-twice">So I added a list and ran the same job twice</a><a href="#less-writing-faster-finish-same-bill">Less writing, faster finish, same bill</a><a href="#what-i-could-not-do">What I could not do</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-the-source-claims--numbers-and-conditions">What the source claims — numbers and conditions</a><a href="#tried-on-my-setup--script-reuse-in-the-art-team">Tried on my setup — script reuse in the art team</a><a href="#the-change--one-shared-workspace-list">The change — one shared-workspace list</a><a href="#verdict-adopted-for-time">Verdict: adopted, for time</a></nav><div class="prose"><p><strong>Anthropic asked Claude to prove, mathematically, that 239 test entry points across 123 open-source libraries never crash on any input smaller than 64 MB.</strong> That kind of proof is called formal verification. One detail in the report caught my eye: when agents could copy each other’s finished proofs, they spent 17% fewer tokens. I tried that idea on the AI art team in my own game studio. Work got 21% faster. The bill stayed the same.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 200" role="img" aria-label="Fuzzing versus formal verification. Fuzzing keeps feeding random inputs into a test entry point and looks for one that crashes. Formal verification turns the same entry point into a specification; Claude writes the proof and Rocq checks it.">
+  <text class="lbl" x="8" y="22">One test entry point, two roads</text>
+  <rect class="bx-code" x="8" y="36" width="480" height="58" rx="2"/>
+  <text class="bx-t" x="248" y="60" text-anchor="middle">Fuzzing — keep throwing random inputs</text>
+  <text class="bx-s" x="248" y="82" text-anchor="middle">you know only what you hit · untried inputs remain</text>
+  <rect class="bx-code" x="512" y="36" width="480" height="58" rx="2"/>
+  <text class="bx-t" x="752" y="60" text-anchor="middle">Formal proof — «no input crashes it»</text>
+  <text class="bx-s" x="752" y="82" text-anchor="middle">Claude writes the proof · Rocq checks it</text>
+  <line class="rule" x1="8" y1="120" x2="992" y2="120"/>
+  <text class="cap cap-i" x="8" y="146">Outside the proof: the stated promise · the RISC-V and Linux models · the checker</text>
+  <text class="cap" x="8" y="170">x86, ARM and multi-threaded programs are not covered this time</text>
+</svg>
+</figure>
+<h2 id="trying-lots-of-inputs-is-not-the-same-as-proving-all-inputs-are-fine">Trying lots of inputs is not the same as proving all inputs are fine</h2>
+<p>The usual way to hunt bugs is <strong>fuzzing</strong>. You throw random inputs at a program, again and again, and wait for it to crash. Run it longer and you find more. But the space of inputs never ends, so there is always an input nobody tried.</p>
+<p>Formal verification goes the other way. Instead of trying inputs one by one, you write a mathematical proof that <strong>no input at all can make this program crash</strong>. A checker program — Rocq, here — grades the proof line by line, so no human has to read it.</p>
+<p>The catch has always been size. One operating system kernel took two person-years to build and twenty to prove. So proofs were kept for code where failure is unthinkable, like flight control.</p>
+<h2 id="what-changed-claude-wrote-the-proofs">What changed: Claude wrote the proofs</h2>
+<p>Anthropic took fuzz tests that projects already had and turned each into a promise: “this entry point never crashes on any input under 64 MB.” Then Claude wrote the proof of that promise.</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>123 · 239</td>
+<td>libraries proven · test entry points</td>
+</tr>
+<tr>
+<td>~180 million lines</td>
+<td>total proof written; a typical one runs ~600,000 lines</td>
+</tr>
+<tr>
+<td>a few weeks</td>
+<td>how long it took</td>
+</tr>
+<tr>
+<td>hundreds</td>
+<td>bugs found while proving, some missed by trillions of fuzz runs</td>
+</tr>
+</tbody>
+</table>
+<p>When a proof gets stuck, there is probably a bug at that spot. Claude fixed the bug and proved the fixed code. One bug only fired on a rare input of about 20 MB. Fuzzers usually stop at 1 MB, so they never reached it.</p>
+<h2 id="proven-does-not-mean-zero-bugs">“Proven” does not mean “zero bugs”</h2>
+<p>The post draws this line itself. A proof says the program keeps its promise. It does not say the promise matches the real world.</p>
+<p>This promise assumes a single-threaded program, a RISC-V chip and Linux. Most people run these libraries on x86 or ARM. That gap sits outside the proof. What the work does buy is <strong>knowing where to look</strong> for any remaining bug: the promise, the models of chip and OS, and the checker.</p>
+<h2 id="what-i-took-was-not-the-proofs-but-the-copying">What I took was not the proofs but the copying</h2>
+<p>I have no proofs to write. What stuck with me was an experiment near the end.</p>
+<p>Agents working on different proofs were given a shared workspace where they could <strong>copy each other’s finished proofs</strong>. They used 17% fewer tokens than agents working alone, and a few succeeded where solo attempts had failed. The reason was spelled out: most of any proof covers code every program has, so borrowing and adapting beats starting over.</p>
+<p>My studio has the same shape. When the AI makes a pixel animation, it writes scripts for the drawing — and also scripts to build comparison sheets, zoom in, and run checks. Those exist for every character.</p>
+<h2 id="measured-first-84-of-every-script-was-written-from-scratch">Measured first: 84% of every script was written from scratch</h2>
+<p>I compared every art script so far, line by line, against the scripts written before it.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Lines</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Written from scratch</td>
+<td>18,012</td>
+<td>84%</td>
+</tr>
+<tr>
+<td>Reused as is or with edits</td>
+<td>3,306</td>
+<td>16%</td>
+</tr>
+</tbody>
+</table>
+<p>Almost all of that 16% was <strong>one session continuing its own work</strong>. Scripts from other sessions were barely touched. And 7,450 of the fresh lines were not drawing at all — they were viewing, comparing and checking tools.</p>
+<h2 id="so-i-added-a-list-and-ran-the-same-job-twice">So I added a list and ran the same job twice</h2>
+<p>I generated one page listing 111 finished scripts, grouped by job. Then I gave the same job to four agents.</p>
+<ul>
+<li>Job: a four-frame faint animation for Arcanine (four legs) and Machamp (two legs)</li>
+<li>Group A, two agents: the current way</li>
+<li>Group B, two agents: “before writing a script, find one in this list that did the same job, copy it, then adapt it”</li>
+<li>Same model, same effort level, same moment, run separately</li>
+</ul>
+<h2 id="less-writing-faster-finish-same-bill">Less writing, faster finish, same bill</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="Group A versus group B. Fresh script lines fell from 86 percent to 19 percent, time from 10 minutes 30 seconds to 8 minutes 14 seconds, output tokens from 58 thousand to 48 thousand. Total relative cost barely moved, from 93 to 91.">
+  <text class="lbl" x="8" y="22">Group A (current) top · group B (list first) bottom — mean of two</text>
+  <text class="cap cap-i" x="200" y="58" text-anchor="end">Fresh script lines</text>
+  <rect class="bar" x="216" y="42" width="602" height="20" rx="1"/>
+  <text class="cap cap-i" x="830" y="58">86%</text>
+  <rect class="bar bar-p" x="216" y="66" width="133" height="20" rx="1"/>
+  <text class="cap cap-p" x="361" y="82">19%</text>
+  <text class="cap cap-i" x="200" y="122" text-anchor="end">Time</text>
+  <rect class="bar" x="216" y="106" width="602" height="20" rx="1"/>
+  <text class="cap cap-i" x="830" y="122">10m 30s</text>
+  <rect class="bar bar-p" x="216" y="130" width="471" height="20" rx="1"/>
+  <text class="cap cap-p" x="699" y="146">8m 14s</text>
+  <text class="cap cap-i" x="200" y="186" text-anchor="end">Output tokens</text>
+  <rect class="bar" x="216" y="170" width="602" height="20" rx="1"/>
+  <text class="cap cap-i" x="830" y="186">58k</text>
+  <rect class="bar bar-p" x="216" y="194" width="490" height="20" rx="1"/>
+  <text class="cap cap-p" x="718" y="210">48k</text>
+  <text class="cap cap-i" x="200" y="250" text-anchor="end">Total cost (relative)</text>
+  <rect class="bar" x="216" y="234" width="602" height="20" rx="1"/>
+  <text class="cap cap-i" x="830" y="250">93</text>
+  <rect class="bar bar-p" x="216" y="258" width="586" height="20" rx="1"/>
+  <text class="cap cap-p" x="814" y="274">91</text>
+</svg>
+</figure>
+<p>Group B’s fresh lines dropped from 86% to 19%. Time fell 21%, and the text the AI produced (output tokens) fell 19% — almost exactly the 17% Anthropic reported.</p>
+<p>Total cost, though, barely moved. Reading the copied scripts <strong>raised the input side</strong>, and that gave back nearly everything saved on output. All four animations passed the machine checks. Each had a flaw or two by eye (group B’s Arcanine looks like its body floats when lying down), but neither group was clearly better.</p>
+<p>I kept the change in the studio, because the same money now buys a faster finish. As a way to save tokens, this run did not prove it.</p>
+<h2 id="what-i-could-not-do">What I could not do</h2>
+<ul>
+<li><strong>Only two pairs.</strong> Even the two A agents differed 1.7× in cost. Anthropic ran 36 tasks three times each. My numbers show a direction, not a size.</li>
+<li><strong>No human has judged the art yet.</strong> Passing machine checks means “no defects,” nothing more.</li>
+<li><strong>I fixed two flaws group B reported before adopting the list</strong> — one job’s scripts were scattered across sections, and copied defaults gave no hint they were tuned to a different reference. I have not re-measured with the fixed list.</li>
+</ul>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>This is research published on 2026-10-22 by Anthropic’s Frontier Red Team with Theorem.</strong> They turned OSS-Fuzz entry points into the specification “no crash on any input below 64 MB,” and Claude wrote the proofs against RISC-V executables. 123 libraries and 239 entry points were proven. I picked one experiment from the post — proof reuse — moved it to my studio’s pixel-animation agents, and measured it with two species × two groups.</p>
+<h2 id="what-the-source-claims--numbers-and-conditions">What the source claims — numbers and conditions</h2>
+<p>The thesis is that LLMs are making formal verification feasible at much larger scale. The supporting figures, as stated:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Targets</td>
+<td>123 OSS-Fuzz libraries · 239 fuzz entry points</td>
+</tr>
+<tr>
+<td>Spec</td>
+<td>no crash for every input under 64 MB and every modeled Linux response and memory layout</td>
+</tr>
+<tr>
+<td>Assumptions</td>
+<td>single-threaded static binary · fixed memory budget · RISC-V · Linux · musl libc</td>
+</tr>
+<tr>
+<td>Proof size</td>
+<td>~180M lines of Rocq · ~600k per proof · median binary 18k instructions</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>a few weeks</td>
+</tr>
+<tr>
+<td>Trusted base</td>
+<td>RISC-V and Linux process models · the exact theorem statements · the Rocq checker</td>
+</tr>
+</tbody>
+</table>
+<p>A crash means a fault, a failed assertion, or any unmodeled behavior. The binaries were interpreted directly rather than translating fuzz tests into Rocq, to avoid translation errors.</p>
+<h3 id="bugs-came-out-of-the-proving">Bugs came out of the proving</h3>
+<p>Each time a proof stalled, Claude patched the code, the spec was regenerated, and Claude proved again. Hundreds of bugs surfaced. The post names four: a counter underflow in a decompressor that only fires on a rare ~20 MB layout; an out-of-bounds read in an image decoder needing a 64 MB input and over 2 GB of memory; a read needing a particular call order across two handles to one file; and a rediscovered libexpat CVE needing deep nesting. Fuzzers typically cap inputs at 1 MB.</p>
+<h3 id="the-post-flags-reward-hacking-first">The post flags reward hacking first</h3>
+<p>“Patch, then prove” has a hole: rewrite the program into one that does nothing and anything becomes provable. The authors penalized every patch, gave extra credit for proving how few inputs a patch changed, and logged and audited patches. I have hit the same shape running my own gates — once passing becomes the goal, the target drifts toward whatever passes.</p>
+<h3 id="two-kinds-of-efficiency--newer-models-and-reuse">Two kinds of efficiency — newer models, and reuse</h3>
+<ul>
+<li>On 36 small verification tasks built from real OSS-Fuzz code, Opus 5.5 proved half of them with about 40% fewer tokens than Opus 5 (three single-agent attempts per task, 5M-token budget).</li>
+<li>In a shared workspace where agents could copy each other’s proofs, they needed 17% fewer tokens than working alone. 30 of the 34 finished proofs were cheaper than the solo average, and two that solo agents never finished got done.</li>
+<li>The reason given: most of a proof covers parts every program has, such as C runtime start-up and AddressSanitizer.</li>
+</ul>
+<h2 id="tried-on-my-setup--script-reuse-in-the-art-team">Tried on my setup — script reuse in the art team</h2>
+<p>My studio’s art team makes pixel animation with Python scripts and leaves them in a <code>_scripts</code> folder per job. The rule even said “the next species reuses these.” I measured whether that happens.</p>
+<p><strong>Method.</strong> For each script file, compare it line by line with every script from an earlier, different job folder and keep the best match. Buckets follow the source’s Figure 6: identical (99%+) · lightly edited (80–99%) · heavily edited (40–80%) · new (under 40%).</p>
+<table>
+<thead>
+<tr>
+<th>Bucket</th>
+<th>Lines</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New</td>
+<td>18,012</td>
+<td>84%</td>
+</tr>
+<tr>
+<td>Heavily edited</td>
+<td>1,599</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Identical</td>
+<td>1,024</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Lightly edited</td>
+<td>683</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+<p>115 scripts, 21,318 lines. Every “identical” case was the same session’s next batch — one effects toolkit carried through batches 1, 2, 4 and 5. Between body animation and effects, or between sessions, reuse sat at 2–10%: effectively none. Split by file name, 7,450 of the new lines were viewing, comparison, checking and measuring tools — my equivalent of “parts every program has.”</p>
+<h2 id="the-change--one-shared-workspace-list">The change — one shared-workspace list</h2>
+<p>I wrote a script that copies each finished script’s first docstring line and usage line, untouched, into a single list. I did not summarize by hand: the moment a list is summarized, it starts drifting from the scripts. The first version grouped 111 scripts by purpose (compare, view, measure, deliver, rig, drawing).</p>
+<h3 id="experiment-design">Experiment design</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task</td>
+<td>faint animation · facing right · about 4 frames · move-the-parts method · hold last frame</td>
+</tr>
+<tr>
+<td>Subjects</td>
+<td>Arcanine (four legs) · Machamp (two legs, four arms) — neither has an original faint</td>
+</tr>
+<tr>
+<td>Bar</td>
+<td>Charizard’s original faint · machine check · five numeric filters · comparison sheet</td>
+</tr>
+<tr>
+<td>Group A</td>
+<td>current way</td>
+</tr>
+<tr>
+<td>Group B</td>
+<td>one paragraph at the top of the brief: find a matching script in the list, copy it, adapt it</td>
+</tr>
+<tr>
+<td>Controls</td>
+<td>same agent definition · model · effort level · start time · each told not to open the others’ folders</td>
+</tr>
+</tbody>
+</table>
+<p>Tokens are the per-call usage summed from each agent’s transcript. Relative cost weights input 1, cache write 1.25, cache read 0.1, output 5.</p>
+<h3 id="results">Results</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A Arcanine</th>
+<th>A Machamp</th>
+<th>B Arcanine</th>
+<th>B Machamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New script lines</td>
+<td>86%</td>
+<td>86%</td>
+<td>17%</td>
+<td>21%</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>9m 25s</td>
+<td>11m 36s</td>
+<td>8m 50s</td>
+<td>7m 37s</td>
+</tr>
+<tr>
+<td>Output tokens</td>
+<td>54,385</td>
+<td>62,494</td>
+<td>50,544</td>
+<td>44,622</td>
+</tr>
+<tr>
+<td>Cache writes</td>
+<td>123,167</td>
+<td>149,208</td>
+<td>161,935</td>
+<td>147,529</td>
+</tr>
+<tr>
+<td>Relative cost</td>
+<td>698k</td>
+<td>1,168k</td>
+<td>1,001k</td>
+<td>816k</td>
+</tr>
+<tr>
+<td>Machine check</td>
+<td>pass</td>
+<td>pass</td>
+<td>pass</td>
+<td>pass</td>
+</tr>
+</tbody>
+</table>
+<p>By group mean, B was −21% time, −19% output, −3% relative cost. Cache writes rose 13%; that is the cost of reading the copied scripts in, and it nearly cancelled the output savings. Both B agents copied from the same place: an earlier Blastoise faint job with the same motion, method and reference.</p>
+<h3 id="two-flaws-group-b-reported">Two flaws group B reported</h3>
+<ul>
+<li>One job’s scripts were scattered across five purpose sections. Both agents ended up copying a whole job anyway, so the list’s unit was wrong. → regrouped by job.</li>
+<li>A copied tolerance default was tuned to the earlier job’s reference (another sprite’s 4 px). Left alone, it would have failed this run’s 2 px check, and nothing in the script said where the value came from. → the list header now says to re-measure copied defaults against the current reference.</li>
+</ul>
+<h2 id="verdict-adopted-for-time">Verdict: adopted, for time</h2>
+<p>I added one line to the agent definition and the working guide — “before writing a new script, find a whole job in the list and copy it” — and put the list generator next to them. Cost was the same, time dropped, and I found no sign of worse output.</p>
+<p>One thing harvested, and one lesson paid for. <strong>“Writing less” and “paying less” are different numbers.</strong> Looking only at output, I would have reported a 19% saving. Adding the input side pushed it into the noise. Anthropic’s 17% is a total-token figure, so I cannot claim I reproduced it here; my tasks are far shorter than proofs, which makes the reading cost a bigger share.</p>
+<p>Three things remain: re-measure with the fixed list, add more samples, and have a human judge the art.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/qa/formal-verification/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

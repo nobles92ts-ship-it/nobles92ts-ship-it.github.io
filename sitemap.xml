@@ -2069,6 +2069,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/clumsy/"/>
   </url>
   <url>
+    <loc>https://aitryed.com/en/teardowns/qa/formal-verification/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/formal-verification/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/formal-verification/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/formal-verification/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/teardowns/qa/formal-verification/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/formal-verification/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/formal-verification/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/formal-verification/"/>
+  </url>
+  <url>
     <loc>https://aitryed.com/en/teardowns/qa/qa-infrastructure/</loc>
     <lastmod>2026-09-28T17:42:01+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/qa-infrastructure/"/>

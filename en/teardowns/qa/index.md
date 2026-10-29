@@ -1,8 +1,8 @@
 # QA automation
 
-> Seven investigations into automation and cause-analysis tools. The earlier adoption ledger stays separate from the two static probes performed with REA.
+> Eight investigations into automation, cause-analysis tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.
 
-- Headline number: 7 pieces · prior 4.5 / 7
+- Headline number: 8 pieces · prior 4.5 / 7
 - Rendered page: https://aitryed.com/en/teardowns/qa/
 - Other language: https://aitryed.com/ko/teardowns/qa/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -15,7 +15,7 @@ First, what "QA automation" is.
 
 When you build a game or an app, someone has to **press everything and check it works.** Press a button, see if the right screen comes up, confirm the value landed. A person doing that by hand is QA. **Getting a machine to do the pressing** is QA automation.
 
-There are seven pieces here, opening up automation and tools for investigating causes.
+There are eight pieces here, opening up automation, tools for investigating causes, and one piece of formal-verification research.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
@@ -82,6 +82,10 @@ The check above taught me that writing something down and putting it in are sepa
 ## The seventh tool helps investigate what a failed check means
 
 [REA](/en/teardowns/qa/rea/index.md) lets an agent inspect executables and applications. I tried static analysis on a Windows binary and a small JavaScript fixture, then examined the boundary between findings and inference. **Two exercised probes do not amount to a QA integration.** The 4.5 / 7 adoption figure belongs to the earlier six pieces; these probes are not added to that tally.
+
+## The eighth borrows one idea from a different road: proof
+
+[Claude formal verification](/en/teardowns/qa/formal-verification/index.md) is Anthropic's work having Claude prove that 123 open-source libraries never crash under stated conditions. Proofs are not my job, so I took one idea from it — agents copying each other's finished work — put it into my game studio's art team, and measured before and after. Time fell 21%; cost stayed flat. This is not added to the 4.5 / 7 figure either.
 
 ## The detailed record starts here
 
