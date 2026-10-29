@@ -65,8 +65,6 @@ It also runs the other way. Folders named `_no_sync` are left out of S3 but deli
 
 ## Not done yet
 
-**Since early October, the S3 backup has been ending in "failure" almost every day.** I gave it a brake: stop if a run tries to delete more than 300 files. From 2 to 29 October it hit that brake on 26 of the 28 days. New files still go all the way up (3,131 of them on 29 October), so the backup is not empty — but files I deleted are leaving the backup only 300 a day, and I have not fixed it.
-
 **Nothing tells me when Syncthing quietly stops.** It happened once in August, and all I have since is a person checking now and then.
 
 **AI transcripts from the home PC exist only on the home PC.** They are out of Syncthing, and only the work PC uploads to S3, so conversations held at home have no second copy anywhere.
@@ -91,6 +89,7 @@ It also runs the other way. Folders named `_no_sync` are left out of S3 but deli
 | Bucket | versioning on · server-side encryption · public access blocked · Seoul region |
 | Lifecycle rule | after a day, keep only the newest old version of each file; clear unfinished upload parts after 7 days |
 | rclone config file | encrypted; each PC reads the password from a local file |
+| Git history of the game repo | not uploaded as a folder; a daily `git bundle` file (about 10MB) goes up instead |
 
 ## Two sync tools on one folder invent conflicts
 
@@ -113,6 +112,16 @@ The real cost was requests. A file listing does not tell rclone when each file w
 | Result | one run went from 2.1 minutes to 12 seconds |
 
 I fell hard once along the way. I first tried a different flag for the same saving (`--use-server-modtime`). Tested as a single command it was fine, but inside the normal two-way cycle it decided every file had changed and aborted itself. Sync between the PCs stood still for seven hours. **One command passing told me nothing about the whole cycle passing.**
+
+## A brake can mistake ordinary work for an accident
+
+The S3 backup has a brake: if a run wants to delete more than 300 files at once, it stops. It is there so that wiping a folder by mistake does not wipe it from the backup too. Yet from 2 to 29 October the backup hit that brake on 26 of the 28 days and ended in "failure".
+
+Counting what it wanted to delete, day by day, 240 to 300 files came from one place: the git history folder (`.git`) of the game I am building. Git writes a small file for each piece of work, and once thousands pile up it packs them into one large file and deletes the small ones. October brought 927 commits to that repo, close to a thousand small files went up each day, and every packing left the backup with thousands to delete. Three hundred a day could not keep up; by the 29th, 7,332 files were waiting in S3 to be removed.
+
+The brake was not broken. It counts deletions and nothing else, so it cannot tell routine work from an accident. I left the brake alone and changed the shape of what moves. That repo's `.git` is now out of the backup; instead, `git bundle` packs everything — all 314 branches and each working folder's position — into a single file every day. Packing took four seconds. Downloading it back from S3 and restoring gave the same branch count and the same latest commit as the original. Then I removed the 10,816 old `.git` files left in S3, and a backup run the same day finished clean.
+
+**A brake that counts files does not know which files.** Turning thousands of daily changes into one file kept the brake intact and removed the cause, which loosening the brake would not have done.
 
 ## The last copy of a deleted file is kept on purpose
 
@@ -168,7 +177,6 @@ Starting with a fresh database is safe: the machine joins as a new device and on
 
 | Item | Status |
 |---|---|
-| S3 backup hitting the 300-file brake | hit on 26 of the days from 2–29 October. New files go up; only cleaning out deleted ones lags. Not addressed |
 | Automatic stall detection for Syncthing | none — a person checks the remaining bytes now and then |
 | Versioning period: one year → 7–30 days | on hold, because it would also affect the work folder |
 | Second copy of home-PC transcripts | none — they live only on the home PC since leaving sync |
