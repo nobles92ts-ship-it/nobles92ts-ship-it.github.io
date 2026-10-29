@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>동기화와 백업 — 쓴 글</title><meta name="description" content="회사 PC와 집 PC는 Syncthing으로 같은 폴더를 실시간으로 맞추고, AWS S3에는 하루 한 번 백업을 올립니다. 동기화는 실수까지 복사하기 때문에 백업이 따로 있어야 합니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="동기화와 백업 — 쓴 글"><meta property="og:description" content="회사 PC와 집 PC는 Syncthing으로 같은 폴더를 실시간으로 맞추고, AWS S3에는 하루 한 번 백업을 올립니다. 동기화는 실수까지 복사하기 때문에 백업이 따로 있어야 합니다."><meta property="og:url" content="https://aitryed.com/ko/writing/sync-backup/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="동기화와 백업 — 쓴 글"><meta name="twitter:description" content="회사 PC와 집 PC는 Syncthing으로 같은 폴더를 실시간으로 맞추고, AWS S3에는 하루 한 번 백업을 올립니다. 동기화는 실수까지 복사하기 때문에 백업이 따로 있어야 합니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/writing/sync-backup/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/writing/sync-backup/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/writing/sync-backup/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/writing/sync-backup/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/writing/sync-backup/"><link rel="stylesheet" href="/_astro/Shell.X3WZQL5G.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="writing"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/about/" data-sec="about"><span class="n">04</span><span>나는 누구</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/writing/sync-backup/" hreflang="en">English</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 쓴 글</div><div class="plist"><a href="/ko/writing/verdicts/"><span class="t"><span>판정</span><span class="kpi">글 5</span></span><span class="s">PASS와 FAIL 사이. 무엇을 증거로 칠지, 기계가 혼자 단정해도 되는 범위는 어디까지인지.</span></a><a href="/ko/writing/measurement/"><span class="t"><span>측정</span><span class="kpi">글 1</span></span><span class="s">어디에 시간이 갔나. 추정과 실측을 갈라 적는 법. 그리고 잰 값을 무엇과 비교할지 정하는 일.</span></a><a href="/ko/writing/agents/"><span class="t"><span>부리기</span><span class="kpi">글 2</span></span><span class="s">AI에 일을 시키는 쪽 이야기. 루프, 가드, 그리고 자동화하지 않기로 한 것들.</span></a><a href="/ko/writing/choosing/"><span class="t"><span>고르기</span><span class="kpi">글 2</span></span><span class="s">남의 것을 들일지 정하는 자리. 무엇을 근거로 기각하고, 그 기각을 언제 다시 여는가.</span></a><a href="/ko/writing/ai-foldering/"><span class="t"><span>AI 폴더링</span><span class="kpi">질문 4 · 출처 7</span></span><span class="s">AI와 같이 쓰는 폴더는 프로그램이 «주소»로 파일을 찾습니다. 그래서 저는 폴더 모양을 그리지 않고, 새 파일이 어디로 갈지 묻는 질문 넷으로 정리합니다.</span></a><a href="/ko/writing/sync-backup/" aria-current="page"><span class="t"><span>동기화와 백업</span><span class="kpi">PC 2 · 층 3</span></span><span class="s">회사 PC와 집 PC는 Syncthing으로 같은 폴더를 실시간으로 맞추고, AWS S3에는 하루 한 번 백업을 올립니다. 동기화는 실수까지 복사하기 때문에 백업이 따로 있어야 합니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>쓴 글</span><span class="st">공개</span></div><h1>동기화와 백업</h1><p class="sum">회사 PC와 집 PC는 Syncthing으로 같은 폴더를 실시간으로 맞추고, AWS S3에는 하루 한 번 백업을 올립니다. 동기화는 실수까지 복사하기 때문에 백업이 따로 있어야 합니다.</p><div class="meta"><span>PC 2 · 층 3</span><a class="src" href="https://docs.syncthing.net/users/versioning.html" target="_blank" rel="noopener">문서 Syncthing 버전 보관 — docs.syncthing.net/users/versioning.html ↗</a><a class="src" href="https://docs.syncthing.net/users/ignoring.html" target="_blank" rel="noopener">문서 Syncthing 제외 목록 — docs.syncthing.net/users/ignoring.html ↗</a><a class="src" href="https://rclone.org/commands/rclone_sync/" target="_blank" rel="noopener">문서 rclone sync — rclone.org/commands/rclone_sync ↗</a><a class="src" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html" target="_blank" rel="noopener">문서 S3 수명 주기 — docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#동기화는-복사기이고-백업은-금고입니다">동기화는 복사기이고, 백업은 금고입니다</a><a href="#사고마다-막아-주는-층이-다릅니다">사고마다 막아 주는 층이 다릅니다</a><a href="#백업은-한-pc에서만-한-방향으로만-올립니다">백업은 한 PC에서만, 한 방향으로만 올립니다</a><a href="#옮기지-않는-파일도-정해-둡니다">옮기지 않는 파일도 정해 둡니다</a><a href="#아직-못-한-것">아직 못 한 것</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#지금-설정은-이렇습니다">지금 설정은 이렇습니다</a><a href="#두-장치가-같은-폴더를-맡으면-가짜-충돌이-납니다">두 장치가 같은 폴더를 맡으면 가짜 충돌이 납니다</a><a href="#돈은-저장이-아니라-물어보는-횟수에서-샜습니다">돈은 저장이 아니라 «물어보는 횟수»에서 샜습니다</a><a href="#지운-파일의-마지막-판은-일부러-남깁니다">지운 파일의 마지막 판은 일부러 남깁니다</a><a href="#syncthing은-에러-없이-멈출-수-있습니다">Syncthing은 에러 없이 멈출 수 있습니다</a><a href="#버전-보관은-차이가-아니라-파일을-통째로-남깁니다">버전 보관은 차이가 아니라 파일을 통째로 남깁니다</a><a href="#두-pc의-ai가-같은-파일을-고치면-한쪽-고침이-사라집니다">두 PC의 AI가 같은 파일을 고치면 한쪽 고침이 사라집니다</a><a href="#제외-목록은-pc마다-따로-고쳐야-합니다">제외 목록은 PC마다 따로 고쳐야 합니다</a><a href="#한쪽-pc를-포맷할-때는-순서가-있습니다">한쪽 PC를 포맷할 때는 순서가 있습니다</a><a href="#남은-일">남은 일</a></nav><div class="prose"><p><strong>제 컴퓨터 두 대(회사 PC와 집 PC)는 Syncthing이라는 무료 프로그램으로 같은 폴더를 실시간으로 맞추고, 아마존 클라우드 저장소인 AWS S3에 하루 한 번 백업을 올립니다. 둘은 비슷해 보이지만 하는 일이 반대라서 둘 다 둡니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="파일을 지키는 층은 셋이다. 첫째는 각 PC 안의 버전 보관으로, 실수로 지운 파일 하나를 되돌린다. 둘째는 Syncthing이 실시간으로 맞추는 다른 PC로, 한쪽 디스크가 죽었을 때 쓴다. 셋째는 하루 한 번 한 방향으로 올리는 S3 백업으로, 두 PC가 다 당했을 때 쓴다. 아래 층으로 갈수록 느리지만 오래 간다.">
+  <text class="lbl" x="8" y="22">파일을 지키는 층은 셋 — 사고마다 막는 층이 다르다</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="122" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="166" y="64" text-anchor="middle">① 버전 보관 (각 PC 안)</text>
+  <text class="cap" x="166" y="90" text-anchor="middle">실수로 지운 파일 하나</text>
+  <text class="cap" x="166" y="114" text-anchor="middle">상대 PC가 보낸 변경의</text>
+  <text class="cap" x="166" y="138" text-anchor="middle">옛 판을 1년까지 둔다</text>
+  <rect class="vn vn-a" x="342" y="36" width="316" height="122" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="500" y="64" text-anchor="middle">② 다른 PC (Syncthing)</text>
+  <text class="cap" x="500" y="90" text-anchor="middle">한쪽 디스크가 죽었을 때</text>
+  <text class="cap" x="500" y="114" text-anchor="middle">바뀌면 몇 초 안에</text>
+  <text class="cap" x="500" y="138" text-anchor="middle">양쪽이 똑같아진다</text>
+  <rect class="vn vn-b" x="676" y="36" width="316" height="122" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="834" y="64" text-anchor="middle">③ S3 백업 (하루 한 번)</text>
+  <text class="cap" x="834" y="90" text-anchor="middle">두 PC가 다 당했을 때</text>
+  <text class="cap" x="834" y="114" text-anchor="middle">회사 PC → 클라우드 한 방향</text>
+  <text class="cap" x="834" y="138" text-anchor="middle">지운 파일도 마지막 판은 남김</text>
+  <text class="lbl" x="8" y="192">오른쪽으로 갈수록 느리지만 오래 간다</text>
+  <text class="lbl" x="8" y="218">한 층이 못 막는 사고를 다음 층이 막는다</text>
+</svg>
+</figure>
+<h2 id="동기화는-복사기이고-백업은-금고입니다">동기화는 복사기이고, 백업은 금고입니다</h2>
+<p>Syncthing은 두 컴퓨터를 인터넷으로 직접 이어 주는 프로그램입니다. 한쪽에서 파일이 바뀌면 몇 초 안에 다른 쪽 파일도 똑같이 바꿉니다. 파일을 중간 서버에 맡기지 않고 두 PC끼리 주고받습니다. 그래서 회사에서 고친 문서를 집에 가서 그대로 이어 쓸 수 있습니다.</p>
+<p>문제는 «똑같이»입니다. 실수로 파일을 지우면 그 실수도 몇 초 안에 다른 PC로 건너갑니다. 랜섬웨어가 파일을 망가뜨려도 마찬가지입니다. 동기화는 지키는 장치가 아니라 <strong>베끼는 장치</strong>입니다.</p>
+<p>S3는 아마존(AWS)이 빌려주는 클라우드 저장소입니다. 저는 여기에 하루 한 번, 아침 8시에 회사 PC의 폴더를 올립니다. 오늘 실수를 해도 어제 올린 판은 그대로 남아 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>동기화 (Syncthing)</th>
+<th>백업 (S3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>언제</td>
+<td>파일이 바뀌면 바로</td>
+<td>하루 한 번, 08:00</td>
+</tr>
+<tr>
+<td>방향</td>
+<td>두 PC가 서로</td>
+<td>회사 PC → 클라우드, 한쪽으로만</td>
+</tr>
+<tr>
+<td>실수로 지우면</td>
+<td>양쪽에서 같이 사라진다</td>
+<td>어제 올린 판이 남아 있다</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>무료</td>
+<td>한 달 1달러 안쪽 (계산값)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="사고마다-막아-주는-층이-다릅니다">사고마다 막아 주는 층이 다릅니다</h2>
+<p>파일 하나를 잘못 지웠다면 첫째 층, <strong>버전 보관</strong>으로 갑니다. Syncthing은 상대 PC에서 건너온 변경 때문에 파일이 바뀌거나 지워지면, 바뀌기 전 판을 숨김 폴더에 따로 챙겨 둡니다. 저는 이걸 1년까지 두도록 켜 놨습니다. 기본값은 꺼짐이라 직접 켜야 합니다.</p>
+<p>한쪽 PC의 디스크가 통째로 죽으면 둘째 층, <strong>다른 PC</strong>가 있습니다. 거기에 같은 파일이 다 있으니까요.</p>
+<p>셋째 층 <strong>S3</strong>는 두 PC가 한꺼번에 당했을 때를 위한 것입니다. 실수가 이미 양쪽에 퍼졌거나, 둘 다 포맷해야 하는 경우입니다. 그래서 S3는 동기화가 고장 났을 때보다 <strong>동기화가 너무 잘 돌았을 때</strong> 필요합니다.</p>
+<h2 id="백업은-한-pc에서만-한-방향으로만-올립니다">백업은 한 PC에서만, 한 방향으로만 올립니다</h2>
+<p>S3에 올리는 일은 회사 PC 혼자 합니다. 집 PC에서 같은 백업 스크립트가 켜지면, 스크립트가 자기 자신을 끄고 끝납니다.</p>
+<p>이유가 있습니다. 한 방향 백업은 «원본에 없는 파일은 백업에서도 지운다»는 규칙으로 돕니다. 두 PC가 같은 저장소에 각자 올리면, 서로 상대가 올린 파일을 «원본에 없다»고 보고 지우게 됩니다. 집 PC의 변경은 어차피 Syncthing이 회사 PC로 가져오니, 한 곳에서만 올려도 빠지는 게 없습니다.</p>
+<p>거꾸로 S3에서 PC로 내려받는 일은 자동으로 두지 않았습니다. 그게 자동이면 PC에서 난 사고가 그대로 백업까지 덮어쓸 수 있어서, 되살릴 때는 사람이 직접 명령을 칩니다.</p>
+<h2 id="옮기지-않는-파일도-정해-둡니다">옮기지 않는 파일도 정해 둡니다</h2>
+<p>모든 파일을 옮기는 게 정답은 아닙니다. 아래 넷은 일부러 동기화에서 뺐습니다.</p>
+<table>
+<thead>
+<tr>
+<th>빼는 것</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC마다 다른 설정·로그인 파일</td>
+<td>파일 안에 그 PC의 사용자 이름이 박혀 있어서, 건너가면 서로를 덮어쓴다</td>
+</tr>
+<tr>
+<td>프로그램이 쓰고 있는 데이터베이스</td>
+<td>쓰는 도중에 복사되면 깨진다</td>
+</tr>
+<tr>
+<td>언제든 다시 만들 수 있는 색인</td>
+<td>두 PC가 각자 만들면 매번 «양쪽이 고쳤다»로 부딪친다</td>
+</tr>
+<tr>
+<td>AI와 나눈 대화 기록 파일</td>
+<td>계속 길어지는 파일이라, 버전 보관이 통째로 복사하다가 22GB까지 불었다</td>
+</tr>
+</tbody>
+</table>
+<p>반대 경우도 있습니다. <code>_no_sync</code>라는 이름의 폴더는 S3에는 안 올리지만 Syncthing으로는 일부러 옮깁니다. 이 이름의 쓰임은 <a href="/ko/writing/ai-foldering/">AI 폴더링</a>에 따로 적었습니다.</p>
+<h2 id="아직-못-한-것">아직 못 한 것</h2>
+<p><strong>S3 백업이 10월 들어 거의 매일 «실패»로 끝나고 있습니다.</strong> 한 번에 300개 넘게 지우려 하면 멈추도록 브레이크를 걸어 뒀는데, 10월 2일부터 29일까지 28일 중 26일이 이 브레이크에 걸렸습니다. 새 파일은 끝까지 올라가니(10월 29일에 3,131개) 백업이 비는 건 아닙니다. 다만 지운 파일이 백업에서 하루 300개씩만 빠지고 있고, 그걸 아직 손보지 않았습니다.</p>
+<p><strong>Syncthing이 조용히 멈춰도 알려 주는 장치가 없습니다.</strong> 8월에 한 번 그런 일이 있었고, 그 뒤로도 사람이 가끔 들여다보는 게 전부입니다.</p>
+<p><strong>집 PC의 AI 대화 기록은 집 PC에만 있습니다.</strong> 대화 기록을 동기화에서 뺐고 S3는 회사 PC만 올리니, 집에서 나눈 대화는 어디에도 사본이 없습니다.</p>
+<p><strong>클라우드 요금 경보도 없습니다.</strong> 백업용 계정에 저장소 권한만 줘서 청구서를 읽을 수 없습니다. 위 표의 한 달 비용은 그래서 계산값입니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>처음(2026-05-21)에는 S3 하나로 두 PC를 묶었습니다.</strong> 회사 PC와 집 PC가 각각 S3와 양방향으로 맞추는 구조였습니다. 석 달 동안 요금이 오르고 가짜 충돌이 쌓였고, 8월 7일에 Syncthing을 들이면서 S3를 백업 전용으로 내렸습니다. 아래는 지금(2026-10-29) 돌고 있는 설정과, 거기까지 오면서 값을 치른 일들입니다.</p>
+<h2 id="지금-설정은-이렇습니다">지금 설정은 이렇습니다</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syncthing</td>
+<td>v2.1.7. 두 PC가 직접 연결된다(중계 서버를 안 거친다)</td>
+</tr>
+<tr>
+<td>맞추는 폴더</td>
+<td>작업 폴더와 AI 설정 폴더로 시작해, 지금은 다른 도구 설정 폴더 둘이 더해져 넷</td>
+</tr>
+<tr>
+<td>바뀐 뒤 보내기까지 기다리는 시간</td>
+<td>작업 폴더 10초 · AI 설정 폴더 300초</td>
+</tr>
+<tr>
+<td>버전 보관</td>
+<td>단계식(staggered). 처음 한 시간은 30초마다, 그 뒤로는 점점 성기게 남기고 1년이 지나면 지운다</td>
+</tr>
+<tr>
+<td>충돌 감시</td>
+<td>15분마다 충돌 사본을 찾아 로그·캐시류는 정리하고, 작업 파일은 남긴 채 알림. 회사 PC에서만 돈다</td>
+</tr>
+<tr>
+<td>S3로 올리는 도구</td>
+<td>rclone <code>sync</code>, 회사 PC → S3 한 방향, 매일 08:00</td>
+</tr>
+<tr>
+<td>올릴 때 붙이는 것</td>
+<td><code>--checksum</code>(내용으로 비교) · <code>--max-delete 300</code>(한 번에 300개 넘게 지우면 멈춤)</td>
+</tr>
+<tr>
+<td>S3 저장소 설정</td>
+<td>버전 관리 켬 · 서버 쪽 암호화 · 공개 접근 차단 · 서울 지역</td>
+</tr>
+<tr>
+<td>옛 판 정리 규칙</td>
+<td>옛 판은 하루가 지나면 가장 최근 것 하나만 남긴다. 끝나지 않은 업로드 조각은 7일 뒤 지운다</td>
+</tr>
+<tr>
+<td>rclone 설정 파일</td>
+<td>암호화해 두고, 암호는 각 PC 안의 파일에서 읽는다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="두-장치가-같은-폴더를-맡으면-가짜-충돌이-납니다">두 장치가 같은 폴더를 맡으면 가짜 충돌이 납니다</h2>
+<p>Syncthing을 처음 붙인 8월 7일 하루 동안 충돌 알림이 계속 울렸습니다. 열어 보니 전부 가짜였습니다. 충돌 사본 한쪽은 지금 파일과 글자 하나 다르지 않았고, 다른 한쪽은 S3에 남아 있던 하루 전 판이었습니다.</p>
+<p>원인은 구조였습니다. Syncthing이 방금 두 PC를 똑같이 맞춰 놨는데, 하루 한 번 도는 S3 양방향 동기화가 하루 늦은 판을 들고 와서 «상대 PC가 고쳤다»고 읽었습니다. 제외 목록으로는 못 막았습니다. 그래서 같은 날 S3를 회사 PC 한 대에서 올리기만 하는 한 방향으로 바꿨고, 충돌이라는 개념 자체가 백업 쪽에서 사라졌습니다.</p>
+<p><strong>두 동기화 장치가 같은 폴더를 맡으면 서로의 쓰기를 남의 변경으로 봅니다.</strong> 한쪽은 맞추고, 다른 한쪽은 받아 적기만 해야 합니다.</p>
+<h2 id="돈은-저장이-아니라-물어보는-횟수에서-샜습니다">돈은 저장이 아니라 «물어보는 횟수»에서 샜습니다</h2>
+<p>S3 청구액이 5월 20달러, 6월 47달러, 7월 75달러로 올랐습니다. 처음엔 옛 판이 쌓여서라고 생각했는데, 저장 요금은 한 달 1.7달러였습니다. 옛 판을 다 지워도 1.5달러밖에 안 줄어드는 셈입니다.</p>
+<p>진짜 범인은 요청 수였습니다. rclone은 파일 목록만 받아서는 수정 시각을 알 수 없어, 파일마다 따로 «이 파일 언제 바뀌었나»를 묻습니다. 파일 2만 6천여 개를 하루 144번 맞추고 있었으니 한 달에 1억 번이 넘는 질문이었습니다.</p>
+<table>
+<thead>
+<tr>
+<th>손본 것</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하루 144번 → 하루 한 번</td>
+<td>질문 수가 그만큼 준다</td>
+</tr>
+<tr>
+<td>양방향 → 한 방향 + <code>--checksum</code></td>
+<td>목록에 이미 있는 내용 지문으로 비교해, 파일마다 묻지 않는다(35개로 재 보니 질문 36번 → 1번)</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>한 번 도는 시간 2.1분 → 12초</td>
+</tr>
+</tbody>
+</table>
+<p>중간에 한 번 크게 넘어졌습니다. 같은 질문을 줄이는 다른 옵션(<code>--use-server-modtime</code>)을 먼저 넣었는데, 명령 하나로 시험할 때는 멀쩡하던 것이 양방향 동기화의 정상 순환에 들어가자 «모든 파일이 바뀌었다»고 판단해 스스로 멈췄습니다. 두 PC 동기화가 7시간 섰습니다. <strong>명령 하나가 통과했다고 순환 전체가 통과하는 건 아니었습니다.</strong></p>
+<h2 id="지운-파일의-마지막-판은-일부러-남깁니다">지운 파일의 마지막 판은 일부러 남깁니다</h2>
+<p>옛 판 정리 규칙은 «더 새로운 옛 판이 하나 이상 있으면» 지웁니다. 그런데 이미 지운 파일의 마지막 판은 그 뒤에 더 새로운 판이 없으니, 이 규칙으로는 영원히 안 지워집니다. 8월에 재 보니 그런 판이 11,472개, 4.75GiB였습니다.</p>
+<p>처음엔 결함으로 봤습니다. 다시 보니 실수로 지운 파일을 되살릴 유일한 근거였습니다. 한 달 0.12달러라서 그대로 두기로 했습니다. 날짜만으로 지우는 규칙도 검토했다가 버렸습니다. 그러면 잘 안 바뀌는 중요한 파일일수록 복구 지점이 먼저 사라집니다.</p>
+<h2 id="syncthing은-에러-없이-멈출-수-있습니다">Syncthing은 에러 없이 멈출 수 있습니다</h2>
+<p>8월 29일 오후, 이 PC의 변경이 다른 PC로 하나도 가지 않았습니다. 화면에도 로그에도 경고가 없었습니다. 폴더 상태가 «검사 중»에서 몇 시간째 안 바뀌고 있었고, 검사가 안 끝나니 주고받는 단계가 아예 시작되지 않았습니다.</p>
+<p>갈라낸 기준은 상태 글자가 아니라 <strong>남은 양</strong>이었습니다. 받아야 할 바이트 수가 수십 분 동안 1바이트도 안 줄면 멈춘 것입니다. 연결 상태를 묻는 요청은 바로 답했기 때문에 «살아 있다»로 속기 쉬웠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>시도</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로그램 재시작</td>
+<td>4분 뒤 적용, 15분쯤 돌다가 다시 멈춤</td>
+</tr>
+<tr>
+<td>강제 종료</td>
+<td>45초간 안 죽고, 다시 뜬 뒤 데이터베이스를 여느라 14분 무응답, 또 멈춤</td>
+</tr>
+<tr>
+<td>재부팅</td>
+<td>다음 날 정상으로 돌아옴</td>
+</tr>
+</tbody>
+</table>
+<p>데이터는 하나도 안 잃었습니다. 멈추는 고장이지 지우는 고장은 아니었습니다. 지금 규칙은 «두 번 재시작해서 같은 자리로 돌아오면 재부팅»입니다.</p>
+<h2 id="버전-보관은-차이가-아니라-파일을-통째로-남깁니다">버전 보관은 차이가 아니라 파일을 통째로 남깁니다</h2>
+<p>9월 14일, 디스크 경고가 왔습니다. 버전 보관 폴더가 22.04GB였고, 그중 22.02GB가 AI 대화 기록 파일이었습니다. 대화 하나짜리 파일이 287MB까지 자라 있었고, 대화가 이어질 때마다 30~60초 간격으로 그 파일이 통째로 한 판씩 쌓였습니다. 그 한 대화에서만 36판, 8.2GB였습니다.</p>
+<p>같은 폴더의 첨부 이미지 3GB는 한 번 쓰고 안 바뀌어서 판이 하나도 안 쌓였습니다. 범인은 크기가 아니라 «계속 자라는 큰 파일»이었습니다. 대화 기록을 Syncthing에서 빼고, 원본이 살아 있는 옛 판(21.66GB)만 지웠습니다. 원본이 이미 없는 판 125개는 유일한 사본이라 남겼습니다.</p>
+<p>이보다 먼저, 8월에는 이 폴더 크기로 알림을 걸었다가 두 번 헛울렸습니다. 버전 보관은 한 시간마다 스스로 솎아내서 크기가 톱니처럼 오르내리는데, 하필 솎아내기 직전 꼭대기를 재고 있었습니다. 그래서 알림 기준을 <strong>디스크 여유 공간</strong>으로 바꿨습니다. 중간 숫자 대신 정말 걱정하는 숫자를 재니 헛울림이 멎었습니다.</p>
+<h2 id="두-pc의-ai가-같은-파일을-고치면-한쪽-고침이-사라집니다">두 PC의 AI가 같은 파일을 고치면 한쪽 고침이 사라집니다</h2>
+<p>9월 22일, 이 PC의 AI 작업 창과 다른 PC의 AI 작업 창이 같은 코드 파일을 몇 초 간격으로 번갈아 고쳤습니다. Syncthing은 두 판을 합치지 않습니다. 하나를 고르고, 진 쪽은 <code>이름.sync-conflict-날짜-시각-기기</code> 사본으로 따로 빼 둡니다. 그래서 고친 내용이 작업 파일에서 사라졌다가 돌아오기를 1분 사이에 세 번 했습니다.</p>
+<p>신호는 둘이었습니다. 고친 파일 옆에 충돌 사본이 생긴 것, 그리고 파일 안에 제가 쓰지 않은 코드가 들어온 것. 지금 규칙은 그 파일에서 손을 떼고, 지금 판과 사본을 다른 곳에 떠 두고, 누가 먼저 고칠지 사람에게 묻는 것입니다. 한 번에 한쪽만 고칩니다.</p>
+<h2 id="제외-목록은-pc마다-따로-고쳐야-합니다">제외 목록은 PC마다 따로 고쳐야 합니다</h2>
+<p>Syncthing은 제외 목록 파일(<code>.stignore</code>)을 자기 설정으로 보고 상대 PC에 보내지 않습니다. S3가 양방향이던 시절에는 그걸 타고 건너갔지만, 한 방향이 된 뒤로는 어느 길로도 안 갑니다. 그래서 제외 목록을 고치면 회사 PC와 집 PC에서 각각 고칩니다. 한쪽만 고치면 아무 에러 없이 어긋난 채로 돕니다.</p>
+<p>제외 규칙은 이름을 정확히 쓰지 않고 넓게 겁니다. 처음에 로그인 파일을 정확한 이름 하나로만 뺐더니, 계정별로 만든 사본과 <code>.bak</code> 붙은 사본이 그대로 백업에 올라갔습니다. 복구하려고 방금 만든 백업 파일까지 다음 번에 올라갔습니다. 지금은 <code>.credentials*</code>처럼 별표로 막고, 막은 뒤에는 S3를 직접 조회해서 정말 0개인지 확인합니다.</p>
+<p>대소문자도 부딪쳤습니다. 윈도는 <code>C--Users</code>와 <code>c--Users</code>를 같은 폴더로 보지만 Syncthing과 S3는 다른 폴더로 봅니다. 그 때문에 34개 파일이 멈춰 있었고, 대소문자를 무시하는 제외 패턴으로 풀었습니다.</p>
+<h2 id="한쪽-pc를-포맷할-때는-순서가-있습니다">한쪽 PC를 포맷할 때는 순서가 있습니다</h2>
+<p>Syncthing을 다시 깔 때 <strong>예전 설정과 데이터베이스를 백업에서 되살리면 안 됩니다.</strong> 데이터베이스에는 «파일이 N개 있었다»가 적혀 있는데 디스크가 비어 있으면, 전부 «지워졌다»로 판정해 상대 PC에서도 지웁니다. Syncthing에는 한꺼번에 지우는 걸 막는 브레이크가 없습니다.</p>
+<p>새 데이터베이스로 시작하면 안전합니다. 처음 보는 기기로 참가해 상대에게서 내려받기만 합니다. 순서는 S3 백업 작업을 먼저 끄고 → 포맷하고 → Syncthing을 새로 깔고 → 상대 PC가 제안하는 폴더 이름을 그대로 받고 → 다 맞춰진 걸 본 뒤에 백업을 다시 켜는 것입니다.</p>
+<p><strong>이 기록에서 값을 치른 교훈은 이겁니다 — 동기화가 조용하다는 건 아무 뜻도 없습니다.</strong> 가짜 충돌은 시끄럽게 울렸고, 진짜 고장(8월 29일의 정지)은 한 번도 안 울렸습니다. 그래서 상태 글자 대신 남은 양을, 폴더 크기 대신 디스크 여유를 재게 됐습니다.</p>
+<h2 id="남은-일">남은 일</h2>
+<table>
+<thead>
+<tr>
+<th>할 일</th>
+<th>지금</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300개 브레이크에 걸리는 S3 백업</td>
+<td>10월 2~29일 중 26일 걸림. 새 파일은 올라가고, 지운 파일 정리만 밀린다. 손대지 않음</td>
+</tr>
+<tr>
+<td>Syncthing 정지 자동 감지</td>
+<td>없음. 남은 양을 사람이 가끔 본다</td>
+</tr>
+<tr>
+<td>버전 보관 기간 1년 → 7~30일</td>
+<td>작업 폴더에도 영향이 있어 보류</td>
+</tr>
+<tr>
+<td>집 PC 대화 기록 사본</td>
+<td>없음. 동기화에서 뺀 뒤로 집 PC에만 있다</td>
+</tr>
+<tr>
+<td>클라우드 요금 경보</td>
+<td>없음. 백업용 계정이 청구서를 못 읽는다</td>
+</tr>
+</tbody>
+</table>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

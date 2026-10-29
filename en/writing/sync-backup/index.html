@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sync and backup — Things I wrote</title><meta name="description" content="My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Sync and backup — Things I wrote"><meta property="og:description" content="My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing."><meta property="og:url" content="https://aitryed.com/en/writing/sync-backup/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sync and backup — Things I wrote"><meta name="twitter:description" content="My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/writing/sync-backup/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/writing/sync-backup/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/writing/sync-backup/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/writing/sync-backup/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/writing/sync-backup/"><link rel="stylesheet" href="/_astro/Shell.X3WZQL5G.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="writing"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing" aria-current="page"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/about/" data-sec="about"><span class="n">04</span><span>Who I am</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/writing/sync-backup/" hreflang="ko">한국어</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">03 Things I wrote</div><div class="plist"><a href="/en/writing/verdicts/"><span class="t"><span>Verdicts</span><span class="kpi">5 posts</span></span><span class="s">The space between PASS and FAIL — what counts as evidence, and how much a machine may decide alone.</span></a><a href="/en/writing/measurement/"><span class="t"><span>Measurement</span><span class="kpi">1 post</span></span><span class="s">Where the time actually went, and how to keep estimates and measurements apart. And the work of deciding what to compare a number against.</span></a><a href="/en/writing/agents/"><span class="t"><span>Running agents</span><span class="kpi">2 posts</span></span><span class="s">The other side — loops, guards, and the things I decided not to automate.</span></a><a href="/en/writing/choosing/"><span class="t"><span>Choosing</span><span class="kpi">2 posts</span></span><span class="s">Deciding whether to bring someone else&#39;s work in. What counts as grounds for rejection, and when a rejection gets reopened.</span></a><a href="/en/writing/ai-foldering/"><span class="t"><span>AI foldering</span><span class="kpi">4 questions · 7 sources</span></span><span class="s">In folders I share with AI, programs find files by their address. So I don&#39;t design a folder shape — I ask four questions about where each new file should go.</span></a><a href="/en/writing/sync-backup/" aria-current="page"><span class="t"><span>Sync and backup</span><span class="kpi">2 PCs · 3 layers</span></span><span class="s">My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>Things I wrote</span><span class="st">public</span></div><h1>Sync and backup</h1><p class="sum">My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing.</p><div class="meta"><span>2 PCs · 3 layers</span><a class="src" href="https://docs.syncthing.net/users/versioning.html" target="_blank" rel="noopener">Docs Syncthing versioning — docs.syncthing.net/users/versioning.html ↗</a><a class="src" href="https://docs.syncthing.net/users/ignoring.html" target="_blank" rel="noopener">Docs Syncthing ignore list — docs.syncthing.net/users/ignoring.html ↗</a><a class="src" href="https://rclone.org/commands/rclone_sync/" target="_blank" rel="noopener">Docs rclone sync — rclone.org/commands/rclone_sync ↗</a><a class="src" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html" target="_blank" rel="noopener">Docs S3 lifecycle — docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#sync-is-a-photocopier-backup-is-a-safe">Sync is a photocopier; backup is a safe</a><a href="#each-accident-has-its-own-layer">Each accident has its own layer</a><a href="#only-one-pc-uploads-and-only-in-one-direction">Only one PC uploads, and only in one direction</a><a href="#some-files-are-kept-out-on-purpose">Some files are kept out on purpose</a><a href="#not-done-yet">Not done yet</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#the-setup-today">The setup today</a><a href="#two-sync-tools-on-one-folder-invent-conflicts">Two sync tools on one folder invent conflicts</a><a href="#the-money-leaked-through-questions-not-storage">The money leaked through questions, not storage</a><a href="#the-last-copy-of-a-deleted-file-is-kept-on-purpose">The last copy of a deleted file is kept on purpose</a><a href="#syncthing-can-stop-without-a-single-error">Syncthing can stop without a single error</a><a href="#versioning-keeps-whole-files-not-differences">Versioning keeps whole files, not differences</a><a href="#when-ai-on-both-pcs-edits-one-file-one-edit-vanishes">When AI on both PCs edits one file, one edit vanishes</a><a href="#the-ignore-list-has-to-be-edited-on-each-pc">The ignore list has to be edited on each PC</a><a href="#wiping-one-pc-has-a-required-order">Wiping one PC has a required order</a><a href="#still-open">Still open</a></nav><div class="prose"><p><strong>I work on two computers, one at the office and one at home. A free program called Syncthing keeps the same folders identical on both, in real time, and once a day a copy goes up to AWS S3, Amazon’s cloud storage. The two look alike but do opposite jobs, which is why I run both.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Three layers protect the files. First, versioning inside each PC brings back a single file deleted by mistake. Second, the other PC, kept identical by Syncthing in real time, covers a dead disk. Third, a one-way S3 backup made once a day covers the case where both PCs are hit. The further right, the slower but the longer it lasts.">
+  <text class="lbl" x="8" y="22">Three layers — each one stops a different accident</text>
+  <rect class="vn vn-a" x="8" y="36" width="316" height="122" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="166" y="64" text-anchor="middle">① Versioning (on each PC)</text>
+  <text class="cap" x="166" y="90" text-anchor="middle">one file deleted by mistake</text>
+  <text class="cap" x="166" y="114" text-anchor="middle">old copies of changes from</text>
+  <text class="cap" x="166" y="138" text-anchor="middle">the other PC, up to a year</text>
+  <rect class="vn vn-a" x="342" y="36" width="316" height="122" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-p" x="500" y="64" text-anchor="middle">② The other PC (Syncthing)</text>
+  <text class="cap" x="500" y="90" text-anchor="middle">when one disk dies</text>
+  <text class="cap" x="500" y="114" text-anchor="middle">a change reaches the other</text>
+  <text class="cap" x="500" y="138" text-anchor="middle">side within seconds</text>
+  <rect class="vn vn-b" x="676" y="36" width="316" height="122" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="834" y="64" text-anchor="middle">③ S3 backup (once a day)</text>
+  <text class="cap" x="834" y="90" text-anchor="middle">when both PCs are hit</text>
+  <text class="cap" x="834" y="114" text-anchor="middle">work PC → cloud, one way</text>
+  <text class="cap" x="834" y="138" text-anchor="middle">keeps the last copy of deletions</text>
+  <text class="lbl" x="8" y="192">The further right, the slower — and the longer it lasts</text>
+  <text class="lbl" x="8" y="218">What one layer misses, the next one catches</text>
+</svg>
+</figure>
+<h2 id="sync-is-a-photocopier-backup-is-a-safe">Sync is a photocopier; backup is a safe</h2>
+<p>Syncthing connects two computers directly over the internet. When a file changes on one, the other gets the same change within seconds. Nothing is parked on a server in between — the two PCs talk to each other. That is how a document I edit at the office is waiting for me at home.</p>
+<p>The catch is the word “same”. Delete a file by mistake and the mistake arrives on the other PC within seconds too. So would ransomware. Sync does not protect anything; <strong>it copies</strong>.</p>
+<p>S3 is cloud storage that Amazon rents out. Every morning at 8:00 the work PC pushes its folders there. If I break something today, yesterday’s copy is still sitting in S3.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sync (Syncthing)</th>
+<th>Backup (S3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When</td>
+<td>the moment a file changes</td>
+<td>once a day, 08:00</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>both PCs, both ways</td>
+<td>work PC to the cloud only</td>
+</tr>
+<tr>
+<td>Delete something by accident</td>
+<td>it vanishes on both</td>
+<td>yesterday’s copy survives</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>free</td>
+<td>under a dollar a month (calculated)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="each-accident-has-its-own-layer">Each accident has its own layer</h2>
+<p>Deleted one file by mistake? That is layer one, <strong>versioning</strong>. Whenever a change arriving from the other PC overwrites or removes a file, Syncthing first tucks the old copy into a hidden folder. Mine keeps them for up to a year. It ships switched off, so you have to turn it on yourself.</p>
+<p>If a whole disk dies, layer two is simply <strong>the other PC</strong>, which holds every file.</p>
+<p>Layer three, <strong>S3</strong>, is for the day both machines are hit at once: a mistake that already spread, or both needing a wipe. Put differently, you need S3 not when sync breaks but when <strong>sync works too well</strong>.</p>
+<h2 id="only-one-pc-uploads-and-only-in-one-direction">Only one PC uploads, and only in one direction</h2>
+<p>The work PC does all the S3 uploading on its own. If the same script starts on the home PC, it switches its own scheduled task off and exits.</p>
+<p>There is a reason. A one-way backup runs on the rule “if the source no longer has it, remove it from the backup”. Let two PCs push into one bucket and each will see the other’s files as missing from its source and delete them. Changes made at home reach the work PC through Syncthing anyway, so one uploader misses nothing.</p>
+<p>The reverse — pulling from S3 back onto a PC — is never automatic. If it were, an accident on the PC could roll straight into the backup. Restoring is a command a person types on purpose.</p>
+<h2 id="some-files-are-kept-out-on-purpose">Some files are kept out on purpose</h2>
+<p>Syncing everything is not the goal. These four stay out of Syncthing deliberately:</p>
+<table>
+<thead>
+<tr>
+<th>Left out</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per-PC settings and sign-in files</td>
+<td>they contain that machine’s user name in their paths, so each PC would overwrite the other</td>
+</tr>
+<tr>
+<td>A database a program is writing to</td>
+<td>copying it mid-write corrupts it</td>
+</tr>
+<tr>
+<td>Indexes that can be rebuilt any time</td>
+<td>both PCs build their own, so every run looks like “both sides edited it”</td>
+</tr>
+<tr>
+<td>Transcripts of my AI conversations</td>
+<td>they keep growing, and versioning copied them whole until the archive hit 22GB</td>
+</tr>
+</tbody>
+</table>
+<p>It also runs the other way. Folders named <code>_no_sync</code> are left out of S3 but deliberately included in Syncthing. What that name is for is covered in <a href="/en/writing/ai-foldering/">AI foldering</a>.</p>
+<h2 id="not-done-yet">Not done yet</h2>
+<p><strong>Since early October, the S3 backup has been ending in “failure” almost every day.</strong> I gave it a brake: stop if a run tries to delete more than 300 files. From 2 to 29 October it hit that brake on 26 of the 28 days. New files still go all the way up (3,131 of them on 29 October), so the backup is not empty — but files I deleted are leaving the backup only 300 a day, and I have not fixed it.</p>
+<p><strong>Nothing tells me when Syncthing quietly stops.</strong> It happened once in August, and all I have since is a person checking now and then.</p>
+<p><strong>AI transcripts from the home PC exist only on the home PC.</strong> They are out of Syncthing, and only the work PC uploads to S3, so conversations held at home have no second copy anywhere.</p>
+<p><strong>There is no billing alarm either.</strong> The backup account only has storage permissions and cannot read invoices, which is why the monthly cost above is a calculation.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>On 21 May 2026 the two PCs were tied together by S3 alone.</strong> Each machine ran a two-way sync against the same bucket. Over three months the bill climbed and phantom conflicts piled up, and on 7 August Syncthing took over the PC-to-PC job while S3 was demoted to backup only. Below is the setup running today (29 October 2026) and the things that cost me something on the way.</p>
+<h2 id="the-setup-today">The setup today</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syncthing</td>
+<td>v2.1.7, with the two PCs connected directly (no relay server)</td>
+</tr>
+<tr>
+<td>Folders kept in step</td>
+<td>started as the work folder and the AI settings folder; two more tool-settings folders joined later, four in all</td>
+</tr>
+<tr>
+<td>Wait before sending a change</td>
+<td>10 seconds for the work folder · 300 seconds for the AI settings folder</td>
+</tr>
+<tr>
+<td>Versioning</td>
+<td>staggered — every 30 seconds for the first hour, sparser after that, removed after one year</td>
+</tr>
+<tr>
+<td>Conflict watcher</td>
+<td>every 15 minutes it finds conflict copies, tidies logs and caches, and keeps real work files while sending an alert. Runs on the work PC only</td>
+</tr>
+<tr>
+<td>Upload tool</td>
+<td>rclone <code>sync</code>, work PC → S3, one way, daily at 08:00</td>
+</tr>
+<tr>
+<td>Flags</td>
+<td><code>--checksum</code> (compare by content) · <code>--max-delete 300</code> (stop rather than delete more than 300 files in one run)</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>versioning on · server-side encryption · public access blocked · Seoul region</td>
+</tr>
+<tr>
+<td>Lifecycle rule</td>
+<td>after a day, keep only the newest old version of each file; clear unfinished upload parts after 7 days</td>
+</tr>
+<tr>
+<td>rclone config file</td>
+<td>encrypted; each PC reads the password from a local file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="two-sync-tools-on-one-folder-invent-conflicts">Two sync tools on one folder invent conflicts</h2>
+<p>The day Syncthing went in, 7 August, the conflict alerts would not stop. Every one turned out to be fake. One side of each conflict copy was byte-for-byte the current file; the other was the day-old copy still sitting in S3.</p>
+<p>The cause was the layout. Syncthing had just made both PCs identical, and then the once-a-day two-way S3 sync arrived holding a day-old version and read it as “the other PC edited this”. No exclude rule could stop it. That same day I switched S3 to a one-way push from the work PC alone, and the very idea of a conflict disappeared from the backup side.</p>
+<p><strong>When two sync tools share a folder, each reads the other’s writes as someone else’s edit.</strong> One has to do the syncing; the other should only take notes.</p>
+<h2 id="the-money-leaked-through-questions-not-storage">The money leaked through questions, not storage</h2>
+<p>The S3 bill went from $20 in May to $47 in June and $75 in July. I assumed old versions were piling up. Storage, though, came to $1.70 a month — deleting every old version would have saved $1.50.</p>
+<p>The real cost was requests. A file listing does not tell rclone when each file was modified, so it asks about every file separately. With about 26,000 files synced 144 times a day, that was over a hundred million questions a month.</p>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>144 runs a day → one</td>
+<td>that many fewer questions</td>
+</tr>
+<tr>
+<td>two-way → one-way plus <code>--checksum</code></td>
+<td>compares with the content fingerprint already in the listing, so no per-file question (measured on 35 files: 36 requests → 1)</td>
+</tr>
+<tr>
+<td>Result</td>
+<td>one run went from 2.1 minutes to 12 seconds</td>
+</tr>
+</tbody>
+</table>
+<p>I fell hard once along the way. I first tried a different flag for the same saving (<code>--use-server-modtime</code>). Tested as a single command it was fine, but inside the normal two-way cycle it decided every file had changed and aborted itself. Sync between the PCs stood still for seven hours. <strong>One command passing told me nothing about the whole cycle passing.</strong></p>
+<h2 id="the-last-copy-of-a-deleted-file-is-kept-on-purpose">The last copy of a deleted file is kept on purpose</h2>
+<p>The lifecycle rule deletes an old version only if a newer old version exists. A file that has already been deleted has nothing newer after its last version, so that copy is never removed. In August there were 11,472 of them, 4.75GiB.</p>
+<p>At first I filed it as a defect. Looking again, it was the only way back for anything deleted by mistake. At $0.12 a month, it stays. I also weighed a purely date-based rule and dropped it: the important files that rarely change would lose their restore points first.</p>
+<h2 id="syncthing-can-stop-without-a-single-error">Syncthing can stop without a single error</h2>
+<p>On the afternoon of 29 August, not one change from this PC reached the other. No warning on screen, none in the logs. A folder had been stuck at “scanning” for hours, and since the scan never finished, the exchange step never began.</p>
+<p>What told me was not the status text but <strong>how much was left to move</strong>. If the bytes still needed do not drop by a single byte for tens of minutes, it has stalled. Requests about the connection still answered instantly, which makes “it’s alive” an easy thing to believe.</p>
+<table>
+<thead>
+<tr>
+<th>Tried</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restart the program</td>
+<td>took effect after 4 minutes, ran about 15, stalled again</td>
+</tr>
+<tr>
+<td>Force-kill</td>
+<td>refused to die for 45 seconds; once relaunched, spent 14 minutes opening its database, then stalled again</td>
+</tr>
+<tr>
+<td>Reboot</td>
+<td>back to normal the next day</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing was lost — it was a fault that stops, not one that deletes. The rule now: if two restarts land in the same place, reboot.</p>
+<h2 id="versioning-keeps-whole-files-not-differences">Versioning keeps whole files, not differences</h2>
+<p>On 14 September a disk warning came in. The version archive was 22.04GB, and 22.02GB of that was AI transcripts. A single conversation’s file had grown to 287MB, and every 30 to 60 seconds while it was going, the archive took another complete copy of it. That one conversation alone left 36 copies, 8.2GB.</p>
+<p>The 3GB of attached images in the same folder are written once and never change, so they built up no copies at all. The culprit was not size but “a big file that keeps growing”. I took transcripts out of Syncthing and deleted only the old copies whose original still exists (21.66GB). The 125 copies whose original was already gone are the only copies left, so they stayed.</p>
+<p>Before that, in August, I had put an alert on this folder’s size and it cried wolf twice. The archive prunes itself every hour, so its size rises and falls like a saw blade, and my check happened to land at the peak just before each prune. I moved the alert to <strong>free disk space</strong>. Measuring the number I actually care about, instead of a number in the middle, ended the false alarms.</p>
+<h2 id="when-ai-on-both-pcs-edits-one-file-one-edit-vanishes">When AI on both PCs edits one file, one edit vanishes</h2>
+<p>On 22 September an AI session on this PC and another on the other PC took turns editing the same code file a few seconds apart. Syncthing does not merge. It picks one version and moves the loser aside as <code>name.sync-conflict-date-time-device</code>. My edit disappeared from the working file and came back three times in one minute.</p>
+<p>There were two signals: a conflict copy appearing next to the file I had edited, and code inside it that I had not written. The rule now is to let go of the file, save the current version and the copies somewhere else, and ask a person who should edit first. One side at a time.</p>
+<h2 id="the-ignore-list-has-to-be-edited-on-each-pc">The ignore list has to be edited on each PC</h2>
+<p>Syncthing treats its ignore file (<code>.stignore</code>) as its own configuration and does not send it to the other PC. While S3 was two-way the file hitched a ride that way; since S3 went one-way, nothing carries it. So when I change the ignore list, I change it on the work PC and the home PC separately. Change one and they drift apart without any error.</p>
+<p>Exclusions are written wide, not as exact names. The first time I excluded the sign-in file by its exact name, per-account copies and <code>.bak</code> copies went straight into the backup — even the copy I had just made to recover from the problem went up on the next run. Now it is blocked with a wildcard like <code>.credentials*</code>, and after blocking I query S3 directly to confirm the count really is zero.</p>
+<p>Letter case collided too. Windows treats <code>C--Users</code> and <code>c--Users</code> as the same folder; Syncthing and S3 do not. That held 34 files stuck until a case-insensitive exclude pattern cleared it.</p>
+<h2 id="wiping-one-pc-has-a-required-order">Wiping one PC has a required order</h2>
+<p>When reinstalling Syncthing, <strong>never restore the old settings and database from a backup.</strong> The database says “there were N files”; if the disk is empty, every one of them is judged deleted, and the deletions go out to the other PC. Syncthing has no brake on mass deletion.</p>
+<p>Starting with a fresh database is safe: the machine joins as a new device and only downloads. The order is: switch the S3 backup task off → wipe → install Syncthing fresh → accept the folder names the other PC proposes → wait until everything matches → switch the backup back on.</p>
+<p><strong>The lesson this record paid for: a quiet sync means nothing.</strong> The fake conflicts were loud, and the real fault (the 29 August stall) never made a sound. That is why I now watch how much is left to move instead of the status text, and free disk space instead of folder size.</p>
+<h2 id="still-open">Still open</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3 backup hitting the 300-file brake</td>
+<td>hit on 26 of the days from 2–29 October. New files go up; only cleaning out deleted ones lags. Not addressed</td>
+</tr>
+<tr>
+<td>Automatic stall detection for Syncthing</td>
+<td>none — a person checks the remaining bytes now and then</td>
+</tr>
+<tr>
+<td>Versioning period: one year → 7–30 days</td>
+<td>on hold, because it would also affect the work folder</td>
+</tr>
+<tr>
+<td>Second copy of home-PC transcripts</td>
+<td>none — they live only on the home PC since leaving sync</td>
+</tr>
+<tr>
+<td>Cloud billing alarm</td>
+<td>none — the backup account cannot read invoices</td>
+</tr>
+</tbody>
+</table>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/writing/sync-backup/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    const load = () => (loading ??= fetch(`/search-index-${lang}.json`)
+      .then((r) => r.json())
+      .then((d) => (idx = d.filter((x) => x.l === lang))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
