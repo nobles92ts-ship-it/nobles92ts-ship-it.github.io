@@ -10,7 +10,7 @@
 
 ---
 
-**Why do short video scripts written by AI sound like someone reading a document? This post looks for the answer in 533 thousand sentences of real Korean speech, then sets a 0-to-4 dial, called spice, for how much human flavor to mix back in. Yeojin made it, working with Claude to analyze and write it up. Moon Hyeonggeun moved it onto this site and published it.**
+**Why do short video scripts written by AI sound like someone reading a document? This post looks for the answer in 533 thousand sentences of real Korean speech, then sets a 0-to-4 dial, called spice, for how much human flavor to mix back in. It was made at newcurve, where Yeojin analyzed it and picked the versions by hand, working with Claude to write it up. Moon Hyeonggeun moved it onto this site and published it.**
 
 A quick word on the name first. "Malmat" is Korean for the taste of talking. "This method is efficient" and "Honestly, this is so much easier, just try it" mean the same thing, but they sound nothing alike. The first is a voice reading. The second is a voice talking. This post is about getting AI to produce the second.
 
