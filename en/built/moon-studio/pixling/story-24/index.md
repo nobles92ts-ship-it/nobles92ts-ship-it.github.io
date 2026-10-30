@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-23/"><small>← Previous</small>Ep.23 · Save the Incense</a><span class="sn-next sn-none">Next episode coming soon</span></nav>
+<nav class="sn" aria-label="Episodes"><a class="sn-prev" href="/en/built/moon-studio/pixling/story-23/"><small>← Previous</small>Ep.23 · Save the Incense</a><a class="sn-next" href="/en/built/moon-studio/pixling/story-25/"><small>Next →</small>Ep.25 · Devimon</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Get Kkaeal (PC · free)</a>
 </div>
 

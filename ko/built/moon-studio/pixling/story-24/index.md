@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="앞뒤 화"><a class="sn-prev" href="/ko/built/moon-studio/pixling/story-23/"><small>← 이전 화</small>23화 · 향을 지켜라</a><span class="sn-next sn-none">다음 화는 곧 올라옵니다</span></nav>
+<nav class="sn" aria-label="앞뒤 화"><a class="sn-prev" href="/ko/built/moon-studio/pixling/story-23/"><small>← 이전 화</small>23화 · 향을 지켜라</a><a class="sn-next" href="/ko/built/moon-studio/pixling/story-25/"><small>다음 화 →</small>25화 · 데블몬</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">깨알 받기 (PC · 무료)</a>
 </div>
 

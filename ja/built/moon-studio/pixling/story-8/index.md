@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-7/"><small>← 前の話</small>第7話 · ニビジム</a><span class="sn-next sn-none">次の話はもうすぐ公開します</span></nav>
+<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-7/"><small>← 前の話</small>第7話 · ニビジム</a><a class="sn-next" href="/ja/built/moon-studio/pixling/story-9/"><small>次の話 →</small>第9話 · おつきみやま</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Kkaeal をダウンロード (PC · 無料)</a>
 </div>
 
