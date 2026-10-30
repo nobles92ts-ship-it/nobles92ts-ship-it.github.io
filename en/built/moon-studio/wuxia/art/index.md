@@ -146,7 +146,7 @@ Low-poly on standard PBR is the worst combination available. Low-poly reads as *
 
 The methodology and the measurements now exist. What's missing is elsewhere.
 
-Building solo, the bottleneck isn't code. [Code gets written by AI](/en/about/). The bottleneck is **one character, one set of animations** — twenty-eight forms need twenty-eight sets of motion.
+Building solo, the bottleneck isn't code. Code gets written by AI. The bottleneck is **one character, one set of animations** — twenty-eight forms need twenty-eight sets of motion.
 
 So when I look at generation tools, the question isn't "is this tool good" but **how far does it get automatically and where does a person become necessary.** And answering that needs more than tools: collect only tool announcements and the conclusion is always "yes, it can be done." So **I read outsourcing quotes alongside them.** Without the price it isn't a judgement, it's a hope.
 

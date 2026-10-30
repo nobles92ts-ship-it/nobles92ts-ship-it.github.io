@@ -6,14 +6,14 @@ Before reading the list —
 
 - **Every document has two layers.** The top is a plain-language explanation written for someone who knows nothing about the subject. **Below** the heading "The detailed record starts here" is the original analysis. Stop at that heading if you need the gist; everything under it is the untouched record, with the evidence and the numbers.
 - **Korean is the original.** These English pages are machine-assisted translations of the Korean ones (`/ko/…`), so where the two disagree, the Korean is authoritative. Swap the language segment and the URLs pair up.
-- **One of the five sections is not written by hand.** "AI news today" is rebuilt every morning by a collector. Its cards have no permanent URLs of their own and disappear within days — **cite the category pages, not the cards.**
+- **One of the five sections is not written by hand.** "AI news today" is rebuilt every morning by a collector. Its cards have no permanent URLs of their own and slide to later pages (`/ai-issue/page/2/`…) as newer ones arrive — **cite the category pages, not the cards.**
 - **The document links below point at the markdown twin** (`…/index.md`). The page a human reads is the same URL without `index.md`; the markdown is that page with the chrome stripped and every diagram replaced by its description. Section indexes, the news feed and the glossary have no markdown twin, so those links are HTML.
 - What the sections mean —
   - **My tools** — Tools I made and run every day.
   - **What I took apart** — Repos and services I took apart — and what I kept.
   - **Things I wrote** — Notes that outgrew a commit message.
-  - **Who I am** — Who is doing all this, and why.
-  - **AI news today** — What turned up in the last three days — collected by machine, published by hand.
+  - **Written together** — Posts by people I invited to write here.
+  - **AI news today** — What turned up lately, newest first — and every earlier page. Collected by machine, published by hand.
 
 ## My tools
 
@@ -171,15 +171,14 @@ Before reading the list —
 - [AI foldering](https://aitryed.com/en/writing/ai-foldering/index.md): In folders I share with AI, programs find files by their address. So I don't design a folder shape — I ask four questions about where each new file should go.
 - [Sync and backup](https://aitryed.com/en/writing/sync-backup/index.md): My work PC and home PC keep the same folders in step with Syncthing, and once a day a copy goes up to AWS S3. Sync copies your mistakes too, so the backup has to be a separate thing.
 
-## Who I am
+## Written together
 
-- [Who I am](https://aitryed.com/en/about/): Who is doing all this, and why.
-- [About](https://aitryed.com/en/about/me/index.md): I'm not a developer. The AI writes the code. I've spent twelve years finding where it breaks.
-- [Privacy](https://aitryed.com/en/about/privacy/index.md): The only thing this site collects from you is how many times a page has been opened. It also fetches fonts from elsewhere, and the host keeps access logs.
+- [Written together](https://aitryed.com/en/together/): Posts by people I invited to write here.
+- [How to write here](https://aitryed.com/en/together/guide/index.md): There is no upload box on this site. People I invite send a draft by email or a shared folder, and it goes up after a check and a read-through.
 
 ## AI news today
 
-- [AI news today — everything](https://aitryed.com/en/ai-issue/): Rebuilt every morning; the cards themselves are gone within days.
+- [AI news today — everything](https://aitryed.com/en/ai-issue/): Rebuilt every morning. Page one is the newest; earlier cards move to later pages.
 - [Papers](https://aitryed.com/en/ai-issue/papers/)
 - [Models](https://aitryed.com/en/ai-issue/models/)
 - [GitHub](https://aitryed.com/en/ai-issue/repos/)
