@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 188 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 189 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -213,6 +213,7 @@ Before reading the list —
 
 - [Written together](https://aitryed.com/en/together/): Posts by people I invited to write here.
 - [How to write here](https://aitryed.com/en/together/guide/index.md): There is no upload box on this site. People I invite send a draft by email or a shared folder, and it goes up after a check and a read-through.
+- [Mixing human speech flavor into AI scripts](https://aitryed.com/en/together/malmat/index.md): Why short video scripts written by AI sound read aloud, found by comparing 533 thousand sentences of real Korean speech, and a 0–4 dial for how much human flavor to mix back in.
 
 ## AI news today
 

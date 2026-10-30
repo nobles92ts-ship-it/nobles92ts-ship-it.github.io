@@ -3513,6 +3513,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/together/guide/"/>
   </url>
   <url>
+    <loc>https://aitryed.com/en/together/malmat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/together/malmat/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/together/malmat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/together/malmat/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/together/malmat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/together/malmat/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/together/malmat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/together/malmat/"/>
+  </url>
+  <url>
     <loc>https://aitryed.com/en/writing/</loc>
     <lastmod>2026-10-29T14:18:55+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/writing/"/>
