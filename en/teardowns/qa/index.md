@@ -1,8 +1,8 @@
 # QA automation
 
-> Nine investigations into automation, cause-analysis and desktop-control tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.
+> Ten investigations into automation, cause-analysis and desktop-control tools, one formal-verification study and an essay on judgment models. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.
 
-- Headline number: 9 pieces · prior 4.5 / 7
+- Headline number: 10 pieces · prior 4.5 / 7
 - Rendered page: https://aitryed.com/en/teardowns/qa/
 - Other language: https://aitryed.com/ko/teardowns/qa/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -15,7 +15,7 @@ First, what "QA automation" is.
 
 When you build a game or an app, someone has to **press everything and check it works.** Press a button, see if the right screen comes up, confirm the value landed. A person doing that by hand is QA. **Getting a machine to do the pressing** is QA automation.
 
-There are nine pieces here, opening up automation, tools for investigating causes and controlling desktop programs, and one piece of formal-verification research.
+There are ten pieces here, opening up automation, tools for investigating causes and controlling desktop programs, one piece of formal-verification research, and one essay whose numbers I re-measured.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
@@ -91,6 +91,10 @@ The check above taught me that writing something down and putting it in are sepa
 
 [agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list, not through screenshots. I read its docs and code, then **tried it briefly on my PC and removed it.** Reading worked, but I could not show it runs separately while I work. Android game screens publish no such list either, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
 
+## The tenth re-measures a number from someone else's essay
+
+[Judged by the model, scoped by people](/en/teardowns/qa/judge-before-action/index.md) is another QA engineer's essay arguing that an agent should consult a judgment model before every action. I mostly had that structure. Re-asking the essay's 0.57 looked more like a split between options than doubt, and applying that fix to my tests buried a bug. I kept one rule for writing questions, also left out of the 4.5 / 7 figure.
+
 ## The detailed record starts here
 
 Where other people's test automation gets taken apart: device farms, unattended regression on real hardware, game autoplay tools, agent-driven test platforms.
@@ -109,6 +113,7 @@ Where other people's test automation gets taken apart: device farms, unattended 
 | [clumsy](/en/teardowns/qa/clumsy/index.md) | **2.5** of 6 (0 applied) | Analysing the same subject twice left the verdict exactly where it was — **only a measurement moves a verdict** |
 | [REA](/en/teardowns/qa/rea/index.md) | **2 static probes** (QA integration untested) | A complete graph can retain semantic unknowns; preserve the target, method, and limitations with each answer |
 | [agent-desktop](/en/teardowns/qa/agent-desktop/index.md) | On hold (**2 principles**, tried, removed) | **A number is valid only at the moment you looked** — refuse stale tags, never turn a failed read into "absent" |
+| [Judged by the model, scoped by people](/en/teardowns/qa/judge-before-action/index.md) | **1** rule | **Merge options only when the action that follows is the same** — when a value is low, first see where the probability went |
 
 An investigation that yields nothing isn't wasted. Asleep **turned a set of conclusions with a sample size of one into two** — on-prem, fail-closed on live, unattended regression, element-based targeting. Nebula handed over zero techniques and instead surfaced that **the official gateway's defences aren't wired into the path a real run takes.**
 
