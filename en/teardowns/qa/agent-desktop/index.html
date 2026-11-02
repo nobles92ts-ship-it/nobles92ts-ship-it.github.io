@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>agent-desktop — QA automation</title><meta name="description" content="A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="agent-desktop — QA automation"><meta property="og:description" content="A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet."><meta property="og:url" content="https://aitryed.com/en/teardowns/qa/agent-desktop/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="agent-desktop — QA automation"><meta name="twitter:description" content="A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/qa/agent-desktop/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/agent-desktop/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"><link rel="stylesheet" href="/_astro/Shell.CbLz2IVL.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/together/" data-sec="together"><span class="n">04</span><span>Written together</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/agent-desktop/" hreflang="ko">한국어</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">10 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">9 pieces · prior 4.5 / 7</span></span><span class="s">Nine investigations into automation, cause-analysis and desktop-control tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. Catching &quot;stuck&quot; as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).</span></a><a href="/en/teardowns/qa/clumsy/"><span class="t"><span>clumsy</span><span class="kpi">2.5 kept · 0 runs</span></span><span class="s">A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).</span></a><a href="/en/teardowns/qa/rea/"><span class="t"><span>REA</span><span class="kpi">2 static probes</span></span><span class="s">REA helps agents investigate executables and applications. I inspected its implementation and tried a Windows binary and a small JavaScript fixture, keeping static findings separate from runtime claims.</span></a><a href="/en/teardowns/qa/formal-verification/"><span class="t"><span>Claude formal verification — copying finished proofs</span><span class="kpi">time −21% · cost flat</span></span><span class="s">Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other&#39;s finished work, and measured it before and after in my game studio&#39;s art team.</span></a><a href="/en/teardowns/qa/agent-desktop/" aria-current="page"><span class="t"><span>agent-desktop</span><span class="kpi">on hold · not run yet</span></span><span class="s">A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>agent-desktop</h1><p class="sum">A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet.</p><div class="meta"><span>on hold · not run yet</span><a class="src" href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener">github.com/vercel-labs/agent-desktop ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#it-reads-a-parts-list-instead-of-looking-at-the-screen">It reads a parts list instead of looking at the screen</a><a href="#one-turn-is-look-press-look-again">One turn is look, press, look again</a><a href="#it-refuses-a-stale-tag-on-purpose">It refuses a stale tag on purpose</a><a href="#it-cannot-see-programs-that-publish-no-list">It cannot see programs that publish no list</a><a href="#for-my-work-the-game-screens-block-it-so-i-am-holding">For my work the game screens block it, so I am holding</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#the-repository-is-eight-months-old-and-effectively-one-persons-project">The repository is eight months old and effectively one person’s project</a><a href="#the-core-knows-no-operating-system">The core knows no operating system</a><a href="#the-command-count-matched-the-readme">The command count matched the README</a><a href="#it-does-not-turn-could-not-read-into-not-there">It does not turn “could not read” into “not there”</a><a href="#it-answered-success-is-not-it-changed">“It answered success” is not “it changed”</a><a href="#its-own-numbers-come-from-synthetic-data">Its own numbers come from synthetic data</a><a href="#cautions-are-written-down-before-you-start">Cautions are written down before you start</a><a href="#verdict-table">Verdict table</a><a href="#the-principle-that-remains">The principle that remains</a><a href="#resume-conditions">Resume conditions</a><a href="#what-i-did-not-do">What I did not do</a></nav><div class="prose"><p><strong>agent-desktop is a command-line tool that lets an AI read a desktop program as a list of parts it can operate, not as a picture, and then press those parts.</strong> Vercel Labs makes it. It is written in Rust, runs on macOS, Windows and Linux, is licensed Apache-2.0, and had 7,061 stars on 2026-11-02.</p>
+<p>For this write-up I read the repository’s docs and implementation files. <strong>I did not install or run it.</strong> So the verdict below separates what I confirmed by reading from what I still do not know.</p>
+<h2 id="it-reads-a-parts-list-instead-of-looking-at-the-screen">It reads a parts list instead of looking at the screen</h2>
+<p>Every program on Windows or macOS has a second description the OS keeps for it: a list saying which things on screen are buttons, text fields and menus. It exists for screen readers used by blind people, and it is called the accessibility tree because windows hold menus and menus hold items, like branches.</p>
+<p>agent-desktop dumps that list as JSON for the AI. Each part gets a numbered tag (a ref) such as <code>@s8f3k2p9:e8</code>, and the AI presses by quoting the tag.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Screenshot approach</th>
+<th>This tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What the AI receives</td>
+<td>A picture</td>
+<td>Text with each part’s name, kind and tag</td>
+</tr>
+<tr>
+<td>How it presses</td>
+<td>Guesses coordinates in the picture</td>
+<td>Quotes a tag and asks the OS to act</td>
+</tr>
+<tr>
+<td>A window is covered</td>
+<td>It may click the covering window</td>
+<td>By default it neither moves the pointer nor takes focus</td>
+</tr>
+<tr>
+<td>Where it struggles</td>
+<td>Resolution and theme changes</td>
+<td>Programs that publish no list</td>
+</tr>
+</tbody>
+</table>
+<h2 id="one-turn-is-look-press-look-again">One turn is look, press, look again</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">agent-desktop</span><span style="color:#032F62"> snapshot</span><span style="color:#005CC5"> --app</span><span style="color:#032F62"> Finder</span><span style="color:#005CC5"> -i</span><span style="color:#6A737D">      # parts list with tags</span></span>
+<span class="line"><span style="color:#6F42C1">agent-desktop</span><span style="color:#032F62"> click</span><span style="color:#032F62"> @s8f3k2p9:e8</span><span style="color:#6A737D">            # press that tag</span></span>
+<span class="line"><span style="color:#6F42C1">agent-desktop</span><span style="color:#032F62"> snapshot</span><span style="color:#005CC5"> --app</span><span style="color:#032F62"> Finder</span><span style="color:#005CC5"> -i</span><span style="color:#6A737D">      # look again to check</span></span></code></pre>
+<p>The tool supplies eyes and hands only. The calling AI decides what to do next, and the repository’s own guide (AGENTS.md) says no model is embedded in the tool.</p>
+<h2 id="it-refuses-a-stale-tag-on-purpose">It refuses a stale tag on purpose</h2>
+<p>This was the design that stood out. A tag belongs to the snapshot it came from. The snapshot’s name (<code>s8f3k2p9</code>) is part of the tag, and a bare <code>@e8</code> is rejected with <code>INVALID_ARGS</code>. Once the screen changes, the part a tag pointed to may be gone, so the tool answers <code>STALE_REF</code> (out of date) or <code>AMBIGUOUS_TARGET</code> (more than one match) and tells the AI to look again.</p>
+<p>Think of a restaurant. Calling “guest number 3” gets the wrong person once the room has turned over. Calling “number 3 on the 7 p.m. list” lets the host say the list is out of date and nobody stands up.</p>
+<h2 id="it-cannot-see-programs-that-publish-no-list">It cannot see programs that publish no list</h2>
+<p>The repository states this limit itself. A screen with no accessibility tree is invisible to it, and web pages are out of scope; it points to a sibling tool, agent-browser, for those. The game screens I work with do not publish such a list (my Android QA tool’s own instructions assume so), and that limit nearly decided my verdict.</p>
+<h2 id="for-my-work-the-game-screens-block-it-so-i-am-holding">For my work the game screens block it, so I am holding</h2>
+<p>I want to automate two kinds of screens. One is ordinary Windows programs; the other is games. For the first, I already have a skill built on a UI Automation tool (pywinauto), so this tool adds little. For the second there is no tree, so this tool sees nothing.</p>
+<p>The verdict is therefore <strong>on hold</strong>. It is not a rejection because the two principles below earn their keep; resume conditions are at the end.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>I based the analysis on <code>main</code> at <a href="https://github.com/vercel-labs/agent-desktop/commit/9eb9b296192fcb70bda25e918cd6dd66abfa3d0d">commit 9eb9b29</a>, read on 2026-11-02. The latest release is <code>v1.0.2</code> (2026-10-30). <strong>I did not install, build or run anything.</strong> I read README, AGENTS.md, CONCEPTS.md, CHANGELOG.md, the benchmark note, two lesson documents and two implementation files.</p>
+<h2 id="the-repository-is-eight-months-old-and-effectively-one-persons-project">The repository is eight months old and effectively one person’s project</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created · last push</td>
+<td>2026-02-19 · 2026-11-01</td>
+</tr>
+<tr>
+<td>Stars · forks</td>
+<td>7,061 · 518</td>
+</tr>
+<tr>
+<td>Open issues</td>
+<td>41 (the API’s <code>open_issues_count</code> says 102, which includes pull requests)</td>
+</tr>
+<tr>
+<td>Contributors</td>
+<td>Top is <code>lahfir</code> with 214; next are bots (<code>github-actions</code> 43, <code>detail-app</code> 26) and <code>ctate</code> 14</td>
+</tr>
+<tr>
+<td>Releases</td>
+<td>10-18 <code>v0.10.1</code>, 10-25 <code>v0.11.1</code>, 10-27 <code>v1.0.0</code>, 10-28 <code>v1.0.1</code>, 10-30 <code>v1.0.2</code></td>
+</tr>
+<tr>
+<td>Files</td>
+<td>3,682. Core 642, Linux 1,029, Windows 449, macOS 287, FFI 195 (tests included)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Linux only arrived in 1.0.0</strong> (CHANGELOG). Five releases in two weeks means fast movement, and it also means the contract is still setting. <code>v0.10.0</code> raised the C library’s major version to 5, removed seventeen functions and broke the tag format.</p>
+<h2 id="the-core-knows-no-operating-system">The core knows no operating system</h2>
+<p>AGENTS.md calls this structure non-negotiable. The core crate (<code>crates/core</code>) owns a <code>PlatformAdapter</code> trait and every shared type; the macOS, Windows and Linux crates only implement it. CI fails if the core imports a platform crate, and <code>cargo tree -p agent-desktop-core</code> must name none. Every trait method defaults to <code>not_supported</code>, so an adapter fills in only what its platform can do.</p>
+<p>Command handling is plain. There is no command trait or registry: one <code>match</code> in <code>dispatch()</code> calls each command’s <code>execute()</code>, and <code>batch</code> goes through the same <code>dispatch()</code>. <strong>With a single path, no entrance bypasses the policy check.</strong></p>
+<h2 id="the-command-count-matched-the-readme">The command count matched the README</h2>
+<p>The README claims 60 command names and 56 operational ones. I counted the table: 6 + 16 + 10 + 12 + 4 + 3 + 1 + 3 + 5 = 60. The other four (<code>key-down</code>, <code>key-up</code>, <code>mouse-down</code>, <code>mouse-up</code>) refuse to run until a daemon can release a held key, as the docs explain. AGENTS.md says a test (<code>doc_literal_drift_tests.rs</code>) fails when these numbers drift; I did not run it.</p>
+<h2 id="it-does-not-turn-could-not-read-into-not-there">It does not turn “could not read” into “not there”</h2>
+<p>I picked one headline claim and followed it into the code: <strong>the tool does not act on a candidate whose identity it could not confirm.</strong> CONCEPTS.md splits every property into <code>Known</code>, <code>Absent</code> and <code>Unknown</code> and warns against merging a failed read into “absent”, because one negation turns “cannot tell” into “definitely not”.</p>
+<p>In code, <a href="https://github.com/vercel-labs/agent-desktop/blob/9eb9b296192fcb70bda25e918cd6dd66abfa3d0d/crates/core/src/refs/resolve_errors.rs"><code>resolve_errors.rs</code></a> keeps that promise. When a candidate cannot be read it does not return “no match”. It returns <code>ErrorCode::Timeout</code> stamped <code>complete: false</code>, <code>retryable: true</code> and a not-delivered marker. Docs and code said the same thing.</p>
+<h2 id="it-answered-success-is-not-it-changed">“It answered success” is not “it changed”</h2>
+<p>The most valuable lesson file was <a href="https://github.com/vercel-labs/agent-desktop/blob/9eb9b296192fcb70bda25e918cd6dd66abfa3d0d/docs/solutions/runtime-errors/an-atspi-write-that-returns-success-has-not-changed-anything.md">the AT-SPI write one</a>. On Linux, asking a text field to take text can answer success while nothing changes, depending on the toolkit (destroyed widgets, read-only fields, Firefox inputs). The opposite also happens: a call answers failure and lands later, when a stopped app resumes.</p>
+<p>The fix is one line. <strong>Judge by a read taken after the write, not by the reply.</strong> If the value is unchanged the result is <code>write_ignored</code>; if it cannot be read, the result honestly stays <code>delivered_unverified</code>. Password fields are never read back, and error messages replace their text with <code>[withheld]</code>.</p>
+<h2 id="its-own-numbers-come-from-synthetic-data">Its own numbers come from synthetic data</h2>
+<p>The benchmark note states its limits. It compares an old and a new locator path on fabricated Chromium and Electron trees (31 runs, median and 95th percentile), and says measuring real apps such as Slack needs a permission and belongs to a separate integration suite. The README carries no boastful speed or accuracy figures, which I liked. The cost is that I have no number for how fast it is on real apps.</p>
+<h2 id="cautions-are-written-down-before-you-start">Cautions are written down before you start</h2>
+<p>The README opens with a warning: snapshots, clipboard reads and screenshots can hold private content, so keep them out of public logs. macOS needs an accessibility grant; Windows needs none for apps at your terminal’s integrity level. Linux differs between X11 and Wayland (mouse input only on X11 with <code>--headed</code>).</p>
+<h2 id="verdict-table">Verdict table</h2>
+<p>Cells I could not measure carry an estimate marked <code>[estimated]</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Verdict</th>
+<th>Gain</th>
+<th>Adoption cost</th>
+<th>Cost to undo</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use the tool itself for my Windows program automation</td>
+<td><strong>On hold</strong></td>
+<td>Small; a skill for the same job exists</td>
+<td>Half a day to install and test (2 to 6 hours, 95% CI) <code>[estimated]</code></td>
+<td>Cheap (<code>npm</code> uninstall)</td>
+<td>Low; not run</td>
+</tr>
+<tr>
+<td>Bind a tag to the observation it came from</td>
+<td><strong>Adopt (principle)</strong></td>
+<td>Stops presses on stale coordinates</td>
+<td>Low; record the screenshot number with each call <code>[estimated]</code></td>
+<td>Cheap</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Record a failed read separately from “absent”</td>
+<td><strong>Adopt (principle)</strong></td>
+<td>Keeps a check that never ran from looking like a pass</td>
+<td>Low</td>
+<td>Cheap</td>
+<td>High; confirmed in code</td>
+</tr>
+<tr>
+<td>Judge a write by reading afterwards</td>
+<td><strong>Already have it</strong></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>Same grain as my rule: aim by screen, judge by log</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-principle-that-remains">The principle that remains</h2>
+<p><strong>A number is valid only at the moment you looked.</strong> The tool enforces this in grammar by putting the snapshot’s name inside the tag. My side has a flow that guesses coordinates from a screenshot and presses; those coordinates should always belong to the screen just seen, but I do not tie them to it in any record. It touches my Android QA tool’s tap and swipe calls, and the fix is not adopting this tool but logging the screenshot number with each call.</p>
+<h2 id="resume-conditions">Resume conditions</h2>
+<ul>
+<li>A Windows program I automate produces a real mis-press on a stale element.</li>
+<li>My game screens start publishing an accessibility tree.</li>
+<li>Speed or accuracy figures measured on real apps are published.</li>
+</ul>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<ul>
+<li>I did not install or run it. All behavior was confirmed from docs and code only.</li>
+<li>I did not open the Windows adapter (<code>crates/windows</code>). The two implementation files I read are in the core.</li>
+<li>I did not read the history of reverted commits or closed issues, and I cannot say whether an eight-month-old repo has enough of it to interpret.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/qa/agent-desktop/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const fb = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

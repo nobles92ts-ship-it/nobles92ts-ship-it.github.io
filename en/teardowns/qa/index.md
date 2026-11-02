@@ -1,8 +1,8 @@
 # QA automation
 
-> Eight investigations into automation, cause-analysis tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.
+> Nine investigations into automation, cause-analysis and desktop-control tools and one formal-verification study. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.
 
-- Headline number: 8 pieces · prior 4.5 / 7
+- Headline number: 9 pieces · prior 4.5 / 7
 - Rendered page: https://aitryed.com/en/teardowns/qa/
 - Other language: https://aitryed.com/ko/teardowns/qa/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -15,7 +15,7 @@ First, what "QA automation" is.
 
 When you build a game or an app, someone has to **press everything and check it works.** Press a button, see if the right screen comes up, confirm the value landed. A person doing that by hand is QA. **Getting a machine to do the pressing** is QA automation.
 
-There are eight pieces here, opening up automation, tools for investigating causes, and one piece of formal-verification research.
+There are nine pieces here, opening up automation, tools for investigating causes and controlling desktop programs, and one piece of formal-verification research.
 
 ## My own field, and the smallest harvest — which is not a complaint
 
@@ -87,6 +87,10 @@ The check above taught me that writing something down and putting it in are sepa
 
 [Claude formal verification](/en/teardowns/qa/formal-verification/index.md) is Anthropic's work having Claude prove that 123 open-source libraries never crash under stated conditions. Proofs are not my job, so I took one idea from it — agents copying each other's finished work — put it into my game studio's art team, and measured before and after. Time fell 21%; cost stayed flat. This is not added to the 4.5 / 7 figure either.
 
+## The ninth lets an AI operate desktop programs through a parts list, and I put it on hold
+
+[agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list, not through screenshots. I read its docs and code but **did not run it on my own PC.** My game screens publish no such list, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
+
 ## The detailed record starts here
 
 Where other people's test automation gets taken apart: device farms, unattended regression on real hardware, game autoplay tools, agent-driven test platforms.
@@ -104,6 +108,7 @@ Where other people's test automation gets taken apart: device farms, unattended 
 | [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | **1.5** of 4 | Measure a detector's false-positive rate **on your own corpus** before adopting it — and on the corpus it will actually run against |
 | [clumsy](/en/teardowns/qa/clumsy/index.md) | **2.5** of 6 (0 applied) | Analysing the same subject twice left the verdict exactly where it was — **only a measurement moves a verdict** |
 | [REA](/en/teardowns/qa/rea/index.md) | **2 static probes** (QA integration untested) | A complete graph can retain semantic unknowns; preserve the target, method, and limitations with each answer |
+| [agent-desktop](/en/teardowns/qa/agent-desktop/index.md) | On hold (**2 principles**, not run) | **A number is valid only at the moment you looked** — refuse stale tags, never turn a failed read into "absent" |
 
 An investigation that yields nothing isn't wasted. Asleep **turned a set of conclusions with a sample size of one into two** — on-prem, fail-closed on live, unattended regression, element-based targeting. Nebula handed over zero techniques and instead surfaced that **the official gateway's defences aren't wired into the path a real run takes.**
 

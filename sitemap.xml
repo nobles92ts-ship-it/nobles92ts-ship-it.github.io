@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aitryed.com/en/</loc>
-    <lastmod>2026-11-02T09:37:17+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/"/>
   </url>
   <url>
     <loc>https://aitryed.com/ko/</loc>
-    <lastmod>2026-11-02T09:37:17+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/"/>
@@ -2882,14 +2882,14 @@
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/</loc>
-    <lastmod>2026-10-30T19:02:56+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/"/>
   </url>
   <url>
     <loc>https://aitryed.com/ko/teardowns/</loc>
-    <lastmod>2026-10-30T19:02:56+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/"/>
@@ -3540,17 +3540,31 @@
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/qa/</loc>
-    <lastmod>2026-10-30T19:02:56+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/"/>
   </url>
   <url>
     <loc>https://aitryed.com/ko/teardowns/qa/</loc>
-    <lastmod>2026-10-30T19:02:56+09:00</lastmod>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/en/teardowns/qa/agent-desktop/</loc>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/agent-desktop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/teardowns/qa/agent-desktop/</loc>
+    <lastmod>2026-11-02T12:11:17+09:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/agent-desktop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/agent-desktop/"/>
   </url>
   <url>
     <loc>https://aitryed.com/en/teardowns/qa/asleep-qa/</loc>

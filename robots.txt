@@ -6,6 +6,8 @@ Allow: /
 #   막지 않으면 본문 조각이 검색 결과에 페이지처럼 뜬다.
 Disallow: /search-index-ko.json
 Disallow: /search-index-en.json
+Disallow: /search-index-ko-feed.json
+Disallow: /search-index-en-feed.json
 
 # ⛔ 마크다운 판(`…/index.md` 226장)은 **일부러 안 막았다** (2026-09-17 형근님 결정).
 #   빠뜨린 게 아니다. 여기에 `Disallow: /*/index.md$` 를 넣기 전에 아래를 읽을 것.
