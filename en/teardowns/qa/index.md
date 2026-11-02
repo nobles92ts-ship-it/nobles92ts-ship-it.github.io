@@ -89,7 +89,7 @@ The check above taught me that writing something down and putting it in are sepa
 
 ## The ninth lets an AI operate desktop programs through a parts list, and I put it on hold
 
-[agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list, not through screenshots. I read its docs and code but **did not run it on my own PC.** My game screens publish no such list, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
+[agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list, not through screenshots. I read its docs and code, then **tried it briefly on my PC and removed it.** Reading worked, but I could not show it runs separately while I work. Android game screens publish no such list either, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
 
 ## The detailed record starts here
 
@@ -108,7 +108,7 @@ Where other people's test automation gets taken apart: device farms, unattended 
 | [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | **1.5** of 4 | Measure a detector's false-positive rate **on your own corpus** before adopting it — and on the corpus it will actually run against |
 | [clumsy](/en/teardowns/qa/clumsy/index.md) | **2.5** of 6 (0 applied) | Analysing the same subject twice left the verdict exactly where it was — **only a measurement moves a verdict** |
 | [REA](/en/teardowns/qa/rea/index.md) | **2 static probes** (QA integration untested) | A complete graph can retain semantic unknowns; preserve the target, method, and limitations with each answer |
-| [agent-desktop](/en/teardowns/qa/agent-desktop/index.md) | On hold (**2 principles**, not run) | **A number is valid only at the moment you looked** — refuse stale tags, never turn a failed read into "absent" |
+| [agent-desktop](/en/teardowns/qa/agent-desktop/index.md) | On hold (**2 principles**, tried, removed) | **A number is valid only at the moment you looked** — refuse stale tags, never turn a failed read into "absent" |
 
 An investigation that yields nothing isn't wasted. Asleep **turned a set of conclusions with a sample size of one into two** — on-prem, fail-closed on live, unattended regression, element-based targeting. Nebula handed over zero techniques and instead surfaced that **the official gateway's defences aren't wired into the path a real run takes.**
 

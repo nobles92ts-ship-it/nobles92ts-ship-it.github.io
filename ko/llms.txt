@@ -181,7 +181,7 @@
 - [QA 자동화 · clumsy](https://aitryed.com/ko/teardowns/qa/clumsy/index.md): 윈도우 PC의 인터넷을 일부러 나쁘게 만드는 도구입니다. PC 게임의 끊김·지연 테스트에 쓰려고 열었고 소스 2,709줄을 다 읽었습니다. 판정은 채택인데, 같은 걸 8월에 이미 분석했고 두 번 다 한 번도 안 돌렸다는 게 이 편의 교훈입니다(2026-10-02).
 - [QA 자동화 · REA](https://aitryed.com/ko/teardowns/qa/rea/index.md): AI가 실행 파일과 앱의 구조를 조사하도록 돕는 도구입니다. 실제 Windows 파일과 작은 JavaScript 표본으로 시험했고, 확인한 사실과 추론의 경계를 살폈습니다.
 - [QA 자동화 · Claude 형식 검증 — 끝난 증명 베껴 쓰기](https://aitryed.com/ko/teardowns/qa/formal-verification/index.md): 앤트로픽이 Claude로 오픈소스 123개에 «안 멈춘다»를 증명한 연구를 읽고, 그 안의 «끝난 증명 베껴 쓰기» 하나를 제 게임 스튜디오 아트팀에 붙여 전후를 쟀습니다.
-- [QA 자동화 · agent-desktop](https://aitryed.com/ko/teardowns/qa/agent-desktop/index.md): AI가 화면 그림 대신 운영체제가 따로 갖고 있는 부품 목록으로 데스크톱 프로그램을 읽고 조작하게 하는 도구입니다. 문서와 구현을 읽어 확인했고, 제 PC에서는 아직 돌려 보지 않았습니다.
+- [QA 자동화 · agent-desktop](https://aitryed.com/ko/teardowns/qa/agent-desktop/index.md): AI가 화면 그림 대신 운영체제가 따로 갖고 있는 부품 목록으로 데스크톱 프로그램을 읽고 조작하게 하는 도구입니다. 문서와 구현을 읽은 뒤 제 PC에서 잠깐 돌려 봤고, 읽기는 잘 됐지만 사람과 동시에 쓰기는 입증하지 못해 지웠습니다.
 - [게임 만들기](https://aitryed.com/ko/teardowns/games/index.md): 게임과 제작 도구 여섯 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.
 - [게임 만들기 · Elemental Sandbox](https://aitryed.com/ko/teardowns/games/elemental-sandbox/index.md): 이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.
 - [게임 만들기 · OpenMMO](https://aitryed.com/ko/teardowns/games/openmmo/index.md): 1인 개발자가 라이브까지 올린 MMORPG. README만 보고 쓴 제 요약이 코드를 열자 두 군데 틀렸습니다.

@@ -1,8 +1,8 @@
 # agent-desktop
 
-> A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I checked the docs and code; I have not run it on my own PC yet.
+> A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I read the docs and code, then tried it briefly on my PC. Reading worked; sharing the PC with a person went unproven, so I removed it.
 
-- Headline number: on hold · not run yet
+- Headline number: on hold · tried, removed
 - Rendered page: https://aitryed.com/en/teardowns/qa/agent-desktop/
 - Other language: https://aitryed.com/ko/teardowns/qa/agent-desktop/index.md
 - Repository: https://github.com/vercel-labs/agent-desktop
@@ -12,7 +12,7 @@
 
 **agent-desktop is a command-line tool that lets an AI read a desktop program as a list of parts it can operate, not as a picture, and then press those parts.** Vercel Labs makes it. It is written in Rust, runs on macOS, Windows and Linux, is licensed Apache-2.0, and had 7,061 stars on 2026-11-02.
 
-For this write-up I read the repository's docs and implementation files. **I did not install or run it.** So the verdict below separates what I confirmed by reading from what I still do not know.
+The body of this write-up comes from reading the repository's docs and implementation files. Later the same day I installed it and tried it briefly, and **that review sits [at the very end](#i-ran-it-reading-worked-sharing-did-not).**
 
 ## It reads a parts list instead of looking at the screen
 
@@ -55,7 +55,7 @@ The verdict is therefore **on hold**. It is not a rejection because the two prin
 
 ## The detailed record starts here
 
-I based the analysis on `main` at [commit 9eb9b29](https://github.com/vercel-labs/agent-desktop/commit/9eb9b296192fcb70bda25e918cd6dd66abfa3d0d), read on 2026-11-02. The latest release is `v1.0.2` (2026-10-30). **I did not install, build or run anything.** I read README, AGENTS.md, CONCEPTS.md, CHANGELOG.md, the benchmark note, two lesson documents and two implementation files.
+I based the analysis on `main` at [commit 9eb9b29](https://github.com/vercel-labs/agent-desktop/commit/9eb9b296192fcb70bda25e918cd6dd66abfa3d0d), read on 2026-11-02. The latest release is `v1.0.2` (2026-10-30). **At this stage I did not install, build or run anything.** I read README, AGENTS.md, CONCEPTS.md, CHANGELOG.md, the benchmark note, two lesson documents and two implementation files.
 
 ## The repository is eight months old and effectively one person's project
 
@@ -106,7 +106,7 @@ Cells I could not measure carry an estimate marked `[estimated]`.
 
 | Technique | Verdict | Gain | Adoption cost | Cost to undo | Confidence |
 |---|---|---|---|---|---|
-| Use the tool itself for my Windows program automation | **On hold** | Small; a skill for the same job exists | Half a day to install and test (2 to 6 hours, 95% CI) `[estimated]` | Cheap (`npm` uninstall) | Low; not run |
+| Use the tool itself for my Windows program automation | **On hold** | Small; a skill for the same job exists | Half a day to install and test (2 to 6 hours, 95% CI) `[estimated]` | Cheap (`npm` uninstall) | Low; one short trial only |
 | Bind a tag to the observation it came from | **Adopt (principle)** | Stops presses on stale coordinates | Low; record the screenshot number with each call `[estimated]` | Cheap | Medium |
 | Record a failed read separately from "absent" | **Adopt (principle)** | Keeps a check that never ran from looking like a pass | Low | Cheap | High; confirmed in code |
 | Judge a write by reading afterwards | **Already have it** | None | None | None | Same grain as my rule: aim by screen, judge by log |
@@ -123,6 +123,40 @@ Cells I could not measure carry an estimate marked `[estimated]`.
 
 ## What I did not do
 
-- I did not install or run it. All behavior was confirmed from docs and code only.
-- I did not open the Windows adapter (`crates/windows`). The two implementation files I read are in the core.
+- During the analysis I did not install or run it, so those findings rest on docs and code. What happened when I ran it is in the review below.
+- During the analysis I did not open the Windows adapter (`crates/windows`); the two implementation files I read are in the core. For the review I read only the code that launches the on-screen pointer.
 - I did not read the history of reverted commits or closed issues, and I cannot say whether an eight-month-old repo has enough of it to interpret.
+
+## I ran it: reading worked, sharing did not
+
+On 2026-11-02 I installed `v1.0.2` from npm on a Windows 11 PC and spent a few hours with it. I wanted one answer. **Can an AI operate this PC separately while I keep working on it?** I could not show that it can, and I removed the tool when I finished.
+
+| Trial | Result |
+|---|---|
+| Reading a work launcher window | Good. About 1.2 seconds for 207 entries, including button states, checkboxes and field values |
+| My screen during reads | Over four reads, neither the pointer position nor the front window moved |
+| Dropdowns | None of the 8 reported its selected value |
+| Pressing 7 + 8 = in Calculator | All four signals were delivered, yet the answer was not 15 |
+| On-screen pointer | Stayed hidden on the npm build; appeared from a renamed copy of the same file |
+
+### A covered window took the press, then jumped forward
+
+Calculator sat behind other windows and still received 7 and +, while the real pointer stayed put. That matched the docs. Around the press of 8, though, Calculator came to the front, and I did not find out why.
+
+The answer came out as `1/7 + 8`, with a `1/x` I never sent. Calculator's shortcut for `1/x` is the `R` key, so my own typing may have landed there. I stopped before a retest could separate the causes, which leaves this as a guess.
+
+### The on-screen pointer is a drawing, not a second mouse
+
+In a demo, a pointer moving apart from yours looks like an extra input device. It is a picture on a transparent window, and buttons are pressed by accessibility signals. Typed text is real keystrokes aimed at the front window according to the docs, so that part collides with me by design.
+
+I also found why the pointer stayed hidden. The code draws it only when the executable is named `agent-desktop`, and npm installs `agent-desktop-win32-x64.exe`. The enable command still answers success and quietly returns `rendered: false`. I have not reported this upstream.
+
+### My biggest mistake was where I tested
+
+I left the trial to an AI, and it opened a window and pressed buttons on the screen I was working on. A test of whether we could share the PC became the interruption itself. It felt like losing control, so I stopped it partway through. A sharing test belongs off your working screen, or at a time set aside for it.
+
+### The verdict stays on hold
+
+**This tool reads ordinary programs and presses their buttons from behind. It does not let two parties split one computer.** One active screen has one input path, and patching the tool would not change that. If I only need reading again, reinstalling costs little.
+
+Some things remain unknown. I never read a game editor or a PC game window, and one trial says little about how reliable signal presses are. The reason the window jumped forward and the source of that `1/x` both stay unconfirmed.
