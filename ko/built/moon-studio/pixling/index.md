@@ -11,7 +11,7 @@
 
 <div class="kk" data-hide="숨기기" data-show="돌아오기" aria-label="깨알 소개와 받기">
 <header class="k-hero">
-<div class="k-title"><p class="k-name k-stroke">깨알</p><p class="k-lede">포켓몬 + 디지몬<br>다마고치</p></div>
+<div class="k-title"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 바탕화면에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
 <div class="k-side">
 <p class="k-now">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p>
 <a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a>
