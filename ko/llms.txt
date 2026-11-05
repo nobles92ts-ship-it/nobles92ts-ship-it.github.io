@@ -53,7 +53,7 @@
 - [adb 기반 게임 QA 서버 · 나온 것](https://aitryed.com/ko/built/android-qa/findings/index.md): 자동화 결함이 아닌 것이 처음 나왔습니다. 그리고 그건 자랑이 아닙니다.
 - [adb 기반 게임 QA 서버 · 사진 판독기](https://aitryed.com/ko/built/android-qa/judge/index.md): 기록으로 결과를 못 정하는 검사는 사진으로 판정합니다. 그 판정을 규칙이 다시 거르고, 다른 회사의 모델이 한 번 더 봅니다.
 - [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 디렉터·기능 오너·새 검증관·지속 아트 세션을 함께 씁니다. 작업 인수와 중복·자원 충돌을 보강한 결과, 실제 게임 전환과 남은 검증을 기록합니다.
-- [문스튜디오 · 깨알](https://aitryed.com/ko/built/moon-studio/pixling/index.md): 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
+- [문스튜디오 · 깨알](https://aitryed.com/ko/built/moon-studio/pixling/index.md): 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 - [문스튜디오 · 깨알 · 91화 · 문 앞에서](https://aitryed.com/ko/built/moon-studio/pixling/story-91/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 91화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 90화 · 다크마스터즈](https://aitryed.com/ko/built/moon-studio/pixling/story-90/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 90화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 89화 · 지우 vs 그린](https://aitryed.com/ko/built/moon-studio/pixling/story-89/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 89화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.

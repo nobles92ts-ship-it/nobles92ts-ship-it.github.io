@@ -1,6 +1,6 @@
 # 깨알
 
-> 바탕화면 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 바탕화면 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
+> 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
 - 수치: v0.2.9 베타 · Windows · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
@@ -11,7 +11,7 @@
 
 <div class="kk" data-hide="숨기기" data-show="돌아오기" aria-label="깨알 소개와 받기">
 <header class="k-hero">
-<div class="k-title"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 바탕화면에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
+<div class="k-title"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 모니터에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
 <div class="k-side">
 <p class="k-now">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p>
 <a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a>
@@ -22,9 +22,9 @@
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>
 </header>
 <section class="k-sec" id="k-nowin">
-<div class="k-nowin-head"><div><h2>이 게임은 화면을<br>차지하지 않습니다</h2><p>창이 따로 없습니다. 생물이 바탕화면 위, 작업 표시줄 근처를 돌아다닙니다.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="₩ 키: 그림 숨기기와 돌아오기">₩</button><p class="k-keynote">개발자분들은 설정에서 다른 키로 바꿀 수 있어요</p></div></div>
+<div class="k-nowin-head"><div><h2>이 게임은 화면을<br>차지하지 않습니다</h2><p>창이 따로 없습니다. 생물이 모니터 위, 작업 표시줄 근처를 돌아다닙니다.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="₩ 키: 그림 숨기기와 돌아오기">₩</button><p class="k-keynote">개발자분들은 설정에서 다른 키로 바꿀 수 있어요</p></div></div>
 <dl class="k-vs">
-<div><dt>어디서</dt><dd class="k-old">게임 창 안</dd><dd class="k-new">바탕화면 위</dd></div>
+<div><dt>어디서</dt><dd class="k-old">게임 창 안</dd><dd class="k-new">모니터 위</dd></div>
 <div><dt>언제</dt><dd class="k-old">할 때만 켬</dd><dd class="k-new">일하는 내내 켜 둠<small>시간대마다 잘 나오는 생물이 다릅니다.</small></dd></div>
 <div><dt>급할 때</dt><dd class="k-old">창을 내림</dd><dd class="k-new">₩ 키 한 번에 숨고, 한 번 더 누르면 돌아옴</dd></div>
 </dl>
@@ -137,7 +137,7 @@
 </section>
 <section class="k-sec k-end" id="k-get">
 <div class="k-endrow">
-<h2>오늘부터 바탕화면에서<br>같이 놀아요</h2>
+<h2>오늘부터 모니터에서<br>같이 놀아요</h2>
 <div><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><p class="k-m">Kkaeal.zip · 무료<br><a href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></p></div>
 </div>
 </section>
