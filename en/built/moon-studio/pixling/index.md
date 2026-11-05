@@ -9,148 +9,105 @@
 
 ---
 
-<div class="kk" data-hide="Hide" data-show="Bring back" aria-label="Kkaeal: what it is and how to get it">
-<header class="k-hero">
-<div class="k-title"><p class="k-name k-stroke">Kkaeal</p><p class="k-lede">A Pokémon × Digimon Tamagotchi<br>growing on your monitor</p></div>
-<div class="k-side">
-<p class="k-now">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p>
-<a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a>
-<p class="k-info"><b>Kkaeal.zip</b><span>v0.2.9 beta · about 78 MB · free</span><a href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a><span>A non-commercial fan game. Not an official game.</span></p>
-<div class="k-phone">It won't run on a phone. <b>Open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
-<p class="k-try">Try the <kbd>\</kbd> key. The pictures here hide just as the game does, and come back on a second press. Developers who type it all day can switch to another key in the settings.</p>
-</div>
+<div class="kk" data-hide="Hide" data-show="Bring back" aria-label="Kkaeal: game info and download">
+<header class="k-top">
+<div class="k-head"><p class="k-name k-stroke">Kkaeal</p><p class="k-lede">A Pokémon × Digimon Tamagotchi<br>growing on your monitor</p></div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"><p class="k-gone" role="status">All hidden. Press \ again to bring them back.</p></div>
 </header>
-<section class="k-sec" id="k-nowin">
-<div class="k-nowin-head"><div><h2>It doesn't take<br>over your screen</h2><p>Kkaeal has no game window. The creatures walk around on your monitor, near the taskbar.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="The \ key: hide the pictures and bring them back">\</button><p class="k-keynote">Developers: you can switch to another key in the settings</p></div></div>
-<dl class="k-vs">
-<div><dt>Where</dt><dd class="k-old">Inside its window</dd><dd class="k-new">On your monitor</dd></div>
-<div><dt>When</dt><dd class="k-old">Only while you play</dd><dd class="k-new">Left running all day<small>Different creatures show up at different times of day.</small></dd></div>
-<div><dt>When you need it gone</dt><dd class="k-old">Minimise the window</dd><dd class="k-new">One press of \ hides everything; press again to bring it back</dd></div>
-</dl>
-<p class="k-note">You can change the hide key in the settings. Kkaeal doesn't take that key away from other programs: typing \ elsewhere still types it, and the game hides along with it.</p>
+<section class="k-getbox" aria-label="Download">
+<div class="k-getl"><p class="k-one">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p><p class="k-info"><span>v0.2.9 beta · about 78 MB · free</span></p></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a></div>
+<div class="k-phone">The phone version is in progress. For now, <b>open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
 </section>
-<section class="k-sec k-shots" id="k-shots">
-<h2>It's quicker to see it move</h2>
-<p class="k-sub">Each one opens a short clip on Instagram. The captions in the clips are in Korean.</p>
+<dl class="k-facts">
+<div><dt>Genre</dt><dd>Tamagotchi-style raising</dd></div>
+<div><dt>Dex</dt><dd>921 species</dd></div>
+<div><dt>Language</dt><dd>Korean · English</dd></div>
+<div><dt>Platform</dt><dd>Windows PC<small>Android · iOS · Mac in progress</small></dd></div>
+</dl>
+<section class="k-sec" id="k-preview">
+<p class="k-eye">Preview</p>
+<h2>See it move first</h2>
 <ul class="k-reel">
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeTHl7sO_cI/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/cute.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">Partner being cute</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeEMfVxB2DU/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/office.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">A Gyarados at work</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeIqUwLBTDd/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/tower.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">Tower floor 100</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeEyZ4RhnpD/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/digivice.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">Digivice and DNA Digivolve</span></a></li>
 </ul>
+<p class="k-note">Each one opens a short clip on Instagram. The captions in the clips are in Korean.</p>
 </section>
-<section class="k-sec k-dex" id="k-dex">
-<div class="k-dex-head"><p class="k-dex-n k-stroke">921</p><div><h2>species to collect in the Dex</h2><p>A first catch flips in as a card, and caught species show a tier from 1 to 10.</p></div></div>
-<div class="k-sides">
-<div><p class="k-dex-t">Pokémon <span>627 species</span></p><ul class="k-mons">
-<li><img class="k-pet" src="/games/pixling/mon/p00.webp" width="23" height="27" style="--w:23;--s:3" alt="" loading="lazy"><span>Pikachu</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p01.webp" width="30" height="31" style="--w:30;--s:3" alt="" loading="lazy"><span>Charizard</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p02.webp" width="27" height="25" style="--w:27;--s:3" alt="" loading="lazy"><span>Eevee</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p03.webp" width="28" height="31" style="--w:28;--s:3" alt="" loading="lazy"><span>Mewtwo</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p04.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>Gengar</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p05.webp" width="27" height="31" style="--w:27;--s:3" alt="" loading="lazy"><span>Snorlax</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p06.webp" width="22" height="21" style="--w:22;--s:3" alt="" loading="lazy"><span>Squirtle</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p07.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>Bulbasaur</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p08.webp" width="27" height="35" style="--w:27;--s:3" alt="" loading="lazy"><span>Dragonite</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p09.webp" width="20" height="26" style="--w:20;--s:3" alt="" loading="lazy"><span>Jigglypuff</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p10.webp" width="26" height="28" style="--w:26;--s:3" alt="" loading="lazy"><span>Mew</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p11.webp" width="63" height="60" style="--w:63;--s:2" alt="" loading="lazy"><span>Gyarados</span></li>
-</ul><p class="k-more">and 615 more</p></div>
-<div><p class="k-dex-t">Digimon <span>294 species</span></p><ul class="k-mons">
-<li><img class="k-pet" src="/games/pixling/mon/d12.webp" width="30" height="32" style="--w:30;--s:3" alt="" loading="lazy"><span>Agumon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d13.webp" width="51" height="47" style="--w:51;--s:2" alt="" loading="lazy"><span>WarGreymon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d14.webp" width="29" height="32" style="--w:29;--s:3" alt="" loading="lazy"><span>Gabumon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d15.webp" width="50" height="56" style="--w:50;--s:2" alt="" loading="lazy"><span>Omegamon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d16.webp" width="47" height="46" style="--w:47;--s:2" alt="" loading="lazy"><span>Greymon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d17.webp" width="62" height="45" style="--w:62;--s:2" alt="" loading="lazy"><span>MetalGarurumon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d18.webp" width="35" height="32" style="--w:35;--s:3" alt="" loading="lazy"><span>Patamon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d19.webp" width="53" height="48" style="--w:53;--s:2" alt="" loading="lazy"><span>Angemon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d20.webp" width="46" height="38" style="--w:46;--s:2" alt="" loading="lazy"><span>Gatomon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d21.webp" width="60" height="56" style="--w:60;--s:2" alt="" loading="lazy"><span>Gallantmon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d22.webp" width="46" height="40" style="--w:46;--s:2" alt="" loading="lazy"><span>Guilmon</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d23.webp" width="23" height="28" style="--w:23;--s:3" alt="" loading="lazy"><span>Veemon</span></li>
-</ul><p class="k-more">and 282 more</p></div>
+<section class="k-sec" id="k-info">
+<p class="k-eye">Game info</p>
+<h2>No window, right on your monitor</h2>
+<p class="k-lead">The creatures walk around near the taskbar. One press of <kbd>\</kbd> hides everything, and a second press brings it back. Developers who type it all day can switch to another key in the settings.</p>
+<div class="k-cards">
+<div><h3>Catch</h3><p>Grab the wild ones walking by: a Poké Ball for Pokémon, a Digivice for Digimon.</p></div>
+<div><h3>Raise</h3><p>Typing and clicking become experience, and your partner digivolves all the way to Mega.</p></div>
+<div><h3>Send</h3><p>Build a team for the gyms and the tower. There are 32 gyms on each side.</p></div>
 </div>
-<p class="k-foot">Dex numbers are as of v0.1.6.</p>
+<div class="k-monrow"><ul class="k-mons"><li><img class="k-pet" src="/games/pixling/mon/p00.webp" width="23" height="27" style="--w:23;--s:3" alt="" loading="lazy"><span>Pikachu</span></li><li><img class="k-pet" src="/games/pixling/mon/p01.webp" width="30" height="31" style="--w:30;--s:3" alt="" loading="lazy"><span>Charizard</span></li><li><img class="k-pet" src="/games/pixling/mon/p02.webp" width="27" height="25" style="--w:27;--s:3" alt="" loading="lazy"><span>Eevee</span></li><li><img class="k-pet" src="/games/pixling/mon/p03.webp" width="28" height="31" style="--w:28;--s:3" alt="" loading="lazy"><span>Mewtwo</span></li><li><img class="k-pet" src="/games/pixling/mon/p04.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>Gengar</span></li><li><img class="k-pet" src="/games/pixling/mon/p05.webp" width="27" height="31" style="--w:27;--s:3" alt="" loading="lazy"><span>Snorlax</span></li><li><img class="k-pet" src="/games/pixling/mon/d12.webp" width="30" height="32" style="--w:30;--s:3" alt="" loading="lazy"><span>Agumon</span></li><li><img class="k-pet" src="/games/pixling/mon/d13.webp" width="51" height="47" style="--w:51;--s:2" alt="" loading="lazy"><span>WarGreymon</span></li><li><img class="k-pet" src="/games/pixling/mon/d14.webp" width="29" height="32" style="--w:29;--s:3" alt="" loading="lazy"><span>Gabumon</span></li><li><img class="k-pet" src="/games/pixling/mon/d15.webp" width="50" height="56" style="--w:50;--s:2" alt="" loading="lazy"><span>Omegamon</span></li><li><img class="k-pet" src="/games/pixling/mon/d16.webp" width="47" height="46" style="--w:47;--s:2" alt="" loading="lazy"><span>Greymon</span></li><li><img class="k-pet" src="/games/pixling/mon/d17.webp" width="62" height="45" style="--w:62;--s:2" alt="" loading="lazy"><span>MetalGarurumon</span></li></ul></div>
+<p class="k-note">627 Pokémon · 294 Digimon. Dex numbers are as of v0.1.6.</p>
 </section>
-<section class="k-sec k-olive" id="k-play">
-<h2>Three things at the core,<br>and more to do in the gaps of your workday</h2>
-<div class="k-verbs">
-<div><h3 class="k-stroke">Catch</h3><p>Grab the wild ones walking by. Pokémon get a Poké Ball thrown at them; Digimon get a Digivice shone on them. Tower, Gym and Link Battle opponents can't be caught (from v0.2.4).</p></div>
-<div><h3 class="k-stroke">Raise</h3><p>Your partner grows and digivolves: Rookie → Champion → Ultimate → Mega.</p></div>
-<div><h3 class="k-stroke">Send</h3><p>Build a team and send it into gyms and the tower. There are 32 gyms on the Pokémon side and 32 on the Digimon side; clear one side of Season 1 and a tougher Season 2 opens. Your first badge from each gym pays gym number × 50 gold.</p></div>
-</div>
-<p class="k-around-t">And around them</p>
-<dl class="k-around">
-<div><dt>Life Yard</dt><dd>Seat up to 10 creatures you aren't using and they work by type for gold: Water types fish, Electric types charge batteries. They only earn while you're active at the PC, and the Digivice reports the take every hour.</dd></div>
-<div><dt>Shop gacha</dt><dd>Spend that gold on pulls (300 a pull) to fill the Dex.</dd></div>
-<div><dt>Daily gift</dt><dd>Once a day, five minutes after you start, a creature walks in wearing a ribbon. Click it to keep it.</dd></div>
-<div><dt>Mini-games</dt><dd>Gomoku against your partner, with four skill levels plus «Random», where a card deck decides who moves · Picture match in three stages · a silhouette quiz.</dd></div>
-<div><dt>Link Battle</dt><dd>Turn your team into one line of code and fight a friend 10 vs 10, one-on-one. No rewards, and both sides need the same version. Turn it on and your team joins the online ranking, where you can challenge other players' teams up to 20 times a day; the server re-checks results every night before they count (from v0.2.5, off by default).</dd></div>
-</dl>
-<p class="k-foot">Numbers above are as of v0.1.6.</p>
+<section class="k-sec" id="k-env">
+<p class="k-eye">Download</p>
+<h2>Where to get it, what it runs on</h2>
+<ul class="k-rows">
+<li><div><b>GitHub</b><span>Kkaeal.zip · about 78 MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download ↓</a></li>
+<li><div><b>itch.io</b><span>If the link above doesn't work</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">Open ↗</a></li>
+</ul>
+<table class="k-env">
+<tbody>
+<tr><th scope="row">Windows PC</th><td class="k-yes">Works</td></tr>
+<tr><th scope="row">Android · iOS · Mac</th><td class="k-wip">In progress</td></tr>
+<tr><th scope="row">Install</th><td>Not needed<small>Unzip and run 깨알.exe.</small></td></tr>
+<tr><th scope="row">Save</th><td>Survives new versions<small>Stored separately in <code>%APPDATA%\Pixling</code>.</small></td></tr>
+<tr><th scope="row">First launch</th><td>A blue box appears once<small>The file has no code signature. Nothing is broken.</small></td></tr>
+<tr><th scope="row">Antivirus</th><td>Not measured yet</td></tr>
+</tbody>
+</table>
+<h3 class="k-h3">Versions</h3>
+<ul class="k-rows k-vers">
+<li><div><b>v0.2.9 <i>Latest</i></b><span>78 MB · 2026-11-03 · Link Battle fix</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9">What's new ↗</a></li>
+<li><div><b>v0.2.8</b><span>78 MB · 2026-11-03 · Quests · Dex «View moves» · Ranking podium</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.8">What's new ↗</a></li>
+<li><div><b>v0.2.7</b><span>72 MB · 2026-11-02</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.7">What's new ↗</a></li>
+</ul>
 </section>
-<section class="k-sec k-paper" id="k-typing">
-<div class="k-col2">
-<div>
-<h2>It grows as you type,<br>and never knows what you typed</h2>
-<p class="k-rule">Each key press is worth 1 experience point; each mouse click is worth 2.</p>
-<p class="k-q">Is it reading my keystrokes?</p>
-<p class="k-a">No.</p>
-<p class="k-t">The only thing Kkaeal counts is how many times something was pressed. It doesn't intercept keystrokes on their way to other programs. It just asks, many times a second, "is anything held down right now?" With that method, rebuilding what you typed is impossible in principle. The save file holds two numbers and nothing else.</p>
-<p class="k-t">Some PCs run security software that blocks even that question. On those, from v0.1.4 on, Kkaeal looks only at when the last input happened and counts each change as one key press. It still can't tell which key it was.</p>
-<p class="k-t">Creatures also only show up while you're at the keyboard. The next one comes after enough time has passed and enough input has piled up since the last. Step away and nothing queues up to pour out when you return.</p>
-</div>
-<div>
-<div class="k-gauge"><p class="k-gh">Try it on this page. This box counts the same way, but it isn't the game, and it sends nothing anywhere.</p><div class="k-nums"><div><b id="k-nk">0</b><span>Key presses</span></div><div><b id="k-nm">0</b><span>Mouse clicks</span></div><div><b id="k-nx">0</b><span>Experience</span></div></div></div>
-<table class="k-count"><thead><tr><th scope="col">Counted</th><th scope="col">Never counted</th></tr></thead><tbody>
-<tr><td><b>How many</b> keys were pressed</td><td>Which key it was</td></tr>
-<tr><td><b>How many</b> mouse clicks</td><td>What you typed · which window · where the cursor was</td></tr>
-</tbody></table>
-</div>
-</div>
-</section>
-<section class="k-sec" id="k-how">
-<div class="k-col2">
-<div><h2>Three steps from download to running</h2><ol class="k-steps">
+<section class="k-sec k-more" id="k-help">
+<details open><summary>How to run it</summary><div class="k-body">
+<ol class="k-steps">
 <li><i>1</i><span>Unzip the download</span></li>
 <li><i>2</i><span>Double-click <b>깨알.exe</b> in the <b>깨알</b> folder</span></li>
 <li><i>3</i><span>If a blue box appears: <b>More info → Run anyway</b></span></li>
-</ol></div>
-<div><div class="k-smart" aria-label="Where to click in the blue box"><p class="k-st">Windows protected your PC</p><p class="k-sr"><u>More info</u><em>① click here</em></p><p class="k-sr"><span class="k-run">Run anyway</span><em>② and this button appears</em><span class="k-no">Don't run</span></p></div><p class="k-why"><strong>It appears once, on first launch. Nothing is broken.</strong> The file has no code signature, a publisher's stamp. A signature costs money every year, and these days a signed file still gets the box until enough people have downloaded it. For a free game, it wasn't worth it.</p></div>
-</div>
+</ol>
+<div class="k-smart" aria-label="Where to click in the blue box"><p class="k-st">Windows protected your PC</p><p class="k-sr"><u>More info</u><em>① click here</em></p><p class="k-sr"><span class="k-run">Run anyway</span><em>② and this button appears</em><span class="k-no">Don't run</span></p></div>
+</div></details>
+<details><summary>More to do</summary><div class="k-body"><ul class="k-list">
+<li><b>Life Yard</b>Seat up to 10 creatures you aren't using and they work by type for gold, only while you're active at the PC.</li>
+<li><b>Shop gacha</b>Spend that gold on pulls (300 a pull) to fill the Dex.</li>
+<li><b>Daily gift</b>Once a day, five minutes after you start, a creature walks in wearing a ribbon. Click it to keep it.</li>
+<li><b>Mini-games</b>Gomoku against your partner · Picture match · a silhouette quiz.</li>
+<li><b>Link Battle</b>Turn your team into one line of code and fight a friend 10 vs 10. Turn it on to join the online ranking (off by default).</li>
+</ul></div></details>
+<details><summary>Updates</summary><div class="k-body"><p>At start the game asks whether a new version exists, and downloads only if you agree. If you don't want to wait, press «⬆ Update» in the menu. Versions older than v0.1.3 get no notice, so download from this page once and overwrite.</p></div></details>
+<details><summary>What goes over the internet</summary><div class="k-body"><ul class="k-list">
+<li><b>Version check</b>Asks GitHub once at start. It sends only its version number.</li>
+<li><b>Attendance signal</b>While running, once a day it sends an anonymous number, the version and quest stage. There is no setting to turn this off (from v0.2.8).</li>
+<li><b>Event check</b>At start and every hour it asks whether an event is on, and sends nothing (from v0.2.8).</li>
+<li><b>Ranking</b>Only players who turn on Ranking talk to the ranking server.</li>
+</ul></div></details>
+<details><summary>Is it reading my keystrokes?</summary><div class="k-body">
+<p>No. It only counts how many times something was pressed, and can't tell which key it was. Each key press is worth 1 experience point; each mouse click is worth 2.</p>
+<div class="k-gauge"><p class="k-gh">Try it on this page. This box counts the same way, but it isn't the game, and it sends nothing anywhere.</p><div class="k-nums"><div><b id="k-nk">0</b><span>Key presses</span></div><div><b id="k-nm">0</b><span>Mouse clicks</span></div><div><b id="k-nx">0</b><span>Experience</span></div></div></div>
+</div></details>
+<details><summary>Credits and copyright</summary><div class="k-body"><p>A non-commercial fan game, not an official game. The Digimon sprites belong to Bandai; the Pokémon sprites belong to Nintendo, Game Freak and Creatures. The full notice is in the in-game credits window and in <code>OUTPUT_NOTICE.md</code> inside the zip.</p></div></details>
 </section>
-<section class="k-sec k-restsec">
-<div class="k-rest">
-<div><h2>Your save lives elsewhere,<br>so new versions keep it</h2>
-<p>The save isn't next to the game file; it's in <code>%APPDATA%\Pixling</code> (the folder keeps the old name on purpose — renaming it would lose your creatures). When a new version comes out, download the new zip and overwrite the old files. Your creatures stay.</p>
-<p>Usually the game does even that for you. Once at start it asks GitHub (the download repository) whether a newer version exists, sending only its version number, and downloads only if you agree. If you don't want to wait, press «⬆ Update» in the menu (from v0.1.6). While the game is running, a Digivice bubble reminds you every 30 minutes until you update (from v0.2.2). If you're already up to date, that window lists what's new in that version (from v0.2.3).</p>
-<p>The notice has been in the game since v0.1.3. If you're on something older, it won't come, so download from this page once and overwrite.</p>
-</div>
-<div><h2>What it can't do yet</h2><ul class="k-cant">
-<li><b>Run on Mac or phones</b>It relies on Windows window features.</li>
-<li><b>Skip the blue box</b>No code signature.</li>
-<li><b>Vouch for antivirus behaviour</b>How antivirus tools view the "is a key held down?" polling hasn't been measured yet.</li>
-</ul></div>
-</div>
-</section>
-<section class="k-sec k-end" id="k-get">
-<div class="k-endrow">
-<h2>Let them play on<br>your monitor today</h2>
-<div><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a><p class="k-m">Kkaeal.zip · free<br><a href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a></p></div>
-</div>
-</section>
-<p class="k-base">The name is a Korean pun. 깨알 is a sesame seed, something tiny; read as 깨 + 알 it also means "crack the egg", which is how every creature here is born.<br>This is a non-commercial fan game. The Digimon sprites belong to Bandai; the Pokémon sprites belong to Nintendo, Game Freak and Creatures. The full notice is in the in-game credits window and in <code>OUTPUT_NOTICE.md</code> inside the zip.</p>
 <div class="k-bar">
 <a class="k-get" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download · free</a>
 <nav aria-label="On this page">
-<a href="#k-nowin">No window</a>
-<a href="#k-shots">Clips</a>
-<a href="#k-dex">Dex</a>
-<a href="#k-play">To do</a>
-<a href="#k-typing">Typing</a>
-<a href="#k-how">Setup</a>
+<a href="#k-preview">Preview</a>
+<a href="#k-info">Game info</a>
+<a href="#k-env">Download</a>
+<a href="#k-help">Help</a>
 </nav>
 <div class="k-tray"><button type="button" class="k-hidebtn js-hide" aria-pressed="false"><kbd>\</kbd> <span class="k-lbl">Hide</span></button><span class="k-clock" id="k-clock" aria-hidden="true"></span></div>
 </div>

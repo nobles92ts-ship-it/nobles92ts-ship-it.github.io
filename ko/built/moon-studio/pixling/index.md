@@ -9,148 +9,105 @@
 
 ---
 
-<div class="kk" data-hide="숨기기" data-show="돌아오기" aria-label="깨알 소개와 받기">
-<header class="k-hero">
-<div class="k-title"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 모니터에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
-<div class="k-side">
-<p class="k-now">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p>
-<a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a>
-<p class="k-info"><b>Kkaeal.zip</b><span>v0.2.9 베타 · 약 78MB · 무료</span><a href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a><span>비영리 팬메이드입니다. 공식 게임이 아닙니다.</span></p>
-<div class="k-phone">휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
-<p class="k-try"><kbd>₩</kbd> 키를 눌러 보세요. 게임처럼 이 화면의 그림도 숨고, 한 번 더 누르면 돌아옵니다. 코드를 자주 치는 개발자라면 설정에서 다른 키로 바꿀 수 있어요.</p>
-</div>
+<div class="kk" data-hide="숨기기" data-show="돌아오기" aria-label="깨알 게임 정보와 받기">
+<header class="k-top">
+<div class="k-head"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 모니터에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>
 </header>
-<section class="k-sec" id="k-nowin">
-<div class="k-nowin-head"><div><h2>이 게임은 화면을<br>차지하지 않습니다</h2><p>창이 따로 없습니다. 생물이 모니터 위, 작업 표시줄 근처를 돌아다닙니다.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="₩ 키: 그림 숨기기와 돌아오기">₩</button><p class="k-keynote">개발자분들은 설정에서 다른 키로 바꿀 수 있어요</p></div></div>
-<dl class="k-vs">
-<div><dt>어디서</dt><dd class="k-old">게임 창 안</dd><dd class="k-new">모니터 위</dd></div>
-<div><dt>언제</dt><dd class="k-old">할 때만 켬</dd><dd class="k-new">일하는 내내 켜 둠<small>시간대마다 잘 나오는 생물이 다릅니다.</small></dd></div>
-<div><dt>급할 때</dt><dd class="k-old">창을 내림</dd><dd class="k-new">₩ 키 한 번에 숨고, 한 번 더 누르면 돌아옴</dd></div>
-</dl>
-<p class="k-note">숨기는 키는 설정에서 바꿀 수 있습니다. 이 키를 다른 프로그램에서 빼앗지 않기 때문에, 다른 데서 ₩ 를 쳐도 글자는 그대로 쳐지고 게임만 같이 숨습니다.</p>
+<section class="k-getbox" aria-label="받기">
+<div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.2.9 베타 · 약 78MB · 무료</span></p></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a></div>
+<div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
-<section class="k-sec k-shots" id="k-shots">
-<h2>움직이는 걸로 보면 한 번에 압니다</h2>
-<p class="k-sub">누르면 인스타그램 짧은 영상으로 갑니다.</p>
+<dl class="k-facts">
+<div><dt>장르</dt><dd>다마고치형 육성</dd></div>
+<div><dt>도감</dt><dd>921종</dd></div>
+<div><dt>언어</dt><dd>한국어 · English</dd></div>
+<div><dt>플랫폼</dt><dd>Windows PC<small>Android · iOS · Mac 작업 중</small></dd></div>
+</dl>
+<section class="k-sec" id="k-preview">
+<p class="k-eye">미리보기</p>
+<h2>움직이는 걸로 먼저 보세요</h2>
 <ul class="k-reel">
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeTHl7sO_cI/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/cute.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">애교 부리는 파트너</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeEMfVxB2DU/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/office.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">출근했더니 갸라도스</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeIqUwLBTDd/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/tower.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">탑 100층</span></a></li>
 <li><a href="https://www.instagram.com/munbanggu100w/reel/DeEyZ4RhnpD/" target="_blank" rel="noopener"><span class="k-frame"><img class="k-pet" src="/games/pixling/digivice.webp" width="320" height="569" alt="" loading="lazy"></span><span class="k-cap">디지바이스와 합체 진화</span></a></li>
 </ul>
+<p class="k-note">누르면 인스타그램 짧은 영상으로 갑니다.</p>
 </section>
-<section class="k-sec k-dex" id="k-dex">
-<div class="k-dex-head"><p class="k-dex-n k-stroke">921</p><div><h2>종을 도감에 모아요</h2><p>처음 잡으면 카드로 뒤집혀 나오고, 잡은 종에는 1~10 티어가 붙습니다.</p></div></div>
-<div class="k-sides">
-<div><p class="k-dex-t">포켓몬 <span>627종</span></p><ul class="k-mons">
-<li><img class="k-pet" src="/games/pixling/mon/p00.webp" width="23" height="27" style="--w:23;--s:3" alt="" loading="lazy"><span>피카츄</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p01.webp" width="30" height="31" style="--w:30;--s:3" alt="" loading="lazy"><span>리자몽</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p02.webp" width="27" height="25" style="--w:27;--s:3" alt="" loading="lazy"><span>이브이</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p03.webp" width="28" height="31" style="--w:28;--s:3" alt="" loading="lazy"><span>뮤츠</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p04.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>팬텀</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p05.webp" width="27" height="31" style="--w:27;--s:3" alt="" loading="lazy"><span>잠만보</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p06.webp" width="22" height="21" style="--w:22;--s:3" alt="" loading="lazy"><span>꼬부기</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p07.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>이상해씨</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p08.webp" width="27" height="35" style="--w:27;--s:3" alt="" loading="lazy"><span>망나뇽</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p09.webp" width="20" height="26" style="--w:20;--s:3" alt="" loading="lazy"><span>푸린</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p10.webp" width="26" height="28" style="--w:26;--s:3" alt="" loading="lazy"><span>뮤</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/p11.webp" width="63" height="60" style="--w:63;--s:2" alt="" loading="lazy"><span>갸라도스</span></li>
-</ul><p class="k-more">그리고 615종 더</p></div>
-<div><p class="k-dex-t">디지몬 <span>294종</span></p><ul class="k-mons">
-<li><img class="k-pet" src="/games/pixling/mon/d12.webp" width="30" height="32" style="--w:30;--s:3" alt="" loading="lazy"><span>아구몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d13.webp" width="51" height="47" style="--w:51;--s:2" alt="" loading="lazy"><span>워그레이몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d14.webp" width="29" height="32" style="--w:29;--s:3" alt="" loading="lazy"><span>파피몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d15.webp" width="50" height="56" style="--w:50;--s:2" alt="" loading="lazy"><span>오메가몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d16.webp" width="47" height="46" style="--w:47;--s:2" alt="" loading="lazy"><span>그레이몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d17.webp" width="62" height="45" style="--w:62;--s:2" alt="" loading="lazy"><span>메탈가루몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d18.webp" width="35" height="32" style="--w:35;--s:3" alt="" loading="lazy"><span>파닥몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d19.webp" width="53" height="48" style="--w:53;--s:2" alt="" loading="lazy"><span>엔젤몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d20.webp" width="46" height="38" style="--w:46;--s:2" alt="" loading="lazy"><span>가트몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d21.webp" width="60" height="56" style="--w:60;--s:2" alt="" loading="lazy"><span>듀크몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d22.webp" width="46" height="40" style="--w:46;--s:2" alt="" loading="lazy"><span>길몬</span></li>
-<li><img class="k-pet" src="/games/pixling/mon/d23.webp" width="23" height="28" style="--w:23;--s:3" alt="" loading="lazy"><span>브이몬</span></li>
-</ul><p class="k-more">그리고 282종 더</p></div>
+<section class="k-sec" id="k-info">
+<p class="k-eye">게임 정보</p>
+<h2>창 없이, 모니터 위에서</h2>
+<p class="k-lead">생물이 작업 표시줄 근처를 돌아다닙니다. <kbd>₩</kbd> 키 한 번이면 전부 숨고, 한 번 더 누르면 돌아옵니다. 코드를 자주 치는 개발자라면 설정에서 다른 키로 바꿀 수 있어요.</p>
+<div class="k-cards">
+<div><h3>잡기</h3><p>돌아다니는 야생을 잡습니다. 포켓몬은 몬스터볼, 디지몬은 디지바이스.</p></div>
+<div><h3>키우기</h3><p>타자와 클릭이 경험치가 되고, 파트너가 궁극체까지 진화합니다.</p></div>
+<div><h3>보내기</h3><p>팀을 꾸려 체육관과 탑에 보냅니다. 체육관은 양쪽 32관씩.</p></div>
 </div>
-<p class="k-foot">도감 숫자는 v0.1.6 기준입니다.</p>
+<div class="k-monrow"><ul class="k-mons"><li><img class="k-pet" src="/games/pixling/mon/p00.webp" width="23" height="27" style="--w:23;--s:3" alt="" loading="lazy"><span>피카츄</span></li><li><img class="k-pet" src="/games/pixling/mon/p01.webp" width="30" height="31" style="--w:30;--s:3" alt="" loading="lazy"><span>리자몽</span></li><li><img class="k-pet" src="/games/pixling/mon/p02.webp" width="27" height="25" style="--w:27;--s:3" alt="" loading="lazy"><span>이브이</span></li><li><img class="k-pet" src="/games/pixling/mon/p03.webp" width="28" height="31" style="--w:28;--s:3" alt="" loading="lazy"><span>뮤츠</span></li><li><img class="k-pet" src="/games/pixling/mon/p04.webp" width="26" height="26" style="--w:26;--s:3" alt="" loading="lazy"><span>팬텀</span></li><li><img class="k-pet" src="/games/pixling/mon/p05.webp" width="27" height="31" style="--w:27;--s:3" alt="" loading="lazy"><span>잠만보</span></li><li><img class="k-pet" src="/games/pixling/mon/d12.webp" width="30" height="32" style="--w:30;--s:3" alt="" loading="lazy"><span>아구몬</span></li><li><img class="k-pet" src="/games/pixling/mon/d13.webp" width="51" height="47" style="--w:51;--s:2" alt="" loading="lazy"><span>워그레이몬</span></li><li><img class="k-pet" src="/games/pixling/mon/d14.webp" width="29" height="32" style="--w:29;--s:3" alt="" loading="lazy"><span>파피몬</span></li><li><img class="k-pet" src="/games/pixling/mon/d15.webp" width="50" height="56" style="--w:50;--s:2" alt="" loading="lazy"><span>오메가몬</span></li><li><img class="k-pet" src="/games/pixling/mon/d16.webp" width="47" height="46" style="--w:47;--s:2" alt="" loading="lazy"><span>그레이몬</span></li><li><img class="k-pet" src="/games/pixling/mon/d17.webp" width="62" height="45" style="--w:62;--s:2" alt="" loading="lazy"><span>메탈가루몬</span></li></ul></div>
+<p class="k-note">포켓몬 627종 · 디지몬 294종. 도감 숫자는 v0.1.6 기준입니다.</p>
 </section>
-<section class="k-sec k-olive" id="k-play">
-<h2>셋이 중심이고,<br>일하는 틈에 할 거리가 둘레에 붙어 있습니다</h2>
-<div class="k-verbs">
-<div><h3 class="k-stroke">잡기</h3><p>돌아다니는 야생을 잡습니다. 포켓몬은 몬스터볼을 던지고, 디지몬은 디지바이스로 비춥니다. 탑 · 체육관 · 통신 대전 상대는 잡지 않습니다(v0.2.4 부터).</p></div>
-<div><h3 class="k-stroke">키우기</h3><p>파트너가 자라서 성장기 → 성숙기 → 완전체 → 궁극체로 진화합니다.</p></div>
-<div><h3 class="k-stroke">보내기</h3><p>팀을 꾸려 체육관과 탑에 보냅니다. 체육관은 포켓몬 쪽 · 디지몬 쪽이 32관씩이고, 시즌 1 한쪽을 다 깨면 더 센 시즌 2 가 열립니다. 배지를 처음 따면 «관 번호 × 50G».</p></div>
-</div>
-<p class="k-around-t">그리고 둘레에</p>
-<dl class="k-around">
-<div><dt>생활 마당</dt><dd>안 쓰는 몬스터를 10마리까지 앉히면 타입대로 일해서 골드를 법니다. 물 타입은 낚시, 전기 타입은 충전. 내가 PC 를 쓰는 동안만 벌고, 한 시간마다 번 골드를 알려 줍니다.</dd></div>
-<div><dt>상점 뽑기</dt><dd>모은 골드로 뽑기를 돌려(1회 300G) 도감을 채웁니다.</dd></div>
-<div><dt>매일 선물</dt><dd>하루 한 번, 첫 활동 5분 뒤 리본을 단 몬스터가 걸어옵니다. 눌러야 데려옵니다.</dd></div>
-<div><dt>미니게임</dt><dd>파트너와 두는 오목(하 · 중 · 상 · 극상, 그리고 카드가 차례를 정하는 «랜덤») · 그림 맞추기 1 · 2 · 3단계 · 실루엣 맞추기.</dd></div>
-<div><dt>통신 대전</dt><dd>내 팀을 코드 한 줄로 바꿔 친구와 10 대 10, 한 마리씩 1:1 로 겨룹니다. 보상은 없고, 같은 판끼리 씁니다. 참여를 켜면 온라인 랭킹에 내 팀을 올리고 다른 사람 팀에 하루 20번까지 도전합니다. 결과는 밤마다 서버가 다시 확인한 뒤 순위에 들어갑니다(v0.2.5 부터 · 처음엔 꺼져 있음).</dd></div>
-</dl>
-<p class="k-foot">위 숫자는 v0.1.6 기준입니다.</p>
+<section class="k-sec" id="k-env">
+<p class="k-eye">받는 환경</p>
+<h2>받기와 지원 환경</h2>
+<ul class="k-rows">
+<li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
+<li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
+</ul>
+<table class="k-env">
+<tbody>
+<tr><th scope="row">Windows PC</th><td class="k-yes">됩니다</td></tr>
+<tr><th scope="row">Android · iOS · Mac</th><td class="k-wip">작업 중입니다</td></tr>
+<tr><th scope="row">설치</th><td>필요 없습니다<small>zip 을 풀고 깨알.exe 를 켜면 됩니다.</small></td></tr>
+<tr><th scope="row">세이브</th><td>새 판을 덮어써도 남습니다<small><code>%APPDATA%\Pixling</code> 에 따로 저장합니다.</small></td></tr>
+<tr><th scope="row">처음 켤 때</th><td>파란 창이 한 번 뜹니다<small>코드 서명이 없어서 뜹니다. 고장이 아닙니다.</small></td></tr>
+<tr><th scope="row">백신</th><td>아직 재 보지 않았습니다</td></tr>
+</tbody>
+</table>
+<h3 class="k-h3">판 내역</h3>
+<ul class="k-rows k-vers">
+<li><div><b>v0.2.9 <i>최신</i></b><span>78MB · 2026-11-03 · 통신 대전 고침</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9">바뀐 점 ↗</a></li>
+<li><div><b>v0.2.8</b><span>78MB · 2026-11-03 · 퀘스트 · 도감 «기술 보기» · 랭킹 시상대</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.8">바뀐 점 ↗</a></li>
+<li><div><b>v0.2.7</b><span>72MB · 2026-11-02</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.7">바뀐 점 ↗</a></li>
+</ul>
 </section>
-<section class="k-sec k-paper" id="k-typing">
-<div class="k-col2">
-<div>
-<h2>타자를 치면 자랍니다.<br>무엇을 쳤는지는 모릅니다</h2>
-<p class="k-rule">키를 한 번 누르면 경험치 1, 마우스를 한 번 누르면 2입니다.</p>
-<p class="k-q">「내 타자를 읽는 거 아니야?」</p>
-<p class="k-a">아닙니다.</p>
-<p class="k-t">이 게임이 세는 건 누른 횟수 하나뿐입니다. 키 입력을 중간에서 가로채지 않고, 아주 짧은 간격으로 「지금 눌려 있나」만 묻습니다. 이렇게 하면 글자를 되살리는 게 원리상 불가능합니다. 세이브 파일에도 숫자 두 개만 남습니다.</p>
-<p class="k-t">보안 프로그램이 이 물음까지 막는 PC 에서는 v0.1.4 부터 「마지막으로 무언가를 누른 시각」만 보고, 그 시각이 바뀔 때마다 키 한 번으로 셉니다. 이때도 어떤 키였는지는 알 수 없습니다.</p>
-<p class="k-t">생물은 내가 키보드 앞에 있을 때만 나타납니다. 조금 전에 만난 뒤로 시간이 충분히 지나고 조작도 충분히 쌓여야 다음 생물이 옵니다. 자리를 비운 사이에 쌓였다가 한꺼번에 쏟아지지도 않습니다.</p>
-</div>
-<div>
-<div class="k-gauge"><p class="k-gh">지금 이 화면에서 눌러 보세요. 같은 셈법의 시험 칸이고, 게임 화면은 아닙니다. 어디로도 보내지 않습니다.</p><div class="k-nums"><div><b id="k-nk">0</b><span>키 누른 횟수</span></div><div><b id="k-nm">0</b><span>마우스 누른 횟수</span></div><div><b id="k-nx">0</b><span>경험치</span></div></div></div>
-<table class="k-count"><thead><tr><th scope="col">세는 것</th><th scope="col">안 세는 것</th></tr></thead><tbody>
-<tr><td>키를 누른 <b>횟수</b></td><td>어떤 키였는지</td></tr>
-<tr><td>마우스를 누른 <b>횟수</b></td><td>무슨 글자를 쳤는지 · 어느 창이었는지 · 커서가 어디였는지</td></tr>
-</tbody></table>
-</div>
-</div>
-</section>
-<section class="k-sec" id="k-how">
-<div class="k-col2">
-<div><h2>받아서 켜기까지 세 번</h2><ol class="k-steps">
+<section class="k-sec k-more" id="k-help">
+<details open><summary>받아서 켜는 법</summary><div class="k-body">
+<ol class="k-steps">
 <li><i>1</i><span>받은 zip 을 풉니다</span></li>
 <li><i>2</i><span><b>깨알</b> 폴더의 <b>깨알.exe</b> 를 두 번 누릅니다</span></li>
 <li><i>3</i><span>파란 창이 뜨면 <b>추가 정보 → 실행</b></span></li>
-</ol></div>
-<div><div class="k-smart" aria-label="파란 창에서 누를 곳"><p class="k-st">Windows의 PC 보호</p><p class="k-sr"><u>추가 정보</u><em>① 여기를 누르면</em></p><p class="k-sr"><span class="k-run">실행</span><em>② 이 버튼이 생깁니다</em><span class="k-no">실행 안 함</span></p></div><p class="k-why"><strong>처음 켤 때 한 번 뜹니다. 고장이 아닙니다.</strong> 이 파일에 「만든 사람 도장」(코드 서명)이 없어서 뜹니다. 도장은 1년에 돈이 들고, 요즘은 도장을 받아도 이 창이 바로 사라지지 않습니다. 받는 사람이 많아져야 창이 뜨지 않게 됩니다. 그래서 무료 게임에는 붙이지 않았습니다.</p></div>
-</div>
+</ol>
+<div class="k-smart" aria-label="파란 창에서 누를 곳"><p class="k-st">Windows의 PC 보호</p><p class="k-sr"><u>추가 정보</u><em>① 여기를 누르면</em></p><p class="k-sr"><span class="k-run">실행</span><em>② 이 버튼이 생깁니다</em><span class="k-no">실행 안 함</span></p></div>
+</div></details>
+<details><summary>그 밖에 할 거리</summary><div class="k-body"><ul class="k-list">
+<li><b>생활 마당</b>안 쓰는 몬스터를 10마리까지 앉히면 타입대로 일해서 골드를 법니다. 내가 PC 를 쓰는 동안만 법니다.</li>
+<li><b>상점 뽑기</b>모은 골드로 뽑기를 돌려(1회 300G) 도감을 채웁니다.</li>
+<li><b>매일 선물</b>하루 한 번, 첫 활동 5분 뒤 리본을 단 몬스터가 걸어옵니다. 눌러야 데려옵니다.</li>
+<li><b>미니게임</b>파트너와 두는 오목 · 그림 맞추기 · 실루엣 맞추기.</li>
+<li><b>통신 대전</b>내 팀을 코드 한 줄로 바꿔 친구와 10 대 10 으로 겨룹니다. 참여를 켜면 온라인 랭킹에도 오릅니다(처음엔 꺼져 있음).</li>
+</ul></div></details>
+<details><summary>업데이트</summary><div class="k-body"><p>게임이 켜질 때 새 판이 있는지 묻고, «받기»를 눌러 동의할 때만 받습니다. 기다리기 싫으면 메뉴 «⬆ 업데이트» 를 누르세요. v0.1.3 보다 옛 판은 알림이 오지 않으니, 한 번만 이 페이지에서 받아 덮어써 주세요.</p></div></details>
+<details><summary>인터넷으로 오가는 것</summary><div class="k-body"><ul class="k-list">
+<li><b>새 판 확인</b>켤 때 한 번 GitHub 에 묻습니다. 보내는 것은 판 번호뿐입니다.</li>
+<li><b>출석 신호</b>켜져 있으면 하루 한 번 이름 없는 번호 · 판 번호 · 퀘스트 단계를 보냅니다. 끄는 설정은 없습니다(v0.2.8 부터).</li>
+<li><b>이벤트 확인</b>켤 때와 1시간마다 이벤트가 있는지 묻기만 합니다(v0.2.8 부터).</li>
+<li><b>랭킹</b>직접 참여를 켠 분만 랭킹 서버와 이야기합니다.</li>
+</ul></div></details>
+<details><summary>타자를 읽나요?</summary><div class="k-body">
+<p>아닙니다. 세는 건 누른 횟수 하나뿐이고, 어떤 키였는지는 알 수 없습니다. 키를 한 번 누르면 경험치 1, 마우스를 한 번 누르면 2입니다.</p>
+<div class="k-gauge"><p class="k-gh">지금 이 화면에서 눌러 보세요. 같은 셈법의 시험 칸이고, 게임 화면은 아닙니다. 어디로도 보내지 않습니다.</p><div class="k-nums"><div><b id="k-nk">0</b><span>키 누른 횟수</span></div><div><b id="k-nm">0</b><span>마우스 누른 횟수</span></div><div><b id="k-nx">0</b><span>경험치</span></div></div></div>
+</div></details>
+<details><summary>출처와 저작권</summary><div class="k-body"><p>비영리 팬메이드입니다. 공식 게임이 아닙니다. 디지몬 도트는 반다이, 포켓몬 도트는 닌텐도·게임프리크·크리처스의 것입니다. 전문은 게임 안 「출처와 저작권」 창과 zip 안의 <code>OUTPUT_NOTICE.md</code> 에 있습니다.</p></div></details>
 </section>
-<section class="k-sec k-restsec">
-<div class="k-rest">
-<div><h2>세이브는 따로 살아서<br>새 판을 받아도 남습니다</h2>
-<p>세이브는 게임 파일 옆이 아니라 <code>%APPDATA%\Pixling</code> 에 저장됩니다(폴더 이름은 옛 이름 그대로 둡니다 — 바꾸면 키우던 생물을 못 찾습니다). 새 판이 나오면 새 zip 을 받아 덮어쓰기만 하면 되고, 키우던 생물은 그대로 있습니다.</p>
-<p>덮어쓰는 일도 대개는 게임이 해 줍니다. 켤 때 한 번 GitHub(받기 저장소)에 새 판이 있는지 묻고, 보내는 것은 판 번호뿐입니다. «받기»를 눌러 동의할 때만 받습니다. 기다리기 싫으면 메뉴 «⬆ 업데이트» 를 누르세요(v0.1.6 부터). 켜 둔 동안에는 업데이트할 때까지 디지바이스 말풍선으로 30분마다 다시 알려 줍니다(v0.2.2 부터). 이미 최신이면 그 창에 그 판에서 달라진 것을 몇 줄로 보여 줍니다(v0.2.3 부터).</p>
-<p>이 알림은 v0.1.3 부터 들어 있습니다. 그보다 옛 판을 쓰고 계시면 알림이 오지 않으니, 한 번만 이 페이지에서 받아 덮어써 주세요.</p>
-</div>
-<div><h2>아직 못 하는 것</h2><ul class="k-cant">
-<li><b>Mac · 휴대폰에서 하기</b>Windows 창 기능으로 돌아갑니다.</li>
-<li><b>파란 창 없애기</b>코드 서명이 없습니다.</li>
-<li><b>백신 반응 확인</b>「지금 눌려 있나」를 묻는 방식을 백신이 어떻게 보는지는 아직 재 보지 않았습니다.</li>
-</ul></div>
-</div>
-</section>
-<section class="k-sec k-end" id="k-get">
-<div class="k-endrow">
-<h2>오늘부터 모니터에서<br>같이 놀아요</h2>
-<div><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><p class="k-m">Kkaeal.zip · 무료<br><a href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a></p></div>
-</div>
-</section>
-<p class="k-base">이름은 두 말에서 왔습니다. 작고 촘촘하다는 「깨알 같다」, 그리고 이 게임의 생물이 모두 태어나는 방법인 「알을 깨다」.<br>비영리 팬메이드입니다. 디지몬 도트는 반다이, 포켓몬 도트는 닌텐도·게임프리크·크리처스의 것입니다. 전문은 게임 안 「출처와 저작권」 창과 zip 안의 <code>OUTPUT_NOTICE.md</code> 에 있습니다.</p>
 <div class="k-bar">
 <a class="k-get" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 · 무료</a>
 <nav aria-label="이 화면 안내">
-<a href="#k-nowin">창 없음</a>
-<a href="#k-shots">영상</a>
-<a href="#k-dex">도감</a>
-<a href="#k-play">할 거리</a>
-<a href="#k-typing">타자</a>
-<a href="#k-how">켜는 법</a>
+<a href="#k-preview">미리보기</a>
+<a href="#k-info">게임 정보</a>
+<a href="#k-env">받는 환경</a>
+<a href="#k-help">도움말</a>
 </nav>
 <div class="k-tray"><button type="button" class="k-hidebtn js-hide" aria-pressed="false"><kbd>₩</kbd> <span class="k-lbl">숨기기</span></button><span class="k-clock" id="k-clock" aria-hidden="true"></span></div>
 </div>
