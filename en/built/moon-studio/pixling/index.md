@@ -11,7 +11,7 @@
 
 <div class="kk" data-hide="Hide" data-show="Bring back" aria-label="Kkaeal: what it is and how to get it">
 <header class="k-hero">
-<div class="k-title"><p class="k-name k-stroke">Kkaeal</p><p class="k-lede">Pokémon and Digimon<br>play on your desktop</p></div>
+<div class="k-title"><p class="k-name k-stroke">Kkaeal</p><p class="k-lede">Pokémon + Digimon<br>Tamagotchi</p></div>
 <div class="k-side">
 <p class="k-now">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p>
 <a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a>
