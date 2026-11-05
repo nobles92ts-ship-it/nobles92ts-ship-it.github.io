@@ -17,12 +17,12 @@
 <a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a>
 <p class="k-info"><b>Kkaeal.zip</b><span>v0.2.9 beta · about 78 MB · free</span><a href="https://nobles92ts-ship-it.itch.io/pixling">Not working? Get it on itch.io →</a><span>A non-commercial fan game. Not an official game.</span></p>
 <div class="k-phone">It won't run on a phone. <b>Open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
-<p class="k-try">Try the <kbd>\</kbd> key. The pictures here hide just as the game does, and come back on a second press.</p>
+<p class="k-try">Try the <kbd>\</kbd> key. The pictures here hide just as the game does, and come back on a second press. Developers who type it all day can switch to another key in the settings.</p>
 </div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"><p class="k-gone" role="status">All hidden. Press \ again to bring them back.</p></div>
 </header>
 <section class="k-sec" id="k-nowin">
-<div class="k-nowin-head"><div><h2>It doesn't take<br>over your screen</h2><p>Kkaeal has no game window. The creatures walk around on your desktop, near the taskbar.</p></div><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="The \ key: hide the pictures and bring them back">\</button></div>
+<div class="k-nowin-head"><div><h2>It doesn't take<br>over your screen</h2><p>Kkaeal has no game window. The creatures walk around on your desktop, near the taskbar.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="The \ key: hide the pictures and bring them back">\</button><p class="k-keynote">Developers: you can switch to another key in the settings</p></div></div>
 <dl class="k-vs">
 <div><dt>Where</dt><dd class="k-old">Inside its window</dd><dd class="k-new">On your desktop</dd></div>
 <div><dt>When</dt><dd class="k-old">Only while you play</dd><dd class="k-new">Left running all day<small>Different creatures show up at different times of day.</small></dd></div>

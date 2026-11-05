@@ -17,12 +17,12 @@
 <a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a>
 <p class="k-info"><b>Kkaeal.zip</b><span>v0.2.9 베타 · 약 78MB · 무료</span><a href="https://nobles92ts-ship-it.itch.io/pixling">안 받아지면 itch.io 에서 →</a><span>비영리 팬메이드입니다. 공식 게임이 아닙니다.</span></p>
 <div class="k-phone">휴대폰에서는 실행되지 않아요. <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
-<p class="k-try"><kbd>₩</kbd> 키를 눌러 보세요. 게임처럼 이 화면의 그림도 숨고, 한 번 더 누르면 돌아옵니다.</p>
+<p class="k-try"><kbd>₩</kbd> 키를 눌러 보세요. 게임처럼 이 화면의 그림도 숨고, 한 번 더 누르면 돌아옵니다. 코드를 자주 치는 개발자라면 설정에서 다른 키로 바꿀 수 있어요.</p>
 </div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>
 </header>
 <section class="k-sec" id="k-nowin">
-<div class="k-nowin-head"><div><h2>이 게임은 화면을<br>차지하지 않습니다</h2><p>창이 따로 없습니다. 생물이 바탕화면 위, 작업 표시줄 근처를 돌아다닙니다.</p></div><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="₩ 키: 그림 숨기기와 돌아오기">₩</button></div>
+<div class="k-nowin-head"><div><h2>이 게임은 화면을<br>차지하지 않습니다</h2><p>창이 따로 없습니다. 생물이 바탕화면 위, 작업 표시줄 근처를 돌아다닙니다.</p></div><div class="k-keywrap"><button type="button" class="k-key js-hide" aria-pressed="false" aria-label="₩ 키: 그림 숨기기와 돌아오기">₩</button><p class="k-keynote">개발자분들은 설정에서 다른 키로 바꿀 수 있어요</p></div></div>
 <dl class="k-vs">
 <div><dt>어디서</dt><dd class="k-old">게임 창 안</dd><dd class="k-new">바탕화면 위</dd></div>
 <div><dt>언제</dt><dd class="k-old">할 때만 켬</dd><dd class="k-new">일하는 내내 켜 둠<small>시간대마다 잘 나오는 생물이 다릅니다.</small></dd></div>
