@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-61/"><small>← 前の話</small>第61話 · やしきの日記</a><span class="sn-next sn-none">次の話はもうすぐ公開します</span></nav>
+<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-61/"><small>← 前の話</small>第61話 · やしきの日記</a><a class="sn-next" href="/ja/built/moon-studio/pixling/story-63/"><small>次の話 →</small>第63話 · 燃えるやしき</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Kkaeal をダウンロード (PC · 無料)</a>
 </div>
 
