@@ -9,7 +9,7 @@
 
 ---
 
-<div class="kk" data-hide="숨기기" data-show="돌아오기" aria-label="깨알 게임 정보와 받기">
+<div class="kk" data-hide="숨기기" data-show="돌아오기" data-copied="PC 주소를 복사했어요" aria-label="깨알 게임 정보와 받기">
 <header class="k-top">
 <div class="k-head"><p class="k-name k-stroke">깨알</p><p class="k-lede">내 모니터에서 자라는<br>포켓몬 × 디지몬 다마고치</p></div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>

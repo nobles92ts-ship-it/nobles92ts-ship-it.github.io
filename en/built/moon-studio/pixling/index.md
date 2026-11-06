@@ -9,7 +9,7 @@
 
 ---
 
-<div class="kk" data-hide="Hide" data-show="Bring back" aria-label="Kkaeal: game info and download">
+<div class="kk" data-hide="Hide" data-show="Bring back" data-copied="PC link copied" aria-label="Kkaeal: game info and download">
 <header class="k-top">
 <div class="k-head"><p class="k-name k-stroke">Kkaeal</p><p class="k-lede">A Pokémon × Digimon Tamagotchi<br>growing on your monitor</p></div>
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"><p class="k-gone" role="status">All hidden. Press \ again to bring them back.</p></div>

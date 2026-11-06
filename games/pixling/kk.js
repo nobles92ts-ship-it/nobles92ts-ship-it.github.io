@@ -29,12 +29,41 @@
   });
   document.addEventListener('pointerdown', function () { clicks++; show(); });
 
+  // 주소 복사. ⚠ 스레드·인스타 안의 브라우저는 navigator.clipboard 가 없거나 거절한다 → execCommand 로 한 번 더.
   var copy = document.getElementById('k-copy');
-  copy.addEventListener('click', function () {
-    var u = location.origin + location.pathname;
-    function fail() { copy.textContent = u; }
-    if (!navigator.clipboard) return fail();
-    navigator.clipboard.writeText(u).then(function () { copy.textContent = copy.dataset.done; }, fail);
+  var url = location.origin + location.pathname;
+  function copyUrl(ok, fail) {
+    function old() {
+      var t = document.createElement('textarea');
+      t.value = url; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      var done = false;
+      try { done = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(t);
+      done ? ok() : fail();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok, old);
+    else old();
+  }
+  function copied() { copy.textContent = copy.dataset.done; }
+  function failed() { copy.textContent = url; copy.scrollIntoView({ block: 'center' }); }
+  copy.addEventListener('click', function () { copyUrl(copied, failed); });
+
+  // 휴대폰에서는 받기 버튼이 zip 대신 PC 주소를 복사한다 — 폰에 zip 을 받아 봐야 못 연다.
+  // ⚠ 2026-11-05 스토어 구성으로 바꿀 때 이걸 빠뜨려 폰에서 zip 이 받아졌다(11-06 형근님 지적).
+  //   예전 받기 상자는 폰에서 받기 버튼을 숨겼다. 지금은 버튼을 두고 누름의 뜻을 바꾼다.
+  var phone = window.matchMedia('(max-width:767px), (hover:none) and (pointer:coarse)');
+  root.querySelectorAll('a[href$=".zip"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!phone.matches) return;
+      e.preventDefault();
+      copyUrl(function () {
+        copied();
+        if (a.dataset.label == null) a.dataset.label = a.innerHTML;
+        a.textContent = root.dataset.copied;
+        setTimeout(function () { a.innerHTML = a.dataset.label; }, 2500);
+      }, failed);
+    });
   });
 
   var clock = document.getElementById('k-clock');
