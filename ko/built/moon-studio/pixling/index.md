@@ -2,7 +2,7 @@
 
 > 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
-- 수치: v0.2.9 베타 · Windows · 무료
+- 수치: v0.3.0 베타 · Windows · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
 - 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
@@ -15,7 +15,7 @@
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>
 </header>
 <section class="k-getbox" aria-label="받기">
-<div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.2.9 베타 · 약 78MB · 무료</span></p></div>
+<div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.0 베타 · 약 86MB · 무료</span></p></div>
 <div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a></div>
 <div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
@@ -67,7 +67,8 @@
 </table>
 <h3 class="k-h3">판 내역</h3>
 <ul class="k-rows k-vers">
-<li><div><b>v0.2.9 <i>최신</i></b><span>78MB · 2026-11-03 · 통신 대전 고침</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9">바뀐 점 ↗</a></li>
+<li><div><b>v0.3.0 <i>최신</i></b><span>86MB · 2026-11-06 · 한 창 허브 · 픽셀 이펙트 · 파워 소수 반영</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.0">바뀐 점 ↗</a></li>
+<li><div><b>v0.2.9</b><span>78MB · 2026-11-03 · 통신 대전 고침</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9">바뀐 점 ↗</a></li>
 <li><div><b>v0.2.8</b><span>78MB · 2026-11-03 · 퀘스트 · 도감 «기술 보기» · 랭킹 시상대</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.8">바뀐 점 ↗</a></li>
 <li><div><b>v0.2.7</b><span>72MB · 2026-11-02</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.7">바뀐 점 ↗</a></li>
 </ul>
@@ -126,7 +127,8 @@
 
 | 판 | 2026-10-28에 확인한 상태 |
 |---|---|
-| v0.2.9 | 공개 받기 저장소의 최신 배포판(2026-11-03). 받기 안내 기준 |
+| v0.3.0 | 공개 받기 저장소의 최신 배포판(2026-11-06). 받기 안내 기준 |
+| v0.2.9 | 이전 공개판(2026-11-03) |
 | v0.2.8 | 이전 공개판(2026-11-03) |
 | v0.2.7 | 이전 공개판(2026-11-02) |
 | v0.2.6 | 이전 공개판(2026-10-28) |
@@ -139,7 +141,7 @@
 | v0.1.7 | 공개하지 않고 v0.2.0에 합침 |
 | v0.1.6 | 이전 공개판. 이 페이지의 기능 표 기준 |
 
-확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
+확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.0)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
 
 ## v2 당시 세 세션의 경계에서 배운 것
 
