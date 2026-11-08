@@ -1,15 +1,15 @@
 # Context and memory
 
-> What goes up to the model and what stays outside. Across all ten, not one line of code crossed over — only rules did.
+> What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.
 
-- Headline number: 10 written · 0 code
+- Headline number: 11 written · 0 code
 - Rendered page: https://aitryed.com/en/teardowns/memory/
 - Other language: https://aitryed.com/ko/teardowns/memory/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**Ten pieces about what to show an AI and what to keep out of its sight. Across all ten, not one line of code crossed over.**
+**Eleven pieces about what to show an AI and what to keep out of its sight. Across all eleven, not one line of code crossed over.**
 
 ## First — why decide what to keep out
 
@@ -17,7 +17,7 @@ When you give an AI a job, **telling it everything you know feels like it should
 
 There is a ceiling on how much an AI can read at once. Call that ceiling a desk. Pile every document onto the desk and **you can no longer find the one page you need.** A wide desk is not the goal; **a desk holding only what's needed right now** is.
 
-So the real question is not *how do I make it remember more* but **what goes on the desk and what stays in the drawer.** All ten pieces are about that.
+So the real question is not *how do I make it remember more* but **what goes on the desk and what stays in the drawer.** All eleven pieces are about that.
 
 ## Not one line of code crossed, and everything that did was a rule
 
@@ -34,7 +34,7 @@ Someone else's organising tool is shaped to **someone else's data.** Mine is sha
 
 ## And this shelf found more holes in my own work than any other
 
-Least taken, most gained. **Six of the ten found a defect while I was holding someone else's ruler against my own thing.**
+Least taken, most gained. **Seven of the eleven found a defect while I was holding someone else's ruler against my own thing.**
 
 That is the real value here. Not learning the good thing — **measuring your own thing by someone else's standard makes the invisible visible.**
 
@@ -93,7 +93,7 @@ Precisely because there was nothing to learn, **I filled the comparison table to
 
 Things about what gets sent up to the model and what stays outside it: context compression, retrieval without vectors, second brains. The test for this bucket isn't what the subject is; it's whether it's about **deciding what a machine gets to read.**
 
-## Ten, and not one line of code crossed over
+## Eleven, and not one line of code crossed over
 
 | Subject | What came across | Shape |
 |---|---|---|
@@ -107,12 +107,13 @@ Things about what gets sent up to the model and what stays outside it: context c
 | [A second brain in four steps](/en/teardowns/memory/second-brain-4steps/index.md) | Nothing did — instead **it found an empty cell of mine** | one adoption, one confirmed defect |
 | [dsh-anchored-standard](/en/teardowns/memory/dsh-anchored-standard/index.md) | Nothing did — **there was no hook to install it into** | one rejection, 24 days unrun confirmed |
 | [public-apis](/en/teardowns/memory/public-apis/index.md) | Put a cheap check ahead of an expensive one and **the expensive one looks like it runs while never running** | one trap, one confirmed defect |
+| [The components of agent memory](/en/teardowns/memory/agent-memory-components/index.md) | When fixing memory, check notes **against the record, not against other notes** | two procedures, one confirmed defect |
 
 **All rules, hooks, structures and wiring. Zero code ported.** Context problems mostly don't yield to someone else's code — the answer lives in the shape of your own data, so the only transferable part is the ruler.
 
 ## And this bucket found the most holes in my own work
 
-Six pieces used somebody else's principle as a ruler and produced a number.
+Seven pieces used somebody else's principle as a ruler and produced a number.
 
 - Of **1,021 markdown files in my vault, 47 (4.6%) have front matter** — so when retrieval fails there, the cause is likely empty metadata, not a missing tool
 - Cache reuse 92.5–96.3%, uncached input 1.8–2.0 tokens per call — **the compression tool had nothing left to compress**
@@ -120,6 +121,7 @@ Six pieces used somebody else's principle as a ruler and produced a number.
 - Across 52 run logs, **the feature a video called "the heart" met its trigger condition once**
 - Running the autonomous-accumulation track for real: **zero items, zero files, zero observer hooks** — it was only installed
 - Opening the API catalogue I built a month ago: **liveness was measured on 300 of its 1,791 rows (17%)**
+- A weekly memory-consolidation reminder succeeded every week while **actual consolidation ran zero times in 86 days** — the alarm had stood itself down because notes kept arriving
 
 The one that stung most was the kind of error no amount of careful reading of the repo would ever catch — but that piece is about hooks and skills, so it moved to [agent harnesses](/en/teardowns/harness/karrot-seed/index.md).
 

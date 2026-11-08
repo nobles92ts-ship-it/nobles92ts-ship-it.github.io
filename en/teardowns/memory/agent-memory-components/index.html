@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The components of agent memory — Context and memory</title><meta name="description" content="Anthropic published research on splitting an AI agent's memory into four layers and fixing it after the fact with a process called dreaming. Held against my own setup, the layers already matched. The fixing step had not run in 86 days."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="The components of agent memory — Context and memory"><meta property="og:description" content="Anthropic published research on splitting an AI agent's memory into four layers and fixing it after the fact with a process called dreaming. Held against my own setup, the layers already matched. The fixing step had not run in 86 days."><meta property="og:url" content="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The components of agent memory — Context and memory"><meta name="twitter:description" content="Anthropic published research on splitting an AI agent's memory into four layers and fixing it after the fact with a process called dreaming. Held against my own setup, the layers already matched. The fixing step had not run in 86 days."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/memory/agent-memory-components/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><link rel="stylesheet" href="/_astro/Shell.CytMMbFG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/together/" data-sec="together"><span class="n">04</span><span>Written together</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/memory/agent-memory-components/" hreflang="ko">한국어</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/" aria-current="page"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">10 pieces · prior 4.5 / 7</span></span><span class="s">Ten investigations into automation, cause-analysis and desktop-control tools, one formal-verification study and an essay on judgment models. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/memory/rag-without-vectors/"><span class="t"><span>RAG without a vector DB</span><span class="kpi">structure 6/6 · numbers 1/5</span></span><span class="s">Every structural claim held up and everything that failed was a specific number — the characteristic failure of secondhand write-ups.</span></a><a href="/en/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">verdict reversed twice</span></span><span class="s">It started as an adoption review. Measuring my own environment, the thing this tool would shrink didn&#39;t exist.</span></a><a href="/en/teardowns/memory/second-brain-course/"><span class="t"><span>A second-brain workshop</span><span class="kpi">0 takeaways · 2 defects</span></span><span class="s">Seven of the eight curriculum slots were already covered. Then I ran the deck&#39;s own skill scorecard over my 99 skills and two real defects fell out.</span></a><a href="/en/teardowns/memory/graph-engineering/"><span class="t"><span>Graph engineering</span><span class="kpi">1 net gain of 8</span></span><span class="s">What the video calls the heart of a graph fired once across my 52 runs. The one thing I didn&#39;t have, though, turned out to be worth a measured 9.9 minutes a run.</span></a><a href="/en/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>An LLM wiki in Obsidian</span><span class="kpi">4 overlap · 2 new</span></span><span class="s">I went looking for structure and came back with two hygiene rules. My layers were already finer than the video&#39;s, and the thing I wanted most I put on hold.</span></a><a href="/en/teardowns/memory/second-brain-interview/"><span class="t"><span>A second-brain interview</span><span class="kpi">200 workflows → 0</span></span><span class="s">Why someone who had built two hundred automation workflows threw them all away and focused on one context instead. The structure is ordinary; the way it connects was not.</span></a><a href="/en/teardowns/memory/file-management/"><span class="t"><span>A file management system</span><span class="kpi">5 agree · 3 I missed</span></span><span class="s">Five conclusions matched a design I&#39;d built separately, and not one of the reasons overlapped. It also named three gaps in mine exactly.</span></a><a href="/en/teardowns/memory/second-brain-4steps/"><span class="t"><span>A second brain in four steps</span><span class="kpi">1 adopted · step 4 idle</span></span><span class="s">There was almost nothing here to learn. And in the process of holding it up, my own step four turned out to be installed and never once run.</span></a><a href="/en/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">4 takeaways → 0 · 24 days unrun</span></span><span class="s">Installing it was flatly impossible — my harness has no hook that can take context away. The worse part was that I already owned the tool to measure this, and hadn&#39;t run it in 24 days.</span></a><a href="/en/teardowns/memory/public-apis/"><span class="t"><span>public-apis</span><span class="kpi">1,756 entries · gate dead 400 days</span></span><span class="s">The link check on a 477k-star list had failed 400 days running. And the list I went looking for was already sitting in my own folder.</span></a><a href="/en/teardowns/memory/agent-memory-components/" aria-current="page"><span class="t"><span>The components of agent memory</span><span class="kpi">4 layers match · consolidation idle 86 days</span></span><span class="s">Anthropic published research on splitting an AI agent&#39;s memory into four layers and fixing it after the fact with a process called dreaming. Held against my own setup, the layers already matched. The fixing step had not run in 86 days.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>The components of agent memory</h1><p class="sum">Anthropic published research on splitting an AI agent&#39;s memory into four layers and fixing it after the fact with a process called dreaming. Held against my own setup, the layers already matched. The fixing step had not run in 86 days.</p><div class="meta"><span>4 layers match · consolidation idle 86 days</span><a class="src" href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">Original (Anthropic Engineering, 2026-11-06) — anthropic.com/research/components-of-agent-memory ↗</a><a class="src" href="https://www.instagram.com/p/DfdWN35j1Dx/" target="_blank" rel="noopener">Where I first saw it (Instagram summary, ai.asap.kr) — instagram.com/p/DfdWN35j1Dx ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#in-plain-terms--a-notebook-and-a-recording">In plain terms — a notebook and a recording</a><a href="#what-the-post-showed--choosing-matters-more-than-volume">What the post showed — choosing matters more than volume</a><a href="#against-my-setup--same-layers-idle-hands">Against my setup — same layers, idle hands</a><a href="#and-when-it-did-run-it-never-looked-at-the-answer-key">And when it did run, it never looked at the answer key</a><a href="#what-i-am-taking--two-changes-and-one-i-already-had">What I am taking — two changes, and one I already had</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#the-source--one-exploratory-post-run-on-anthropics-own-evaluations">The source — one exploratory post, run on Anthropic’s own evaluations</a><a href="#six-techniques--all-about-who-fixes-what-and-when">Six techniques — all about who fixes what, and when</a><a href="#what-held-up--every-number-checked-against-the-original-figures">What held up — every number checked against the original figures</a><a href="#my-setup--over-the-cap-in-bytes-under-it-in-characters">My setup — over the cap in bytes, under it in characters</a><a href="#the-yield--dreaming-failed-at-has-it-ever-run-not-does-it-exist">The yield — dreaming failed at “has it ever run”, not “does it exist”</a><a href="#where-my-verdict-cracked--i-nearly-wrote-already-have-it">Where my verdict cracked — I nearly wrote “already have it”</a><a href="#what-i-did-not-do">What I did not do</a></nav><div class="prose"><p><strong>Anthropic published a research post on how to build memory for AI agents — AIs that carry out multi-step work on someone’s behalf. Memory is split into four layers, and after the work is done a separate pass checks the notes against the record and fixes them. They call that pass dreaming. I held it against my own memory setup. The four layers were already the same shape. The fixing pass had not run once in 86 days.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="Agent memory has four layers. The top, injected layer is loaded at the start of every session. Below it, the map layer is a wiki that links notes and records. Below that, the notes layer holds what the agent judged worth writing down while working. At the bottom is the record layer, the full session log. Dreaming runs after the session ends: it checks notes against the record and fixes them, builds the map, and promotes important notes to the top.">
+  <text class="lbl" x="8" y="22">Four layers — the higher up, the smaller and more often read</text>
+  <rect class="vn vn-b" x="8" y="36" width="640" height="44" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="24" y="64">① Injected — a small bundle loaded every session</text>
+  <rect class="vn vn-a" x="8" y="90" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="118">② Map — a wiki linking notes and records</text>
+  <rect class="vn vn-a" x="8" y="144" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="172">③ Notes — what seemed worth writing down</text>
+  <rect class="vn vn-a" x="8" y="198" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="226">④ Record — the full session log, ground truth</text>
+  <rect class="vn vn-b" x="680" y="36" width="312" height="206" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="836" y="64" text-anchor="middle">Dreaming (after work)</text>
+  <text class="cap" x="836" y="104" text-anchor="middle">checks notes against record</text>
+  <text class="cap" x="836" y="144" text-anchor="middle">builds a map from notes</text>
+  <text class="cap" x="836" y="184" text-anchor="middle">promotes what matters</text>
+  <text class="cap" x="836" y="224" text-anchor="middle">fills gaps one session left</text>
+  <line class="rule" x1="8" y1="262" x2="992" y2="262"/>
+  <text class="cap" x="8" y="286">The point — notes can be wrong, the record cannot. So the record is the answer key</text>
+</svg>
+<figcaption>Figures 13 and 1 of the original, merged and redrawn. Layer names paraphrase the original (Injected context · Memory representations · Memory notes · Transcripts).</figcaption>
+</figure>
+<h2 id="in-plain-terms--a-notebook-and-a-recording">In plain terms — a notebook and a recording</h2>
+<p>An AI forgets a conversation once it ends. The next one starts blank. So whatever it should still know next time gets <strong>written to files and read back in later.</strong> That is agent memory.</p>
+<p>Think of a class you once took.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Like</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① Injected</td>
+<td>A sticky note on your pencil case</td>
+<td>You see it every time, so it must stay small</td>
+</tr>
+<tr>
+<td>② Map</td>
+<td>The contents page of your notebook</td>
+<td>Tells you which page holds what</td>
+</tr>
+<tr>
+<td>③ Notes</td>
+<td>What you scribbled during class</td>
+<td>Written in the moment. Sometimes written wrong</td>
+</tr>
+<tr>
+<td>④ Record</td>
+<td>A recording of the lecture</td>
+<td>Long and dull, but <strong>exactly what happened</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dreaming is replaying the recording at night and correcting your notebook.</strong> During class you are too busy writing to check anything. So you set time aside afterwards and compare. The name comes from neuroscience, where sleep is when the day’s experiences get consolidated.</p>
+<h2 id="what-the-post-showed--choosing-matters-more-than-volume">What the post showed — choosing matters more than volume</h2>
+<p>The sharpest scene in the research was a Pokémon game. Two Claude models played the same game, each with a memory folder.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Memory files</th>
+<th>Badges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Older model</td>
+<td><strong>413</strong> (225 folders)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Newer model</td>
+<td><strong>9</strong> plus one dashboard file</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The older model made a file for every battle and every item. Eventually it spent more time searching its own memory than playing. The newer model <strong>skipped whatever it could read off the screen.</strong> It wrote down only the rules it had worked out for itself.</p>
+<p>Then they handed the models a fixed rule: record only failures. Scores went down. The stronger the model, the better it did when <strong>left to judge what was worth keeping.</strong></p>
+<h2 id="against-my-setup--same-layers-idle-hands">Against my setup — same layers, idle hands</h2>
+<p>I also give Claude a memory folder to work with. I checked each of the four layers.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Original</th>
+<th>Mine</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① Injected</td>
+<td>Keep small, push overflow down</td>
+<td>Index file at 171 lines, under the stated 200-line cap</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>② Map</td>
+<td>A wiki linking notes</td>
+<td>Index → hub → note; <strong>all 255 notes within two hops</strong></td>
+<td>Same</td>
+</tr>
+<tr>
+<td>③ Notes</td>
+<td>Let the model choose</td>
+<td>Not failure-only (lessons 95 · project 88 · reference 72)</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>④ Record</td>
+<td>Ground truth</td>
+<td>958 session logs kept as-is</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>Dreaming</td>
+<td>Check notes against record</td>
+<td><strong>Last run 2026-08-14, 86 days ago</strong></td>
+<td><strong>Stopped</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The four layers already lined up. The trouble is the bottom-right cell. A scheduled task reminded me every week to consolidate memory, and it reported success every week. The consolidation itself never ran. No alarm went off either, because <strong>I had built the alarm to stand down while new notes kept arriving.</strong></p>
+<h2 id="and-when-it-did-run-it-never-looked-at-the-answer-key">And when it did run, it never looked at the answer key</h2>
+<p>There is a deeper difference. My consolidation procedure compares notes with <strong>other notes and the index.</strong> It merges duplicates and drops stale ones. <strong>There is no step that checks a note against the session log.</strong></p>
+<p>That comparison is exactly where dreaming earned its keep in the original. In the game, Claude wrote down that a building sat on the east side of a mountain. It was wrong. Trusting that note, Claude dropped off the same ledge three times. Dreaming reread the log, fixed that one line, and Claude went straight on to the next city. <strong>Notes checked against notes vouch for each other’s mistakes.</strong> Only the recording exposes them.</p>
+<h2 id="what-i-am-taking--two-changes-and-one-i-already-had">What I am taking — two changes, and one I already had</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add “check against the log” to consolidation</td>
+<td>Today it only compares notes with notes</td>
+</tr>
+<tr>
+<td>Alarm on “did it run” separately</td>
+<td>Fresh notes were hiding the fact that nothing was consolidated</td>
+</tr>
+<tr>
+<td><del>One writer per file</del></td>
+<td>Already had it — two PCs once edited the index together and old lines came back</td>
+</tr>
+</tbody>
+</table>
+<p>The last row appears in the original too. Several agents wrote to one shared table and overwrote each other, so only 41 of 57 key facts survived. One agent and one page per contract kept all 57. I had learned the same lesson from a different accident.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p><strong>Zero tools adopted, two procedures to change.</strong> The four layers in the post (injected context, representations, notes, transcripts) already matched how my memory is built. The yield came from a narrower question: <strong>what does dreaming use as its answer key?</strong> The post uses the session transcript. My weekly consolidation compares notes with notes. And that weekly consolidation has not run since 2026-08-14 — 86 days — even though its scheduled reminder finished with success every week.</p>
+<h2 id="the-source--one-exploratory-post-run-on-anthropics-own-evaluations">The source — one exploratory post, run on Anthropic’s own evaluations</h2>
+<p>The original is “The components of agent memory” on the Anthropic Engineering blog (2026-11-06, Lance Martin). It is not a product launch. It is <strong>a write-up of several internal evaluations.</strong> Dreaming exists as a research preview in Claude Managed Agents; the post does not announce a general release.</p>
+<p>It defines agent memory narrowly: knowledge gained from experience and <strong>kept between sessions</strong> as readable context. Weight updates, in-context learning within one conversation, and compaction are out of scope.</p>
+<table>
+<thead>
+<tr>
+<th>Layer (original name)</th>
+<th>What</th>
+<th>Who writes it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Injected context</td>
+<td>Memory loaded into every session</td>
+<td>Dreaming promotes into it</td>
+</tr>
+<tr>
+<td>Memory representations</td>
+<td>Wikis and similar, computed from logs and notes</td>
+<td>Dreaming builds them</td>
+</tr>
+<tr>
+<td>Memory notes</td>
+<td>Salient observations written mid-session</td>
+<td>The agent, on the spot</td>
+</tr>
+<tr>
+<td>Transcripts</td>
+<td>The searchable event log</td>
+<td>Written automatically</td>
+</tr>
+</tbody>
+</table>
+<h2 id="six-techniques--all-about-who-fixes-what-and-when">Six techniques — all about who fixes what, and when</h2>
+<ol>
+<li><strong>Memory is a prediction.</strong> Writing a rule predicts the pattern will recur. Writing a verified fact predicts the next session will rely on it without checking.</li>
+<li><strong>Let the model decide what to write.</strong> Say what memory is for, not how to use it.</li>
+<li><strong>Dreaming corrects.</strong> It tests notes against the original transcripts.</li>
+<li><strong>Dreaming builds maps.</strong> It links scattered notes into a wiki.</li>
+<li><strong>Dreaming promotes.</strong> It lifts key notes into the injected layer, and when that layer grows it moves detail down and leaves a link behind.</li>
+<li><strong>Dreaming can be aimed.</strong> Instructions say what matters for the task — and dreaming can rewrite those instructions after studying its own failures.</li>
+</ol>
+<p>The post cites Claude Code’s auto memory as an example of item 5: it loads <strong>only the first 200 lines or 25 KB</strong> of MEMORY.md and reads the rest on demand.</p>
+<h2 id="what-held-up--every-number-checked-against-the-original-figures">What held up — every number checked against the original figures</h2>
+<p>I first saw this as an Instagram summary. The account is a Korean AI-news digest, not Anthropic; “Anthropic official research” in the caption was a source credit. So I matched each number in the summary to the original. Three were not in the text. They were inside the figures.</p>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Where in the original</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CL-Bench database task: Opus 5.5 from 0.655 to 0.838</td>
+<td>Figure 3, bar chart</td>
+<td>Matches</td>
+</tr>
+<tr>
+<td>“Record only failures” cut Opus 5’s memory gain by 0.234</td>
+<td>Figure 5, right</td>
+<td>Matches, <strong>3 runs</strong></td>
+</tr>
+<tr>
+<td>One shared table: 41 of 57 facts; one page per contract: 57</td>
+<td>Figure 14 caption</td>
+<td>Matches</td>
+</tr>
+<tr>
+<td>24–25 questions</td>
+<td>Body text</td>
+<td>Matches (24 on the merger · 25 on the corpus)</td>
+</tr>
+</tbody>
+</table>
+<p>The summary left things out. The same figure gives Opus 4.7 at −0.150 (3 runs) and Sonnet 4.6 at −0.020 (<strong>1 run</strong>). Meanwhile the older Sonnet 4.6, when told to read its memory and test its theories before answering, nearly doubled from 0.364 to 0.641. <strong>Whether steering helps or hurts flips with the model generation.</strong></p>
+<p>The wiki results come with their own counterexamples. On 25 questions over roughly 350,000 documents, scaling dreaming from 2 to 128 sessions lifted wiki-only answers from 13% to 48% of graded criteria. But on a task where each answer sat in a single document, the wiki did no better than search. On another, the wiki grew larger than the documents it described — the post compares it to Borges’s map the size of the empire. <strong>A map is only a map while it is smaller.</strong></p>
+<p>The post’s own caveats, carried over: dreaming costs compute, and checking every memory continuously may not be practical. It suggests focusing on information likely to change, or tuning cadence to how often memories are read.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 268" role="img" aria-label="The four layers and dreaming, held against my memory setup. Injected layer: the index is 171 lines, inside the 200-line cap. Map layer: all 255 notes are reachable within two hops of the index. Notes layer: 95 lessons, 88 project notes and 72 references, so not failure-only. Record layer: 958 session logs are kept. Dreaming last ran on 14 August 2026 and has been idle for 86 days; when it ran it compared notes with notes, not with the record.">
+  <text class="lbl" x="8" y="22">Held against my setup — four layers match, the fixing step differs</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="62" text-anchor="middle">① Injected</text>
+  <text class="cap" x="126" y="88" text-anchor="middle">index: 171 lines</text>
+  <text class="cap" x="126" y="114" text-anchor="middle">under 200 cap</text>
+  <rect class="vn vn-a" x="254" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="372" y="62" text-anchor="middle">② Map</text>
+  <text class="cap" x="372" y="88" text-anchor="middle">all 255 notes</text>
+  <text class="cap" x="372" y="114" text-anchor="middle">within two hops</text>
+  <rect class="vn vn-a" x="500" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="618" y="62" text-anchor="middle">③ Notes</text>
+  <text class="cap" x="618" y="88" text-anchor="middle">lessons 95 · project 88</text>
+  <text class="cap" x="618" y="114" text-anchor="middle">reference 72</text>
+  <rect class="vn vn-a" x="746" y="36" width="246" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="869" y="62" text-anchor="middle">④ Record</text>
+  <text class="cap" x="869" y="88" text-anchor="middle">958 session logs</text>
+  <text class="cap" x="869" y="114" text-anchor="middle">kept as-is</text>
+  <rect class="vn vn-b" x="8" y="146" width="984" height="70" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="24" y="174">Dreaming — last run 08-14, idle 86 days (the reminder succeeded weekly)</text>
+  <text class="cap" x="24" y="200">When it did run, it compared notes with notes and the index, not the record</text>
+  <line class="rule" x1="8" y1="232" x2="992" y2="232"/>
+  <text class="cap cap-i" x="8" y="256">⇒ <tspan class="cap-p">The structure already matches</tspan> — the yield is "what is the answer key" and "did it run"</text>
+</svg>
+<figcaption>Measured 2026-11-08: index lines and characters, note types, link depth from the index, number of session logs, and the consolidation marker date.</figcaption>
+</figure>
+<h2 id="my-setup--over-the-cap-in-bytes-under-it-in-characters">My setup — over the cap in bytes, under it in characters</h2>
+<p>The index file is 28,788 bytes. Read “25 KB” as bytes and it is already over. Yet the copy loaded into this very session reached the last line. Counted as characters it is 18,268. My own notes had recorded the same thing earlier: the app’s warning counts <strong>characters</strong>, and the file loaded in full even past 30,000 bytes. So the cap I am actually close to is <strong>lines</strong>, not kilobytes — 171 of 200, with 29 to spare.</p>
+<p>The map layer was already following the post’s advice. The index points directly at 145 notes. The other 110 sit one hub file further down. Unreachable: zero out of 255. When the index gets crowded I move a section into a hub and leave one line behind — the same move as “push detail down, leave a link.”</p>
+<h2 id="the-yield--dreaming-failed-at-has-it-ever-run-not-does-it-exist">The yield — dreaming failed at “has it ever run”, not “does it exist”</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Verdict</th>
+<th>Gain</th>
+<th>Cost to adopt</th>
+<th>Cost to undo</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add a log-check step to weekly consolidation</td>
+<td>Adopt</td>
+<td>Stops wrong notes from being trusted indefinitely [estimated]</td>
+<td>One paragraph in the procedure</td>
+<td>Delete the paragraph</td>
+<td>Medium — the evidence is one game scene</td>
+</tr>
+<tr>
+<td>Decouple the stall alarm from note activity</td>
+<td>Adopt</td>
+<td>An 86-day silence becomes a one-week alert</td>
+<td>One condition in the detector</td>
+<td>Revert the condition</td>
+<td>High — measured directly</td>
+</tr>
+<tr>
+<td>One writer per file</td>
+<td>Already have</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>High — learned from another accident</td>
+</tr>
+<tr>
+<td>Build a wiki with dreaming</td>
+<td>Hold</td>
+<td>Only when questions span documents</td>
+<td>Dozens of sessions of compute</td>
+<td>Delete the wiki folder</td>
+<td>Low — the post has counterexamples</td>
+</tr>
+<tr>
+<td>Remove fixed rules on what to save</td>
+<td>Not applicable</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>My rules don’t restrict to failures</td>
+</tr>
+</tbody>
+</table>
+<p>The first row is the core. My procedure says merge, correct, delete — but it never said what a correction is checked against. Matching notes to the index catches <strong>a note that disagrees with the index.</strong> It cannot catch <strong>a note where both are wrong.</strong> That is exactly the Pokémon scene: the note and the progress log (“Mt Moon DONE”) vouched for each other, and the truth was only in the transcript.</p>
+<p>The second row I brought on myself. The first detector fired when consolidation was more than 10 days late. It went off while I was clearly writing notes, so I called it a false alarm and changed it to fire only when note-writing had also stopped. <strong>That made “writing notes but never consolidating” count as healthy.</strong> By the post’s own split, writing notes and dreaming are different jobs. One running is no reason to silence the other.</p>
+<h2 id="where-my-verdict-cracked--i-nearly-wrote-already-have-it">Where my verdict cracked — I nearly wrote “already have it”</h2>
+<p>When I first filled in the comparison, I almost put “already have — weekly self-evolution” in the dreaming cell. There was a scheduled task, it succeeded every week, and the procedure used the word “correct.” All three were evidence of <strong>having</strong> it. Only afterwards did I open the last-run date. It failed at layer three of <a href="/en/teardowns/memory/">this category’s fourth axis</a> — <strong>has it ever been switched on.</strong></p>
+<p>There was an error the other way too. When I first measured the index in bytes I nearly concluded “over 25 KB, the tail gets cut.” I withdrew that only after confirming the last line had loaded in this session. <strong>Don’t call a limit exceeded before checking its unit.</strong></p>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<ul>
+<li><strong>The log-check step is not in yet.</strong> This piece stops at the verdict. When I add it, it should start with notes likely to change, as the post suggests — the logs in this folder alone are 5.8 GB, so checking everything does not pay.</li>
+<li><strong>I did not reproduce the post’s numbers.</strong> CL-Bench and the Pokémon runs are Anthropic’s internal evaluations, and many cells rest on 1 to 16 runs.</li>
+<li><strong>I did not check the other PC.</strong> Consolidation could have run at home with only the marker left stale. The marker lives in a folder both PCs sync, so I think that unlikely (unverified).</li>
+<li><strong>I did not try the wiki.</strong> I have not measured whether my 255 notes face the cross-document questions where a wiki pays off.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/memory/agent-memory-components/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const fb = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>

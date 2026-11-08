@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>에이전트 기억의 부품들 — 컨텍스트와 기억</title><meta name="description" content="Anthropic이 AI 에이전트의 기억을 네 층으로 나누고, 일이 끝난 뒤 기록과 대조해 고치는 「드리밍」을 연구로 공개했습니다. 제 기억 장치에 대 보니 층은 이미 같았고, 고치는 단계만 86일째 멈춰 있었습니다."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="에이전트 기억의 부품들 — 컨텍스트와 기억"><meta property="og:description" content="Anthropic이 AI 에이전트의 기억을 네 층으로 나누고, 일이 끝난 뒤 기록과 대조해 고치는 「드리밍」을 연구로 공개했습니다. 제 기억 장치에 대 보니 층은 이미 같았고, 고치는 단계만 86일째 멈춰 있었습니다."><meta property="og:url" content="https://aitryed.com/ko/teardowns/memory/agent-memory-components/"><meta property="og:image" content="https://aitryed.com/og.ko.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — AI랑 같이 잡니다."><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="에이전트 기억의 부품들 — 컨텍스트와 기억"><meta name="twitter:description" content="Anthropic이 AI 에이전트의 기억을 네 층으로 나누고, 일이 끝난 뒤 기록과 대조해 고치는 「드리밍」을 연구로 공개했습니다. 제 기억 장치에 대 보니 층은 이미 같았고, 고치는 단계만 86일째 멈춰 있었습니다."><meta name="twitter:image" content="https://aitryed.com/og.ko.png"><link rel="canonical" href="https://aitryed.com/ko/teardowns/memory/agent-memory-components/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/ko/teardowns/memory/agent-memory-components/index.md"><link rel="describedby" href="https://aitryed.com/ko/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/memory/agent-memory-components/"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/memory/agent-memory-components/"><link rel="stylesheet" href="/_astro/Shell.CytMMbFG.css"></head><body data-lang="ko"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="검색" aria-label="검색"><div class="fres" id="fres" role="listbox" aria-label="검색"></div></div><div class="secnav"><a href="/ko/"><span class="n">00</span><span>홈</span></a><a href="/ko/built/" data-sec="built"><span class="n">01</span><span>만든 도구</span></a><a href="/ko/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>뜯어본 생각</span></a><a href="/ko/writing/" data-sec="writing"><span class="n">03</span><span>쓴 글</span></a><a href="/ko/together/" data-sec="together"><span class="n">04</span><span>함께 쓴 글</span></a><a href="/ko/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>오늘의 AI 소식</span></a></div><div class="foot"><a class="lang" href="/en/teardowns/memory/agent-memory-components/" hreflang="en">English</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 뜯어본 생각</div><div class="plist"><a href="/ko/teardowns/harness/"><span class="t"><span>에이전트 하네스</span><span class="kpi">23편 · 개별 판정</span></span><span class="s">에이전트를 무엇 위에서 돌릴 것인가. 스물세 편의 분석과 각자의 도입 판정을 모았습니다. 과거 21편 당시의 채택 집계도 그 시점의 기록으로 남겼습니다.</span></a><a href="/ko/teardowns/memory/" aria-current="page"><span class="t"><span>컨텍스트와 기억</span><span class="kpi">11편 · 코드 0</span></span><span class="s">무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.</span></a><a href="/ko/teardowns/qa/"><span class="t"><span>QA 자동화</span><span class="kpi">10편 · 기존 적용 4.5 / 7</span></span><span class="s">자동화·원인 조사·데스크톱 조작 도구와 형식 검증 연구, 판정 모델에 관한 글까지 열 편입니다. 기존 기법 적용 4.5 / 7, REA 정적 시험 두 종류, 형식 검증에서 옮긴 실험 하나를 구분해 기록합니다.</span></a><a href="/ko/teardowns/games/"><span class="t"><span>게임 만들기</span><span class="kpi">6편 · 코드 0</span></span><span class="s">게임과 제작 도구 여섯 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.</span></a></div></nav><nav class="col col-s"><div class="col-head">뜯은 것</div><div class="plist"><a href="/ko/teardowns/memory/rag-without-vectors/"><span class="t"><span>벡터DB 없는 RAG</span><span class="kpi">구조 6/6 · 숫자 1/5</span></span><span class="s">구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.</span></a><a href="/ko/teardowns/memory/headroom/"><span class="t"><span>Headroom</span><span class="kpi">결론 2회 뒤집힘</span></span><span class="s">도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.</span></a><a href="/ko/teardowns/memory/second-brain-course/"><span class="t"><span>세컨드 브레인 강의</span><span class="kpi">수확 0 · 내 결함 2</span></span><span class="s">커리큘럼 여덟 칸 중 일곱이 이미 있었습니다. 그런데 강의의 자가채점표를 제 스킬 99개에 돌렸더니 실제 결함이 둘 나왔습니다.</span></a><a href="/ko/teardowns/memory/graph-engineering/"><span class="t"><span>그래프 엔지니어링</span><span class="kpi">8종 중 순증 1</span></span><span class="s">영상이 「그래프의 핵심」이라 부른 것은 제 52개 런에서 발동 조건이 단 한 번 나왔습니다. 대신 안 갖고 있던 하나는 실측으로 이득이 확인됐습니다.</span></a><a href="/ko/teardowns/memory/llm-wiki-obsidian/"><span class="t"><span>옵시디언 LLM 위키</span><span class="kpi">4겹침 · 순증 2</span></span><span class="s">3계층 구조는 제 쪽이 이미 4계층이었습니다. 새로 얻은 셋 중 둘은 위생 규칙이고, 제일 탐났던 하나는 보류했습니다.</span></a><a href="/ko/teardowns/memory/second-brain-interview/"><span class="t"><span>세컨드 브레인 인터뷰</span><span class="kpi">워크플로 200 → 0</span></span><span class="s">자동화 워크플로 200개를 만들던 사람이 전부 버리고 맥락 하나에 집중한 이유. 구조는 흔한데 연결 방식이 새로웠습니다.</span></a><a href="/ko/teardowns/memory/file-management/"><span class="t"><span>파일 관리 체계</span><span class="kpi">일치 5 · 내가 놓친 3</span></span><span class="s">제 설계와 결론 다섯 개가 일치했는데 근거가 완전히 달랐습니다. 그리고 제가 놓친 셋을 정확히 짚었습니다.</span></a><a href="/ko/teardowns/memory/second-brain-4steps/"><span class="t"><span>세컨드 브레인 4단계</span><span class="kpi">채택 1 · 4단계 미가동</span></span><span class="s">이 영상에서 배울 건 거의 없었습니다. 그런데 대보는 과정에서 제 4단계가 설치만 돼 있고 한 번도 돈 적이 없다는 게 드러났습니다.</span></a><a href="/ko/teardowns/memory/dsh-anchored-standard/"><span class="t"><span>dsh-anchored-standard</span><span class="kpi">수확 4 → 0 · 미실행 24일</span></span><span class="s">설치가 아예 불가능했습니다 — 제 하네스엔 컨텍스트를 뺄 수 있는 훅이 없습니다. 그런데 더 아팠던 건, 그걸 잴 도구를 이미 갖고 24일 안 돌린 쪽이었습니다.</span></a><a href="/ko/teardowns/memory/public-apis/"><span class="t"><span>public-apis</span><span class="kpi">1,756건 · 게이트 400일</span></span><span class="s">별 47만 개짜리 목록의 링크 검사가 400일 연속 실패하고 있었습니다. 그리고 제가 찾던 목록은 이미 제 폴더 안에 있었습니다.</span></a><a href="/ko/teardowns/memory/agent-memory-components/" aria-current="page"><span class="t"><span>에이전트 기억의 부품들</span><span class="kpi">층 4개 일치 · 통합 86일 멈춤</span></span><span class="s">Anthropic이 AI 에이전트의 기억을 네 층으로 나누고, 일이 끝난 뒤 기록과 대조해 고치는 「드리밍」을 연구로 공개했습니다. 제 기억 장치에 대 보니 층은 이미 같았고, 고치는 단계만 86일째 멈춰 있었습니다.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>뜯어본 생각</span><span class="st">공개</span></div><h1>에이전트 기억의 부품들</h1><p class="sum">Anthropic이 AI 에이전트의 기억을 네 층으로 나누고, 일이 끝난 뒤 기록과 대조해 고치는 「드리밍」을 연구로 공개했습니다. 제 기억 장치에 대 보니 층은 이미 같았고, 고치는 단계만 86일째 멈춰 있었습니다.</p><div class="meta"><span>층 4개 일치 · 통합 86일 멈춤</span><a class="src" href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">원문 (Anthropic 엔지니어링, 2026-11-06) — anthropic.com/research/components-of-agent-memory ↗</a><a class="src" href="https://www.instagram.com/p/DfdWN35j1Dx/" target="_blank" rel="noopener">처음 본 곳 (인스타그램 요약, ai.asap.kr) — instagram.com/p/DfdWN35j1Dx ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="이 글의 절"><div class="oh">이 글의 절</div><a href="#이게-무슨-이야기냐면--일기와-공책입니다">이게 무슨 이야기냐면 — 일기와 공책입니다</a><a href="#원문이-보여-준-것--적는-양보다-고르는-눈입니다">원문이 보여 준 것 — 적는 양보다 고르는 눈입니다</a><a href="#제-기억-장치에-대-봤더니--층은-같았고-고치는-손이-멈춰-있었습니다">제 기억 장치에 대 봤더니 — 층은 같았고, 고치는 손이 멈춰 있었습니다</a><a href="#그리고-돌았을-때도-정답지를-안-봤습니다">그리고 돌았을 때도 정답지를 안 봤습니다</a><a href="#그래서-가져온-것--둘-그리고-이미-하던-것-하나">그래서 가져온 것 — 둘, 그리고 이미 하던 것 하나</a><a href="#여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</a><a href="#대상--anthropic이-자기-모델로-돌린-탐색-연구-한-편이다">대상 — Anthropic이 자기 모델로 돌린 탐색 연구 한 편이다</a><a href="#대표-기법-여섯--전부-언제-누가-고치나의-문제다">대표 기법 여섯 — 전부 「언제 누가 고치나」의 문제다</a><a href="#깨본-결과--수치는-전부-원문-그림에서-확인했다">깨본 결과 — 수치는 전부 원문 그림에서 확인했다</a><a href="#내-환경에-대-봤다--주입-층은-바이트로-재면-넘고-글자로-재면-남는다">내 환경에 대 봤다 — 주입 층은 바이트로 재면 넘고, 글자로 재면 남는다</a><a href="#수확--드리밍은-있다가-아니라-켠-적-있나에서-걸렸다">수확 — 드리밍은 「있다」가 아니라 「켠 적 있나」에서 걸렸다</a><a href="#판정에서-깨진-것--이미-하고-있다를-처음엔-적었다">판정에서 깨진 것 — 「이미 하고 있다」를 처음엔 적었다</a><a href="#못-한-것">못 한 것</a></nav><div class="prose"><p><strong>Anthropic이 AI 에이전트(사람 대신 여러 단계의 일을 하는 AI)의 기억을 어떻게 짜는지 연구 글로 공개했습니다. 기억을 네 층으로 나누고, 일이 끝난 뒤 따로 시간을 내서 기록과 대조해 고칩니다. 그 과정을 「드리밍」이라고 부릅니다. 제 기억 장치에 그대로 대 봤더니 네 층은 이미 같은 모양이었습니다. 그런데 고치는 단계는 86일째 한 번도 안 돌고 있었습니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 1000 300" role="img" aria-label="에이전트 기억은 네 층이다. 맨 위 주입 층은 매 세션 처음부터 실린다. 그 아래 지도 층은 메모와 기록을 엮은 위키 같은 것이다. 그 아래 메모 층은 에이전트가 일하면서 중요하다고 판단해 적은 것이다. 맨 아래 기록 층은 세션 전체 로그다. 드리밍은 세션이 끝난 뒤 메모를 기록과 대조해 고치고, 지도를 만들고, 중요한 것을 맨 위로 올린다.">
+  <text class="lbl" x="8" y="22">기억은 네 층이다 — 위로 갈수록 작고 자주 읽힌다</text>
+  <rect class="vn vn-b" x="8" y="36" width="640" height="44" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="24" y="64">① 주입 — 매 세션 처음부터 싣는 작은 묶음</text>
+  <rect class="vn vn-a" x="8" y="90" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="118">② 지도 — 메모와 기록을 엮은 위키</text>
+  <rect class="vn vn-a" x="8" y="144" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="172">③ 메모 — 일하다가 중요하다 싶어 적은 것</text>
+  <rect class="vn vn-a" x="8" y="198" width="640" height="44" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="24" y="226">④ 기록 — 세션 전체 로그, 진짜 원본</text>
+  <rect class="vn vn-b" x="680" y="36" width="312" height="206" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="836" y="64" text-anchor="middle">드리밍 (일이 끝난 뒤)</text>
+  <text class="cap" x="836" y="104" text-anchor="middle">메모를 기록과 대조해 고친다</text>
+  <text class="cap" x="836" y="144" text-anchor="middle">흩어진 메모로 지도를 만든다</text>
+  <text class="cap" x="836" y="184" text-anchor="middle">중요한 것을 맨 위로 올린다</text>
+  <text class="cap" x="836" y="224" text-anchor="middle">세션 하나가 못 본 걸 채운다</text>
+  <line class="rule" x1="8" y1="262" x2="992" y2="262"/>
+  <text class="cap" x="8" y="286">핵심 — 메모는 틀릴 수 있고, 기록은 안 틀린다. 그래서 기록을 정답지로 쓴다</text>
+</svg>
+<figcaption>원문의 그림 13과 1을 한 장으로 합쳐 다시 그렸다. 층의 이름은 원문(Injected context · Memory representations · Memory notes · Transcripts)을 풀어 쓴 것이다.</figcaption>
+</figure>
+<h2 id="이게-무슨-이야기냐면--일기와-공책입니다">이게 무슨 이야기냐면 — 일기와 공책입니다</h2>
+<p>AI는 대화가 끝나면 그 내용을 잊습니다. 다음 대화는 백지에서 시작합니다. 그래서 다음에도 알아야 할 것을 <strong>파일로 적어 두고 다음에 다시 읽게</strong> 만드는데, 이걸 에이전트 기억이라고 부릅니다.</p>
+<p>학교 다닐 때를 떠올리면 쉽습니다.</p>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th>비유</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 주입</td>
+<td>필통에 붙인 메모지</td>
+<td>매번 눈에 들어온다. 그래서 작아야 한다</td>
+</tr>
+<tr>
+<td>② 지도</td>
+<td>공책 맨 앞의 목차</td>
+<td>어느 쪽에 뭐가 있는지 알려 준다</td>
+</tr>
+<tr>
+<td>③ 메모</td>
+<td>수업 중에 적은 공책</td>
+<td>그 순간 중요하다 싶어 적었다. 가끔 틀리게 적는다</td>
+</tr>
+<tr>
+<td>④ 기록</td>
+<td>수업 녹음 파일</td>
+<td>길고 지루하지만 <strong>실제로 있었던 일 그대로</strong>다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>드리밍은 밤에 녹음을 다시 들으며 공책을 고치는 일</strong>입니다. 수업 중에는 받아 적기 바빠서 확인할 틈이 없습니다. 그러니 나중에 따로 시간을 내서 맞춰 보는 겁니다. 이름은 사람이 잠자는 동안 낮의 기억을 정리한다는 뇌 과학 이야기에서 따왔습니다.</p>
+<h2 id="원문이-보여-준-것--적는-양보다-고르는-눈입니다">원문이 보여 준 것 — 적는 양보다 고르는 눈입니다</h2>
+<p>연구에서 제일 선명한 장면은 포켓몬 게임이었습니다. 두 AI 모델에게 같은 게임을 시키고 기억 폴더를 줬습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>기억 파일</th>
+<th>얻은 배지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>옛 모델</td>
+<td><strong>413개</strong> (폴더 225개)</td>
+<td>1개</td>
+</tr>
+<tr>
+<td>새 모델</td>
+<td><strong>9개</strong> + 대시보드 한 장</td>
+<td>4개</td>
+</tr>
+</tbody>
+</table>
+<p>옛 모델은 싸울 때마다, 아이템을 주울 때마다 파일을 만들었습니다. 결국 게임을 하는 시간보다 자기 기억을 뒤지는 시간이 더 길어졌습니다. 새 모델은 <strong>화면을 보면 알 수 있는 건 안 적었습니다.</strong> 직접 겪어서 알아낸 규칙만 적었습니다.</p>
+<p>그리고 「실패만 적어라」 같은 정해진 규칙을 주자, 오히려 성적이 떨어졌습니다. 똑똑한 모델일수록 <strong>무엇을 적을지는 스스로 고르게</strong> 두는 편이 나았습니다.</p>
+<h2 id="제-기억-장치에-대-봤더니--층은-같았고-고치는-손이-멈춰-있었습니다">제 기억 장치에 대 봤더니 — 층은 같았고, 고치는 손이 멈춰 있었습니다</h2>
+<p>저도 Claude에게 기억 폴더를 주고 씁니다. 원문의 네 층을 하나씩 대 봤습니다.</p>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th>원문</th>
+<th>제 것</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 주입</td>
+<td>작게 유지, 넘치면 아래로</td>
+<td>목차 파일 171줄, 원문이 말한 한도(200줄) 안</td>
+<td>같음</td>
+</tr>
+<tr>
+<td>② 지도</td>
+<td>메모를 엮은 위키</td>
+<td>목차 → 허브 → 메모, <strong>255개 전부 두 칸 안에 닿음</strong></td>
+<td>같음</td>
+</tr>
+<tr>
+<td>③ 메모</td>
+<td>스스로 골라 적기</td>
+<td>실패만 적지 않음 (교훈 95 · 진행 88 · 참고 72)</td>
+<td>같음</td>
+</tr>
+<tr>
+<td>④ 기록</td>
+<td>진짜 원본</td>
+<td>대화 기록 958개 그대로 보관</td>
+<td>같음</td>
+</tr>
+<tr>
+<td>드리밍</td>
+<td>메모를 기록과 대조</td>
+<td><strong>마지막 실행 08-14, 86일 전</strong></td>
+<td><strong>멈춤</strong></td>
+</tr>
+</tbody>
+</table>
+<p>층 네 개는 이미 같은 모양이었습니다. 문제는 맨 오른쪽 아래 칸입니다. 매주 「기억을 정리하라」고 알려 주는 예약 작업은 꼬박꼬박 돌았습니다. 그런데 정리 자체는 86일 동안 한 번도 안 했습니다. 그걸 알려 줄 경보도 울리지 않았습니다. <strong>메모가 계속 쌓이고 있으면 경보를 낮추도록</strong> 제가 직접 만들어 두었기 때문입니다.</p>
+<h2 id="그리고-돌았을-때도-정답지를-안-봤습니다">그리고 돌았을 때도 정답지를 안 봤습니다</h2>
+<p>더 근본적인 차이가 하나 있습니다. 제 정리 절차를 열어 보니, 메모를 <strong>다른 메모·목차와</strong> 대조합니다. 겹치는 걸 합치고 낡은 걸 지웁니다. <strong>녹음 파일(기록)과 맞춰 보는 단계는 없습니다.</strong></p>
+<p>원문에서 드리밍이 값을 한 건 정확히 그 대조 덕분이었습니다. 게임 속 AI가 「건물은 산 동쪽에 있다」고 잘못 적었습니다. 그 메모를 믿고 같은 낭떠러지에서 세 번 떨어졌습니다. 드리밍이 기록을 다시 보고 그 한 줄을 고치자 곧장 다음 도시에 도착했습니다. <strong>공책끼리 대조하면 틀린 메모가 서로를 보증해 줍니다.</strong> 녹음과 대조해야 틀린 게 드러납니다.</p>
+<h2 id="그래서-가져온-것--둘-그리고-이미-하던-것-하나">그래서 가져온 것 — 둘, 그리고 이미 하던 것 하나</h2>
+<table>
+<thead>
+<tr>
+<th>무엇</th>
+<th>왜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정리 절차에 「기록과 대조」를 넣는다</td>
+<td>지금은 메모끼리만 맞춰 본다</td>
+</tr>
+<tr>
+<td>「몇 번 돌았나」를 경보에서 따로 본다</td>
+<td>메모가 쌓인다는 이유로 정리가 안 돈 걸 덮었다</td>
+</tr>
+<tr>
+<td><del>여럿이 한 파일에 같이 쓰지 않는다</del></td>
+<td>이미 하던 것 — 두 PC가 목차를 같이 고쳐 옛 줄이 살아난 사고가 있었다</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 줄은 원문에도 나옵니다. 여러 AI가 표 하나를 같이 고치자 서로의 내용을 덮어써서 중요한 사실 57개 중 41개만 남았습니다. 계약서마다 담당 하나, 페이지 하나로 나누자 57개가 다 남았습니다. 저는 같은 교훈을 이미 다른 사고로 배웠습니다.</p>
+<h2 id="여기부터는-자세한-기록입니다">여기부터는 자세한 기록입니다</h2>
+<p><strong>도구는 0개, 바꿀 절차가 2개입니다.</strong> 원문의 네 층(주입·표현·메모·기록)은 제 기억 장치와 구조가 이미 같았습니다. 수확은 구조가 아니라 <strong>드리밍의 정답지가 무엇이냐</strong>에서 나왔습니다. 원문은 세션 기록을 정답지로 쓰고, 제 주간 통합은 메모를 메모와 대조합니다. 그리고 그 주간 통합은 2026-08-14 이후 86일 동안 한 번도 돌지 않았습니다. 예약 작업은 매주 성공으로 끝났는데도 그랬습니다.</p>
+<h2 id="대상--anthropic이-자기-모델로-돌린-탐색-연구-한-편이다">대상 — Anthropic이 자기 모델로 돌린 탐색 연구 한 편이다</h2>
+<p>원문은 Anthropic 엔지니어링 블로그의 「The components of agent memory」(2026-11-06, Lance Martin)다. 제품 발표가 아니라 <strong>내부 평가를 여러 개 돌려 본 탐색 기록</strong>이다. 드리밍은 Claude Managed Agents에서 연구 미리보기로 붙어 있는 기능이고, 글은 그걸 일반 출시하지 않는다.</p>
+<p>에이전트 기억의 정의부터 좁게 잡는다. 경험에서 얻어 <strong>세션 사이에 남겨 두는 지식</strong>이다. 가중치를 바꾸는 학습, 한 대화 안의 학습, 긴 대화를 요약해 갈아 끼우는 압축은 빼고 본다.</p>
+<table>
+<thead>
+<tr>
+<th>층 (원문 이름)</th>
+<th>무엇</th>
+<th>누가 쓰나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Injected context</td>
+<td>매 세션 처음부터 싣는 기억</td>
+<td>드리밍이 올려 준다</td>
+</tr>
+<tr>
+<td>Memory representations</td>
+<td>기록·메모에서 계산한 위키 등</td>
+<td>드리밍이 짓는다</td>
+</tr>
+<tr>
+<td>Memory notes</td>
+<td>세션 중 중요하다고 판단해 적은 것</td>
+<td>에이전트가 그 자리에서</td>
+</tr>
+<tr>
+<td>Transcripts</td>
+<td>검색할 수 있는 전체 이벤트 로그</td>
+<td>자동으로 남는다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="대표-기법-여섯--전부-언제-누가-고치나의-문제다">대표 기법 여섯 — 전부 「언제 누가 고치나」의 문제다</h2>
+<ol>
+<li><strong>기억은 예측이다.</strong> 규칙을 적는 건 「이 패턴이 또 나온다」는 예측이다. 확인된 사실을 적는 건 「다음 세션은 다시 확인하지 않고 이걸 믿을 것」이라는 예측이다.</li>
+<li><strong>무엇을 적을지는 모델에게 맡긴다.</strong> 기억이 무엇을 위한 것인지만 말하고, 어떻게 쓰라고는 안 한다.</li>
+<li><strong>드리밍으로 고친다.</strong> 메모를 원본 기록과 대조한다.</li>
+<li><strong>드리밍으로 지도를 짓는다.</strong> 흩어진 메모를 엮어 위키를 만든다.</li>
+<li><strong>드리밍으로 위로 올린다.</strong> 중요한 메모를 주입 층으로 올리고, 주입 층이 커지면 세부를 아래로 내리고 링크만 남긴다.</li>
+<li><strong>드리밍의 목표를 일에 맞춘다.</strong> 무엇이 중요한지를 지시문이 정한다. 지시문은 드리밍 자신이 실패를 보고 고칠 수도 있다.</li>
+</ol>
+<p>원문은 Claude Code의 자동 기억을 5번의 예로 든다. 목차 파일(MEMORY.md)은 <strong>앞 200줄 또는 25KB까지만</strong> 싣는다. 나머지는 필요할 때 읽는다.</p>
+<h2 id="깨본-결과--수치는-전부-원문-그림에서-확인했다">깨본 결과 — 수치는 전부 원문 그림에서 확인했다</h2>
+<p>처음 본 곳은 인스타그램 요약 게시물이었다. 게시한 계정은 Anthropic이 아니라 국내 AI 소식 요약 계정이다. 「앤트로픽 공식 리서치」는 출처 표기다. 그래서 요약에 실린 수치를 원문과 하나씩 맞췄다. 본문에 없는 셋은 그림 안에 있었다.</p>
+<table>
+<thead>
+<tr>
+<th>주장</th>
+<th>원문 위치</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CL-Bench 데이터베이스 과제, Opus 5.5가 0.655에서 0.838로</td>
+<td>그림 3 막대</td>
+<td>일치</td>
+</tr>
+<tr>
+<td>「실패만 기록」 규칙이 Opus 5의 기억 이득을 0.234 깎음</td>
+<td>그림 5 오른쪽</td>
+<td>일치, <strong>단 3회 실행</strong></td>
+</tr>
+<tr>
+<td>공유 표에 여럿이 쓰면 57개 중 41개, 계약서별로 나누면 57개</td>
+<td>그림 14 설명</td>
+<td>일치</td>
+</tr>
+<tr>
+<td>질문 24~25개</td>
+<td>본문</td>
+<td>일치 (병합 24개 · 문서 묶음 25개)</td>
+</tr>
+</tbody>
+</table>
+<p>요약이 뺀 것도 있다. 원문은 같은 그림 5에서 Opus 4.7이 −0.150(3회), Sonnet 4.6이 −0.020(<strong>1회</strong>)이라고 적는다. 반대로 옛 모델(Sonnet 4.6)은 「답하기 전에 기억을 읽고 가설을 시험하라」고 지시하자 점수가 0.364에서 0.641로 거의 두 배가 됐다. <strong>지시가 해로운지 이로운지는 모델 세대에 따라 뒤집힌다.</strong></p>
+<p>위키 실험에는 반례가 같이 실려 있다. 문서 약 35만 개에 대한 질문 25개에서 드리밍 세션을 2회에서 128회로 늘리자 위키만으로 답한 점수가 13%에서 48%로 올랐다. 그런데 정보가 한 문서에 다 있는 과제에서는 위키가 검색보다 낫지 않았다. 다른 과제에서는 위키가 원본 문서보다 커졌다. 원문은 이걸 보르헤스의 「제국만 한 지도」에 빗댄다. <strong>지도는 줄일 때만 지도다.</strong></p>
+<p>원문이 스스로 밝힌 한계도 옮긴다. 드리밍은 연산을 쓴다. 모든 기억을 계속 검사하는 건 실용적이지 않을 수 있다. 바뀔 법한 정보에 집중하거나, 기억이 읽히는 빈도에 맞춰 주기를 정하라고 권한다.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 268" role="img" aria-label="원문의 네 층과 드리밍을 제 기억 장치에 대 본 결과. 주입 층은 목차 171줄로 한도 200줄 안이다. 지도 층은 메모 255개가 전부 목차에서 두 칸 안에 닿는다. 메모 층은 교훈 95, 진행 88, 참고 72로 실패만 적지 않는다. 기록 층은 대화 기록 958개가 그대로 있다. 드리밍은 2026년 8월 14일이 마지막이라 86일째 멈춰 있고, 돌 때도 메모를 기록이 아니라 메모와 대조했다.">
+  <text class="lbl" x="8" y="22">제 기억 장치에 대 본 결과 — 층은 넷 다 같고, 고치는 단계만 다르다</text>
+  <rect class="vn vn-a" x="8" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="126" y="62" text-anchor="middle">① 주입</text>
+  <text class="cap" x="126" y="88" text-anchor="middle">목차 171줄</text>
+  <text class="cap" x="126" y="114" text-anchor="middle">한도 200줄 안</text>
+  <rect class="vn vn-a" x="254" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="372" y="62" text-anchor="middle">② 지도</text>
+  <text class="cap" x="372" y="88" text-anchor="middle">메모 255개 전부</text>
+  <text class="cap" x="372" y="114" text-anchor="middle">목차에서 두 칸 안</text>
+  <rect class="vn vn-a" x="500" y="36" width="236" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="618" y="62" text-anchor="middle">③ 메모</text>
+  <text class="cap" x="618" y="88" text-anchor="middle">교훈 95 · 진행 88</text>
+  <text class="cap" x="618" y="114" text-anchor="middle">참고 72</text>
+  <rect class="vn vn-a" x="746" y="36" width="246" height="96" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="869" y="62" text-anchor="middle">④ 기록</text>
+  <text class="cap" x="869" y="88" text-anchor="middle">대화 기록 958개</text>
+  <text class="cap" x="869" y="114" text-anchor="middle">그대로 보관</text>
+  <rect class="vn vn-b" x="8" y="146" width="984" height="70" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-p" x="24" y="174">드리밍 — 마지막 08-14, 86일째 멈춤 (예약 작업은 매주 성공)</text>
+  <text class="cap" x="24" y="200">돌 때도 메모를 기록이 아니라 메모·목차와 대조했다</text>
+  <line class="rule" x1="8" y1="232" x2="992" y2="232"/>
+  <text class="cap cap-i" x="8" y="256">⇒ <tspan class="cap-p">구조는 이미 같다</tspan> — 수확은 「무엇을 정답지로 쓰나」와 「돌았나」 둘이다</text>
+</svg>
+<figcaption>2026-11-08 실측. 목차 줄 수·글자 수, 메모 파일 종류, 링크 도달 깊이, 대화 기록 파일 수, 통합 마커 날짜를 한 번씩 셌다.</figcaption>
+</figure>
+<h2 id="내-환경에-대-봤다--주입-층은-바이트로-재면-넘고-글자로-재면-남는다">내 환경에 대 봤다 — 주입 층은 바이트로 재면 넘고, 글자로 재면 남는다</h2>
+<p>목차 파일은 28,788바이트다. 원문의 「25KB」를 바이트로 읽으면 이미 넘는다. 그런데 이번 세션에 실린 목차에는 마지막 줄까지 들어와 있었다. 글자로 세면 18,268자다. 제 기록에도 같은 관찰이 있었다. 앱 경고는 <strong>글자 수</strong>로 재고, 3만 바이트를 넘긴 날에도 끝 줄까지 실렸다. 그러니 지금 실제로 가까운 한도는 KB가 아니라 <strong>줄 수</strong>다. 171줄이고, 200줄까지 29줄 남았다.</p>
+<p>지도 층은 원문의 처방을 이미 따르고 있었다. 목차에서 직접 가리키는 메모가 145개다. 나머지 110개는 허브 파일 하나를 거쳐 닿는다. 255개 중 못 닿는 것은 0개다. 목차가 커지면 한 절을 허브로 내리고 줄 하나만 남기는 방식이 원문의 「세부는 아래로, 링크만 남긴다」와 같다.</p>
+<h2 id="수확--드리밍은-있다가-아니라-켠-적-있나에서-걸렸다">수확 — 드리밍은 「있다」가 아니라 「켠 적 있나」에서 걸렸다</h2>
+<table>
+<thead>
+<tr>
+<th>기법</th>
+<th>판정</th>
+<th>이득</th>
+<th>도입비용</th>
+<th>되돌리기 비용</th>
+<th>신뢰도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주간 통합에 기록 대조 단계 추가</td>
+<td>채택</td>
+<td>틀린 메모가 계속 믿기는 것을 막음 [추정]</td>
+<td>절차 문서 한 단락</td>
+<td>한 단락 삭제</td>
+<td>중 — 원문 근거가 게임 한 장면</td>
+</tr>
+<tr>
+<td>통합 정체 경보를 메모 생산과 분리</td>
+<td>채택</td>
+<td>86일 침묵 같은 일을 1주 안에 앎</td>
+<td>감지 스크립트 한 조건</td>
+<td>조건 되돌림</td>
+<td>높음 — 실측으로 확인</td>
+</tr>
+<tr>
+<td>여럿이 한 파일에 같이 쓰지 않기</td>
+<td>이미 있음</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>높음 — 다른 사고로 이미 배움</td>
+</tr>
+<tr>
+<td>드리밍으로 위키 짓기</td>
+<td>보류</td>
+<td>질문이 여러 문서에 걸칠 때만</td>
+<td>세션 수십 회 연산</td>
+<td>위키 폴더 삭제</td>
+<td>낮음 — 반례가 원문에 있음</td>
+</tr>
+<tr>
+<td>무엇을 적을지 정한 규칙 빼기</td>
+<td>해당 없음</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>제 규칙은 실패만 고르지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p>첫 줄이 이 편의 알맹이다. 제 통합 절차는 「병합·정정·삭제」를 하는데, 그 정정이 무엇을 근거로 하는지가 비어 있었다. 메모를 목차와 맞추면 <strong>목차와 어긋난 메모</strong>는 잡지만 <strong>둘 다 틀린 메모</strong>는 못 잡는다. 원문의 포켓몬 장면이 바로 그 경우였다. 메모와 진행 기록(「산 끝, 통과」)이 서로를 보증했고, 정답은 세션 기록에만 있었다.</p>
+<p>둘째 줄은 제 설계가 자초한 것이다. 처음에는 「통합이 10일 넘게 멈추면 경보」였다. 메모를 잘 쓰고 있는데 경보가 울려서 오탐으로 보고 「메모 생산도 0일 때만 경보」로 고쳤다. 그 결과 <strong>메모는 쓰는데 통합은 안 하는 상태가 정상으로 분류됐다.</strong> 원문의 구분대로라면 메모 쓰기와 드리밍은 다른 일이다. 하나가 돈다고 다른 하나의 경보를 낮추면 안 됐다.</p>
+<h2 id="판정에서-깨진-것--이미-하고-있다를-처음엔-적었다">판정에서 깨진 것 — 「이미 하고 있다」를 처음엔 적었다</h2>
+<p>처음 이 대조표를 채울 때 드리밍 칸에 「이미 있음 — 주간 자가진화」를 적을 뻔했다. 크론이 있고, 매주 성공으로 끝나고, 절차 문서에 「정정」이라는 말이 있었다. 셋 다 <strong>보유</strong> 증거였다. 마지막 실행 날짜를 연 건 그다음이었다. <a href="/ko/teardowns/memory/">이 분류의 넷째 축</a>이 말하는 3층 — <strong>켠 적은 있나</strong> — 에서 또 걸렸다.</p>
+<p>반대 방향의 오판도 하나 있었다. 목차 바이트를 처음 쟀을 때 「25KB 넘음, 꼬리가 잘린다」고 결론 낼 뻔했다. 이번 세션에 실린 목차의 마지막 줄을 확인하고서야 철회했다. <strong>한도의 단위를 확인하기 전에 넘었다고 말하면 안 된다.</strong></p>
+<h2 id="못-한-것">못 한 것</h2>
+<ul>
+<li><strong>기록 대조 단계는 아직 안 넣었다.</strong> 이 편은 판정까지다. 넣을 때는 원문처럼 「바뀔 법한 메모」부터 골라야 한다. 대화 기록이 이 폴더만 5.8GB라 전수 대조는 비용이 안 맞는다.</li>
+<li><strong>원문의 수치를 재현하지 않았다.</strong> CL-Bench와 포켓몬 실험은 Anthropic 내부 평가다. 실행 횟수가 1~16회로 적은 칸이 많다.</li>
+<li><strong>다른 PC의 실행 흔적은 안 봤다.</strong> 집 PC에서 통합을 돌렸는데 마커 파일만 안 갱신됐을 가능성은 남는다. 마커는 두 PC가 동기화하는 폴더에 있어서 가능성은 낮다고 본다(미확인).</li>
+<li><strong>위키 실험은 해 보지 않았다.</strong> 제 메모 255개가 위키가 이득을 보는 「여러 문서에 걸친 질문」에 해당하는지 재지 않았다.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a href="/ko/about/privacy/">개인정보처리방침</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "ko";
+const fb = "ko";
+const none = "없음";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "조회 {n}";
+const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
