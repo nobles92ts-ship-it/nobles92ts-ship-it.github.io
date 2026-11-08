@@ -2,7 +2,7 @@
 
 > A free Windows game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
 
-- Headline number: v0.3.1 beta · Windows · free
+- Headline number: v0.3.2 beta · Windows · free
 - Rendered page: https://aitryed.com/en/built/moon-studio/pixling/
 - Other language: https://aitryed.com/ko/built/moon-studio/pixling/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -15,7 +15,7 @@
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="Pikachu and Charizard with a Poké Ball on the Pokémon gym side; Gabumon and WarGreymon with a Digivice on the Digimon arena side — Kkaeal key art"><p class="k-gone" role="status">All hidden. Press \ again to bring them back.</p></div>
 </header>
 <section class="k-getbox" aria-label="Download">
-<div class="k-getl"><p class="k-one">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p><p class="k-info"><span>v0.3.1 beta · about 86 MB · free</span></p></div>
+<div class="k-getl"><p class="k-one">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p><p class="k-info"><span>v0.3.2 beta · about 86 MB · free</span></p></div>
 <div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a></div>
 <div class="k-phone">The phone version is in progress. For now, <b>open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
 </section>
@@ -67,7 +67,8 @@
 </table>
 <h3 class="k-h3">Versions</h3>
 <ul class="k-rows k-vers">
-<li><div><b>v0.3.1 <i>Latest</i></b><span>86 MB · 2026-11-07 · Auto-battle ON/OFF · New ranking season table</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.1">What's new ↗</a></li>
+<li><div><b>v0.3.2 <i>Latest</i></b><span>86 MB · 2026-11-08 · Ranked Battles on one screen · Friends · Notice board</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.2">What's new ↗</a></li>
+<li><div><b>v0.3.1</b><span>86 MB · 2026-11-07 · Auto-battle ON/OFF · New ranking season table</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.1">What's new ↗</a></li>
 <li><div><b>v0.3.0</b><span>86 MB · 2026-11-06 · One-window hub · Pixel effects · Fractional power</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.0">What's new ↗</a></li>
 <li><div><b>v0.2.9</b><span>78 MB · 2026-11-03 · Link Battle fix</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.9">What's new ↗</a></li>
 <li><div><b>v0.2.8</b><span>78 MB · 2026-11-03 · Quests · Dex «View moves» · Ranking podium</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.2.8">What's new ↗</a></li>
@@ -128,7 +129,8 @@ The [studio coordination update](/en/built/moon-studio/index.md) keeps the direc
 
 | Version | State confirmed on 2026-10-28 |
 |---|---|
-| v0.3.1 | Latest public download (2026-11-07); the download instructions on this page describe this release |
+| v0.3.2 | Latest public download (2026-11-08); the download instructions on this page describe this release |
+| v0.3.1 | Previous public release (2026-11-07) |
 | v0.3.0 | Previous public release (2026-11-06) |
 | v0.2.9 | Previous public release (2026-11-03) |
 | v0.2.8 | Previous public release (2026-11-03) |
@@ -143,7 +145,7 @@ The [studio coordination update](/en/built/moon-studio/index.md) keeps the direc
 | v0.1.7 | Never released on its own; folded into v0.2.0 |
 | v0.1.6 | Previous public release; the feature table on this page describes it |
 
-This is a comparison of the operating board with the [public release](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.1). I did not rerun the game's regression suite while updating this page.
+This is a comparison of the operating board with the [public release](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.2). I did not rerun the game's regression suite while updating this page.
 
 ## What the three-session v2 process taught about boundaries
 
