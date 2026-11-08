@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 221 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 222 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -158,6 +158,7 @@ Before reading the list —
 - [MOON Studio · Future game 1 · Art](https://aitryed.com/en/built/moon-studio/future-1/art/index.md): Building solo, the real bottleneck isn't code. This slot starts by deciding what won't be made.
 - [MOON Studio · Future game 1 · QA](https://aitryed.com/en/built/moon-studio/future-1/qa/index.md): If you can't say in one sentence what a pass means, the test isn't verification yet.
 - [MOON Studio · Future game 2](https://aitryed.com/en/built/moon-studio/future-2/index.md): The second empty slot. Its parts read the same as Future game 1 — there are two to show "several," not because they differ.
+- [Second brain](https://aitryed.com/en/built/second-brain/index.md): My own documents in one index that any AI session can search with the same command. tc-team runs fully only when it is connected.
 
 ## What I took apart
 

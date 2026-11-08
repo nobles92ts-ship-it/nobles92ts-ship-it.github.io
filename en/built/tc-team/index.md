@@ -30,6 +30,8 @@ This tool **fills that table from a specification.**
 
 Since October 2026 it can also hand the same cases to **an AI, as documents it reads and then tests from.** The section *The AI edition* below covers it.
 
+⭐ **It runs fully only when connected to a [second brain](/en/built/second-brain/index.md).** The second brain is what finds values the spec leaves out in your own docs; without it, every one of those rows goes to a person as "needs spec confirmation".
+
 ## The point is not "the AI writes them"
 
 This is what the tool actually is.
