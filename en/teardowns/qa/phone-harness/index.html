@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>phone-harness — QA automation</title><meta name="description" content="An open-source tool that lets an AI agent such as Claude Code look at and tap a real smartphone. I read an introduction video alongside the repository code. Game screens — my actual work — are invisible to it too, so I put it on hold. Usage telemetry is on by default, which I confirmed in the code."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="phone-harness — QA automation"><meta property="og:description" content="An open-source tool that lets an AI agent such as Claude Code look at and tap a real smartphone. I read an introduction video alongside the repository code. Game screens — my actual work — are invisible to it too, so I put it on hold. Usage telemetry is on by default, which I confirmed in the code."><meta property="og:url" content="https://aitryed.com/en/teardowns/qa/phone-harness/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="phone-harness — QA automation"><meta name="twitter:description" content="An open-source tool that lets an AI agent such as Claude Code look at and tap a real smartphone. I read an introduction video alongside the repository code. Game screens — my actual work — are invisible to it too, so I put it on hold. Usage telemetry is on by default, which I confirmed in the code."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/qa/phone-harness/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/qa/phone-harness/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/qa/phone-harness/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/qa/phone-harness/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/qa/phone-harness/"><link rel="stylesheet" href="/_astro/Shell.CytMMbFG.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/together/" data-sec="together"><span class="n">04</span><span>Written together</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/qa/phone-harness/" hreflang="ko">한국어</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/"><span class="t"><span>Agent harnesses</span><span class="kpi">23 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/" aria-current="page"><span class="t"><span>QA automation</span><span class="kpi">11 pieces · prior 4.5 / 7</span></span><span class="s">Eleven investigations into automation, cause-analysis, desktop- and phone-control tools, one formal-verification study and an essay on judgment models. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">6 pieces · 0 code</span></span><span class="s">Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/qa/toss-nebula/"><span class="t"><span>Toss Nebula device farm</span><span class="kpi">0 techniques taken</span></span><span class="s">Nothing transferred. What it gave me instead was a ruler — and held against my own code, it found a crack.</span></a><a href="/en/teardowns/qa/asleep-qa/"><span class="t"><span>Asleep&#39;s QA automation</span><span class="kpi">1 of 11</span></span><span class="s">Ten of the eleven decisions I had already arrived at. The value wasn&#39;t transfer — it was independent confirmation.</span></a><a href="/en/teardowns/qa/autoplay-test-tool/"><span class="t"><span>An autoplay test tool</span><span class="kpi">2 of 4 techniques</span></span><span class="s">A bot that walks the map measuring performance. Catching &quot;stuck&quot; as a contradiction in the data beats what I had — so both the contradiction check and the two-clocks confirmation went into my bot (2026-09-28).</span></a><a href="/en/teardowns/qa/qa-infrastructure/"><span class="t"><span>A talk on QA infrastructure</span><span class="kpi">0 captions · slides only</span></span><span class="s">There were no captions, so I reconstructed it from slides alone. Even carrying that gap, one thing survived — and it wasn&#39;t about tools, it was about the definition of evidence.</span></a><a href="/en/teardowns/qa/watermarks-remover/"><span class="t"><span>watermarks-remover</span><span class="kpi">4 takeaways → 1.5</span></span><span class="s">I opened a tool that erases AI fingerprints in order to audit my own publish gate. Then the metric built to catch AI caught something I had written by hand. So it went in only narrowed to long-form (2026-09-29).</span></a><a href="/en/teardowns/qa/clumsy/"><span class="t"><span>clumsy</span><span class="kpi">2.5 kept · 0 runs</span></span><span class="s">A free Windows tool that makes your own internet connection worse on purpose. I opened it to test how a PC game copes with drops and lag, and read all 2,709 lines. The verdict is adopt — and the lesson is that I had already analysed it in August and run it zero times, twice over (2026-10-02).</span></a><a href="/en/teardowns/qa/rea/"><span class="t"><span>REA</span><span class="kpi">2 static probes</span></span><span class="s">REA helps agents investigate executables and applications. I inspected its implementation and tried a Windows binary and a small JavaScript fixture, keeping static findings separate from runtime claims.</span></a><a href="/en/teardowns/qa/formal-verification/"><span class="t"><span>Claude formal verification — copying finished proofs</span><span class="kpi">time −21% · cost flat</span></span><span class="s">Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other&#39;s finished work, and measured it before and after in my game studio&#39;s art team.</span></a><a href="/en/teardowns/qa/agent-desktop/"><span class="t"><span>agent-desktop</span><span class="kpi">on hold · tried, removed</span></span><span class="s">A tool that lets an AI read and operate desktop programs through the parts list the operating system already keeps, not through screenshots. I read the docs and code, then tried it briefly on my PC. Reading worked; sharing the PC with a person went unproven, so I removed it.</span></a><a href="/en/teardowns/qa/judge-before-action/"><span class="t"><span>Judged by the model, scoped by people</span><span class="kpi">1 rule · structure already here</span></span><span class="s">A QA engineer&#39;s essay proposing that an AI agent ask a judgment-only model before every action. Re-asking Jev the essay&#39;s own sentences suggested the famous 0.57 was a split between options, not doubt, and trying the same fix on my automated tests buried a bug.</span></a><a href="/en/teardowns/qa/phone-harness/" aria-current="page"><span class="t"><span>phone-harness</span><span class="kpi">On hold · blind to game screens</span></span><span class="s">An open-source tool that lets an AI agent such as Claude Code look at and tap a real smartphone. I read an introduction video alongside the repository code. Game screens — my actual work — are invisible to it too, so I put it on hold. Usage telemetry is on by default, which I confirmed in the code.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>phone-harness</h1><p class="sum">An open-source tool that lets an AI agent such as Claude Code look at and tap a real smartphone. I read an introduction video alongside the repository code. Game screens — my actual work — are invisible to it too, so I put it on hold. Usage telemetry is on by default, which I confirmed in the code.</p><div class="meta"><span>On hold · blind to game screens</span><a class="src" href="https://www.youtube.com/watch?v=-7akHqSkpzE" target="_blank" rel="noopener">Source video (Korean, 개발동생) — youtube.com/watch?v=-7akHqSkpzE ↗</a><a class="src" href="https://github.com/phone-harness/phone-harness" target="_blank" rel="noopener">Repository github.com/phone-harness/phone-harness — github.com/phone-harness/phone-harness ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#using-a-phone-turned-into-a-few-functions">Using a phone, turned into a few functions</a><a href="#each-phone-has-different-eyes-and-accuracy-splits-there">Each phone has different eyes, and accuracy splits there</a><a href="#three-models-one-errand--the-cheapest-was-the-slowest">Three models, one errand — the cheapest was the slowest</a><a href="#the-whole-phone-becomes-visible-to-the-agent">The whole phone becomes visible to the agent</a><a href="#game-screens-stop-it-for-my-work-so-it-stays-on-hold">Game screens stop it for my work, so it stays on hold</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#a-three-month-old-mit-project-with-a-cloud-business-attached">A three-month-old MIT project with a cloud business attached</a><a href="#most-of-the-videos-claims-matched-the-code">Most of the video’s claims matched the code</a><a href="#telemetry-sends-more-than-the-video-says">Telemetry sends more than the video says</a><a href="#on-android-a-screen-with-no-tree-takes-a-different-road">On Android, a screen with no tree takes a different road</a><a href="#the-model-comparison-is-one-run-by-someone-else-but-it-points-where-mine-do">The model comparison is one run by someone else, but it points where mine do</a><a href="#verdict-table">Verdict table</a><a href="#the-principle-worth-keeping">The principle worth keeping</a><a href="#when-to-revisit">When to revisit</a><a href="#not-done">Not done</a></nav><div class="prose"><p><strong>phone-harness is an open-source tool that lets an AI coding agent — Claude Code, Codex and the like — use a real smartphone the way a person does: look at the screen, tap, swipe and type.</strong> Nothing gets installed on the phone and no jailbreak is needed. An iPhone is reached through the Mac’s iPhone Mirroring window; an Android phone through USB debugging (adb).</p>
+<p>I watched a 13-minute Korean introduction video, then checked its claims one by one against the repository code. I did not install or run the tool myself.</p>
+<figure class="fig">
+<svg viewBox="0 0 1000 260" role="img" aria-label="How phone-harness is built. The agent speaks through 51 functions such as open_app, tap_text, type_text and screen. Behind them sit three kinds of phone. An iPhone is read through the Mac mirroring window with Apple OCR; its weak spots are icons without text and misread Korean. An Android phone is read through adb and the accessibility tree; its weak spot is screens with no tree, such as games. A cloud phone does the same remotely as a paid beta. One script runs on all three; what differs is how accurately the screen is read.">
+  <text class="lbl" x="8" y="22">A handful of functions, three kinds of phone behind them</text>
+  <rect class="bx-code" x="8" y="36" width="984" height="52" rx="2"/>
+  <text class="bx-t" x="500" y="57" text-anchor="middle">What the agent says — open_app · tap_text · type_text · screen</text>
+  <text class="bx-s" x="500" y="78" text-anchor="middle">51 functions · the moves a person makes on a phone, written down</text>
+  <line class="rule" x1="168" y1="88" x2="168" y2="108"/>
+  <line class="rule" x1="500" y1="88" x2="500" y2="108"/>
+  <line class="rule" x1="832" y1="88" x2="832" y2="108"/>
+  <rect class="vn vn-a" x="8" y="108" width="320" height="112" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="168" y="132" text-anchor="middle">iPhone (needs a Mac)</text>
+  <text class="cap" x="168" y="156" text-anchor="middle">Eyes: mirror → Apple OCR</text>
+  <text class="cap" x="168" y="180" text-anchor="middle">Hands: simulated input</text>
+  <text class="cap cap-p" x="168" y="204" text-anchor="middle">Weak: icons, misread text</text>
+  <rect class="vn vn-b" x="340" y="108" width="320" height="112" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-i" x="500" y="132" text-anchor="middle">Android (any OS)</text>
+  <text class="cap" x="500" y="156" text-anchor="middle">Eyes: adb → a11y tree</text>
+  <text class="cap" x="500" y="180" text-anchor="middle">Hands: adb input</text>
+  <text class="cap cap-p" x="500" y="204" text-anchor="middle">Weak: no tree (games)</text>
+  <rect class="vn vn-a" x="672" y="108" width="320" height="112" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="132" text-anchor="middle">Cloud phone (paid beta)</text>
+  <text class="cap" x="832" y="156" text-anchor="middle">Same thing, remotely</text>
+  <text class="cap" x="832" y="180" text-anchor="middle">Real device · number · login</text>
+  <text class="cap cap-p" x="832" y="204" text-anchor="middle">Weak: your phone, their server</text>
+  <text class="cap" x="8" y="246">⇒ One script runs on all three. Only the accuracy of «reading» differs</text>
+</svg>
+<figcaption>Pressing works almost the same everywhere. Accuracy is decided by what reads the screen.</figcaption>
+</figure>
+<h2 id="using-a-phone-turned-into-a-few-functions">Using a phone, turned into a few functions</h2>
+<p>What you do on a phone is not much: open an app, find some text and tap it, scroll, type. The tool writes each move down as a <strong>function</strong> — a one-line command that does one fixed job.</p>
+<table>
+<thead>
+<tr>
+<th>What a person does</th>
+<th>What the agent calls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Find the app icon and open it</td>
+<td><code>open_app("Notes")</code></td>
+</tr>
+<tr>
+<td>Find the words “New Note” and tap them</td>
+<td><code>tap_text("New Note")</code></td>
+</tr>
+<tr>
+<td>Type on the keyboard</td>
+<td><code>type_text("hello")</code></td>
+</tr>
+<tr>
+<td>Skim what text is on screen</td>
+<td><code>screen()</code></td>
+</tr>
+</tbody>
+</table>
+<p>The agent strings these into a short script and sends it. The helper file in the repository holds 51 of them.</p>
+<h2 id="each-phone-has-different-eyes-and-accuracy-splits-there">Each phone has different eyes, and accuracy splits there</h2>
+<p>Tapping is similar on every phone. The difference is in <strong>reading the screen</strong>.</p>
+<p>On an iPhone, the tool photographs the mirroring window and runs Apple’s text recognition (OCR — turning text in a picture into actual text). Because it reads a picture, it can be wrong; in the video one coffee-chain app name and one restaurant name came back garbled.</p>
+<p>Android is different. The tool pulls the <strong>parts list</strong> the app itself reports to the operating system — the accessibility tree, the list of button and label names kept for screen readers. The app wrote those names, so nothing gets misread. The video reaches the same conclusion: Android is the steadier of the two.</p>
+<h2 id="three-models-one-errand--the-cheapest-was-the-slowest">Three models, one errand — the cheapest was the slowest</h2>
+<p>This comparison was measured by the video’s presenter, not by me. He gave Haiku, Sonnet and Opus the same errand: open a delivery app, find the best-rated chicken place and list three menu items.</p>
+<p>He expected Haiku to be fastest. It took the longest — 7 min 48 s — and repeated the same attempts, calling tools 56 times. It also reported the restaurant name wrong. Sonnet finished correctly in 3 min 46 s. Haiku had the lowest per-token price, but once you add the time a person spends re-checking its mistakes, the presenter said he would not hand it phone work; his pick was Sonnet.</p>
+<h2 id="the-whole-phone-becomes-visible-to-the-agent">The whole phone becomes visible to the agent</h2>
+<p>With this tool attached, the agent can see messages, texts, payment screens and photos. So the video suggests a <strong>spare phone or a cloud phone</strong> rather than the one you live on.</p>
+<p>It also says to switch one thing off right after installing: <strong>usage telemetry</strong>, where a program sends usage records back to its makers. The code confirms it is on by default, and it sends more than the video implies — up to 20,000 characters of the script the agent sent, plus up to 20,000 characters of what that script printed. What a script prints often includes text read off the phone.</p>
+<h2 id="game-screens-stop-it-for-my-work-so-it-stays-on-hold">Game screens stop it for my work, so it stays on hold</h2>
+<p>My work is testing Android games by machine. A game draws its whole screen as a single picture, so pulling the parts list gives an empty shell — exactly what I wrote in <a href="/en/built/android-qa/">the adb-based game QA server</a>.</p>
+<p>phone-harness knows about this and keeps a separate picture-OCR function for screens without a tree, such as games and canvases. But that recogniser is <strong>Apple’s, so it only switches on on a Mac.</strong> My work PC runs Windows, which leaves only one way to read a game screen: let the model look at the screenshot itself. My own tool already does that.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>Analysis is pinned to <a href="https://github.com/phone-harness/phone-harness/commit/4bebff105af853215fb74c958c2c5e78bc275be2">commit 4bebff1</a> on <code>main</code>, read on 2026-11-10; the latest release is <code>0.3.3</code> (2026-11-02). The video is <a href="https://www.youtube.com/watch?v=-7akHqSkpzE">a Korean introduction on the 개발동생 channel</a>, posted in early November 2026. From the repository I read README, SKILL.md and five source files (<code>helpers.py</code>, <code>android.py</code>, <code>ocr.py</code>, <code>telemetry.py</code>, <code>run.py</code>). <strong>Nothing was installed or run.</strong></p>
+<h2 id="a-three-month-old-mit-project-with-a-cloud-business-attached">A three-month-old MIT project with a cloud business attached</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value (2026-11-10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created · last push</td>
+<td>2026-08-07 · 2026-11-09</td>
+</tr>
+<tr>
+<td>Stars · forks</td>
+<td>4,752 · 490</td>
+</tr>
+<tr>
+<td>Language · licence</td>
+<td>Python · MIT</td>
+</tr>
+<tr>
+<td>Integrations</td>
+<td>Hermes plugin · OpenClaw plugin · MCP server (cloud phones only)</td>
+</tr>
+<tr>
+<td>Requirements</td>
+<td>iPhone: macOS 15+ and iOS 18+ · Android: adb on macOS, Linux or Windows</td>
+</tr>
+</tbody>
+</table>
+<p>The top of the README carries three buttons pointing to a hosted product, Phone Harness Cloud. The YC launch the video mentions belongs to that side. The open-source CLI is free; hosted real devices, phone numbers and persistent logins are the paid part.</p>
+<h2 id="most-of-the-videos-claims-matched-the-code">Most of the video’s claims matched the code</h2>
+<table>
+<thead>
+<tr>
+<th>The video said</th>
+<th>What the code shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone: mirroring plus Vision OCR</td>
+<td><code>ocr.py</code> reads the mirroring capture with Apple Vision and returns a tap-ready point for every string</td>
+</tr>
+<tr>
+<td>Android: adb plus the accessibility tree</td>
+<td><code>android.py</code> fetches the tree with <code>uiautomator dump</code>; its header literally says “no OCR”</td>
+</tr>
+<tr>
+<td>A few functions drive the phone</td>
+<td>51 public functions in <code>helpers.py</code>, including <code>open_app</code>, <code>tap_text</code>, <code>type_text</code>, <code>screen</code>, <code>swipe</code>, <code>scroll</code></td>
+</tr>
+<tr>
+<td>Weak on icons without text</td>
+<td>README limits: OCR sees text, not icons — unlabeled controls need a screenshot and a vision-capable model</td>
+</tr>
+<tr>
+<td>No multi-touch, camera or Face ID</td>
+<td>In the README limits as stated, plus: DRM video renders black</td>
+</tr>
+<tr>
+<td>Telemetry is on by default</td>
+<td><code>config.py</code> default <code>"telemetry": True</code>; off by default only under Hermes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="telemetry-sends-more-than-the-video-says">Telemetry sends more than the video says</h2>
+<p>The video said it sends “the scripts you ran, and text.” Read in the code, it is this:</p>
+<table>
+<thead>
+<tr>
+<th>Sent</th>
+<th>Cap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task</code> — the body of the script the agent sent</td>
+<td>20,000 characters (<code>MAX_TASK_LENGTH = 20_000</code>)</td>
+</tr>
+<tr>
+<td><code>output</code> — the tail of what that script printed to stdout</td>
+<td>20,000 characters (<code>_MAX_OUTPUT_LENGTH = 20_000</code>)</td>
+</tr>
+<tr>
+<td>Everything else</td>
+<td>install ID, which agent called it, model name (if an environment variable names it), duration, error text</td>
+</tr>
+</tbody>
+</table>
+<p>It goes to the analytics service PostHog, sent by a detached process so the CLI never waits. <strong>The <code>output</code> field is the problem.</strong> Agents routinely print what they read — <code>print(screen())</code> — to check a screen, and then the phone’s text rides along in the event. The code’s header lists three ways off: <code>phone-harness config set telemetry false</code>, the variable <code>DO_NOT_TRACK=1</code>, or <code>PHONE_HARNESS_TELEMETRY=0</code> for a single call.</p>
+<h2 id="on-android-a-screen-with-no-tree-takes-a-different-road">On Android, a screen with no tree takes a different road</h2>
+<p>Screen reading in <code>android.py</code> has two steps. It asks for the tree first. If the tree is refused — <code>uiautomator</code> gives up on a screen that never goes idle — it falls back to picture OCR only when Apple Vision is present, and raises an error otherwise. There is also <code>ocr_pixels()</code>, which forces picture OCR for games, canvases and WebViews, but it too is defined only when Vision exists.</p>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Driving Android from a Mac</th>
+<th>Driving Android from Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinary app</td>
+<td>tree — exact</td>
+<td>tree — exact</td>
+</tr>
+<tr>
+<td>Game (tree is an empty shell)</td>
+<td>picture OCR through <code>ocr_pixels()</code></td>
+<td>no text recognition — the model must look at the screenshot</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When a game’s tree comes back as an empty shell, the result is an empty list, not an error.</strong> That is how the code reads: only a refusal triggers the OCR fallback; a successful dump with no text simply returns nothing. An agent could take “no text on screen” for “still loading.” I did not confirm this on a device.</p>
+<h2 id="the-model-comparison-is-one-run-by-someone-else-but-it-points-where-mine-do">The model comparison is one run by someone else, but it points where mine do</h2>
+<figure class="fig">
+<svg viewBox="0 0 1000 256" role="img" aria-label="The presenter's model comparison on the same errand, finding three menu items at a chicken place. Haiku 5.5: 7 min 48 s, 56 tool calls, 141k tokens, restaurant name wrong. Sonnet 5.5: 3 min 46 s, 24 tool calls, 117k tokens, correct. Opus 5.5: 4 min 18 s, 28 tool calls, 123k tokens, correct. The presenter picked Sonnet.">
+  <text class="lbl" x="8" y="22">One errand, three models — measured in the video (three menu items)</text>
+  <rect class="vn vn-a" x="8" y="36" width="320" height="150" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="168" y="62" text-anchor="middle">Haiku 5.5</text>
+  <text class="cap" x="168" y="88" text-anchor="middle">7:48 · 56 tool calls</text>
+  <text class="cap" x="168" y="112" text-anchor="middle">141k tokens</text>
+  <text class="cap cap-p" x="168" y="136" text-anchor="middle">Name wrong</text>
+  <text class="cap" x="168" y="160" text-anchor="middle">Price $0.10 / $0.50</text>
+  <rect class="vn vn-b" x="340" y="36" width="320" height="150" rx="2" fill-opacity=".12"/>
+  <text class="cap cap-i" x="500" y="62" text-anchor="middle">Sonnet 5.5</text>
+  <text class="cap" x="500" y="88" text-anchor="middle">3:46 · 24 tool calls</text>
+  <text class="cap" x="500" y="112" text-anchor="middle">117k tokens</text>
+  <text class="cap" x="500" y="136" text-anchor="middle">Correct</text>
+  <text class="cap" x="500" y="160" text-anchor="middle">Price $2 / $10</text>
+  <rect class="vn vn-a" x="672" y="36" width="320" height="150" rx="2" fill-opacity=".06"/>
+  <text class="cap cap-i" x="832" y="62" text-anchor="middle">Opus 5.5</text>
+  <text class="cap" x="832" y="88" text-anchor="middle">4:18 · 28 tool calls</text>
+  <text class="cap" x="832" y="112" text-anchor="middle">123k tokens</text>
+  <text class="cap" x="832" y="136" text-anchor="middle">Correct</text>
+  <text class="cap" x="832" y="160" text-anchor="middle">Price $4 / $20</text>
+  <line class="rule" x1="8" y1="202" x2="992" y2="202"/>
+  <text class="cap cap-i" x="8" y="224">⇒ The cheapest model took longest and got it wrong. His pick: Sonnet</text>
+  <text class="cap" x="8" y="244">Prices are dollars per million input / output tokens, copied from the video</text>
+</svg>
+<figcaption>A single run, and not mine. Still, "a cheap model that wanders can flip the total cost" matches what I have seen in my own screen-judging work.</figcaption>
+</figure>
+<p>According to the video, Sonnet and Opus took the name the OCR had garbled, looked at the screenshot again and reported it correctly. <strong>The model’s own vision caught the OCR’s mistake from behind.</strong> So the tool’s accuracy is not set by the OCR alone: the same OCR output becomes a right or wrong answer depending on which model sits on top.</p>
+<p>One run cannot support a general claim about timing. The video shows no repeated runs, no variance, and no result for the second errand, a coffee order.</p>
+<h2 id="verdict-table">Verdict table</h2>
+<p>Cells I could not measure are estimates, marked <code>[estimated]</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Verdict</th>
+<th>Gain</th>
+<th>Cost to adopt</th>
+<th>Cost to undo</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use the tool itself for Android game QA</td>
+<td><strong>On hold</strong></td>
+<td>small — game trees are empty and Windows has no OCR path</td>
+<td>2–5 hours to install and wire up (95% CI) <code>[estimated]</code></td>
+<td>cheap (remove with <code>uv</code>)</td>
+<td>medium — confirmed in code, not on a device</td>
+</tr>
+<tr>
+<td>Read ordinary app screens through the tree and tap by text</td>
+<td><strong>Already have it</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>my tool uses the tree wherever one exists</td>
+</tr>
+<tr>
+<td>Attach where each read value came from (<code>tree</code> / <code>pixels</code>)</td>
+<td><strong>Adopt (principle)</strong></td>
+<td>separates “possibly misread” from “reported exactly” at judgment time</td>
+<td>low <code>[estimated]</code></td>
+<td>cheap</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>Telemetry on by default</td>
+<td><strong>Turn it off if used</strong></td>
+<td>—</td>
+<td>one command</td>
+<td>—</td>
+<td>high — confirmed in code</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-principle-worth-keeping">The principle worth keeping</h2>
+<p><strong>Tag every value with where it was read from.</strong> phone-harness attaches <code>source: "tree"</code> (exact, reported by the OS) or <code>"pixels"</code> (inferred from a picture) to every string on screen — the same name can be trusted in one case and doubted in the other. My screen judge currently writes verdicts from logs and from screenshots into the same result field. Splitting them would let me, when tracing a wrong verdict, rule out “misread the picture” first.</p>
+<h2 id="when-to-revisit">When to revisit</h2>
+<ul>
+<li>When I need to check a non-game app repeatedly (an internal app, a booking app).</li>
+<li>When the repository gains a picture-OCR path that works on Windows.</li>
+<li>When I can dedicate a spare Android phone — attaching my everyday phone stays off the table.</li>
+</ul>
+<h2 id="not-done">Not done</h2>
+<ul>
+<li>I did not install or run it. Device behaviour was checked only through the video and the code.</li>
+<li>Whether a game screen returns an empty list or a refusal is read from code, not measured on my device.</li>
+<li>I did not open the iPhone side (<code>ios.py</code>, <code>mirror.py</code>) or the cloud side (<code>cloud.py</code>, <code>remote.py</code>).</li>
+<li>The model numbers are one run by the video’s presenter. No repeats, no variance.</li>
+</ul>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/qa/phone-harness/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const fb = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
