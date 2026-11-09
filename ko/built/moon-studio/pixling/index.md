@@ -2,7 +2,7 @@
 
 > 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
-- 수치: v0.3.2 베타 · Windows · 무료
+- 수치: v0.3.2 베타 · Windows · Mac · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
 - 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
@@ -16,14 +16,14 @@
 </header>
 <section class="k-getbox" aria-label="받기">
 <div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.2 베타 · 약 86MB · 무료</span></p></div>
-<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
 <dl class="k-facts">
 <div><dt>장르</dt><dd>다마고치형 육성</dd></div>
 <div><dt>도감</dt><dd>921종</dd></div>
 <div><dt>언어</dt><dd>한국어 · English</dd></div>
-<div><dt>플랫폼</dt><dd>Windows PC<small>Android · iOS · Mac 작업 중</small></dd></div>
+<div><dt>플랫폼</dt><dd>Windows PC · Mac<small>Mac 은 Apple Silicon · macOS 14 이상 · Android · iOS 작업 중</small></dd></div>
 </dl>
 <section class="k-sec" id="k-preview">
 <p class="k-eye">미리보기</p>
@@ -53,12 +53,14 @@
 <h2>받기와 지원 환경</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · 약 109MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
 <li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
 </ul>
 <table class="k-env">
 <tbody>
 <tr><th scope="row">Windows PC</th><td class="k-yes">됩니다</td></tr>
-<tr><th scope="row">Android · iOS · Mac</th><td class="k-wip">작업 중입니다</td></tr>
+<tr><th scope="row">Mac</th><td class="k-yes">됩니다<small>Apple Silicon(M1 이상) · macOS 14 이상. Intel Mac 은 아직입니다.</small></td></tr>
+<tr><th scope="row">Android · iOS</th><td class="k-wip">작업 중입니다</td></tr>
 <tr><th scope="row">설치</th><td>필요 없습니다<small>zip 을 풀고 깨알.exe 를 켜면 됩니다.</small></td></tr>
 <tr><th scope="row">세이브</th><td>새 판을 덮어써도 남습니다<small><code>%APPDATA%\Pixling</code> 에 따로 저장합니다.</small></td></tr>
 <tr><th scope="row">처음 켤 때</th><td>파란 창이 한 번 뜹니다<small>코드 서명이 없어서 뜹니다. 고장이 아닙니다.</small></td></tr>
@@ -84,6 +86,11 @@
 </ol>
 <div class="k-smart" aria-label="파란 창에서 누를 곳"><p class="k-st">Windows의 PC 보호</p><p class="k-sr"><u>추가 정보</u><em>① 여기를 누르면</em></p><p class="k-sr"><span class="k-run">실행</span><em>② 이 버튼이 생깁니다</em><span class="k-no">실행 안 함</span></p></div>
 </div></details>
+<details><summary>Mac 에서 켜는 법</summary><div class="k-body"><ol class="k-steps">
+<li><i>1</i><span>받은 DMG 를 열고 <b>Kkaeal.app</b>(깨알)을 <b>응용 프로그램</b> 폴더로 옮깁니다</span></li>
+<li><i>2</i><span>응용 프로그램에서 깨알을 켭니다</span></li>
+<li><i>3</i><span>«확인되지 않은 개발자»로 막히면 한 번 켜 본 뒤 <b>시스템 설정 → 개인정보 보호 및 보안 → 그래도 열기</b></span></li>
+</ol><p>Apple 개발자 서명 · 공증이 없는 개인 배포라 처음 한 번 직접 허락합니다. Mac 전체 보안 기능을 끌 필요는 없습니다. 조작으로 키우려면 메뉴바 깨알 아이콘 → <b>macOS 입력 권한…</b>에서 입력 모니터링을 허용합니다(누른 횟수만 셉니다). 맥 판은 자동 업데이트가 없어서, 새 판이 나오면 이 페이지에서 받아 앱을 바꿔 끼웁니다. 세이브는 <code>~/Library/Application Support/Pixling</code> 에 따로 남습니다.</p></div></details>
 <details><summary>그 밖에 할 거리</summary><div class="k-body"><ul class="k-list">
 <li><b>생활 마당</b>안 쓰는 몬스터를 10마리까지 앉히면 타입대로 일해서 골드를 법니다. 내가 PC 를 쓰는 동안만 법니다.</li>
 <li><b>상점 뽑기</b>모은 골드로 뽑기를 돌려(1회 300G) 도감을 채웁니다.</li>

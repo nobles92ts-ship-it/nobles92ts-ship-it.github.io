@@ -2,7 +2,7 @@
 
 > A free Windows game where pixel creatures live in the corner of your screen. Catch them, raise them, send them into gyms. No game window, it runs while you work.
 
-- Headline number: v0.3.2 beta · Windows · free
+- Headline number: v0.3.2 beta · Windows · Mac · free
 - Rendered page: https://aitryed.com/en/built/moon-studio/pixling/
 - Other language: https://aitryed.com/ko/built/moon-studio/pixling/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
@@ -16,14 +16,14 @@
 </header>
 <section class="k-getbox" aria-label="Download">
 <div class="k-getl"><p class="k-one">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p><p class="k-info"><span>v0.3.2 beta · about 86 MB · free</span></p></div>
-<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Download for Mac<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">The phone version is in progress. For now, <b>open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
 </section>
 <dl class="k-facts">
 <div><dt>Genre</dt><dd>Tamagotchi-style raising</dd></div>
 <div><dt>Dex</dt><dd>921 species</dd></div>
 <div><dt>Language</dt><dd>Korean · English</dd></div>
-<div><dt>Platform</dt><dd>Windows PC<small>Android · iOS · Mac in progress</small></dd></div>
+<div><dt>Platform</dt><dd>Windows PC · Mac<small>Mac: Apple Silicon · macOS 14+ · Android · iOS in progress</small></dd></div>
 </dl>
 <section class="k-sec" id="k-preview">
 <p class="k-eye">Preview</p>
@@ -53,12 +53,14 @@
 <h2>Where to get it, what it runs on</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · about 78 MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · about 109 MB · Apple Silicon (M1+) · macOS 14 or later</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Download ↓</a></li>
 <li><div><b>itch.io</b><span>If the link above doesn't work</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">Open ↗</a></li>
 </ul>
 <table class="k-env">
 <tbody>
 <tr><th scope="row">Windows PC</th><td class="k-yes">Works</td></tr>
-<tr><th scope="row">Android · iOS · Mac</th><td class="k-wip">In progress</td></tr>
+<tr><th scope="row">Mac</th><td class="k-yes">Works<small>Apple Silicon (M1+) · macOS 14 or later. Intel Macs not yet.</small></td></tr>
+<tr><th scope="row">Android · iOS</th><td class="k-wip">In progress</td></tr>
 <tr><th scope="row">Install</th><td>Not needed<small>Unzip and run 깨알.exe.</small></td></tr>
 <tr><th scope="row">Save</th><td>Survives new versions<small>Stored separately in <code>%APPDATA%\Pixling</code>.</small></td></tr>
 <tr><th scope="row">First launch</th><td>A blue box appears once<small>The file has no code signature. Nothing is broken.</small></td></tr>
@@ -84,6 +86,11 @@
 </ol>
 <div class="k-smart" aria-label="Where to click in the blue box"><p class="k-st">Windows protected your PC</p><p class="k-sr"><u>More info</u><em>① click here</em></p><p class="k-sr"><span class="k-run">Run anyway</span><em>② and this button appears</em><span class="k-no">Don't run</span></p></div>
 </div></details>
+<details><summary>Running it on a Mac</summary><div class="k-body"><ol class="k-steps">
+<li><i>1</i><span>Open the DMG and move <b>Kkaeal.app</b> to <b>Applications</b></span></li>
+<li><i>2</i><span>Launch Kkaeal from Applications</span></li>
+<li><i>3</i><span>If macOS blocks it as from an unidentified developer, try once, then <b>System Settings → Privacy &amp; Security → Open Anyway</b></span></li>
+</ol><p>This is a personal release without an Apple Developer ID signature or notarization, so you approve it once yourself. You don't need to turn off any Mac-wide security setting. To grow from typing and clicking, allow Input Monitoring from the menu-bar icon → <b>macOS input permission…</b> (only counts are kept). Mac builds don't self-update: download the new build here and replace the app. Saves stay in <code>~/Library/Application Support/Pixling</code>.</p></div></details>
 <details><summary>More to do</summary><div class="k-body"><ul class="k-list">
 <li><b>Life Yard</b>Seat up to 10 creatures you aren't using and they work by type for gold, only while you're active at the PC.</li>
 <li><b>Shop gacha</b>Spend that gold on pulls (300 a pull) to fill the Dex.</li>
