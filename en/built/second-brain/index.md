@@ -65,7 +65,7 @@ There is a reason step 4 passes two or three phrasings. The search matches **wor
 - **Woven answers are not used as TC evidence yet.** They come up only when a person asks. New versions get them through the separate file, so for now that seemed enough.
 - **Carrying answers into a new version has not been checked on a real run.** The next new-version TC run is the first check.
 - **Search is word matching.** A different word for the same thing is only found if someone adds that phrasing.
-- **The published cross-reference rule accepts evidence tags under the name of the project I validated it on.** The manifest example keeps that name; renaming it means editing the rule file too.
+- **The published cross-reference rule accepts evidence tags under the placeholder name `MYGAME`.** The manifest example uses the same name. To use your own project name, edit the rule file too.
 
 ## The detailed record starts here
 
