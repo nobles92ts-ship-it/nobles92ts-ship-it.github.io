@@ -16,7 +16,7 @@
 </header>
 <section class="k-getbox" aria-label="Download">
 <div class="k-getl"><p class="k-one">While you work, they wander around, fight and grow on their own. A free Windows game: catch them and raise them.</p><p class="k-info"><span>v0.3.3 beta · about 86 MB · free</span></p></div>
-<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Download for Mac<small>Apple Silicon · macOS 14+</small></a></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download free<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">Download for Mac<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">The phone version is in progress. For now, <b>open this page on a PC</b> to download.<button type="button" id="k-copy" data-done="Copied">Copy link</button></div>
 </section>
 <dl class="k-facts">
@@ -53,7 +53,7 @@
 <h2>Where to get it, what it runs on</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · about 78 MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.2 · about 109 MB · Apple Silicon (M1+) · macOS 14 or later</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Download ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.3 · about 110 MB · Apple Silicon (M1+) · macOS 14 or later</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">Download ↓</a></li>
 <li><div><b>itch.io</b><span>If the link above doesn't work</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">Open ↗</a></li>
 </ul>
 <table class="k-env">
@@ -137,8 +137,8 @@ The [studio coordination update](/en/built/moon-studio/index.md) keeps the direc
 
 | Version | State confirmed on 2026-10-28 |
 |---|---|
-| v0.3.3 | Latest public download (2026-11-10); the download instructions on this page describe this release |
-| v0.3.2 | Previous public release (2026-11-08); the Mac build is still this release |
+| v0.3.3 | Latest public download (2026-11-10); the download instructions on this page describe this release, and the Mac build is this release too |
+| v0.3.2 | Previous public release (2026-11-08) |
 | v0.3.1 | Previous public release (2026-11-07) |
 | v0.3.0 | Previous public release (2026-11-06) |
 | v0.2.9 | Previous public release (2026-11-03) |

@@ -16,7 +16,7 @@
 </header>
 <section class="k-getbox" aria-label="받기">
 <div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.3 베타 · 약 86MB · 무료</span></p></div>
-<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
 <dl class="k-facts">
@@ -53,7 +53,7 @@
 <h2>받기와 지원 환경</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.2 · 약 109MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.2/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.3 · 약 110MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
 <li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
 </ul>
 <table class="k-env">
@@ -137,8 +137,8 @@
 
 | 판 | 2026-10-28에 확인한 상태 |
 |---|---|
-| v0.3.3 | 공개 받기 저장소의 최신 배포판(2026-11-10). 받기 안내 기준 |
-| v0.3.2 | 이전 공개판(2026-11-08) · Mac 판은 아직 이 판 |
+| v0.3.3 | 공개 받기 저장소의 최신 배포판(2026-11-10). 받기 안내 기준 · Mac 판도 이 판 |
+| v0.3.2 | 이전 공개판(2026-11-08) |
 | v0.3.1 | 이전 공개판(2026-11-07) |
 | v0.3.0 | 이전 공개판(2026-11-06) |
 | v0.2.9 | 이전 공개판(2026-11-03) |
