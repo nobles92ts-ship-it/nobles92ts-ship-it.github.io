@@ -250,6 +250,27 @@ const none = "nothing found";
 })();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
 const one = "{n} views";
 const all = "Pages here have been opened {n} times.";
+const dl = "Downloaded {n} times so far";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
 
   (function () {
     var el = document.getElementById('vw');

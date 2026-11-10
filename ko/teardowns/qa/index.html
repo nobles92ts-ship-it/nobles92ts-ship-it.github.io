@@ -242,6 +242,27 @@ const none = "없음";
 })();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
 const one = "조회 {n}";
 const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+const dl = "지금까지 {n}번 받았습니다";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
 
   (function () {
     var el = document.getElementById('vw');

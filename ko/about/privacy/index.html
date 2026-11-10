@@ -86,7 +86,7 @@
 <p><strong>갱신 2026-09-17</strong></p>
 <h2 id="이-사이트가-직접-수집하는-것--조회수-하나">이 사이트가 직접 수집하는 것 — 조회수 하나</h2>
 <p>정적 사이트라 서버가 없습니다. 회원가입도, 입력 양식도, 댓글도 없습니다. 쿠키를 심지 않고, 방문자를 알아보는 식별자를 부여하지 않으며, 일반적인 웹 분석 도구(Google Analytics 등)를 붙이지 않았습니다.</p>
-<p><strong>수집하는 것은 페이지별 조회 횟수 하나입니다.</strong> 문서 페이지와 첫 화면에서 별도의 집계 함수(<code>aitry-views.vercel.app</code>)를 호출해 해당 주소의 카운터를 1 증가시킵니다. <strong>저장되는 것은 「주소 → 누적 횟수」 한 쌍뿐이며, 방문자를 식별하는 값은 함께 저장하지 않습니다.</strong> 방문자 단위의 구분·재방문 식별·행동 추적은 하지 않습니다.</p>
+<p><strong>수집하는 것은 페이지별 조회 횟수 하나입니다.</strong> 문서 페이지와 첫 화면에서 별도의 집계 함수(<code>aitry-views.vercel.app</code>)를 호출해 해당 주소의 카운터를 1 증가시킵니다. <strong>저장되는 것은 「주소 → 누적 횟수」 한 쌍뿐이며, 방문자를 식별하는 값은 함께 저장하지 않습니다.</strong> 방문자 단위의 구분·재방문 식별·행동 추적은 하지 않습니다. 깨알 내려받기 횟수가 표시되는 자리에서는 같은 함수가 GitHub 릴리스의 공개 숫자를 읽어 돌려줄 뿐이며, 방문자에 대한 어떤 값도 받거나 저장하지 않습니다.</p>
 <p>⚠ 그 결과 이 수치는 <strong>정확한 방문자 통계가 아닙니다.</strong> 같은 사람이 여러 번 열면 여러 번 셉니다.</p>
 <p><strong>브라우저의 <code>sessionStorage</code> 를 한 칸 사용합니다.</strong> 같은 방문 중 같은 문서를 다시 열 때 중복 집계를 피하려는 용도이며, 탭을 닫으면 삭제됩니다. 이 값은 전송되지 않습니다. <code>localStorage</code> 와 쿠키는 쓰지 않습니다.</p>
 <p>검색은 브라우저 안에서 돕니다 — 색인 파일을 이 사이트에서 한 번 받아 브라우저가 거릅니다. <strong>입력한 검색어는 어디로도 전송되지 않습니다.</strong></p>
@@ -231,6 +231,27 @@ const none = "없음";
 })();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
 const one = "조회 {n}";
 const all = "여기 있는 글이 지금까지 {n}번 열렸습니다.";
+const dl = "지금까지 {n}번 받았습니다";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
 
   (function () {
     var el = document.getElementById('vw');

@@ -67,7 +67,7 @@ So **the places I do not control are written down too.**
 
 It's a static site, so there is no server. No accounts, no forms, no comments. It sets no cookies, assigns no visitor identifier, and installs no general web-analytics tool (Google Analytics and the like).
 
-**What is collected is a per-page view count, and nothing else.** On document pages and the front page a separate counting function (`aitry-views.vercel.app`) is called, which increments the counter for that address by one. **What is stored is a pair — address and cumulative count — with no value that identifies a visitor.** There is no per-visitor separation, no return-visit detection and no behavioural tracking.
+**What is collected is a per-page view count, and nothing else.** On document pages and the front page a separate counting function (`aitry-views.vercel.app`) is called, which increments the counter for that address by one. **What is stored is a pair — address and cumulative count — with no value that identifies a visitor.** There is no per-visitor separation, no return-visit detection and no behavioural tracking. Where the download count of Kkaeal is shown, the same function only reads the public number on the GitHub release and returns it; it receives and stores nothing about the visitor.
 
 ⚠ As a result the figure is **not an accurate visitor statistic.** One person opening a page five times counts five times.
 

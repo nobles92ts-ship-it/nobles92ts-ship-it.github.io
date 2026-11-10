@@ -86,7 +86,7 @@
 <p><strong>Updated 17 September 2026</strong></p>
 <h2 id="what-this-site-collects--one-view-count">What this site collects — one view count</h2>
 <p>It’s a static site, so there is no server. No accounts, no forms, no comments. It sets no cookies, assigns no visitor identifier, and installs no general web-analytics tool (Google Analytics and the like).</p>
-<p><strong>What is collected is a per-page view count, and nothing else.</strong> On document pages and the front page a separate counting function (<code>aitry-views.vercel.app</code>) is called, which increments the counter for that address by one. <strong>What is stored is a pair — address and cumulative count — with no value that identifies a visitor.</strong> There is no per-visitor separation, no return-visit detection and no behavioural tracking.</p>
+<p><strong>What is collected is a per-page view count, and nothing else.</strong> On document pages and the front page a separate counting function (<code>aitry-views.vercel.app</code>) is called, which increments the counter for that address by one. <strong>What is stored is a pair — address and cumulative count — with no value that identifies a visitor.</strong> There is no per-visitor separation, no return-visit detection and no behavioural tracking. Where the download count of Kkaeal is shown, the same function only reads the public number on the GitHub release and returns it; it receives and stores nothing about the visitor.</p>
 <p>⚠ As a result the figure is <strong>not an accurate visitor statistic.</strong> One person opening a page five times counts five times.</p>
 <p><strong>One <code>sessionStorage</code> slot is used in the browser</strong> to avoid counting the same document twice during one visit. It is deleted when the tab closes and is never transmitted. <code>localStorage</code> and cookies are not used.</p>
 <p>Search runs inside your browser — the index is fetched once from this site and filtered locally. <strong>What you type is never sent anywhere.</strong></p>
@@ -231,6 +231,27 @@ const none = "nothing found";
 })();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
 const one = "{n} views";
 const all = "Pages here have been opened {n} times.";
+const dl = "Downloaded {n} times so far";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
 
   (function () {
     var el = document.getElementById('vw');
