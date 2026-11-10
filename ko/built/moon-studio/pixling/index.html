@@ -50,7 +50,7 @@
 <tr><th scope="row">Windows PC</th><td class="k-yes">됩니다</td></tr>
 <tr><th scope="row">Mac</th><td class="k-yes">됩니다<small>Apple Silicon(M1 이상) · macOS 14 이상. Intel Mac 은 아직입니다.</small></td></tr>
 <tr><th scope="row">Android · iOS</th><td class="k-wip">작업 중입니다</td></tr>
-<tr><th scope="row">설치</th><td>필요 없습니다<small>zip 을 풀고 깨알.exe 를 켜면 됩니다.</small></td></tr>
+<tr><th scope="row">설치</th><td>필요 없습니다<small>Windows 는 zip 을 풀고 깨알.exe 를 켜면 됩니다. Mac 은 깨알을 응용 프로그램 폴더로 옮겨 켭니다.</small></td></tr>
 <tr><th scope="row">세이브</th><td>새 판을 덮어써도 남습니다<small><code>%APPDATA%\Pixling</code> 에 따로 저장합니다.</small></td></tr>
 <tr><th scope="row">처음 켤 때</th><td>파란 창이 한 번 뜹니다<small>코드 서명이 없어서 뜹니다. 고장이 아닙니다.</small></td></tr>
 <tr><th scope="row">백신</th><td>아직 재 보지 않았습니다</td></tr>
@@ -77,11 +77,28 @@
 </ol>
 <div class="k-smart" aria-label="파란 창에서 누를 곳"><p class="k-st">Windows의 PC 보호</p><p class="k-sr"><u>추가 정보</u><em>① 여기를 누르면</em></p><p class="k-sr"><span class="k-run">실행</span><em>② 이 버튼이 생깁니다</em><span class="k-no">실행 안 함</span></p></div>
 </div></details>
-<details><summary>Mac 에서 켜는 법</summary><div class="k-body"><ol class="k-steps">
-<li><i>1</i><span>받은 DMG 를 열고 <b>Kkaeal.app</b>(깨알)을 <b>응용 프로그램</b> 폴더로 옮깁니다</span></li>
+<details><summary>Mac 에서 켜는 법</summary><div class="k-body">
+<p><b>처음 열기</b></p><ol class="k-steps">
+<li><i>1</i><span>받은 DMG 를 열고 <b>Kkaeal.app</b>(깨알)을 <b>응용 프로그램</b> 폴더로 끌어 놓습니다</span></li>
 <li><i>2</i><span>응용 프로그램에서 깨알을 켭니다</span></li>
-<li><i>3</i><span>«확인되지 않은 개발자»로 막히면 한 번 켜 본 뒤 <b>시스템 설정 → 개인정보 보호 및 보안 → 그래도 열기</b></span></li>
-</ol><p>Apple 개발자 서명 · 공증이 없는 개인 배포라 처음 한 번 직접 허락합니다. Mac 전체 보안 기능을 끌 필요는 없습니다. 조작으로 키우려면 메뉴바 깨알 아이콘 → <b>macOS 입력 권한…</b>에서 입력 모니터링을 허용합니다(누른 횟수만 셉니다). 맥 판은 자동 업데이트가 없어서, 새 판이 나오면 이 페이지에서 받아 앱을 바꿔 끼웁니다. 세이브는 <code>~/Library/Application Support/Pixling</code> 에 따로 남습니다.</p></div></details>
+<li><i>3</i><span>«확인되지 않은 개발자» 창이 뜨면 그 창을 닫습니다</span></li>
+<li><i>4</i><span><b>시스템 설정 → 개인정보 보호 및 보안</b>으로 가서 맨 아래 <b>그래도 열기</b>를 누릅니다</span></li>
+<li><i>5</i><span>다음 창에서 <b>열기</b>를 누릅니다(암호를 물으면 넣습니다)</span></li>
+</ol>
+<p><b>조작으로 키우기 (입력 권한)</b></p><ol class="k-steps">
+<li><i>1</i><span>화면 위 메뉴바의 깨알 아이콘을 누릅니다</span></li>
+<li><i>2</i><span><b>macOS 입력 권한…</b> 을 누릅니다</span></li>
+<li><i>3</i><span><b>입력 모니터링 설정 열기</b>를 누릅니다</span></li>
+<li><i>4</i><span>열린 목록에서 <b>깨알</b> 옆 스위치를 <b>켬(ON)</b>으로 바꿉니다</span></li>
+<li><i>5</i><span>깨알을 끄고 다시 켭니다</span></li>
+</ol>
+<p><b>업데이트 뒤 조작이 안 먹을 때</b> — 맥은 앱을 바꿔 끼우면 예전 허락을 새 앱에 이어 주지 않습니다. 설정에는 켜져 있는데 안 먹는 까닭이 이것입니다. 0.3.4.1 부터는 이럴 때 앱이 먼저 알려 줍니다.</p><ol class="k-steps">
+<li><i>1</i><span><b>시스템 설정 → 개인정보 보호 및 보안 → 입력 모니터링</b>을 엽니다</span></li>
+<li><i>2</i><span>목록의 예전 <b>깨알</b>을 고르고 아래 <b>−</b> 를 누릅니다</span></li>
+<li><i>3</i><span>깨알을 다시 켜고 위 «조작으로 키우기» 1~3번을 합니다. 목록에 새로 생긴 <b>깨알</b> 스위치를 <b>켬(ON)</b>으로 바꿉니다</span></li>
+<li><i>4</i><span>깨알을 끄고 다시 켭니다</span></li>
+</ol>
+<p>Apple 개발자 서명 · 공증이 없는 개인 배포라 처음 한 번 직접 허락합니다. Mac 전체 보안 기능을 끌 필요는 없습니다. macOS 15 부터는 우클릭 «열기»로 여는 길이 없어서 위 순서대로 합니다. 입력 권한은 누른 횟수만 셉니다 — 글자 · 앱 이름 · 화면은 모으지 않습니다. 맥 판은 자동 업데이트가 없어서, 새 판이 나오면 이 페이지에서 받아 앱을 바꿔 끼웁니다. 세이브는 <code>~/Library/Application Support/Pixling</code> 에 따로 남습니다.</p></div></details>
 <details><summary>그 밖에 할 거리</summary><div class="k-body"><ul class="k-list">
 <li><b>생활 마당</b>안 쓰는 몬스터를 10마리까지 앉히면 타입대로 일해서 골드를 법니다. 내가 PC 를 쓰는 동안만 법니다.</li>
 <li><b>상점 뽑기</b>모은 골드로 뽑기를 돌려(1회 300G) 도감을 채웁니다.</li>
