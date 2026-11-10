@@ -53,7 +53,7 @@
 <h2>Where to get it, what it runs on</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · about 78 MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.4 · about 110 MB · Apple Silicon (M1+) · macOS 14 or later</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">Download ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.4.1 · about 110 MB · Apple Silicon (M1+) · macOS 14 or later</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">Download ↓</a></li>
 <li><div><b>itch.io</b><span>If the link above doesn't work</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">Open ↗</a></li>
 </ul>
 <table class="k-env">
@@ -138,7 +138,7 @@ The [studio coordination update](/en/built/moon-studio/index.md) keeps the direc
 
 | Version | State confirmed on 2026-10-28 |
 |---|---|
-| v0.3.4 | Latest public download (2026-11-10); the download instructions on this page describe this release; the Mac build is also 0.3.4 (separate Mac repository) |
+| v0.3.4 | Latest public download (2026-11-10); the download instructions on this page describe this release; the Mac build is 0.3.4.1 (separate Mac repository · first-launch crash fix) |
 | v0.3.3 | Previous public release (2026-11-10); Mac build 0.3.3.1 (same content plus a fix for the Mac first-launch notice) |
 | v0.3.2 | Previous public release (2026-11-08) |
 | v0.3.1 | Previous public release (2026-11-07) |
