@@ -53,7 +53,7 @@
 <h2>받기와 지원 환경</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.3.1 · 약 109MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.4 · 약 110MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
 <li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
 </ul>
 <table class="k-env">
@@ -138,7 +138,7 @@
 
 | 판 | 2026-10-28에 확인한 상태 |
 |---|---|
-| v0.3.4 | 공개 받기 저장소의 최신 배포판(2026-11-10). 받기 안내 기준 · Mac 판은 맥 전용 저장소의 0.3.3.1 |
+| v0.3.4 | 공개 받기 저장소의 최신 배포판(2026-11-10). 받기 안내 기준 · Mac 판도 0.3.4(맥 전용 저장소) |
 | v0.3.3 | 이전 공개판(2026-11-10) · Mac 판 0.3.3.1(같은 내용 + 맥 첫 화면 안내 고침) |
 | v0.3.2 | 이전 공개판(2026-11-08) |
 | v0.3.1 | 이전 공개판(2026-11-07) |
