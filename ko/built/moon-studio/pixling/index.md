@@ -16,7 +16,7 @@
 </header>
 <section class="k-getbox" aria-label="받기">
 <div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.3 베타 · 약 86MB · 무료</span></p></div>
-<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
+<div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
 <dl class="k-facts">
@@ -53,7 +53,7 @@
 <h2>받기와 지원 환경</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.3.1 · 약 109MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/download/v0.3.3/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.3.1 · 약 109MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
 <li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
 </ul>
 <table class="k-env">
