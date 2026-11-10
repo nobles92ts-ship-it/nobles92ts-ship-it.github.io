@@ -58,13 +58,31 @@ Two tools are in the public repo's [`brain/`](https://github.com/nobles92ts-ship
 | 4 | To search it yourself: `python brain/brain_search.py --build`, then `python brain/brain_search.py "respawn delay" "revive timer"` |
 | 5 | Rebuild steps 1–2 nightly when docs change. When the bundle is newer, the pipeline re-indexes it on its own |
 
-There is a reason step 4 passes two or three phrasings. The search matches **words**, not meaning. On twelve questions it had never seen, one phrasing found 5; adding reworded phrasings found 7.
+There is a reason step 4 passes two or three phrasings. The published search matches **words**, not meaning. On twelve questions it had never seen, one phrasing found 5; adding reworded phrasings found 7. In my own setup I have since removed that limit.
+
+## Different words now find the same document — meaning search is mixed in
+
+Word search works like a librarian who only reads spines. The words of the question have to appear in the document. Ask "what happens when a player leaves?" and a page that says "on exit" stays hidden, even though both mean the same thing.
+
+So a second librarian joined, one who reads for meaning. Ahead of time, every chunk of every document gets a card: 1,024 numbers that describe what the chunk is about. A question is turned into the same kind of card, and the chunks whose cards sit closest come back. Making those cards is called **embedding**.
+
+| | Spine reader only | Spine + meaning reader |
+|---|---|---|
+| 39 unseen questions — right document in the top 5 | 28 | **37** |
+| Newly found / lost | — | 9 / **0** |
+| 826 questions the TC pipeline once answered, asked again | 436 | **522** |
+| Time per search | 0.02 s | 0.2 s |
+
+Mixing both matters. The meaning reader slips when you already know the exact name: a question about a monster-setting feature's coverage, asked by its name, ranked 1st for word search and 16th for meaning search. Fusing the two rankings lets each cover the other's blind spot.
+
+The cards are made **on my own PC only**, with a local model runner (Ollama) and a multilingual embedding model (bge-m3, 1.2 GB). No document leaves the machine. If the runner is off, search does not stop; it answers with the word side alone.
 
 ## Not done
 
 - **Woven answers are not used as TC evidence yet.** They come up only when a person asks. New versions get them through the separate file, so for now that seemed enough.
 - **Carrying answers into a new version has not been checked on a real run.** The next new-version TC run is the first check.
-- **Search is word matching.** A different word for the same thing is only found if someone adds that phrasing.
+- **Meaning search exists only in my setup so far.** The public repo's `brain_search.py` still matches words, so a different word for the same thing is found only if someone adds that phrasing.
+- **The TC pipeline has not used it on a real run yet.** What I have is the replay of past questions and one trial lookup.
 - **The published cross-reference rule accepts evidence tags under the placeholder name `MYGAME`.** The manifest example uses the same name. To use your own project name, edit the rule file too.
 
 ## The detailed record starts here
@@ -92,6 +110,26 @@ When a new version retires an old one, it leaves a record that names the old tab
 ### Without layers, TCs cite TCs
 
 The first index had no layers. The lookup step then picked sentences from past TC designs as "spec definitions". Those sentences had been guesses awaiting confirmation, and in the next TC they were written down as settled. So every document now carries a layer tag, and the rule takes evidence only from layer `D`. The public `build_bundle.py` adds that tag.
+
+## What it cost — adding meaning search was easy; the mixing order was not
+
+Meaning search itself went in within a day. The time went into how to mix it, and into proving it helped.
+
+### Three phrasings buried the meaning side
+
+The first version built one word-search ranking per phrasing, added one meaning ranking, and fused them all at once. Pass three phrasings and the word side gets three votes against one. Measured through the real code, the 37 found out of 39 dropped to 31. Fusing the word rankings into a single list first, then mixing that 1:1 with the meaning list, brought it back. **Same fusion formula, different vote counts, different result.**
+
+### The advice to reword flipped
+
+With word search alone, "add reworded phrasings" was right (5 → 7). After meaning search went in, that advice found one fewer. Rewordings written by someone who did not know the answer slipped in English terms and added noise. The advice now is **put the question sentence first, as is, and add rewordings after it** — that found 38 of 39 and lost none.
+
+### One launch flag put cmd windows on screen
+
+When the runner is off at search time, search starts it. The first version detached it from its parent, and every model load then flashed **visible cmd windows** from its helper process. Launching the official app instead opened its chat window. Both were dropped. Starting the server with only a "no window" flag let the helper inherit the hidden console. Watching for visible windows during a search found none.
+
+### Before touching the TC lookup, I measured against that engine's own code
+
+The TC pipeline's lookup step uses a different search tool (context-mode). To decide whether to switch, I ran that tool's search function **unchanged** on a copy of its index, with the questions past runs actually asked. A look-alike reimplementation would have made the numbers worthless. The result is the 826-question row above. On a sample of 40 questions the pipeline once failed to answer, judged with the two lists' sources hidden, answers appeared in 8 instead of 4. In 30 of the 40, neither list had an answer — the wiki simply does not say. **Better search does not write missing documents.**
 
 ## Verdict
 

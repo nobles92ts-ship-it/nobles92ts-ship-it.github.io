@@ -125,7 +125,7 @@ Cells I could not measure are estimates, marked `[estimated]`.
 | Technique | Verdict | Gain | Cost to adopt | Cost to undo | Confidence |
 |---|---|---|---|---|---|
 | Use the tool itself for Android game QA | **On hold** | small — game trees are empty and Windows has no OCR path | 2–5 hours to install and wire up (95% CI) `[estimated]` | cheap (remove with `uv`) | medium — confirmed in code, not on a device |
-| Read ordinary app screens through the tree and tap by text | **Already have it** | — | — | — | my tool uses the tree wherever one exists |
+| Read non-game screens (permission pop-ups, store, settings) through the tree and tap by text | **Adopted (added)** | tap by name instead of guessed coordinates. On the day I added it, the real phone gave 19 home-screen elements in 2.5 s, and tapping "Apps" by its text really opened the drawer. The engine's own warning dialog, shown when the APK lands before its OBB, was readable as text too | two tools plus 9 unit tests, a few hours | cheap | medium — refusing cleanly on a game screen is covered by unit tests only, not yet seen on a device |
 | Attach where each read value came from (`tree` / `pixels`) | **Adopt (principle)** | separates "possibly misread" from "reported exactly" at judgment time | low `[estimated]` | cheap | medium |
 | Telemetry on by default | **Turn it off if used** | — | one command | — | high — confirmed in code |
 
