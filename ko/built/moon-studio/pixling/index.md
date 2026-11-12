@@ -2,7 +2,7 @@
 
 > 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
 
-- 수치: v0.3.4 베타 · Windows · Mac · 무료
+- 수치: v0.3.5 베타 · Windows · Mac · 무료
 - 사람이 보는 화면: https://aitryed.com/ko/built/moon-studio/pixling/
 - 반대 언어: https://aitryed.com/en/built/moon-studio/pixling/index.md
 - 이 사이트 안내(AI용): https://aitryed.com/ko/llms.txt
@@ -15,7 +15,7 @@
 <div class="k-stage"><img class="k-pet" src="/games/pixling/hero.webp" width="720" height="320" alt="포켓몬 체육관 쪽의 피카츄·리자몽과 몬스터볼, 디지몬 경기장 쪽의 파피몬·워그레이몬과 디지바이스 — 깨알 대표 그림"><p class="k-gone" role="status">다 숨었습니다. ₩ 를 한 번 더 누르면 돌아옵니다.</p></div>
 </header>
 <section class="k-getbox" aria-label="받기">
-<div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.4 베타 · 약 86MB · 무료</span></p></div>
+<div class="k-getl"><p class="k-one">일하는 동안 알아서 돌아다니고, 싸우고, 자랍니다. 잡고 키우는 무료 Windows 게임이에요.</p><p class="k-info"><span>v0.3.5 베타 · 약 86MB · 무료</span></p></div>
 <div class="k-getr"><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">무료로 받기<small>Windows</small></a><a class="k-btn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">Mac 받기<small>Apple Silicon · macOS 14+</small></a></div>
 <div class="k-phone">휴대폰판은 작업 중이에요. 지금은 <b>PC에서 이 주소로</b> 와 주세요.<button type="button" id="k-copy" data-done="복사했어요">주소 복사</button></div>
 </section>
@@ -53,7 +53,7 @@
 <h2>받기와 지원 환경</h2>
 <ul class="k-rows">
 <li><div><b>GitHub</b><span>Kkaeal.zip · 약 78MB</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 ↓</a></li>
-<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.4.1 · 약 110MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
+<li><div><b>Mac</b><span>Kkaeal-macOS-arm64.dmg · v0.3.5 · 약 111MB · Apple Silicon(M1 이상) · macOS 14 이상</span></div><a class="k-rowbtn" href="https://github.com/nobles92ts-ship-it/pixling-download-mac/releases/latest/download/Kkaeal-macOS-arm64.dmg">받기 ↓</a></li>
 <li><div><b>itch.io</b><span>위 링크가 안 받아질 때</span></div><a class="k-rowbtn k-ghost" href="https://nobles92ts-ship-it.itch.io/pixling">열기 ↗</a></li>
 </ul>
 <table class="k-env">
@@ -69,7 +69,8 @@
 </table>
 <h3 class="k-h3">판 내역</h3>
 <ul class="k-rows k-vers">
-<li><div><b>v0.3.4 <i>최신</i></b><span>86MB · 2026-11-10 · 리그 결과 바로 보기 · 퀘스트 안내 고침</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.4">바뀐 점 ↗</a></li>
+<li><div><b>v0.3.5 <i>최신</i></b><span>86MB · 2026-11-12 · 영웅의 길 끊김 고침 · 퀘스트 한 줄 목표 · 도감 카드 지금 레벨</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.5">바뀐 점 ↗</a></li>
+<li><div><b>v0.3.4</b><span>86MB · 2026-11-10 · 리그 결과 바로 보기 · 퀘스트 안내 고침</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.4">바뀐 점 ↗</a></li>
 <li><div><b>v0.3.3</b><span>86MB · 2026-11-10 · 천하통일 리그 · 하루 도전표 20장 · 리그 지도</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.3">바뀐 점 ↗</a></li>
 <li><div><b>v0.3.2</b><span>86MB · 2026-11-08 · 랭킹전 한 화면 · 친구 · 공지 게시판</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.2">바뀐 점 ↗</a></li>
 <li><div><b>v0.3.1</b><span>86MB · 2026-11-07 · 자동사냥 ON/OFF · 랭킹 새 시즌 표</span></div><a class="k-link" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.1">바뀐 점 ↗</a></li>
@@ -155,7 +156,8 @@
 
 | 판 | 2026-10-28에 확인한 상태 |
 |---|---|
-| v0.3.4 | 공개 받기 저장소의 최신 배포판(2026-11-10). 받기 안내 기준 · Mac 판은 0.3.4.1(맥 전용 저장소 · 첫 실행 꺼짐 고침) |
+| v0.3.5 | 공개 받기 저장소의 최신 배포판(2026-11-12). 받기 안내 기준 · Mac 판도 0.3.5(맥 전용 저장소) |
+| v0.3.4 | 이전 공개판(2026-11-10) · Mac 판 0.3.4.1(맥 전용 저장소 · 첫 실행 꺼짐 고침) |
 | v0.3.3 | 이전 공개판(2026-11-10) · Mac 판 0.3.3.1(같은 내용 + 맥 첫 화면 안내 고침) |
 | v0.3.2 | 이전 공개판(2026-11-08) |
 | v0.3.1 | 이전 공개판(2026-11-07) |
@@ -173,7 +175,7 @@
 | v0.1.7 | 공개하지 않고 v0.2.0에 합침 |
 | v0.1.6 | 이전 공개판. 이 페이지의 기능 표 기준 |
 
-확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.4)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
+확인은 운영 보드와 [공개 릴리스](https://github.com/nobles92ts-ship-it/pixling-download/releases/tag/v0.3.5)를 대조한 것이다. 이 글을 고치며 게임 회귀 시험을 새로 실행하지 않았다.
 
 ## v2 당시 세 세션의 경계에서 배운 것
 
