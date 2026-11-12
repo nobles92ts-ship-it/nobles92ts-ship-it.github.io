@@ -1,15 +1,15 @@
 # Making games
 
-> Six investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.
+> Seven investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.
 
-- Headline number: 6 pieces · 0 code
+- Headline number: 7 pieces · 0 code
 - Rendered page: https://aitryed.com/en/teardowns/games/
 - Other language: https://aitryed.com/ko/teardowns/games/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**This shelf holds what I found when I opened up other people's games, game-making tools, and game research. Six pieces so far.**
+**This shelf holds what I found when I opened up other people's games, game-making tools, and game research. Seven pieces so far.**
 
 One thing up front. "Taking something apart" usually implies **copying the good bits over**. Here that almost never works.
 
@@ -44,6 +44,10 @@ One item disappeared from the list. **Not building something is also an outcome*
 ## The sixth piece examines the connection to a game-making tool
 
 [Unreal Engine Skills](/en/teardowns/games/unreal-engine-skills/index.md) guides Claude through working inside Unreal Editor. This time the question is where the instructions meet executable engine tools. I ran the startup script; I did not verify an editor connection. The account distinguishes reading, execution, and the integration work still left open.
+
+## The seventh piece is a downloader for reference videos
+
+[yoinks](/en/teardowns/games/yoinks/index.md) is a terminal tool that saves a video link as a file. I did not take its code. I confirmed on a real video that **the size on screen was not the file it downloads**, and wrote that lesson into my own script.
 
 ## The detailed record starts here
 

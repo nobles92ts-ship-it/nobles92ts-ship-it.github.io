@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 223편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 224편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -215,13 +215,14 @@
 - [QA 자동화 · agent-desktop](https://aitryed.com/ko/teardowns/qa/agent-desktop/index.md): AI가 화면 그림 대신 운영체제가 따로 갖고 있는 부품 목록으로 데스크톱 프로그램을 읽고 조작하게 하는 도구입니다. 문서와 구현을 읽은 뒤 제 PC에서 잠깐 돌려 봤고, 읽기는 잘 됐지만 사람과 동시에 쓰기는 입증하지 못해 지웠습니다.
 - [QA 자동화 · 판정은 모델이, 범위는 사람이](https://aitryed.com/ko/teardowns/qa/judge-before-action/index.md): AI 에이전트가 행동하기 직전마다 판정 전용 모델에게 묻자는 QA 엔지니어의 글입니다. 글에 나온 문장을 Jev에 다시 물어보니 «0.57»은 애매함이 아니라 보기가 갈린 값에 가까웠고, 제 자동 테스트에 같은 방법을 대 보니 버그 하나가 묻혔습니다.
 - [QA 자동화 · phone-harness](https://aitryed.com/ko/teardowns/qa/phone-harness/index.md): Claude Code 같은 AI 에이전트가 실제 스마트폰을 직접 보고 누르게 해 주는 오픈소스 도구입니다. 소개 영상과 저장소 코드를 같이 읽었고, 제 일인 게임 화면은 이 도구도 못 읽어서 보류했습니다. 사용 통계가 기본으로 켜져 있다는 점은 코드로 확인했습니다.
-- [게임 만들기](https://aitryed.com/ko/teardowns/games/index.md): 게임과 제작 도구 여섯 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.
+- [게임 만들기](https://aitryed.com/ko/teardowns/games/index.md): 게임과 제작 도구 일곱 편을 읽었습니다. 가져온 코드와 실행해 본 범위를 따로 적고, 연결을 확인하는 순서까지 살펴봅니다.
 - [게임 만들기 · Elemental Sandbox](https://aitryed.com/ko/teardowns/games/elemental-sandbox/index.md): 이펙트가 가장 안 값나갑니다. 가져올 규칙은 하나 — 기록은 무차원으로, 치수는 매 프레임 해석.
 - [게임 만들기 · OpenMMO](https://aitryed.com/ko/teardowns/games/openmmo/index.md): 1인 개발자가 라이브까지 올린 MMORPG. README만 보고 쓴 제 요약이 코드를 열자 두 군데 틀렸습니다.
 - [게임 만들기 · Hunyuan3D-WorldClaw](https://aitryed.com/ko/teardowns/games/worldclaw/index.md): 프롬프트 한 줄로 편집 가능한 3D 오픈월드를 짓는다는 논문. 레포에 코드가 없고 논문에 수치가 없습니다.
 - [게임 만들기 · 진삼국무쌍 오리진](https://aitryed.com/ko/teardowns/games/dynasty-warriors-origins/index.md): 제 게임에 뭘 더 넣을지 보려고 뜯었는데, 안 만들어도 되는 것 하나를 먼저 찾았습니다.
 - [게임 만들기 · 유니티 최근 업데이트](https://aitryed.com/ko/teardowns/games/unity-releases/index.md): 일주일 치를 정직하게 그으니 릴리스 5건이 전부였습니다. 그런데 그 안에 기능 추가가 아니라 이사가 들어 있었습니다.
 - [게임 만들기 · Unreal Engine Skills](https://aitryed.com/ko/teardowns/games/unreal-engine-skills/index.md): Claude가 언리얼 에디터를 다루는 연결 구조를 뜯었습니다. 스킬 3개와 시작 훅을 확인했고, Windows의 프로젝트 밖 탐색에서 시간 초과도 재현했습니다.
+- [게임 만들기 · yoinks — 보여 주는 크기와 받는 파일이 달랐다](https://aitryed.com/ko/teardowns/games/yoinks/index.md): 주소를 붙여넣으면 영상을 파일로 받아 주는 터미널 도구입니다. 코드를 읽고 그 선택 로직을 실제 영상에 돌려 보니, 화면에 적힌 크기와 실제로 받는 파일이 달랐습니다. 도구는 안 들이고, 쓸 만한 세 가지만 제 스크립트로 옮겼습니다.
 
 ## 쓴 글
 

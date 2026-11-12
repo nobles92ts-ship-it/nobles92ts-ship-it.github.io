@@ -3969,6 +3969,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/games/worldclaw/"/>
   </url>
   <url>
+    <loc>https://aitryed.com/en/teardowns/games/yoinks/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/games/yoinks/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/games/yoinks/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/games/yoinks/"/>
+  </url>
+  <url>
+    <loc>https://aitryed.com/ko/teardowns/games/yoinks/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/games/yoinks/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/games/yoinks/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/games/yoinks/"/>
+  </url>
+  <url>
     <loc>https://aitryed.com/en/teardowns/harness/</loc>
     <lastmod>2026-10-30T19:02:56+09:00</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/"/>
