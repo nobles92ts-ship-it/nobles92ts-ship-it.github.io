@@ -1,6 +1,6 @@
 # Claude formal verification — copying finished proofs
 
-> Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other's finished work, and measured it before and after in my game studio's art team.
+> Anthropic had Claude prove that 239 fuzzing entry points in 123 open-source libraries never crash. I took one idea from it, letting agents copy each other's finished work, and measured it before and after in my game studio's art team. Two weeks later I checked the whole studio against it and filled the one gap, auditing tests that were edited to pass.
 
 - Headline number: time −21% · cost flat
 - Rendered page: https://aitryed.com/en/teardowns/qa/formal-verification/
@@ -84,11 +84,33 @@ Total cost, though, barely moved. Reading the copied scripts **raised the input 
 
 I kept the change in the studio, because the same money now buys a faster finish. As a way to save tokens, this run did not prove it.
 
+## Two weeks later, the whole studio had one gap
+
+I held the source up against the whole studio this time, not just the art team. In my studio one AI (the owner) builds a feature and a different AI (the verifier) rules on whether it works.
+
+| Idea in the source | In the studio |
+|---|---|
+| Write down what "correct" means so a machine can decide it | Already there — every work card has pass conditions |
+| Someone other than the builder checks | Already there — the owner's green is not a verdict |
+| Reuse finished work | Already there — a technique library; the verifier's scripts are only 18% new lines |
+| "Proven" is not "bug-free" | Already there — "it's in" and "it works" are measured separately |
+| Audit whatever was changed to get a pass | **Missing** |
+
+The last row is the one that matters. The source warns that a program rewritten to do nothing can be proven safe. Tests are no different. Lower the expected value and anything passes.
+
+A rule did exist. When an owner changes an old test's expectation, they must write down why. **Nobody read those notes.**
+
+So the verifier got one more line. It pulls every old test whose expectation changed between the last build and this one, by machine, and checks each written reason against the actual change. A mismatch is a fail.
+
+Before adding it I tried it on two real builds. A build that rewrote many tests produced 81 lines; one that barely touched tests produced zero.
+
 ## What I could not do
 
 - **Only two pairs.** Even the two A agents differed 1.7× in cost. Anthropic ran 36 tasks three times each. My numbers show a direction, not a size.
 - **No human has judged the art yet.** Passing machine checks means "no defects," nothing more.
 - **I fixed two flaws group B reported before adopting the list** — one job's scripts were scattered across sections, and copied defaults gave no hint they were tuned to a different reference. I have not re-measured with the fixed list.
+- **The live trial of the shared list produced no verdict.** In the two weeks after adoption there were five art jobs, and none found someone else's work through the list. Three copied their own previous round, one skipped the list, one had no matching job. After that, the heavy art work moved to another AI (Codex).
+- **The 81 lines are not 81 cheats.** Most are probably honest edits after a design change. Checking them one by one starts with the next verification.
 
 ## The detailed record starts here
 
@@ -180,3 +202,36 @@ I added one line to the agent definition and the working guide — "before writi
 One thing harvested, and one lesson paid for. **"Writing less" and "paying less" are different numbers.** Looking only at output, I would have reported a 19% saving. Adding the input side pushed it into the noise. Anthropic's 17% is a total-token figure, so I cannot claim I reproduced it here; my tasks are far shorter than proofs, which makes the reading cost a bigger share.
 
 Three things remain: re-measure with the fixed list, add more samples, and have a human judge the art.
+
+## Added 11-12 — mapping the studio system, and auditing edited tests
+
+Two weeks after the art experiment I mapped the source's five ideas onto the whole Moon Studio v3 setup (director, owner, verifier). Files opened: `pipeline.md` (11-05 revision), `game-owner.md`, `game-verifier.md`, the technique library, and the verifier's 87 probe scripts.
+
+| Source | Studio counterpart | Status |
+|---|---|---|
+| Spec first | AC (acceptance conditions) on each card | present |
+| Independent checker (Rocq) | The verifier, a fresh context separate from the builder | present |
+| Proof reuse | Technique library; verifier scripts at 29% new lines overall, 18% in the later half; the art shared list | present |
+| Proven ≠ defect-free | "In ≠ works"; the ★ positive sample (remove the one guarded line, see if the test fails); human visual review | present |
+| Penalize and audit patches | Owner rule 5: change only tests made stale by this card, and record old → new expectation with the reason | **half** — the record was written, but the verifier definition never said to read it |
+
+The ★ positive sample covers only newly written tests and tests whose guarded line changed in this batch. An old test with a lowered expectation fell outside it. That is exactly where reward hacking would come in.
+
+### The line added
+
+Step 4 of `game-verifier.md` got one more scope. Pull every existing test whose assertion or expected value changed in `git diff -U0 <previous build>..<this build> -- tests/ tools/`. For each, check that the result card records "old → new, because of which change", and that the change really made the old value stale. Missing or mismatched → RED (expectation lowered). Deleting a test or turning it into skip/xfail counts the same. Not applied retroactively to a batch already in progress.
+
+### Measured before adding it
+
+The same extraction on two real build pairs of the game, counting removed lines that contain `assert`, `==`, `expect`, `skip` or `xfail`:
+
+| Build diff | Test and tool file changes | Lines pulled |
+|---|---|---|
+| v0.3.4 → v0.3.5 | 69 files · +2,901 / −263 | 81 |
+| v0.3.3 → v0.3.4 | 2 files · +261 / −1 | 0 |
+
+The positive case (heavy test edits) and the negative case (almost none) separate. The 81 lines are audit candidates, though; whether any is a cheat needs a line-by-line check, which begins with the next verification. The pattern is simple, so assertions written in other styles can slip past — a remaining hole.
+
+### State of the shared-list trial
+
+From 10-29 to 11-12 the Claude art team did five jobs. All five result cards kept the "copied from" line, and the list grew from 12 to 15 job sets. Yet no job copied someone else's work through the list: Paladin r13, r13b and r13c copied their own earlier round, the base-body job did not open the list first, and VOL1 had no matching job (background or scenery) in it. Time and touch-up rounds were not recorded. From 11-06 the heavy art work went to Codex, so the Claude-side sample stops growing. Recorded as no verdict; the mechanism stays on.
