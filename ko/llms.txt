@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 224편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 237편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -54,6 +54,19 @@
 - [adb 기반 게임 QA 서버 · 사진 판독기](https://aitryed.com/ko/built/android-qa/judge/index.md): 기록으로 결과를 못 정하는 검사는 사진으로 판정합니다. 그 판정을 규칙이 다시 거르고, 다른 회사의 모델이 한 번 더 봅니다.
 - [문스튜디오](https://aitryed.com/ko/built/moon-studio/index.md): 1인 + AI 게임 스튜디오. 디렉터·기능 오너·새 검증관·지속 아트 세션을 함께 씁니다. 작업 인수와 중복·자원 충돌을 보강한 결과, 실제 게임 전환과 남은 검증을 기록합니다.
 - [문스튜디오 · 깨알](https://aitryed.com/ko/built/moon-studio/pixling/index.md): 모니터 구석에 사는 픽셀 생물을 잡고, 키우고, 체육관에서 싸우게 하는 Windows 게임. 창 없이 일하는 내내 켜 두는 무료 육성 게임입니다.
+- [문스튜디오 · 깨알 · 104화 · 저쪽 하늘](https://aitryed.com/ko/built/moon-studio/pixling/story-104/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 104화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 103화 · 메탈가루몬](https://aitryed.com/ko/built/moon-studio/pixling/story-103/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 103화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 102화 · 워그레이몬](https://aitryed.com/ko/built/moon-studio/pixling/story-102/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 102화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 101화 · 폭풍 속 길](https://aitryed.com/ko/built/moon-studio/pixling/story-101/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 101화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 100화 · 다녀올게](https://aitryed.com/ko/built/moon-studio/pixling/story-100/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 100화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 99화 · 무너지는 고원](https://aitryed.com/ko/built/moon-studio/pixling/story-99/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 99화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 98화 · 네가 정해](https://aitryed.com/ko/built/moon-studio/pixling/story-98/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 98화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 97화 · 뮤](https://aitryed.com/ko/built/moon-studio/pixling/story-97/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 97화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 96화 · 금 간 빛](https://aitryed.com/ko/built/moon-studio/pixling/story-96/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 96화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 95화 · 뮤츠](https://aitryed.com/ko/built/moon-studio/pixling/story-95/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 95화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 94화 · 막아 둔 동굴](https://aitryed.com/ko/built/moon-studio/pixling/story-94/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 94화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 93화 · 스승의 일기](https://aitryed.com/ko/built/moon-studio/pixling/story-93/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 93화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 92화 · 동굴의 그림자](https://aitryed.com/ko/built/moon-studio/pixling/story-92/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 92화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 91화 · 문 앞에서](https://aitryed.com/ko/built/moon-studio/pixling/story-91/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 91화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 90화 · 다크마스터즈](https://aitryed.com/ko/built/moon-studio/pixling/story-90/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 90화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 89화 · 지우 vs 그린](https://aitryed.com/ko/built/moon-studio/pixling/story-89/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 89화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.

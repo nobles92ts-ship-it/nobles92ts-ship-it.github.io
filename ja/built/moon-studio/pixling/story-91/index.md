@@ -37,7 +37,7 @@
 </div>
 
 <div class="story-end">
-<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-90/"><small>← 前の話</small>第90話 · ダークマスターズ</a><span class="sn-next sn-none">次の話はもうすぐ公開します</span></nav>
+<nav class="sn" aria-label="前後の話"><a class="sn-prev" href="/ja/built/moon-studio/pixling/story-90/"><small>← 前の話</small>第90話 · ダークマスターズ</a><a class="sn-next" href="/ja/built/moon-studio/pixling/story-92/"><small>次の話 →</small>第92話 · 洞窟の影</a></nav>
 <a class="story-dl" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Kkaeal をダウンロード (PC · 無料)</a>
 </div>
 
