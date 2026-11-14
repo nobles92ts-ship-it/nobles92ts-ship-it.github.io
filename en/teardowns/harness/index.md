@@ -2,14 +2,14 @@
 
 > What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.
 
-- Headline number: 23 pieces · individual verdicts
+- Headline number: 24 pieces · individual verdicts
 - Rendered page: https://aitryed.com/en/teardowns/harness/
 - Other language: https://aitryed.com/ko/teardowns/harness/index.md
 - Site guide for agents: https://aitryed.com/en/llms.txt
 
 ---
 
-**This shelf examines the machinery around an AI agent. It now holds 23 analyses, with adoption decisions recorded in the individual pieces.**
+**This shelf examines the machinery around an AI agent. It now holds 24 analyses, with adoption decisions recorded in the individual pieces.**
 
 [Harness2](/en/teardowns/harness/harness2/index.md) was added on 2026-10-19. [BrowserSkill](/en/teardowns/harness/browserskill/index.md) is also linked here after being missing from this index. The old “21 pieces, 1 adopted” tally below belongs to its original period; it is not a new count of currently installed tools.
 
@@ -28,7 +28,7 @@ That bundle is the harness. **If the AI is the horse, the harness is the reins a
 
 ## This is the largest shelf here
 
-The ledger contains **23 harness analyses as of 2026-10-19**. I did not design the categories first and fill them; **I filled them and then found that this was the largest shelf.**
+The ledger contains **24 harness analyses as of 2026-11-14**. I did not design the categories first and fill them; **I filled them and then found that this was the largest shelf.**
 
 **This number is where my time went.**
 

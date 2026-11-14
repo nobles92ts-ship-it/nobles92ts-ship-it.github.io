@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 239편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 240편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -177,7 +177,7 @@
 ## 뜯어본 생각
 
 - [뜯어본 생각](https://aitryed.com/ko/teardowns/): 레포·서비스를 분해하고, 무엇을 가져왔는지.
-- [에이전트 하네스](https://aitryed.com/ko/teardowns/harness/index.md): 에이전트를 무엇 위에서 돌릴 것인가. 스물세 편의 분석과 각자의 도입 판정을 모았습니다. 과거 21편 당시의 채택 집계도 그 시점의 기록으로 남겼습니다.
+- [에이전트 하네스](https://aitryed.com/ko/teardowns/harness/index.md): 에이전트를 무엇 위에서 돌릴 것인가. 스물네 편의 분석과 각자의 도입 판정을 모았습니다. 과거 21편 당시의 채택 집계도 그 시점의 기록으로 남겼습니다.
 - [에이전트 하네스 · mattpocock/skills](https://aitryed.com/ko/teardowns/harness/mattpocock-skills/index.md): 스킬 35개는 안 받았습니다. 받은 건 그 스킬들을 어떻게 쓸지 스스로 규정한 문서 한 장이고, 그 자를 대보니 제 스킬 96개 중 1개만 통과했습니다.
 - [에이전트 하네스 · ECC](https://aitryed.com/ko/teardowns/harness/ecc/index.md): 제 설정의 상류 레포를 뜯었습니다. 가져올 건 기능이 아니라 측정 하나였고, 그 측정 도구는 제 환경에서 안 돌았습니다.
 - [에이전트 하네스 · Prime Agent](https://aitryed.com/ko/teardowns/harness/prime-agent/index.md): 코드까지 읽고 기법 넷을 건졌는데, 그중 1등은 닷새 전 제가 이미 적어 둔 것이었습니다.
@@ -206,6 +206,7 @@
 - [에이전트 하네스 · 당근 SEED](https://aitryed.com/ko/teardowns/harness/karrot-seed/index.md): 디자인 시스템은 제 일과 무관했습니다. 값어치는 레포를 에이전트가 읽을 수 있게 정리한 방식에 있었습니다.
 - [에이전트 하네스 · pstack](https://aitryed.com/ko/teardowns/harness/pstack/index.md): 한 개발자의 일하는 습관을 AI용 설명서로 옮긴 스킬 묶음입니다. 통째로는 안 들였고, 「직접 켜서 확인하는 법」을 만드는 스킬 하나만 후보로 남겼습니다.
 - [에이전트 하네스 · terminal-mac — 맥북 안에 가상 맥을 띄워 AI 에게 맡긴다](https://aitryed.com/ko/teardowns/harness/terminal-mac/index.md): 맥북 안에 가상 맥 한 대를 띄우고 AI 가 그 화면을 보며 클릭·입력하게 하는 오픈소스입니다. 코드를 읽어 보니 통신 방식은 단단했고, 저자도 아직 실제로 켜 본 기록이 없었습니다. 들이지 않고 맥북에서 한 번 켜 볼 후보로 남겼습니다.
+- [에이전트 하네스 · 두 회사의 코딩 에이전트, 한 주의 변경 기록을 세어 봤다](https://aitryed.com/ko/teardowns/harness/release-notes-1114/index.md): Claude Code 와 Codex 의 릴리스 노트를 끝까지 읽고 항목을 셌습니다. 앞 700자만 읽은 첫 요약은 전체의 1.7%였고, 보안 줄은 그 바깥에 있었습니다.
 - [컨텍스트와 기억](https://aitryed.com/ko/teardowns/memory/index.md): 무엇을 올려보내고 무엇을 남길 것인가. 열한 편 다 코드는 한 줄도 안 넘어왔고 규칙만 남았습니다.
 - [컨텍스트와 기억 · 벡터DB 없는 RAG](https://aitryed.com/ko/teardowns/memory/rag-without-vectors/index.md): 구조적 주장은 전부 맞았고, 틀린 건 전부 구체 숫자였습니다 — 2차 정리물의 전형적 실패 지점입니다.
 - [컨텍스트와 기억 · Headroom](https://aitryed.com/ko/teardowns/memory/headroom/index.md): 도입 검토였는데, 제 환경을 실제로 재보니 이 도구가 줄여 줄 대상이 존재하지 않았습니다.

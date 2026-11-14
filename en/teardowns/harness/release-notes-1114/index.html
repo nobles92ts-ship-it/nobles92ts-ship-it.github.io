@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Two vendors&#39; coding agents, one week of changelogs, counted — Agent harnesses</title><meta name="description" content="I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="Two vendors' coding agents, one week of changelogs, counted — Agent harnesses"><meta property="og:description" content="I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it."><meta property="og:url" content="https://aitryed.com/en/teardowns/harness/release-notes-1114/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Two vendors' coding agents, one week of changelogs, counted — Agent harnesses"><meta name="twitter:description" content="I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/harness/release-notes-1114/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/harness/release-notes-1114/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/release-notes-1114/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/release-notes-1114/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/release-notes-1114/"><link rel="stylesheet" href="/_astro/Shell.DHI-UaJT.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/together/" data-sec="together"><span class="n">04</span><span>Written together</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/release-notes-1114/" hreflang="ko">한국어</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">24 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">11 pieces · prior 4.5 / 7</span></span><span class="s">Eleven investigations into automation, cause-analysis, desktop- and phone-control tools, one formal-verification study and an essay on judgment models. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">7 pieces · 0 code</span></span><span class="s">Seven investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a><a href="/en/teardowns/harness/eli5/"><span class="t"><span>eli5 — a plugin with zero lines of code</span><span class="kpi">865 bytes · 1 run</span></span><span class="s">One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.</span></a><a href="/en/teardowns/harness/browserskill/"><span class="t"><span>BrowserSkill — lending an agent my browser</span><span class="kpi">on hold · 2 harvested</span></span><span class="s">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</span></a><a href="/en/teardowns/harness/harness2/"><span class="t"><span>Harness2</span><span class="kpi">Records how it improves</span></span><span class="s">A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.</span></a><a href="/en/teardowns/harness/attention-span/"><span class="t"><span>attention-span — the note that told Claude to bold line one, and what the number counted</span><span class="kpi">43% shorter · line one 3→75%</span></span><span class="s">Three style notes that make Claude&#39;s answers shorter and clearer up front. Recounting the README&#39;s numbers from the raw data, the 43% length cut held up, but &quot;the answer is in line one, 3% to 75%&quot; turned out to count whether line one starts in bold.</span></a><a href="/en/teardowns/harness/task-observer/"><span class="t"><span>task-observer — the skill that improves your skills but never edits them</span><span class="kpi">103 credited · 45.6KB core</span></span><span class="s">A skill that jots down what you correct while you work and, once a week, hands you proposed edits to your skills. The video sold it as a token saver. The repo is not one, and it reads 45.6KB at the start of every session.</span></a><a href="/en/teardowns/harness/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/harness/pstack/"><span class="t"><span>pstack</span><span class="kpi">61 skills · 1 candidate</span></span><span class="s">One developer&#39;s working habits, written down as a manual for AI. I didn&#39;t adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;.</span></a><a href="/en/teardowns/harness/terminal-mac/"><span class="t"><span>terminal-mac — a virtual Mac inside your Mac, driven by an AI</span><span class="kpi">candidate · 0 runs</span></span><span class="s">An open-source tool that boots a virtual Mac inside a Mac and lets an AI look at its screen, click and type. The messaging design held up when I read the code, but the author has not run it live either. I did not install it; it stays a candidate to try once on a MacBook.</span></a><a href="/en/teardowns/harness/release-notes-1114/" aria-current="page"><span class="t"><span>Two vendors&#39; coding agents, one week of changelogs, counted</span><span class="kpi">294 items · 52% fixes</span></span><span class="s">I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>Two vendors&#39; coding agents, one week of changelogs, counted</h1><p class="sum">I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it.</p><div class="meta"><span>294 items · 52% fixes</span><a class="src" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.323" target="_blank" rel="noopener">Claude Code v2.1.323 release — github.com/anthropics/claude-code/releases/tag/v2.1.323 ↗</a><a class="src" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.325" target="_blank" rel="noopener">Claude Code v2.1.325 release — github.com/anthropics/claude-code/releases/tag/v2.1.325 ↗</a><a class="src" href="https://github.com/openai/codex/releases/tag/rust-v0.169.0" target="_blank" rel="noopener">Codex rust-v0.169.0 release — github.com/openai/codex/releases/tag/rust-v0.169.0 ↗</a><a class="src" href="https://code.claude.com/docs/en/code-mode" target="_blank" rel="noopener">Claude Code Code Mode docs — code.claude.com/docs/en/code-mode ↗</a><a class="src" href="https://github.com/anthropics/anthropic-sdk-python/releases" target="_blank" rel="noopener">Anthropic Python SDK releases — github.com/anthropics/anthropic-sdk-python/releases ↗</a><a class="src" href="https://github.com/openai/openai-python/releases" target="_blank" rel="noopener">OpenAI Python SDK releases — github.com/openai/openai-python/releases ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#what-is-a-changelog">What is a changelog</a><a href="#what-the-count-showed">What the count showed</a><a href="#the-two-vendors-do-not-write-notes-the-same-way">The two vendors do not write notes the same way</a><a href="#what-my-first-summary-missed">What my first summary missed</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-i-counted-and-how">What I counted, and how</a><a href="#what-actually-happened-that-week">What actually happened that week</a><a href="#a-quick-look-at-the-sdks">A quick look at the SDKs</a><a href="#what-it-cost-me-to-learn">What it cost me to learn</a><a href="#what-i-did-not-do">What I did not do</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>Claude Code and Codex are programs that let an AI read and edit code on your own computer. I read the full changelogs both vendors published in the second week of November and counted the lines. The headline features turned out to be a thin slice.</strong></p>
+<h2 id="what-is-a-changelog">What is a changelog</h2>
+<p>Every time a program ships a new version, its makers list what changed. That list is called release notes. Think of a building’s notice board: the elevator replacement gets one line, and the rest is dozens of small repairs.</p>
+<h2 id="what-the-count-showed">What the count showed</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Claude Code v2.1.323</th>
+<th>Codex 0.169.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All items</td>
+<td>294</td>
+<td>259</td>
+</tr>
+<tr>
+<td>New things</td>
+<td>16 (5%)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Fixes</td>
+<td>154 (52%)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>The rest</td>
+<td>changes, improvements, other</td>
+<td>docs 2, chores 2, commit list 243</td>
+</tr>
+</tbody>
+</table>
+<p><strong>New features are about 5%. Fixes are half.</strong> The news only ever covers that 5%.</p>
+<h2 id="the-two-vendors-do-not-write-notes-the-same-way">The two vendors do not write notes the same way</h2>
+<p>Claude Code puts every line into one flat list. Codex puts twelve hand-picked lines on top (six features, six fixes) and attaches 243 commit titles below them.</p>
+<p>So counting items to see who works harder gives a wrong answer. The two numbers come from different rulers.</p>
+<h2 id="what-my-first-summary-missed">What my first summary missed</h2>
+<p>I first pulled only the opening 700 characters of each recent release. For v2.1.323 the full text is 41,650 bytes, so I had read <strong>1.7%</strong> of it. New features sit at the top and were caught. The lines about closing sandbox gaps sit in the middle and were missed entirely.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>A release note is easiest to read at the top and least representative there. This entry is a line-by-line tally of notes downloaded from public repositories on 2026-11-14. It does not declare either tool better.</p>
+<h2 id="what-i-counted-and-how">What I counted, and how</h2>
+<p>Three documents: Claude Code v2.1.323 (11-12), v2.1.325 (11-13), and Codex rust-v0.169.0 (11-13). One line starting with <code>- </code> is one item.</p>
+<p>For Claude Code I sorted by the first word of each line. <code>Added</code> counts as an addition, <code>Fixed</code> as a fix, and <code>Changed</code>, <code>Improved</code>, <code>Renamed</code>, <code>Removed</code> or <code>Deprecated</code> as a change. That is a <strong>first-word match</strong>, not a judgment from reading each sentence.</p>
+<table>
+<thead>
+<tr>
+<th>Claude Code</th>
+<th>Total</th>
+<th>Added</th>
+<th>Fixed</th>
+<th>Changed</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v2.1.323</td>
+<td>294</td>
+<td>16</td>
+<td>154</td>
+<td>62</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v2.1.325</td>
+<td>139</td>
+<td>3</td>
+<td>79</td>
+<td>40</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<p>Fixes are 52% and 57%. Both clear half, and that is as far as two documents let me go. It is too small a sample to say what a typical release looks like.</p>
+<p>Codex 0.169.0 is built differently: New Features 6, Bug Fixes 6, Documentation 2, Chores 2, then a separate Changelog of 243 lines. Only the first sixteen are written as sentences. The other 243 are commit titles, so its “6 added” is not comparable with the Claude Code figure.</p>
+<h2 id="what-actually-happened-that-week">What actually happened that week</h2>
+<p>Read for content rather than count, two things stood out.</p>
+<p><strong>Sandbox lines were frequent.</strong> The word <code>sandbox</code> appears 14 times in v2.1.323 and 11 times in v2.1.325. It is a keyword match, so not every hit is a security fix. Still, v2.1.325 opens with a fix for how zstd-compressed responses are decoded, and another line tells Claude when an isolated checkout cannot update protected files such as <code>.claude</code>.</p>
+<p><strong>The extension model got a contract.</strong> v2.1.323 lets a plugin declare which Claude Code versions it supports under <code>engines["claude-code"]</code>, and blocks install, update and load outside that range. The same version adds <strong>Code Mode</strong>, an experimental opt-in where Claude writes JavaScript to call its tools instead of calling them one by one.</p>
+<p>Codex 0.169.0 leads with terminal features: several side-chat tabs, searching older tasks, folding finished activity, adding a model provider from the terminal, and handling cloud conversations from the terminal.</p>
+<h2 id="a-quick-look-at-the-sdks">A quick look at the SDKs</h2>
+<p>In November the Python SDKs reached v2.5 to v2.8 on Anthropic’s side and v3.48 to v3.51 on OpenAI’s. Many Anthropic fixes reject empty values, <code>.</code> and <code>..</code> in cloud request paths such as Bedrock and Vertex. OpenAI added typed async function tools and agent-session options. I read only the release titles and the opening of each for these.</p>
+<h2 id="what-it-cost-me-to-learn">What it cost me to learn</h2>
+<p><strong>A summary built from the top of a document leans toward new features.</strong> Release notes put the newest thing first, so the first 700 characters are structurally the most novel. Only after counting the full text did I see that my first summary had skipped about half of the fix lines.</p>
+<p><strong>Item counts measure writing habits, not effort.</strong> You cannot read 294 against 259 as workload. One is a flat list. The other is twelve curated lines plus a commit dump.</p>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<ul>
+<li>I did not read and classify each line. First-word matching and keyword counts are all I have, and 14 mentions of <code>sandbox</code> does not mean 14 security fixes.</li>
+<li>Two Claude Code releases and one Codex release are the whole sample. “Claude Code is half fixes” is not a claim I can make.</li>
+<li>I counted Codex’s 243 commit lines but did not classify what they say.</li>
+<li>The 0.171.0 alpha releases have a title and no body, so there was nothing to read.</li>
+<li>Model quality and real-world speed are outside this entry. A changelog does not say.</li>
+<li>I did not open any source diff. Nothing the notes call “fixed” was checked against the code.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<p><strong>Nothing to adopt.</strong> I already use both tools. What this leaves is one reading habit: skip past the new features at the top and scan the middle for <strong>fix lines that mention isolation, permissions or tokens</strong>. You find new features by using the tool, but you only hear about a closed hole if somebody tells you.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/harness/release-notes-1114/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const fb = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+const dl = "Downloaded {n} times so far";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
