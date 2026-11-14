@@ -1,6 +1,6 @@
 # AI TRY — English
 
-> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 238 written pages in all, and a machine-collected AI news feed.
+> A personal site by Moon Hyeonggeun, a QA engineer of twelve years who does not write the code — the AI does — and spends his time finding where it breaks. It holds tools he built and runs daily, teardowns of other people's repos and services, 239 written pages in all, and a machine-collected AI news feed.
 
 Before reading the list —
 
@@ -162,6 +162,7 @@ Ep.101 · Path Through the Storm](https://aitryed.com/en/built/moon-studio/pixli
 - [MOON Studio · Kkaeal · Ep.3 · The Way Home](https://aitryed.com/en/built/moon-studio/pixling/story-3/index.md): Episode 3 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
 - [MOON Studio · Kkaeal · Ep.2 · Digimon VS Pokémon](https://aitryed.com/en/built/moon-studio/pixling/story-2/index.md): Episode 2 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
 - [MOON Studio · Kkaeal · Ep.1 · Where Are We?](https://aitryed.com/en/built/moon-studio/pixling/story-1/index.md): Episode 1 of the ongoing comic "Fell Into the Pokémon World", told in a vertical scroll with the creatures of Kkaeal.
+- [MOON Studio · Kkaeal · Privacy policy](https://aitryed.com/en/built/moon-studio/pixling/privacy/index.md): What MOON Studio collects from Kkaeal players who link a Google account, where it is kept, and how to delete it.
 - [MOON Studio · Wuxia Unity prototype](https://aitryed.com/en/built/moon-studio/wuxia/index.md): Design, implementation, and verification records from the Unity prototype with 44 forms and 26 artifacts. Its design also informed MukGeom and ManInJeok.
 - [MOON Studio · Wuxia Unity prototype · Design](https://aitryed.com/en/built/moon-studio/wuxia/design/index.md): Turn "win by reading the pattern" into a rule and telegraph duration becomes the only dial you have.
 - [MOON Studio · Wuxia Unity prototype · Spec](https://aitryed.com/en/built/moon-studio/wuxia/spec/index.md): The rules from the design page as actual artifact — four lineages, the matchup cycle, three verdict constants, real telegraph durations.

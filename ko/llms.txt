@@ -1,6 +1,6 @@
 # AI TRY — 한국어
 
-> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 238편과 매일 아침 기계가 모으는 AI 소식.
+> QA 12년차인 문형근이 「코드는 AI가 쓰고, 나는 어디서 깨지는지를 찾는다」는 방식으로 만든 것들을 모아 둔 개인 사이트. 직접 만들어 매일 돌리는 도구, 남의 레포·서비스를 뜯어본 기록, 커밋 메시지로는 안 되던 글 239편과 매일 아침 기계가 모으는 AI 소식.
 
 목록을 읽기 전에 알아야 할 것 —
 
@@ -158,6 +158,7 @@
 - [문스튜디오 · 깨알 · 3화 · 돌아가는 길](https://aitryed.com/ko/built/moon-studio/pixling/story-3/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 3화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 2화 · 디지몬 VS 포켓몬](https://aitryed.com/ko/built/moon-studio/pixling/story-2/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 2화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
 - [문스튜디오 · 깨알 · 1화 · 여긴 어디야](https://aitryed.com/ko/built/moon-studio/pixling/story-1/index.md): 연재 만화 「떨어졌다, 포켓몬 세계」 1화. 깨알 게임의 생물들이 주인공인 세로 만화입니다.
+- [문스튜디오 · 깨알 · 개인정보 처리방침](https://aitryed.com/ko/built/moon-studio/pixling/privacy/index.md): 깨알 게임에서 구글 계정 연결을 한 분의 정보를 문스튜디오가 무엇을 받고, 어디에 두고, 어떻게 지우는지 적은 개인정보 처리방침입니다.
 - [문스튜디오 · 무협 Unity 원형](https://aitryed.com/ko/built/moon-studio/wuxia/index.md): 44초식·26신물의 Unity 원형에서 남긴 설계·구현·검증 기록입니다. 이 기획은 묵검과 만인적의 바탕으로도 이어졌습니다.
 - [문스튜디오 · 무협 Unity 원형 · 설계](https://aitryed.com/ko/built/moon-studio/wuxia/design/index.md): 패턴을 읽어 이긴다는 말을 규칙으로 옮기면, 전조 시간이 유일한 손잡이가 됩니다.
 - [문스튜디오 · 무협 Unity 원형 · 기획](https://aitryed.com/ko/built/moon-studio/wuxia/spec/index.md): 설계에서 정한 규칙의 실물. 계열 넷과 상성, 판정 세 수치, 전조 시간까지 정해진 값 그대로.

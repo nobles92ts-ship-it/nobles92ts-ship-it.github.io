@@ -130,6 +130,7 @@
 <div class="k-gauge"><p class="k-gh">Try it on this page. This box counts the same way, but it isn't the game, and it sends nothing anywhere.</p><div class="k-nums"><div><b id="k-nk">0</b><span>Key presses</span></div><div><b id="k-nm">0</b><span>Mouse clicks</span></div><div><b id="k-nx">0</b><span>Experience</span></div></div></div>
 </div></details>
 <details><summary>Credits and copyright</summary><div class="k-body"><p>A non-commercial fan game, not an official game. The Digimon sprites belong to Bandai; the Pokémon sprites belong to Nintendo, Game Freak and Creatures. The full notice is in the in-game credits window and in <code>OUTPUT_NOTICE.md</code> inside the zip.</p></div></details>
+<p class="k-note"><a class="k-link" href="/en/built/moon-studio/pixling/privacy/">Privacy policy</a> — how we handle the information of players who link a Google account.</p>
 </section>
 <div class="k-bar">
 <a class="k-get" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">Download · free</a>

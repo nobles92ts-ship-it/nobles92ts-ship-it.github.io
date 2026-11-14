@@ -130,6 +130,7 @@
 <div class="k-gauge"><p class="k-gh">지금 이 화면에서 눌러 보세요. 같은 셈법의 시험 칸이고, 게임 화면은 아닙니다. 어디로도 보내지 않습니다.</p><div class="k-nums"><div><b id="k-nk">0</b><span>키 누른 횟수</span></div><div><b id="k-nm">0</b><span>마우스 누른 횟수</span></div><div><b id="k-nx">0</b><span>경험치</span></div></div></div>
 </div></details>
 <details><summary>출처와 저작권</summary><div class="k-body"><p>비영리 팬메이드입니다. 공식 게임이 아닙니다. 디지몬 도트는 반다이, 포켓몬 도트는 닌텐도·게임프리크·크리처스의 것입니다. 전문은 게임 안 「출처와 저작권」 창과 zip 안의 <code>OUTPUT_NOTICE.md</code> 에 있습니다.</p></div></details>
+<p class="k-note"><a class="k-link" href="/ko/built/moon-studio/pixling/privacy/">개인정보 처리방침</a> — 구글 계정 연결을 한 분의 정보를 어떻게 다루는지 적었습니다.</p>
 </section>
 <div class="k-bar">
 <a class="k-get" href="https://github.com/nobles92ts-ship-it/pixling-download/releases/latest/download/Kkaeal.zip">받기 · 무료</a>
