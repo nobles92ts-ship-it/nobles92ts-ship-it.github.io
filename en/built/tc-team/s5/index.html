@@ -194,7 +194,7 @@
 <p>Clear all four and a completion marker file gets written. The design intent was: <strong>if that file is absent, this stage runs again.</strong></p>
 <p>But no code checks whether the file exists (as of 2026-09) — the only place it appears in the chain is the line that creates it. So resuming from S6 or S7 skips the S5 gates without looking at the marker (flagged in the 2026-09-24 review, unfixed). The paragraph below still holds as intent; until something reads the file, it is a promise rather than a mechanism.</p>
 <p>That’s what makes resuming from the middle possible. An exit code dies with the process; a file doesn’t. In a pipeline running unattended, writing it to disk is the only way to know “this much is done.”</p>
-</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/built/tc-team/s5/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/built/tc-team/s5/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><a href="mailto:moonstudio@aitryed.com">moonstudio@aitryed.com</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
 const fb = "en";
 const none = "nothing found";
 
