@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CHIMERA — a voice built from a simulated throat, with no recordings — Agent harnesses</title><meta name="description" content="A short video called CHIMERA an &quot;AI vocal model.&quot; I opened the source. No AI makes the sound. The program calculates how air moves through lungs, vocal folds, mouth and nose, and AI worked on tuning the result."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:site_name" content="AI TRY"><meta property="og:title" content="CHIMERA — a voice built from a simulated throat, with no recordings — Agent harnesses"><meta property="og:description" content="A short video called CHIMERA an &quot;AI vocal model.&quot; I opened the source. No AI makes the sound. The program calculates how air moves through lungs, vocal folds, mouth and nose, and AI worked on tuning the result."><meta property="og:url" content="https://aitryed.com/en/teardowns/harness/chimera-vocal-synth/"><meta property="og:image" content="https://aitryed.com/og.en.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="AI TRY — I'm in bed with an AI."><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CHIMERA — a voice built from a simulated throat, with no recordings — Agent harnesses"><meta name="twitter:description" content="A short video called CHIMERA an &quot;AI vocal model.&quot; I opened the source. No AI makes the sound. The program calculates how air moves through lungs, vocal folds, mouth and nose, and AI worked on tuning the result."><meta name="twitter:image" content="https://aitryed.com/og.en.png"><link rel="canonical" href="https://aitryed.com/en/teardowns/harness/chimera-vocal-synth/"><link rel="alternate" type="text/markdown" href="https://aitryed.com/en/teardowns/harness/chimera-vocal-synth/index.md"><link rel="describedby" href="https://aitryed.com/en/llms.txt"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="alternate" hreflang="en" href="https://aitryed.com/en/teardowns/harness/chimera-vocal-synth/"><link rel="alternate" hreflang="ko" href="https://aitryed.com/ko/teardowns/harness/chimera-vocal-synth/"><link rel="alternate" hreflang="x-default" href="https://aitryed.com/en/teardowns/harness/chimera-vocal-synth/"><link rel="stylesheet" href="/_astro/Shell.DHI-UaJT.css"></head><body data-lang="en"><div class="shell" data-depth="2" data-sec="teardowns" data-cols="4"><nav class="col col-1"><div class="find" hidden><input type="search" id="q" autocomplete="off" spellcheck="false" placeholder="Search" aria-label="Search"><div class="fres" id="fres" role="listbox" aria-label="Search"></div></div><div class="secnav"><a href="/en/"><span class="n">00</span><span>Home</span></a><a href="/en/built/" data-sec="built"><span class="n">01</span><span>My tools</span></a><a href="/en/teardowns/" data-sec="teardowns" aria-current="page"><span class="n">02</span><span>What I took apart</span></a><a href="/en/writing/" data-sec="writing"><span class="n">03</span><span>Things I wrote</span></a><a href="/en/together/" data-sec="together"><span class="n">04</span><span>Written together</span></a><a href="/en/ai-issue/" data-sec="ai-issue"><span class="n">05</span><span>AI news today</span></a></div><div class="foot"><a class="lang" href="/ko/teardowns/harness/chimera-vocal-synth/" hreflang="ko">한국어</a><a class="lang" href="/ja/built/moon-studio/pixling/" hreflang="ja">日本語</a><a class="gh" href="https://github.com/nobles92ts-ship-it" target="_blank" rel="noopener">GitHub ↗</a></div></nav><nav class="col col-2"><div class="col-head">02 What I took apart</div><div class="plist"><a href="/en/teardowns/harness/" aria-current="page"><span class="t"><span>Agent harnesses</span><span class="kpi">24 pieces · individual verdicts</span></span><span class="s">What to run an agent on top of. Twenty-three analyses with individual adoption decisions; the old twenty-one-piece adoption tally remains a historical record.</span></a><a href="/en/teardowns/memory/"><span class="t"><span>Context and memory</span><span class="kpi">11 written · 0 code</span></span><span class="s">What goes up to the model and what stays outside. Across all eleven, not one line of code crossed over — only rules did.</span></a><a href="/en/teardowns/qa/"><span class="t"><span>QA automation</span><span class="kpi">11 pieces · prior 4.5 / 7</span></span><span class="s">Eleven investigations into automation, cause-analysis, desktop- and phone-control tools, one formal-verification study and an essay on judgment models. The earlier adoption ledger stays separate from the REA static probes and the experiment borrowed from formal verification.</span></a><a href="/en/teardowns/games/"><span class="t"><span>Making games</span><span class="kpi">7 pieces · 0 code</span></span><span class="s">Seven investigations into games and their tools. Code adoption, executed checks, and proposed integrations are recorded separately.</span></a></div></nav><nav class="col col-s"><div class="col-head">Subjects</div><div class="plist"><a href="/en/teardowns/harness/mattpocock-skills/"><span class="t"><span>mattpocock/skills</span><span class="kpi">1 of 96</span></span><span class="s">I didn&#39;t take the 35 skills. I took the one document that defines how to use them — and measured against it, 1 of my 96 skills passed.</span></a><a href="/en/teardowns/harness/ecc/"><span class="t"><span>ECC</span><span class="kpi">1 of 285</span></span><span class="s">I took apart the upstream of my own configuration. What was worth taking wasn&#39;t a feature but a measurement — and that measuring tool wouldn&#39;t run here.</span></a><a href="/en/teardowns/harness/prime-agent/"><span class="t"><span>Prime Agent</span><span class="kpi">top find was a rediscovery</span></span><span class="s">I read the code and came away with four techniques. The best of them was something I&#39;d written down myself five days earlier.</span></a><a href="/en/teardowns/harness/clawd-on-desk/"><span class="t"><span>Clawd on Desk</span><span class="kpi">1.5 net of 7</span></span><span class="s">I tried to justify installing it with measurements and failed. The record says so, in place.</span></a><a href="/en/teardowns/harness/odysseus/"><span class="t"><span>Odysseus</span><span class="kpi">1 of 5 disciplines</span></span><span class="s">I went looking for the enforcement point behind each of the five disciplines the docs declare. One of them existed.</span></a><a href="/en/teardowns/harness/ponytail/"><span class="t"><span>ponytail</span><span class="kpi">1 line of 4</span></span><span class="s">Four lines shortlisted out of a rule set with 92,000 stars; one held up. The more valuable finding came from my own rules.</span></a><a href="/en/teardowns/harness/omniroute/"><span class="t"><span>OmniRoute</span><span class="kpi">7 techniques → 0</span></span><span class="s">I didn&#39;t skip this 41,856-star gateway over performance. Its tier 1 is my own subscription accounts, disguised and sent upstream.</span></a><a href="/en/teardowns/harness/session-messaging/"><span class="t"><span>Cross-session messaging</span><span class="kpi">0 sockets · already live</span></span><span class="s">The mechanism the video dug up doesn&#39;t exist on my OS. The capability I actually wanted was already on, and the real failure mode was misdelivery, not security.</span></a><a href="/en/teardowns/harness/buzz-groupchat/"><span class="t"><span>Buzz group chat</span><span class="kpi">1 of 2 demos</span></span><span class="s">Slack where the channel members are people and local CLIs. Two demos, one worked — and the presenter admitting which one didn&#39;t is what this video is worth.</span></a><a href="/en/teardowns/harness/four-plugins/"><span class="t"><span>Four plugins</span><span class="kpi">2 of 4 already rejected</span></span><span class="s">A 44-second recommendation reel. Two of the four I had already taken apart and rejected, and the counterexample sat inside the maker&#39;s own benchmark table.</span></a><a href="/en/teardowns/harness/meta-prompting/"><span class="t"><span>Meta-prompting</span><span class="kpi">3 steps · 0 gates</span></span><span class="s">Don&#39;t write a good prompt — hand over all the raw material and let the AI carve it down. Nowhere in the three steps is the result measured.</span></a><a href="/en/teardowns/harness/fable-field-guide/"><span class="t"><span>A field guide to Fable</span><span class="kpi">6 techniques · 3 new</span></span><span class="s">Someone from the company that built the model, explaining how to use it. Which makes the six techniques trustworthy and the closing claim the least trustworthy part.</span></a><a href="/en/teardowns/harness/superpowers/"><span class="t"><span>obra/superpowers</span><span class="kpi">3 takeaways → 1</span></span><span class="s">I didn&#39;t adopt the framework. But the real output of this teardown wasn&#39;t a takeaway — it was watching two of my own conclusions collapse under the method the project itself prescribes.</span></a><a href="/en/teardowns/harness/aside/"><span class="t"><span>ASIDE</span><span class="kpi">rejected · 5 triggers</span></span><span class="s">It won&#39;t install on my machines. That should have been a one-line rejection, except the &quot;no plans&quot; part of my own judgement fell apart on three lines of changelog.</span></a><a href="/en/teardowns/harness/payg-image-routing/"><span class="t"><span>One skill, ad images, pay-as-you-go routing</span><span class="kpi">1 takeaway · 4 refutations</span></span><span class="s">The skill design is a well-built real thing. The conclusion in the title, though, falls apart on a table the video itself puts on screen.</span></a><a href="/en/teardowns/harness/deepseek-harness/"><span class="t"><span>DeepSeek Harness</span><span class="kpi">5 harvests → 0</span></span><span class="s">I set out to harvest five techniques from a 181,214-star repo, and every one of them died on two skills I had installed and never once run.</span></a><a href="/en/teardowns/harness/ip-as-logo-skill/"><span class="t"><span>ip-as-logo</span><span class="kpi">7 techniques → 0</span></span><span class="s">A skill with not one line of code. One of the two pillars I took for its core invention lives only in a file the agent never reads, and the other was a number that flipped four times in 45 hours.</span></a><a href="/en/teardowns/harness/anti-slop/"><span class="t"><span>anti-slop</span><span class="kpi">15 rules → 0</span></span><span class="s">I ran 15 rules over all of my own code, got 27 hits, and decided to fix none of them. Looking for somewhere to attach them instead, I found that my own leak-defence gate can switch itself off in silence.</span></a><a href="/en/teardowns/harness/dsh-better-sidebar/"><span class="t"><span>DSH better-sidebar</span><span class="kpi">4 takeaways → 1</span></span><span class="s">The headline number — a ~325KB core — broke under measurement. But the gate I was using to judge someone else&#39;s ungated repository had never once been committed in my own.</span></a><a href="/en/teardowns/harness/cumora/"><span class="t"><span>cumora</span><span class="kpi">2 takeaways → 0</span></span><span class="s">The only hold among eight. The adversarial pass found that my own deploy was leaking too — and both the diagnosis and the prescription were wrong.</span></a><a href="/en/teardowns/harness/eli5/"><span class="t"><span>eli5 — a plugin with zero lines of code</span><span class="kpi">865 bytes · 1 run</span></span><span class="s">One instruction turned into a plugin — explain it to me like I am five. Opened up, it is three files, 865 bytes, zero lines of executable code — and in 21 days I called it exactly once.</span></a><a href="/en/teardowns/harness/browserskill/"><span class="t"><span>BrowserSkill — lending an agent my browser</span><span class="kpi">on hold · 2 harvested</span></span><span class="s">Tencent&#39;s tool lets an agent drive the Chromium I am already signed into. The design is good. Then I opened the source and found the doorman checking the costume instead of the face — and a comment where the authors admit it.</span></a><a href="/en/teardowns/harness/harness2/"><span class="t"><span>Harness2</span><span class="kpi">Records how it improves</span></span><span class="s">A research framework that changes prompts, tools, and working procedures while keeping model weights fixed. I traced its two improvement loops and paper claims, then tested where the unmodified Windows demo stops.</span></a><a href="/en/teardowns/harness/attention-span/"><span class="t"><span>attention-span — the note that told Claude to bold line one, and what the number counted</span><span class="kpi">43% shorter · line one 3→75%</span></span><span class="s">Three style notes that make Claude&#39;s answers shorter and clearer up front. Recounting the README&#39;s numbers from the raw data, the 43% length cut held up, but &quot;the answer is in line one, 3% to 75%&quot; turned out to count whether line one starts in bold.</span></a><a href="/en/teardowns/harness/task-observer/"><span class="t"><span>task-observer — the skill that improves your skills but never edits them</span><span class="kpi">103 credited · 45.6KB core</span></span><span class="s">A skill that jots down what you correct while you work and, once a week, hands you proposed edits to your skills. The video sold it as a token saver. The repo is not one, and it reads 45.6KB at the start of every session.</span></a><a href="/en/teardowns/harness/karrot-seed/"><span class="t"><span>Karrot SEED</span><span class="kpi">7 → 2</span></span><span class="s">The design system had nothing to do with my work. The value was in how the repository is arranged so agents can read it.</span></a><a href="/en/teardowns/harness/pstack/"><span class="t"><span>pstack</span><span class="kpi">61 skills · 1 candidate</span></span><span class="s">One developer&#39;s working habits, written down as a manual for AI. I didn&#39;t adopt the bundle — I kept one skill as a candidate, the one that writes &quot;how to launch it and check it yourself&quot;.</span></a><a href="/en/teardowns/harness/terminal-mac/"><span class="t"><span>terminal-mac — a virtual Mac inside your Mac, driven by an AI</span><span class="kpi">candidate · 0 runs</span></span><span class="s">An open-source tool that boots a virtual Mac inside a Mac and lets an AI look at its screen, click and type. The messaging design held up when I read the code, but the author has not run it live either. I did not install it; it stays a candidate to try once on a MacBook.</span></a><a href="/en/teardowns/harness/release-notes-1114/"><span class="t"><span>Two vendors&#39; coding agents, one week of changelogs, counted</span><span class="kpi">294 items · 52% fixes</span></span><span class="s">I read the full release notes for Claude Code and Codex and counted the lines. My first summary used 1.7% of one release, and the security lines sat outside it.</span></a><a href="/en/teardowns/harness/chimera-vocal-synth/" aria-current="page"><span class="t"><span>CHIMERA — a voice built from a simulated throat, with no recordings</span><span class="kpi">0 samples · 2,660 stars</span></span><span class="s">A short video called CHIMERA an &quot;AI vocal model.&quot; I opened the source. No AI makes the sound. The program calculates how air moves through lungs, vocal folds, mouth and nose, and AI worked on tuning the result.</span></a></div></nav><main class="col col-3"><article class="doc"><div class="eyebrow"><span>What I took apart</span><span class="st">public</span></div><h1>CHIMERA — a voice built from a simulated throat, with no recordings</h1><p class="sum">A short video called CHIMERA an &quot;AI vocal model.&quot; I opened the source. No AI makes the sound. The program calculates how air moves through lungs, vocal folds, mouth and nose, and AI worked on tuning the result.</p><div class="meta"><span>0 samples · 2,660 stars</span><a class="src" href="https://www.youtube.com/shorts/kksmXPe5kVA" target="_blank" rel="noopener">Intro short (channel 평양냉면, 42 s) — youtube.com/shorts/kksmXPe5kVA ↗</a><a class="src" href="https://github.com/jamesondh/chimera-vocal-synth" target="_blank" rel="noopener">github.com/jamesondh/chimera-vocal-synth — github.com/jamesondh/chimera-vocal-synth ↗</a><a class="src" href="https://github.com/jamesondh/chimera-vocal-synth/blob/main/docs/architecture.md" target="_blank" rel="noopener">Design doc architecture.md — github.com/jamesondh/chimera-vocal-synth/blob/main/docs/architecture.md ↗</a><a class="src" href="https://github.com/jamesondh/chimera-vocal-synth/blob/main/docs/csd-comparison.md" target="_blank" rel="noopener">Singer comparison csd-comparison.md — github.com/jamesondh/chimera-vocal-synth/blob/main/docs/csd-comparison.md ↗</a><a class="src" href="https://github.com/jamesondh/chimera-vocal-synth/blob/main/docs/speech-comparison.md" target="_blank" rel="noopener">Speech comparison speech-comparison.md — github.com/jamesondh/chimera-vocal-synth/blob/main/docs/speech-comparison.md ↗</a><a class="src" href="https://github.com/jamesondh/chimera-vocal-synth/blob/main/docs/hill-climb/README.md" target="_blank" rel="noopener">Tuning rules hill-climb/README.md — github.com/jamesondh/chimera-vocal-synth/blob/main/docs/hill-climb/README.md ↗</a><a class="src" href="https://www.chimera.audio/" target="_blank" rel="noopener">Official site chimera.audio — chimera.audio ↗</a><span class="vw" id="vw" hidden></span></div><nav class="onthis" aria-label="On this page"><div class="oh">On this page</div><a href="#where-does-a-voice-come-from">Where does a voice come from?</a><a href="#how-is-this-different-from-the-usual-ai-voice">How is this different from the usual AI voice?</a><a href="#so-where-is-the-ai">So where is the AI?</a><a href="#the-video-asked-can-it-really-sing-like-that">The video asked: can it really sing like that?</a><a href="#the-detailed-record-starts-here">The detailed record starts here</a><a href="#what-is-in-it">What is in it</a><a href="#the-path-a-sound-takes">The path a sound takes</a><a href="#how-close-is-it-to-a-human-numbers-the-repository-measured">How close is it to a human? Numbers the repository measured</a><a href="#the-rules-for-how-ai-fixes-the-sound--why-this-piece-is-filed-under-harness">The rules for how AI fixes the sound — why this piece is filed under harness</a><a href="#what-this-cost-and-what-i-learned">What this cost, and what I learned</a><a href="#what-i-did-not-do">What I did not do</a><a href="#verdict">Verdict</a></nav><div class="prose"><p><strong>CHIMERA does not stitch together recordings of human voices. It builds the inside of a throat in software and blows air through it to make the sound.</strong> It is the thing the video calls an “AI vocal model.” It runs in a web browser, and the source is open under the MIT license.</p>
+<h2 id="where-does-a-voice-come-from">Where does a voice come from?</h2>
+<p>You breathe out, and air rises from the lungs. Two folds in the throat make that air flutter, and the flutter is a raw buzz. The buzz is not speech yet. It passes through the mouth, and the shape of the tongue and lips turns it into “ah” or “ee.”</p>
+<p>Think of a guitar. The string vibrates the same way every time, and the shape of the body decides the color of the sound. In a human voice, the mouth and throat are the guitar body.</p>
+<h2 id="how-is-this-different-from-the-usual-ai-voice">How is this different from the usual AI voice?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Usual AI voice</th>
+<th>CHIMERA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td>Listen to huge amounts of human voice and learn what it sounds like</td>
+<td>Calculate the shape of the throat and how air moves in it</td>
+</tr>
+<tr>
+<td>Like a parrot or a luthier?</td>
+<td>A parrot repeating what it heard</td>
+<td>Someone who builds the instrument and plays it</td>
+</tr>
+<tr>
+<td>Recordings</td>
+<td>Needed</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td>Distance from a human</td>
+<td>Very close, depending on the model</td>
+<td>Getting closer, still a gap</td>
+</tr>
+</tbody>
+</table>
+<p>The README says “no samples, no neural audio.” So the video’s line that AI “copied it perfectly” does not hold. Nothing was copied, and nothing shows it is perfect.</p>
+<h2 id="so-where-is-the-ai">So where is the AI?</h2>
+<p>In two places: the people who wrote the code, and the tuning. The design doc says the owner wrote the engine working with AI coding agents. A folder called <code>hill-climb</code> holds the rules under which an agent improves the sound one small step at a time.</p>
+<h2 id="the-video-asked-can-it-really-sing-like-that">The video asked: can it really sing like that?</h2>
+<p>Singing works. Type words, press Sing, and it sings them to a tune in English, Korean or Russian. In Korean each Hangul block gets one note.</p>
+<p>I could not find the yodel or the four-part “Mr. Sandman” from the video in the source. The section on what I did not do says more.</p>
+<h2 id="the-detailed-record-starts-here">The detailed record starts here</h2>
+<p>I read the repository directly and separate what I checked from what I did not. I watched the 42-second short as frames plus captions, and I did not hear the audio.</p>
+<h2 id="what-is-in-it">What is in it</h2>
+<p>The repository is <code>jamesondh/chimera-vocal-synth</code>. It was created on 2026-11-05. On 2026-11-18 it had 2,660 stars, an MIT license, Rust as its language and about 270 commits. The engine is Rust compiled to WebAssembly and runs in the browser’s audio worklet. The same code runs as a command-line tool (<code>chimera</code>).</p>
+<p>It does six jobs.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Play</td>
+<td>Drag the tongue, lips and jaw in a cutaway of the head</td>
+</tr>
+<tr>
+<td>Speak</td>
+<td>Turn English text or phonetic symbols into speech</td>
+</tr>
+<tr>
+<td>Sing</td>
+<td>Sing lyrics to a tune; can record a 9:16 video</td>
+</tr>
+<tr>
+<td>Beatbox</td>
+<td>Every drum is a mouth gesture</td>
+</tr>
+<tr>
+<td>Bestiary</td>
+<td>Songbird, seal, alligator and elephant</td>
+</tr>
+<tr>
+<td>Duet</td>
+<td>Two 3D heads replay a pre-rendered song</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-path-a-sound-takes">The path a sound takes</h2>
+<p>In the design doc’s diagram, the interface sends commands, the audio engine calculates the voice, and about 60 times a second it sends its state back to the screen. The head cutaway that moves on screen is that returned state, drawn live. The picture is a live feed of the engine, not decoration.</p>
+<p>Inside the engine four layers chain together.</p>
+<ol>
+<li><strong>Gesture plan.</strong> Each sound becomes a bundle of moves such as “tongue here, lips this far.” The idea comes from the linguistics framework called articulatory phonology.</li>
+<li><strong>Anatomy.</strong> From the moves it draws a cross-section of the mouth and works out how wide the tube is at each point along its length.</li>
+<li><strong>Sound source.</strong> The default is a glottal opening shape that makes the airflow flutter. Birds get a separate syrinx model.</li>
+<li><strong>Air path.</strong> It calculates pressure and flow along a branched tube. For an adult voice the internal rate is 96,000 steps per second.</li>
+</ol>
+<p>A more detailed two-mass vocal-fold model was designed but, as the doc itself says, never built. The current sound comes without it.</p>
+<h2 id="how-close-is-it-to-a-human-numbers-the-repository-measured">How close is it to a human? Numbers the repository measured</h2>
+<p>The repository ships tools that compare the voice with real people: <code>compare csd</code> for a singer and <code>compare tsp</code> for speakers.</p>
+<p><strong>Against a singer.</strong> It has the synth sing 50 English children’s songs from a dataset sung by one professional female singer, at the same pitches with the same words, and measures every note. The 2026-11-07 baseline score is 1.433 on training songs and 1.590 on held-out songs. Zero means within the singer’s own variation between songs, and bigger is farther. The largest gap was in the highs. The 4–8 kHz band was 7.5 dB brighter than hers. The synth put 35 cents of vibrato on every long note, while she used it on about two thirds.</p>
+<p><strong>Against speakers.</strong> The speech recognizer Whisper gets 2.7% of the words wrong on real recordings. On sentences the synth read it got about 37% wrong, which is more than ten times as many. The real-speaker score is 0.277 and CHIMERA’s is 1.646.</p>
+<p>After tuning batch 3, the figure in the commit message is 36.75% to 27.15%. That was measured inside the repository with the same tool, and I did not re-measure it.</p>
+<h2 id="the-rules-for-how-ai-fixes-the-sound--why-this-piece-is-filed-under-harness">The rules for how AI fixes the sound — why this piece is filed under harness</h2>
+<p><code>docs/hill-climb/README.md</code> says an AI agent proposes one hypothesis and one change at a time, and the change is kept only if real human voices judge it better. Three lines are worth reading.</p>
+<ul>
+<li><strong>Real recordings are the judge.</strong> The recognizer is a backup guard. In batch 2 the recognizer error fell 4 points, but the owner could hardly hear the difference (3 preferred the new one, 1 the old, 4 could not tell). So from batch 3 on the order was reversed.</li>
+<li><strong>Name the cause first.</strong> Before changing anything the agent writes down which value is wrong, because of what physics, with a source. The text says a constant turned until the score reads right is not a fix.</li>
+<li><strong>A person listens and merges.</strong> In batch 3 the new version was picked on 10 of 16 clips heard blind, against 2 for the old. The owner merges, not the agent.</li>
+</ul>
+<h2 id="what-this-cost-and-what-i-learned">What this cost, and what I learned</h2>
+<p><strong>Ask which layer the word “AI” is about.</strong> The short’s title said “AI vocal model,” and the source said “no neural audio.” The layer that makes the sound has no AI. It sits in writing and tuning the code. From the title alone I would have filed this as a different kind of thing, a trained voice model.</p>
+<p><strong>One automatic judge alone raises the score and nothing else.</strong> Batch 2 is the example. The recognizer improved and a human ear did not notice, so the judge became real people and the recognizer moved to guard duty.</p>
+<h2 id="what-i-did-not-do">What I did not do</h2>
+<ul>
+<li>I did not run it. I did not open the web app, listen to the sound or render from the command line. Every figure above is a value the repository’s docs state.</li>
+<li>I could not confirm that the video’s yodel and four-part “Mr. Sandman” come from this repository. The file list has no quartet or yodel name, and the README’s Duet (two 3D heads, a pre-rendered song) is a different scene. It may be a separate demo by the owner or a newer version.</li>
+<li>“Nearly human” has no support. The numbers show it improving, and the owner states the goal as “as realistic as we can make it.”</li>
+<li>I did not judge the quality of Korean singing. That it accepts Korean lyrics comes from the README’s feature list.</li>
+<li>The code is MIT, but the children’s-song dataset used for comparison is non-commercial (CC BY-NC-SA), and the doc says it cannot ship in a product. Treat the two separately when borrowing.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<p><strong>Watch it for now and decide where to use it later.</strong> I have no place to adopt it yet. I keep two things. First, recordings and training are not the only way to make a voice. Second, an agent rule that lets a human ear win when the automatic judge and the ear disagree. After I listen to it myself, I will revise this verdict.</p>
+</div></article><footer class="pagefoot"><span>© 2026 AI TRY</span><a class="badge" href="/ko/teardowns/harness/chimera-vocal-synth/" hreflang="ko">Machine-assisted translation · Korean original</a><a href="/en/about/privacy/">Privacy</a><a href="mailto:moonstudio@aitryed.com">moonstudio@aitryed.com</a><span>aitryed.com</span></footer></main></div><script>(function(){const lang = "en";
+const fb = "en";
+const none = "nothing found";
+
+  // 색인은 첫 타이핑 때 한 번만 받는다 — 안 쓰는 사람에게 받게 하지 않는다
+  const box = document.querySelector('.find');
+  const q = document.getElementById('q');
+  const out = document.getElementById('fres');
+  if (box && q && out) {
+    box.hidden = false;
+    let idx = null, loading = null, active = -1;
+
+    // ⚠ 색인은 **언어마다 한 벌**이다. 합본을 받던 시절엔 한국어 독자가 영문 본문까지 받고
+    //   받자마자 절반을 버렸다(558.7KB → 340.2KB). 파일 이름은 robots.txt 와 함께 움직인다.
+    //   filter 는 남겨 둔다 — 옛 합본이 캐시에 남아 있어도 결과가 섞이지 않는다.
+    //   2026-11-02 부터 **두 쪽**(문서 · 소식+용어사전)이다. 받는 총량은 같고 파일당 크기만 줄었다.
+    const load = () => (loading ??= Promise.all([`/search-index-${fb}.json`, `/search-index-${fb}-feed.json`]
+      .map((u) => fetch(u).then((r) => r.json())))
+      .then((parts) => (idx = parts.flat().filter((x) => x.l === fb))));
+
+    // 부분 문자열로 맞춘다. 한국어는 형태소 분석 없이도 "전조"가 "전조가"에 걸린다.
+    // 제목 > 요약 > 본문 순으로 점수를 준다 — 제목에 있으면 그게 그 페이지의 주제다.
+    const score = (d, terms) => {
+      let s = 0;
+      for (const t of terms) {
+        const T = d.t.toLowerCase(), D = (d.d || '').toLowerCase(), B = d.b.toLowerCase();
+        if (T.includes(t)) s += 12;
+        else if (D.includes(t)) s += 5;
+        else if (B.includes(t)) s += 2;
+        else return 0;              // 한 낱말이라도 없으면 탈락 (AND)
+      }
+      return s;
+    };
+
+    const snip = (d, t) => {
+      const i = d.b.toLowerCase().indexOf(t);
+      if (i < 0) return d.d || '';
+      return (i > 24 ? '…' : '') + d.b.slice(Math.max(0, i - 24), i + 76).trim() + '…';
+    };
+
+    const render = () => {
+      const raw = q.value.trim().toLowerCase();
+      active = -1;
+      if (!raw) { out.innerHTML = ''; out.classList.remove('on'); return; }
+      if (!idx) { load().then(render); return; }
+      const terms = raw.split(/\s+/).filter(Boolean);
+      const hits = idx.map((d) => [score(d, terms), d]).filter(([s]) => s > 0)
+        .sort((a, b) => b[0] - a[0]).slice(0, 10);
+      out.classList.add('on');
+      out.innerHTML = hits.length
+        ? hits.map(([, d]) =>
+            `<a href="${d.u}"><span class="fs">${d.s}</span><span class="ft">${d.t}</span>` +
+            `<span class="fb">${snip(d, terms[0]).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]))}</span></a>`).join('')
+        : `<p class="fnone">${none}</p>`;
+    };
+
+    q.addEventListener('focus', load, { once: true });
+    q.addEventListener('input', render);
+    q.addEventListener('keydown', (e) => {
+      const links = [...out.querySelectorAll('a')];
+      if (e.key === 'Escape') { q.value = ''; render(); q.blur(); return; }
+      if (!links.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links.forEach((a, i) => a.classList.toggle('sel', i === active));
+        links[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); links[active].click(); }
+    });
+    // 어느 페이지에서든 / 로 검색창에 간다
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) { out.innerHTML = ''; out.classList.remove('on'); }
+    });
+  }
+})();</script><script>(function(){const ep = "https://aitry-views.vercel.app/api/views";
+const one = "{n} views";
+const all = "Pages here have been opened {n} times.";
+const dl = "Downloaded {n} times so far";
+
+  (function () {
+    var nodes = document.querySelectorAll('.dl-n');
+    if (!ep || !nodes.length) return;
+    fetch(ep.replace(/views$/, 'downloads'), { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number') return;
+        var num = d.total.toLocaleString('en-US');
+        var label = dl.replace('{n}', num);
+        for (var i = 0; i < nodes.length; i++) {
+          var shown = Number((nodes[i].textContent || '').replace(/[^0-9]/g, ''));
+          if (!(d.total > shown)) continue;
+          nodes[i].textContent = num;
+          nodes[i].title = label;
+          nodes[i].setAttribute('aria-label', label);
+        }
+      })
+      .catch(function () {});
+  })();
+
+  (function () {
+    var el = document.getElementById('vw');
+    var elAll = document.getElementById('vwall');
+    if (!ep || (!el && !elAll)) return;
+
+    var path = location.pathname;
+    var key = 'vw:' + path;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) { /* 사생활 모드 — 그냥 센다 */ }
+
+    var url = ep + '?p=' + encodeURIComponent(path) + (seen ? '&peek=1' : '');
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        try { sessionStorage.setItem(key, '1'); } catch (e) {}
+        var put = function (node, tmpl, n) {
+          if (!node || n === null || n === undefined) return;
+          var num = Number(n).toLocaleString();
+          var label = tmpl.replace('{n}', num);
+          node.textContent = num;
+          node.title = label;
+          node.setAttribute('role', 'img');
+          node.setAttribute('aria-label', label);
+          node.hidden = false;
+        };
+        put(el, one, d.page);
+        put(elAll, all, d.total);
+      })
+      .catch(function () { /* 카운터가 죽은 것뿐이다. 화면은 그대로 둔다. */ });
+  })();
+})();</script></body></html>
