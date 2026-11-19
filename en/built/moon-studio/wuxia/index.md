@@ -10,71 +10,41 @@
 
 ---
 
-**These are the records of a wuxia Unity prototype built around reading an opponent's patterns.** They preserve the design of 44 forms and 26 artifacts, implementation problems, and verification methods.
+The Wuxia Unity prototype is the first test build of a wuxia game won by reading an opponent's patterns. These records cover the design of 44 forms and 26 artifacts, the problems met during implementation, and how the game was verified.
 
 The design later informed the 2D MukGeom and crowd-combat ManInJeok prototypes. The Unity measurements and combat rules below belong to the original prototype; they are not current measurements of those two games. See [MOON Studio v3](/en/built/moon-studio/index.md) for the current production process.
 
-## The one thing at the centre
+## You read the telegraph and pick the counter
 
-Most action games are won by **reacting fast.** The enemy attacks, you dodge or block. **Practise, your hands get quicker, you win.**
+Most action games reward fast reactions. The enemy attacks, you dodge or block, and with practice your hands get quicker and you win more.
 
-This is different.
+Here, just before an enemy attacks, a telegraph appears showing what kind of attack it is. You read it and pick the matching counter. Pick the right kind and you take zero damage, the enemy freezes for 1.6 seconds, and you return double damage. Pick the wrong kind and only 60% of the hit lands; do nothing and all of it lands.
 
-Just before an enemy attacks, **a telegraph appears showing what *kind* of attack it is.** You read it and **pick the matching counter.**
+Choosing right wins almost for free, and choosing wrong costs you. That gap is the heart of the design.
 
-| What you picked | Result |
-|---|---|
-| **The right kind** | **Zero damage** + the enemy is **frozen for 1.6s** + **double** damage returned |
-| The wrong kind | **Only 60%** lands |
-| Nothing | **All of it lands** |
+## What grows is what you know
 
-The gap between the first two rows is large. **Pick right and you win almost for free; pick wrong and you lose ground.**
+The thing a player builds up in this game is knowledge of the enemy's patterns. A new enemy is unknown, so you learn by taking hits. By the second meeting you know the pattern and rarely get touched.
 
-## So what the player accumulates is knowledge, not reflexes
-
-That is the whole design.
-
-| | A typical action game | This one |
-|---|---|---|
-| What grows | **Reaction speed** | **What you know** |
-| How you get stronger | Practice makes your hands faster | **You come to know the enemy's patterns** |
-| A new enemy | Hard | **Unknown → you learn by taking hits** |
-| The second meeting | A bit better | **Knowing it, you barely get hit** |
-
-Which makes **meeting the same enemy again the fun part.** You get battered, then once you know the pattern **you turn everything aside cleanly.**
-
-Scale: **44 techniques, 26 artefacts.**
+That makes meeting the same enemy again the fun part. You get battered at first, and once you know the pattern you turn everything aside cleanly. The scale is 44 techniques and 26 artifacts.
 
 ## Written up in six parts
 
-One project, and each part has a completely different problem. **Mixed into one piece nothing survives.**
+It is one project, but each part has a completely different problem, and mixed into one piece nothing survives.
 
-| Part | What the problem is |
-|---|---|
-| **Design** | Turning *win by reading the pattern* **into a rule** |
-| **Spec** | The artifact of those rules — **the actual values** |
-| **World** | Where factions, identity and story **become systems** |
-| **Client** | Where the code handling **time and hit resolution** leaks |
-| **Art** | **The real bottleneck building solo is not code** |
-| **QA** | **What a passing test is *not* looking at** |
+Design asks how to turn "win by reading the pattern" into a rule. Spec holds the rules as they actually are, with the values as decided. World covers where factions, identity and story become systems. Client looks at where the code handling time and hit resolution leaks, Art at why the real bottleneck for a solo builder is not code, and QA at what a passing test is not looking at.
 
 ## This game is where the teardowns land
 
-The rules I take away from opening other people's work **land here.**
+The rules I take away from opening other people's work land here. Take things apart only and it ends at "nice"; attach it to something and you find out whether it is actually usable.
 
-Take things apart only and it ends at *nice.* **It has to be attached to something before you learn whether it is actually usable.**
-
-And attaching it, **most of it does not fit.** That fact goes back into the teardown piece.
+Attached to a real game, most of it does not fit, and that fact goes back into the teardown piece.
 
 ## Not yet
 
-Written down honestly.
+The game has never been playtested. The rules above are verified only as far as whether the design holds together, and nobody has yet looked at whether it is fun.
 
-**It has never been playtested.**
-
-The rules above are all verified **only as far as "does the design hold together."** **Whether it is fun, nobody has looked at.**
-
-And **the "60% on a wrong pick"** is not a measured number either. It came from **"it has to differ from a clean hit."** Measured, it will change.
+The 60% figure for a wrong pick is not a measured number either. It came from the requirement that a wrong pick must differ from a clean hit, and once measured it will change.
 
 ## The detailed record starts here
 

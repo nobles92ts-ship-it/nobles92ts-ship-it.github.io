@@ -9,45 +9,29 @@
 
 ---
 
-**This shelf holds what I found when I opened up other people's games, game-making tools, and game research. Seven pieces so far.**
-
-One thing up front. "Taking something apart" usually implies **copying the good bits over**. Here that almost never works.
+"Making games" collects seven pieces where I opened up other people's games, game-making tools, and game research. Taking something apart usually implies copying the good bits over, and with games that almost never worked.
 
 ## Game parts don't fit my machine
 
-Think of car parts. However good someone else's car is, **if the engine spec is different, that part will not go into mine.**
+Think of car parts. However good someone else's car is, a part built to a different engine spec will not go into mine. Games are the same: the tool I build in differs from the one they built in, they work in three dimensions and I work in two, some carry a "not for commercial use" condition, and some have nothing to download at all, only pictures and a description.
 
-Games are the same. The tool I build in and the tool they built in are different. They are in three dimensions and I am in two. Some carry a **"not for commercial use"** condition. And some have **nothing to download at all** — pictures and a description, no program.
+Across the first five pieces, zero lines of code crossed into my own work. The sixth, Unreal Engine Skills, has not been installed either; I only ran its project-detection script in temporary folders.
 
-Across the first five pieces, the amount of code that crossed into my own work was **zero lines**. The sixth, Unreal Engine Skills, has not been installed either. I exercised its project-detection script in temporary folders.
+## What does cross is a rule
 
-## What does cross is a sentence
-
-Something else comes over instead. **Not a part — a rule.**
-
-From one piece the takeaway was a single sentence: *don't nail numbers into the code.* That one sentence pointed at **43 places in my own project.**
-
-Parts don't fit because specs differ. **"Build it this way or you'll pay later" has no spec.**
-
-So the pieces here read better as **"what rule can I learn"** than **"what can I copy."**
+What comes over instead is a rule. From one piece the takeaway was a single sentence, "don't nail numbers into the code," and that sentence pointed at 43 places in my own project. Parts fail because their specs differ, but "build it this way or you'll pay later" has no spec. The pieces here read better as a search for rules to learn than for things to copy.
 
 ## Once, the research deleted an item from my build list
 
-Looking things up before building can feel like a detour. I got the opposite once.
-
-I believed a certain game rewarded a certain move with **a slow-motion effect**. So my build list said **"need a time-scaling system first"** — I couldn't add the reward without it.
-
-Checking the actual sources: the reward was **a different kind of reward entirely**, and the slow-motion **appeared in no source at all.**
-
-One item disappeared from the list. **Not building something is also an outcome** — it just never shows up in a tally of things built.
+Looking things up before building can feel like a detour, and once it turned out the other way. I believed a certain game rewarded a certain move with a slow-motion effect, so my build list said I needed a time-scaling system first. Checking the actual sources showed the reward was a different kind entirely, and the slow motion appeared in none of them. One item vanished from the list. Not building something counts as an outcome too.
 
 ## The sixth piece examines the connection to a game-making tool
 
-[Unreal Engine Skills](/en/teardowns/games/unreal-engine-skills/index.md) guides Claude through working inside Unreal Editor. This time the question is where the instructions meet executable engine tools. I ran the startup script; I did not verify an editor connection. The account distinguishes reading, execution, and the integration work still left open.
+[Unreal Engine Skills](/en/teardowns/games/unreal-engine-skills/index.md) guides Claude through working inside Unreal Editor. Where the first five asked whether parts could move across, this one asks where the instructions meet executable engine tools. I ran the startup script and did not verify an editor connection. The account separates what I read, what I ran, and what is still open.
 
 ## The seventh piece is a downloader for reference videos
 
-[yoinks](/en/teardowns/games/yoinks/index.md) is a terminal tool that saves a video link as a file. I did not take its code. I confirmed on a real video that **the size on screen was not the file it downloads**, and wrote that lesson into my own script.
+[yoinks](/en/teardowns/games/yoinks/index.md) is a terminal tool that saves a video link as a file. I did not take its code. On a real video I confirmed that the size shown on screen differed from the file it actually downloads, and I wrote that lesson into my own script.
 
 ## The detailed record starts here
 

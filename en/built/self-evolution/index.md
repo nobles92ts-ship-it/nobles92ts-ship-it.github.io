@@ -10,66 +10,35 @@
 
 ---
 
-**Every Thursday morning it reads what I learned that week and *proposes* how to rewrite my memory file. Then it stops and waits for me.**
+The self-evolution loop is a cron job that runs every Thursday morning, reads what I learned that week, and proposes how to rewrite my memory file. After posting the proposal it stops and waits for me.
 
-## First — what a memory file is
+## What a memory file is
 
-When I give an AI work, I keep the things it needs to know in a file so **I do not re-explain the background each time.** *This project is like this. In this situation, do that.*
+When I give an AI work, I keep the things it needs to know in a file so I do not have to re-explain the background each time. This project is like this; in this situation, do that. The file loads automatically into every task.
 
-That file **loads automatically into every task.**
+## Memory only grows
 
-## Which creates an obvious problem
+Learn something new and it gets added. Nothing ever shrinks. Wrong entries stay, and so do entries that have gone unused for months.
 
-Memory **keeps growing.** Learn something and it gets added.
+As time passes the memory file gets larger, so what loads each time gets larger too, until it is too big to be read properly. Memory that only grows ends up as memory that is not read. That makes this loop's job closer to keeping the file small enough to still be loaded than to learning more.
 
-**It does not shrink.** Wrong entries are not removed. Entries unused for months are not removed.
+## What it does each week
 
-So:
+On Thursday morning it does four things in order. It reads that week's work records and works out what changed. Then it proposes edits to the memory file: merge these two, this one is now wrong, this one has gone unused for months, this one is new. Finally it stops and waits.
 
-| As time passes | |
-|---|---|
-| The memory file | **Gets larger** |
-| What loads every time | **Gets larger** |
-| **Eventually** | **Too large to be read** |
+## The stop is the whole design
 
-> **Memory that only grows ends up being memory that is not read.**
+Version one applied its proposals automatically, and that was the mistake. The reason is a little subtle: the most recent note is not necessarily the most complete one.
 
-Which makes this loop's job closer to **"keep it small enough to still be loaded"** than **"learn more."**
+Automatic merging chose the latest. That latest note was a single line written in a hurry, and underneath it sat an older, much fuller version. The fuller one was quietly discarded, and I found out much later.
 
-## What it does weekly
+## A human sits on the deleting
 
-Thursday morning:
-
-1. Reads that week's work records
-2. Works out what changed
-3. **Proposes edits to the memory file** — *merge these two. This is now wrong. This has gone unused for months. This is new.*
-4. **Stops and waits**
-
-## Step 4 is the whole design
-
-Version one **merged automatically.** **That was the mistake, and the reason is subtle.**
-
-> **The most *recent* note is not the most *complete* note.**
-
-Automatic merging **chose the latest.** And the latest was a one-line note written in a hurry, **with a much fuller version underneath it.**
-
-**It was quietly discarded.** And **I found out much later.**
-
-## Which is why a human sits on the deleting
-
-**Getting an addition wrong hurts less.** One useless entry exists.
-
-**Deleting cannot be undone.** And **noticing something is gone takes time** — you do not know until you need it.
-
-So this loop **proposes and stops.**
+Getting an addition wrong hurts less, because it leaves one useless entry. Deleting cannot be undone, and it takes time to notice that something is gone, since you do not know until you need it. So the loop proposes and stops.
 
 ## Written up in three parts
 
-| | What the problem is |
-|---|---|
-| **The dead channel** | **The sophisticated one had quietly died**, and the document diagnosing it was wrong in two places |
-| **Four tempos** | Treating learning as **one block** was the real cause of the over-design |
-| **The detector** | The thing built to detect death **false-positived first** |
+The story from this loop is split into three pieces. The dead-channel piece covers how the sophisticated channel had quietly died and how my own diagnosis was wrong in two places. The four-tempos piece concludes that treating learning as one block was the real cause of the over-design. The detector piece is about the tool built to detect that death, which produced a false positive first.
 
 ## The detailed record starts here
 

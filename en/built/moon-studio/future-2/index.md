@@ -10,31 +10,21 @@
 
 ---
 
-**The second empty slot. Its contents are *the same* as Future game 1.**
+Future game 2 is the second empty slot in the Moon Studio plan, placed after Future game 1. Its contents are the same as Future game 1.
 
-## So why two
+## Why there are two slots
 
-There seems no reason to hold the same thing twice. There is one.
+Holding the same thing twice seems pointless, but there is one reason. With a single slot, the assumption that there is one game never breaks, and it takes two slots to mean several.
 
-> **With *one* slot, the assumption "there is one game" never breaks. It takes *two* to mean "several."**
+That slots 1 and 2 do not differ is itself the evidence, because it shows nothing about either slot is special. With only one extra slot you could end up with 1 as the real one and 2 as its copy, and then adding a third becomes a decision again. When the two are identical, a third grows the same way.
 
-That there is no difference between 1 and 2 is itself the evidence: **nothing about either slot is special.**
+## The cost is close to zero
 
-With only one extra slot you could end up with **"1 is the real one and 2 is its copy."** Then adding a third becomes a decision again.
-
-**When the two are identical, a third grows the same way.**
-
-## And this too costs almost nothing
-
-Holding one more empty slot costs **a folder and a few files.**
-
-Adding one later costs **changed addresses, link repairs and code edits.**
-
-> **Now is nearly free and later is expensive. So it happens now.**
+One more empty slot costs a folder and a few files. Adding one later costs changed addresses, link repairs and code edits. Doing it now is nearly free and doing it later is expensive, so it happens now.
 
 ## The contents are on slot 1
 
-The **acceptance conditions for all four parts are identical**, as is everything that follows.
+The acceptance conditions for all four parts are identical to Future game 1, and so is everything that follows below.
 
 ## The detailed record starts here
 

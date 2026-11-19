@@ -10,78 +10,39 @@
 
 ---
 
-**Almost all the cost is in frames. And the budget triples while the video length grows sixtyfold.**
+The cost of /watch looking at a video sits almost entirely in frames, the screen captures it takes. The frame budget triples while video length grows sixtyfold, and this page is about how that gap is handled.
 
-## The cost structure is very simple
+## Nearly all the cost is in frames
 
-| What | Cost |
-|---|---|
-| **The transcript** (speech as text) | **A few thousand units even for ten minutes** — effectively free |
-| **Frames** | **All of it** |
+The transcript, which is the speech written out as text, costs a few thousand units even for ten minutes, so it is effectively free. Pulling 80 frames costs 50,000 to 80,000 units, more than ten times the transcript. Doubling the resolution multiplies the per-frame cost by roughly four.
 
-In numbers: 80 frames costs **50,000 to 80,000 units.** **More than ten times the transcript.**
+So there is a ceiling: 100 frames in total, at most 2 per second, shared out by the video's length.
 
-And **doubling the resolution multiplies the per-frame cost by roughly four.**
+## The budget triples and the length grows sixtyfold
 
-## So there is a ceiling
+Compare a 1-minute video with a 60-minute one. Length differs by 60 times, but the frames available top out at 100. Long videos get progressively sparser, and 60 minutes across 100 frames is one frame every 36 seconds. At that rate you see almost nothing.
 
-**100 frames total, at most 2 per second.** Within that, the budget is allocated by length.
+## I assumed the transcript would be enough, at first
 
-## And here is the problem — "budget triples, length grows sixtyfold"
+Transcripts are cheap and frames are expensive, so using transcripts only looked like the answer. It does not work. A presenter points at the screen and says <strong>"if you look at this value here"</strong>, and the transcript keeps only that sentence. Where "here" is and what "this value" was do not survive.
 
-Why the ceiling is hard.
+Game footage is worse. Almost nothing is said and the screen does all the work, so the transcript is empty. A transcript holds what was said and frames hold what was shown, and building needs the second.
 
-| | A 1-minute video | A 60-minute video |
-|---|---|---|
-| Length | 1× | **60×** |
-| Frames available | A few | **100 (the ceiling)** |
+## So long videos get cut
 
-**Length grows sixtyfold and the budget does not.** Which makes long videos **progressively sparser.** Sixty minutes across 100 frames is **one frame every 36 seconds.**
+The tool's answer is to name a stretch. Looking at a chosen stretch densely beats sweeping an hour sparsely almost every time, and once a stretch is named the whole budget goes there.
 
-At one frame every 36 seconds **you see almost nothing.**
+Take a 60-minute video. Spread across 100 frames it gives one frame every 36 seconds, which shows you almost nothing. Name just 2:15 to 2:45 and 60 frames land in those 30 seconds, 2 per second (the ceiling), so nearly every movement is caught. The frame count is lower, yet where the frames are spent changes everything.
 
-## "Surely the transcript is enough" — I thought so too
+Usually what I want is not the whole video anyway but one moment, like "how did they do that effect".
 
-Transcripts are cheap and frames are expensive, so why not use transcripts only.
+## The same video is never run twice
 
-**It does not work.**
-
-A presenter points at the screen and says **"if you look at this value here."** The transcript keeps **that sentence only.** **Where "here" is and what "this value" was do not survive.**
-
-Game footage is worse. **Almost nothing is said and the screen does all the work.** The transcript is empty.
-
-> **A transcript holds what was said; frames hold what was shown. Building requires the second.**
-
-## Which is why long videos get cut
-
-This is the tool's answer.
-
-**Looking at a chosen stretch densely beats sweeping an hour sparsely, almost always.**
-
-Name a stretch and **the whole budget goes there.**
-
-| Approach | Result |
-|---|---|
-| 60 minutes across 100 frames | **One frame every 36 seconds** — you see almost nothing |
-| **Just 2:15 to 2:45** | **60 frames in those 30 seconds** (2 per second — the ceiling) — nearly every movement is caught |
-
-Fewer frames, not more — and **where they are spent changes everything.**
-
-And usually **what I want is not the whole thing but one moment** — *how did they do that effect.*
-
-## The same video is never watched twice
-
-A follow-up question **within the same conversation does not re-run it.**
-
-The frames and the transcript are **already in front of it**, and pulling them again is **paying the same cost twice.**
-
-Without this, **"look at that scene again" costs a full second run.**
+A follow-up question within the same conversation does not re-run the video. The frames and the transcript are already in front of the AI, and pulling them again would pay the same cost twice. Without this rule, "look at that scene again" costs a full second run.
 
 ## The resolution stays where it is
 
-The default is low. **Doubling it multiplies per-frame cost by about four**, making **80 frames cost 200,000–300,000 units.**
-
-And usually **more frames buys more than more pixels.** Blurry still shows **the order of the actions**; too few frames means **not seeing the action at all.**
+The default is low. Doubling it multiplies per-frame cost by about four, so 80 frames would cost 200,000 to 300,000 units. More frames usually buy more than more pixels do. A blurry still shows the order of the actions, while too few frames means not seeing the action at all.
 
 > **[도판]** Left is the budget; right is how many frames per second that budget actually buys. The left side triples while the right side drops to a seventeenth.
 >

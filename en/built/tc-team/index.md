@@ -10,198 +10,148 @@
 
 ---
 
-**Feed it a specification and test cases fill a spreadsheet. The point is not "the AI writes them" — anyone can do that badly. The point is *what the AI was not given.***
+tc-team is a tool that takes a specification and fills a spreadsheet with test cases. "The AI writes them" is not what makes it interesting, since anyone can do that badly. What matters is what the AI was never given.
 
-## First — what a test case is
+## What a test case is
 
-Build a game or an app and **someone has to confirm it works.** *Have a look and see if it's fine* is not a confirmation. **What to press and what should appear** has to be written down first.
+Build a game or an app and someone has to confirm it works. "Have a look and see if it's fine" is not a confirmation, so what to press and what should appear has to be written down first. That written line is a test case.
 
-That written line is a test case. Roughly:
+Say the feature is item upgrade. The line reads: press upgrade with no upgrade stones, and "Insufficient materials" appears and the upgrade does not happen. Dozens of these get written per feature, and by hand it is slow and things get missed along the way. The tool fills that table from a specification.
 
-| Field | Content |
-|---|---|
-| **What** | Item upgrade |
-| **How** | Press upgrade with no upgrade stones |
-| **Then** | *Insufficient materials* appears and the upgrade does not happen |
+Since October 2026 it can also hand the same cases to an AI, as a bundle of documents the AI reads and then tests from. The section on the AI edition below covers it.
 
-Dozens of these get written per feature. **By hand it is slow, and things get missed as you go.**
+The tool runs fully only when connected to a [second brain](/en/built/second-brain/index.md). The second brain is what finds values the spec leaves out in your own docs; without it, every one of those rows goes to a person as "needs spec confirmation".
 
-This tool **fills that table from a specification.**
+## What the AI is given and what code keeps
 
-Since October 2026 it can also hand the same cases to **an AI, as documents it reads and then tests from.** The section *The AI edition* below covers it.
+Ask an AI to write test cases and it will. Anyone can, and the trouble is that the output differs every time. Today numbering starts at 1, tomorrow at 0. Some days there are six columns, some days seven. Feed the same specification twice and the results differ.
 
-⭐ **It runs fully only when connected to a [second brain](/en/built/second-brain/index.md).** The second brain is what finds values the spec leaves out in your own docs; without it, every one of those rows goes to a person as "needs spec confirmation".
+So the roles were split. Code, meaning a fixed program, owns the order, the table skeleton, numbering, formatting, the coverage ledger and the writing to the sheet. The AI owns sentences, design judgement, findings and verdicts. It writes only the words, and code holds the shape.
 
-## The point is not "the AI writes them"
-
-This is what the tool actually is.
-
-**Ask an AI to write test cases and it will.** Anyone can. The problem is **the output differs every time.**
-
-- Today numbering starts at 1, tomorrow at 0
-- Some days six columns, some days seven
-- Feed the same specification twice and **the results differ**
-
-So the roles were split.
-
-| Who | Owns |
-|---|---|
-| **Code** (a fixed program) | **Order, the table skeleton, numbering, formatting, the coverage ledger, writing to the sheet** |
-| **The AI** | **Sentences, design judgement, findings, verdicts** |
-
-So **the AI writes only the words and the code holds the shape.**
-
-Why: **at first the AI drove everything, and as it went it drifted out of the rules it had itself set.** Around row 30 the formatting has changed. Not malice — **that is simply its nature.**
-
-**When the code holds the shape, there is nothing to drift out of.**
+The reason is that at first the AI drove everything, and as it went it drifted out of the rules it had itself set. Around row 30 the formatting had changed. It was not malice, just its nature. When code holds the shape, there is nothing to drift out of.
 
 ## Eight stages
 
 | Stage | What it does | Owner |
 |---|---|---|
-| **0** | Gather the source, lock out concurrent runs, **self-check the input** | Code |
-| **1** | Read the spec and build **the design skeleton** — the seat that gets the strongest AI | AI |
-| **2** | **Inspect** whether the design can be expanded | Code |
-| **3** | Build the skeleton → **split the sentence-writing four ways** → merge | Code + AI |
-| **4** | **Review adversarially**, judge, record coverage | AI |
-| **5** | Apply fixes + **four inspections** — if a rule is uncovered, an AI gets one try at filling it | Code + AI |
-| **6** | **Write to the real sheet** | Code |
-| **7** | Finalise, **a trust score on every row**, dashboard | Code |
+| 0 | Gather the source, lock out concurrent runs, self-check the input | Code |
+| 1 | Read the spec and build the design skeleton. This seat gets the strongest AI | AI |
+| 2 | Inspect whether the design can be expanded | Code |
+| 3 | Build the skeleton, split the sentence-writing four ways, merge | Code + AI |
+| 4 | Review adversarially, judge, record coverage | AI |
+| 5 | Apply fixes plus four inspections; if a rule is uncovered, an AI gets one try at filling it | Code + AI |
+| 6 | Write to the real sheet | Code |
+| 7 | Finalise, a trust score on every row, dashboard | Code |
 
-Stage 0 is prepared separately; **stages 1 to 7 then run to the end from a single command.** One "starting on this" notice goes to an internal channel when it begins.
+Stage 0 is prepared separately, and stages 1 to 7 then run to the end from a single command. One "starting on this" notice goes to an internal channel when it begins.
 
-## What defines its character — "it stops when it cannot pass"
+## It stops when it cannot pass
 
-This tool **does not "do its best and continue."**
-
-There are checkpoints, and **failing one means stopping and calling a person.** Whatever it can fix by itself, it tries a few times first.
+The tool does not "do its best and continue". There are checkpoints, and failing one means stopping and calling a person. Whatever it can fix by itself, it tries a few times first.
 
 | Checkpoint | If it catches |
 |---|---|
-| Input check | Re-gather once; failing again, **do not start at all** |
-| Design inspection | **Stop** — a person fixes the design, and the run picks up from there |
-| Merge comparison | **Only the mismatched chunk** re-runs |
-| Wording inspection | Tries up to three times to fix **vague phrasing** itself; stops if it isn't shrinking |
-| Applying a fix | **Rejection is correct behaviour** — if the target does not match expectation, it is not edited and the run stops |
+| Input check | Re-gather once; failing again, do not start at all |
+| Design inspection | Stop. A person fixes the design and the run picks up from there |
+| Merge comparison | Only the mismatched chunk re-runs |
+| Wording inspection | Tries up to three times to fix vague phrasing itself; stops if it isn't shrinking |
+| Applying a fix | Rejection is correct behaviour: if the target does not match expectation, it is not edited and the run stops |
 | Duplicate inspection | Stops if two cases are word-for-word identical |
-| Coverage inspection | **If a rule is uncovered**, an AI gets one try at filling it; still uncovered, it stops |
+| Coverage inspection | If a rule is uncovered, an AI gets one try at filling it; still uncovered, it stops |
 
-The "applying a fix" row matters. **Opening something to fix it and finding the content is not as expected means not fixing it and stopping.** Someone may have edited it in between. **Rejection is not a fault, it is correct operation.**
+The "applying a fix" row matters most. If it opens something to fix it and finds the content is not as expected, it does not fix it and stops, because someone may have edited it in between. Rejection counts as correct operation.
 
-That character has a price. Counting back through the logs in September 2026: **of 38 end-to-end runs, 13 (34%) stopped at least once and needed a person to carry on.** Better than quietly shipping a wrong table — but it is not yet a tool that simply does everything for you.
+That character has a price. Counting back through the logs in September 2026, 13 of 38 end-to-end runs (34%) stopped at least once and needed a person to carry on. That beats quietly shipping a wrong table, but it is not yet a tool that simply does everything for you.
 
-## Review is adversarial, not collaborative
+## Reviewers who cannot see each other
 
-Finished cases are read **by several viewpoints at once** — one for structure, one for quality, one comparing against the source.
+Finished cases are read by several viewpoints at once: one for structure, one for quality, one comparing against the source. None of them can see the others' results.
 
-And **they cannot see each other's results.**
+That is deliberate. Seeing each other makes opinions converge, and converged opinions miss the same things together. Three looking separately catch three different things.
 
-That is deliberate. **Seeing each other makes opinions converge, and converged opinions miss the same things together.** Three looking separately catch three different things.
+What the three find goes to a single judging AI, which argues each point and throws out the misfires. The survivors are never fixed by the AI directly. They are written down as a fix plan that code can apply, and stage 5's code does the actual editing.
 
-What the three find goes to **a single judging AI**, which argues each point and throws out the misfires. The survivors are never fixed by the AI directly — they are written down as **a fix plan that code can apply**, and stage 5's code does the actual editing.
+## Five things that changed in September
 
-## Five things that changed in September — the tool keeps getting fixed in use
+The tool keeps getting fixed in use. On 24 September 2026 the whole thing got a check-up that turned up 50 candidate defects, and for each one a different AI was asked to argue it away. Five changes came out of it.
 
-On 24 September 2026 the whole tool got a check-up. It turned up 50 candidate defects, and for each one a different AI was asked to argue it away. Here is what changed as a result.
+The first was that the strongest AI now does the design (24 September). Stage 1 design takes 64% of a run's time, so that is where quality differs most, and design alone goes to Claude Opus 5.5. In a side-by-side test it did better on two features out of three.
 
-| What | In plain terms |
-|---|---|
-| **The strongest AI does the design** (24 Sep) | Stage 1 design takes 64% of a run's time, so that is where quality differs most. Design alone goes to Claude Opus 5.5. In a side-by-side test it did better on two features out of three |
-| **Ask the internal wiki first** | Anything the spec left unanswered — marked "needs confirmation" — gets looked up in the company wiki and data tables first. If an answer turns up, that question comes off the list sent to the planners |
-| **Rules inside tables, one row at a time** (25 Sep) | **Tables** in a spec were not fully making it into the rule ledger. A fifth of the table rows were outside it, and the check still passed with "nothing missing." What isn't in the ledger can't be missed, as far as the check can tell |
-| **Resuming keeps the fixes** (25 Sep) | Stop a run midway and resume it, and the stage-4 review's fixes were **silently thrown away.** On the surface the run finished normally |
-| **The working AIs are isolated** (25 Sep) | Every AI called up for a stage was carrying my personal settings, plugins and memory with it. Through that gap the design AI once wrote files straight into my Drive and deleted them (110 copies it had made itself; nothing that already existed was lost). Now each one carries **only the tools its stage needs** |
+The second was to ask the internal wiki first. Anything the spec left unanswered and marked "needs confirmation" now gets looked up in the company wiki and data tables, and if an answer turns up, that question comes off the list sent to the planners.
 
-The last row started as a cost saving. Measured on the same spec with isolation on and off, the money came to **a little over 7%** (only two pairs, so not settled). The real gain was elsewhere: the number of times something **unrelated to the job** — a summary of some other task, say — got slipped into the first instruction an AI received was **0 out of 23 with isolation on, and 23 out of 23 with it off.**
+The third was to take rules inside tables one row at a time (25 September). Tables in a spec were not fully making it into the rule ledger: a fifth of the table rows sat outside it, and the check still passed with "nothing missing". What isn't in the ledger can't be missed, as far as the check can tell.
 
-## Two lessons that cost something — "do not join by number"
+The fourth was to make resumed runs keep their fixes (25 September). Stop a run midway and resume it, and the stage-4 review's fixes were silently thrown away, while on the surface the run finished normally.
 
-The one that hurt.
+The fifth was to isolate the working AIs (25 September). Every AI called up for a stage was carrying my personal settings, plugins and memory with it. Through that gap the design AI once wrote files straight into my Drive and deleted them: 110 copies it had made itself, with nothing that already existed lost. Now each one carries only the tools its stage needs.
 
-There is a ledger tracking coverage, and at first it pointed **by case number** — *rule 3 is covered by case 7.*
+That last change started as a cost saving. Measured on the same spec with isolation on and off, the money came to a little over 7%, from only two pairs, so it is not settled. The real gain was elsewhere. The number of times something unrelated to the job, such as a summary of some other task, got slipped into the first instruction an AI received was 0 out of 23 with isolation on, and 23 out of 23 with it off.
 
-Then **inserting one row pushes every number below it down.** Seven becomes eight. The ledger still says seven, and **seven is now a different case.**
+## Why numbers cannot be the join key
 
-I first tried **recomputing the numbers.** **Wrong.** With several insertions the arithmetic stops holding.
+This is the lesson that hurt most. A ledger tracks coverage, and at first it pointed by case number, as in "rule 3 is covered by case 7".
 
-Now it **joins by content, not number** — a combination of category, verification stage and reproduction steps.
+Then inserting one row pushes every number below it down. Seven becomes eight, the ledger still says seven, and seven is now a different case. I first tried recomputing the numbers, which was wrong: with several insertions the arithmetic stops holding.
 
-> **Position changes; content does not.**
+Now the ledger joins by content, using a combination of category, verification stage and reproduction steps. Position changes while content does not.
 
-## The AI edition — same engine, one more exit
+## The AI edition: same engine, one more exit
 
-In October 2026 I added **tc-team-ai**. It takes the test cases the same engine produces and, instead of a spreadsheet for people, hands them over as **a bundle of documents an AI reads and then checks the game with.** A spec is all it needs.
+In October 2026 I added tc-team-ai. It takes the test cases the same engine produces and, instead of a spreadsheet for people, hands them over as a bundle of documents an AI reads and then checks the game with. The people edition takes a spec plus a Google Sheet and runs stages 0 to 7. The AI edition takes the spec alone and runs stages 0 to 5, skipping stages 6 and 7 that write the sheet. What comes out is a bundle of run rules, cases, the original spec and an empty results table.
 
-| | For people | For an AI |
-|---|---|---|
-| Input | Spec + a Google Sheet | **The spec alone** |
-| Stages | 0 to 7 | 0 to 5 — stages 6 and 7, which write the sheet, are skipped |
-| Output | A table in the sheet | A bundle — run rules, cases, the original spec, an empty results table |
-
-The reason for a separate edition is simple. **People and AIs read the same line differently.** A tester who reads *press upgrade with no upgrade stones* knows how to empty out the stones and where on the screen to look. An AI fills those gaps with guesses, and wanders off.
-
-So each line gets four fields attached.
+The reason for a separate edition is that people and AIs read the same line differently. A tester who reads "press upgrade with no upgrade stones" knows how to empty out the stones and where on the screen to look. An AI fills those gaps with guesses and wanders off. So each line gets four fields attached.
 
 | Field | For the example above |
 |---|---|
-| **Precondition** — what must already be true | A character holding no upgrade stones |
-| **Action** — what to do | Press upgrade |
-| **Expectation** — what should appear | *Insufficient materials* shows and nothing is upgraded |
-| **Observation** — what to judge by | The message, and whether the upgrade level stayed put |
+| Precondition (what must already be true) | A character holding no upgrade stones |
+| Action (what to do) | Press upgrade |
+| Expectation (what should appear) | "Insufficient materials" shows and nothing is upgraded |
+| Observation (what to judge by) | The message, and whether the upgrade level stayed put |
 
-An AI does the splitting, which makes the frightening part **meaning that shifts on the way.** Zero gets copied down as one, or *does not open* flips to *opens*, and the AI checks the wrong thing and writes PASS. Code stands guard here too: it checks that the original's numbers, English names and quoted text survive into the four fields and that a negative has not flipped, and a case that fails twice ships as the original line alone.
+An AI does the splitting, which makes the frightening part meaning that shifts on the way. Zero gets copied down as one, or "does not open" flips to "opens", and the AI checks the wrong thing and writes PASS. Code stands guard here too. It checks that the original's numbers, English names and quoted text survive into the four fields and that a negative has not flipped, and a case that fails twice ships as the original line alone. The original line is always the truth and the four fields are a reading aid; the run rules at the front of the bundle say the same.
 
-**The original line is always the truth; the four fields are a reading aid.** The run rules at the front of the bundle say the same.
+The rules the AI must follow travel in the same place. There is no PASS and no FAIL without evidence, meaning a screenshot path, a log line or a database value. Behaviour the spec never decided must not be logged as a bug either. Those cases leave already flagged "verdict on hold", and the AI writes BLOCKED (spec) instead of FAIL and notes what it actually saw.
 
-The rules the AI must follow travel in the same place. No PASS and no FAIL without evidence — a screenshot path, a log line, a database value. And **behaviour the spec never decided must not be logged as a bug.** Those cases leave already flagged *verdict on hold*; the AI writes BLOCKED (spec) instead of FAIL and notes what it actually saw.
+On 8 October I ran one internal spec all the way through. It produced 106 cases, every one of them split into four fields and passed the check, and 15 were on hold. It took 1 hour 38 minutes, 81 of them in design, and the splitting took a little over six.
 
-On 8 October I ran one internal spec all the way through. It produced 106 cases, every one of them split and passed the check, and 15 were on hold. It took 1 hour 38 minutes, 81 of them in design; the splitting took a little over six.
+This is where the join-by-number lesson bit a second time. The bundle tells each case which rule of the spec it came from. That lives in the stage-4 ledger, whose numbers come from before stage 5 renumbers everything, so the join goes by sentence instead. The same sentence can sit in two places, though: the smoke checklist at the front and the main body, an overlap the design allows on purpose. 29 of 65 past runs had pairs like that. Now the side the ledger was pointing at (smoke or body) is tried first, and if that still leaves more than one candidate, the link is left off and counted. A blank is better than a wrong source.
 
-**This is where "do not join by number" bit a second time.** The bundle tells each case which rule of the spec it came from. That lives in the stage-4 ledger, whose numbers come from before stage 5 renumbers everything — so the join goes by sentence instead.
+Here is what it cannot do yet. No AI has taken one of these bundles and actually tested a game with it. The results table is empty, and only the producing side has been verified. How to set up a state is not in the bundle either: cheats, test accounts and where the logs live differ from game to game, so the project has to supply them, and without that the case stays BLOCKED (environment). Some shifts also get past the check. A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording, which is why the original stays the truth. Korean also has a short way of writing "not", and at first a dropped one passed too; the "nothing is upgraded" above is phrased exactly that way in the Korean original. That was fixed on 12 October, and it is caught now.
 
-Except **the same sentence can sit in two places**: the smoke checklist at the front and the main body, an overlap the design allows on purpose. 29 of 65 past runs had pairs like that. Now the side the ledger was pointing at (smoke or body) is tried first, and if that still leaves more than one candidate, **the link is left off and counted.** A blank is better than a wrong source.
-
-**What it cannot do yet.**
-
-- **No AI has taken one of these bundles and actually tested a game with it.** The results table is empty. Only the producing side has been verified.
-- **How to set up a state is not in the bundle.** Cheats, test accounts, where the logs live — that differs from game to game, so the project has to supply it. Without it, the case stays BLOCKED (environment).
-- **Some shifts get past the check.** A negative that was never in the original, or a condition slipped in without a number, looks just like ordinary rewording. That is why the original stays the truth. Korean also has a short way of writing *not*, and at first a dropped one passed too — the *nothing is upgraded* above is phrased exactly that way in the Korean original. That was fixed on 12 October, and it is caught now.
-
-## 26 October, v4.3.8 — more to look at once a run is over
+## 26 October, v4.3.8: more to look at once a run is over
 
 On 26 October 2026 I put v4.3.8 on the public repo ([release notes](https://github.com/nobles92ts-ship-it/AI_GAME_QA_TestCase/releases/tag/v4.3.8)). Six things changed.
 
-| What | In plain words |
-|---|---|
-| **A report card when it finishes** | Once the cases are final, a separate report (`quality_report`) is built. One page shows which sentence of the spec became which case, what was left out, and which questions are still open. The sheet's existing columns are left alone |
-| **A plan-for-running slot in the design** | For each of ten checks the design now says whether it applies to the feature and how risky it is. Examples: how many wrong logins before lockout, reconnecting, how long data is kept, screen sizes. An older design without the slot is reported as *unknown*, never as *passed* |
-| **A check that the numbers in the design match** | Code compares the settings a design states against the baseline. It only reads and never edits. Whether the meaning is right is still the reviewers' job |
-| **A cheat memo** | Starting a test sometimes needs an in-game command (a cheat). The AI only picks *which cheat and which item name*. Code finds the real item number in the table, builds one command line, and attaches it as a **note** on the first row of the sub-category. Cell values are not changed, and a name missing from the table drops that cheat |
-| **It stops at a limit** | If usage limits or a busy model make a call fail, the run stops and tells you instead of hitting the same wall again |
-| **Where the "needs spec clarification" list sits** | On newly made tabs that list moves to columns R and S: R is the number, S is the item. Existing tabs were not moved |
+One is a report card when a run finishes. Once the cases are final, a separate report (`quality_report`) is built, and one page shows which sentence of the spec became which case, what was left out, and which questions are still open. The sheet's existing columns are left alone.
+
+Two is a plan-for-running slot in the design. For each of ten checks the design now says whether it applies to the feature and how risky it is. Examples are how many wrong logins before lockout, reconnecting, how long data is kept, and screen sizes. An older design without the slot is reported as unknown, and never counted as passed.
+
+Three is a check that the numbers in the design match. Code compares the settings a design states against the baseline; it only reads and never edits, and whether the meaning is right is still the reviewers' job.
+
+Four is a cheat memo. Starting a test sometimes needs an in-game command (a cheat). The AI only picks which cheat and which item name, and code finds the real item number in the table, builds one command line, and attaches it as a note on the first row of the sub-category. Cell values are not changed, and a name missing from the table drops that cheat.
+
+Five is stopping at a limit. If usage limits or a busy model make a call fail, the run stops and tells you instead of hitting the same wall again.
+
+Six is where the "needs spec clarification" list sits. On newly made tabs that list moves to columns R and S, with R as the number and S as the item. Existing tabs were not moved.
 
 All six were checked only as far as a full test run on a fresh install. This page has no measurement of what they change on an internal spec.
 
 ## An honest limit
 
-**A thin specification produces thin output.**
+A thin specification produces thin output. The tool does not invent specification that is not there; where there is no basis it marks "needs confirmation from the spec" and moves on rather than writing a case. I think that is right, because an invented case becomes "where did this come from" later, and by then nobody knows.
 
-This tool **does not invent specification that is not there.** Where there is no basis it **marks "needs confirmation from the spec" and moves on** rather than writing a case.
+But in an organisation with thin specifications the volume comes out lower than expected. The cause lies more in the material than the tool, and to the person using it the disappointment is identical.
 
-I think that is right — **an invented case becomes "where did this come from" later, and by then nobody knows.**
+It is slow. One feature end to end takes 1 hour 36 minutes at the median, and 64% of that is design. Split the runs at 27 August and the median design pass went from 41 to 67 minutes. Design moved to a stronger AI that day, but whether that is why it slowed down has not been measured separately.
 
-But **in an organisation with thin specifications the volume comes out lower than expected.** That is the material's fault rather than the tool's, and **to the person using it the disappointment is identical.**
+Some things are not fixed yet. Two that the September check-up found are waiting their turn.
 
-**It is slow.** One feature end to end takes **1 hour 36 minutes** at the median, and 64% of that is design. Split the runs at 27 August and the median design pass went from **41 to 67 minutes**. Design moved to a stronger AI that day, but whether that is why it slowed down has not been measured separately.
-
-**Some things are not fixed yet.** Two that the September check-up found and that are waiting their turn:
-
-- **Re-run it from the same folder and it treats last time's tab as its own, wipes it and writes afresh.** If someone recorded test results in that tab in between, those can go with it. It happens because "is this our tab?" is decided by a marker file on my machine, not by the sheet.
-- **It leaves a file saying "every inspection passed," but no code ever checks it.** Resume from a later stage and stage 5's inspections can be skipped. The documentation said "no marker means the stage runs again"; the code was not keeping that promise.
+- Re-run it from the same folder and it treats last time's tab as its own, wipes it and writes afresh. If someone recorded test results in that tab in between, those can go with it. It happens because "is this our tab?" is decided by a marker file on my machine, not by the sheet.
+- It leaves a file saying "every inspection passed," but no code ever checks it. Resume from a later stage and stage 5's inspections can be skipped. The documentation said "no marker means the stage runs again"; the code was not keeping that promise.
 
 ## Things that were rejected
 
-The version history is largely **a list of things that looked like progress and were not.** **More was removed than added.**
+Version history is mostly a list of things that looked like progress and were not. More was taken out than was built.
 
 > **[도판]** Black cells are deterministic code; orange cells are the model. Only S3 crosses both lanes — code builds the skeleton, the model fills in prose, code merges it back. Triangles are gates: fail one and the run stops there.
 >

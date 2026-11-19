@@ -10,51 +10,31 @@
 
 ---
 
-**This game does not exist yet. Only the slot is standing.**
+Future game 1 is the slot for a game that does not exist yet. Only the slot is standing, and what it carries is the part of what the wuxia game taught that can actually travel to the next game.
 
 ## Why build a slot for a game that does not exist
 
-The reason is on the studio page; in one line here:
+The reason is on the studio page, so here it is in one line. Fit a studio around one game and the day a second arrives, all of it has to be rebuilt. At that point every address changes, and the links people made from outside die with them.
 
-> **Fit a studio around one game and the day a second arrives, all of it has to be rebuilt.**
+Adding it later is expensive; leaving an empty slot now is free.
 
-And at that point **every address changes, and the links people made from outside die with them.**
+## The slot holds acceptance conditions, not game content
 
-**Adding it later is expensive; leaving an empty slot now is free.**
+What is in the slot right now is not game content. It is "what has to exist before this slot can be called filled," which is to say acceptance conditions.
 
-## So what is written in the slot right now
+For Design, the condition is whether the way you win can be written in two sentences. Spec asks whether the rules fit one screen and whether what is undecided has been written down. Art asks whether it has been decided what will not be made, and Verification asks whether you can say in one sentence what a pass means.
 
-**Not game content.** What is here is only **"what has to exist before this slot can be called filled."**
+## Every condition came from the wuxia game
 
-In other words, **acceptance conditions.**
+All of these were paid for on the wuxia game. The most common mistake when starting a new game is "I'll do better this time," and then the same mistake happens in the same place, because at that moment you cannot remember what you learned.
 
-| Part | The condition for this slot |
-|---|---|
-| **Design** | **Can the way you win be written in two sentences** |
-| **Spec** | Do the rules **fit one screen**, and is **what is undecided written down** |
-| **Art** | **Has it been decided what will *not* be made** |
-| **Verification** | Can you say **in one sentence what a pass means** |
+So what was learned is written in advance as acceptance conditions for the next game. Write a lesson as a story and it goes unread; write it as a condition and it has to be passed, so it gets read.
 
-## Where those conditions came from
+## What has to be re-decided is written down too
 
-**All of them were paid for on the wuxia game.**
+Each part carries two kinds of entry. One kind is a rule that holds when the game changes. The other is a question whose answer differs for every game.
 
-The most common mistake when starting a new game is **"I'll do better this time."** And then **the same mistake happens in the same place.** At the moment it matters, you cannot remember what you learned.
-
-So **what was learned is written in advance as acceptance conditions for the next game.**
-
-> **Write a lesson as a story and it goes unread. Write it as a condition and it has to be passed, so it gets read.**
-
-## And what has to be re-decided is written too
-
-Each part carries **two kinds of entry.**
-
-| Kind | Nature |
-|---|---|
-| **Travels** | A rule that **holds when the game changes** |
-| **Has to be re-decided** | A question whose **answer differs per game** |
-
-Separating them matters. **Without the split, last game's answers get carried over** and pinned onto the new game. **And they will not fit, while feeling comfortable because they are familiar.**
+Keeping the two apart matters. Without the split, last game's answers get carried over and pinned onto the new game, where they do not fit but feel comfortable because they are familiar.
 
 ## The detailed record starts here
 

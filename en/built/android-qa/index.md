@@ -10,59 +10,33 @@
 
 ---
 
-**A program that checks a game automatically, with a real phone plugged in over USB and nobody watching. I built it myself because the off-the-shelf automation tools will not work here.**
+The adb-based game QA server is a program that checks a game automatically, with a real phone plugged in over USB and nobody watching. I built it myself because the off-the-shelf automation tools cannot work on a game screen.
 
-## Why the off-the-shelf tools do not work — a game screen has no handles
+## A game screen gives automation tools no names to grab
 
-This is where the project starts. Understand this part and the rest follows.
+An ordinary app puts every part of its screen on display with a name attached. There really is a thing labelled "Login button," so an automation tool can find it by name and press it, even when the screen size differs or the position moves.
 
-**An ordinary app** puts things on screen **each carrying a name.** There really is a thing labelled *Login button*.
+A game paints the whole screen as a single picture. Anything that looks like a button is just paint, so searching for the Login button turns up nothing. To a stock tool the screen looks like an empty room, and there is nothing to press.
 
-So an automation tool can say **"press the Login button."** It finds it by name and presses it. The screen size can differ, the position can move, and it still finds it.
+## Press by looking at the screen, judge by reading the log
 
-**A game is different.** A game paints **the whole screen as a single picture.** Things that look like buttons are **just paint.**
+So the work is split in two. Where to press is decided by looking at a picture of the screen and working out the position. Whether the press worked is decided by reading what the game wrote down.
 
-| | An ordinary app | A game |
-|---|---|---|
-| How the screen is built | Named parts | **One picture** |
-| Search for *the Login button* | It finds it | **Nothing there** |
+Moving the verdict off the pixels and onto the log was the biggest single improvement in this project. Why is explained in the piece below.
 
-So a stock tool looking at a game screen **sees an empty room.** There is nothing to press.
-
-## So the method changed — "drive by sight, judge by log"
-
-One line runs through the whole project.
-
-| What | How |
-|---|---|
-| **Pressing** | **Look at a picture of the screen** and work out where to press |
-| **Judging whether it worked** | **Read what the game wrote down** |
-| **What the log cannot decide** | **An AI judges the screenshot**, and rules re-check its evidence (from 2026-09) |
-
-Splitting those two is the core. And **moving the verdict off the pixels and onto the log** was this project's single biggest improvement. Why, in the piece below.
-
-Some things never reach the log, though — "what is visible on screen" is one of them. Since 2026-09 those cases are judged by the **photo judge** instead of a person.
+Some things never reach the log, though. "What is visible on screen" is one of them. Since 2026-09 an AI judge has handled those checks in place of a person: it judges the screenshot, and rules re-check its evidence.
 
 ## Scale
 
-Written in Python, 22 capabilities, with 353 checks around it now (104 at first). It runs with a real phone attached over USB or Wi-Fi, and the current test list has 248 cases.
-
-It has run **300 cycles** overnight, unattended.
+It is written in Python, with 22 capabilities and 353 checks around them (104 at first). It runs with a real phone attached over USB or Wi-Fi, and the current test list has 248 cases. It has run 300 cycles overnight, unattended.
 
 ## Written up in four parts
 
-| | What the problem is |
-|---|---|
-| **Driving and judging** | How do you press a screen with no handles, and what decides the result |
-| **The unattended loop** | What has to be true for a run nobody is watching |
-| **What came out** | The overnight result — and **the first thing that wasn't my automation's fault** |
-| **The photo judge** | What it takes to trust an AI's verdict on a screen the log cannot decide |
+The first part covers driving and judging: how you press a screen with no handles, and what decides the result. The second covers the unattended loop, meaning what has to be true for a run nobody is watching. The third is what came out, which includes the overnight result and the first problem that was not my automation's fault. The last covers the photo judge, and what it takes to trust an AI's verdict on a screen the log cannot decide.
 
-## And the same cases against a PC build
+## The same cases against a PC build
 
-The case list was written for phones, but **the PC build of the same game** also had to be checked.
-
-The same game **controls completely differently.** And **what needs confirming is identical.** How that gap was bridged is written up too.
+The case list was written for phones, but the PC build of the same game also had to be checked. The controls are completely different even though the game is the same, and what needs confirming is identical. How that gap was bridged is written up too.
 
 ## The detailed record starts here
 

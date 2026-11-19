@@ -9,87 +9,79 @@
 
 ---
 
-**This is my day job. It is also the shelf that has taught me the least — and that turns out not to be a bad thing.**
+The QA automation shelf collects eleven write-ups from opening up other people's test-automation and cause-investigation tools. It is my day job, and it is also the shelf that has taught me the least.
 
-First, what "QA automation" is.
+First, what "QA automation" means. When you build a game or an app, someone has to press everything and check that it works: press a button, see whether the right screen comes up, confirm the value landed. A person doing that by hand is QA, and getting a machine to do the pressing is QA automation.
 
-When you build a game or an app, someone has to **press everything and check it works.** Press a button, see if the right screen comes up, confirm the value landed. A person doing that by hand is QA. **Getting a machine to do the pressing** is QA automation.
+## My own field, and the smallest harvest
 
-There are eleven pieces here, opening up automation, tools for investigating causes and controlling desktop programs and phones, one piece of formal-verification research, and one essay whose numbers I re-measured.
+Across the first five pieces, the techniques I wrote down as adopted number 4.5, fewer than on any other shelf. When I checked, only one had actually gone into my code; that story is in the 2026-09 check below.
 
-## My own field, and the smallest harvest — which is not a complaint
+My first thought was that I must be reading them badly, but that was not it. Hold the same problem long enough and everyone arrives at similar answers, the way two climbers meet at the same spots when a mountain has only a few routes up. What you take from that is "my route was right."
 
-Across the first five pieces, the techniques I **wrote down as adopted** number **4.5**. Fewer than any other shelf. (Only one had actually gone in when I checked — see the 2026-09 check below.)
+## Why the research still paid off
 
-My first thought was *I must be reading them badly.* That wasn't it. **Hold the same problem long enough and everyone arrives at similar answers.**
+Two kinds of return came out of it.
 
-Put it this way: when there are only a few routes up a mountain, the person who climbed first and the person who climbed later meet at the same places. At that point the finding is not *nothing to learn* — it is **my route was right.**
+The first is that a conclusion I held alone became a conclusion held by two. Some of my judgements were my own, with no way to know whether they were right. Then someone I had never met, at a different company, turned out to have reached exactly the same answer independently. A sample of one became a sample of two, which is worth a lot even with zero techniques transferred.
 
-## Why the research still pays when nothing transfers
-
-This is the important part of the shelf. Two different kinds of return came out.
-
-**One — a conclusion I held alone became a conclusion held by two.** Some judgements I had made on my own, with **no way to know whether they were right.** Then someone I have never met, at a different company, **had arrived independently at exactly the same answer.** A sample of one became a sample of two. Even with zero techniques transferred, that is worth a lot.
-
-**Two — someone else's principle became a ruler for my own thing.** In one piece the transferable technique count was **zero.** But taking the principle they had set and measuring my code against it, I found **a defence I had built was not wired into any actual run.** Nothing learned, and something to fix.
+The second is that someone else's principle became a ruler for my own work. One piece offered zero techniques to take. But when I measured my code against the principle its authors had set, I found that a defence I had built was not wired into any actual run. I had learned nothing new and still had something to fix.
 
 ## "Already there" did not always mean the same thing
 
-At two pieces I read it as one thing: *I already arrived at this.* At four, **two different states** were hiding under that phrase. Having arrived at the same answer and **having written the answer down without ever doing it** are not the same.
+With two pieces, I read it as one thing: I had already arrived at the same conclusion. By the fourth piece, two different states were hiding under that phrase. Arriving at the same answer and writing the answer down without ever doing it are not the same.
 
-And I was caught by the second one — **something I believed I had done turned out to be something I had written down as intending to do.**
+I was caught by the second one. Something I believed I had done turned out to be something I had only written down as intending to do.
 
-## One permission that changed the nature of the evidence
+## One permission changed the nature of the evidence
 
-There is a harvest here that isn't a technique.
+One harvest here has nothing to do with techniques. Checking whether a game's drop rate matches what was advertised used to mean pulling hundreds of times and doing statistics, which was slow and ended in "probably right."
 
-Checking whether a game's drop rate matches what was advertised used to mean **pulling hundreds of times and doing statistics.** Slow, and the answer comes out as *probably right*.
-
-When access to the underlying data arrived, the same check became **one query, five seconds.** And the answer stopped being *probably* and became **certain.**
-
-→ What I took: **it wasn't a faster tool. The vantage point changed, and that changed the kind of evidence available.**
+When access to the underlying data arrived, the same check became one query and five seconds, and "probably" became certain. The vantage point changed, and with it the kind of evidence available.
 
 ## In the fifth, I went to judge a detector and got caught by it
 
-The first four were other people's talks and articles. The fifth was **the first time I pulled someone's code and ran it against my own data.**
+The first four were other people's talks and articles. The fifth was the first time I pulled someone's code and ran it against my own data.
 
-I went to test whether their detector caught what it claimed. **Run against my data, it flagged a pile of things that were fine.** Not because the tool is bad — because it was **the wrong tool for the place I meant to put it.** Without measuring, it would have come straight in.
+I went to test whether their detector caught what it claimed. Run against my data, it flagged a pile of things that were fine. It was the wrong tool for the place I meant to put it, though nothing is wrong with the tool itself. Without measuring, it would have come straight in.
 
-## Of the 4.5 techniques I wrote down as adopted, one reached the code — a 2026-09 check
+## Of the 4.5 techniques I wrote down as adopted, one reached the code
 
-About a month on, I opened my code to see whether what each piece said it would take had actually gone in.
+About a month on, I opened my code to see whether what each piece said it would take had actually gone in (the 2026-09 check).
 
 | Piece | What it said I'd take | As of 2026-09 |
 |---|---|---|
-| [Asleep's QA automation](/en/teardowns/qa/asleep-qa/index.md) | Count passes that came from a rough coordinate tap separately | **In** — a tap ledger that records the evidence behind every tap |
-| [An autoplay test tool](/en/teardowns/qa/autoplay-test-tool/index.md) | Catch "pushing but not moving" as being stuck · confirm only when two clocks ring together | **Not in** at the check → **both went in** (9/28) |
-| [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | One sentence-rhythm term · a check that stops on an unknown kind of file | **Neither was in** at the check → **both went in**: the stopping check (9/28) and the rhythm term (9/29, long-form only) |
-| [Toss Nebula](/en/teardowns/qa/toss-nebula/index.md) | Fix the "gateway that exists twice" it surfaced instead of a technique | **Half** — the real run path now has a lock; the gateway still exists twice |
-| [A talk on QA infrastructure](/en/teardowns/qa/qa-infrastructure/index.md) | Use the gacha case as an example in writing | **In** — ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) |
+| [Asleep's QA automation](/en/teardowns/qa/asleep-qa/index.md) | Count passes that came from a rough coordinate tap separately | In: a tap ledger that records the evidence behind every tap |
+| [An autoplay test tool](/en/teardowns/qa/autoplay-test-tool/index.md) | Catch "pushing but not moving" as being stuck · confirm only when two clocks ring together | Not in at the check; both went in (9/28) |
+| [watermarks-remover](/en/teardowns/qa/watermarks-remover/index.md) | One sentence-rhythm term · a check that stops on an unknown kind of file | Neither was in at the check; both went in: the stopping check (9/28) and the rhythm term (9/29, long-form only) |
+| [Toss Nebula](/en/teardowns/qa/toss-nebula/index.md) | Fix the "gateway that exists twice" it surfaced instead of a technique | Half: the real run path now has a lock, but the gateway still exists twice |
+| [A talk on QA infrastructure](/en/teardowns/qa/qa-infrastructure/index.md) | Use the gacha case as an example in writing | In: ["Probably right" is not a verdict](/en/writing/verdicts/evidence-grades/index.md) |
 
-**Writing "adopt" and putting it in turned out to be separate jobs.** Marking a row "adopted" in a verdict table feels like the work is done at that moment, and the code knows nothing about it. So this shelf's number is now written as **"4.5 of 4.5 applied"** rather than "4.5 techniques" — the one that was in at the check, plus the 3.5 put in over the next two days (a publish check that stops on an unknown kind of file · the contradiction check for being stuck · the two-clocks confirmation · a long-form-only sentence-rhythm check). The effects differ. The rhythm check caught two easy-layer passages on its first run and they were fixed; the two stuck-detection pieces haven't filtered anything in simulation yet — the current bot pushes the whole time it walks, and nothing in the simulation inches forward — so what went in and what has had an effect are counted separately too.
+Writing "adopt" and putting it in turned out to be separate jobs. Marking a row "adopted" in a verdict table feels like the work is finished at that moment, and the code knows nothing about it. So this shelf's number is now written as "4.5 of 4.5 applied" rather than "4.5 techniques." It is the one that was in at the check plus the 3.5 put in over the next two days: a publish check that stops on an unknown kind of file, the contradiction check for being stuck, the two-clocks confirmation, and a long-form-only sentence-rhythm check.
 
-One mistake ran the other way. In the autoplay piece I said my stuck detection had only one layer; opening the code, **a second layer was already there** — that piece now says so.
+The effects differ. The rhythm check caught two easy-layer passages on its first run and they were fixed. The two stuck-detection pieces have not filtered anything in simulation yet, because the current bot pushes the whole time it walks and nothing in the simulation inches forward. What went in and what has had an effect are counted separately too.
 
-And outside this shelf, something built by someone else entered my QA pipeline for the first time: the evaluation model **Jev**, attached as the photo judge's "second eye" (2026-09-24). It came in through a four-day trial rather than a teardown, and in the range measured it has not yet caught a real error → [The photo judge](/en/built/android-qa/judge/index.md).
+One mistake ran the other way. In the autoplay piece I said my stuck detection had only one layer; when I opened the code, a second layer was already there, and that piece now says so.
+
+Outside this shelf, something built by someone else entered my QA pipeline for the first time: the evaluation model Jev, attached as the photo judge's "second eye" (2026-09-24). It came in through a four-day trial rather than a teardown, and in the range measured it has not yet caught a real error. The details are in [The photo judge](/en/built/android-qa/judge/index.md).
 
 ## The sixth piece took the same subject apart twice and never ran it
 
-[clumsy](/en/teardowns/qa/clumsy/index.md) is a tool that makes a PC's internet connection worse on purpose. I opened it for disconnect testing, and only after finishing did I find **a report from August that had already reached the same conclusion.** Both times I wrote "use it". Neither time did I run it.
+[clumsy](/en/teardowns/qa/clumsy/index.md) is a tool that makes a PC's internet connection worse on purpose. I opened it for disconnect testing, and only after finishing did I find a report from August that had already reached the same conclusion. Both times I wrote "use it," and neither time did I run it.
 
-The check above taught me that writing something down and putting it in are separate jobs; this time I went through that twice inside a single subject. So the shelf's number becomes **"4.5 of 7 applied"** — clumsy adds 2.5 to what was written down, and nothing to what went in.
+The check above taught me that writing something down and putting it in are separate jobs; this time I went through that twice inside a single subject. So the shelf's number becomes "4.5 of 7 applied." Clumsy adds 2.5 to what was written down and nothing to what went in.
 
 ## The seventh tool helps investigate what a failed check means
 
-[REA](/en/teardowns/qa/rea/index.md) lets an agent inspect executables and applications. I tried static analysis on a Windows binary and a small JavaScript fixture, then examined the boundary between findings and inference. **Two exercised probes do not amount to a QA integration.** The 4.5 / 7 adoption figure belongs to the earlier six pieces; these probes are not added to that tally.
+[REA](/en/teardowns/qa/rea/index.md) lets an agent inspect executables and applications. I tried static analysis on a Windows binary and a small JavaScript fixture, then examined the boundary between findings and inference. Two exercised probes do not amount to a QA integration. The 4.5 / 7 adoption figure belongs to the earlier six pieces, and these probes are not added to that tally.
 
 ## The eighth borrows one idea from a different road: proof
 
-[Claude formal verification](/en/teardowns/qa/formal-verification/index.md) is Anthropic's work having Claude prove that 123 open-source libraries never crash under stated conditions. Proofs are not my job, so I took one idea from it — agents copying each other's finished work — put it into my game studio's art team, and measured before and after. Time fell 21%; cost stayed flat. This is not added to the 4.5 / 7 figure either.
+[Claude formal verification](/en/teardowns/qa/formal-verification/index.md) is Anthropic's work having Claude prove that 123 open-source libraries never crash under stated conditions. Proofs are not my job, so I took one idea from it, agents copying each other's finished work, put it into my game studio's art team, and measured before and after. Time fell 21% and cost stayed flat. This is not added to the 4.5 / 7 figure either.
 
 ## The ninth lets an AI operate desktop programs through a parts list, and I put it on hold
 
-[agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list, not through screenshots. I read its docs and code, then **tried it briefly on my PC and removed it.** Reading worked, but I could not show it runs separately while I work. Android game screens publish no such list either, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
+[agent-desktop](/en/teardowns/qa/agent-desktop/index.md) reads and presses programs through the OS accessibility list instead of through screenshots. I read its docs and code, then tried it briefly on my PC and removed it. Reading worked, but I could not show it runs separately while I work. Android game screens publish no such list either, so I held it and took away one principle: tie a tag to the moment you looked. This is not added to the 4.5 / 7 figure either.
 
 ## The tenth re-measures a number from someone else's essay
 
@@ -97,7 +89,7 @@ The check above taught me that writing something down and putting it in are sepa
 
 ## The eleventh lets an AI use a real smartphone, and it stopped at game screens
 
-[phone-harness](/en/teardowns/qa/phone-harness/index.md) lets an agent like Claude Code look at and tap an iPhone or Android phone the way a person would. I watched an introduction video and checked it against the repository code. Ordinary apps read well, but game screens are invisible to it too, and its picture-text recognition only runs on a Mac, so it is on hold. I took one principle — tag every read value with where it came from — and left it out of the 4.5 / 7 figure.
+[phone-harness](/en/teardowns/qa/phone-harness/index.md) lets an agent like Claude Code look at and tap an iPhone or Android phone the way a person would. I watched an introduction video and checked it against the repository code. Ordinary apps read well, but game screens are invisible to it too, and its picture-text recognition only runs on a Mac, so it is on hold. I took one principle, tagging every read value with where it came from, and left it out of the 4.5 / 7 figure.
 
 ## The detailed record starts here
 

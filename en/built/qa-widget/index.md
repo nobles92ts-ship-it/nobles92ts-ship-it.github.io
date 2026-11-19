@@ -10,55 +10,29 @@
 
 ---
 
-**A small panel that is *always* on screen. Test results and progress, refreshed every five minutes on its own.**
+The QA widget is a small panel that stays on screen all the time. Test results and progress refresh by themselves every five minutes.
 
-## Why not a web dashboard
+## Why it is not a web dashboard
 
-This is the entire thing.
+Dashboards usually end up as web pages: prettier, bigger, with room for more features. They share one fatal weakness, though. You have to go and look, and nobody goes.
 
-Build a dashboard and you normally build **a web page.** Prettier, bigger, room for more features.
+It tends to play out the same way. On the day it ships everyone opens it and says it looks nice. A week later people check it now and then, and by two weeks the tab is closed. After a month the numbers have gone stale and nobody knows.
 
-Web dashboards have one fatal weakness.
+That last stage is the worst. A wrong number sits there, nobody looks, so nobody fixes it.
 
-> **You have to *go* and look. And nobody goes.**
+## Built so you do not have to go
 
-In practice:
-
-| When | What happens |
-|---|---|
-| The day it ships | Everyone opens it. *Nice* |
-| A week later | Occasionally |
-| **Two weeks later** | **The tab is closed** |
-| A month later | **The numbers have gone stale and nobody knows** |
-
-The last row is the worst. **A wrong number is sitting there and nobody looks, so nobody fixes it.**
-
-## So it was built so you do not have to go
-
-This widget is **pinned to the top right of the desktop.** Turn the computer on and it is there.
-
-**No going required. Not looking takes effort.**
+The widget is pinned to the top right of the desktop. Turn the computer on and it is there. There is no trip to make; not looking would take effort.
 
 ## Written up in three parts
 
-| | What the problem is |
-|---|---|
-| **The screen** | **Why something that shows numbers must not show *only* numbers** |
-| **Architecture** | **Why the widget must not fetch anything** |
-| **Delivery** | **Putting it on someone else's machine was harder than building it** |
+The story splits into three write-ups. The screen part covers why something that shows numbers must not show only numbers. The architecture part covers why the widget must not fetch anything itself, and the delivery part covers why putting a tool on someone else's machine was harder than building it.
 
 ## The cost
 
-Stated plainly.
+To be plain about it, the widget runs on Windows only and looks like it was made in 2009. Both are true.
 
-- It runs **on Windows only**
-- It **looks like it was made in 2009**
-
-**Both are true.**
-
-And since it was built it has been **on my screen every working day.** None of the prettier dashboards I have made managed that.
-
-> **Ugly and seen daily beats beautiful and never opened.**
+Even so, it has been on my screen every working day since I built it, which none of the prettier dashboards I have made ever managed. A dashboard that looks good and goes unopened loses to an ugly one that is seen daily.
 
 ## The detailed record starts here
 

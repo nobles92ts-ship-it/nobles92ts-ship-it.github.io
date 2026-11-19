@@ -10,19 +10,15 @@
 
 ---
 
-**Give the office PC a job and the home PC does it. No server, no ports — **one folder** is the whole thing.**
+claude-bus is a small tool that lets the office PC hand a job to the home PC and have it done there. There is no server and no port, just one shared folder.
 
 ## How it runs
 
-Two computers **share one folder** (the kind that syncs itself).
+The two computers share a folder that syncs itself: a file dropped in on one side shows up on the other.
 
-1. The office PC drops **a file saying "do this"** into the folder
-2. A watcher on the home PC, **checking the folder every minute**, finds it
-3. The home PC **starts a fresh session** and does the work
-4. It puts the result **back into the same folder**
-5. The office PC reads it
+The office PC drops a file in that folder saying "do this." A watcher on the home PC checks the folder every minute, and when it finds the file it starts a fresh session, does the work, and puts the result back in the same folder. The office PC then reads it.
 
-**No server, no ports, no login.** It was **laid on top of** a folder sync that was already running.
+There is no server, no port and no login. The bus sits on top of a folder sync that was already running.
 
 > **[도판]** No server, no port, no auth. It drops a file into a sync folder that was already running. Slow — but it does the one thing a chat app can't: wake a machine that's asleep.
 >
@@ -30,40 +26,19 @@ Two computers **share one folder** (the kind that syncs itself).
 
 ## It was not built to move files
 
-The most misread part.
+This is the part people misread most often. Files inside a syncing folder are already on both machines, so there would be no reason to build a bus just to send one.
 
-Files inside a syncing folder are **already on both machines.** There would be no reason to build this to send a file.
-
-**What it buys is not the file, it is the machine.**
-
-There are things only the home PC has — programs installed only there, a game project only there, hardware attached to it. **Moving files does not get you those.**
-
-So **the job is sent over so it can be done there.**
+What it buys is the machine itself. Programs installed only on the home PC, a game project that lives only there, and hardware plugged into it can't be reached by moving files. So the job is sent over and done there.
 
 ## Why build a slow channel on purpose
 
-A round trip takes **two to three minutes.** A messenger takes seconds. **Far slower.**
+A round trip takes two to three minutes, far slower than a messenger that takes seconds.
 
-There is one thing a messenger cannot do.
-
-| | A messenger | This bus |
-|---|---|---|
-| Speed | **Seconds** | 2–3 minutes |
-| If the other machine **is asleep** | **Messages just pile up** | **It wakes it and runs the job** |
-
-A messenger requires **the other side to be awake.** Asleep, the messages accumulate and someone has to read them in the morning.
-
-Here **the watcher keeps looking at the folder**, so when a file lands **the sleeping side wakes itself** and works.
-
-> **Slow, but it arrives with nobody there.**
+Still, there is one thing a messenger cannot do. It needs the other side to be awake; if that PC is asleep, the messages pile up and someone has to read them in the morning. Here the watcher keeps looking at the folder, so when a file lands the sleeping side wakes itself and gets to work. It is slow, but it arrives with nobody there.
 
 ## Written up in three parts
 
-| | What the problem is |
-|---|---|
-| **Protocol** | Both sides share one folder — **why no conflict copies appear** |
-| **Timing** | I measured where the three minutes go — **it was not my code** |
-| **Safety** | **What stands between somebody else's instruction and my machine** |
+The write-up comes in three pieces. [Protocol](/en/built/claude-bus/protocol/index.md) covers why no conflict copies appear when both sides share one folder. [Timing](/en/built/claude-bus/timing/index.md) is about measuring where the three minutes go and finding it was not my code. [Safety](/en/built/claude-bus/safety/index.md) looks at what stands between somebody else's instruction and my machine.
 
 ## The detailed record starts here
 

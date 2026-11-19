@@ -9,96 +9,49 @@
 
 ---
 
-**A real device ran 300 cycles overnight with nobody watching. What made it finish was not fast code but *knowing how to cut things off*.**
+A real device ran 300 cycles overnight with nobody watching. What got it to the end was not faster code but a way of cutting failures off.
 
 ## What "unattended" means
 
-Set it going at night and the result has to be there in the morning.
+Start it at night and the result should be waiting in the morning. Most automation can't manage that. It stops somewhere, and once it has stopped it stays there until morning.
 
-Most automation **cannot run all night.** It stops somewhere. And once stopped it **stands there until morning.**
+A stall at 2am costs six hours and you find out at breakfast. A run that finishes and leaves a list of failures starts the morning with reading that list. This piece is about what makes the difference.
 
-| | Result |
-|---|---|
-| Stops at 2am | **Six hours wasted.** Discovered in the morning |
-| Runs to the end, leaving a list of failures | **Read the list in the morning** |
+## How far a failure spreads matters more than speed
 
-What makes that difference is the subject of this piece.
+Making it faster looks like the answer, and it wasn't. When one step fails and the failure spreads to everything, the night ends there. When it stays inside that one step, the rest keeps running. Double the performance and the night still ends at the same place if the stopping point hasn't moved. [Building the loop itself gave the same verdict](/en/built/android-qa/loop/index.md): what produced a full run there was the structure that pens a failure in, not throughput.
 
-## The answer — not speed, but cutting off
+## Waiting is worse than failing
 
-The intuitive answer is **make it faster.** It is not.
+A failure is written down and can be read in the morning. Waiting leaves nothing. Stand six hours on "awaiting response" and all you see at breakfast is "still in progress". You can't tell whether it failed or succeeded, or what happened that night.
 
-> **What decides it is how far a failure spreads.**
+So every place that waits carries a limit: wait this long and no longer. Past the limit, record a failure and move on. A recorded failure is information.
 
-| When a failure | Result |
-|---|---|
-| **Spreads to everything** | The night ends there |
-| **Stays inside that one thing** | **The rest keeps running** |
+## The suspect list was narrowed in advance
 
-And the same verdict came out of [building the loop itself](/en/built/android-qa/loop/index.md) — what produced a full run there was not throughput but the structure that pens a failure in. **Double the performance and the night still ends in the same place if the stopping point is unchanged.**
+The cases I run are only ones already confirmed to pass in full. When something fails, that leaves one suspect. The product passed yesterday, so what's left is my side.
 
-## "Waiting is worse than failing"
+[The loop write-up calls this a free oracle](/en/built/android-qa/loop/index.md), because nothing had to be built to do the judging. Choosing what to run gave me the judgement as a side effect. Opening the list in the morning doesn't mean sorting "product or me?" case by case.
 
-The most important line.
+## A wrong tap and a wrong verdict cost different amounts
 
-A failure **is recorded and can be read in the morning.** Waiting **leaves nothing.**
+If a tap is wrong, tap again. That's cheap, so tapping can work from the screen. If a verdict is wrong, the wrong result goes into the record, which is expensive. So verdicts come from reading the logs, not from looking at the screen. Two things with different costs don't share evidence.
 
-Stand six hours on *awaiting response* and what you see in the morning is **"still in progress."** Neither failed nor succeeded. **There is no way to know what happened that night.**
+## One battery point was a pass condition
 
-So **every waiting point carries "wait only this long."** Past it, **record a failure and move on.**
+Running all night needs the device to be alive in the morning. Measured overnight, the battery dropped one percentage point. That became one of the pass conditions for unattended operation. However well it runs, if the battery dies before morning it isn't unattended.
 
-**A recorded failure is information; waiting leaves nothing at all.**
+## Repetition accumulates; it doesn't discover
 
-## The subject of a failure is fixed in advance
+A problem that never showed up in one run showed up across 300. That wasn't the automation being clever. A rare event has to be run many times before it appears once. What automation does is run many times, not search well.
 
-Another device.
+The distinction matters because the next step differs. If the automation caught it, make the automation smarter. If it surfaced because of volume, run it more.
 
-The case list being run is **one already confirmed to pass in full.** Which narrows the suspects to one the moment anything fails — the product cleared yesterday, so what is left is my side.
+## What I could not do
 
-[The loop write-up calls that a free oracle](/en/built/android-qa/loop/index.md), because nothing had to be built to make the judgement: **choosing what to run produced the judgement as a side effect.**
+The detailed record below lists eight things I couldn't do. Half of that list is "I didn't measure it", not "I measured it and it was fine". The most dangerous sentence in unattended regression is "nothing has gone wrong so far", because nothing going wrong can mean it's fine or can mean nobody is looking. Leave the unmeasured places unnamed and that silence piles up like evidence.
 
-So opening the list in the morning does not involve **working through "is this the product or me" case by case.**
-
-## "A wrong tap" and "a wrong verdict" cost different amounts
-
-Hence splitting the evidence.
-
-| | When wrong | By what |
-|---|---|---|
-| **Tapping** | **Tap again** — cheap | Looking at the screen |
-| **Judging** | **A wrong result enters the record** — expensive | **Reading the logs** |
-
-Different costs mean **they must not share evidence.** Tapping can be approximate; judging must be exact.
-
-## And "one battery point" was a pass condition
-
-Small and interesting.
-
-Running all night requires **the device to still be alive in the morning.** Measuring the overnight battery drain gave **one percentage point.**
-
-That became **one of the pass conditions for unattended operation.** However well it runs, **if the battery dies before morning it is not unattended.**
-
-## What unattended repetition produces is accumulation, not discovery
-
-The last insight.
-
-Something that never appeared in one run **appeared across 300.** That is **not the automation being clever.**
-
-**Rare events require many runs to appear once.** What the automation does is **run many times**, not find things well.
-
-Worth separating because **"our automation caught a bug" and "we ran it a lot and it surfaced" lead to different next actions.** The first means make the automation smarter; the second means **run it more.**
-
-## What I could not do — and why the list matters
-
-The detailed record below lists **eight things I could not do.** One line from it:
-
-> **Half of that list is "I did not measure it," not "I measured it and it was fine."**
-
-Because the most dangerous sentence in unattended regression is **"nothing has gone wrong so far."**
-
-Nothing going wrong could mean **it is fine** or **nobody is looking.** And **unless the unmeasured places are named and recorded, that silence accumulates as if it were evidence.**
-
-One in particular: **visual bugs are still invisible.** That is the price of putting the verdict in the logs. **A broken screen still passes if the logs look normal.** That slot belongs to a person, and **the larger the unattended surface grows, the blurrier that person's portion becomes.**
+One of them in particular: visual bugs are still invisible. That is the price of keeping the verdict in the logs. A broken screen still passes if the logs look normal. That slot belongs to a person, and the bigger the unattended surface gets, the blurrier it becomes where that person's share is.
 
 > **[도판]** One device, one build, one night. The variance across multiple nights and multiple devices was never measured.
 >

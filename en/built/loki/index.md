@@ -10,57 +10,37 @@
 
 ---
 
-**Say something in a messenger and the PC under my desk does the work. It works from my phone, from anywhere.**
+Loki is a local Slack agent that puts my own PC into the work messenger as if it were a person. Say something there and the PC under my desk does the work, and it works from my phone, from anywhere.
 
-## What it is
+## Send a message and the computer at home does the job
 
-I put **my own PC into the work messenger as if it were a person.**
+Send it a message and the computer at home actually carries out the work, then sends the result back through the messenger. Think of texting an errand to an assistant at my desk. That assistant sits at my computer. It sees my files and runs my programs.
 
-Send it a message and **the computer at home actually does the work**, then sends the result back through the messenger.
+## A flat monthly fee makes leaving it on all day painless
 
-Think of it as **texting instructions to an assistant sitting at my desk.** The assistant is at my computer, so it can see my files and run my programs.
+Attaching an AI to a program normally means paying per use. Every check costs something even when nothing is happening, so leaving it on all day is a liability.
 
-## The decisive design — "it runs on a flat monthly fee"
+Loki runs on top of the subscription I already pay for, so there is no additional charge. Asking it to check things often costs nothing extra, which makes an agent that stays on all day realistic. A billing structure made that possible, more than any feature.
 
-This is why the thing is viable at all.
-
-Attaching an AI to a program normally means **paying per use.** Which makes leaving it on all day a liability — **every check costs something even when nothing is happening.**
-
-This is different. **It runs on top of the subscription I already pay for.** No additional charge.
-
-| | Pay per use | This |
+| | Pay per use | Loki |
 |---|---|---|
-| Leave it running all day | **A liability** | **No issue** |
-| Have it check things often | Costs each time | **Just do it** |
+| Leave it running all day | A liability | No issue |
+| Have it check things often | Costs each time | Just do it |
+| Extra charge | By usage | None |
 
-**The point where leaving an agent on all day becomes realistic** is here. Not a feature — **a billing structure made this possible.**
+## It suits jobs that take hours
 
-## What it is actually used for — "work that outlives the conversation"
+Its best use is work that outlives the conversation. I send "run this job" from my phone, put the phone away and do something else, and hours later the report lands in that thread.
 
-Its best use is **jobs that take hours.**
+The PC does the work and the messenger is just a handle. Where I am does not matter, as long as I did not shut the machine down on my way out.
 
-For instance:
+## The source is published
 
-1. Send **"run this job"** from my phone
-2. Put the phone away and do something else
-3. **Hours later, the report lands in that thread**
-
-**The PC does the work and the messenger is just a handle.** So it does not matter where I am, as long as I did not shut the machine down.
-
-## It is published
-
-The source is open for anyone to look at.
-
-And something actually came of that — **someone using it found a bug and sent it back with the diagnosis and the fix attached.**
+The source is open for anyone to look at. Something did come of that: a person using it found a bug and sent it back with the diagnosis and the fix attached.
 
 ## Written up in four parts
 
-| | What the problem is |
-|---|---|
-| **Architecture** | Swapping both the messenger and the AI while **keeping one core** |
-| **Commands** | How much you can ask for through a chat box |
-| **Permissions and guards** | Opening **something that can touch my whole machine** to other people |
-| **Silent failures** | Almost every bug here was **"returned success and did nothing"** |
+The architecture part covers swapping both the messenger and the AI while keeping one core. Commands asks how much a chat box can do. Permissions and guards is about letting other people use something that can touch my whole machine. Silent failures covers the bugs, and almost every one was "returned success and did nothing."
 
 The last one is the most expensive story this project produced.
 

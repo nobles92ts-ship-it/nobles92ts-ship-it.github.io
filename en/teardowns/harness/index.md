@@ -9,101 +9,43 @@
 
 ---
 
-**This shelf examines the machinery around an AI agent. It now holds 24 analyses, with adoption decisions recorded in the individual pieces.**
+"Agent harnesses" examines the machinery around an AI agent: 24 analyses, each with its own adoption decision recorded in the piece itself. [Harness2](/en/teardowns/harness/harness2/index.md) was added on 2026-10-19, and [BrowserSkill](/en/teardowns/harness/browserskill/index.md), which had been missing from this index, was linked at the same time. The "21 pieces, 1 adopted" tally below belongs to its original period and is not a fresh count of what is installed today.
 
-[Harness2](/en/teardowns/harness/harness2/index.md) was added on 2026-10-19. [BrowserSkill](/en/teardowns/harness/browserskill/index.md) is also linked here after being missing from this index. The old “21 pieces, 1 adopted” tally below belongs to its original period; it is not a new count of currently installed tools.
+## What a harness is
 
-## First — what a harness is
+Literally, a harness is the tack you put on a horse. An AI needs something similar, because the AI itself only exchanges words, and getting a job done means strapping machinery around it. One part tells it what rules to keep, one grants it tools, one makes it ask a person before anything dangerous, and one checks the work when it is done. That bundle is the harness: if the AI is the horse, the harness is the reins and saddle.
 
-Literally, it is the tack you put on a horse.
+## It became the largest shelf
 
-Something similar is needed to put an AI to work. The AI itself only exchanges words; **to actually get a job done, machinery has to be strapped around it.**
-
-- Something telling it what rules to keep
-- Something granting it tools to use
-- Something that makes it ask before doing anything dangerous
-- Something that checks the work once it is done
-
-That bundle is the harness. **If the AI is the horse, the harness is the reins and saddle.**
-
-## This is the largest shelf here
-
-The ledger contains **24 harness analyses as of 2026-11-14**. I did not design the categories first and fill them; **I filled them and then found that this was the largest shelf.**
-
-**This number is where my time went.**
+The ledger holds 24 harness analyses as of 2026-11-14. I did not design the categories first and fill them; I filled them, counted, and found this was the biggest. That number is where my time went.
 
 ## At twenty-one pieces, one tool had come in
 
-This is the tally from when the shelf held twenty-one pieces. It describes that period, rather than today's installed inventory.
-
-| | Count |
-|---|---|
-| Taken apart | **21** |
-| Actually installed | **1** |
-
-And even that one **was not installed for efficiency.** I installed it because I wanted it, and **I wrote that on its page** — because **memory later rewrites itself into *I added it for the productivity gain.***
-
-Memory reworks your choices into rational ones. **Writing the reason down where it happened is the only defence.**
+When the shelf held twenty-one pieces, I had taken 21 apart and installed 1. Even that one was not installed for efficiency. I installed it because I wanted it, and I wrote that on its page, since memory later rewrites a choice into a rational one. Writing the reason down where it happened is the only defence.
 
 ## The twenty that stayed out had different reasons
 
-I assumed it was *nothing good out there.* It was not. The rejection reasons sorted into kinds.
+I assumed it meant there was nothing good out there, but the rejection reasons sorted into kinds. Sometimes I already had the same thing. Sometimes it was good but nothing in my setup could take it. Sometimes it was downloaded and installed and would not run, and sometimes the vendor's own table contradicted its marketing. The third and fourth came up most often.
 
-| Reason | What it means |
-|---|---|
-| **I already had it** | The same thing was present in my setup |
-| **No screw holes** | Good, but nothing in my setup to mount it on |
-| **It would not install** | Downloaded, installed, did not run |
-| **Its own material refutes it** | The marketing was contradicted by the vendor's own table |
+## The commonest outcome was owning it and never switching it on
 
-The third and fourth came up often.
+At six pieces I saw only "no tools taken." By twenty, a more frequent conclusion had emerged. I first read it as "I already had this," but there was a layer beneath: I had it and had never once switched it on. Owning something is fine, while never running it is the same as not owning it, and a file listing makes the two look identical.
 
-## The most frequent conclusion — "I have it and never switched it on"
+That is why this shelf reads differently from the others. Elsewhere the question is what I can take; here it is closer to looking at what I already run through someone else's eyes. Open another harness and the parts of mine I had stopped seeing, because they seemed obvious, come back into view.
 
-At six pieces I only saw *no tools taken.* At twenty, **a more frequent conclusion had emerged.**
+## The refutation usually sat in the subject's own material
 
-I read it first as **I already had this.** There was a layer beneath.
+In eight pieces, the decisive evidence that overturned my verdict was in the target's own material, not in a critical article. It was a table in their marketing, a rule they wrote themselves that said stop when followed, a changelog containing what the download page left out, the second table of the same talk reversing its title's premise, two of their documents disagreeing, their own source breaking their own rules, one repository carrying three different numbers at once, and their own check failing to catch its own idioms when run directly.
 
-> **Not "I had it" but "I had it and never switched it on once."**
+What I took from this is that you rarely need to hunt for criticism. Reading the vendor's material to the end usually turns it up, because marketing is on the front page, the limits are on the back, and people read the front.
 
-Completely different states. Having it is fine; **never switching it on is identical to not having it.** And **a listing of files makes the two look the same.**
+## Five of the twenty were picked by a machine
 
-## Which is why this shelf reads differently
+Up to fifteen I chose by hand. The five that took the count to twenty came from a feed that a collector I built gathers twice a day from six sources, and I took apart everything it had stacked up, in order, without filtering. It was the first time that route was actually used, so I was switching on something I had built and never used, and the shelf's commonest conclusion applied to me as well.
 
-Other shelves read as **what can I take.**
+## The twenty-first was my own warehouse
 
-This one is closer to **look at what I already run through someone else's eyes.** Open someone else's harness and the parts of mine I had stopped seeing — because they were obvious — come back into view.
-
-## And one pattern repeated eight times
-
-The most interesting finding here.
-
-**In eight pieces, the decisive evidence that overturned my verdict was not in a critical article but in the target's own material.**
-
-| Where it was |
-|---|
-| **A table in their own marketing** |
-| **A rule they themselves wrote** — following it said stop |
-| **Their own changelog** — containing what the download page did not |
-| **Their own source** — their code breaks their own rules |
-| **The same repository holding three different numbers at once** |
-| **Their own CI guard** — run directly, it catches none of their own idioms |
-
-→ What I took: **you rarely need to hunt for critical articles to find a refutation.** Read the vendor's own material to the end and it is usually in there. **Marketing is on the front page and the limits are on the back**, and people read the front page.
-
-## I did not choose the five that brought the count to twenty
-
-Up to fifteen I picked by hand. **The five that took it to twenty came from a feed a machine gathers daily.**
-
-A collector I built sweeps six sources twice a day. I took **everything from it, in order**, without filtering.
-
-That route was being used for the first time. Which means **I was switching on something I had built and never used** — the most frequent conclusion on this shelf applied to me too.
-
-## And the twenty-first was my own warehouse
-
-The twenty-first piece was unusual. **I took apart something I had installed myself 21 days earlier and never used.**
-
-The first twenty were all someone else's, and the verdicts were *not taking it* or *already have it.* **Only in the twenty-first was the target mine.**
+The twenty-first piece took apart something I had installed myself 21 days earlier and never used. The first twenty were all other people's work, and the verdicts were "not taking it" or "already have it." Only in the twenty-first was the target mine.
 
 ## The detailed record starts here
 

@@ -13,21 +13,19 @@
 
 ---
 
-**/watch is a skill that lets an AI (Claude) *watch* a video. It started from a site called YouTube Summary — paste a YouTube link and it reads the captions and summarises them. /watch adds eyes and ears to that, and changes what comes back from a summary into a spec you can actually build from.**
+/watch is a skill that lets an AI (Claude) watch a video. A skill is a folder holding instructions that tell the AI how to do one job, plus the scripts that do it. This one started from a site called YouTube Summary, where you paste a YouTube link and get a summary built from the captions. /watch adds eyes and ears to that idea and changes what comes back from a summary into a spec you can build from.
 
-A skill is a folder holding instructions that tell the AI how to do one particular job, plus the scripts that do it. Hand this one a video URL and what comes back is not a summary but *a spec you can build from*.
+## What YouTube Summary does is the yardstick for this skill
 
-## First, what YouTube Summary does — the yardstick for this skill
+YouTube Summary (youtubesummary.com) is a free site: paste a YouTube link and a summary comes back in under thirty seconds, no account needed. Its own blog lays out five steps.
 
-YouTube Summary (youtubesummary.com) is a free site: paste a YouTube link and a summary comes back in under thirty seconds, no account needed. Its own blog lays out the steps.
-
-1. Fetch the video's **captions** — the words spoken in the video, written out with timestamps
+1. Fetch the video's captions, which are the spoken words written out with timestamps
 2. Split a long transcript into chunks
-3. Pick the video's **type** from the title and the opening — lecture, product review, cooking, news and so on
+3. Pick the video's type from the title and the opening, such as lecture, product review, cooking or news
 4. Summarise with a question sheet that depends on the type: ingredients and steps for a recipe, pros, cons and a verdict for a review
 5. Merge the chunk summaries into one
 
-It also names two limits of its own. **It doesn't look at the screen**, so charts, demos and text that only appears on screen are invisible to it. **And without captions it stops** — transcribing the audio costs too much time and money to do by default, it says.
+The site names two limits of its own. It doesn't look at the screen, so charts, demos and text that appears only on screen are invisible to it. And it stops when there are no captions, because transcribing the audio costs too much time and money to do by default.
 
 ## /watch adds eyes and ears
 
@@ -35,68 +33,42 @@ It also names two limits of its own. **It doesn't look at the screen**, so chart
 >
 > The same video link, read differently. YouTube Summary reads only the caption text, stops if there are no captions, and returns a summary. /watch reads captions plus screenshots of the video, transcribes the audio when there are no captions, and returns a spec. What was added is eyes and ears; what changed is the question sheet.
 
-| | YouTube Summary | /watch |
-|---|---|---|
-| What it reads | captions (text) only | captions **plus screenshots** |
-| No captions | stops | **transcribes the audio** into a transcript |
-| Where it runs | that site's servers | **my own machine** — the video file never leaves it |
-| What comes back | a summary | answers to your question, and **a spec** |
+As the figure shows, the same link gets read differently. YouTube Summary reads only the captions and runs on that site's servers. /watch reads the captions plus screenshots of the video and runs on my own machine. When there are no captions, the first one stops, while /watch transcribes the audio into a transcript. The video file never leaves the machine, and only the audio goes out, and only when it has to. What comes back differs too: a summary from one, answers to your question and a spec from the other.
 
-A screenshot here is a single still taken from the video — a frame. The AI opens each one and looks at it.
+A screenshot here is a single still taken from the video, a frame. The AI opens each one and looks at it.
 
 ## How it runs
 
-Give it an address and it:
+Give it an address and it first fetches the video. Then it pulls frames. The video's length sets how many, and how far the picture has moved on since the last frame taken sets where. Every hard cut gets one, a screen that changes slowly, like text typed a letter at a time, gets one once enough change has built up, and still stretches get few. It never takes more than 100, however long the video runs.
 
-1. Fetches the video
-2. Pulls frames — **how many is set by the video's length; where they go is set by how far the picture has moved on since the last frame taken.** Every hard cut gets one, a screen that changes slowly — text typed a letter at a time — gets one once enough has built up, still stretches get few, and never more than 100 however long it runs
-3. Gets **a transcript** from the captions — and if there are none, **transcribes the audio**
-4. **Lines frames and transcript up by time** and hands them over — the AI opens the frames one by one and answers
+The transcript comes from the captions, or from transcribing the audio when there are none. Finally it lines frames and transcript up by time and hands them over, and the AI opens the frames one by one and answers.
 
 ## The first version was useless
 
-Stated plainly. Like YouTube Summary, the first build produced **a summary.**
+The first build produced a summary, like YouTube Summary does. A summary tells you what happened, which suits someone who is not going to watch the video. I watch a video in order to build something, and for that a summary carries nothing.
 
-A summary tells you **what happened.** That is what someone who is *not going to watch it* needs.
+Take the combat example. A summary says "they explained the combat system". What I need is "there is one health bar and two people push it", a sentence I can build from.
 
-But I watch a video **in order to build something.** For that, a summary **carries nothing.**
+So I dropped summaries and made it produce a spec: what does what, what the numbers are, what sits where on screen. The same video gives two different artefacts depending on whether you ask what it was about or how it was built.
 
-| | What a summary gives | What I need |
-|---|---|---|
-| Content | *They explained the combat system* | ***There is one health bar and two people push it*** |
-| Can I use it | **No** | **I can build that** |
+## Three problems had to be solved
 
-So I **dropped summaries and made it produce a spec** — what does what, what the numbers are, what sits where on screen.
+The first is the frame budget: almost all the cost is in frames, and video length grows without limit. The second is the transcript, because having captions and not having them are entirely different routes. The third is boundary and failure, meaning what leaves the machine when a tool handles other people's videos.
 
-> **The same video gives two different artefacts depending on whether you ask "what was it about" or "how was it built."**
+## The output goes to two places
 
-## Three problems
-
-| | What the problem is |
-|---|---|
-| **Frame budget** | **Almost all the cost is in frames**, and video length grows without limit |
-| **Transcript** | Having captions and not having them are **entirely different routes** |
-| **Boundary and failure** | **A tool handling other people's videos** — what leaves the machine |
-
-## Where it goes
-
-**Sixteen runs so far.** The output goes to two places.
-
-- **The analysis archive** on this site
-- **The game project** — specs pulled out of someone's talk get implemented and tested there
-
-The second is why the tool exists. **Watching a video and thinking *nice* leaves nothing.** It has to come out as a spec before there is a next step.
+Sixteen runs so far. The output goes to the analysis archive on this site and to the game project, where specs pulled out of someone's talk get implemented and tested. The second is why the tool exists. Watching a video and thinking "nice" leaves nothing, and it has to come out as a spec before there is a next step.
 
 ## Want to build one? Four ingredients
 
-The skill is simpler than it sounds. It's a script that calls three existing tools in order, plus one instruction sheet telling the AI when and how to call it.
+The skill is simpler than it sounds. It is a script that calls three existing tools in order, plus one instruction sheet telling the AI when and how to call it.
 
 | Ingredient | What it does |
 |---|---|
-| **yt-dlp** | downloads the video and its captions (free) |
-| **ffmpeg** | pulls frames out of the video, and strips out the audio when needed (free) |
-| **Whisper** (Groq or OpenAI) | transcribes the audio when there are no captions — the only part that costs money |
-| **SKILL.md** | the instructions the AI reads: when to use this skill and how to read its output |
+| yt-dlp | downloads the video and its captions (free) |
+| ffmpeg | pulls frames out of the video, and strips out the audio when needed (free) |
+| Whisper (Groq or OpenAI) | transcribes the audio when there are no captions, the only part that costs money |
+| SKILL.md | the instructions the AI reads: when to use this skill and how to read its output |
 
 The step-by-step order, the numbers and the traps are in the "Building it" sections of the detailed record below. The original code is bradautomates/claude-video (MIT licence), linked at the top.
 
